@@ -34,9 +34,7 @@ function init_head($aside = true)
     $CI = &get_instance();
     $CI->load->view('admin/includes/head');
     $CI->load->view('admin/includes/header', ['startedTimers' => $CI->misc_model->get_staff_started_timers()]);
-    if ($aside == true) {
-        $CI->load->view('admin/includes/main_menu');
-    }
+    $CI->load->view('admin/includes/main_menu');
 }
 /**
  * @since  1.0.0
