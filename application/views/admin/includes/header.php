@@ -163,8 +163,11 @@ ob_start();
                               <?php echo staff_profile_image($current_user->staffid, array('round'), 'small', array('height' => '40', 'width' => '40')); ?> 
                            </span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right pb-0"><a class="dropdown-item" href="page-user-profile.html"><i class="bx bx-user mr-50"></i> Edit Profile</a><a class="dropdown-item" href="app-email.html"><i class="bx bx-envelope mr-50"></i> My Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="bx bx-check-square mr-50"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="bx bx-message mr-50"></i> Chats</a>
-                           <div class="dropdown-divider mb-0"></div><a class="dropdown-item" href="auth-login.html"><i class="bx bx-power-off mr-50"></i> Logout</a>
+                        <div class="dropdown-menu dropdown-menu-right pb-0">
+                           <a class="dropdown-item" href="<?php echo admin_url('staff/edit_profile'); ?>"><i class="bx bx-user mr-50"></i> <?php echo _l('nav_edit_profile'); ?></a>
+                           <a class="dropdown-item" href="<?php echo admin_url('profile'); ?>"><i class="bx bx-user mr-50"></i> <?php echo _l('nav_my_profile'); ?></a>
+                           <a class="dropdown-item" href="<?php echo admin_url('staff/timesheets'); ?>"><i class="bx bx-check-square mr-50"></i> <?php echo _l('my_timesheets'); ?></a>
+                           <div class="dropdown-divider mb-0"></div><a class="dropdown-item" href="#" onclick="logout(); return false;"><i class="bx bx-power-off mr-50"></i> <?php echo _l('nav_logout'); ?></a>
                         </div>
                   </li>
                </ul>
