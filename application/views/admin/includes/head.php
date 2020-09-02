@@ -50,6 +50,3 @@
 
     </head>
   <!-- END: Head-->
-
-<body <?php echo admin_body_class(isset($bodyclass) ? $bodyclass : ''); ?><?php if($isRTL === 'true'){ echo 'dir="rtl"';}; ?>>
-<?php hooks()->do_action('after_body_start'); ?>
