@@ -6,7 +6,6 @@
 <html class="loading" lang="<?php echo $locale; ?>" data-textdirection="ltr">
   <!-- BEGIN: Head-->
   <head>
-      
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -38,8 +37,6 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/assets/css/style.css">
     <!-- END: Custom CSS-->
-
-    <?php echo app_compile_css(); ?>
     <?php render_admin_js_variables(); ?>
     <script>
         var totalUnreadNotifications = <?php echo $current_user->total_unread_notifications; ?>,
