@@ -222,11 +222,10 @@ function get_company_logo($uri = '', $href_class = '', $type = '')
     $logoURL = hooks()->apply_filters('logo_href', $logoURL);
 
     if ($company_logo != '') {
-        $logo = '<href="'. $logoURL . '" class="navbar-brand ' . ($href_class != '' ? ' ' . $href_class : '') . '">
+        $logo = '<a href="'. $logoURL . '" class="navbar-brand ' . ($href_class != '' ? ' ' . $href_class : '') . '">
             <div class="brand-logo">
                 <img src="' . base_url('uploads/company/' . $company_logo) . '" class="logo" alt="' . html_escape($company_name) . '">
-            </div>
-            <h2 class="brand-text mb-0">Frest</h2></a>';
+            </div></a>';
     } elseif ($company_name != '') {
         $logo = '<a href="' . $logoURL . '" class="' . $href_class . ' logo logo-text">' . $company_name . '</a>';
     } else {
