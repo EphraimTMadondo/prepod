@@ -2,7 +2,9 @@
 <?php init_head(); ?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
-      <div class="content-overlay"></div>
+      <div class="content-overlay">
+        <?php $this->load->view('admin/includes/alerts'); ?>
+      </div>
         <div class="content-wrapper">
             <div class="screen-options-area"></div>
             <div class="screen-options-btn">
@@ -12,7 +14,6 @@
                 <?php
                 
                 ?>
-                <?php $this->load->view('admin/includes/alerts'); ?>
 
                 <?php hooks()->do_action( 'before_start_render_dashboard_content' ); ?>
 
