@@ -164,8 +164,8 @@ ob_start();
                            </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right pb-0">
-                           <a class="dropdown-item" href="<?php echo admin_url('staff/edit_profile'); ?>"><i class="bx bx-user mr-50"></i> <?php echo _l('nav_edit_profile'); ?></a>
                            <a class="dropdown-item" href="<?php echo admin_url('profile'); ?>"><i class="bx bx-user mr-50"></i> <?php echo _l('nav_my_profile'); ?></a>
+                           <a class="dropdown-item" href="<?php echo admin_url('staff/edit_profile'); ?>"><i class="bx bx-user mr-50"></i> <?php echo _l('nav_edit_profile'); ?></a>
                            <a class="dropdown-item" href="<?php echo admin_url('staff/timesheets'); ?>"><i class="bx bx-check-square mr-50"></i> <?php echo _l('my_timesheets'); ?></a>
                            <div class="dropdown-divider mb-0"></div><a class="dropdown-item" href="#" onclick="logout(); return false;"><i class="bx bx-power-off mr-50"></i> <?php echo _l('nav_logout'); ?></a>
                         </div>
