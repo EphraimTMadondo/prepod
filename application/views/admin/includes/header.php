@@ -32,7 +32,7 @@ ob_start();
                   </ul>
                </div>
                <ul class="nav navbar-nav float-right">
-                  <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language"><?php echo _l('language'); ?></span></a>
+                  <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language"><?php echo _l('system_default_string'); ?></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                            <?php foreach($this->app->get_available_languages() as $user_lang) { ?>
                               <a class="dropdown-item" href="<?php echo admin_url('staff/change_language/'.$user_lang); ?>" data-language="en"><?php echo ucfirst($user_lang); ?></a>
