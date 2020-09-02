@@ -65,70 +65,44 @@
 <?php $this->load->view('admin/utilities/calendar_template'); ?>
 <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
 
-<!-- Added by Leo -->
 
-    <!-- Perfect-scrollbar  -->
-    <script src="<?php echo base_url();?>assets/plugins/perfect-scrollbar/perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
+<div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
 
-    <!-- Tui Calendar -->
-    <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
-    
-    <!-- Chance -->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
-    
-    <!-- Apex Calendar -->
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+      <p class="clearfix mb-0"><span class="float-left d-inline-block">2020 &copy; PIXINVENT</span><span class="float-right d-sm-inline-block d-none">Crafted with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a></span>
+        <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
+      </p>
+    </footer>
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/vendors.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    
-    
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/modal/components-modal.js"></script>
-    
-    
-    <script>
-        function getMySchedules(){
-            //alert("this is running");
-            
-            var d = new Date();
-            var year = d.getFullYear();
-            var month = d.getMonth();
-            var day = d.getDate();
-            var nextYear = new Date(year + 1, month, day);
-            
-            var dd = String(nextYear.getDate()).padStart(2, '0');
-            var mm = String(nextYear.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = nextYear.getFullYear();
-            
-            nextYearDate = yyyy + '/' + mm + '/'  + dd;
-            
-            $.ajax({
-                url: "<?php echo base_url();?>admin/utilities/get_calendar_data",
-                type: "POST",
-                success: function(result){
-                    //$("#div1").html(result);
-                    //alert("Leo " + result);
-                    setSchedules2(JSON.parse(result));
-                },
-                data:{
-                    csrf_token_name:'<?Php echo $this->security->get_csrf_hash(); ?>',
-                    start:'2020-01-01',
-                    end:nextYearDate,
-                    timezone: 'Africa/Harare'
-                }
-            });
-        }
-    </script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
-    <!--<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>-->
-        <script src="<?php echo base_url();?>assets/js/my-calendar.js"></script>
-        
-        <!-- Custom JS -->
-    <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <!-- END: Page Vendor JS-->
 
+    <!-- BEGIN: Theme JS-->
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/customizer.min.js"></script>
+    <!-- END: Theme JS-->
 
+    <!-- BEGIN: Page JS-->
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
+    <!-- END: Page JS-->
 
-<!-- End of Added by Leo -->
-</body>
+  </body>
+  <!-- END: Body-->
 </html>
