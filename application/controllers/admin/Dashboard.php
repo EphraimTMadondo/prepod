@@ -17,7 +17,6 @@ class Dashboard extends AdminController
         $this->load->model('departments_model');
         $this->load->model('todo_model');
         $data['departments'] = $this->departments_model->get();
-
         $data['todos'] = $this->todo_model->get_todo_items(0);
         // Only show last 5 finished todo items
         $this->todo_model->setTodosLimit(5);
@@ -75,6 +74,9 @@ class Dashboard extends AdminController
         $data['user_dashboard_visibility'] = json_encode($data['user_dashboard_visibility']);
 
         $data = hooks()->apply_filters('before_dashboard_render', $data);
+        echo "<pre>";
+            print_r($data);
+        echo "</pre>";
         $this->load->view('admin/dashboard/dashboard', $data);
     }
 
