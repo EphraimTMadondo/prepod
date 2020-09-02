@@ -44,6 +44,7 @@ function init_tail()
 {
     $CI = &get_instance();
     $CI->load->view('admin/includes/scripts');
+    $CI->load->view('admin/includes/footer');
 }
 /**
  * Get admin url
