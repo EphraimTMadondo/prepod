@@ -160,7 +160,6 @@ ob_start();
                   </li>
                   <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                            <div class="user-nav d-sm-flex d-none"><span class="user-name"><?php echo get_staff_full_name(); ?></span><span class="user-status text-muted">Available</span></div><span>
-                              <img class="round" src="<?php echo base_url();?>assets/frest/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"> 
                               <?php echo staff_profile_image($current_user->staffid, array('round'), 'small', array('height' => '40', 'width' => '40')); ?> 
                            </span>
                         </a>
