@@ -74,9 +74,6 @@ class Dashboard extends AdminController
         $data['user_dashboard_visibility'] = json_encode($data['user_dashboard_visibility']);
 
         $data = hooks()->apply_filters('before_dashboard_render', $data);
-        echo "<pre>";
-            print_r($data);
-        echo "</pre>";
         $this->load->view('admin/dashboard/dashboard', $data);
     }
 
