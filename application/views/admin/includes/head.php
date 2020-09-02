@@ -46,7 +46,5 @@
         isRTL = '<?php echo $isRTL; ?>',
         taskid,taskTrackingStatsData,taskAttachmentDropzone,taskCommentAttachmentDropzone,newsFeedDropzone,expensePreviewDropzone,taskTrackingChart,cfh_popover_templates = {},_table_api;
     </script>
-    <?php app_admin_head(); ?>
-
     </head>
   <!-- END: Head-->
