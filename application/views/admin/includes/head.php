@@ -39,9 +39,6 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/assets/css/style.css">
     <!-- END: Custom CSS-->
 
-
-    <!-- Problem CSS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/bootstrap.css">
     <?php echo app_compile_css(); ?>
     <?php render_admin_js_variables(); ?>
     <script>
