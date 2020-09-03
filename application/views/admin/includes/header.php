@@ -18,7 +18,7 @@ ob_start();
                   <ul class="nav navbar-nav bookmark-icons">
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="<?php echo base_url();?>admin/mailbox" data-toggle="tooltip" data-placement="top" title="Email"><i class="ficon bx bx-envelope"></i></a></li>
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="<?php echo base_url();?>admin/tasks" data-toggle="tooltip" data-placement="top" title="Todo"><i class="ficon bx bx-check-circle"></i></a></li>
-                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href="<?php echo base_url();?>admin/calendar" data-toggle="tooltip" data-placement="top" title="Calendar"><i class="ficon bx bx-calendar-alt"></i></a></li>
+                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href="<?php echo base_url();?>admin/utilities/calendar" data-toggle="tooltip" data-placement="top" title="Calendar"><i class="ficon bx bx-calendar-alt"></i></a></li>
                   </ul>
                   <ul class="nav navbar-nav">
                         <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon bx bx-star warning"></i></a>
