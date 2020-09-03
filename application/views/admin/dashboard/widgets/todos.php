@@ -16,6 +16,8 @@
                <ul class="widget-todo-list-wrapper" id="widget-todo-list">
                   <?php foreach($todos as $todo) { ?>
                   <li class="widget-todo-item">
+                     <?php echo form_hidden('todo_order',$todo['item_order']); ?>
+                     <?php echo form_hidden('finished',0); ?>
                      <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
                         <div class="widget-todo-title-area d-flex align-items-center">
                            <i class='bx bx-grid-vertical mr-25 font-medium-3 cursor-move'></i>

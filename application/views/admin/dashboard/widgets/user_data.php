@@ -3,170 +3,194 @@
  $companyusername = $_SESSION['current_company'];
 
 ?>
-<div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('user_widget'); ?>">
+<!-- Earnings Widget Swiper Starts -->
+<div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('user_widget'); ?>" id="widget-earnings">
    <div class="card">
-      <div class="card-body">
-         <div class="widget-dragger"></div>
-         <div class="horizontal-scrollable-tabs">
-            <div class="scroller scroller-left arrow-left"><i class="fa fa-angle-left"></i></div>
-            <div class="scroller scroller-right arrow-right"><i class="fa fa-angle-right"></i></div>
-            <div class="horizontal-tabs">
-               <ul class="nav nav-tabs nav-tabs-horizontal" role="tablist">
-                  <li role="presentation" class="active">
-                     <a href="#home_tab_tasks" aria-controls="home_tab_tasks" role="tab" data-toggle="tab">
-                        <i class="fa fa-tasks menu-icon"></i> <?php echo _l('home_my_tasks'); ?>
-                     </a>
-                  </li>
-                  <li role="presentation">
-                     <a href="#home_my_projects" onclick="init_table_staff_projects(true);" aria-controls="home_my_projects" role="tab" data-toggle="tab">
-                     <i class="fa fa-bars menu-icon"></i> <?php echo _l('home_my_projects'); ?>
-                     </a>
-                  </li>
-                  <li role="presentation">
-                     <a href="#home_my_reminders" onclick="initDataTable('.table-my-reminders', admin_url + 'misc/my_reminders', undefined, undefined,undefined,[2,'asc']);" aria-controls="home_my_reminders" role="tab" data-toggle="tab">
-                     <i class="fa fa-clock-o menu-icon"></i> <?php echo _l('my_reminders'); ?>
-                     <?php
-                    
-                        $total_reminders = total_rows(db_prefix().'reminders',
-                          array(
-                           'isnotified'=>0,
-                           'staff'=>get_staff_user_id(),
-                           'company_username'=>$companyusername,
-                        )
-                        );
-                        if($total_reminders > 0){
-                          echo '<span class="badge">'.$total_reminders.'</span>';
-                        }
-                        ?>
-                     </a>
-                  </li>
-                  <?php if((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()){ ?>
-                  <li role="presentation">
-                     <a href="#home_tab_tickets" onclick="init_table_tickets(true);" aria-controls="home_tab_tickets" role="tab" data-toggle="tab">
-                     <i class="fa fa-ticket menu-icon"></i> <?php echo _l('home_tickets'); ?>
-                     </a>
-                  </li>
-                  <?php } ?>
-                  <?php if(is_staff_member()){ ?>
-                  <li role="presentation">
-                     <a href="#home_announcements" onclick="init_table_announcements(true);" aria-controls="home_announcements" role="tab" data-toggle="tab">
-                     <i class="fa fa-bullhorn menu-icon"></i> <?php echo _l('home_announcements'); ?>
-                     <?php if($total_undismissed_announcements != 0){ echo '<span class="badge">'.$total_undismissed_announcements.'</span>';} ?>
-                     </a>
-                  </li>
-                  <?php } ?>
-                  <?php if(is_admin()){ ?>
-                  <li role="presentation">
-                     <a href="#home_tab_activity" aria-controls="home_tab_activity" role="tab" data-toggle="tab">
-                     <i class="fa fa-window-maximize menu-icon"></i> <?php echo _l('home_latest_activity'); ?>
-                     </a>
-                  </li>
-                  <?php } ?>
-               </ul>
-               <hr class="hr-panel-heading hr-user-data-tabs" />
-               <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="home_tab_tasks">
-                     <a href="<?php echo admin_url('tasks/list_tasks'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
-                     <div class="clearfix"></div>
-                     <div class="_hidden_inputs _filters _tasks_filters">
-                        <?php
-                           echo form_hidden('my_tasks',true);
-                           foreach($task_statuses as $status){
-                            $val = 'true';
-                            if($status['id'] == Tasks_model::STATUS_COMPLETE){
-                              $val = '';
-                           }
-                           echo form_hidden('task_status_'.$status['id'],$val);
-                           }
-                           ?>
-                     </div>
-                     <?php $this->load->view('admin/tasks/_table'); ?>
-                  </div>
-                  <?php if((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()){ ?>
-                  <div role="tabpanel" class="tab-pane" id="home_tab_tickets">
-                     <a href="<?php echo admin_url('tickets'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
-                     <div class="clearfix"></div>
-                     <div class="_filters _hidden_inputs hidden tickets_filters">
-                        <?php
-                           // On home only show on hold, open and in progress
-                           echo form_hidden('ticket_status_1',true);
-                           echo form_hidden('ticket_status_2',true);
-                           echo form_hidden('ticket_status_4',true);
-                           ?>
-                     </div>
-                     <?php echo AdminTicketsTableStructure(); ?>
-                  </div>
-                  <?php } ?>
-                  <div role="tabpanel" class="tab-pane" id="home_my_projects">
-                     <a href="<?php echo admin_url('projects'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
-                     <div class="clearfix"></div>
-                     <?php render_datatable(array(
-                        _l('project_name'),
-                        _l('project_start_date'),
-                        _l('project_deadline'),
-                        _l('project_status'),
-                        ),'staff-projects',[], [
-                        'data-last-order-identifier' => 'my-projects',
-                        'data-default-order'  => get_table_last_order('my-projects'),
-                        ]);
-                        ?>
-                  </div>
-                  <div role="tabpanel" class="tab-pane" id="home_my_reminders">
-                     <a href="<?php echo admin_url('misc/reminders'); ?>" class="mbot20 inline-block full-width">
-                     <?php echo _l('home_widget_view_all'); ?>
-                     </a>
-                     <?php render_datatable(array(
-                        _l( 'reminder_related'),
-                        _l('reminder_description'),
-                        _l( 'reminder_date'),
-                        ), 'my-reminders'); ?>
-                  </div>
-                  <?php if(is_staff_member()){ ?>
-                  <div role="tabpanel" class="tab-pane" id="home_announcements">
-                     <?php if(is_admin()){ ?>
-                     <a href="<?php echo admin_url('announcements'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
-                     <div class="clearfix"></div>
-                     <?php } ?>
-                     <?php render_datatable(array(_l('announcement_name'),_l('announcement_date_list')),'announcements'); ?>
-                  </div>
-                  <?php } ?>
-                  <?php if(is_admin()){ ?>
-                  <div role="tabpanel" class="tab-pane" id="home_tab_activity">
-                     <a href="<?php echo admin_url('utilities/activity_log'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
-                     <div class="clearfix"></div>
-                     <div class="activity-feed">
-                        <?php foreach($activity_log as $log){
-                            if($log['company_username'] == $companyusername)
-                            {
-                        
-                        ?>
-                        <div class="feed-item">
-                           <div class="date">
-                              <span class="text-has-action" data-toggle="tooltip" data-title="<?php echo _dt($log['date']); ?>">
-                              <?php echo time_ago($log['date']); ?>
-                              </span>
+      <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+         <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> Earnings</h5>
+         <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+      </div>
+      <div class="card-content">
+         <div class="card-body py-1">
+               <!-- earnings swiper starts -->
+               <div class="widget-earnings-swiper swiper-container p-1">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="home_tab_tasks">
+                           <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                           <div class="swiper-text">
+                              <?php echo _l('home_my_tasks'); ?>
+                              <p class="mb-0 font-small-2 font-weight-normal"></p>
                            </div>
-                           <div class="text">
-                              <?php echo $log['staffid']; ?><br />
-                              <?php echo $log['description']; ?>
+                     </div>
+                     <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" onclick="init_table_staff_projects(true);" id="home_my_projects">
+                           <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                           <div class="swiper-text">
+                              <?php echo _l('home_my_projects'); ?>
+                              <p class="mb-0 font-small-2 font-weight-normal"></p>
                            </div>
+                     </div>
+                     <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center"  onclick="initDataTable('.table-my-reminders', admin_url + 'misc/my_reminders', undefined, undefined,undefined,[2,'asc']);" id="home_my_reminders">
+                           <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                           <div class="swiper-text">
+                              <?php echo _l('home_my_reminders'); ?>
+                              <p class="mb-0 font-small-2 font-weight-normal">
+                              <?php
+                                 $total_reminders = total_rows(db_prefix().'reminders',
+                                    array(
+                                    'isnotified'=>0,
+                                    'staff'=>get_staff_user_id(),
+                                    'company_username'=>$companyusername,
+                                 )
+                                 );
+                                 if($total_reminders > 0){
+                                    echo $total_reminders;
+                                 }
+                                 ?>
+                              </p>
+                           </div>
+                     </div>
+                     <?php if((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()){ ?>
+                        <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center"  onclick="init_table_tickets(true);" id="home_tab_tickets">
+                              <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                              <div class="swiper-text">
+                                 <?php echo _l('home_tickets'); ?>
+                                 <p class="mb-0 font-small-2 font-weight-normal"></p>
+                              </div>
                         </div>
-                        <?php 
-                            
-                            
-                            }
-                            
-                        } 
-                        
-                        
-                        
-                        ?>
-                     </div>
+                     <?php } ?>
+                     <?php if(is_staff_member()){ ?>
+                        <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center"  onclick="init_table_announcements(true);" id="home_announcements">
+                              <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                              <div class="swiper-text">
+                                 <?php echo _l('home_announcements'); ?>
+                                 <p class="mb-0 font-small-2 font-weight-normal"><?php if($total_undismissed_announcements != 0){ echo $total_undismissed_announcements;} ?></p>
+                              </div>
+                        </div>
+                     <?php } ?>
+                     <?php if(is_admin()){ ?>
+                        <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="home_tab_activity">
+                              <i class="bx bx-pyramid mr-50 font-large-1"></i>
+                              <div class="swiper-text">
+                                 <?php echo _l('home_latest_activity'); ?>
+                                 <p class="mb-0 font-small-2 font-weight-normal"></p>
+                              </div>
+                        </div>
+                     <?php } ?>
                   </div>
-                  <?php } ?>
                </div>
-            </div>
+               <!-- earnings swiper ends -->
+         </div>
+      </div>
+      <div class="main-wrapper-content">
+         <div class="wrapper-content" data-earnings="home_tab_tasks">
+               <div class="widget-earnings-scroll table-responsive">
+                  <table class="table table-borderless widget-earnings-width mb-0">
+                     <tbody>
+                           <tr>
+                              <td class="pr-75">
+                                 <div class="media align-items-center">
+                                       <a class="media-left mr-50" href="#">
+                                          <img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                                       </a>
+                                       <div class="media-body">
+                                          <h6 class="media-heading mb-0">Mera Baker</h6>
+                                          <span class="font-small-2">Ux Designer</span>
+                                       </div>
+                                 </div>
+                              </td>
+                              <td class="px-0 w-25">
+                                 <div class="progress progress-bar-primary progress-sm mb-0">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="80" aria-valuemax="100" style="width:55%;"></div>
+                                 </div>
+                              </td>
+                              <td class="text-center"><span class="badge badge-light-primary">+ $860</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="pr-75">
+                                 <div class="media align-items-center">
+                                       <a class="media-left mr-50" href="#">
+                                          <img src="../../../app-assets/images/portrait/small/avatar-s-10.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                                       </a>
+                                       <div class="media-body">
+                                          <h6 class="media-heading mb-0">Jerry Lter</h6>
+                                          <span class="font-small-2">Designer</span>
+                                       </div>
+                                 </div>
+                              </td>
+                              <td class="px-0 w-25">
+                                 <div class="progress progress-bar-info progress-sm mb-0">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="80" aria-valuemax="100" style="width:33%;"></div>
+                                 </div>
+                              </td>
+                              <td class="text-center"><span class="badge badge-light-warning">- $280</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="pr-75">
+                                 <div class="media align-items-center">
+                                       <a class="media-left mr-50" href="#">
+                                          <img src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                                       </a>
+                                       <div class="media-body">
+                                          <h6 class="media-heading mb-0">Pauly uez</h6>
+                                          <span class="font-small-2">Devloper</span>
+                                       </div>
+                                 </div>
+                              </td>
+                              <td class="px-0 w-25">
+                                 <div class="progress progress-bar-success progress-sm mb-0">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="80" aria-valuemax="100" style="width:10%;"></div>
+                                 </div>
+                              </td>
+                              <td class="text-center"><span class="badge badge-light-success">+ $853</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="pr-75">
+                                 <div class="media align-items-center">
+                                       <a class="media-left mr-50" href="#">
+                                          <img src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                                       </a>
+                                       <div class="media-body">
+                                          <h6 class="media-heading mb-0">Lary Masey</h6>
+                                          <span class="font-small-2">Marketing</span>
+                                       </div>
+                                 </div>
+                              </td>
+                              <td class="px-0 w-25">
+                                 <div class="progress progress-bar-primary progress-sm mb-0">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="80" aria-valuemax="100" style="width:15%;"></div>
+                                 </div>
+                              </td>
+                              <td class="text-center"><span class="badge badge-light-primary">+ $125</span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="pr-75">
+                                 <div class="media align-items-center">
+                                       <a class="media-left mr-50" href="#">
+                                          <img src="../../../app-assets/images/portrait/small/avatar-s-12.jpg" alt="avatar" class="rounded-circle" height="30" width="30">
+                                       </a>
+                                       <div class="media-body">
+                                          <h6 class="media-heading mb-0">Lula Taylor</h6>
+                                          <span class="font-small-2">Degigner</span>
+                                       </div>
+                                 </div>
+                              </td>
+                              <td class="px-0 w-25">
+                                 <div class="progress progress-bar-danger progress-sm mb-0">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="80" aria-valuemax="100" style="width:35%;"></div>
+                                 </div>
+                              </td>
+                              <td class="text-center"><span class="badge badge-light-danger">- $310</span>
+                              </td>
+                           </tr>
+                     </tbody>
+                  </table>
+               </div>
          </div>
       </div>
    </div>
 </div>
+<!-- Earnings Widget Swiper Ends -->
