@@ -32,20 +32,17 @@
                 <div class="col-md-8" data-container="left-8">
                     <?php render_dashboard_widgets('left-8'); ?>
                 </div>
-                <div class="col-md-8" data-container="left-8">
-                    <?php render_dashboard_widgets('left-8'); ?>
-                </div>
                 <div class="col-md-4" data-container="right-4">
                     <?php render_dashboard_widgets('right-4'); ?>
                 </div>
 
                 <div class="clearfix"></div>
 
-                <div class="col-md-4" data-container="bottom-right-4">
-                    <?php render_dashboard_widgets('bottom-right-4'); ?>
+                <div class="col-md-4" data-container="bottom-left-4">
+                    <?php render_dashboard_widgets('bottom-left-4'); ?>
                 </div>
-                <div class="col-md-4" data-container="bottom-right-4">
-                    <?php render_dashboard_widgets('bottom-right-4'); ?>
+                <div class="col-md-4" data-container="bottom-middle-4">
+                    <?php render_dashboard_widgets('bottom-middle-4'); ?>
                 </div>
                 <div class="col-md-4" data-container="bottom-right-4">
                     <?php render_dashboard_widgets('bottom-right-4'); ?>
