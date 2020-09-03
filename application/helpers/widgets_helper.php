@@ -20,10 +20,6 @@ function get_dashboard_widgets()
             'container' => 'left-8',
         ],
         [
-            'path'      => 'admin/dashboard/widgets/user_data',
-            'container' => 'left-8',
-        ],
-        [
             'path'      => 'admin/dashboard/widgets/upcoming_events',
             'container' => 'left-8',
         ],
@@ -38,6 +34,10 @@ function get_dashboard_widgets()
         [
             'path'      => 'admin/dashboard/widgets/todos',
             'container' => 'right-4',
+        ],
+        [
+            'path'      => 'admin/dashboard/widgets/user_data',
+            'container' => 'left-8',
         ],
         [
             'path'      => 'admin/dashboard/widgets/leads_chart',
