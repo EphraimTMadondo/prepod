@@ -14,8 +14,8 @@
       ?>
          <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
          <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
-            <div class="card">
-                <div class="top_stats_wrapper">
+            <div class="card text-center">
+                <div class="card-content">
                    <?php
                       $total_invoices = total_rows(db_prefix().'invoices',"company_username ='$companyusername'",'status NOT IN (5,6),'.(!has_permission('invoices','','view') ? ' AND ' . get_invoices_where_sql_for_staff(get_staff_user_id()) : ''));
                   $total_invoices_awaiting_payment = total_rows(db_prefix().'invoices',"company_username ='$companyusername'",'status NOT IN (2,5,6)'.(!has_permission('invoices','','view') ? ' AND ' . get_invoices_where_sql_for_staff(get_staff_user_id()) : ''));
@@ -41,8 +41,8 @@
          <?php } ?>
          <?php if(is_staff_member()){ ?>
          <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
-            <div class="card">
-                <div class="top_stats_wrapper">
+            <div class="card text-center">
+                <div class="card-content">
                    <?php
                       $where = '';
                       if(!is_admin()){
@@ -79,8 +79,8 @@
          </div>
          <?php } ?>
          <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
-            <div class="card">
-                <div class="top_stats_wrapper">
+            <div class="card text-center">
+                <div class="card-content">
                    <?php
                       $_where = '';
                       $project_status = get_project_status_by_id(2);
@@ -111,8 +111,8 @@
             </div>
          </div>
          <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
-            <div class="card">
-                <div class="top_stats_wrapper">
+            <div class="card text-center">
+                <div class="card-content">
                    <?php
                       $_where = '';
                       if (!has_permission('tasks', '', 'view')) {
