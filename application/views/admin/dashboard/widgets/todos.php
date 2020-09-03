@@ -21,7 +21,7 @@
                      <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
                         <div class="widget-todo-title-area d-flex align-items-center">
                            <i class='bx bx-grid-vertical mr-25 font-medium-3 cursor-move'></i>
-                           <span class="checkbox checkbox-primary no-mtop checkbox-inline">
+                           <span class="checkbox checkbox-shadow" style="margin-top:-16">
                               <input type="checkbox" name="todo_id" id="<?php echo $todo['todoid']; ?>" class="checkbox__input" value="<?php echo $todo['todoid']; ?>">
                               <label for="<?php echo $todo['todoid']; ?>"></label>
                            </span>
