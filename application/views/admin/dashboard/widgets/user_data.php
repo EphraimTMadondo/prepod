@@ -1,5 +1,5 @@
 <!-- Earnings Widget Swiper Starts -->
-<div class="col-xl-4 col-md-6 earnings-card" id="widget-earnings">
+<div class="col-12 earnings-card" id="widget-earnings">
       <div class="card">
          <div class="card-header border-bottom d-flex justify-content-between align-items-center">
             <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> Earnings</h5>
