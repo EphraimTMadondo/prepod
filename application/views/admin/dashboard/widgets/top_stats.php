@@ -1,10 +1,19 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); 
    $companyusername = $_SESSION['current_company'];
 ?>
-<div class="col-xl-4 col-12 dashboard-users">
+<div class="col-12 dashboard-users relative" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('quick_stats'); ?>">
       <div class="row">
+      <?php
+         $initial_column = 'col-lg-3';
+         if(!is_staff_member() && ((!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 0
+           || (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()))))) {
+            $initial_column = 'col-lg-6';
+         } else if(!is_staff_member() || (!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()) || (get_option('allow_staff_view_invoices_assigned') == 0 && (!has_permission('invoices','','view') && !has_permission('invoices','','view_own'))))) {
+            $initial_column = 'col-lg-4';
+         }
+      ?>
          <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
-         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6">
+         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
                      <?php
@@ -24,7 +33,7 @@
          </div>
          <?php } ?>
          <?php if(is_staff_member()){ ?>
-         <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6">
+         <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
                   <div class="card-body py-1">
@@ -56,7 +65,7 @@
             </div>
          </div>
          <?php } ?>
-         <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6">
+         <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
                   <div class="card-body py-1">
@@ -83,7 +92,7 @@
                 </div>
             </div>
          </div>
-         <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6">
+         <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
                   <div class="card-body py-1">
