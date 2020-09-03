@@ -5,7 +5,7 @@
 <div class="widget"  id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('user_widget'); ?>">
    <div class="card">
       <div class="card-header border-bottom d-flex justify-content-between align-items-center">
-         <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> User Data</h5>
+         <h5 class="card-title"><i class="bx bx-box font-medium-5 align-middle"></i> User Data</h5>
          <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
       </div>
       <div class="card-content">
