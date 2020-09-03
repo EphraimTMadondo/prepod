@@ -26,7 +26,14 @@
                            <span class="widget-todo-title ml-50"><?php echo $todo['description']; ?></span>
                         </div>
                         <div class="widget-todo-item-action d-flex align-items-center">
-                           <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                           <div class="dropdown">
+                              <div class="dropdown-toggle mr-1" role="button" id="dropdownMenuButton<?php echo $todo['todoid']; ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                              </div>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $todo['todoid']; ?>">
+                                 <a class="dropdown-item" href="#"  onclick="edit_todo_item(this,<?php echo $todo['todoid']; ?>); return false;">Edit</a>
+                                 <a class="dropdown-item" href="#"  onclick="delete_todo_item(this,<?php echo $todo['todoid']; ?>); return false;">Delete</a>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </li>
