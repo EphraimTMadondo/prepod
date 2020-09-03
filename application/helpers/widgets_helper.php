@@ -149,8 +149,8 @@ function render_dashboard_widgets($container)
                 if ($widgetHTML != '') {
                     $html      = str_get_html($widgetHTML);
                     $parentDOM = $html->find('div[id="widget-' . $widgetID . '"]', 0);
-                    if (strpos($parentDOM->class, 'd-none') !== true) {
-                        $parentDOM->class .= ' d-none';
+                    if (strpos($parentDOM->class, 'hide') !== true) {
+                        $parentDOM->class .= ' hide';
                     }
                     $widgetHTML = $html;
                 }
