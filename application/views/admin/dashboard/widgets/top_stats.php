@@ -22,7 +22,7 @@
                      ?>
                      <div class="card-body">
                         <div class="badge-circle badge-circle-lg badge-circle-light-warning mx-auto my-1">
-                              <i class="bx bx-balance font-medium-5"></i>
+                              <i class="bx bx-receipt font-medium-5"></i>
                            </div>
                            <div class="text-muted mb-0 line-ellipsis"><?php echo _l('invoices_awaiting_payment'); ?></div>
                            <h3 class="mb-0"><?php echo $total_invoices_awaiting_payment; ?> / <?php echo $total_invoices;?></h3>
@@ -110,7 +110,7 @@
                         $percent_not_finished_tasks = ($total_tasks > 0 ? number_format(($total_not_finished_tasks * 100) / $total_tasks,2) : 0);
                      ?>
                       <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto my-1">
-                           <i class="bx bx-check font-medium-5"></i>
+                           <i class="bx bx-task font-medium-5"></i>
                         </div>
                         <div class="text-muted mb-0 line-ellipsis"><?php echo _l('tasks_not_finished'); ?> </div>
                         <h3 class="mb-0"><?php echo $total_not_finished_tasks; ?> / <?php echo $total_tasks; ?></h3>
