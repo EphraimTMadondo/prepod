@@ -3,8 +3,8 @@
    <?php if(count($upcoming_events) > 0 && is_staff_member()){ ?>
    <div class="row">
       <div class="col-md-12">
-         <div class="panel_s events">
-            <div class="panel-body padding-10">
+         <div class="card events">
+            <div class="card-body padding-10">
                <div class="widget-dragger"></div>
               <p class="padding-5">
                <?php echo _l('home_this_week_events'); ?>

@@ -4,7 +4,7 @@
    <div class="row" id="weekly_payments">
       <div class="col-md-12">
          <div class="card">
-            <div class="panel-body padding-10">
+            <div class="card-body padding-10">
                <div class="widget-dragger"></div>
                <div class="col-md-12">
                   <p class="pull-left mtop5"><?php echo _l('home_weekly_payment_records'); ?></p>
