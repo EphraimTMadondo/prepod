@@ -90,11 +90,12 @@
 
     <!-- BEGIN: Page JS-->
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
-    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js"></script>
-    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
-    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
-    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="<?php echo base_url();?>/app-assets/js/scripts/cards/widgets.js"></script>
     <!-- END: Page JS-->
 
   </body>
