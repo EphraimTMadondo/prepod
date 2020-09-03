@@ -3,18 +3,13 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay">
-        <?php //$this->load->view('admin/includes/alerts'); ?>
+        <?php $this->load->view('admin/includes/alerts'); ?>
       </div>
         <div class="content-wrapper">
-            <div class="screen-options-area"></div>
-            <div class="screen-options-btn">
-                <?php echo _l('dashboard_options'); ?>
-            </div>
             <div class="row">
                 <?php
                 
                 ?>
-
                 <?php hooks()->do_action( 'before_start_render_dashboard_content' ); ?>
 
                 <div class="clearfix"></div>
