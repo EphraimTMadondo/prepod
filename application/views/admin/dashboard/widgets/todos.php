@@ -16,22 +16,17 @@
                <ul class="widget-todo-list-wrapper" id="widget-todo-list">
                   <?php foreach($todos as $todo) { ?>
                   <li class="widget-todo-item">
+                     <?php echo form_hidden('todo_order',$todo['item_order']); ?>
+                     <?php echo form_hidden('finished',0); ?>
                      <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
                         <div class="widget-todo-title-area d-flex align-items-center">
-                           <i class='bx bx-grid-vertical mr-25 font-medium-4 cursor-move'></i>
                            <div class="checkbox checkbox-shadow">
-                           <input type="checkbox" class="checkbox__input" id="checkbox2">
-                           <label for="checkbox2"></label>
+                              <input type="checkbox" name="todo_id" id="<?php echo $todo['todoid']; ?>" class="checkbox__input" value="<?php echo $todo['todoid']; ?>">
+                              <label for="<?php echo $todo['todoid']; ?>"></label>
                            </div>
-                           <span class="widget-todo-title ml-50">Check all the changes that you did,
-                           before you commit</span>
+                           <span class="widget-todo-title ml-50"><?php echo $todo['description']; ?></span>
                         </div>
                         <div class="widget-todo-item-action d-flex align-items-center">
-                           <div class="badge badge-pill badge-light-danger mr-1">backend</div>
-                           <div class="avatar m-0 mr-50">
-                           <img src="../../../app-assets/images/profile/user-uploads/social-2.jpg" alt="img placeholder"
-                              height="32" width="32">
-                           </div>
                            <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
                         </div>
                      </div>
