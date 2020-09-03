@@ -22,7 +22,7 @@
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
             <?php if($totalQuickActionsRemoved != count($quickActions)){ ?>
-                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="square"></i><span class="menu-title" data-i18n="Card">Card</span></a>
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">Quick Links</span></a>
                     <ul class="menu-content">
                     <?php
                         foreach($quickActions as $key => $item){
@@ -51,17 +51,27 @@
                     </ul>
                 </li>
                 <?php } ?>
-                <li class="nav-item"><a href="../../../html/ltr/vertical-menu-template-semi-dark/index.html"><i class="menu-livicon" data-icon="desktop"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span></a>
+                <?php
+                hooks()->do_action('before_render_aside_menu');
+                ?>
+                <li class=" nav-item"><a href="https://worksuite.app/os/admin/mailbox"><i class="menu-livicon" data-icon="envelope-pull"></i><span class="menu-title" data-i18n="Email">Email</span></a>
+                </li>
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18n="Invoice">CRM</span></a>
                     <ul class="menu-content">
-                        <li class="active"><a href="dashboard-ecommerce.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
+                        <li><a href="https://worksuite.app/os/admin/clients"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Customers List">Customers</span></a>
                         </li>
-                        <li><a href="dashboard-analytics.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Analytics">Analytics</span></a>
+                        <li><a href="https://worksuite.app/os/admin/proposals"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Proposals">Proposals</span></a>
+                        </li>
+                        <li><a href="app-invoice-edit.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Edit">Leads</span></a>
+                            <ul class="menu-content">
+                                <li><a href="https://worksuite.app/os/admin/leads/sources"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Sources">Sources</span></a>
+                                <li><a href="https://worksuite.app/os/admin/leads/statuses"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Statuses">Statuses</span></a>
+                                <li><a href="https://worksuite.app/os/admin/leads/forms"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Web to Lead">Web to Lead</span></a>
+                            </ul>
+                        </li>
+                        <li><a href="https://worksuite.app/os/admin/contracts"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Contracts">Contracts</span></a>
                         </li>
                     </ul>
-                </li>
-
-                <li class=" navigation-header"><span>Apps</span></li>
-                <li class=" nav-item"><a href="app-email.html"><i class="menu-livicon" data-icon="envelope-pull"></i><span class="menu-title" data-i18n="Email">Email</span></a>
                 </li>
                 <li class=" nav-item"><a href="app-chat.html"><i class="menu-livicon" data-icon="comments"></i><span class="menu-title" data-i18n="Chat">Chat</span></a>
                 </li>
@@ -70,18 +80,6 @@
                 <li class=" nav-item"><a href="app-calendar.html"><i class="menu-livicon" data-icon="calendar"></i><span class="menu-title" data-i18n="Calendar">Calendar</span></a>
                 </li>
                 <li class=" nav-item"><a href="app-kanban.html"><i class="menu-livicon" data-icon="grid"></i><span class="menu-title" data-i18n="Kanban">Kanban</span></a>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span class="menu-title" data-i18n="Invoice">Invoice</span></a>
-                    <ul class="menu-content">
-                        <li><a href="app-invoice-list.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Invoice List</span></a>
-                        </li>
-                        <li><a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Invoice</span></a>
-                        </li>
-                        <li><a href="app-invoice-edit.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Edit">Invoice Edit</span></a>
-                        </li>
-                        <li><a href="app-invoice-add.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Add">Invoice Add</span></a>
-                        </li>
-                    </ul>
                 </li>
                 <li class=" nav-item"><a href="app-file-manager.html"><i class="menu-livicon" data-icon="save"></i><span class="menu-title" data-i18n="File Manager">File Manager</span></a>
                 </li>
