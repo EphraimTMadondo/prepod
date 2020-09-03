@@ -3,17 +3,8 @@
 ?>
 <div class="col-xl-4 col-12 dashboard-users">
       <div class="row">
-      <?php
-         $initial_column = 'col-lg-3';
-         if(!is_staff_member() && ((!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 0
-           || (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()))))) {
-            $initial_column = 'col-lg-6';
-         } else if(!is_staff_member() || (!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()) || (get_option('allow_staff_view_invoices_assigned') == 0 && (!has_permission('invoices','','view') && !has_permission('invoices','','view_own'))))) {
-            $initial_column = 'col-lg-4';
-         }
-      ?>
          <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
-         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?=$initial_column?>">
+         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                      <?php
