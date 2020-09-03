@@ -72,18 +72,12 @@
     </footer>
     <!-- END: Footer-->
 
-
     <!-- BEGIN: Vendor JS-->
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/vendors.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
     <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
-    <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
@@ -96,7 +90,11 @@
 
     <!-- BEGIN: Page JS-->
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
+    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js"></script>
+    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
+    <script src="echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
     <!-- END: Page JS-->
 
   </body>
