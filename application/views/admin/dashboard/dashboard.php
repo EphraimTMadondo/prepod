@@ -47,7 +47,6 @@
                 <div class="col-md-4" data-container="bottom-right-4">
                     <?php render_dashboard_widgets('bottom-right-4'); ?>
                 </div>
-
                 <?php hooks()->do_action('after_dashboard'); ?>
             </div>
         </div>
