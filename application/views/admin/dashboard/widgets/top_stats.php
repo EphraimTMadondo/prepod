@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); 
    $companyusername = $_SESSION['current_company'];
 ?>
-<div class="col-12 dashboard-users relative" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('quick_stats'); ?>">
+<div class="col-xl-4 col-12 dashboard-users">
       <div class="row">
       <?php
          $initial_column = 'col-lg-3';
@@ -13,7 +13,7 @@
          }
       ?>
          <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
-         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?=$initial_column?>">
             <div class="card text-center">
                 <div class="card-content">
                      <?php
@@ -33,7 +33,7 @@
          </div>
          <?php } ?>
          <?php if(is_staff_member()){ ?>
-         <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                   <div class="card-body py-1">
@@ -65,7 +65,7 @@
             </div>
          </div>
          <?php } ?>
-         <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                   <div class="card-body py-1">
@@ -92,7 +92,7 @@
                 </div>
             </div>
          </div>
-         <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                   <div class="card-body py-1">
