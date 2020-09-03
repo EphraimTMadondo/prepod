@@ -26,6 +26,11 @@
                            </div>
                            <div class="text-muted mb-0 line-ellipsis"><?php echo _l('invoices_awaiting_payment'); ?></div>
                            <h3 class="mb-0"><?php echo $total_invoices_awaiting_payment; ?> / <?php echo $total_invoices;?></h3>
+                           <div class="clearfix"></div>
+                           <div class="progress no-margin progress-bar-mini">
+                              <div class="progress-bar progress-bar-warning no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo $percent_total_invoices_awaiting_payment; ?>" aria-valuemin="0" aria-valuemax="100" style="width: 0%" data-percent="<?php echo $percent_total_invoices_awaiting_payment; ?>">
+                              </div>
+                           </div>
                      </div>
                   </div>
             </div>
@@ -59,6 +64,11 @@
                         </div>
                         <div class="text-muted mb-0 line-ellipsis"><?php echo _l('leads_converted_to_client'); ?></div>
                         <h3 class="mb-0"><?php echo $total_leads_converted; ?> / <?php echo $total_leads; ?></h3>
+                        <div class="clearfix"></div>
+                        <div class="progress no-margin progress-bar-mini">
+                           <div class="progress-bar progress-bar-success no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo $percent_total_leads_converted; ?>" aria-valuemin="0" aria-valuemax="100" style="width: 0%" data-percent="<?php echo $percent_total_leads_converted; ?>">
+                           </div>
+                        </div>
                   </div>
                 </div>
             </div>
@@ -87,6 +97,11 @@
                         </div>
                         <div class="text-muted mb-0 line-ellipsis"><?php echo _l('projects') . ' ' . $project_status['name']; ?></div>
                         <h3 class="mb-0"><?php echo $total_projects_in_progress; ?> / <?php echo $total_projects; ?></h3>
+                        <div class="clearfix"></div>
+                        <div class="progress no-margin progress-bar-mini">
+                           <div class="progress-bar progress-bar-primary no-percent-text not-dynamic" style="background:<?php echo $project_status['color']; ?>" role="progressbar" aria-valuenow="<?php echo $percent_in_progress_projects; ?>" aria-valuemin="0" aria-valuemax="100" style="width: 0%" data-percent="<?php echo $percent_in_progress_projects; ?>">
+                           </div>
+                        </div>
                   </div>
                 </div>
             </div>
@@ -114,6 +129,11 @@
                         </div>
                         <div class="text-muted mb-0 line-ellipsis"><?php echo _l('tasks_not_finished'); ?> </div>
                         <h3 class="mb-0"><?php echo $total_not_finished_tasks; ?> / <?php echo $total_tasks; ?></h3>
+                        <div class="clearfix"></div>
+                        <div class="progress no-margin progress-bar-mini">
+                           <div class="progress-bar progress-bar-danger progress-bar-default no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo $percent_not_finished_tasks; ?>" aria-valuemin="0" aria-valuemax="100" style="width: 0%" data-percent="<?php echo $percent_not_finished_tasks; ?>">
+                           </div>
+                        </div>
                   </div>
             </div>
          </div>
