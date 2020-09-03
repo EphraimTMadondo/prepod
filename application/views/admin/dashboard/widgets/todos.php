@@ -5,9 +5,7 @@
       <div class="col-12">
          <div class="card widget-todo">
             <div class="card-header border-bottom d-flex justify-content-between align-items-center">
-               <h4 class="card-title d-flex">
-                  <i class='bx bx-check font-medium-5 pl-25 pr-75'></i><?php echo _l('home_my_todo_items'); ?>
-               </h4>
+               <h4 class="card-title d-flex">Tasks</h4>
                <div class="heading-elements">
                   <a href="<?php echo admin_url('todo'); ?>" type="button" class="btn btn-sm btn-light-primary"><?php echo _l('home_widget_view_all'); ?></a>
                   <a href="#__todo" data-toggle="modal" type="button" class="btn btn-sm btn-light-primary"><?php echo _l('new_todo'); ?></a>
