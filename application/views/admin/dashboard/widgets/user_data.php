@@ -2,7 +2,7 @@
  $companyusername = $_SESSION['current_company'];
 ?>
 <!-- User Data Widget Swiper Starts -->
-<div class="widget" id="widget-earnings">
+<div class="widget"  id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('user_widget'); ?>">
    <div class="card">
       <div class="card-header border-bottom d-flex justify-content-between align-items-center">
          <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> User Data</h5>
