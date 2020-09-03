@@ -4,12 +4,12 @@
    <div class="row">
       <div class="col-md-12">
          <div class="card">
-            <div class="card-body padding-10">
-               <div class="widget-dragger"></div>
-               <p class="padding-5"><?php echo _l('home_lead_overview'); ?></p>
-               <hr class="hr-panel-heading-dashboard">
-               <div class="relative" style="height:250px">
-                  <canvas class="chart" height="250" id="leads_status_stats"></canvas>
+            <div class="card-header">
+               <h4 class="card-title"><?php echo _l('home_lead_overview'); ?></h4>
+            </div>
+            <div class="card-content">
+               <div class="card-body">
+                     <div id="leads_status_stats" class="d-flex justify-content-center"></div>
                </div>
             </div>
          </div>

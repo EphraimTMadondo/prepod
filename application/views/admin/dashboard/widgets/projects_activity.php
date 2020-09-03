@@ -1,10 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="widget<?php if(count($projects_activity) == 0){echo ' hide';} ?>" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_project_activity'); ?>">
   <div class="card projects-activity">
+    <div class="card-header">
+        <h4 class="card-title"><?php echo _l('home_project_activity'); ?></h4>
+    </div>
    <div class="card-body padding-10">
     <div class="widget-dragger"></div>
-    <p class="padding-5"><?php echo _l('home_project_activity'); ?></p>
-    <hr class="hr-panel-heading-dashboard">
     <div class="activity-feed">
      <?php
      foreach($projects_activity as $activity){
