@@ -32,6 +32,28 @@
                      </div>
                   </li>
                   <?php } ?>
+                  <li class="widget-todo-item">
+                     <div class="widget-todo-title-wrapper d-flex justify-content-between align-items-center mb-50">
+                        <div class="widget-todo-title-area d-flex align-items-center">
+                           <i class='bx bx-grid-vertical mr-25 font-medium-4 cursor-move'></i>
+                           <div class="checkbox checkbox-shadow">
+                                 <input type="checkbox" class="checkbox__input" id="checkbox1">
+                                 <label for="checkbox1"></label>
+                           </div>
+                           <span class="widget-todo-title ml-50">Add SCSS and JS files if
+                                 required</span>
+                        </div>
+                        <div class="widget-todo-item-action d-flex align-items-center">
+                           <div class="badge badge-pill badge-light-success mr-1">frontend</div>
+                           <div class="avatar bg-rgba-primary m-0 mr-50">
+                                 <div class="avatar-content">
+                                    <span class="font-size-base text-primary">RA</span>
+                                 </div>
+                           </div>
+                           <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+                        </div>
+                     </div>
+                  </li>
                </ul>
             </div>
       </div>
