@@ -6,16 +6,12 @@
 <!-- Earnings Widget Swiper Starts -->
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('user_widget'); ?>" id="widget-earnings">
    <div class="card">
-      <div class="card-header border-bottom d-flex justify-content-between align-items-center">
-         <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> Earnings</h5>
-         <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
-      </div>
       <div class="card-content">
          <div class="card-body py-1">
                <!-- earnings swiper starts -->
                <div class="widget-earnings-swiper swiper-container p-1">
                   <div class="swiper-wrapper">
-                     <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center" id="home_tab_tasks">
+                     <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center swiper-slide-active" id="home_tab_tasks">
                            <i class="bx bx-pyramid mr-50 font-large-1"></i>
                            <div class="swiper-text">
                               <?php echo _l('home_my_tasks'); ?>
