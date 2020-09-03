@@ -1,34 +1,33 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); 
    $companyusername = $_SESSION['current_company'];
+   $initial_column = 'col-lg-3';
+   if(!is_staff_member() && ((!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 0
+      || (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()))))) {
+      $initial_column = 'col-lg-6';
+   } else if(!is_staff_member() || (!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()) || (get_option('allow_staff_view_invoices_assigned') == 0 && (!has_permission('invoices','','view') && !has_permission('invoices','','view_own'))))) {
+      $initial_column = 'col-lg-4';
+   }
 ?>
-<div class="col-12 dashboard-users relative" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('quick_stats'); ?>">
-      <div class="row">
-      <?php
-         $initial_column = 'col-lg-3';
-         if(!is_staff_member() && ((!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 0
-           || (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()))))) {
-            $initial_column = 'col-lg-6';
-         } else if(!is_staff_member() || (!has_permission('invoices','','view') && !has_permission('invoices','','view_own') && (get_option('allow_staff_view_invoices_assigned') == 1 && !staff_has_assigned_invoices()) || (get_option('allow_staff_view_invoices_assigned') == 0 && (!has_permission('invoices','','view') && !has_permission('invoices','','view_own'))))) {
-            $initial_column = 'col-lg-4';
-         }
-      ?>
-         <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
-         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+<!-- Widgets Statistics start -->
+<section id="widgets-Statistics">
+  <div class="row">
+   <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
+         <div class="col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
-                <div class="card-content">
+                  <div class="card-content">
                      <?php
                         $total_invoices = total_rows(db_prefix().'invoices',"company_username ='$companyusername'",'status NOT IN (5,6),'.(!has_permission('invoices','','view') ? ' AND ' . get_invoices_where_sql_for_staff(get_staff_user_id()) : ''));
                         $total_invoices_awaiting_payment = total_rows(db_prefix().'invoices',"company_username ='$companyusername'",'status NOT IN (2,5,6)'.(!has_permission('invoices','','view') ? ' AND ' . get_invoices_where_sql_for_staff(get_staff_user_id()) : ''));
                         $percent_total_invoices_awaiting_payment = ($total_invoices > 0 ? number_format(($total_invoices_awaiting_payment * 100) / $total_invoices,2) : 0);
                      ?>
-                     <div class="card-body py-1">
-                        <div class="badge-circle badge-circle-lg badge-circle-light-warning mx-auto mb-50">
+                     <div class="card-body">
+                        <div class="badge-circle badge-circle-lg badge-circle-light-warning mx-auto my-1">
                               <i class="bx bx-user font-medium-5"></i>
                            </div>
-                           <div class="text-muted line-ellipsis"><?php echo _l('invoices_awaiting_payment'); ?></div>
+                           <div class="text-muted mb-0 line-ellipsis"><?php echo _l('invoices_awaiting_payment'); ?></div>
                            <h3 class="mb-0"><?php echo $total_invoices_awaiting_payment; ?> / <?php echo $total_invoices;?></h3>
                      </div>
-                </div>
+                  </div>
             </div>
          </div>
          <?php } ?>
@@ -36,7 +35,7 @@
          <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
-                  <div class="card-body py-1">
+                  <div class="card-body">
                      <?php
                         $where = '';
                         if(!is_admin()){
@@ -55,10 +54,10 @@
 
                         $percent_total_leads_converted = ($total_leads > 0 ? number_format(($total_leads_converted * 100) / $total_leads,2) : 0);
                      ?>
-                     <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto mb-50">
+                     <div class="badge-circle badge-circle-lg badge-circle-light-success mx-auto my-1">
                            <i class="bx bx-user font-medium-5"></i>
                         </div>
-                        <div class="text-muted line-ellipsis"><?php echo _l('leads_converted_to_client'); ?></div>
+                        <div class="text-muted mb-0 line-ellipsis"><?php echo _l('leads_converted_to_client'); ?></div>
                         <h3 class="mb-0"><?php echo $total_leads_converted; ?> / <?php echo $total_leads; ?></h3>
                   </div>
                 </div>
@@ -68,7 +67,7 @@
          <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
-                  <div class="card-body py-1">
+                  <div class="card-body">
                      <?php
                         $_where = '';
                         $project_status = get_project_status_by_id(2);
@@ -83,10 +82,10 @@
 
                         $percent_in_progress_projects = ($total_projects > 0 ? number_format(($total_projects_in_progress * 100) / $total_projects,2) : 0);
                      ?>
-                      <div class="badge-circle badge-circle-lg badge-circle-light-primary mx-auto mb-50">
+                      <div class="badge-circle badge-circle-lg badge-circle-light-primary mx-auto my-1">
                            <i class="bx bx-user font-medium-5"></i>
                         </div>
-                        <div class="text-muted line-ellipsis"><?php echo _l('projects') . ' ' . $project_status['name']; ?></div>
+                        <div class="text-muted mb-0 line-ellipsis"><?php echo _l('projects') . ' ' . $project_status['name']; ?></div>
                         <h3 class="mb-0"><?php echo $total_projects_in_progress; ?> / <?php echo $total_projects; ?></h3>
                   </div>
                 </div>
@@ -95,7 +94,7 @@
          <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card text-center">
                 <div class="card-content">
-                  <div class="card-body py-1">
+                  <div class="card-body">
                      <?php
                         $_where = '';
                         if (!has_permission('tasks', '', 'view')) {
@@ -110,13 +109,14 @@
 
                         $percent_not_finished_tasks = ($total_tasks > 0 ? number_format(($total_not_finished_tasks * 100) / $total_tasks,2) : 0);
                      ?>
-                      <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto mb-50">
+                      <div class="badge-circle badge-circle-lg badge-circle-light-danger mx-auto my-1">
                            <i class="bx bx-user font-medium-5"></i>
                         </div>
-                        <div class="text-muted line-ellipsis"><?php echo _l('tasks_not_finished'); ?> </div>
+                        <div class="text-muted mb-0 line-ellipsis"><?php echo _l('tasks_not_finished'); ?> </div>
                         <h3 class="mb-0"><?php echo $total_not_finished_tasks; ?> / <?php echo $total_tasks; ?></h3>
                   </div>
             </div>
          </div>
-      </div>
-   </div>
+  </div>
+</section>
+<!-- Widgets Statistics End -->
