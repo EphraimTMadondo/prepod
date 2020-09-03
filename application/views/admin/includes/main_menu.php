@@ -166,7 +166,7 @@
                 }
                 $totalSetupMenuItems++;
                 ?>
-                <li class="nav-item"><a href="<?php echo count($item['children']) > 0 ? '#' : $item['href']; ?>"><i class="menu-livicon" data-icon="<?php echo $item['icon']; ?>"></i><span class="menu-title" data-i18n="<?php echo _l($item['name'],'', false); ?>"><?php echo _l($item['name'],'', false); ?></span></a>
+                <li class="nav-item"><a href="<?php echo count($item['children']) > 0 ? '#' : $item['href']; ?>"><i class="menu-livicon" data-icon="bx bx-right-arrow-alt"></i><span class="menu-title" data-i18n="<?php echo _l($item['name'],'', false); ?>"><?php echo _l($item['name'],'', false); ?></span></a>
                     <?php if(count($item['children']) > 0){ ?>
                         <ul class="menu-content">
                             <?php foreach($item['children'] as $submenu){ ?>
