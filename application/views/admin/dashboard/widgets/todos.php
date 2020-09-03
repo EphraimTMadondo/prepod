@@ -44,12 +44,6 @@
                                  required</span>
                         </div>
                         <div class="widget-todo-item-action d-flex align-items-center">
-                           <div class="badge badge-pill badge-light-success mr-1">frontend</div>
-                           <div class="avatar bg-rgba-primary m-0 mr-50">
-                                 <div class="avatar-content">
-                                    <span class="font-size-base text-primary">RA</span>
-                                 </div>
-                           </div>
                            <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
                         </div>
                      </div>
