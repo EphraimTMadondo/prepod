@@ -27,7 +27,7 @@
                         </div>
                         <div class="widget-todo-item-action d-flex align-items-center">
                            <div class="dropdown">
-                              <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer dropdown-toggle" role="button" id="dropdownMenuButton<?php echo $todo['todoid']; ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                              <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer" role="button" id="dropdownMenuButton<?php echo $todo['todoid']; ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $todo['todoid']; ?>">
                                  <a class="dropdown-item" href="#"  onclick="edit_todo_item(this,<?php echo $todo['todoid']; ?>); return false;">Edit</a>
                                  <a class="dropdown-item" href="#"  onclick="delete_todo_item(this,<?php echo $todo['todoid']; ?>); return false;">Delete</a>
