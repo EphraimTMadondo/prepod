@@ -140,7 +140,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span class="menu-title" data-i18n="Reports">Reports</span></a>
                     <ul class="menu-content">
                         <li><a href="<?php echo base_url();?>admin/reports/sales"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Sales">Sales</span></a>
@@ -159,8 +158,30 @@
                 </li>
                 <li class=" navigation-header"><span>Setup</span>
                 </li>
-                <li class=" nav-item"><a href="colors.html"><i class="menu-livicon" data-icon="drop"></i><span class="menu-title" data-i18n="Colors">Colors</span></a>
+                <?php
+                $totalSetupMenuItems = 0;
+                foreach($setup_menu as $key => $item){
+                    if(isset($item['collapse']) && count($item['children']) === 0) {
+                    continue;
+                }
+                $totalSetupMenuItems++;
+                ?>
+                <li class="nav-item"><a href="<?php echo count($item['children']) > 0 ? '#' : $item['href']; ?>"><i class="menu-livicon" data-icon="<?php echo $item['icon']; ?>"></i><span class="menu-title" data-i18n="<?php echo _l($item['name'],'', false); ?>"><?php echo _l($item['name'],'', false); ?></span></a>
+                    <?php if(count($item['children']) > 0){ ?>
+                        <ul class="menu-content">
+                            <?php foreach($item['children'] as $submenu){ ?>
+                                <li><a href="<?php echo $submenu['href']; ?>"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="<?php echo _l($submenu['name'],'',false); ?>"><?php echo _l($submenu['name'],'',false); ?></span></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
                 </li>
+                <?php hooks()->do_action('after_render_single_setup_menu', $item); ?>
+                <?php } ?>
+                <?php if(get_option('show_help_on_setup_menu') == 1 && is_admin()){ $totalSetupMenuItems++; ?>
+                    <li><a href="<?php echo hooks()->apply_filters('help_menu_item_link','https://help.perfexcrm.com'); ?>"><i class="bx bx-link"></i><span class="menu-item" data-i18n="<?php echo hooks()->apply_filters('help_menu_item_text',_l('setup_help')); ?>"><?php echo hooks()->apply_filters('help_menu_item_text',_l('setup_help')); ?></span></a>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
