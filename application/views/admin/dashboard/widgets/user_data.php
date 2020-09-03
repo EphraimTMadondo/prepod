@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); 
-
  $companyusername = $_SESSION['current_company'];
-
 ?>
 <!-- Earnings Widget Swiper Starts -->
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('user_widget'); ?>" id="widget-earnings">
