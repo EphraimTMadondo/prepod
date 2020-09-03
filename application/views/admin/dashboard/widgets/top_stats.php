@@ -1,12 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); 
-
-
-
-$companyusername = $_SESSION['current_company'];
-
+   $companyusername = $_SESSION['current_company'];
 ?>
-<div class="widget relative" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('quick_stats'); ?>">
-      <div class="widget-dragger"></div>
+<div class="col-12 dashboard-users relative" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('quick_stats'); ?>">
       <div class="row">
       <?php
          $initial_column = 'col-lg-3';
@@ -18,7 +13,7 @@ $companyusername = $_SESSION['current_company'];
          }
       ?>
          <?php if(has_permission('invoices','','view') || has_permission('invoices','','view_own') || (get_option('allow_staff_view_invoices_assigned') == '1' && staff_has_assigned_invoices())){ ?>
-         <div class="quick-stats-invoices col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-success col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card">
                 <div class="top_stats_wrapper">
                    <?php
@@ -45,7 +40,7 @@ $companyusername = $_SESSION['current_company'];
          </div>
          <?php } ?>
          <?php if(is_staff_member()){ ?>
-         <div class="quick-stats-leads col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-danger col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card">
                 <div class="top_stats_wrapper">
                    <?php
@@ -83,7 +78,7 @@ $companyusername = $_SESSION['current_company'];
             </div>
          </div>
          <?php } ?>
-         <div class="quick-stats-projects col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-warning col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card">
                 <div class="top_stats_wrapper">
                    <?php
@@ -115,7 +110,7 @@ $companyusername = $_SESSION['current_company'];
                 
             </div>
          </div>
-         <div class="quick-stats-tasks col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
+         <div class="dashboard-users-primary col-xs-12 col-md-6 col-sm-6 <?php echo $initial_column; ?>">
             <div class="card">
                 <div class="top_stats_wrapper">
                    <?php
