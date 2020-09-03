@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="card widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_my_todo_items'); ?>">
    <div class="panel_s todo-panel">
-      <div class="panel-body padding-10">
+      <div class="card-body padding-10">
          <div class="widget-dragger"></div>
          <p class="padding-5 center" style="    margin-bottom: 0px;">
             <?php echo _l('home_my_todo_items'); ?>
