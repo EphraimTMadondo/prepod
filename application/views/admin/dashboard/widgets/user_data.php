@@ -100,19 +100,17 @@
          </div>
          <?php if((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()){ ?>
          <div class="wrapper-content" data-earnings="home_tab_tickets">
-            <div role="tabpanel" class="tab-pane" id="home_tab_tickets">
-               <a href="<?php echo admin_url('tickets'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
-               <div class="clearfix"></div>
-               <div class="_filters _hidden_inputs hidden tickets_filters">
-                  <?php
-                     // On home only show on hold, open and in progress
-                     echo form_hidden('ticket_status_1',true);
-                     echo form_hidden('ticket_status_2',true);
-                     echo form_hidden('ticket_status_4',true);
-                     ?>
-               </div>
-               <?php echo AdminTicketsTableStructure(); ?>
+            <a href="<?php echo admin_url('tickets'); ?>" class="mbot20 inline-block full-width"><?php echo _l('home_widget_view_all'); ?></a>
+            <div class="clearfix"></div>
+            <div class="_filters _hidden_inputs hidden tickets_filters">
+               <?php
+                  // On home only show on hold, open and in progress
+                  echo form_hidden('ticket_status_1',true);
+                  echo form_hidden('ticket_status_2',true);
+                  echo form_hidden('ticket_status_4',true);
+                  ?>
             </div>
+            <?php echo AdminTicketsTableStructure(); ?>
          </div>
          <?php } ?>
          <div class="wrapper-content" data-earnings="home_my_projects">
