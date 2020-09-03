@@ -4,6 +4,10 @@
 <!-- User Data Widget Swiper Starts -->
 <div class="widget" id="widget-earnings">
    <div class="card">
+      <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+         <h5 class="card-title"><i class="bx bx-dollar font-medium-5 align-middle"></i> User Data</h5>
+         <i class="bx bx-dots-vertical-rounded font-medium-3 cursor-pointer"></i>
+      </div>
       <div class="card-content">
          <div class="card-body py-1">
                <!-- user data swiper starts -->
@@ -73,7 +77,7 @@
                   </div>
                </div>
                <!-- user data swiper ends -->
-               
+
                <!-- user data content start -->
                <div class="main-wrapper-content">
                   <div class="wrapper-content" data-earnings="home_tab_tasks">
