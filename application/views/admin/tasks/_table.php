@@ -31,7 +31,7 @@ foreach ($custom_fields as $field) {
 
 $table_data = hooks()->apply_filters('tasks_table_columns', $table_data);
 
-render_datatable($table_data, 'tasks', [], [
+render_datatable($table_data, 'tasks table table-borderless widget-earnings-width', [], [
         'data-last-order-identifier' => 'tasks',
         'data-default-order'         => get_table_last_order('tasks'),
 ]);

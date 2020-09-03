@@ -28,7 +28,7 @@
                      <div class="swiper-slide rounded swiper-shadow py-75 px-2 d-flex align-items-center"  onclick="initDataTable('.table-my-reminders', admin_url + 'misc/my_reminders', undefined, undefined,undefined,[2,'asc']);" id="home_my_reminders">
                            <i class="bx bx-pyramid mr-50 font-large-1"></i>
                            <div class="swiper-text">
-                              <?php echo _l('home_my_reminders'); ?>
+                              <?php echo _l('my_reminders'); ?>
                               <p class="mb-0 font-small-2 font-weight-normal">
                               <?php
                                  $total_reminders = total_rows(db_prefix().'reminders',
@@ -93,7 +93,9 @@
                      }
                      ?>
                </div>
-               <?php $this->load->view('admin/tasks/_table'); ?>
+               <div class="widget-earnings-scroll table-responsive">
+                  <?php $this->load->view('admin/tasks/_table'); ?>
+               </div>
             </div>              
          </div>
          <?php if((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()){ ?>
