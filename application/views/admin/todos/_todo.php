@@ -5,6 +5,7 @@
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">
                     <span class="edit-title hide"><?php echo _l('todo_edit_title'); ?></span>
+                    <span class="add-title hide"><?php echo _l('todo_add_title'); ?></span>
                 </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
