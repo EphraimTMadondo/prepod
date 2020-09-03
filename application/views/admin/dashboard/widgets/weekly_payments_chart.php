@@ -4,10 +4,12 @@
    <div class="row" id="weekly_payments">
       <div class="col-md-12">
          <div class="card">
+         <div class="card-header">
+              <h4 class="card-title"><?php echo _l('home_weekly_payment_records'); ?></h4>
+          </div>
             <div class="card-body padding-10">
                <div class="widget-dragger"></div>
                <div class="col-md-12">
-                  <p class="pull-left mtop5"><?php echo _l('home_weekly_payment_records'); ?></p>
                   <?php if(has_permission('reports','','view')){ ?>
                   <a href="<?php echo admin_url('reports/sales'); ?>" class="pull-right mtop5"><?php echo _l('home_stats_full_report'); ?></a>
                   <div class="clearfix"></div>
