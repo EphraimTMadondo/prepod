@@ -4,7 +4,7 @@
    <div class="row">
       <div class="col-md-12">
          <div class="card">
-            <div class="panel-body padding-10">
+            <div class="card-body padding-10">
                <div class="widget-dragger"></div>
                <p class="padding-5"><?php echo _l('home_lead_overview'); ?></p>
                <hr class="hr-panel-heading-dashboard">
