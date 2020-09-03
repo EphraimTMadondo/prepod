@@ -16,14 +16,6 @@ function get_dashboard_widgets()
             'container' => 'top-12',
         ],
         [
-            'path'      => 'admin/dashboard/widgets/todos',
-            'container' => 'right-4',
-        ],
-        [
-            'path'      => 'admin/dashboard/widgets/leads_chart',
-            'container' => 'right-4',
-        ],
-        [
             'path'      => 'admin/dashboard/widgets/finance_overview',
             'container' => 'left-8',
         ],
@@ -42,6 +34,14 @@ function get_dashboard_widgets()
         [
             'path'      => 'admin/dashboard/widgets/weekly_payments_chart',
             'container' => 'left-8',
+        ],
+        [
+            'path'      => 'admin/dashboard/widgets/todos',
+            'container' => 'right-4',
+        ],
+        [
+            'path'      => 'admin/dashboard/widgets/leads_chart',
+            'container' => 'right-4',
         ],
         [
             'path'      => 'admin/dashboard/widgets/projects_chart',
