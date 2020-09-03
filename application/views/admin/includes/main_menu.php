@@ -1,4 +1,14 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+   $totalQuickActionsRemoved = 0;
+   $quickActions = $this->app->get_quick_actions_links();
+   foreach($quickActions as $key => $item){
+    if(isset($item['permission'])){
+     if(!has_permission($item['permission'],'','create')){
+       $totalQuickActionsRemoved++;
+     }
+   }
+   }
+?>
 
     <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
@@ -11,7 +21,37 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
-                <li class=" nav-item"><a href="../../../html/ltr/vertical-menu-template-semi-dark/index.html"><i class="menu-livicon" data-icon="desktop"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span></a>
+            <?php if($totalQuickActionsRemoved != count($quickActions)){ ?>
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="square"></i><span class="menu-title" data-i18n="Card">Card</span></a>
+                    <ul class="menu-content">
+                    <?php
+                        foreach($quickActions as $key => $item){
+                            $url = '';
+                            if(isset($item['permission'])){
+                                if(!has_permission($item['permission'],'','create')){
+                                continue;
+                                }
+                            }
+                            if(isset($item['custom_url'])){
+                                $url = $item['url'];
+                            } else {
+                                $url = admin_url(''.$item['url']);
+                            }
+                            $href_attributes = '';
+                            if(isset($item['href_attributes'])){
+                                foreach ($item['href_attributes'] as $key => $val) {
+                                $href_attributes .= $key . '=' . '"' . $val . '"';
+                                }
+                            }
+                            ?>
+                        <li>
+                            <a href="<?php echo $url; ?>" <?php echo $href_attributes; ?>><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Basic"><?php echo $item['name']; ?></span></a>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </li>
+                <?php } ?>
+                <li class="nav-item"><a href="../../../html/ltr/vertical-menu-template-semi-dark/index.html"><i class="menu-livicon" data-icon="desktop"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge-light-danger badge-pill badge-round float-right mr-2">2</span></a>
                     <ul class="menu-content">
                         <li class="active"><a href="dashboard-ecommerce.html"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="eCommerce">eCommerce</span></a>
                         </li>
@@ -19,8 +59,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" navigation-header"><span>Apps</span>
-                </li>
+
+                <li class=" navigation-header"><span>Apps</span></li>
                 <li class=" nav-item"><a href="app-email.html"><i class="menu-livicon" data-icon="envelope-pull"></i><span class="menu-title" data-i18n="Email">Email</span></a>
                 </li>
                 <li class=" nav-item"><a href="app-chat.html"><i class="menu-livicon" data-icon="comments"></i><span class="menu-title" data-i18n="Chat">Chat</span></a>
