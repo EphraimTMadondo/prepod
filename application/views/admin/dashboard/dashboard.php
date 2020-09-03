@@ -96,6 +96,7 @@
 
     <!-- BEGIN: Page JS-->
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
     <!-- END: Page JS-->
 
   </body>
