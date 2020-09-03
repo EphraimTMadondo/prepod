@@ -181,5 +181,4 @@
       </div>
    </div>
 </div>
-</div>
 <!-- User Data Widget Swiper Ends -->
