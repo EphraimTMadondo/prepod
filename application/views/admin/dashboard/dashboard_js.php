@@ -117,7 +117,12 @@
         var tickets_chart_status = $('#tickets-awaiting-reply-by-status');
         var leads_chart = $('#leads_status_stats');
         var projects_chart = $('#projects_status_stats');
-
+        console.log(
+            tickets_chart_departments,
+            tickets_chart_status,
+            leads_chart,
+            projects_chart
+        );
         if (tickets_chart_departments.length > 0) {
             // Tickets awaiting reply by department chart
             var tickets_dep_chart = new Chart(tickets_chart_departments, {
