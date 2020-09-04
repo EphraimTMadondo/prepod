@@ -60,6 +60,14 @@
                                     </div>
                                 </li>
                                 <?php } ?>
+                                <li class="timeline-items timeline-icon-success active">
+                                    <div class="timeline-time">Mon 8:17pm</div>
+                                    <h6 class="timeline-title">Jonny Richie Commented</h6>
+                                    <p class="timeline-text">on <a href="JavaScript:void(0);">Project name</a></p>
+                                    <div class="timeline-content">
+                                        Story behind vedio game and lame is very creative
+                                    </div>
+                                </li>
                             </ul>
                             <!-- <button class="btn btn-block btn-primary">View All Notifications</button> -->
                         </div>
