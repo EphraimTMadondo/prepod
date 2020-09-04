@@ -3,6 +3,7 @@
     var weekly_payments_statistics;
     var user_dashboard_visibility = <?php echo $user_dashboard_visibility; ?>;
     $(window).on("load", function() {
+        alert("Script is runnig");
         $( "[data-container]" ).sortable({
             connectWith: "[data-container]",
             helper:'clone',
