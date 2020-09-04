@@ -34,13 +34,6 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
 <!-- END: Page JS-->
 
-
-<!-- BEGIN: Calendar Page JS-->
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>
-<!-- END: Calendar Page JS-->
-
 <?php hooks()->do_action('before_js_scripts_render'); ?>
 
 <?php echo app_compile_scripts();

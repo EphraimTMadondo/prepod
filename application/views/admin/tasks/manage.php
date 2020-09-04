@@ -2,7 +2,7 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
-<div class="card mtop20">
+<div class="card mtop20 content-wrapper">
    <div class="panel-body">
       <div class="row _buttons">
          <div class="col-md-8">
@@ -49,6 +49,7 @@
    <?php } ?>
 </div>
 </div>
+
 <?php init_tail(); ?>
 <script>
    taskid = '<?php echo $taskid; ?>';
