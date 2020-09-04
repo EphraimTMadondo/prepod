@@ -9,7 +9,7 @@
             </div>
             <div class="card-content">
                <div class="card-body">
-                     <div id="leads_status_stats" class="d-flex justify-content-center"></div>
+                  <canvas class="chart" height="250" id="leads_status_stats"></canvas>
                </div>
             </div>
          </div>
