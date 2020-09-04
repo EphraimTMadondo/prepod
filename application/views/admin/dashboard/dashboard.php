@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-4" data-container="right-4">
                 <!-- Timeline Widget Starts -->
-                <div  class="widget<?php if(count($projects_activity) == 0){echo ' hide';} ?>" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_project_activity'); ?>">
+                <div class="widget<?php if(count($projects_activity) == 0){echo ' ';} ?>" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_project_activity'); ?>">
                 <div class="card ">
                     <div class="card-header">
                         <h4 class="card-title">
