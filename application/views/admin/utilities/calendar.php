@@ -1,8 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper app-content">
-	<div class="content content-wrapper">
-		<div class="row">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+      <div class="content-overlay">
+        <?php $this->load->view('admin/includes/alerts'); ?>
+      </div>
+        <div class="content-wrapper row">
 			<div class="col-md-12">
 				<div class="card" style="margin-top: 2.5rem;">
 					<div class="panel-body" style="overflow-x: auto;">
