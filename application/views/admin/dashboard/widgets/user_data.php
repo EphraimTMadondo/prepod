@@ -175,7 +175,6 @@
                         </div>
                      </div>
                   <?php } ?>
-               </div>
                <!-- user data content ends -->
          </div>
       </div>
