@@ -12,14 +12,9 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
    } else { 
       $this->load->view("admin/tasks/tasks_list.php");
 }?>
+<!-- END: Content-->
 <?php init_tail(); ?>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-todo.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-kanban.js"></script>
-<script>
-   taskid = '<?php echo $taskid; ?>';
-   $(function(){
-       tasks_kanban();
-   });
-</script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-kanban.js"></script>
 </body>
 </html>
