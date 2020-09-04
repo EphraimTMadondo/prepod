@@ -3,6 +3,8 @@
    ini_set('display_errors', 1);
 ?>
 <?php init_head(); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/pages/app-todo.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/pages/app-kanban.css">
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="card mtop20 content-wrapper">
@@ -49,8 +51,9 @@
       <?php } ?>
    </div>
 </div>
-
 <?php init_tail(); ?>
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-todo.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-kanban.js"></script>
 <script>
    taskid = '<?php echo $taskid; ?>';
    $(function(){
