@@ -3,6 +3,10 @@
    ini_set('display_errors', 1);
 ?>
 <?php init_head(); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/jkanban/jkanban.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/forms/select/select2.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/pickers/pickadate/pickadate.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/pages/app-todo.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/pages/app-kanban.css">
 <!-- BEGIN: Content-->
