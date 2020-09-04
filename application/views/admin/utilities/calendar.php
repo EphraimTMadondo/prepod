@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<div id="wrapper app-content">
+	<div class="content content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card" style="margin-top: 2.5rem;">
@@ -9,9 +9,6 @@
 						<div class="dt-loader hide"></div>
 						<?php $this->load->view('admin/utilities/calendar_filters'); ?>
 						<div id="calendarh"></div>
-						
-						
-						
 						<!-- calendar Wrapper  -->
                         <div class="calendar-wrapper position-relative">
                             <!-- calendar app overlay -->
