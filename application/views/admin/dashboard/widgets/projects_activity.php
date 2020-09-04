@@ -22,12 +22,14 @@
                   $href = '';
                   $name = '[CRON]';
                 }?>
-                  <li class="timeline-items timeline-icon-success active">
-                      <div class="timeline-time">Mon 8:17pm</div>
-                      <h6 class="timeline-title">Jonny Richie Commented</h6>
-                      <p class="timeline-text">on <a href="JavaScript:void(0);">Project name</a></p>
+                  <li class="timeline-items timeline-icon-<?php $colors = array('sucess', 'error', 'warning', 'primary'); shuffle($colors); echo $colors[0]?> active">
+                      <div class="timeline-time"><?php echo time_ago($activity['dateadded']); ?></div>
+                      <h6 class="timeline-title"><?php echo $name; ?></h6>
+                      <p class="timeline-text"><a href="<?php echo admin_url('projects/view/'.$activity['project_id']); ?>"><?php echo $activity['project_name']; ?></a></p>
                       <div class="timeline-content">
-                          Story behind vedio game and lame is very creative
+                      <?php if(!empty($activity['additional_data'])){ ?>
+                      <p class="text-muted mtop5"><?php echo $activity['additional_data']; ?></p>
+                      <?php } ?>
                       </div>
                   </li>
                 <?php } ?>
