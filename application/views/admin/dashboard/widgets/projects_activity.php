@@ -1,44 +1,40 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="widget<?php if(count($projects_activity) == 0){echo ' hide';} ?>" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_project_activity'); ?>">
-  <div class="card projects-activity">
-    <div class="card-header">
-        <h4 class="card-title"><?php echo _l('home_project_activity'); ?></h4>
-    </div>
-   <div class="card-body padding-10">
-    <div class="widget-dragger"></div>
-    <div class="activity-feed">
-     <?php
-     foreach($projects_activity as $activity){
-      $name = $activity['fullname'];
-      if($activity['staff_id'] != 0){
-       $href = admin_url('profile/'.$activity['staff_id']);
-     } else if($activity['contact_id'] != 0){
-      $name = '<span class="label label-info inline-block mright5">'._l('is_customer_indicator') . '</span> - ' . $name;
-      $href = admin_url('clients/client/'.get_user_id_by_contact_id($activity['contact_id']).'?contactid='.$activity['contact_id']);
-    } else {
-     $href = '';
-     $name = '[CRON]';
-   }
-   ?>
-   <div class="feed-item">
-     <div class="date"><span class="text-has-action" data-toggle="tooltip" data-title="<?php echo _dt($activity['dateadded']); ?>">
-       <?php echo time_ago($activity['dateadded']); ?>
-     </span>
-   </div>
-     <div class="text">
-      <p class="bold no-mbot">
-       <?php if($href != ''){ ?>
-       <a href="<?php echo $href;?>"><?php echo $name; ?></a> -
-       <?php } else { echo $name;} ;?>
-       <?php echo $activity['description']; ?></p>
-       <?php echo _l('project_name'); ?>: <a href="<?php echo admin_url('projects/view/'.$activity['project_id']); ?>"><?php echo $activity['project_name']; ?></a>
-     </div>
-     <?php if(!empty($activity['additional_data'])){ ?>
-     <p class="text-muted mtop5"><?php echo $activity['additional_data']; ?></p>
-     <?php } ?>
-   </div>
-   <?php } ?>
- </div>
+<!-- Timeline Widget Starts -->
+<div  class="widget<?php if(count($projects_activity) == 0){echo ' hide';} ?>" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_project_activity'); ?>">
+  <div class="card ">
+      <div class="card-header">
+          <h4 class="card-title">
+            <?php echo _l('home_project_activity'); ?>
+          </h4>
+      </div>
+      <div class="card-content">
+          <div class="card-body">
+              <ul class="widget-timeline">
+              <?php
+                foreach($projects_activity as $activity){
+                  $name = $activity['fullname'];
+                  if($activity['staff_id'] != 0){
+                  $href = admin_url('profile/'.$activity['staff_id']);
+                  } else if($activity['contact_id'] != 0){
+                    $name = '<span class="label label-info inline-block mright5">'._l('is_customer_indicator') . '</span> - ' . $name;
+                    $href = admin_url('clients/client/'.get_user_id_by_contact_id($activity['contact_id']).'?contactid='.$activity['contact_id']);
+                  } else {
+                  $href = '';
+                  $name = '[CRON]';
+                }?>
+                  <li class="timeline-items timeline-icon-success active">
+                      <div class="timeline-time">Mon 8:17pm</div>
+                      <h6 class="timeline-title">Jonny Richie Commented</h6>
+                      <p class="timeline-text">on <a href="JavaScript:void(0);">Project name</a></p>
+                      <div class="timeline-content">
+                          Story behind vedio game and lame is very creative
+                      </div>
+                  </li>
+                <?php } ?>
+              </ul>
+              <!-- <button class="btn btn-block btn-primary">View All Notifications</button> -->
+          </div>
+      </div>
+  </div>
 </div>
-</div>
-</div>
+<!-- Timeline Widget Ends -->
