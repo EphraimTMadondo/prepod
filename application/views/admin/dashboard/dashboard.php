@@ -44,6 +44,8 @@
 </script>
 <?php init_tail(); ?>
 <?php $this->load->view('admin/utilities/calendar_template'); ?>
+<?php $this->load->view('admin/dashboard/dashboard_js'); ?>
+
 
 <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
@@ -76,13 +78,13 @@
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/charts/chart-chartjs.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
     <!-- END: Page JS-->
 
-    <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
   </body>
   <!-- END: Body-->
 </html>
