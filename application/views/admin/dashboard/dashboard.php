@@ -81,7 +81,7 @@
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/charts/chart-chartjs.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/chart.min.js"></script>
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
     <!-- END: Page JS-->
 
