@@ -5,7 +5,7 @@
       <div class="content-overlay">
         <?php $this->load->view('admin/includes/alerts'); ?>
       </div>
-        <div class="content-wrapper">
+        <div class="content-wrapper row">
             <?php hooks()->do_action( 'before_start_render_dashboard_content' ); ?>
             <div class="clearfix"></div>
             <div class="col-md-12 mtop30" data-container="top-12">
