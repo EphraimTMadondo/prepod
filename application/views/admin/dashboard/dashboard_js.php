@@ -2,8 +2,7 @@
 <script>
     var weekly_payments_statistics;
     var user_dashboard_visibility = <?php echo $user_dashboard_visibility; ?>;
-    $(window).on("load", function() {
-        alert("Script is runnig");
+    $(function() {
         $( "[data-container]" ).sortable({
             connectWith: "[data-container]",
             helper:'clone',
@@ -118,12 +117,7 @@
         var tickets_chart_status = $('#tickets-awaiting-reply-by-status');
         var leads_chart = $('#leads_status_stats');
         var projects_chart = $('#projects_status_stats');
-        console.log(
-            tickets_chart_departments,
-            tickets_chart_status,
-            leads_chart,
-            projects_chart
-        );
+
         if (tickets_chart_departments.length > 0) {
             // Tickets awaiting reply by department chart
             var tickets_dep_chart = new Chart(tickets_chart_departments, {
@@ -189,7 +183,6 @@
             init_weekly_payment_statistics2();
         });
     });
-
     function fix_user_data_widget_tabs(){
         if((app.browser != 'firefox'
                 && isRTL == 'false' && is_mobile()) || (app.browser == 'firefox'
@@ -197,7 +190,6 @@
                 $('.horizontal-scrollable-tabs ul.nav-tabs-horizontal').css('margin-bottom','26px');
         }
     }
-    
     function init_weekly_payment_statistics(data) {
         if ($('#weekly-payment-statistics').length > 0) {
 
