@@ -43,7 +43,12 @@
         app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
     </script>
     <?php $this->load->view('admin/utilities/calendar_template'); ?>
-    <?php init_tail(); ?>
+    <?php init_tail(); ?> 
+    <!-- BEGIN: Calendar Page JS-->
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>
+    <!-- END: Calendar Page JS-->
     <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
   </body>
   <!-- END: Body-->
