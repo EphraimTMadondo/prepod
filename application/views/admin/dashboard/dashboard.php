@@ -44,7 +44,6 @@
 </script>
 <?php init_tail(); ?>
 <?php $this->load->view('admin/utilities/calendar_template'); ?>
-<?php $this->load->view('admin/dashboard/dashboard_js'); ?>
 
 
 <div class="sidenav-overlay"></div>
@@ -85,6 +84,7 @@
     <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
     <!-- END: Page JS-->
 
+    <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
   </body>
   <!-- END: Body-->
 </html>
