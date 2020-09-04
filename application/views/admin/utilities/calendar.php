@@ -1,5 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/pages/widgets.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/plugins/calendars/app-calendar.css">
+    <!-- END: Page CSS-->
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay">
@@ -157,6 +163,19 @@
 <?php init_tail(); ?>
 
 <!-- BEGIN: Calendar Page JS-->
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/chart.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-dom.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js"></script>
+
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>
