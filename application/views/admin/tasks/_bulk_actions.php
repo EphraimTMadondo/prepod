@@ -7,7 +7,6 @@
             <h4 class="modal-title"><?php echo _l('bulk_actions'); ?></h4>
          </div>
          <div class="modal-body">
-
             <?php if(has_permission('tasks','','delete')){ ?>
                <div class="checkbox checkbox-danger">
                   <input type="checkbox" name="mass_delete" id="mass_delete">
@@ -26,7 +25,6 @@
                   </select>
                </div>
                <?php if(has_permission('tasks','','edit')){ ?>
-
                   <div class="form-group">
                      <label for="task_bulk_priority" class="control-label"><?php echo _l('task_add_edit_priority'); ?></label>
                      <select name="task_bulk_priority" class="selectpicker" id="task_bulk_priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
@@ -63,5 +61,3 @@
    <!-- /.modal-content -->
 </div>
 <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
