@@ -166,25 +166,7 @@
 
 
 <!-- Added by Leo -->
-
-    <!-- Perfect-scrollbar  -->
-    <script src="<?php echo base_url();?>assets/plugins/perfect-scrollbar/perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
-    
-    <!-- Tui Calendar -->
-    <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
-    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
-    
-    <!-- Chance -->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
-    
-    <!-- Apex Calendar -->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    
-        <!-- Custom JS -->
-    <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
-        <script>
+    <script>
         var csrf_token_name = '<?Php echo $this->security->get_csrf_hash(); ?>'
         var getCalendarLink = "<?php echo base_url();?>admin/utilities/get_calendar_data";
         var myTimeZone = '<?Php echo get_option('default_timezone'); ?>';
@@ -224,13 +206,6 @@
             });
         }
     </script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/modal/components-modal.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
-    <!--<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>-->
-    <script src="<?php echo base_url();?>assets/js/my-calendar.js"></script>
-
 <!-- End of Added by Leo -->
-
 </body>
 </html>
