@@ -2,17 +2,28 @@
    defined('BASEPATH') or exit('No direct script access allowed'); 
    ini_set('display_errors', 1);
 ?>
-<?php init_head('task_list'); ?>
-<!-- BEGIN: Content-->
-<?php
-if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { 
-      $this->load->view("admin/tasks/tasks_kanban.php");
-   } else { 
-      $this->load->view("admin/tasks/tasks_list.php");
-}?>
-<!-- END: Content-->
-<?php init_tail(); ?>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-todo.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/app-kanban.js"></script>
-</body>
+
+   <?php
+   if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { 
+         init_head('task_kanban');
+      } else { 
+         init_head('task_list');
+   }?>
+
+   <!-- BEGIN: Content-->
+   <?php
+   if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { 
+         $this->load->view("admin/tasks/tasks_kanban.php");
+      } else { 
+         $this->load->view("admin/tasks/tasks_list.php");
+   }?>
+   <!-- END: Content-->
+
+   <?php
+   if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { 
+         init_tail('task_kanban');
+      } else { 
+         init_tail('task_list');
+   }?>
+   </body>
 </html>
