@@ -57,7 +57,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/components.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/dark-layout.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/semi-dark-layout.min.css">
-    <link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>;
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css">
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
