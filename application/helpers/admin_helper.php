@@ -43,8 +43,8 @@ function init_head($aside = true, $page = "dashboard")
 function init_tail($page = "dashboard")
 {
     $CI = &get_instance();
-    $CI->load->view('admin/includes/scripts', ['page' => $page]);
     $CI->load->view('admin/includes/footer', ['page' => $page]);
+    $CI->load->view('admin/includes/scripts', ['page' => $page]);
 }
 /**
  * Get admin url
