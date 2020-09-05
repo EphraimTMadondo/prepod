@@ -9,31 +9,31 @@
    switch($page)
    {
       case 'dashboard':
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/charts/chart.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-dom.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js"></script>\n';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/charts/chart.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-dom.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js"></script>';
       break;
       case 'task_kanban':
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/jkanban/jkanban.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/editors/quill/quill.min.js"></script>\n';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/jkanban/jkanban.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/editors/quill/quill.min.js"></script>';
       break;
       case 'task_list':
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/editors/quill/quill.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>\n';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/editors/quill/quill.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>';
       break;
    }
 ?>
@@ -53,21 +53,58 @@
    switch($page)
    {
       case 'dashboard':
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/cards/widgets.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>\n';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>\n';
+         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/cards/widgets.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>';
       break;
       case 'task_list':
-         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/pages/app-todo.js"></script>\n';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/pages/app-todo.js"></script>';
       break;
       case 'task_kanban':
-         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/pages/app-kanban.js"></script>\n';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/pages/app-kanban.js"></script>';
       break;
    }
 ?>
 <!-- END: Page JS-->
 
 <?php hooks()->do_action('before_js_scripts_render'); ?>
+
+<?php 
+//echo app_compile_scripts();
+
+/**
+ * Global function for custom field of type hyperlink
+ */
+echo get_custom_fields_hyperlink_js_function(); ?>
+<?php
+/**
+ * Check for any alerts stored in session
+ */
+app_js_alerts();
+?>
+<?php
+/**
+ * Check pusher real time notifications
+ */
+if(get_option('pusher_realtime_notifications') == 1){ ?>
+   <script type="text/javascript">
+   $(function(){
+         // Enable pusher logging - don't include this in production
+         // Pusher.logToConsole = true;
+         <?php $pusher_options = hooks()->apply_filters('pusher_options', array(['disableStats'=>true]));
+            if(!isset($pusher_options['cluster']) && get_option('pusher_cluster') != ''){
+                  $pusher_options['cluster'] = get_option('pusher_cluster');
+            }
+         ?>
+         var pusher_options = <?php echo json_encode($pusher_options); ?>;
+         var pusher = new Pusher("<?php echo get_option('pusher_app_key'); ?>", pusher_options);
+         var channel = pusher.subscribe('notifications-channel-<?php echo get_staff_user_id(); ?>');
+         channel.bind('notification', function(data) {
+            fetch_notifications();
+         });
+   });
+   </script>
+<?php } ?>
 <?php app_admin_footer(); ?>
