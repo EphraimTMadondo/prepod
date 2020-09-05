@@ -57,6 +57,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/components.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/dark-layout.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/semi-dark-layout.min.css">
+    <link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>;
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
@@ -64,13 +65,11 @@
       switch($page)
       {
         case 'dashboard':
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/widgets.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/plugins/calendars/app-calendar.css'>\n\t";
         break;
         case 'calendar':
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/plugins/calendars/app-calendar.css'>\n\t";
         break;
         case "task_list":
