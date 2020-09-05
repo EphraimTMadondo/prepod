@@ -27,8 +27,12 @@
       switch($page)
       {
         case 'task_list':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/forms/select/select2.min.css">\n';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">\n';
+        break;
+        case 'task_kanban':
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/forms/select/select2.min.css">\n';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">\n';
         break;
       }
     ?>
@@ -49,14 +53,18 @@
     <?php
       switch($page)
       {
-        case 'task_list':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css"><br />';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css"><br />';
-        break;
         case 'dashboard':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css"><br />';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/widgets.css"><br />';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/plugins/calendars/app-calendar.css"><br />';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css">\v';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/widgets.css">\v';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/plugins/calendars/app-calendar.css">\v';
+        break;
+        case 'task_list':
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css">\n';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">\n';
+        break;
+        case 'task_kanban':
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css">\n';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">\n';
         break;
       }
     ?>
@@ -65,6 +73,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/assets/css/style.css">
     <!-- END: Custom CSS-->
+    
     <?php render_admin_js_variables(); ?>
     <script>
         var totalUnreadNotifications = <?php echo $current_user->total_unread_notifications; ?>,
