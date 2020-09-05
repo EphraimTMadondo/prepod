@@ -45,6 +45,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
       break;
       default:
+         echo '';
       break;
    }
 ?>
@@ -81,6 +82,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-kanban.js'></script>\n";
       break;
       default:
+         echo '';
       break;
    }
 ?>
