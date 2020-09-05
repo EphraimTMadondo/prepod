@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head('email'); ?>
 <div id="wrapper">
     <div class="content email-templates">
         <div class="row">
@@ -480,6 +480,6 @@
         </div>
     </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('email'); ?>
 </body>
 </html>

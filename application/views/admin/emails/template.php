@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head('mail'); ?>
 <div id="wrapper">
    <div class="content">
       <div class="row">
@@ -147,7 +147,7 @@
       <div class="btn-bottom-pusher"></div>
    </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('mail'); ?>
 <script>
    $(function(){
      <?php foreach($editors as $id){ ?>
