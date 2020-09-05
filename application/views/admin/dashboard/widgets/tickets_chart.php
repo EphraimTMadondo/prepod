@@ -8,7 +8,9 @@
       <div class="col-md-12 mbot10">
         <p class="padding-5"> <?php echo _l('home_tickets_awaiting_reply_by_status'); ?></p>
         <hr class="hr-panel-heading-dashboard">
-        <canvas height="170" id="tickets-awaiting-reply-by-status"></canvas>
+        <div class="height-200">
+            <canvas id="tickets-awaiting-reply-by-status"></canvas>
+        </div>
       </div>
       <div class="clearfix"></div>
       <hr class="no-margin" />
@@ -16,7 +18,9 @@
       <div class="col-md-12">
        <p class="padding-5"><?php echo _l('home_tickets_awaiting_reply_by_department'); ?></p>
        <hr class="hr-panel-heading-dashboard">
-       <canvas height="170" id="tickets-awaiting-reply-by-department"></canvas>
+       <div class="height-200">
+            <canvas id="tickets-awaiting-reply-by-department"></canvas>
+        </div>
      </div>
    </div>
  </div>
