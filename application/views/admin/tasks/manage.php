@@ -10,14 +10,12 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
       init_head(true, 'task_list');
 }?>
 
-<!-- BEGIN: Content-->
 <?php
 if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { 
       $this->load->view("admin/tasks/tasks_kanban.php");
    } else { 
       $this->load->view("admin/tasks/tasks_list.php");
 }?>
-<!-- END: Content-->
 
 <?php
 if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { 
