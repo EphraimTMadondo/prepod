@@ -64,20 +64,21 @@
       switch($page)
       {
         case 'dashboard':
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/widgets.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/plugins/calendars/app-calendar.css'>\n\t";
         break;
         case 'calendar':
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/plugins/calendars/app-calendar.css'>\n\t";
         break;
         case "task_list":
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n\t";
         break;
         case "task_kanban":
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n\t";
         break;
       }
