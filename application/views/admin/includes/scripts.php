@@ -53,11 +53,11 @@
    switch($page)
    {
       case 'dashboard':
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/cards/widgets.js"></script>';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>';
-         echo '<script src="'.base_url().'assets/frest/assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/cards/widgets.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>';
+         echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>';
       break;
       case 'task_list':
          echo '<script src="'.base_url().'assets/frest/app-assets/js/scripts/pages/app-todo.js"></script>';
