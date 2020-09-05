@@ -50,13 +50,13 @@
       switch($page)
       {
         case 'task_list':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css"><br />';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css"><br />';
         break;
         case 'dashboard':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/widgets.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/plugins/calendars/app-calendar.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css"><br />';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/widgets.css"><br />';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/plugins/calendars/app-calendar.css"><br />';
         break;
       }
     ?>
