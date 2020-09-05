@@ -13,7 +13,7 @@ class Mailbox extends AdminController
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('mailbox_model');
+        $this->load->model(_model');
     }
 
     /**
@@ -22,7 +22,7 @@ class Mailbox extends AdminController
      */
     public function index()
     {
-        $data['title'] = _l('mailbox');
+        $data['title'] = _l(');
         $group         = !$this->input->get('group') ? 'inbox' : $this->input->get('group');
         $data['group'] = $group;
         if($group == 'config'){
@@ -30,7 +30,7 @@ class Mailbox extends AdminController
             $member = $this->staff_model->get(get_staff_user_id());
             $data['member'] = $member;
         }
-        $this->load->view('mailbox', $data);
+        $this->load->view(', $data);
     }
 
     /**
@@ -40,7 +40,7 @@ class Mailbox extends AdminController
      */
     public function compose($outbox_id = null)
     {
-        $data['title'] = _l('mailbox');
+        $data['title'] = _l(');
         $group         = 'compose';
         $data['group'] = $group;
         if ($this->input->post()) {
@@ -48,11 +48,11 @@ class Mailbox extends AdminController
             $id              = $this->mailbox_model->add($data, get_staff_user_id(),$outbox_id);
             if ($id) {
                 if($this->input->post('sendmail')=='draft'){
-                    set_alert('success', _l('mailbox_email_draft_successfully', $id));
-                    redirect(admin_url('mailbox?group=draft'));    
+                    set_alert('success', _l(_email_draft_successfully', $id));
+                    redirect(admin_url(?group=draft'));    
                 } else {
-                    set_alert('success', _l('mailbox_email_sent_successfully', $id));
-                    redirect(admin_url('mailbox?group=sent'));    
+                    set_alert('success', _l(_email_sent_successfully', $id));
+                    redirect(admin_url(?group=sent'));    
                 }                
             }
         }
@@ -61,7 +61,7 @@ class Mailbox extends AdminController
             $mail = $this->mailbox_model->get($outbox_id,'outbox');
             $data['mail'] = $mail;
         }
-        $this->load->view('mailbox', $data);
+        $this->load->view(', $data);
     }
 
     /**
@@ -72,11 +72,11 @@ class Mailbox extends AdminController
     public function table($group = 'inbox'){
         if ($this->input->is_ajax_request()) {
             if($group == 'sent' || $group == 'draft'){
-                $this->app->get_table_data(module_views_path('mailbox', 'table_outbox'),[
+                $this->app->get_table_data(module_views_path(', 'table_outbox'),[
                     'group' => $group,
                 ]);
             } else {
-                $this->app->get_table_data(module_views_path('mailbox', 'table'),[
+                $this->app->get_table_data(module_views_path(', 'table'),[
                     'group' => $group,
                 ]);
             }
@@ -97,7 +97,7 @@ class Mailbox extends AdminController
         $data['inbox'] = $inbox;
         $data['type'] = 'inbox';
         $data['attachments'] = $this->mailbox_model->get_mail_attachment($id,'inbox');
-        $this->load->view('mailbox', $data);    
+        $this->load->view(', $data);    
     }
 
     /**
@@ -113,7 +113,7 @@ class Mailbox extends AdminController
         $data['inbox'] = $inbox;
         $data['type'] = 'outbox';
         $data['attachments'] = $this->mailbox_model->get_mail_attachment($id,'outbox');
-        $this->load->view('mailbox', $data);    
+        $this->load->view(', $data);    
     }
 
     /**
@@ -135,9 +135,9 @@ class Mailbox extends AdminController
                 }
             }
             $res = $this->mailbox_model->update_field($group,$action,$value,$id,$type);
-            $message = _l('mailbox_'.$action).' '._l('mailbox_success');
+            $message = _l(_'.$action).' '._l(_success');
             if($res == false){
-                $message = _l('mailbox_'.$action).' '._l('mailbox_fail');
+                $message = _l(_'.$action).' '._l(_fail');
             }
             echo json_encode([
                 'success' => $res,
@@ -157,7 +157,7 @@ class Mailbox extends AdminController
      */
     public function reply($id , $method = 'reply',$type = 'inbox'){        
         $mail = $this->mailbox_model->get($id,$type);
-        $data['title'] = _l('mailbox');
+        $data['title'] = _l(');
         $group         = 'compose';
         $data['group'] = $group;
         if ($this->input->post()) {
@@ -166,8 +166,8 @@ class Mailbox extends AdminController
             $data['reply_type'] = $type;
             $id              = $this->mailbox_model->add($data, get_staff_user_id());
             if ($id) {
-                set_alert('success', _l('mailbox_email_sent_successfully', $id));
-                redirect(admin_url('mailbox?group=sent'));
+                set_alert('success', _l(_email_sent_successfully', $id));
+                redirect(admin_url(?group=sent'));
             }
         }
         
@@ -176,7 +176,7 @@ class Mailbox extends AdminController
         $data['action_type'] = $type;
         $data['method'] = $method;
         $data['mail'] = $mail;
-        $this->load->view('mailbox', $data); 
+        $this->load->view(', $data); 
     }
 
     /**
@@ -187,8 +187,8 @@ class Mailbox extends AdminController
         if ($this->input->post()) {
             $res  = $this->mailbox_model->update_config($this->input->post(),get_staff_user_id());
             if ($res) {
-                set_alert('success', _l('mailbox_email_config_successfully'));
-                redirect(admin_url('mailbox'));
+                set_alert('success', _l(_email_config_successfully'));
+                redirect(admin_url('));
             }
         }
     }

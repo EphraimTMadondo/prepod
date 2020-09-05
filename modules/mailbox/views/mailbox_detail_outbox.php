@@ -8,7 +8,7 @@
         <div class="media-body">
           <div class="float-right d-md-flex fs-15">
             <small class="mr-2"><?php echo _dt($inbox->date_sent)?></small>            
-            <small class="mr-2 cursor"><a href="<?php echo admin_url().'mailbox/reply/'.$inbox->id.'/reply/outbox';?>"><i class="fa fa-reply text-dark" data-toggle="tooltip" title="" data-original-title="<?php echo _l('mailbox_reply')?>"></i></a></small>
+            <small class="mr-2 cursor"><a href="<?php echo admin_url()./reply/'.$inbox->id.'/reply/outbox';?>"><i class="fa fa-reply text-dark" data-toggle="tooltip" title="" data-original-title="<?php echo _l(_reply')?>"></i></a></small>
           </div>
           <div class="media-title text-dark font-weight-semiblod"><?php echo $inbox->sender_name;?> <span class="text-muted">( <?php echo get_staff_email_by_id($inbox->sender_staff_id);?> )</span></div>
           <p class="mb-0 font-weight-semiblod">To: <?php echo $inbox->to;?></p>
@@ -23,7 +23,7 @@
         <hr>
         <?php if($inbox->has_attachment > 0){?>
         <div class="email-attch">          
-          <p><?php echo _l('mailbox_file_attachment')?></p>
+          <p><?php echo _l(_file_attachment')?></p>
           <div class="emai-img">
             <div class="">
                <?php foreach($attachments as $attachment){ 
@@ -47,11 +47,11 @@
       </div>
 
       <div class="pull-right">      
-      <a href="<?php echo admin_url().'mailbox/reply/'.$inbox->id.'/reply/outbox';?>" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-warning">
-        <i class="fa fa-reply"></i></i> <?php echo _l('mailbox_reply'); ?></a>
-      <a href="<?php echo admin_url().'mailbox/reply/'.$inbox->id.'/forward/outbox';?>" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">
+      <a href="<?php echo admin_url()./reply/'.$inbox->id.'/reply/outbox';?>" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-warning">
+        <i class="fa fa-reply"></i></i> <?php echo _l(_reply'); ?></a>
+      <a href="<?php echo admin_url()./reply/'.$inbox->id.'/forward/outbox';?>" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">
           <i class="fa fa-share"></i>
-          <?php echo _l('mailbox_forward'); ?>          
+          <?php echo _l(_forward'); ?>          
         </a>
     </div>
 </div>
