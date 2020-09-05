@@ -29,12 +29,12 @@ function app_admin_footer()
  * Init admin head
  * @param  boolean $aside should include aside
  */
-function init_head($aside = true)
+function init_head($aside = true, $page = "dashboard")
 {
     $CI = &get_instance();
-    $CI->load->view('admin/includes/head');
-    $CI->load->view('admin/includes/header', ['startedTimers' => $CI->misc_model->get_staff_started_timers()]);
-    $CI->load->view('admin/includes/main_menu');
+    $CI->load->view('admin/includes/head', ['page' => $page]);
+    $CI->load->view('admin/includes/header', ['startedTimers' => $CI->misc_model->get_staff_started_timers(), 'page' => $page]);
+    $CI->load->view('admin/includes/main_menu', ['page' => $page]);
 }
 /**
  * @since  1.0.0
