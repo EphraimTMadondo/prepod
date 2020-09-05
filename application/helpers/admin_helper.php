@@ -29,7 +29,7 @@ function app_admin_footer()
  * Init admin head
  * @param  boolean $aside should include aside
  */
-function init_head($aside = true, $page = "dashboard")
+function init_head($aside = true, $page)
 {
     $CI = &get_instance();
     $CI->load->view('admin/includes/head', ['page' => $page]);
@@ -40,7 +40,7 @@ function init_head($aside = true, $page = "dashboard")
  * @since  1.0.0
  * Init admin footer/tails
  */
-function init_tail($page = "dashboard")
+function init_tail($page)
 {
     $CI = &get_instance();
     $CI->load->view('admin/includes/footer', ['page' => $page]);
