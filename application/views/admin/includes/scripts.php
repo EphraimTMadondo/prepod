@@ -54,7 +54,6 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/customizer.min.js"></script>
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
