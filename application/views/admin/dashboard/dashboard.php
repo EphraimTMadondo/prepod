@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head(true, 'dashboard'); ?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay">
@@ -43,7 +43,7 @@
         app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
     </script>
     <?php $this->load->view('admin/utilities/calendar_template'); ?>
-    <?php init_tail(); ?> 
+    <?php init_tail('dashboard'); ?> 
     <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
   </body>
   <!-- END: Body-->
