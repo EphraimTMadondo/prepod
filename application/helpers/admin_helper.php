@@ -40,11 +40,11 @@ function init_head($aside = true, $page = "dashboard")
  * @since  1.0.0
  * Init admin footer/tails
  */
-function init_tail()
+function init_tail($page = "dashboard")
 {
     $CI = &get_instance();
-    $CI->load->view('admin/includes/scripts');
-    $CI->load->view('admin/includes/footer');
+    $CI->load->view('admin/includes/scripts', ['page' => $page]);
+    $CI->load->view('admin/includes/footer', ['page' => $page]);
 }
 /**
  * Get admin url

@@ -44,31 +44,6 @@
     </script>
     <?php $this->load->view('admin/utilities/calendar_template'); ?>
     <?php init_tail(); ?> 
-    
-    <!-- BEGIN: Page JS-->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dragula.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/swiper.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/chart.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-dom.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js"></script>
-
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/cards/widgets.js"></script>
-    <!-- END: Page JS-->
-
-    <!-- BEGIN: Calendar Page JS-->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
-    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>
-
-    <!-- END: Calendar Page JS-->
     <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
   </body>
   <!-- END: Body-->
