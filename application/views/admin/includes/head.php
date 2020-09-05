@@ -22,6 +22,16 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/calendars/tui-time-picker.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/calendars/tui-date-picker.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/calendars/tui-calendar.min.css">
+
+    <?php
+      switch($page)
+      {
+        case 'task_list':
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+        break;
+      }
+    ?>
     <!-- END: Vendor CSS-->
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
@@ -34,6 +44,23 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/dark-layout.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/semi-dark-layout.min.css">
     <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <?php
+      switch($page)
+      {
+        case 'task_list':
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+        break;
+        case 'dashboard':
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/widgets.css">';
+          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/plugins/calendars/app-calendar.css">';
+        break;
+      }
+    ?>
+    <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/assets/css/style.css">
