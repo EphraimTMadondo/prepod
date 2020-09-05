@@ -15,30 +15,34 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/extensions/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/extensions/dragula.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/calendars/tui-time-picker.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/calendars/tui-date-picker.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/calendars/tui-calendar.min.css">
-
     <?php
       switch($page)
       {
+        case 'dashboard':
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n";
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/extensions/swiper.min.css'>\n";
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/extensions/dragula.min.css'>\n";
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css'>\n";
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-time-picker.css'>\n";
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-date-picker.css'>\n";
+          echo "<link rel'stylesheet' type'text/css' href'".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-calendar.min.css'>\n";
+        break;
         case 'task_list':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/dragula.min.css'>\n";
         break;
         case 'task_kanban':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'/assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/jkanban/jkanban.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/pickadate/pickadate.css'>\n";
         break;
       }
     ?>
     <!-- END: Vendor CSS-->
-
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     
     <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/bootstrap.min.css">
@@ -54,17 +58,17 @@
       switch($page)
       {
         case 'dashboard':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/pages/widgets.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/css/plugins/calendars/app-calendar.css">';
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/dashboard-ecommerce.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/widgets.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/plugins/calendars/app-calendar.css'>\n";
         break;
-        case 'task_list':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+        case "task_list":
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n";
         break;
-        case 'task_kanban':
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/forms/select/select2.min.css">';
-          echo '<link rel="stylesheet" type="text/css" href="'.base_url().'assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css">';
+        case "task_kanban":
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n";
         break;
       }
     ?>
