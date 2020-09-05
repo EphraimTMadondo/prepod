@@ -48,6 +48,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
       break;
       default:
+         echo '';
       break;
    }
 ?>

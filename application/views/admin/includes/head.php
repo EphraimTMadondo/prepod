@@ -89,6 +89,7 @@
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/app-email.css'>\n\t";
         break;
         default:
+          echo '';
         break;
       }
     ?>
