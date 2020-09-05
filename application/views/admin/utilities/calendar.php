@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head('calendar'); ?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay">
@@ -154,7 +154,7 @@
 <script>
 	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
 </script>
-<?php init_tail(); ?>
+<?php init_tail('calendar'); ?>
 <script>
 	$(function(){
 		if(get_url_param('eventid')) {
