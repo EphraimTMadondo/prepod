@@ -44,8 +44,10 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
       break;
+      case "mailbox":
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
+      break;
       default:
-         echo '';
       break;
    }
 ?>
@@ -81,8 +83,10 @@
       case "task_kanban":
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-kanban.js'></script>\n";
       break;
+      case "mailbox":
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
+      break;
       default:
-         echo '';
       break;
    }
 ?>

@@ -1,10 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'mailbox_compose_form')); ?>
+<?php echo form_open_multipart($this->uri->uri_string(),array('id'=>_compose_form')); ?>
 <div class="clearfix mtop20"></div>
 <div class="row">
   <div class="col-md-12">
     <div class="form-group">      
-    <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('mailbox_multi_email_split'); ?>"></i>
+    <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l(_multi_email_split'); ?>"></i>
     <?php
         $to = '';
         $cc = '';
@@ -18,9 +18,9 @@
         $body = $mail->body;
       }
     ?>
-    <?php echo render_input('to','mailbox_to',$to); ?>
+    <?php echo render_input('to',_to',$to); ?>
     <?php echo render_input('cc','CC',$cc); ?>
-    <?php echo render_input('subject','mailbox_subject',$subject); ?>
+    <?php echo render_input('subject',_subject',$subject); ?>
     <hr />    
     <?php echo render_textarea('body','',$body,array(),array(),'','tinymce tinymce-compose'); ?>    
     </div>
@@ -41,17 +41,17 @@
     </div>
 
     <div class="btn-group pull-left">
-      <a href="<?php echo admin_url().'mailbox';?>" class="btn btn-warning close-send-template-modal"><?php echo _l('cancel'); ?></a>       
+      <a href="<?php echo admin_url().';?>" class="btn btn-warning close-send-template-modal"><?php echo _l('cancel'); ?></a>       
     </div>
 
     <div class="pull-right">   
       <?php if(!isset($mail)){?>   
       <button type="submit" name="sendmail" value="draft" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-primary">
-        <i class="fa fa-file-o menu-icon"></i> <?php echo _l('mailbox_save_draft'); ?></button>
+        <i class="fa fa-file-o menu-icon"></i> <?php echo _l(_save_draft'); ?></button>
       <?php } ?>
       <button type="submit" name="sendmail" value="outbox" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">
           <i class="fa fa-paper-plane menu-icon"></i>
-          <?php echo _l('mailbox_send'); ?>          
+          <?php echo _l(_send'); ?>          
         </button>
     </div>
 </div>

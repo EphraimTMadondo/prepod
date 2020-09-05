@@ -1,9 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php echo form_open_multipart($this->uri->uri_string().'/config',array('id'=>'mailbox_config_form')); ?>
+<?php echo form_open_multipart($this->uri->uri_string().'/config',array('id'=>_config_form')); ?>
 <div class="row">
     <div class="col-lg-12">
         <br>
-        <?php echo _l('mailbox_user_pass_instructions'); ?>
+        <?php echo _l(_user_pass_instructions'); ?>
         <br><br>
     </div>
     <div class="col-md-6">
@@ -11,7 +11,7 @@
         <?php echo render_input('email','staff_add_edit_email',$value,'email',array('autocomplete'=>'off','readonly'=>'readonly')); ?>
     </div>
     <div class="col-md-6">
-        <label for="mail_password" class="control-label"><?php echo _l('mailbox_email_password'); ?></label>
+        <label for="mail_password" class="control-label"><?php echo _l(_email_password'); ?></label>
         <div class="input-group">
         	<?php $value = (isset($member) ? $member->mail_password : ''); ?>
 	        <input type="password" class="form-control password" name="mail_password" value="<?php echo $value;?>" autocomplete="new-password">
