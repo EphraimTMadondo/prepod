@@ -8,7 +8,7 @@ ob_start();
       case 'task_list':
          echo "<body class='vertical-layout vertical-menu-modern semi-dark-layout content-left-sidebar todo-application navbar-sticky footer-static ' data-open='click' data-menu='vertical-menu-modern' data-col='content-left-sidebar' data-layout='semi-dark-layout'>\n";
       break;
-      case 'default':
+      default:
          echo "<body class='vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-sticky footer-static  ' data-open='click' data-menu='vertical-menu-modern' data-col='2-columns' data-layout='semi-dark-layout'>\n";
       break;
    }
