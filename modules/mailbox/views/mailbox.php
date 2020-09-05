@@ -1159,6 +1159,7 @@
     </div>
 </div>
 <!-- END: Content-->
+
 <?php init_tail('mailbox'); ?>
 <script type="text/javascript">
 	"use strict";
