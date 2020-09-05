@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head('calendar'); ?>
+<?php init_head(true, 'calendar'); ?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay">
