@@ -8,8 +8,8 @@
           </div>
           <div class="card-content">
               <div class="card-body">
-                <div>
-                  <canvas class="chart" height="250" id="projects_status_stats"></canvas>
+                <div class="height-300">
+                    <canvas id="projects_status_stats"></canvas>
                 </div>
               </div>
           </div>
