@@ -43,7 +43,7 @@ foreach ($rResult as $aRow) {
     echo '<li class="media">
         <div class="user-action">
             <div class="checkbox-con mr-25">
-                <div class="checkbox checkbox-shadow checkbox-sm">
+                <div style="margin-top:-8" class="checkbox checkbox-shadow checkbox-sm">
                     <label for="checkboxsmall'.$aRow['id'].'"></label>
                     <input type="checkbox" id="checkboxsmall'.$aRow['id'].'">
                 </div>
