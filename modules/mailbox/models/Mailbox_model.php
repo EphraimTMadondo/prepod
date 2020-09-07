@@ -153,6 +153,9 @@ class Mailbox_model extends App_Model
         }
     }
 
+    public function fetch($group){
+        return $this->db->get(db_prefix() . 'mail_'.$type)->result_array();
+    }
     /**
      * Get detail email by id and type
      * @param  integer $id   
