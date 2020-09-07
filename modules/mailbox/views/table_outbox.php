@@ -44,8 +44,8 @@ foreach ($rResult as $aRow) {
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-8" class="checkbox checkbox-shadow checkbox-sm">
-                    <label for="checkboxsmall'.$aRow['id'].'"></label>
                     <input type="checkbox" id="checkboxsmall'.$aRow['id'].'">
+                    <label for="checkboxsmall'.$aRow['id'].'"></label>
                 </div>
             </div>
             <span class="'.$starred.'">
