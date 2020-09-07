@@ -688,8 +688,8 @@
     $(function(){
         //Added by Ephraim
         fetch(admin_url + 'mailbox/table/<?php echo $group;?>')
-        .then(result => result.json())
-        .then(data => console.log(data));
+        .then(result => console.log(result));
+        // .then(data => console.log(data));
     });
 </script>
 </body>
