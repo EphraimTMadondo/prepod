@@ -56,13 +56,6 @@
                                     </div>
                                     <?php echo _l('mailbox_starred'); ?>
                                 </a>
-                                <a href="<?php echo admin_url('mailbox?group=important'); ?>" class="list-group-item <?php if($group == 'important'){echo 'active ';} ?>">
-                                    <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: info-alt.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'important'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
-                                        </i>
-                                    </div>
-                                    <?php echo _l('mailbox_important'); ?>
-                                </a>
                                 <a href="<?php echo admin_url('mailbox?group=trash'); ?>" class="list-group-item <?php if($group == 'trash'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: trash.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'trash'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
@@ -79,6 +72,15 @@
                                 </a>
                             </div>
                             <!-- sidebar menu  end-->
+                            <!-- sidebar label start -->
+                            <label class="sidebar-label">Labels</label>
+                                <div class="list-group list-group-labels ">
+                                    <a href="<?php echo admin_url('mailbox?group=important'); ?>" class="list-group-item d-flex justify-content-between align-items-center">
+                                        <?php echo _l('mailbox_important'); ?>
+                                        <span class="bullet bullet-success bullet-sm"></span>
+                                    </a>
+                                </div>
+                                <!-- sidebar label end -->
                         </div>
                     </div>
                 </div>
@@ -222,11 +224,26 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="folder">
                                                         <a class="dropdown-item" href="#"><i class="bx bx-edit"></i> Draft</a>
-                                                        <a class="dropdown-item" href="#"><i class="bx bx-info-circle"></i><?php echo _l('mailbox_important'); ?></a>
                                                         <a class="dropdown-item" href="#"><i class="bx bx-trash"></i>Trash</a>
                                                     </div>
                                                 </div>
                                             </li>
+                                            <li class="list-inline-item">
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn btn-icon dropdown-toggle action-icon" id="tag" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="fonticon-wrap">
+                                                                <i class="livicon-evo" data-options="name: tag.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                                                </i>
+                                                            </span>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="tag">
+                                                            <a href="#" class="dropdown-item align-items-center">
+                                                                <span class="bullet bullet-success bullet-sm"></span>
+                                                                <span><?php echo _l('mailbox_important'); ?></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
                                         </ul>
                                     </div>
                                     <!-- action left end here -->
