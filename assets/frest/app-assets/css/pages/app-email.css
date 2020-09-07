@@ -1,5 +1,9 @@
 /* Email application css */
 /*-----------------------*/
+.checkboxsmall {
+ margin-top: -18px;
+}
+
 .email-application .content-area-wrapper {
   border: 1px solid #DFE3E7;
   border-radius: 0.267rem;
