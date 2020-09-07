@@ -686,19 +686,9 @@
 	"use strict";
 
     $(function(){
-        init_btn_with_tooltips();   
-        init_tabs_scrollable();   
-        var webmailTableNotSortable = [0];
-        initDataTable('.table-mailbox', admin_url + 'mailbox/table/<?php echo $group;?>', 'undefined', webmailTableNotSortable, 'undefined', [2, 'desc']);
-        appValidateForm($('#mailbox_config_form'), {
-           email: 'required',
-           mail_password: 'required',           
-        });
-
-
         //Added by Ephraim
-        fetch(admin_url + 'mailbox/table/<?php echo $group;?>')
-        .then(result => result/json)
+        fetch()
+        .then(result => result.json())
         .then(data => console.log(data));
     });
 </script>
