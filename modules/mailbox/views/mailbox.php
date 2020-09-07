@@ -687,9 +687,12 @@
 
     $(function(){
         //Added by Ephraim
-        fetch(admin_url + 'mailbox/table/<?php echo $group;?>')
-        .then(result => result.json())
-        .then(data => console.log(data));
+        $.ajax({
+            metho: "POST",
+            url:admin_url + 'mailbox/table/<?php echo $group;?>'
+        }).done(function(response){
+            console.log({response});
+        })
     });
 </script>
 </body>
