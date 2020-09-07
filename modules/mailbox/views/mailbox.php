@@ -25,7 +25,7 @@
                             <div class="list-group list-group-messages">
                                 <a href="<?php echo admin_url('mailbox?group=inbox'); ?>" class="list-group-item pt-0 <?php if($group == 'inbox'){echo 'active ';} ?>" id="inbox-menu">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: envelope-put.svg; size: 24px; style: lines; strokeColor:#5A8DEE; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: envelope-put.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'inbox'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
                                     <?php echo _l('mailbox_inbox'); ?>
@@ -38,41 +38,41 @@
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=sent'); ?>" class="list-group-item <?php if($group == 'sent'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: paper-plane.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: paper-plane.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'sent'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
                                     <?php echo _l('mailbox_sent'); ?>
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=draft'); ?>" class="list-group-item <?php if($group == 'draft'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: pen.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: pen.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'draft'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div> <?php echo _l('mailbox_draft'); ?>
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=starred'); ?>" class="list-group-item <?php if($group == 'starred'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: star.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: star.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'starred'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
                                     <?php echo _l('starred'); ?>
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=important'); ?>" class="list-group-item <?php if($group == 'important'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: info-alt.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: info-alt.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'important'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
                                     <?php echo _l('mailbox_important'); ?>
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=trash'); ?>" class="list-group-item <?php if($group == 'trash'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: trash.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: trash.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'trash'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
                                     <?php echo _l('mailbox_trash'); ?>
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=config'); ?>" class="list-group-item <?php if($group == 'config'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
-                                        <i class="livicon-evo" data-options="name: grears.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        <i class="livicon-evo" data-options="name: gears.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'config'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
                                     <?php echo _l('mailbox_config'); ?>
