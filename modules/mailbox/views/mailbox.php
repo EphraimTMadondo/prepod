@@ -23,48 +23,59 @@
                         <div class="sidebar-menu-list">
                             <!-- sidebar menu  -->
                             <div class="list-group list-group-messages">
-                                <a href="#" class="list-group-item pt-0 active" id="inbox-menu">
+                                <a href="<?php echo admin_url('mailbox?group=inbox'); ?>" class="list-group-item pt-0 <?php if($group == 'inbox'){echo 'active ';} ?>" id="inbox-menu">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: envelope-put.svg; size: 24px; style: lines; strokeColor:#5A8DEE; eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
-                                    Inbox
-                                    <span class="badge badge-light-primary badge-pill badge-round float-right mt-50">5</span>
+                                    <?php echo _l('mailbox_inbox'); ?>
+                                    <?php
+                                        $num_unread = total_rows(db_prefix() . 'mail_inbox', ['read' => '0','to_staff_id' => get_staff_user_id()]);
+                                        if($num_unread > 0){
+                                    ?>
+                                    <span class="badge badge-light-primary badge-pill badge-round float-right mt-50"><?php echo $num_unread; ?></span>
+                                    <?php }  ?>
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="<?php echo admin_url('mailbox?group=sent'); ?>" class="list-group-item <?php if($group == 'sent'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: paper-plane.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
-                                    Sent
+                                    <?php echo _l('mailbox_sent'); ?>
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="<?php echo admin_url('mailbox?group=draft'); ?>" class="list-group-item <?php if($group == 'draft'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: pen.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
                                         </i>
-                                    </div> Draft
+                                    </div> <?php echo _l('mailbox_draft'); ?>
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="<?php echo admin_url('mailbox?group=starred'); ?>" class="list-group-item <?php if($group == 'starred'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: star.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
-                                    Starred
+                                    <?php echo _l('starred'); ?>
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="<?php echo admin_url('mailbox?group=important'); ?>" class="list-group-item <?php if($group == 'important'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: info-alt.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
-                                    Spam
-                                    <span class="badge badge-light-danger badge-pill badge-round float-right mt-50">3</span>
+                                    <?php echo _l('mailbox_important'); ?>
                                 </a>
-                                <a href="#" class="list-group-item">
+                                <a href="<?php echo admin_url('mailbox?group=trash'); ?>" class="list-group-item <?php if($group == 'trash'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: trash.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
-                                    Trash
+                                    <?php echo _l('mailbox_trash'); ?>
+                                </a>
+                                <a href="<?php echo admin_url('mailbox?group=config'); ?>" class="list-group-item <?php if($group == 'config'){echo 'active ';} ?>">
+                                    <div class="fonticon-wrap d-inline mr-25">
+                                        <i class="livicon-evo" data-options="name: grears.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
+                                        </i>
+                                    </div>
+                                    <?php echo _l('mailbox_config'); ?>
                                 </a>
                             </div>
                             <!-- sidebar menu  end-->
@@ -173,9 +184,9 @@
                                     <span class="d-sm-inline d-none">Cancel</span>
                                 </button>
                                 <?php if(!isset($mail)){?>   
-                                    <button type="submit" name="sendmail" value="draft" class="btn-send btn btn-primary">
+                                    <!-- <button type="submit" name="sendmail" value="draft" class="btn-send btn btn-primary">
                                         <i class='bx bx-edit mr-25'></i> <span class="d-sm-inline d-none"><?php echo _l('mailbox_save_draft'); ?></span>
-                                    </button>
+                                    </button> -->
                                 <?php } ?>
                                 <button type="submit" name="sendmail" value="outbox" class="btn-send btn btn-info">
                                     <i class='bx bx-send mr-25'></i> <span class="d-sm-inline d-none"><?php echo _l('mailbox_send'); ?></span>
