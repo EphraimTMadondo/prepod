@@ -689,7 +689,7 @@
         //Added by Ephraim
         fetch(admin_url + 'mailbox/table/<?php echo $group;?>')
         .then(result => console.log(result));
-        // .then(data => console.log(data));
+        .then(data => console.log(data));
     });
 </script>
 </body>
