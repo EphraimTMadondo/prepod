@@ -28,14 +28,19 @@ $rResult = $result['rResult'];
 foreach ($rResult as $aRow) {
     $starred = "favorite";    
     $msg_starred = _l('mailbox_add_star');
-    $important = "fa-bookmark-o";
-    $msg_important = _l('mailbox_mark_as_important');
+    $important = "";
+    $msg_important = _l('');
     if($aRow['stared']==1){
         $starred = "favorite warning";
         $msg_starred = _l('mailbox_remove_star');
     }
     if($aRow['important']==1){
-        $important = "fa-bookmark red";
+        $important = '<div class="mail-meta-item">
+            <span class="float-right">
+                <span class="bullet bullet-success bullet-sm"></span>
+            </span>
+        </div>
+        ';
         $msg_important = _l('mailbox_mark_as_not_important');
         
     }
@@ -76,12 +81,8 @@ foreach ($rResult as $aRow) {
                 <p class="list-group-item-text truncate mb-0">
                 '.$aRow['body'].'
                 </p>
-                <div class="mail-meta-item">
-                    <span class="float-right">
-                        <span class="bullet bullet-success bullet-sm"></span>
-                    </span>
-                </div>
             </div>
+            '.$important.'
         </div>
     </li>';
 
