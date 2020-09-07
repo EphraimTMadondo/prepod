@@ -260,47 +260,7 @@
                                 <!-- email user list start -->
                                 <div class="email-user-list list-group">
                                     <ul class="users-list-wrapper media-list">
-                                        <li class="media mail-read">
-                                            <div class="user-action">
-                                                <div class="checkbox-con mr-25">
-                                                    <div class="checkbox checkbox-shadow checkbox-sm">
-                                                        <input type="checkbox" id="checkboxsmall1">
-                                                        <label for="checkboxsmall1"></label>
-                                                    </div>
-                                                </div>
-                                                <span class="favorite warning">
-                                                    <i class="bx bxs-star"></i>
-                                                </span>
-                                            </div>
-                                            <div class="pr-50">
-                                                <div class="avatar">
-                                                    <img src="../../../app-assets/images/portrait/small/avatar-s-20.jpg" alt="avtar img holder">
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="user-details">
-                                                    <div class="mail-items">
-                                                        <span class="list-group-item-text text-truncate">Open source project public release 👍</span>
-                                                    </div>
-                                                    <div class="mail-meta-item">
-                                                        <span class="float-right">
-                                                            <span class="mail-date">4:14 AM</span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="mail-message">
-                                                    <p class="list-group-item-text truncate mb-0">
-                                                        Hey John, bah kivu decrete epanorthotic unnotched
-                                                        Argyroneta nonius veratrine preimaginary
-                                                    </p>
-                                                    <div class="mail-meta-item">
-                                                        <span class="float-right">
-                                                            <span class="bullet bullet-success bullet-sm"></span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                     <!-- email user list end -->
 
@@ -360,38 +320,6 @@
                                                     <a class="dropdown-item" href="#"><i class="bx bx-edit"></i> Draft</a>
                                                     <a class="dropdown-item" href="#"><i class="bx bx-info-circle"></i> Spam</a>
                                                     <a class="dropdown-item" href="#"><i class="bx bx-trash"></i> Trash</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <div class="dropdown">
-                                                <button class="btn btn-icon dropdown-toggle action-icon" id="open-mail-tag" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="fonticon-wrap">
-                                                        <i class="livicon-evo" data-options="name: tag.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
-                                                        </i>
-                                                    </span>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="open-mail-tag">
-                                                    <a href="#" class="dropdown-item align-items-center">
-                                                        <span class="bullet bullet-success bullet-sm"></span>
-                                                        Product
-                                                    </a>
-                                                    <a href="#" class="dropdown-item align-items-center">
-                                                        <span class="bullet bullet-primary bullet-sm"></span>
-                                                        Work
-                                                    </a>
-                                                    <a href="#" class="dropdown-item align-items-center">
-                                                        <span class="bullet bullet-warning bullet-sm"></span>
-                                                        Misc
-                                                    </a>
-                                                    <a href="#" class="dropdown-item align-items-center">
-                                                        <span class="bullet bullet-danger bullet-sm"></span>
-                                                        Family
-                                                    </a>
-                                                    <a href="#" class="dropdown-item align-items-center">
-                                                        <span class="bullet bullet-info bullet-sm"></span>
-                                                        Design
-                                                    </a>
                                                 </div>
                                             </div>
                                         </li>
@@ -691,7 +619,11 @@
             metho: "POST",
             url:admin_url + 'mailbox/table/<?php echo $group;?>'
         }).done(function(response){
-            console.log({response});
+            var data = JSON.parse(response);
+            var aaData = data["aaData"];
+            aaData.map(row => {
+                $('.users-list-wrapper').append(row);
+            });
         })
     });
 </script>
