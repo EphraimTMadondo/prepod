@@ -26,7 +26,6 @@ $output  = $result['output'];
 $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
-    $row = [];
     $starred = "favorite";    
     $msg_starred = _l('mailbox_add_star');
     $important = "fa-bookmark-o";
@@ -45,7 +44,7 @@ foreach ($rResult as $aRow) {
         $has_attachment = '<i class="fa fa-paperclip pull-right" data-toggle="tooltip" title="'._l('mailbox_file_attachment').'" data-original-title="fa-paperclip"></i>';
     }
 
-    $row[] = '<li class="media mail-read">
+    echo '<li class="media mail-read">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div class="checkbox checkbox-shadow checkbox-sm">
@@ -97,6 +96,4 @@ foreach ($rResult as $aRow) {
     // $row[] = $content.'<span>'.$aRow[db_prefix() . 'mail_outbox.to'].'</span></a>';
     // $row[] = $content.'<span>'.$aRow['subject'].' - </span><span class="text-muted">'.clear_textarea_breaks(text_limiter($aRow['body'],8,'...')).'</span>'.$has_attachment.'</a>';    
     // $row[] = $content.'<span>'._dt($aRow['date_sent']).'</span></a>';
-
-    echo $row;
 }
