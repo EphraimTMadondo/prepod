@@ -98,5 +98,5 @@ foreach ($rResult as $aRow) {
     // $row[] = $content.'<span>'.$aRow['subject'].' - </span><span class="text-muted">'.clear_textarea_breaks(text_limiter($aRow['body'],8,'...')).'</span>'.$has_attachment.'</a>';    
     // $row[] = $content.'<span>'._dt($aRow['date_sent']).'</span></a>';
 
-    $output['aaData'][] = $row;
+    echo $row;
 }
