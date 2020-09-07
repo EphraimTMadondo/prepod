@@ -49,7 +49,7 @@ foreach ($rResult as $aRow) {
         $read = "";
     }
 
-    echo '<li class="media">
+    echo '<li class="media"  onclick="location.href="'.admin_url().'mailbox/inbox/'.$aRow['id'].'";">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
