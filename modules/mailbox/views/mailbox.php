@@ -222,40 +222,8 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="folder">
                                                         <a class="dropdown-item" href="#"><i class="bx bx-edit"></i> Draft</a>
-                                                        <a class="dropdown-item" href="#"><i class="bx bx-info-circle"></i>Spam</a>
+                                                        <a class="dropdown-item" href="#"><i class="bx bx-info-circle"></i><?php echo _l('mailbox_important'); ?></a>
                                                         <a class="dropdown-item" href="#"><i class="bx bx-trash"></i>Trash</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-icon dropdown-toggle action-icon" id="tag" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="fonticon-wrap">
-                                                            <i class="livicon-evo" data-options="name: tag.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
-                                                            </i>
-                                                        </span>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="tag">
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-success bullet-sm"></span>
-                                                            <span>Product</span>
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-primary bullet-sm"></span>
-                                                            <span>Work</span>
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-warning bullet-sm"></span>
-                                                            <span>Misc</span>
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-danger bullet-sm"></span>
-                                                            <span>Family</span>
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-info bullet-sm"></span>
-                                                            <span> Design</span>
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </li>
