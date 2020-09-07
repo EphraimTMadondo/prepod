@@ -40,7 +40,9 @@ foreach ($rResult as $aRow) {
         $has_attachment = '<i class="bx bx-paperclip mr-50"></i>';
     }
 
-    echo '<li class="media" onclick="location.href="'.admin_url().'mailbox/outbox/'.$aRow['id'].'";">
+    $redirectTO = "location.href='".admin_url()."mailbox/inbox/".$aRow['id']."';";
+
+    echo '<li class="media" onclick="'.$redirectTO.'">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
