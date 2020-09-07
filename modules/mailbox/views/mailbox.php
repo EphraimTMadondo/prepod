@@ -309,44 +309,7 @@
                             $this->load->view('mailbox/mailbox_detail_outbox'); 
                         } else if($group == 'config'){
                             $this->load->view('mailbox/mailbox_config'); 
-                        } else {?>
-                            <?php
-                                $table_data = array();
-                                $obj = array(
-                                    'name'=>_l('mailbox_from'),
-                                    'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-mailbox-from')
-                                );
-                                if($group == 'sent'){
-                                $obj = array(
-                                    'name'=>_l('mailbox_to'),
-                                    'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-mailbox-to')
-                                );
-                                }
-                                $_table_data = array(
-                                '<span class="hide"> - </span><div class="checkbox mass_select_all_wrap"><input type="checkbox" id="mass_select_all" data-to-table="mailbox"><label></label></div>',                                                                             
-                                    $obj
-                                ,
-                                    array(
-                                    'name'=>_l('mailbox_subject'),
-                                    'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-mailbox-subject')
-                                ),
-                                    array(
-                                    'name'=>_l('mailbox_date'),
-                                    'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-mailbox-date')
-                                ),                                        
-                                );
-                                foreach($_table_data as $_t){
-                                array_push($table_data,$_t);
-                                }                                     
-
-                                $table_data = hooks()->apply_filters('mailbox_table_columns', $table_data);
-
-                                render_datatable($table_data,'mailbox',[],[
-                                    'data-last-order-identifier' => 'mailbox',
-                                    'data-default-order'         => get_table_last_order('mailbox'),
-                                ]);
-                                ?>
-                        <?php } ?>
+                        }?>
                         <!--/ Detailed Email View -->
                     </div>
                 </div>
