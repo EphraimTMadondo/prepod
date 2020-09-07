@@ -260,7 +260,13 @@
                                 <!-- email user list start -->
                                 <div class="email-user-list list-group">
                                     <ul class="users-list-wrapper media-list">
-                                        
+                                    <?php
+                                        if($group == 'sent' || $group == 'draft'){
+                                            $this->load->view('table_outbox', ['group' => $group]);
+                                        } else {
+                                            $this->load->view('table', ['group' => $group]);
+                                        }
+                                    ?>
                                     </ul>
                                     <!-- email user list end -->
 
@@ -613,19 +619,19 @@
 <script type="text/javascript">
 	"use strict";
 
-    $(function(){
-        //Added by Ephraim
-        $.ajax({
-            metho: "POST",
-            url:admin_url + 'mailbox/table/<?php echo $group;?>'
-        }).done(function(response){
-            var data = JSON.parse(response);
-            var aaData = data["aaData"];
-            aaData.map(row => {
-                $('.users-list-wrapper').append(row);
-            });
-        })
-    });
+    // $(function(){
+    //     //Added by Ephraim
+    //     $.ajax({
+    //         metho: "POST",
+    //         url:admin_url + 'mailbox/table/<?php //echo $group;?>'
+    //     }).done(function(response){
+    //         var data = JSON.parse(response);
+    //         var aaData = data["aaData"];
+    //         aaData.map(row => {
+    //             $('.users-list-wrapper').append(row);
+    //         });
+    //     })
+    // });
 </script>
 </body>
 </html>

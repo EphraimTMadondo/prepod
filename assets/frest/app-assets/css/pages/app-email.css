@@ -1,9 +1,8 @@
 /* Email application css */
 /*-----------------------*/
-.checkbox .checkbox-shadow .checkbox-sm {
- margin-top: -32;
+.checkbox {
+ margin: 8;
 }
-
 .form-control-position {
   padding-top: 8
 }
