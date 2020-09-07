@@ -192,7 +192,7 @@
                                     <!-- action left start here -->
                                     <div class="action-left d-flex align-items-center">
                                         <!-- select All checkbox -->
-                                        <div class="checkbox checkbox-shadow checkbox-sm selectAll mr-50">
+                                        <div style="margin-top:-8" class="checkbox checkbox-shadow checkbox-sm selectAll mr-50">
                                             <label for="checkboxsmall"></label>
                                             <input type="checkbox" id="checkboxsmall">
                                         </div>
