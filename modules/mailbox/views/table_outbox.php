@@ -32,20 +32,15 @@ foreach ($rResult as $aRow) {
         $starred = "favorite warning";
     }
     if($aRow['important']==1){
-        $important = '<div class="mail-meta-item">
-            <span class="float-right">
-                <span class="bullet bullet-success bullet-sm"></span>
-            </span>
-        </div>
-        ';
+        $important = '<span class="bullet bullet-success bullet-sm"></span>';
         
     }
     $has_attachment = "";
     if($aRow['has_attachment']>0){
-        $has_attachment = '<i class="fa fa-paperclip pull-right" data-toggle="tooltip" title="'._l('mailbox_file_attachment').'" data-original-title="fa-paperclip"></i>';
+        $has_attachment = '<i class="bx bx-paperclip mr-50"></i>';
     }
 
-    echo '<li class="media mail-read">
+    echo '<li class="media">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div class="checkbox checkbox-shadow checkbox-sm">
@@ -78,7 +73,12 @@ foreach ($rResult as $aRow) {
                 '.$aRow['body'].'
                 </p>
             </div>
-            '.$important.'
+            <div class="mail-meta-item">
+                <span class="float-right">
+                    '.$important.'
+                    '.$has_attachment.'
+                </span>
+            </div>
         </div>
     </li>';
 
