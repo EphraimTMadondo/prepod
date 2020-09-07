@@ -27,12 +27,9 @@ $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
     $starred = "favorite";    
-    $msg_starred = _l('mailbox_add_star');
     $important = "";
-    $msg_important = _l('');
     if($aRow['stared']==1){
         $starred = "favorite warning";
-        $msg_starred = _l('mailbox_remove_star');
     }
     if($aRow['important']==1){
         $important = '<div class="mail-meta-item">
@@ -41,7 +38,6 @@ foreach ($rResult as $aRow) {
             </span>
         </div>
         ';
-        $msg_important = _l('mailbox_mark_as_not_important');
         
     }
     $has_attachment = "";
@@ -73,7 +69,7 @@ foreach ($rResult as $aRow) {
                 </div>
                 <div class="mail-meta-item">
                     <span class="float-right">
-                        <span class="mail-date">4:14 AM</span>
+                        <span class="mail-date">'._dt($aRow['date_sent']).'</span>
                     </span>
                 </div>
             </div>
@@ -87,7 +83,7 @@ foreach ($rResult as $aRow) {
     </li>';
 
     // $row[] = '<div class="checkbox"><input type="checkbox" value="' . $aRow['id'] . '"><label></label></div>                
-    //             <a class="btn btnIcon" data-toggle="tooltip" title="" data-original-title="'. _l('mailbox_delete').'" onclick="update_field(\''.$group.'\',\'trash\',1,'.$aRow['id'].');"><i class="fa fa-trash-o"></i></a>';
+    //             <a class="btn btnIcon" data-toggle="tooltip" title="" data-original-title="'. _l('mailbox_delete').'" ><i class="fa fa-trash-o"></i></a>';
     
 
     // $content = '<a href="'.admin_url().'mailbox/outbox/'.$aRow['id'].'">';
