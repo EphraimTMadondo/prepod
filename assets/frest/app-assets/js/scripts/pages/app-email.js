@@ -80,6 +80,11 @@ $(function () {
     detailMailEditor.focus();
   });
 
+  //Populate hidden textarea before submit
+  $('#compose-form').on("submit", function(){
+    $("#hiddenBody").val(composeMailEditor.root.innerHTML);
+  });
+
   //------------------------------------
   // sidebar-left
   // -----------------------------------

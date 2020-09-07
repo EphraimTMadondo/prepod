@@ -54,7 +54,7 @@
                                         <i class="livicon-evo" data-options="name: star.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'starred'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
                                     </div>
-                                    <?php echo _l('starred'); ?>
+                                    <?php echo _l('mailbox_starred'); ?>
                                 </a>
                                 <a href="<?php echo admin_url('mailbox?group=important'); ?>" class="list-group-item <?php if($group == 'important'){echo 'active ';} ?>">
                                     <div class="fonticon-wrap d-inline mr-25">
@@ -79,32 +79,6 @@
                                 </a>
                             </div>
                             <!-- sidebar menu  end-->
-
-                            <!-- sidebar label start -->
-                            <label class="sidebar-label">Labels</label>
-                            <div class="list-group list-group-labels ">
-                                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                    Product
-                                    <span class="bullet bullet-success bullet-sm"></span>
-                                </a>
-                                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                    Work
-                                    <span class="bullet bullet-primary bullet-sm"></span>
-                                </a>
-                                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                    Misc
-                                    <span class="bullet bullet-warning bullet-sm"></span>
-                                </a>
-                                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                    Family
-                                    <span class="bullet bullet-danger bullet-sm"></span>
-                                </a>
-                                <a href="#" class="list-group-item d-flex justify-content-between align-items-center">
-                                    Design
-                                    <span class="bullet bullet-info bullet-sm"></span>
-                                </a>
-                            </div>
-                            <!-- sidebar label end -->
                         </div>
                     </div>
                 </div>
@@ -170,6 +144,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <textarea name="body" hidden id="hiddenBody"></textarea>
                                     <div class="form-group mt-2">
                                         <div class="custom-file">
                                             <input extension="<?php echo str_replace('.','',get_option('ticket_attachments_file_extensions')); ?>" filesize="<?php echo file_upload_max_size(); ?>" name="attachments[0]" accept="<?php echo get_ticket_form_accepted_mimes(); ?>" type="file" class="custom-file-input" id="emailAttach">
