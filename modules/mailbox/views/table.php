@@ -29,39 +29,65 @@ $output  = $result['output'];
 $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
-    $row = [];
-    $read = "bold";
+    $starred = "favorite";    
+    $important = "";
+    if($aRow['stared']==1){
+        $starred = "favorite warning";
+    }
+    if($aRow['important']==1){
+        $important = '<span class="bullet bullet-success bullet-sm"></span>';
+        
+    }
+
+    $has_attachment = "";
+    if($aRow['has_attachment']>0){
+        $has_attachment = '<i class="bx bx-paperclip mr-50"></i>';
+    }
+    
+    $read = "mail-read";
     if($aRow['read'] == 1){
         $read = "";
     }
-    $starred = "fa-star-o";    
-    $msg_starred = _l('mailbox_add_star');
-    $important = "fa-bookmark-o";
-    $msg_important = _l('mailbox_mark_as_important');
-    if($aRow['stared']==1){
-        $starred = "fa-star orange";
-        $msg_starred = _l('mailbox_remove_star');
-    }
-    if($aRow['important']==1){
-        $important = "fa-bookmark red";
-        $msg_important = _l('mailbox_mark_as_not_important');
-        
-    }
-    $has_attachment = "";
-    if($aRow['has_attachment']>0){
-        $has_attachment = '<i class="fa fa-paperclip pull-right" data-toggle="tooltip" title="'._l('mailbox_file_attachment').'" data-original-title="fa-paperclip"></i>';
-    }
 
-    $row[] = '<div class="checkbox"><input type="checkbox" value="' . $aRow['id'] . '"><label></label></div>
-                <a class="btn btnIcon" data-toggle="tooltip" title="" data-original-title="'. $msg_starred.'" onclick="update_field(\''.$group.'\',\'starred\','.$aRow['stared'].','.$aRow['id'].');"><i class="fa '.$starred.'"></i></a>
-                <a class="btn btnIcon" data-toggle="tooltip" title="" data-original-title="'. $msg_important.'" onclick="update_field(\''.$group.'\',\'important\','.$aRow['important'].','.$aRow['id'].');"><i class="fa '.$important.'"></i></a>                
-                <a class="btn btnIcon" data-toggle="tooltip" title="" data-original-title="'. _l('mailbox_delete').'" onclick="update_field(\''.$group.'\',\'trash\',1,'.$aRow['id'].');"><i class="fa fa-trash-o"></i></a>';
-    
-
-    $content = '<a href="'.admin_url().'mailbox/inbox/'.$aRow['id'].'">';
-    $row[] = $content.'<span class="'.$read.'">'.$aRow['sender_name'].'</span></a>';
-    $row[] = $content.'<span class="'.$read.'">'.$aRow['subject'].' - </span><span class="text-muted">'.clear_textarea_breaks(text_limiter($aRow['body'],8,'...')).'</span>'.$has_attachment.'</a>';    
-    $row[] = $content.'<span class="'.$read.'">'._dt($aRow['date_received']).'</span></a>';
-
-    $output['aaData'][] = $row;
+    echo '<li class="media">
+        <div class="user-action">
+            <div class="checkbox-con mr-25">
+                <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
+                    <input type="checkbox" id="checkboxsmall'.$aRow['id'].'">
+                    <label for="checkboxsmall'.$aRow['id'].'"></label>
+                </div>
+            </div>
+            <span class="'.$starred.'">
+                <i class="bx bxs-star"></i>
+            </span>
+        </div>
+        <div class="pr-50">
+            <div class="avatar">
+                <span class="badge badge-circle badge-left-primary">EM</span>
+            </div>
+        </div>
+        <div class="media-body">
+            <div class="user-details">
+                <div class="mail-items">
+                    <span class="list-group-item-text text-truncate">'.$aRow['subject'].'</span>
+                </div>
+                <div class="mail-meta-item">
+                    <span class="float-right">
+                        <span class="mail-date">'._dt($aRow['date_sent']).'</span>
+                    </span>
+                </div>
+            </div>
+            <div class="mail-message">
+                <p class="list-group-item-text truncate mb-0">
+                '.$aRow['body'].'
+                </p>
+            </div>
+            <div class="mail-meta-item">
+                <span class="float-right">
+                    '.$important.'
+                    '.$has_attachment.'
+                </span>
+            </div>
+        </div>
+    </li>';
 }
