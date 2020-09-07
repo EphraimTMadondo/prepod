@@ -49,7 +49,7 @@ foreach ($rResult as $aRow) {
         $read = "";
     }
     $redirectTO = admin_url().'mailbox/inbox/'.$aRow['id'];
-    echo '<li class="media" onclick="location.href=`'.$redirectTO.'`;">
+    echo '<li class="media '.$read.'" onclick="location.href=`'.$redirectTO.'`;">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
