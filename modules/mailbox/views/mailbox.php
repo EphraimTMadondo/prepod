@@ -198,7 +198,7 @@
                                         </div>
                                         <!-- delete unread dropdown -->
                                         <ul class="list-inline m-0 d-flex">
-                                            <li class="list-inline-item mail-delete">
+                                            <li class="list-inline-item mail-delete" >
                                                 <button type="button" class="btn btn-icon action-icon">
                                                     <span class="fonticon-wrap">
                                                         <i class="livicon-evo" data-options="name: trash.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent; duration:0.85;">
