@@ -263,7 +263,7 @@
                                             </fieldset>
                                         </div>
                                         <!-- pagination and page count -->
-                                        <span class="d-none d-sm-block">1-10 of 653</span>
+                                        <!-- <span class="d-none d-sm-block">1-10 of 653</span> -->
                                         <button class="btn btn-icon email-pagination-prev d-none d-sm-block">
                                             <i class="bx bx-chevron-left"></i>
                                         </button>
