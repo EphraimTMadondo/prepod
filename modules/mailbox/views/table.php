@@ -48,8 +48,8 @@ foreach ($rResult as $aRow) {
     if($aRow['read'] == 1){
         $read = "";
     }
-
-    echo '<li class="media"  onclick="location.href="'.admin_url().'mailbox/inbox/'.$aRow['id'].'";">
+    $redirectTO = admin_url().'mailbox/inbox/'.$aRow['id'];
+    echo '<li class="media" onclick="location.href=`'.$redirectTO.'`;">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
