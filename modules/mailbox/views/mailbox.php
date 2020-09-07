@@ -106,30 +106,44 @@
                                 <i class="bx bx-x"></i>
                             </button>
                         </div>
+
                         <!-- form start -->
-                        <form action="#" id="compose-form">
+                        <?php echo form_open_multipart(admin_url().'mailbox/compose',array('id'=>'compose-form')); ?>        
+                        <?php
+                            $to = '';
+                            $cc = '';
+                            $subject = '';
+                            $body = '';
+                        ?>
+                        <?php if(isset($mail)){        
+                            $to = $mail->to;
+                            $cc = $mail->cc;
+                            $subject = $mail->subject;
+                            $body = $mail->body;
+                        }
+                        ?>
                             <div class="card-content">
                                 <div class="card-body pt-0">
-                                    <div class="form-group pb-50">
+                                    <!-- <div class="form-group pb-50">
                                         <label for="emailfrom">from</label>
                                         <input type="text" id="emailfrom" class="form-control" placeholder="user@example.com" disabled>
-                                    </div>
+                                    </div> -->
                                     <div class="form-label-group">
-                                        <input type="email" id="emailTo" class="form-control" placeholder="To" required>
+                                        <input name="to" type="email" id="emailTo" class="form-control" placeholder="To" required>
                                         <label for="emailTo">To</label>
                                     </div>
                                     <div class="form-label-group">
-                                        <input type="text" id="emailSubject" class="form-control" placeholder="Subject">
+                                        <input name="subject" type="text" id="emailSubject" class="form-control" placeholder="Subject">
                                         <label for="emailSubject">Subject</label>
                                     </div>
                                     <div class="form-label-group">
-                                        <input type="text" id="emailCC" class="form-control" placeholder="CC">
+                                        <input name="cc" type="text" id="emailCC" class="form-control" placeholder="CC">
                                         <label for="emailCC">CC</label>
                                     </div>
-                                    <div class="form-label-group">
+                                    <!-- <div class="form-label-group">
                                         <input type="text" id="emailBCC" class="form-control" placeholder="BCC">
-                                        <label for="emailBCC">BCC</label>
-                                    </div>
+                                        <label for=gg"emailBCC">BCC</label>
+                                    </div> -->
                                     <!-- Compose mail Quill editor -->
                                     <div class="snow-container border rounded p-50 ">
                                         <div class="compose-editor mx-75"></div>
@@ -147,7 +161,7 @@
                                     </div>
                                     <div class="form-group mt-2">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="emailAttach">
+                                            <input extension="<?php echo str_replace('.','',get_option('ticket_attachments_file_extensions')); ?>" filesize="<?php echo file_upload_max_size(); ?>" name="attachments[0]" accept="<?php echo get_ticket_form_accepted_mimes(); ?>" type="file" class="custom-file-input" id="emailAttach">
                                             <label class="custom-file-label" for="emailAttach">Attach file</label>
                                         </div>
                                     </div>
@@ -158,11 +172,16 @@
                                     <i class='bx bx-x mr-25'></i>
                                     <span class="d-sm-inline d-none">Cancel</span>
                                 </button>
-                                <button type="submit" class="btn-send btn btn-primary">
-                                    <i class='bx bx-send mr-25'></i> <span class="d-sm-inline d-none">Send</span>
+                                <?php if(!isset($mail)){?>   
+                                    <button type="submit" name="sendmail" value="draft" class="btn-send btn btn-primary">
+                                        <i class='bx bx-edit mr-25'></i> <span class="d-sm-inline d-none"><?php echo _l('mailbox_save_draft'); ?></span>
+                                    </button>
+                                <?php } ?>
+                                <button type="submit" name="sendmail" value="outbox" class="btn-send btn btn-info">
+                                    <i class='bx bx-send mr-25'></i> <span class="d-sm-inline d-none"><?php echo _l('mailbox_send'); ?></span>
                                 </button>
                             </div>
-                        </form>
+                        <?php echo form_close(); ?>
                         <!-- form start end-->
                     </div>
                 </div>
