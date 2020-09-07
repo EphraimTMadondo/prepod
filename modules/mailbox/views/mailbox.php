@@ -687,7 +687,7 @@
 
     $(function(){
         //Added by Ephraim
-        fetch()
+        fetch(admin_url + 'mailbox/table/<?php echo $group;?>)
         .then(result => result.json())
         .then(data => console.log(data));
     });
