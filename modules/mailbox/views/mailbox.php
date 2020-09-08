@@ -308,9 +308,8 @@
                                                 </i>
                                             </span>
                                         </span>
-                                        <h5 class="email-detail-title font-weight-normal mb-0">
-                                            Advertising Internet Online
-                                            <span class="badge badge-light-danger badge-pill ml-1">PRODUCT</span>
+                                        <h5 class="email-detail-title font-weight-normal mb-0" id="mail-title">
+                                            ...
                                         </h5>
                                     </div>
                                     <div class="email-header-right mb-1 ml-2 pl-1">
@@ -386,7 +385,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="information d-sm-flex d-none align-items-center">
-                                                            <small class="text-muted mr-50">05 Jul 2019, 10:30</small>
+                                                            <small class="text-muted mr-50" id="mail-date">...</small>
                                                             <span class="favorite warning">
                                                                 <i class="bx bxs-star mr-25"></i>
                                                             </span>
@@ -413,21 +412,8 @@
                                                     </div>
                                                     <div id="collapse7" role="tabpanel" aria-labelledby="headingCollapse7" class="collapse show">
                                                         <div class="card-content">
-                                                            <div class="card-body py-1">
-                                                                <p class="text-bold-500">Greetings!</p>
-                                                                <p>
-                                                                    It is a long established fact that a reader will be distracted by the readable content of a page
-                                                                    when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal
-                                                                    distribution of letters, as opposed to using 'Content here, content here',making it look like
-                                                                    readable English.
-                                                                </p>
-                                                                <p>
-                                                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                                                                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                                                                    believable.
-                                                                </p>
-                                                                <p class="mb-0">Sincerely yours,</p>
-                                                                <p class="text-bold-500">Envato Design Team</p>
+                                                            <div class="card-body py-1" id="mail-body">
+                                                                
                                                             </div>
                                                             <div class="card-footer pt-0 border-top">
                                                                 <label class="sidebar-label">Attached Files</label>
