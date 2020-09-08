@@ -125,7 +125,7 @@ class Mailbox extends AdminController
     public function config_email_form(){
         $member = $this->staff_model->get(get_staff_user_id());
         $data["form"] = '
-        '.form_open_multipart($this->uri->uri_string().'/config',array('id'=>'mailbox_config_form')).'
+        '.form_open_multipart(admin_url('mailbox/config'),array('id'=>'mailbox_config_form')).'
             <div class="row">
                 <div class="col-lg-12">
                     <br>
@@ -144,7 +144,7 @@ class Mailbox extends AdminController
             </div>
             <div class="row">
                 <div class="col-md-12 center-block">
-                    <button type="submit" autocomplete="off" data-loading-text="'._l('wait_text').'" class="btn btn-primary pull-right">          
+                    <button type="submit" autocomplete="off" data-loading-text="'._l('wait_text').'" class="btn btn-primary float-right">          
                     '._l('save').'        
                     </button>
                 </div>
