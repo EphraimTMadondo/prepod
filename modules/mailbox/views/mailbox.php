@@ -359,37 +359,8 @@
                                                             <span class="bullet bullet-success bullet-sm"></span>
                                                             Product
                                                         </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-primary bullet-sm"></span>
-                                                            Work
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-warning bullet-sm"></span>
-                                                            Misc
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-danger bullet-sm"></span>
-                                                            Family
-                                                        </a>
-                                                        <a href="#" class="dropdown-item align-items-center">
-                                                            <span class="bullet bullet-info bullet-sm"></span>
-                                                            Design
-                                                        </a>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <span class="no-of-list d-none d-sm-block ml-1">1-10 of 653</span>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-icon email-pagination-prev action-icon">
-                                                    <i class='bx bx-chevron-left'></i>
-                                                </button>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <button class="btn btn-icon email-pagination-next action-icon">
-                                                    <i class='bx bx-chevron-right'></i>
-                                                </button>
                                             </li>
                                         </ul>
                                     </div>
