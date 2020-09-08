@@ -380,7 +380,8 @@
                                                             </div>
                                                             <div class="media-body mt-25">
                                                                 <span class="text-primary" id="sender-name">....</span>
-                                                                <span class="d-sm-inline d-none" id="to-email">...</span>
+                                                                <span class="d-sm-inline d-none" id="staff-email">...</span>
+                                                                <small class="text-muted d-block" id="to">..</small>
                                                                 <small class="text-muted d-block" id="cc">..</small>
                                                             </div>
                                                         </div>

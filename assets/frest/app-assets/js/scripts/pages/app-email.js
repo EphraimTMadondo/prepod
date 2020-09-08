@@ -194,7 +194,8 @@ $(function () {
         email_app_details.find('#mail-date').html(mail.inbox.date_sent);
         email_app_details.find('#sender-name').html(mail.inbox.sender_name);
         email_app_details.find('#staff-email').html("&lt;"+ mail.staff_email +"&gt;");
-        email_app_details.find('#cc').html(mail.inbox.to);
+        email_app_details.find('#to').html(mail.inbox.to);
+        email_app_details.find('#cc').html(mail.inbox.cc);
         if(mail.inbox.has_attachment){
             mail.attachments.forEach(attachment => {
               email_app_details.find('#attachment-list').append('<li class="cursor-pointer">\n'+
