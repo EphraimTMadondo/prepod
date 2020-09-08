@@ -186,6 +186,7 @@ $(function () {
       $.get(admin_url + 'mailbox/outbox/' + mail_id).done(function(response) {
         var mail = JSON.parse(response);
         email_app_details.find('#mail-title').text(mail.title);
+        email_app_details.find('.email-header-right').html("");
         email_app_details.find('#mail-body').html(mail.inbox.body);
         email_app_details.find('#mail-date').html(mail.inbox.date_sent);
         email_app_details.find('#profile-image').html(mail.staff_profile_image);
