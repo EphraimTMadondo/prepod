@@ -195,8 +195,8 @@ $(function () {
         email_app_details.find('#profile-image').html(mail.staff_profile_image);
         email_app_details.find('#sender-name').html(mail.inbox.sender_name);
         email_app_details.find('#staff-email').html("&lt;" + mail.staff_email + "&gt;");
-        email_app_details.find('#to').html('to ' + mail.inbox.to);
-        email_app_details.find('#cc').html('cc ' + mail.inbox.cc);
+        email_app_details.find('#to').html('<b>to:</b> ' + mail.inbox.to);
+        email_app_details.find('#cc').html('<b>cc:</b> ' + mail.inbox.cc);
         if(mail.inbox.has_attachment){
             mail.attachments.forEach(attachment => {
               email_app_details.find('#attachment-list').append('<li class="cursor-pointer">\n'+
