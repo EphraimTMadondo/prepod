@@ -214,6 +214,11 @@ $(function () {
     });
   });
 
+  //Configuration
+  $("#mailbox_config").on('click', function () {
+    email_app_details.toggleClass('show');
+  })''
+
   // on click of go button or inbox btn get back to inbox
   $('.go-back, #inbox-menu').on('click', function (e) {
     e.stopPropagation();

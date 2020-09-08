@@ -63,7 +63,7 @@
                                     </div>
                                     <?php echo _l('mailbox_trash'); ?>
                                 </a>
-                                <a href="<?php echo admin_url('mailbox?group=config'); ?>" class="list-group-item <?php if($group == 'config'){echo 'active ';} ?>">
+                                <a href="#" class="list-group-item <?php if($group == 'config'){echo 'active ';} ?>" id="mailbox-config">
                                     <div class="fonticon-wrap d-inline mr-25">
                                         <i class="livicon-evo" data-options="name: gears.svg; size: 24px; style: lines; strokeColor:<?php if($group == 'config'){echo '#5A8DEE;';} else{ echo '#475f7b;';} ?> eventOn:grandparent; duration:0.85;">
                                         </i>
