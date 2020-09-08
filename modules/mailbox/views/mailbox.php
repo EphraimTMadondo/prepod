@@ -223,8 +223,8 @@
                                                         </span>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="folder">
-                                                        <a class="dropdown-item" href="#"><i class="bx bx-edit"></i> Draft</a>
-                                                        <a class="dropdown-item" href="#"><i class="bx bx-trash"></i>Trash</a>
+                                                        <a class="dropdown-item" href="<?php echo admin_url('mailbox?group=draft'); ?>"><i class="bx bx-edit"></i> <?php echo _l('mailbox_draft'); ?></a>
+                                                        <a class="dropdown-item" href="<?php echo admin_url('mailbox?group=trash'); ?>"><i class="bx bx-trash"></i><?php echo _l('mailbox_trash'); ?></a>
                                                     </div>
                                                 </div>
                                             </li>
@@ -237,7 +237,7 @@
                                                             </span>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="tag">
-                                                            <a href="#" class="dropdown-item align-items-center">
+                                                            <a href="#" id="mark-important" class="dropdown-item align-items-center">
                                                                 <span class="bullet bullet-success bullet-sm"></span>
                                                                 <span><?php echo _l('mailbox_important'); ?></span>
                                                             </a>

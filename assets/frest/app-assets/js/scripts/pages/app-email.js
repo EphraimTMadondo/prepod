@@ -38,23 +38,15 @@ function update_field(group, action, value, mail_id){
 /**
  * Update multi-email 
  */
-function update_mass(group, action, value){
-    if(group == 'detail'){
-        update_field(group, action, value, mailid);
-    } else {
-        if (confirm_delete()) {
-            var table_mailbox = $('.table-mailbox');
-            var rows = table_mailbox.find('tbody tr');
-            var lstid = '';
-            $.each(rows, function() {
-                var checkbox = $($(this).find('td').eq(0)).find('input');
-                if (checkbox.prop('checked') === true) {
-                    lstid = lstid + checkbox.val() + ',';
-                }
-            });
-            update_field(group, action, value, lstid);
-        }
-    }
+function update_mass(rows, action, value){
+  var lstid = '', group = '', mail_id = '';
+  $.each(rows, function () {
+    var $this = $(this)
+    var group = $this.closest(".media").data('group');
+    var mail_id = $this.closest(".media").data('mail_id');
+    lstid = lstid + mail_id + ',';
+  });
+  update_field(group, action, value, lstid);
 }
 
 $(function () {
@@ -256,7 +248,10 @@ $(function () {
 
   // On click of delete btn, delete all emails & show "no result found"
   email_application.find(".mail-delete").on("click", function () {
+    var rows = checkbox_con.find("input:checked");
+    update_mass(rows,'trash', 1);
     checkbox_con.find("input:checked").closest("li").remove();
+    // checkbox_con.find("input:checked").closest("li").remove();
     email_application.find(".selectAll input").prop('checked', "");
 
     var tbl_row = $(".email-user-list .users-list-wrapper li:visible").length; //here tbl_test is table name
@@ -274,8 +269,17 @@ $(function () {
 
   // Mark unread mail and remove background color when checkbox unchecked
   email_application.find(".mail-unread").on("click", function () {
+    var rows = checkbox_con.find("input:checked");
+    update_mass(rows,'trash', 1);
     checkbox_con.find("input:checked").closest("li").removeClass("mail-read");
     email_application.find(".user-action .checkbox-con input:checked , .selectAll input").prop('checked', "").closest(".media").removeClass("selected-row-bg");
+  });
+  
+  // Mark unread mail and remove background color when checkbox unchecked
+  email_application.find("#mark-important").on("click", function () {
+    var rows = checkbox_con.find("input:checked");
+    update_mass(rows,'important', 1);
+    window.location.reload();
   });
 
   // Search Filter
