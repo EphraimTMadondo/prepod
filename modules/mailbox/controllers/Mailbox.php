@@ -97,7 +97,7 @@ class Mailbox extends AdminController
         $data['inbox'] = $inbox;
         $data['type'] = 'inbox';
         $data['attachments'] = $this->mailbox_model->get_mail_attachment($id,'inbox');
-        echo json_decode($data);  
+        echo json_encode($data);  
     }
 
     /**
@@ -113,7 +113,7 @@ class Mailbox extends AdminController
         $data['inbox'] = $inbox;
         $data['type'] = 'outbox';
         $data['attachments'] = $this->mailbox_model->get_mail_attachment($id,'outbox');
-        echo json_decode($data);     
+        echo json_encode($data);     
     }
 
     /**
