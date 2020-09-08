@@ -206,10 +206,10 @@ $(function () {
 
     if($this.parent('.favorite').hasClass("warning")){
       $this.removeClass("warning");
-      update_field(group, 'starred', 0, mail_id);
+      update_field(group, 'starred', 1, mail_id);
     }else{
       $this.addClass("warning");
-      update_field(group, 'starred', 1, mail_id);
+      update_field(group, 'starred', 0, mail_id);
     }
 
     if ($this.hasClass("bx-star")) {
@@ -272,7 +272,7 @@ $(function () {
   // Mark unread mail and remove background color when checkbox unchecked
   email_application.find(".mail-unread").on("click", function () {
     var rows = checkbox_con.find("input:checked");
-    update_mass(rows,'trash', 1);
+    update_mass(rows,'read', 1);
     checkbox_con.find("input:checked").closest("li").removeClass("mail-read");
     email_application.find(".user-action .checkbox-con input:checked , .selectAll input").prop('checked', "").closest(".media").removeClass("selected-row-bg");
   });
