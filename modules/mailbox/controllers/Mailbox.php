@@ -178,7 +178,7 @@ class Mailbox extends AdminController
         $data['action_type'] = $type;
         $data['method'] = $method;
         $data['mail'] = $mail;
-        $this->load->view('mailbox', $data); 
+        echo json_encode($data); 
     }
 
     /**
