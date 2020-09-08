@@ -177,6 +177,30 @@ class Mailbox extends AdminController
         $data['type'] = 'reply';
         $data['action_type'] = $type;
         $data['method'] = $method;
+
+        if($type == 'inbox'){
+            if($method == 'reply'){
+            $mail->subject = 'RE: '.$mail->subject;
+            $mail->to = $mail->from_email;
+            } else if($method == 'replyall'){
+            $mail->subject = 'RE: '.$mail->subject;
+            $mail->to = $mail->from_email.';'.$mail->to.';'.$mail->cc;
+            } else {
+            $mail->subject = 'FW: '.$mail->subject;
+            }  
+        } else {
+            if($method == 'reply'){
+            $mail->subject = 'RE: '.$mail->subject;
+            $mail->to = $mail->to;
+            } else if($method == 'replyall'){
+            $mail->subject = 'RE: '.$mail->subject;
+            $mail->to = $mail->to;
+            } else {
+            $mail->subject = 'FW: '.$mail->subject;
+            }
+        }
+
+
         $data['mail'] = $mail;
         echo json_encode($data); 
     }
