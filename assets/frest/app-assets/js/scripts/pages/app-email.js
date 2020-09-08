@@ -8,6 +8,55 @@
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
+/**
+ * Update email status 
+ */
+function update_field(group, action, value, mail_id){
+    var data = {};
+    data.group = group;
+    data.action = action;
+    data.value = value;
+    data.id = mail_id;
+    data.type = 'inbox';     
+    if(group == 'detail'){
+        data.type = mailtype; 
+    }
+    $.post(admin_url + 'mailbox/update_field', data).done(function(response) {
+        response = JSON.parse(response);
+        if (response.success === true || response.success == 'true') {
+            alert_float('success', response.message);            
+            if(group == 'detail'){
+                window.location.reload();
+            }
+        } else {
+            alert_float('warning', response.message);
+        }
+    });
+}
+
+
+/**
+ * Update multi-email 
+ */
+function update_mass(group, action, value){
+    if(group == 'detail'){
+        update_field(group, action, value, mailid);
+    } else {
+        if (confirm_delete()) {
+            var table_mailbox = $('.table-mailbox');
+            var rows = table_mailbox.find('tbody tr');
+            var lstid = '';
+            $.each(rows, function() {
+                var checkbox = $($(this).find('td').eq(0)).find('input');
+                if (checkbox.prop('checked') === true) {
+                    lstid = lstid + checkbox.val() + ',';
+                }
+            });
+            update_field(group, action, value, lstid);
+        }
+    }
+}
+
 $(function () {
   "use strict";
   // variables
@@ -21,13 +70,6 @@ $(function () {
     email_app_list = $(".email-app-list"),
     checkbox_con = $(".user-action .checkbox-con"),
     $primary = "#5A8DEE";
-
-  var tbl_row = $(".email-user-list .users-list-wrapper li:visible").length; //here tbl_test is table name
-
-  //Check if table has row or not
-  if (tbl_row == 0) {
-    email_user_list.find('.no-results').addClass('show');
-  }
 
   // To add Perfect Scrollbar
   // ---------------------------
@@ -164,7 +206,18 @@ $(function () {
   email_application.find(".favorite i").on("click", function (e) {
     e.stopPropagation();
     var $this = $(this)
-    $this.parent('.favorite').toggleClass("warning");
+    var starred = $this.parent('.favorite').data('starred');
+    var group = $this.closest(".media").data('group');
+    var mail_id = $this.closest(".media").data('mail_id');
+
+    if($this.parent('.favorite').hasClass("warning")){
+      $this.removeClass("warning");
+      update_field(group, 'starred', 0, mail_id);
+    }else{
+      $this.addClass("warning");
+      update_field(group, 'starred', 1, mail_id);
+    }
+
     if ($this.hasClass("bx-star")) {
       $this.addClass("bxs-star");
       $this.removeClass("bx-star");

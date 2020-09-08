@@ -49,15 +49,15 @@ foreach ($rResult as $aRow) {
         $read = "";
     }
 
-    echo '<li class="media '.$read.'" >
+    echo '<li class="media '.$read.'" data-group="'.$group.'"  data-mail_id="'.$aRow['id'].'">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
-                    <input type="checkbox" id="checkboxsmall'.$aRow['id'].'">
+                    <input type="checkbox" value="'.$aRow['id'].'" id="checkboxsmall'.$aRow['id'].'">
                     <label for="checkboxsmall'.$aRow['id'].'"></label>
                 </div>
             </div>
-            <span class="'.$starred.'">
+            <span class="'.$starred.'" data-starred="'.$aRow['stared'].'">
                 <i class="bx bxs-star"></i>
             </span>
         </div>

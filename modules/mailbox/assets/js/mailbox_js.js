@@ -17,25 +17,9 @@ function update_field(group, action, value, mail_id){
             alert_float('success', response.message);            
             if(group == 'detail'){
                 window.location.reload();
-            } else {
-                reload_mailbox_tables();
             }
-            
         } else {
             alert_float('warning', response.message);
-        }
-    });
-}
-
-/**
- * Reload mailbox datagrid
- * @return 
- */
-function reload_mailbox_tables() {
-    var av_tasks_tables = ['.table-mailbox'];
-    $.each(av_tasks_tables, function(i, selector) {
-        if ($.fn.DataTable.isDataTable(selector)) {
-            $(selector).DataTable().ajax.reload(null, false);
         }
     });
 }
