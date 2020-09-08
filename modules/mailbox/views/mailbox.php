@@ -237,7 +237,7 @@
                                                             </span>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="tag">
-                                                            <a href="#" id="mark-important" class="dropdown-item align-items-center">
+                                                            <a href="javascript:void()" id="mark-important" class="dropdown-item align-items-center">
                                                                 <span class="bullet bullet-success bullet-sm"></span>
                                                                 <span><?php echo _l('mailbox_important'); ?></span>
                                                             </a>

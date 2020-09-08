@@ -27,6 +27,8 @@ function update_field(group, action, value, mail_id){
             toastr.success(response.message);         
             if(group == 'detail'){
                 window.location.reload();
+            } else if(action == 'important'){
+              window.location.reload();
             }
         } else {
             toastr.warning(response.message);  
@@ -279,7 +281,6 @@ $(function () {
   email_application.find("#mark-important").on("click", function () {
     var rows = checkbox_con.find("input:checked");
     update_mass(rows,'important', 1);
-    window.location.reload();
   });
 
   // Search Filter
