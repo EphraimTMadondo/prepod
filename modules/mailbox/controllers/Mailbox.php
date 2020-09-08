@@ -119,6 +119,42 @@ class Mailbox extends AdminController
     }
 
     /**
+     * configure email
+     * @return json
+     */
+    public function config_email_form(){
+        $member = $this->staff_model->get(get_staff_user_id());
+        $data["form"] = '
+        '.form_open_multipart($this->uri->uri_string().'/config',array('id'=>'mailbox_config_form')).'
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    '._l('mailbox_user_pass_instructions').'
+                    <br><br>
+                </div>
+                <div class="col-md-6">
+                    '.render_input('email','staff_add_edit_email',$member->email,'email',array('autocomplete'=>'off','readonly'=>'readonly')).'
+                </div>
+                <div class="col-md-6">
+                    <label for="mail_password" class="control-label">'._l('mailbox_email_password').'</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control password" name="mail_password" value="'.$member->mail_password.'" autocomplete="new-password">	        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 center-block">
+                    <button type="submit" autocomplete="off" data-loading-text="'._l('wait_text').'" class="btn btn-info">          
+                    '._l('save').'        
+                    </button>
+                </div>
+            </div>
+            '.form_close();
+        echo json_encode($data);
+    }
+    
+
+    /**
      * update email status
      * @return json
      */
