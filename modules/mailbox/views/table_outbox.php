@@ -40,7 +40,7 @@ foreach ($rResult as $aRow) {
         $has_attachment = '<i class="bx bx-paperclip mr-50"></i>';
     }
 
-    echo '<li class="media mail-read" data-group="'.$group.'">
+    echo '<li class="media mail-read" data-group="'.$group.'" data-mail_id="'.$aRow['id'].'">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
