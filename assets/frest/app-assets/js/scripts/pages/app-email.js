@@ -192,7 +192,7 @@ $(function () {
         email_app_details.find('#mail-title').text(mail.title);
         email_app_details.find('#mail-body').html(mail.inbox.body);
         email_app_details.find('#mail-date').html(mail.inbox.date_sent);
-        email_app_details.find('#sender-name').html(mail.inbox.sender-name);
+        email_app_details.find('#sender-name').html(mail.inbox.sender_name);
         email_app_details.find('#to-email').html("to &lt;"+ mail.inbox.to +"&gt;");
         email_app_details.find('#cc').html(mail.inbox.cc);
         if(mail.inbox.has_attachment){
