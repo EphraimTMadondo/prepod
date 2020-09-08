@@ -82,6 +82,7 @@ $(function () {
 
   //Populate hidden textarea before submit
   $('#compose-form').on("submit", function(){
+    alert(composeMailEditor.root.innerHTML);
     $("#hiddenBody").val(composeMailEditor.root.innerHTML);
   });
 
