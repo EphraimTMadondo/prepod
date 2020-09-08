@@ -41,10 +41,10 @@ function update_field(group, action, value, mail_id){
  * Update multi-email 
  */
 function update_mass(rows, action, value){
-  var lstid = '', group = '', mail_id = '';
+  var lstid = '', group = '';
   $.each(rows, function () {
     var $this = $(this)
-    var group = $this.closest(".media").data('group');
+    group = $this.closest(".media").data('group');
     var mail_id = $this.closest(".media").data('mail_id');
     lstid = lstid + mail_id + ',';
   });
