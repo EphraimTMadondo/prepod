@@ -215,7 +215,7 @@ $(function () {
   });
 
   //Configuration
-  $("#mailbox_config").on('click', function () {
+  $("#mailbox-config").on('click', function () {
     email_app_details.toggleClass('show');
   })''
 
