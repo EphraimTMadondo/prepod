@@ -214,8 +214,15 @@ $(function () {
     });
   });
 
+
   //Configuration
   $("#mailbox-config").on('click', function () {
+    $.get(admin_url + 'mailbox/config_email_form').done(function(response) {
+      var data = JSON.parse(response);
+    });
+    email_app_details.find('#mail-title').text("Configuration");
+    email_app_details.find('.email-header-right').html("");
+    email_app_details.find('.email-scroll-area').html(data['form']);
     email_app_details.toggleClass('show');
   });
 
