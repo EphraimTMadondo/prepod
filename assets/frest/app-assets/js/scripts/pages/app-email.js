@@ -379,8 +379,7 @@ $(function () {
       appContentOverlay.addClass('show');
       sideBarLeft.removeClass('show');
 
-      var quill_editor = $(".detail-view-editor .ql-editor");// quill editor content
-      quill_editor[0].innerHTML = result.mail.body;
+      composeMailEditor.root.innerHTML = result.mail.body;
     });
   });
 
@@ -397,9 +396,8 @@ $(function () {
       userNewMailSideBar.addClass('show');
       appContentOverlay.addClass('show');
       sideBarLeft.removeClass('show');
-      
-      var quill_editor = $(".detail-view-editor .ql-editor");// quill editor content
-      quill_editor[0].innerHTML = result.mail.body;
+
+      composeMailEditor.root.innerHTML = result.mail.body;
     });
   });
 
