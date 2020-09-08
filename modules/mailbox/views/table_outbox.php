@@ -82,6 +82,9 @@ foreach ($rResult as $aRow) {
         </div>
     </li>';
 
+    echo '<script>
+        console.log('.json_encode($aRow).');
+    </script>';
     // $row[] = '<div class="checkbox"><input type="checkbox" value="' . $aRow['id'] . '"><label></label></div>                
     //             <a class="btn btnIcon" data-toggle="tooltip" title="" data-original-title="'. _l('mailbox_delete').'" ><i class="fa fa-trash-o"></i></a>';
     
