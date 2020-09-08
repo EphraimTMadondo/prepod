@@ -118,11 +118,6 @@ $(function () {
     theme: 'snow'
   });
 
-  // Quill get focus when click on reply
-  $('.mail-reply').on('click', function () {
-    detailMailEditor.focus();
-  });
-
   //Populate hidden textarea before submit
   $('#compose-form').on("submit", function(){
     $("#hiddenBody").val(composeMailEditor.root.innerHTML);
@@ -362,14 +357,14 @@ $(function () {
   });
 
   // On reply btn clik 
-  $('.mail-reply').on('click', function () {
+  $('#mail-reply').on('click', function () {
     userNewMailSideBar.addClass('show');
     appContentOverlay.addClass('show');
     sideBarLeft.removeClass('show');
   });
 
   // On forward btn clik 
-  $('.mail-forward').on('click', function () {
+  $('#mail-forward').on('click', function () {
     userNewMailSideBar.addClass('show');
     appContentOverlay.addClass('show');
     sideBarLeft.removeClass('show');
