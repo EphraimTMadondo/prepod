@@ -198,6 +198,8 @@ $(function () {
         email_app_details.find('#mail-forward').attr('data-group' , mail.group);
         email_app_details.find('#mail-reply').attr('data-type' , mail.type);
         email_app_details.find('#mail-forward').attr('data-type' , mail.type);
+        email_app_details.find('#mail-reply').attr('data-mail_id' , mail_id);
+        email_app_details.find('#mail-forward').attr('data-mail_id' , mail_id);
 
         if(mail.inbox.has_attachment){
             mail.attachments.forEach(attachment => {
