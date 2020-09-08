@@ -144,7 +144,7 @@ class Mailbox extends AdminController
             </div>
             <div class="row">
                 <div class="col-md-12 center-block">
-                    <button type="submit" autocomplete="off" data-loading-text="'._l('wait_text').'" class="btn btn-info">          
+                    <button type="submit" autocomplete="off" data-loading-text="'._l('wait_text').'" class="btn btn-primary pull-right">          
                     '._l('save').'        
                     </button>
                 </div>
