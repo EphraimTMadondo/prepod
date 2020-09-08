@@ -371,8 +371,11 @@ $(function () {
     var group = $this.data('group');
     var type = $this.data('type');
     $.get(admin_url + 'mailbox/reply/' + mail_id + '/' + 'reply/' + type).done(function(response) {
-      var mail = JSON.parse(response);
-      console.log(mail);
+      var result = JSON.parse(response);
+      $('#emailTo').val(result.mail.to);
+      $('#emailSubject').val(result.mail.subject);
+      var quill_editor = $(".detail-view-editor .ql-editor");// quill editor content
+      quill_editor[0].innerHTML = result.mail.body;
       userNewMailSideBar.addClass('show');
       appContentOverlay.addClass('show');
       sideBarLeft.removeClass('show');
@@ -381,13 +384,15 @@ $(function () {
 
   // On forward btn clik 
   $('#mail-forward').on('click', function () {
-    var $this = $(this)
+   var $this = $(this)
     var mail_id = $this.data('mail_id');
     var group = $this.data('group');
     var type = $this.data('type');
-    $.get(admin_url + 'mailbox/reply/' + mail_id + '/' + 'forward/' + type).done(function(response) {
-      var mail = JSON.parse(response);
-      console.log(mail);
+    $.get(admin_url + 'mailbox/forward/' + mail_id + '/' + 'forward/' + type).done(function(response) {
+      var result = JSON.parse(response);
+      $('#emailSubject').val(result.mail.subject);
+      var quill_editor = $(".detail-view-editor .ql-editor");// quill editor content
+      quill_editor[0].innerHTML = result.mail.body;
       userNewMailSideBar.addClass('show');
       appContentOverlay.addClass('show');
       sideBarLeft.removeClass('show');
