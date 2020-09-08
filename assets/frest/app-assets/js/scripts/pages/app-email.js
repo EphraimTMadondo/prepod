@@ -22,6 +22,13 @@ $(function () {
     checkbox_con = $(".user-action .checkbox-con"),
     $primary = "#5A8DEE";
 
+  var tbl_row = $(".email-user-list .users-list-wrapper li:visible").length; //here tbl_test is table name
+
+  //Check if table has row or not
+  if (tbl_row == 0) {
+    email_user_list.find('.no-results').addClass('show');
+  }
+
   // To add Perfect Scrollbar
   // ---------------------------
 
@@ -82,7 +89,6 @@ $(function () {
 
   //Populate hidden textarea before submit
   $('#compose-form').on("submit", function(){
-    alert(composeMailEditor.root.innerHTML);
     $("#hiddenBody").val(composeMailEditor.root.innerHTML);
   });
 

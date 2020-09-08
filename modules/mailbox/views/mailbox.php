@@ -193,8 +193,8 @@
                                     <div class="action-left d-flex align-items-center">
                                         <!-- select All checkbox -->
                                         <div style="margin-top:-8" class="checkbox checkbox-shadow checkbox-sm selectAll mr-50">
-                                            <label for="checkboxsmall"></label>
                                             <input type="checkbox" id="checkboxsmall">
+                                            <label for="checkboxsmall"></label>
                                         </div>
                                         <!-- delete unread dropdown -->
                                         <ul class="list-inline m-0 d-flex">
