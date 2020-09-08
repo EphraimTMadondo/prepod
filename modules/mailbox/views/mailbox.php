@@ -75,10 +75,10 @@
                             <!-- sidebar label start -->
                             <label class="sidebar-label">Labels</label>
                                 <div class="list-group list-group-labels ">
-                                    <a href="<?php echo admin_url('mailbox?group=important'); ?>" class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="list-group-item d-flex justify-content-between align-items-center">
                                         <?php echo _l('mailbox_important'); ?>
                                         <span class="bullet bullet-success bullet-sm"></span>
-                                    </a>
+                                    </span>
                                 </div>
                                 <!-- sidebar label end -->
                         </div>
