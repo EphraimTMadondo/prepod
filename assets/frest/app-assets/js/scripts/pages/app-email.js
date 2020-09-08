@@ -24,12 +24,12 @@ function update_field(group, action, value, mail_id){
     $.post(admin_url + 'mailbox/update_field', data).done(function(response) {
         response = JSON.parse(response);
         if (response.success === true || response.success == 'true') {
-            alert_float('success', response.message);            
+            toastr.success(response.message);         
             if(group == 'detail'){
                 window.location.reload();
             }
         } else {
-            alert_float('warning', response.message);
+            toastr.warning(response.message);  
         }
     });
 }

@@ -46,6 +46,7 @@
       break;
       case "mailbox":
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/toastr.min.js'></script>\n";
       break;
       default:
          echo '';
