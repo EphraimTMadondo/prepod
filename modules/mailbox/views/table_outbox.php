@@ -69,7 +69,7 @@ foreach ($rResult as $aRow) {
                 </div>
             </div>
             <div class="mail-message">
-                <p class="list-group-item-text truncate mb-0">
+                <p class="list-group-item-text truncate mb-0 float-left">
                 '.$aRow['body'].'
                 </p>
             </div>
