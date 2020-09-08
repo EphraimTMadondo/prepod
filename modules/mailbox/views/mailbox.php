@@ -395,17 +395,13 @@
                                                                     <i class='bx bx-dots-vertical-rounded mr-0'></i>
                                                                 </a>
                                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="second-open-submenu">
-                                                                    <a href="#" class="dropdown-item mail-reply">
+                                                                    <a href="#" class="dropdown-item mail-reply" id="mail-reply">
                                                                         <i class='bx bx-share'></i>
                                                                         Reply
                                                                     </a>
-                                                                    <a href="#" class="dropdown-item">
+                                                                    <a href="#" class="dropdown-item" id="mail-forward">
                                                                         <i class='bx bx-redo'></i>
                                                                         Forward
-                                                                    </a>
-                                                                    <a href="#" class="dropdown-item">
-                                                                        <i class='bx bx-info-circle'></i>
-                                                                        Report Spam
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -429,34 +425,6 @@
                                         </div>
                                     </div>
                                     <!-- email details  end-->
-                                    <div class="row px-2 mb-4">
-                                        <!-- quill editor for reply message -->
-                                        <div class="col-12 px-0">
-                                            <div class="card shadow-none border rounded">
-                                                <div class="card-body quill-wrapper">
-                                                    <span>Reply to Lois Jimenez</span>
-                                                    <div class="snow-container" id="detail-view-quill">
-                                                        <div class="detail-view-editor"></div>
-                                                        <div class="d-flex justify-content-end">
-                                                            <div class="detail-quill-toolbar">
-                                                                <span class="ql-formats mr-50">
-                                                                    <button class="ql-bold"></button>
-                                                                    <button class="ql-italic"></button>
-                                                                    <button class="ql-underline"></button>
-                                                                    <button class="ql-link"></button>
-                                                                    <button class="ql-image"></button>
-                                                                </span>
-                                                            </div>
-                                                            <button class="btn btn-primary send-btn">
-                                                                <i class='bx bx-send mr-25'></i>
-                                                                <span class="d-none d-sm-inline"> Send</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         <!--/ Detailed Email View -->

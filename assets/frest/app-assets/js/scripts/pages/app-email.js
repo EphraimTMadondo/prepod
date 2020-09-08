@@ -187,6 +187,7 @@ $(function () {
   email_app_list.find('.email-user-list li').on('click', function () {
     var $this = $(this)
     var mail_id = $this.data('mail_id');
+    var group = $this.data('group');
       $.get(admin_url + 'mailbox/outbox/' + mail_id).done(function(response) {
         var mail = JSON.parse(response);
         email_app_details.find('#mail-title').text(mail.title);
@@ -355,6 +356,20 @@ $(function () {
 
   // On compose btn clik of compose mail visible and sidebar left hide
   $('.compose-btn').on('click', function () {
+    userNewMailSideBar.addClass('show');
+    appContentOverlay.addClass('show');
+    sideBarLeft.removeClass('show');
+  });
+
+  // On reply btn clik 
+  $('.mail-reply').on('click', function () {
+    userNewMailSideBar.addClass('show');
+    appContentOverlay.addClass('show');
+    sideBarLeft.removeClass('show');
+  });
+
+  // On forward btn clik 
+  $('.mail-forward').on('click', function () {
     userNewMailSideBar.addClass('show');
     appContentOverlay.addClass('show');
     sideBarLeft.removeClass('show');
