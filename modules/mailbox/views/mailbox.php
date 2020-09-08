@@ -379,9 +379,9 @@
                                                                 </div>
                                                             </div>
                                                             <div class="media-body mt-25">
-                                                                <span class="text-primary">Elnora Reese</span>
-                                                                <span class="d-sm-inline d-none">&lt;elnora@gmail.com&gt;</span>
-                                                                <small class="text-muted d-block">to Lois Jimenez</small>
+                                                                <span class="text-primary" id="sender-name">....</span>
+                                                                <span class="d-sm-inline d-none" id="to-email">...</span>
+                                                                <small class="text-muted d-block" id="cc">..</small>
                                                             </div>
                                                         </div>
                                                         <div class="information d-sm-flex d-none align-items-center">
@@ -415,17 +415,10 @@
                                                             <div class="card-body py-1" id="mail-body">
                                                                 
                                                             </div>
-                                                            <div class="card-footer pt-0 border-top">
+                                                            <div class="card-footer pt-0 border-top" id="attachments">
                                                                 <label class="sidebar-label">Attached Files</label>
-                                                                <ul class="list-unstyled mb-0">
-                                                                    <li class="cursor-pointer pb-25">
-                                                                        <img src="../../../app-assets/images/icon/psd.png" height="30" alt="psd.png">
-                                                                        <small class="text-muted ml-1 attchement-text">uikit-design.psd</small>
-                                                                    </li>
-                                                                    <li class="cursor-pointer">
-                                                                        <img src="../../../app-assets/images/icon/sketch.png" height="30" alt="sketch.png">
-                                                                        <small class="text-muted ml-1 attchement-text">uikit-design.sketch</small>
-                                                                    </li>
+                                                                <ul class="list-unstyled mb-0" id="attachment-list">
+                                                                    
                                                                 </ul>
                                                             </div>
                                                         </div>

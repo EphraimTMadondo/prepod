@@ -192,6 +192,20 @@ $(function () {
         email_app_details.find('#mail-title').text(mail.title);
         email_app_details.find('#mail-body').html(mail.inbox.body);
         email_app_details.find('#mail-date').html(mail.inbox.date_sent);
+        email_app_details.find('#sender-name').html(mail.inbox.sender-name);
+        email_app_details.find('#to-email').html("to &lt;"+ mail.inbox.to +"&gt;");
+        email_app_details.find('#cc').html(mail.inbox.cc);
+        if(mail.inbox.has_attachment){
+            mail.attachments.forEach(attachment => {
+              email_app_details.find('#attachment-list').append('
+                <li class="cursor-pointer">\n
+                    <img src="'+base_url+'assets/frest/app-assets/images/icon/'+attachment.file_type+'" height="30" alt="'+attachment.file_name+'">\n
+                    <small class="text-muted ml-1 attchement-text">'+attachment.file_name+'</small>\n
+                </li>\n
+              ');
+            });
+          email_app_details.find('#attachments').removeClass('hide');
+        }
         email_app_details.toggleClass('show');
     });
   });
