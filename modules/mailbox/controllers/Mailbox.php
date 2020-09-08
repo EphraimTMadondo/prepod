@@ -114,6 +114,7 @@ class Mailbox extends AdminController
         $data['type'] = 'outbox';
         $data['attachments'] = $this->mailbox_model->get_mail_attachment($id,'outbox');
         $data['staff_email'] = get_staff_email_by_id($inbox->sender_staff_id);
+        $data['staff_profile_image'] = staff_profile_image($inbox->sender_staff_id, ['mr-2 rounded-circle',], '', ['width' => '30', 'height' => '30', 'alt' => 'avtar img holder']);
         echo json_encode($data);     
     }
 

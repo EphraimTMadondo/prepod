@@ -374,8 +374,8 @@
                                                     <div id="headingCollapse7" class="card-header d-flex justify-content-between align-items-center" data-toggle="collapse" role="tab" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
                                                         <div class="collapse-title media">
                                                             <div class="pr-1">
-                                                                <div class="avatar mr-75">
-                                                                    <img src="../../../app-assets/images/portrait/small/avatar-s-18.jpg" alt="avtar img holder" width="30" height="30">
+                                                                <div class="avatar mr-75" id="profile-image">
+                                                                    <img src="<?=base_url()?>assets/frest/app-assets/images/portrait/small/avatar-s-18.jpg" alt="avtar img holder" width="30" height="30">
                                                                 </div>
                                                             </div>
                                                             <div class="media-body mt-25">
