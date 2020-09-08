@@ -197,12 +197,10 @@ $(function () {
         email_app_details.find('#cc').html(mail.inbox.cc);
         if(mail.inbox.has_attachment){
             mail.attachments.forEach(attachment => {
-              email_app_details.find('#attachment-list').append('
-                <li class="cursor-pointer">\n
-                    <img src="'+base_url+'assets/frest/app-assets/images/icon/'+attachment.file_type+'" height="30" alt="'+attachment.file_name+'">\n
-                    <small class="text-muted ml-1 attchement-text">'+attachment.file_name+'</small>\n
-                </li>\n
-              ');
+              email_app_details.find('#attachment-list').append('<li class="cursor-pointer">\n'+
+                    '<img src="'+base_url+'assets/frest/app-assets/images/icon/'+attachment.file_type+'" height="30" alt="'+attachment.file_name+'">\n'+
+                    '<small class="text-muted ml-1 attchement-text">'+attachment.file_name+'</small>\n'+
+                '</li>\n');
             });
           email_app_details.find('#attachments').removeClass('hide');
         }
