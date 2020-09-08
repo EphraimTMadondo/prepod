@@ -40,8 +40,6 @@ function reload_mailbox_tables() {
     });
 }
 
-
-
 /**
  * Update multi-email 
  */
