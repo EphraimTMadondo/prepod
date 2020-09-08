@@ -56,7 +56,7 @@ function update_mass(rows, action, value){
 * Get email details 
 */
 function get_mail_outbox($id){
-   $.post(admin_url + 'mailbox/outbox/' + $id).done(function(response) {
+   $.get(admin_url + 'mailbox/outbox/' + $id).done(function(response) {
       response = JSON.parse(response);
       return response;
   });
