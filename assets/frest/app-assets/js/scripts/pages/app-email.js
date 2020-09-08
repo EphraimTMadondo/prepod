@@ -193,6 +193,12 @@ $(function () {
         email_app_details.find('#staff-email').html("&lt;" + mail.staff_email + "&gt;");
         email_app_details.find('#to').html('<b>to:</b> ' + mail.inbox.to);
         email_app_details.find('#cc').html('<b>cc:</b> ' + mail.inbox.cc);
+
+        email_app_details.find('#mail-reply').attr('data-group' , mail.group);
+        email_app_details.find('#mail-forward').attr('data-group' , mail.group);
+        email_app_details.find('#mail-reply').attr('data-type' , mail.type);
+        email_app_details.find('#mail-forward').attr('data-type' , mail.type);
+
         if(mail.inbox.has_attachment){
             mail.attachments.forEach(attachment => {
               email_app_details.find('#attachment-list').append('<li class="cursor-pointer">\n'+
@@ -358,16 +364,32 @@ $(function () {
 
   // On reply btn clik 
   $('#mail-reply').on('click', function () {
-    userNewMailSideBar.addClass('show');
-    appContentOverlay.addClass('show');
-    sideBarLeft.removeClass('show');
+    var $this = $(this)
+    var mail_id = $this.data('mail_id');
+    var group = $this.data('group');
+    var type = $this.data('type');
+    $.get(admin_url + 'mailbox/reply/' + mail_id + '/' + 'reply/' + type).done(function(response) {
+      var mail = JSON.parse(response);
+      console.log(mail);
+      userNewMailSideBar.addClass('show');
+      appContentOverlay.addClass('show');
+      sideBarLeft.removeClass('show');
+    });
   });
 
   // On forward btn clik 
   $('#mail-forward').on('click', function () {
-    userNewMailSideBar.addClass('show');
-    appContentOverlay.addClass('show');
-    sideBarLeft.removeClass('show');
+    var $this = $(this)
+    var mail_id = $this.data('mail_id');
+    var group = $this.data('group');
+    var type = $this.data('type');
+    $.get(admin_url + 'mailbox/reply/' + mail_id + '/' + 'forward/' + type).done(function(response) {
+      var mail = JSON.parse(response);
+      console.log(mail);
+      userNewMailSideBar.addClass('show');
+      appContentOverlay.addClass('show');
+      sideBarLeft.removeClass('show');
+    });
   });
 
   // stop propogation on dropdown

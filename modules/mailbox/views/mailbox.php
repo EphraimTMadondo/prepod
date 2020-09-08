@@ -436,22 +436,5 @@
 </div>
 <!-- END: Content-->
 <?php init_tail('mailbox'); ?>
-<script type="text/javascript">
-	"use strict";
-
-    // $(function(){
-    //     //Added by Ephraim
-    //     $.ajax({
-    //         metho: "POST",
-    //         url:admin_url + 'mailbox/table/<?php //echo $group;?>'
-    //     }).done(function(response){
-    //         var data = JSON.parse(response);
-    //         var aaData = data["aaData"];
-    //         aaData.map(row => {
-    //             $('.users-list-wrapper').append(row);
-    //         });
-    //     })
-    // });
-</script>
 </body>
 </html>
