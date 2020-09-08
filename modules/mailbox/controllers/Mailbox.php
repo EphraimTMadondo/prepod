@@ -113,6 +113,7 @@ class Mailbox extends AdminController
         $data['inbox'] = $inbox;
         $data['type'] = 'outbox';
         $data['attachments'] = $this->mailbox_model->get_mail_attachment($id,'outbox');
+        $data['staff_email'] = get_staff_email_by_id($inbox->sender_staff_id);
         echo json_encode($data);     
     }
 
