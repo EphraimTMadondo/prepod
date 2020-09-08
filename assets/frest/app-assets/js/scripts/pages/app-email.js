@@ -389,7 +389,7 @@ $(function () {
     var mail_id = $this.data('mail_id');
     var group = $this.data('group');
     var type = $this.data('type');
-    $.get(admin_url + 'mailbox/forward/' + mail_id + '/' + 'forward/' + type).done(function(response) {
+    $.get(admin_url + 'mailbox/reply/' + mail_id + '/' + 'forward/' + type).done(function(response) {
       var result = JSON.parse(response);
       $('#emailSubject').val(result.mail.subject);
 
