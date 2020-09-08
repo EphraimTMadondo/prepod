@@ -51,18 +51,6 @@ function update_mass(rows, action, value){
   update_field(group, action, value, lstid);
 }
 
-
-/**
-* Get email details 
-*/
-function get_mail_outbox($id){
-   $.get(admin_url + 'mailbox/outbox/' + $id).done(function(response) {
-      response = JSON.parse(response);
-      console.log(response);
-      return response;
-  });
-}
-
 $(function () {
   "use strict";
   // variables
@@ -199,12 +187,13 @@ $(function () {
   email_app_list.find('.email-user-list li').on('click', function () {
     var $this = $(this)
     var mail_id = $this.data('mail_id');
-    var mail = get_mail_outbox(mail_id);
-
-    email_app_details.find('#mail-title').text(mail.title);
-    email_app_details.find('#mail-body').html(mail.inbox.body);
-    email_app_details.find('#mail-date').html(mail.inbox.date_sent);
-    email_app_details.toggleClass('show');
+      $.get(admin_url + 'mailbox/outbox/' + mail_id).done(function(response) {
+        var mail = JSON.parse(response);
+        email_app_details.find('#mail-title').text(mail.title);
+        email_app_details.find('#mail-body').html(mail.inbox.body);
+        email_app_details.find('#mail-date').html(mail.inbox.date_sent);
+        email_app_details.toggleClass('show');
+    });
   });
 
   // on click of go button or inbox btn get back to inbox
