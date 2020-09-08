@@ -85,6 +85,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-kanban.js'></script>\n";
       break;
       case "mailbox":
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
          echo "<script src='".module_dir_url('mailbox', 'assets/js/mailbox_js.js')."'></script>\n";
       break;
       default:

@@ -40,7 +40,7 @@ foreach ($rResult as $aRow) {
         $has_attachment = '<i class="bx bx-paperclip mr-50"></i>';
     }
 
-    echo '<li class="media mail-read" >
+    echo '<li class="media mail-read">
         <div class="user-action">
             <div class="checkbox-con mr-25">
                 <div style="margin-top:-10" class="checkbox checkbox-shadow checkbox-sm">
