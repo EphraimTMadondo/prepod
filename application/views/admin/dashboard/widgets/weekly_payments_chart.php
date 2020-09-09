@@ -30,7 +30,7 @@
                         <?php } ?>
                      </select>
                    <?php } ?>
-                  <div class="height-300">
+                  <div class="height-200">
                      <canvas id="weekly-payment-statistics"></canvas>
                   </div>
                    <div class="clearfix"></div>
