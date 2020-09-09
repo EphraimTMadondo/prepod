@@ -8,8 +8,6 @@
         var leads_chart = $('#leads_status_stats');
         var projects_chart = $('#projects_status_stats');
 
-        console.log({tickets_chart_departments, tickets_chart_status, leads_chart, projects_chart});
-
         if (tickets_chart_departments.length > 0) {
             // Tickets awaiting reply by department chart
             var tickets_dep_chart = new Chart(tickets_chart_departments, {
@@ -55,7 +53,13 @@
                }
            });
         }
-        
+
+        // Payments statistics
+        init_weekly_payment_statistics( <?php echo $weekly_payment_stats; ?> );
+        $('select[name="currency"]').on('change', function() {
+            init_weekly_payment_statistics();
+        });
+
         $( "[data-container]" ).sortable({
             connectWith: "[data-container]",
             helper:'clone',
@@ -176,13 +180,6 @@
         $(window).on('resize', function(){
             $('.horizontal-scrollable-tabs ul.nav-tabs-horizontal').removeAttr('style');
             fix_user_data_widget_tabs();
-        });
-        // Payments statistics
-        // init_weekly_payment_statistics( <?php echo $weekly_payment_stats; ?> );
-        init_weekly_payment_statistics2( <?php echo $weekly_payment_stats; ?> );
-        $('select[name="currency"]').on('change', function() {
-            //init_weekly_payment_statistics();
-            init_weekly_payment_statistics2();
         });
     });
     function fix_user_data_widget_tabs(){
