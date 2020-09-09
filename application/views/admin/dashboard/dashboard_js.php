@@ -3,6 +3,59 @@
     var weekly_payments_statistics;
     var user_dashboard_visibility = <?php echo $user_dashboard_visibility; ?>;
     $(function() {
+        var tickets_chart_departments = $('#tickets-awaiting-reply-by-department');
+        var tickets_chart_status = $('#tickets-awaiting-reply-by-status');
+        var leads_chart = $('#leads_status_stats');
+        var projects_chart = $('#projects_status_stats');
+
+        console.log({tickets_chart_departments, tickets_chart_status, leads_chart, projects_chart});
+
+        if (tickets_chart_departments.length > 0) {
+            // Tickets awaiting reply by department chart
+            var tickets_dep_chart = new Chart(tickets_chart_departments, {
+                type: 'doughnut',
+                data: <?php echo $tickets_awaiting_reply_by_department; ?>,
+            });
+        }
+        if (tickets_chart_status.length > 0) {
+            // Tickets awaiting reply by department chart
+            new Chart(tickets_chart_status, {
+                type: 'doughnut',
+                data: <?php echo $tickets_reply_by_status; ?>,
+                options: {
+                   onClick:function(evt){
+                    onChartClickRedirect(evt,this);
+                }
+            },
+        });
+        }
+        if (leads_chart.length > 0) {
+            // Leads overview status
+            new Chart(leads_chart, {
+                type: 'doughnut',
+                data: <?php echo $leads_status_stats; ?>,
+                options:{
+                    maintainAspectRatio:false,
+                    onClick:function(evt){
+                        onChartClickRedirect(evt,this);
+                    }
+                }
+            });
+        }
+        if(projects_chart.length > 0){
+            // Projects statuses
+            new Chart(projects_chart, {
+                type: 'doughnut',
+                data: <?php echo $projects_status_stats; ?>,
+                options: {
+                    maintainAspectRatio:false,
+                    onClick:function(evt){
+                       onChartClickRedirect(evt,this);
+                   }
+               }
+           });
+        }
+        
         $( "[data-container]" ).sortable({
             connectWith: "[data-container]",
             helper:'clone',
@@ -112,59 +165,6 @@
             }
         });
     });
-
-        var tickets_chart_departments = $('#tickets-awaiting-reply-by-department');
-        var tickets_chart_status = $('#tickets-awaiting-reply-by-status');
-        var leads_chart = $('#leads_status_stats');
-        var projects_chart = $('#projects_status_stats');
-
-        console.log({tickets_chart_departments, tickets_chart_status, leads_chart, projects_chart});
-
-        if (tickets_chart_departments.length > 0) {
-            // Tickets awaiting reply by department chart
-            var tickets_dep_chart = new Chart(tickets_chart_departments, {
-                type: 'doughnut',
-                data: <?php echo $tickets_awaiting_reply_by_department; ?>,
-            });
-        }
-        if (tickets_chart_status.length > 0) {
-            // Tickets awaiting reply by department chart
-            new Chart(tickets_chart_status, {
-                type: 'doughnut',
-                data: <?php echo $tickets_reply_by_status; ?>,
-                options: {
-                   onClick:function(evt){
-                    onChartClickRedirect(evt,this);
-                }
-            },
-        });
-        }
-        if (leads_chart.length > 0) {
-            // Leads overview status
-            new Chart(leads_chart, {
-                type: 'doughnut',
-                data: <?php echo $leads_status_stats; ?>,
-                options:{
-                    maintainAspectRatio:false,
-                    onClick:function(evt){
-                        onChartClickRedirect(evt,this);
-                    }
-                }
-            });
-        }
-        if(projects_chart.length > 0){
-            // Projects statuses
-            new Chart(projects_chart, {
-                type: 'doughnut',
-                data: <?php echo $projects_status_stats; ?>,
-                options: {
-                    maintainAspectRatio:false,
-                    onClick:function(evt){
-                       onChartClickRedirect(evt,this);
-                   }
-               }
-           });
-        }
 
         if($(window).width() < 500) {
             // Fix for small devices weekly payment statistics
