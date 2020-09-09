@@ -22,8 +22,8 @@ if (app.options.enable_google_picker == '1') {
 }
 
 // Set dropzone not auto discover
-Dropzone && Dropzone.options.newsFeedDropzone = false;
-Dropzone &7 Dropzone.options.salesUpload = false;
+Dropzone.options.newsFeedDropzone = false;
+Dropzone.options.salesUpload = false;
 
 // Check for desktop notifications permissions
 if (("Notification" in window) && app.options.desktop_notifications == '1') {
