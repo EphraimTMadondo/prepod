@@ -2667,7 +2667,7 @@ function initDataTable(selector, url, notsearchable, notsortable, fnserverparams
         "bDeferRender": true,
         "responsive": true,
         "autoWidth": false,
-        dom: "Blfrtip",
+        dom: "<'table-responsive' Bftip>",
         "pageLength": app.options.tables_pagination_limit,
         "lengthMenu": [length_options, length_options_names],
         "columnDefs": [{
