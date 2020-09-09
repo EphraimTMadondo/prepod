@@ -11,13 +11,10 @@
                <div class="widget-dragger"></div>
                <div class="col-md-12">
                   <?php if(has_permission('reports','','view')){ ?>
-                  <a href="<?php echo admin_url('reports/sales'); ?>" class="pull-right mtop5"><?php echo _l('home_stats_full_report'); ?></a>
+                  <a href="<?php echo admin_url('reports/sales'); ?>" class="float-right"><?php echo _l('home_stats_full_report'); ?></a>
                   <div class="clearfix"></div>
                   <?php } ?>
                   <div class="clearfix"></div>
-                  <div class="row mtop5">
-                     <hr class="hr-panel-heading-dashboard">
-                  </div>
                   <?php if (is_using_multiple_currencies()) { ?>
                     <select class="selectpicker pull-left mbot15" name="currency" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                        <?php foreach($currencies as $currency){
