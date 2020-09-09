@@ -191,7 +191,6 @@
     }
     function init_weekly_payment_statistics(data) {
         if ($('#weekly-payment-statistics').length > 0) {
-
             if (typeof(weekly_payments_statistics) !== 'undefined') {
                 weekly_payments_statistics.destroy();
             }
