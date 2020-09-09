@@ -14,6 +14,7 @@
     <link rel="shortcut icon" id="favicon" href="https://worksuite.app/prepod/uploads/company/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
+    <?php echo app_compile_css(); ?>
     <!-- BEGIN: Vendor CSS-->
     <?php
       switch($page)
