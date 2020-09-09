@@ -30,9 +30,9 @@
                         <?php } ?>
                      </select>
                    <?php } ?>
-                   <!--<canvas height="130" class="weekly-payments-chart-dashboard" id="weekly-payment-statistics"></canvas>
-                   <p>Hello</p>-->
-                   <div id="weekly-payment-statistics2"></div>
+                  <div class="height-300">
+                     <canvas id="weekly-payment-statistics"></canvas>
+                  </div>
                    <div class="clearfix"></div>
                 </div>
              </div>
@@ -41,4 +41,3 @@
     </div>
     <?php } ?>
  </div>
-
