@@ -236,7 +236,7 @@
                                         </div>
                                         <fieldset class="form-group position-relative has-icon-left m-0 flex-grow-1">
                                             <input type="text" class="form-control todo-search" id="todo-search" placeholder="Search Task">
-                                            <div class="form-control-position">
+                                            <div class="form-control-position" style="padding-top:8px">
                                                 <i class="bx bx-search"></i>
                                             </div>
                                         </fieldset>
