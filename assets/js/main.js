@@ -2667,65 +2667,6 @@ function initDataTable(selector, url, notsearchable, notsortable, fnserverparams
         "bDeferRender": true,
         "responsive": true,
         "autoWidth": false,
-        "pageLength": app.options.tables_pagination_limit,
-        "lengthMenu": [length_options, length_options_names],
-        "columnDefs": [{
-            "searchable": false,
-            "targets": notsearchable,
-        }, {
-            "sortable": false,
-            "targets": notsortable
-        }],
-        "fnDrawCallback": function(oSettings) {
-            _table_jump_to_page(this, oSettings);
-            if (oSettings.aoData.length === 0) {
-                $(oSettings.nTableWrapper).addClass('app_dt_empty');
-            } else {
-                $(oSettings.nTableWrapper).removeClass('app_dt_empty');
-            }
-        },
-        "fnCreatedRow": function(nRow, aData, iDataIndex) {
-            // If tooltips found
-            $(nRow).attr('data-title', aData.Data_Title);
-            $(nRow).attr('data-toggle', aData.Data_Toggle);
-        },
-        "initComplete": function(settings, json) {
-            var t = this;
-            var $btnReload = $('.btn-dt-reload');
-            $btnReload.attr('data-toggle', 'tooltip');
-            $btnReload.attr('title', app.lang.dt_button_reload);
-
-            var $btnColVis = $('.dt-column-visibility');
-            $btnColVis.attr('data-toggle', 'tooltip');
-            $btnColVis.attr('title', app.lang.dt_button_column_visibility);
-
-            if (t.hasClass('scroll-responsive') || app.options.scroll_responsive_tables == 1) {
-                t.wrap('<div class="table-responsive"></div>');
-            }
-
-            var dtEmpty = t.find('.dataTables_empty');
-            if (dtEmpty.length) {
-                dtEmpty.attr('colspan', t.find('thead th').length);
-            }
-
-            // Hide mass selection because causing issue on small devices
-            if (is_mobile() && $(window).width() < 400 && t.find('tbody td:first-child input[type="checkbox"]').length > 0) {
-                t.DataTable().column(0).visible(false, false).columns.adjust();
-                $("a[data-target*='bulk_actions']").addClass('hide');
-            }
-
-            t.parents('.table-loading').removeClass('table-loading');
-            t.removeClass('dt-table-loading');
-            var th_last_child = t.find('thead th:last-child');
-            var th_first_child = t.find('thead th:first-child');
-            if (th_last_child.text().trim() == app.lang.options) {
-                th_last_child.addClass('not-export');
-            }
-            if (th_first_child.find('input[type="checkbox"]').length > 0) {
-                th_first_child.addClass('not-export');
-            }
-            mainWrapperHeightFix();
-        },
         "order": defaultorder,
         "ajax": {
             "url": url,
