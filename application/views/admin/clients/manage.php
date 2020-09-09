@@ -37,150 +37,92 @@
                      ?>
                </div>
                <div class="card" style="margin-top: 20px;">
-                  <div class="panel-body">
+                  <div class="card-body">
                      <div class="_buttons">
                         <?php if (has_permission('customers','','create')) { ?>
-                        <a href="<?php echo admin_url('clients/client'); ?>" class="btn btn-info mright5 test pull-left display-block">
+                        <a href="<?php echo admin_url('clients/client'); ?>" class="btn btn-primary mr-1 mb-1">
                         <?php echo _l('new_client'); ?></a>
-                        <a href="<?php echo admin_url('clients/import'); ?>" class="btn btn-info pull-left display-block mright5 hidden-xs">
+                        <a href="<?php echo admin_url('clients/import'); ?>"  class="btn btn-primary mr-1 mb-1">
                         <?php echo _l('import_customers'); ?></a>
                         <?php } ?>
-                        <a href="<?php echo admin_url('clients/all_contacts'); ?>" class="btn btn-info pull-left display-block mright5">
+                        <a href="<?php echo admin_url('clients/all_contacts'); ?>"  class="btn btn-primary mr-1 mb-1">
                         <?php echo _l('customer_contacts'); ?></a>
-                        <div class="visible-xs">
-                           <div class="clearfix"></div>
-                        </div>
-                        <div class="btn-group pull-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fa fa-filter" aria-hidden="true"></i>
-                           </button>
-                           <ul class="dropdown-menu dropdown-menu-left" style="width:300px;">
-                              <li class="active"><a href="#" data-cview="all" onclick="dt_custom_view('','.table-clients',''); return false;"><?php echo _l('customers_sort_all'); ?></a>
-                              </li>
-                              <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
-                              <li class="divider"></li>
-                              <li>
-                                 <a href="#" data-cview="requires_registration_confirmation" onclick="dt_custom_view('requires_registration_confirmation','.table-clients','requires_registration_confirmation'); return false;">
-                                 <?php echo _l('customer_requires_registration_confirmation'); ?>
+                        <div class="btn-group mb-1 float-right">
+                           <div class="dropdown">
+                              <button class="btn btn-light dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Filters
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                 <a href="#" class="dropdown-item" data-cview="all" onclick="dt_custom_view('','.table-clients',''); return false;"><?php echo _l('customers_sort_all'); ?></a>
+                                 <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
+                                 <div class="dropdown-divider"></div>
+                                 <a href="#" class="dropdown-item" data-cview="requires_registration_confirmation" onclick="dt_custom_view('requires_registration_confirmation','.table-clients','requires_registration_confirmation'); return false;">
+                                    <?php echo _l('customer_requires_registration_confirmation'); ?>
                                  </a>
-                              </li>
-                              <?php } ?>
-                              <li class="divider"></li>
-                              <li>
-                                 <a href="#" data-cview="my_customers" onclick="dt_custom_view('my_customers','.table-clients','my_customers'); return false;">
+                                 <?php } ?>
+                                 <div class="dropdown-divider"></div>
+                                 <a href="#"  class="dropdown-item" class="dropdown-item" data-cview="my_customers" onclick="dt_custom_view('my_customers','.table-clients','my_customers'); return false;">
                                  <?php echo _l('customers_assigned_to_me'); ?>
                                  </a>
-                              </li>
-                              <li class="divider"></li>
-                              <?php if(count($groups) > 0){ ?>
-                              <li class="dropdown-submenu pull-left groups">
-                                 <a href="#" tabindex="-1"><?php echo _l('customer_groups'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
+                                 <div class="dropdown-divider"></div>
+                                 <?php if(count($groups) > 0){ ?>
+                                 <h6 class="dropdown-header"><?php echo _l('customer_groups'); ?></h6>
                                     <?php foreach($groups as $group){ ?>
-                                    <li><a href="#" data-cview="customer_group_<?php echo $group['id']; ?>" onclick="dt_custom_view('customer_group_<?php echo $group['id']; ?>','.table-clients','customer_group_<?php echo $group['id']; ?>'); return false;"><?php echo $group['name']; ?></a></li>
+                                       <a href="#" class="dropdown-item" data-cview="customer_group_<?php echo $group['id']; ?>" onclick="dt_custom_view('customer_group_<?php echo $group['id']; ?>','.table-clients','customer_group_<?php echo $group['id']; ?>'); return false;"><?php echo $group['name']; ?></a>
                                     <?php } ?>
-                                 </ul>
-                              </li>
-                              <div class="clearfix"></div>
-                              <li class="divider"></li>
-                              <?php } ?>
-                              <?php if(count($countries) > 1){ ?>
-                              <li class="dropdown-submenu pull-left countries">
-                                 <a href="#" tabindex="-1"><?php echo _l('clients_country'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
+                                 <?php } ?>
+                                 <div class="dropdown-divider"></div>
+                                 <?php if(count($countries) > 1){ ?>
+                                 <h6 class="dropdown-item"><?php echo _l('clients_country'); ?></h6>
                                     <?php foreach($countries as $country){ ?>
-                                    <li><a href="#" data-cview="country_<?php echo $country['country_id']; ?>" onclick="dt_custom_view('country_<?php echo $country['country_id']; ?>','.table-clients','country_<?php echo $country['country_id']; ?>'); return false;"><?php echo $country['short_name']; ?></a></li>
+                                       <a href="#" class="dropdown-item" data-cview="country_<?php echo $country['country_id']; ?>" onclick="dt_custom_view('country_<?php echo $country['country_id']; ?>','.table-clients','country_<?php echo $country['country_id']; ?>'); return false;"><?php echo $country['short_name']; ?></a>
                                     <?php } ?>
-                                 </ul>
-                              </li>
-                              <div class="clearfix"></div>
-                              <li class="divider"></li>
-                              <?php } ?>
-                              <li class="dropdown-submenu pull-left invoice">
-                                 <a href="#" tabindex="-1"><?php echo _l('invoices'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
-                                    <?php foreach($invoice_statuses as $status){ ?>
-                                    <li>
-                                       <a href="#" data-cview="invoices_<?php echo $status; ?>" onclick="dt_custom_view('invoices_<?php echo $status; ?>','.table-clients','invoices_<?php echo $status; ?>'); return false;"><?php echo _l('customer_have_invoices_by',format_invoice_status($status,'',false)); ?></a>
-                                    </li>
-                                    <?php } ?>
-                                 </ul>
-                              </li>
-                              <div class="clearfix"></div>
-                              <li class="divider"></li>
-                              <li class="dropdown-submenu pull-left estimate">
-                                 <a href="#" tabindex="-1"><?php echo _l('estimates'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
-                                    <?php foreach($estimate_statuses as $status){ ?>
-                                    <li>
-                                       <a href="#" data-cview="estimates_<?php echo $status; ?>" onclick="dt_custom_view('estimates_<?php echo $status; ?>','.table-clients','estimates_<?php echo $status; ?>'); return false;">
-                                       <?php echo _l('customer_have_estimates_by',format_estimate_status($status,'',false)); ?>
-                                       </a>
-                                    </li>
-                                    <?php } ?>
-                                 </ul>
-                              </li>
-                              <div class="clearfix"></div>
-                              <li class="divider"></li>
-                              <li class="dropdown-submenu pull-left project">
-                                 <a href="#" tabindex="-1"><?php echo _l('projects'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
-                                    <?php foreach($project_statuses as $status){ ?>
-                                    <li>
-                                       <a href="#" data-cview="projects_<?php echo $status['id']; ?>" onclick="dt_custom_view('projects_<?php echo $status['id']; ?>','.table-clients','projects_<?php echo $status['id']; ?>'); return false;">
-                                       <?php echo _l('customer_have_projects_by',$status['name']); ?>
-                                       </a>
-                                    </li>
-                                    <?php } ?>
-                                 </ul>
-                              </li>
-                              <div class="clearfix"></div>
-                              <li class="divider"></li>
-                              <li class="dropdown-submenu pull-left proposal">
-                                 <a href="#" tabindex="-1"><?php echo _l('proposals'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
-                                    <?php foreach($proposal_statuses as $status){ ?>
-                                    <li>
-                                       <a href="#" data-cview="proposals_<?php echo $status; ?>" onclick="dt_custom_view('proposals_<?php echo $status; ?>','.table-clients','proposals_<?php echo $status; ?>'); return false;">
-                                       <?php echo _l('customer_have_proposals_by',format_proposal_status($status,'',false)); ?>
-                                       </a>
-                                    </li>
-                                    <?php } ?>
-                                 </ul>
-                              </li>
-                              <div class="clearfix"></div>
-                              <?php if(count($contract_types) > 0) { ?>
-                              <li class="divider"></li>
-                              <li class="dropdown-submenu pull-left contract_types">
-                                 <a href="#" tabindex="-1"><?php echo _l('contract_types'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
-                                    <?php foreach($contract_types as $type){ ?>
-                                    <li>
-                                       <a href="#" data-cview="contract_type_<?php echo $type['id']; ?>" onclick="dt_custom_view('contract_type_<?php echo $type['id']; ?>','.table-clients','contract_type_<?php echo $type['id']; ?>'); return false;">
-                                       <?php echo _l('customer_have_contracts_by_type',$type['name']); ?>
-                                       </a>
-                                    </li>
-                                    <?php } ?>
-                                 </ul>
-                              </li>
-                              <?php } ?>
-                              <?php if(count($customer_admins) > 0 && (has_permission('customers','','create') || has_permission('customers','','edit'))){ ?>
-                              <div class="clearfix"></div>
-                              <li class="divider"></li>
-                              <li class="dropdown-submenu pull-left responsible_admin">
-                                 <a href="#" tabindex="-1"><?php echo _l('responsible_admin'); ?></a>
-                                 <ul class="dropdown-menu dropdown-menu-left">
+                                 <?php } ?>
+                                 <div class="dropdown-divider"></div>
+                                 <h6 class="dropdown-item"><?php echo _l('invoices'); ?></h6>
+                                 <?php foreach($invoice_statuses as $status){ ?>
+                                    <a href="#"  class="dropdown-item" data-cview="invoices_<?php echo $status; ?>" onclick="dt_custom_view('invoices_<?php echo $status; ?>','.table-clients','invoices_<?php echo $status; ?>'); return false;"><?php echo _l('customer_have_invoices_by',format_invoice_status($status,'',false)); ?></a>
+                                 <?php } ?>
+                                 <div class="dropdown-divider"></div>
+                                 <h6 class="dropdown-item"><?php echo _l('estimates'); ?></h6>
+                                 <?php foreach($estimate_statuses as $status){ ?>
+                                    <a href="#"  class="dropdown-item" data-cview="estimates_<?php echo $status; ?>" onclick="dt_custom_view('estimates_<?php echo $status; ?>','.table-clients','estimates_<?php echo $status; ?>'); return false;">
+                                    <?php echo _l('customer_have_estimates_by',format_estimate_status($status,'',false)); ?>
+                                    </a>
+                                 <?php } ?>
+                                 <div class="dropdown-divider"></div>
+                                 <h6 class="dropdown-item"><?php echo _l('projects'); ?></h6>
+                                 <?php foreach($project_statuses as $status){ ?>
+                                    <a href="#"  class="dropdown-item" data-cview="projects_<?php echo $status['id']; ?>" onclick="dt_custom_view('projects_<?php echo $status['id']; ?>','.table-clients','projects_<?php echo $status['id']; ?>'); return false;">
+                                    <?php echo _l('customer_have_projects_by',$status['name']); ?>
+                                    </a>
+                                 <?php } ?>
+                                 <div class="dropdown-divider"></div>
+                                 <h6 class="dropdown-item"><?php echo _l('proposals'); ?></h6>
+                                 <?php foreach($proposal_statuses as $status){ ?>
+                                    <a href="#"  class="dropdown-item" data-cview="proposals_<?php echo $status['id']; ?>" onclick="dt_custom_view('proposals_<?php echo $status['id']; ?>','.table-clients','proposals_<?php echo $status['id']; ?>'); return false;">
+                                    <?php echo _l('customer_have_proposals_by',$status['name']); ?>
+                                    </a>
+                                 <?php } ?>
+                                 <?php if(count($contract_types) > 0) { ?>
+                                 <div class="dropdown-divider"></div>
+                                 <h6 class="dropdown-item"><?php echo _l('contract_types'); ?></h6>
+                                 <?php foreach($contract_type_statuses as $status){ ?>
+                                    <a href="#"  class="dropdown-item" data-cview="contract_type_<?php echo $status['id']; ?>" onclick="dt_custom_view('contract_type_<?php echo $status['id']; ?>','.table-clients','contract_type_<?php echo $status['id']; ?>'); return false;">
+                                    <?php echo _l('customer_have_contracts_by_type',$status['name']); ?>
+                                    </a>
+                                 <?php } ?>
+                                 <?php if(count($customer_admins) > 0 && (has_permission('customers','','create') || has_permission('customers','','edit'))){ ?>
+                                 <div class="dropdown-divider"></div>
+                                 <h6 class="dropdown-item responsible_admin"><?php echo _l('responsible_admin'); ?></h6>
                                     <?php foreach($customer_admins as $cadmin){ ?>
-                                    <li>
-                                       <a href="#" data-cview="responsible_admin_<?php echo $cadmin['staff_id']; ?>" onclick="dt_custom_view('responsible_admin_<?php echo $cadmin['staff_id']; ?>','.table-clients','responsible_admin_<?php echo $cadmin['staff_id']; ?>'); return false;">
+                                       <a href="#"  class="dropdown-item" data-cview="responsible_admin_<?php echo $cadmin['staff_id']; ?>" onclick="dt_custom_view('responsible_admin_<?php echo $cadmin['staff_id']; ?>','.table-clients','responsible_admin_<?php echo $cadmin['staff_id']; ?>'); return false;">
                                        <?php echo get_staff_full_name($cadmin['staff_id']); ?>
                                        </a>
-                                    </li>
                                     <?php } ?>
-                                 </ul>
-                              </li>
-                              <?php } ?>
-                           </ul>
+                                 <?php } ?>
+                              </div>
+                           </div>
                         </div>
                      </div>
                      <div class="clearfix"></div>
