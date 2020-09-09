@@ -348,7 +348,7 @@ function get_datatables_language_array()
         'lengthMenu'        => '_MENU_',
         'loadingRecords'    => _l('dt_loading_records'),
         'processing'        => '<div class="dt-loader"></div>',
-        'search'            => '<div class="input-group"><span class="input-group-prepend"><span class="fa fa-search"></span></span>',
+        'search'            => '<div class="input-group"><div class="input-group-prepend"><button class="btn btn-primary" type="button"><i class="bx bx-search"></i></button></div>',
         'searchPlaceholder' => _l('dt_search'),
         'zeroRecords'       => _l('dt_zero_records'),
         'paginate'          => [
