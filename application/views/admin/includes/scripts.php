@@ -25,7 +25,7 @@
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js?v=2.4.2"></script>
-<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js?v=2.4.2"></script>
 
 <?php
    switch($page)
