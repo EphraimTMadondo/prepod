@@ -27,7 +27,7 @@
          </div>
          <div class="col-md-12">
             <div class="card mtop20 mbot10">
-               <div class="panel-body _buttons">
+               <div class="card-body _buttons">
                   <?php if(has_permission('proposals','','create')){ ?>
                   <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-info pull-left display-block">
                   <?php echo _l('new_proposal'); ?>
@@ -103,7 +103,7 @@
             <div class="row">
                <div class="col-md-12" id="small-table">
                   <div class="card">
-                     <div class="panel-body">
+                     <div class="card-body">
                         <!-- if invoiceid found in url -->
                         <?php echo form_hidden('proposal_id',$proposal_id); ?>
                         <?php
