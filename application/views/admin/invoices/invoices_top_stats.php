@@ -2,7 +2,7 @@
 <div id="stats-top" class="hide">
   <div id="invoices_total"></div>
   <div class="card mtop20">
-    <div class="panel-body">
+    <div class="card-body">
       <?php
       $where_all = '';
       $has_permission_view = has_permission('invoices','','view');

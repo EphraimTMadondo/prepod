@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12">
    <div class="card mtop20 mbot10">
-      <div class="panel-body _buttons">
+      <div class="card-body _buttons">
          <?php $this->load->view('admin/invoices/invoices_top_stats'); ?>
          <?php if(has_permission('invoices','','create')){ ?>
             <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-info pull-left new new-invoice-list mright5"><?php echo _l('create_new_invoice'); ?></a>
@@ -91,7 +91,7 @@
    <div class="row">
       <div class="col-md-12" id="small-table">
          <div class="card">
-            <div class="panel-body">
+            <div class="card-body">
                <!-- if invoiceid found in url -->
                <?php echo form_hidden('invoiceid',$invoiceid); ?>
                <?php $this->load->view('admin/invoices/table_html'); ?>

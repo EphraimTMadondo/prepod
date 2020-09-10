@@ -2,7 +2,7 @@
 <div class="col-md-12 no-padding animated fadeIn">
     <div class="card mtop20">
         <?php echo form_open($formUrl, array('id'=>'schedule_send_form')); ?>
-        <div class="panel-body">
+        <div class="card-body">
             <h4 class="no-margin"><?php echo _l('schedule_email_for', format_invoice_number($invoice->id)); ?></h4>
             <hr class="hr-panel-heading" />
             <div class="row">
