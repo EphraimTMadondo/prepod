@@ -78,24 +78,24 @@
                   <?php echo form_hidden('userid', $client->userid); ?>
                   <div class="clearfix"></div>
                   <?php } ?>
-                     <div class="tab-content">
-                           <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
-                     </div>
+                  <div class="tab-content">
+                        <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
+                  </div>
+                  <?php if($group == 'profile'){ ?>
+                  <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
+                     <button class="btn btn-info only-save customer-form-submiter">
+                     <?php echo _l( 'submit'); ?>
+                     </button>
+                     <?php if(!isset($client)){ ?>
+                     <button class="btn btn-info save-and-add-contact customer-form-submiter">
+                     <?php echo _l( 'save_customer_and_add_contact'); ?>
+                     </button>
+                     <?php } ?>
+                  </div>
+                  <?php } ?>
                </div>
             </div>
          </div>
-         <?php if($group == 'profile'){ ?>
-         <div class="float-right">
-            <button class="btn btn-info only-save customer-form-submiter">
-            <?php echo _l( 'submit'); ?>
-            </button>
-            <?php if(!isset($client)){ ?>
-            <button class="btn btn-info save-and-add-contact customer-form-submiter">
-            <?php echo _l( 'save_customer_and_add_contact'); ?>
-            </button>
-            <?php } ?>
-         </div>
-         <?php } ?>
       </div>
       <?php if($group == 'profile'){ ?>
          <div class="btn-bottom-pusher"></div>
