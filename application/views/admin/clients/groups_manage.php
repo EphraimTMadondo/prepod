@@ -5,7 +5,7 @@
   <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                      <div class="_buttons">
                         <a href="#" class="btn btn-info pull-left" data-toggle="modal" data-target="#customer_group_modal"><?php echo _l('new_customer_group'); ?></a>
