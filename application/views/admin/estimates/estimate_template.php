@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s accounting-template estimate">
-   <div class="panel-body">
+<div class="card accounting-template estimate">
+   <div class="card-body">
       <?php if(isset($estimate)){ ?>
       <?php echo format_estimate_status($estimate->status); ?>
       <hr class="hr-panel-heading" />

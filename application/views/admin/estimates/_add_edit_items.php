@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel-body mtop10">
+<div class="card-body mtop10">
    <div class="row">
       <div class="col-md-4">
           <?php $this->load->view('admin/invoice_items/item_select'); ?>

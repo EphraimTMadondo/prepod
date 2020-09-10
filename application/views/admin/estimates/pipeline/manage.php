@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop20">
-                    <div class="panel-body _buttons">
+                    <div class="card-body _buttons">
                        <?php if(has_permission('estimates','','create')){
                         $this->load->view('admin/estimates/estimates_top_stats');
                     } ?>
@@ -29,7 +31,7 @@
             </div>
             <div class="card animated mtop5 fadeIn">
                 <?php echo form_hidden('estimateid',$estimateid); ?>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="kanban-leads-sort">
