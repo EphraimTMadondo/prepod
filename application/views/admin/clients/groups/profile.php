@@ -4,44 +4,38 @@
    <?php echo form_open($this->uri->uri_string(),array('class'=>'client-form','autocomplete'=>'off')); ?>
    <div class="additional"></div>
    <div class="col-md-12">
-      <div class="horizontal-scrollable-tabs">
-         <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
-         <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
-         <div class="horizontal-tabs">
-            <ul class="nav nav-tabs profile-tabs row customer-profile-tabs nav-tabs-horizontal" role="tablist">
-               <li role="presentation" class="<?php if(!$this->input->get('tab')){echo 'active';}; ?>">
-                  <a href="#contact_info" aria-controls="contact_info" role="tab" data-toggle="tab">
-                  <?php echo _l( 'customer_profile_details'); ?>
-                  </a>
-               </li>
-               <?php
-                  $customer_custom_fields = false;
-                  if(total_rows(db_prefix().'customfields',array('fieldto'=>'customers','active'=>1)) > 0 ){
-                       $customer_custom_fields = true;
-                   ?>
-               <li role="presentation" class="<?php if($this->input->get('tab') == 'custom_fields'){echo 'active';}; ?>">
-                  <a href="#custom_fields" aria-controls="custom_fields" role="tab" data-toggle="tab">
-                  <?php echo hooks()->apply_filters('customer_profile_tab_custom_fields_text', _l( 'custom_fields')); ?>
-                  </a>
-               </li>
-               <?php } ?>
-               <li role="presentation">
-                  <a href="#billing_and_shipping" aria-controls="billing_and_shipping" role="tab" data-toggle="tab">
-                  <?php echo _l( 'billing_shipping'); ?>
-                  </a>
-               </li>
-               <?php hooks()->do_action('after_customer_billing_and_shipping_tab', isset($client) ? $client : false); ?>
-               <?php if(isset($client)){ ?>
-               <li role="presentation">
-                  <a href="#customer_admins" aria-controls="customer_admins" role="tab" data-toggle="tab">
-                  <?php echo _l( 'customer_admins' ); ?>
-                  </a>
-               </li>
-               <?php hooks()->do_action('after_customer_admins_tab',$client); ?>
-               <?php } ?>
-            </ul>
-         </div>
-      </div>
+      <ul class="nav nav-tabs profile-tabs" role="tablist">
+         <li role="presentation" class="nav-item <?php if(!$this->input->get('tab')){echo 'active';}; ?>">
+            <a href="#contact_info"  class="nav-link" aria-controls="contact_info" role="tab" data-toggle="tab">
+            <?php echo _l( 'customer_profile_details'); ?>
+            </a>
+         </li>
+         <?php
+            $customer_custom_fields = false;
+            if(total_rows(db_prefix().'customfields',array('fieldto'=>'customers','active'=>1)) > 0 ){
+                  $customer_custom_fields = true;
+               ?>
+         <li role="presentation" class="nav-item <?php if($this->input->get('tab') == 'custom_fields'){echo 'active';}; ?>">
+            <a href="#custom_fields" class="nav-link" aria-controls="custom_fields" role="tab" data-toggle="tab">
+            <?php echo hooks()->apply_filters('customer_profile_tab_custom_fields_text', _l( 'custom_fields')); ?>
+            </a>
+         </li>
+         <?php } ?>
+         <li role="presentation" class="nav-item ">
+            <a href="#billing_and_shipping"  class="nav-link" aria-controls="billing_and_shipping" role="tab" data-toggle="tab">
+            <?php echo _l( 'billing_shipping'); ?>
+            </a>
+         </li>
+         <?php hooks()->do_action('after_customer_billing_and_shipping_tab', isset($client) ? $client : false); ?>
+         <?php if(isset($client)){ ?>
+         <li role="presentation" class="nav-item ">
+            <a href="#customer_admins"  class="nav-link" aria-controls="customer_admins" role="tab" data-toggle="tab">
+            <?php echo _l( 'customer_admins' ); ?>
+            </a>
+         </li>
+         <?php hooks()->do_action('after_customer_admins_tab',$client); ?>
+         <?php } ?>
+      </ul>
       <div class="tab-content mtop15">
          <?php hooks()->do_action('after_custom_profile_tab_content',isset($client) ? $client : false); ?>
          <?php if($customer_custom_fields) { ?>
