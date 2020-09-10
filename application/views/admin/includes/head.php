@@ -52,6 +52,7 @@
         break;
         default:
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n\t";
         break;
       }
     ?>
