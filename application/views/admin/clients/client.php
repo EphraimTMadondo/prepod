@@ -27,18 +27,6 @@
              </div>
 
          </div>
-         <?php if($group == 'profile'){ ?>
-         <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
-            <button class="btn btn-info only-save customer-form-submiter">
-            <?php echo _l( 'submit'); ?>
-            </button>
-            <?php if(!isset($client)){ ?>
-            <button class="btn btn-info save-and-add-contact customer-form-submiter">
-            <?php echo _l( 'save_customer_and_add_contact'); ?>
-            </button>
-            <?php } ?>
-         </div>
-         <?php } ?>
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
             <div class="card mt-1">
@@ -96,6 +84,18 @@
                </div>
             </div>
          </div>
+         <?php if($group == 'profile'){ ?>
+         <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
+            <button class="btn btn-info only-save customer-form-submiter">
+            <?php echo _l( 'submit'); ?>
+            </button>
+            <?php if(!isset($client)){ ?>
+            <button class="btn btn-info save-and-add-contact customer-form-submiter">
+            <?php echo _l( 'save_customer_and_add_contact'); ?>
+            </button>
+            <?php } ?>
+         </div>
+         <?php } ?>
       </div>
       <?php if($group == 'profile'){ ?>
          <div class="btn-bottom-pusher"></div>
