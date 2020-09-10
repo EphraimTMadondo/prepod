@@ -83,19 +83,13 @@
          </div>
          <?php } ?>
          <div class="col-md-<?php if(isset($client)){echo 9;} else {echo 12;} ?>">
-            <div class="card">
-               <div class="panel-body">
-                  <?php if(isset($client)){ ?>
-                  <?php echo form_hidden('isedit'); ?>
-                  <?php echo form_hidden('userid', $client->userid); ?>
-                  <div class="clearfix"></div>
-                  <?php } ?>
-                  <div>
-                     <div class="tab-content">
-                           <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
-                     </div>
-                  </div>
-               </div>
+            <?php if(isset($client)){ ?>
+               <?php echo form_hidden('isedit'); ?>
+               <?php echo form_hidden('userid', $client->userid); ?>
+               <div class="clearfix"></div>
+            <?php } ?>   
+            <div class="tab-content">
+                  <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
             </div>
          </div>
       </div>
