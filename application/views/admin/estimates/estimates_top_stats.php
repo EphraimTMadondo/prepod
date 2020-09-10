@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div id="stats-top" class="hide">
     <div id="estimates_total"></div>
-    <div class="panel_s">
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-body">
          <div class="_filters _hidden_inputs hidden">
             <?php
             if(isset($estimates_sale_agents)){

@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
    if ($estimate['status'] == $status) { ?>
 <li data-estimate-id="<?php echo $estimate['id']; ?>" class="<?php if($estimate['invoiceid'] != NULL){echo 'not-sortable';} ?>">
-   <div class="panel-body">
+   <div class="card-body">
       <div class="row">
          <div class="col-md-12">
             <h4 class="bold pipeline-heading"><a href="<?php echo admin_url('estimates/list_estimates/'.$estimate['id']); ?>" onclick="estimate_pipeline_open(<?php echo $estimate['id']; ?>); return false;"><?php echo format_estimate_number($estimate['id']); ?></a>
