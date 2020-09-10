@@ -182,7 +182,7 @@
                      </div>
                      <?php } ?>
                      <hr class="hr-panel-heading" />
-                     <a href="#" data-toggle="modal" data-target="#customers_bulk_action" class="bulk-actions-btn table-btn buttons-html5 hide" data-table=".table-clients"><?php echo _l('bulk_actions'); ?></a>
+                     <a href="#" data-toggle="modal" data-target="#customers_ nio no-bpk_action" class="bulk-actions-btn table-btn buttons-html5 hide" data-table=".table-clients"><?php echo _l('bulk_actions'); ?></a>
                      <div class="modal fade bulk_actions" id="customers_bulk_action" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                            <div class="modal-content">
@@ -291,6 +291,10 @@
        $('input[name="exclude_inactive"]').on('change',function(){
            tAPI.ajax.reload();
        });
+       $btnCollection = $('buttons-collection');
+       if($btnCollection.length > 0){
+          $btnCollection .wrap("<div class='btn-group'></div>");
+      }
    });
    
    function customers_bulk_action(event) {
