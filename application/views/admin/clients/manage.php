@@ -6,7 +6,7 @@
       <div class="content-wrapper">
          <div class="row">
             <div class="col-md-12">
-               <div class="card mtop20 _filters _hidden_inputs hidden">
+               <div class="card mt-2 _filters _hidden_inputs hidden">
                   <?php
                      echo form_hidden('my_customers');
                      echo form_hidden('requires_registration_confirmation');
@@ -217,7 +217,7 @@
                         <input type="checkbox" checked id="exclude_inactive" name="exclude_inactive">
                         <label for="exclude_inactive"><?php echo _l('exclude_inactive'); ?> <?php echo _l('clients'); ?></label>
                      </div>
-                     <div class="clearfix mtop20"></div>
+                     <div class="clearfix mt-2"></div>
                      <?php
                         $table_data = array();
                         $_table_data = array(

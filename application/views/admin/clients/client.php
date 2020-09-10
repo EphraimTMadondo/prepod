@@ -5,7 +5,7 @@
   <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-             <div class="card mtop20">
+             <div class="card mt-2">
                 <?php if(isset($client) && $client->registration_confirmed == 0 && is_admin()){ ?>
                    <div class="alert alert-warning">
                       <?php echo _l('customer_requires_registration_confirmation'); ?>
@@ -41,8 +41,8 @@
          <?php } ?>
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
-            <div class="card mbot5">
-               <div class="card-body padding-10">
+            <div class="card mt-1">
+               <div class="card-body p-2">
                   <h4 class="bold">
                      #<?php echo $client->userid . ' ' . $title; ?>
                      <?php if(has_permission('customers','','delete') || is_admin()){ ?>
