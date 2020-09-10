@@ -309,7 +309,7 @@ function render_datatable($headings = [], $class = '', $additional_classes = [''
         $_table_attributes .= $key . '=' . '"' . $val . '" ';
     }
 
-    $table = '<div class="' . $IEfix . '"><table' . $_table_attributes . 'class="dt-table-loading table table-' . $class . '' . $_additional_classes . '">';
+    $table = '<div class="' . $IEfix . '"><table' . $_table_attributes . 'class="dt-table-loading table table-responsive table-' . $class . '' . $_additional_classes . '">';
     $table .= '<thead>';
     $table .= '<tr>';
     foreach ($headings as $heading) {
