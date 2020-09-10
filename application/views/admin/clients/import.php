@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card mtop20">
-          <div class="panel-body">
+          <div class="card-body">
             <?php echo $this->import->downloadSampleFormHtml(); ?>
             <?php echo $this->import->maxInputVarsWarningHtml(); ?>
             <?php if(!$this->import->isSimulation()) { ?>
