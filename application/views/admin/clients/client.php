@@ -85,7 +85,7 @@
             </div>
          </div>
          <?php if($group == 'profile'){ ?>
-         <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
+         <div class="float-right">
             <button class="btn btn-info only-save customer-form-submiter">
             <?php echo _l( 'submit'); ?>
             </button>
