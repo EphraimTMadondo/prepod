@@ -82,7 +82,8 @@
                         <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
                   </div>
                   <?php if($group == 'profile'){ ?>
-                  <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
+                  <div class="btn-bottom-toolbar btn-toolbar-container-out text-right mt-4">
+                     <hr class="hr-panel-heading" />
                      <button class="btn btn-info only-save customer-form-submiter">
                      <?php echo _l( 'submit'); ?>
                      </button>
