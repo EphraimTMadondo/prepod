@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card mtop20">
-          <div class="panel-body">
+          <div class="card-body">
             <?php if(isset($consent_purposes)) { ?>
             <div class="row mbot15">
               <div class="col-md-3 contacts-filter-column">

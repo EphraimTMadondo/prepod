@@ -42,7 +42,7 @@
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
             <div class="card mbot5">
-               <div class="panel-body padding-10">
+               <div class="card-body padding-10">
                   <h4 class="bold">
                      #<?php echo $client->userid . ' ' . $title; ?>
                      <?php if(has_permission('customers','','delete') || is_admin()){ ?>
