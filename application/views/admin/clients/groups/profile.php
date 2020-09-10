@@ -86,7 +86,7 @@
                      if(is_admin() || get_option('staff_members_create_inline_customer_groups') == '1'){
                       echo render_select_with_input_group('groups_in[]',$groups,array('id','name'),'customer_groups',$selected,'<a href="#" data-toggle="modal" data-target="#customer_group_modal"><i class="fa fa-plus"></i></a>',array('multiple'=>true,'data-actions-box'=>true),array(),'','',false);
                       } else {
-                        echo render_select('groups_in[]',$groups,array('id','name'),'customer_groups',$selected,array('multiple'=>true,'data-actions-box'=>true),array(),'','',false);
+                        echo render_select('groups_in[]',$groups,array('id','name'),'customer_groups',$selected,array('multiple'=>true,'data-actions-box'=>true),array(),'','select2',false);
                       }
                      ?>
                   <?php if(!isset($client)){ ?>
@@ -104,13 +104,13 @@
                          }
                       }
                      }
-                            // Do not remove the currency field from the customer profile!
-                     echo render_select('default_currency',$currencies,array('id','name','symbol'),'invoice_add_edit_currency',$selected,$s_attrs); ?>
+                     // Do not remove the currency field from the customer profile!
+                     echo render_select('default_currency',$currencies,array('id','name','symbol'),'invoice_add_edit_currency',$selected,$s_attrs,'', 'select2'); ?>
                   <?php if(get_option('disable_language') == 0){ ?>
                   <div class="form-group select-placeholder">
                      <label for="default_language" class="control-label"><?php echo _l('localization_default_language'); ?>
                      </label>
-                     <select name="default_language" id="default_language" class="form-control selectpicker" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                     <select name="default_language" id="default_language" class="form-control select2" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                         <option value=""><?php echo _l('system_default_string'); ?></option>
                         <?php foreach($this->app->get_available_languages() as $availableLanguage){
                            $selected = '';
@@ -138,7 +138,7 @@
                   <?php $countries= get_all_countries();
                      $customer_default_country = get_option('customer_default_country');
                      $selected =( isset($client) ? $client->country : $customer_default_country);
-                     echo render_select( 'country',$countries,array( 'country_id',array( 'short_name')), 'clients_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex')));
+                     echo render_select( 'country',$countries,array( 'country_id',array( 'short_name')), 'clients_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex')), [], '', 'select2');
                      ?>
                </div>
             </div>
@@ -196,7 +196,7 @@
                         <?php $value=( isset($client) ? $client->billing_zip : ''); ?>
                         <?php echo render_input( 'billing_zip', 'billing_zip',$value); ?>
                         <?php $selected=( isset($client) ? $client->billing_country : '' ); ?>
-                        <?php echo render_select( 'billing_country',$countries,array( 'country_id',array( 'short_name')), 'billing_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex'))); ?>
+                        <?php echo render_select( 'billing_country',$countries,array( 'country_id',array( 'short_name')), 'billing_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex')), [], '', 'select2'); ?>
                      </div>
                      <div class="col-md-6">
                         <h4 class="no-mtop">
@@ -213,7 +213,7 @@
                         <?php $value=( isset($client) ? $client->shipping_zip : ''); ?>
                         <?php echo render_input( 'shipping_zip', 'shipping_zip',$value); ?>
                         <?php $selected=( isset($client) ? $client->shipping_country : '' ); ?>
-                        <?php echo render_select( 'shipping_country',$countries,array( 'country_id',array( 'short_name')), 'shipping_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex'))); ?>
+                        <?php echo render_select( 'shipping_country',$countries,array( 'country_id',array( 'short_name')), 'shipping_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex')), [], '', 'select2'); ?>
                      </div>
                      <?php if(isset($client) &&
                         (total_rows(db_prefix().'invoices',array('clientid'=>$client->userid)) > 0 || total_rows(db_prefix().'estimates',array('clientid'=>$client->userid)) > 0 || total_rows(db_prefix().'creditnotes',array('clientid'=>$client->userid)) > 0)){ ?>
@@ -259,7 +259,7 @@
                foreach($customer_admins as $c_admin){
                   array_push($selected,$c_admin['staff_id']);
                }
-               echo render_select('customer_admins[]',$staff,array('staffid',array('firstname','lastname')),'',$selected,array('multiple'=>true),array(),'','',false); ?>
+               echo render_select('customer_admins[]',$staff,array('staffid',array('firstname','lastname')),'',$selected,array('multiple'=>true),array(),'','select2',false); ?>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
