@@ -291,7 +291,7 @@
        $('input[name="exclude_inactive"]').on('change',function(){
            tAPI.ajax.reload();
        });
-       $btnCollection = $('buttons-collection');
+       $btnCollection = $('.buttons-collection');
        if($btnCollection.length > 0){
           $btnCollection .wrap("<div class='btn-group'></div>");
       }
