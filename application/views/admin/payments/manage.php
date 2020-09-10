@@ -1,9 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
 		<div class="card mtop20">
-			<div class="panel-body">
+			<div class="card-body">
 				<?php $this->load->view('admin/payments/table_html'); ?>
 			</div>
 		</div>

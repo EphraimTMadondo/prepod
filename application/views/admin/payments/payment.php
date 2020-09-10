@@ -1,14 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
 		<div class="row">
 			<div class="col-md-5">
 				<div class="panel_s">
 					<div class="col-md-12 no-padding">
 						<div class="panel_s">
 							<?php echo form_open($this->uri->uri_string()); ?>
-							<div class="panel-body">
+							<div class="card-body">
 								<h4 class="no-margin"><?php echo _l('payment_edit_for_invoice'); ?> <a href="<?php echo admin_url('invoices/list_invoices/'.$payment->invoiceid); ?>"><?php echo format_invoice_number($payment->invoice->id); ?></a></h4>
 								<hr class="hr-panel-heading" />
 								<?php echo render_input('amount','payment_edit_amount_received',$payment->amount,'number'); ?>
@@ -28,8 +30,8 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<div class="panel_s">
-					<div class="panel-body">
+				<div class="card">
+					<div class="card-body">
 						<h4 class="pull-left "><?php echo _l('payment_view_heading'); ?></h4>
 						<div class="pull-right">
 							<div class="btn-group">
