@@ -4,7 +4,7 @@
   foreach(filter_client_visible_tabs($customer_tabs) as $key => $tab){
     ?>
     <li class="nav-item <?php if($key == 'profile'){echo 'active ';} ?>customer_tab_<?php echo $key; ?>">
-      <a data-group="<?php echo $key; ?>" href="<?php echo admin_url('clients/client/'.$client->userid.'?group='.$key); ?>">
+      <a class="nav-link" data-group="<?php echo $key; ?>" href="<?php echo admin_url('clients/client/'.$client->userid.'?group='.$key); ?>">
         <?php if(!empty($tab['icon'])){ ?>
             <i class="<?php echo $tab['icon']; ?> menu-icon" aria-hidden="true"></i>
         <?php } ?>
