@@ -3,6 +3,7 @@
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
+   <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
