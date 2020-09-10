@@ -1,7 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-  <div class="content">
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
         <div class="card mtop20">
