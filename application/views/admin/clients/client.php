@@ -42,7 +42,7 @@
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
             <div class="card mt-1">
-               <div class="card-body p-2">
+               <div class="card-title p-2">
                   <h4 class="bold">
                      #<?php echo $client->userid . ' ' . $title; ?>
                      <?php if(has_permission('customers','','delete') || is_admin()){ ?>
@@ -83,13 +83,17 @@
          </div>
          <?php } ?>
          <div class="col-md-<?php if(isset($client)){echo 9;} else {echo 12;} ?>">
-            <?php if(isset($client)){ ?>
-               <?php echo form_hidden('isedit'); ?>
-               <?php echo form_hidden('userid', $client->userid); ?>
-               <div class="clearfix"></div>
-            <?php } ?>   
-            <div class="tab-content">
-                  <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
+            <div class="card">
+               <div class="card-body">
+                  <?php if(isset($client)){ ?>
+                  <?php echo form_hidden('isedit'); ?>
+                  <?php echo form_hidden('userid', $client->userid); ?>
+                  <div class="clearfix"></div>
+                  <?php } ?>
+                     <div class="tab-content">
+                           <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
+                     </div>
+               </div>
             </div>
          </div>
       </div>
