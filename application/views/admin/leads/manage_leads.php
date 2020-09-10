@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <div class="_buttons">
                      <a href="#" onclick="init_lead(); return false;" class="btn mright5 btn-info pull-left display-block">
                      <?php echo _l('new_lead'); ?>

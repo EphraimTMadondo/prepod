@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
       <div class="row">
          <?php
             if(isset($expense)){
@@ -11,7 +13,7 @@
          <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'expense-form','class'=>'dropzone dropzone-manual col-md-12 mbot20')) ;?>
          <div class="col-md-6">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php
                      if(isset($expense) && $expense->recurring_from != NULL){
                        $recurring_expense = $this->expenses_model->get($expense->recurring_from);
@@ -116,7 +118,7 @@
          </div>
          <div class="col-md-6">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <h4 class="no-margin"><?php echo _l('advanced_options'); ?></h4>
                   <hr class="hr-panel-heading" />
                   <?php

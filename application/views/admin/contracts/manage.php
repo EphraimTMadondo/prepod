@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop20">
@@ -22,7 +24,7 @@
                     }
                     ?>
                 </div>
-                <div class="panel-body _buttons">
+                <div class="card-body _buttons">
                     <?php if(has_permission('contracts','','create')){ ?>
                     <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
@@ -156,7 +158,7 @@
                     </div>
                     <div class="card">
                         <?php echo form_hidden('custom_view'); ?>
-                        <div class="panel-body">
+                        <div class="card-body">
                            <?php $this->load->view('admin/contracts/table_html'); ?>
                        </div>
                    </div>

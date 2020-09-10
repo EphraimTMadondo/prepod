@@ -6,7 +6,7 @@ if ($lead_is_client) {
 }
 if ($lead['status'] == $status['id']) { ?>
 <li data-lead-id="<?php echo $lead['id']; ?>"<?php echo $lead_already_client_tooltip; ?> class="lead-kan-ban<?php if ($lead['assigned'] == get_staff_user_id()) {echo ' current-user-lead'; } ?><?php if($lead_is_client && get_option('lead_lock_after_convert_to_customer') == 1 && !is_admin()){echo ' not-sortable';} ?>">
-   <div class="panel-body lead-body">
+   <div class="card-body lead-body">
       <div class="row">
          <div class="col-md-12 lead-name">
             <?php if ($lead['assigned'] != 0) { ?>

@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12 no-padding">
    <div class="card mtop20">
-      <div class="panel-body">
+      <div class="card-body">
          <?php if($expense->recurring == 1){
             echo '<div class="ribbon info"><span>'._l('expense_recurring_indicator').'</span></div>';
             } ?>
