@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
       <div class="row">
          <div class="col-md-6 left-column">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php echo form_open($this->uri->uri_string(),array('id'=>'contract-form')); ?>
                   <div class="form-group">
                      <div class="checkbox checkbox-primary no-mtop checkbox-inline">
@@ -74,8 +76,8 @@
          </div>
          <?php if(isset($contract)) { ?>
          <div class="col-md-7 right-column">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <h4 class="no-margin"><?php echo $contract->subject; ?></h4>
                   <a href="<?php echo site_url('contract/'.$contract->id.'/'.$contract->hash); ?>" target="_blank">
                      <?php echo _l('view_contract'); ?>

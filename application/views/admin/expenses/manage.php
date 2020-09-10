@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20 mbot10">
-               <div class="panel-body _buttons">
+               <div class="card-body _buttons">
                   <?php if(has_permission('expenses','','create')){ ?>
                   <a href="<?php echo admin_url('expenses/expense'); ?>" class="btn btn-info"><?php echo _l('new_expense'); ?></a>
                   <?php } ?>
@@ -21,7 +23,7 @@
             <div class="row">
                <div class="col-md-12" id="small-table">
                   <div class="card">
-                     <div class="panel-body">
+                     <div class="card-body">
                         <div class="clearfix"></div>
                         <!-- if expenseid found in url -->
                         <?php echo form_hidden('expenseid',$expenseid); ?>

@@ -3,12 +3,13 @@
 <?php if (isset($form)) {
     echo form_hidden('form_id', $form->id);
 } ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                <?php if (isset($form)) { ?>
                   <ul class="nav nav-tabs" role="tablist">
                      <li role="presentation" class="active">

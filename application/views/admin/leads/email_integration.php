@@ -1,11 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php hooks()->do_action('before_leads_email_integration_form'); ?>
                   <h4 class="pull-left"><?php echo $title; ?></h4>
                   <a href="<?php echo admin_url('spam_filters/view/leads'); ?>" class="btn btn-info btn-xs pull-right">
