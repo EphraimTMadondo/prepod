@@ -3,7 +3,7 @@
     <div class="card mtop20">
         <?php echo form_open(admin_url('invoices/record_payment'),array('id'=>'record_payment_form')); ?>
         <?php echo form_hidden('invoiceid',$invoice->id); ?>
-        <div class="panel-body">
+        <div class="card-body">
             <h4 class="no-margin"><?php echo _l('record_payment_for_invoice'); ?> <?php echo format_invoice_number($invoice->id); ?></h4>
            <hr class="hr-panel-heading" />
             <div class="row">

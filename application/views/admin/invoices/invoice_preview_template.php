@@ -7,8 +7,8 @@
 </div>
 <?php } ?>
 <?php if(count($invoices_to_merge) > 0){ ?>
-<div class="panel_s no-padding mbot5">
-   <div class="panel-body">
+<div class="card no-padding mbot5">
+   <div class="card-body">
       <h4 class="font-medium bold no-mtop mbot15"><?php echo _l('invoices_available_for_merging'); ?></h4>
       <hr class="hr-panel-heading hr-10"/>
       <?php foreach($invoices_to_merge as $_inv){ ?>

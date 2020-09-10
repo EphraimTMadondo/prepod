@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="card mtop20">
-    <div class="panel-body">
+    <div class="card-body">
         <?php
         $total_payments = count($invoice->payments);
         if($total_payments > 0){ ?>
