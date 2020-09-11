@@ -3,16 +3,17 @@
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
+   <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop12">
-                    <div class="panel-body _buttons">
+                    <div class="card-body _buttons">
                         <div class="row">
                             <div class="col-md-8">
                                 <?php if(has_permission('proposals','','create')){ ?>
-                                <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-info pull-left new"><?php echo _l('new_proposal'); ?></a>
+                                <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-primary float-left new"><?php echo _l('new_proposal'); ?></a>
                                 <?php } ?>
-                                <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-default mleft5 pull-left"><?php echo _l('switch_to_list_view'); ?></a>
+                                <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-default ml-1 float-left"><?php echo _l('switch_to_list_view'); ?></a>
                             </div>
                             <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
                                 <?php echo render_input('search','','','search',array('data-name'=>'search','onkeyup'=>'proposals_pipeline();'),array(),'no-margin') ?>
@@ -24,7 +25,7 @@
                 </div>
                 <div class="card animated mtop5 fadeIn">
                     <?php echo form_hidden('proposalid',$proposalid); ?>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="kanban-leads-sort">
