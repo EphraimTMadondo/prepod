@@ -81,11 +81,6 @@
     });
     <?php } ?>
   }
-
-  $btnCollection = $('.buttons-collection');
-  if($btnCollection.length > 0){
-      $btnCollection .wrap("<div class='btn-group'></div>");
-  }
 });
 </script>
 </body>
