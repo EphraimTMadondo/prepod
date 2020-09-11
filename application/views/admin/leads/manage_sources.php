@@ -10,7 +10,7 @@
                 <div class="card mtop20">
                     <div class="card-body">
                       <div class="_buttons">
-                        <a href="#" onclick="new_source(); return false;" class="btn btn-info pull-left display-block"><?php echo _l('lead_new_source'); ?></a>
+                        <a href="#" onclick="new_source(); return false;" class="btn btn-primary float-left"><?php echo _l('lead_new_source'); ?></a>
                     </div>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />
@@ -28,19 +28,18 @@
                                 <td><?php echo $source['id']; ?></td>
                                
                                 <td><a href="#" onclick="edit_source(this,<?php echo $source['id']; ?>); return false" data-name="<?php echo $source['name']; ?>"><?php echo $source['name']; ?></a><br />
-                               
                                     <span class="text-muted">
                                         <?php echo _l('leads_table_total',total_rows(db_prefix().'leads',array('source'=>$source['id'],'company_username'=>$companyusername))); ?>
                                     </span>
                                 </td>
                                 <td>
-                                     <?php
-                                if($source['company_username'] == $companyusername){ ?>
-                                    <a href="#" onclick="edit_source(this,<?php echo $source['id']; ?>); return false" data-name="<?php echo $source['name']; ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-                                    <a href="<?php echo admin_url('leads/delete_source/'.$source['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
-                                     <?php
-                                }
-                                ?>
+                                    <?php
+                                    if($source['company_username'] == $companyusername){ ?>
+                                        <a href="#" onclick="edit_source(this,<?php echo $source['id']; ?>); return false" data-name="<?php echo $source['name']; ?>" class="btn btn-light btn-icon"><i class="bx bx-edit"></i></a>
+                                        <a href="<?php echo admin_url('leads/delete_source/'.$source['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
+                                        <?php
+                                    }
+                                    ?>
                                 </td>
                             </tr>
                             <?php } ?>
@@ -75,8 +74,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo _l('close'); ?></button>
+                <button type="submit" class="btn btn-primary"><?php echo _l('submit'); ?></button>
             </div>
         </div>
         <!-- /.modal-content -->
