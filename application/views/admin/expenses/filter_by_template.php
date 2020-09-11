@@ -20,7 +20,7 @@ foreach($categories as $category){
 }
 ?>
 </div>
-<div class="btn-group float-right ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+<div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
     <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="bx bx-filter" aria-hidden="true"></i>
     </button>
