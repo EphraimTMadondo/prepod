@@ -2,8 +2,8 @@
 <?php echo form_hidden('_attachment_sale_id',$credit_note->id); ?>
 <?php echo form_hidden('_attachment_sale_type','credit_note'); ?>
 <div class="col-md-12 no-padding">
-   <div class="panel_s">
-      <div class="panel-body">
+   <div class="card">
+      <div class="card-body">
          <div class="horizontal-scrollable-tabs preview-tabs-top">
             <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
             <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
