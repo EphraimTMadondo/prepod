@@ -938,7 +938,7 @@ function get_datatable_buttons(table) {
 
     if (!$(table).hasClass('dt-inline')) {
         table_buttons_options.push({
-            text: '<i class="livicon-evo" data-options="name: refresh.svg"></i>',
+            text: '<i class="bx bx-refresh"></i>',
             className: 'btn btn-default-dt-options btn-dt-reload',
             action: function(e, dt, node, config) {
                 dt.ajax.reload();
