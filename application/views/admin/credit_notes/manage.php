@@ -20,12 +20,12 @@
       <div class="card mt-2 mb-1">
          <div class="card-body _buttons">
             <?php if(has_permission('credit_notes','','create')){ ?>
-            <a href="<?php echo admin_url('credit_notes/credit_note'); ?>" class="btn btn-info pull-left display-block">
+            <a href="<?php echo admin_url('credit_notes/credit_note'); ?>" class="btn btn-primary float-left display-block">
                <?php echo _l('new_credit_note'); ?>
             </a>
             <?php } ?>
             <div class="display-block text-right">
-             <div class="btn-group float-right ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+             <div class="btn-group float-left ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-filter" aria-hidden="true"></i>
                </button>
