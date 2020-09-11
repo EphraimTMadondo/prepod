@@ -68,6 +68,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/semi-dark-layout.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel='stylesheet' type='text/css' href='<?php echo base_url();?>assets/frest/app-assets/vendors/css/tables/datatable/datatables.min.css'>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/file-uploaders/dropzone.min.css">
     <!-- END: Theme CSS--->
 
     <!-- BEGIN: Page CSS-->
