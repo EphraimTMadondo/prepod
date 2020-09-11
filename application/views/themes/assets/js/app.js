@@ -939,7 +939,7 @@ function get_datatable_buttons(table) {
     if (!$(table).hasClass('dt-inline')) {
         table_buttons_options.push({
             text: '<i class="bx bx-refresh"></i>',
-            className: 'btn btn-default-dt-options btn-dt-reload',
+            className: 'btn btn-default-dt-options btn-dt-reload btn-icon',
             action: function(e, dt, node, config) {
                 dt.ajax.reload();
             }
