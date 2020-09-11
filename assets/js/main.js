@@ -2609,7 +2609,7 @@ function appDataTableInline(element, options) {
         pageLength: app.options.tables_pagination_limit,
         fnRowCallback: DataTablesInlineLazyLoadImages,
         order: [0, 'asc'],
-        dom: "<'mt-2' B <'float-right' f> tip>",
+        dom: "<'table-responsive mt-2' B <'float-right' f> tip>",
         "fnDrawCallback": function(oSettings) {
 
             _table_jump_to_page(this, oSettings);
@@ -2739,6 +2739,7 @@ function initDataTableInline(dt_table) {
     appDataTableInline(dt_table, {
         supportsButtons: true,
         supportsLoading: true,
+        "responsive": true,
         autoWidth: false,
         scrollResponsive: app.options.scroll_responsive_tables,
     });
