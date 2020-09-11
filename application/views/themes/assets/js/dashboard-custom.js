@@ -320,13 +320,13 @@ function prepareCalendar(){
     //         return '<label><input type="checkbox" />Task</label>';
     //     },
     //     allday: function(schedule) {
-    //         return schedule.title + ' <i class="fa fa-refresh"></i>';
+    //         return schedule.title + ' <i class="bx bx-refresh"></i>';
     //     },
     //     alldayTitle: function() {
     //         return 'All Day';
     //     },
     //     time: function(schedule) {
-    //         return schedule.title + ' <i class="fa fa-refresh"></i>' + schedule.start;
+    //         return schedule.title + ' <i class="bx bx-refresh"></i>' + schedule.start;
     //     }
     // },
     // month: {

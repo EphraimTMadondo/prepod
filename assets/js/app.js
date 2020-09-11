@@ -36,7 +36,7 @@ $(function() {
         newattachment.find('input').attr('name', 'attachments[' + addMoreAttachmentsInputKey + ']').val('');
         newattachment.find($.fn.appFormValidator.internal_options.error_element + '[id*="error"]').remove();
         newattachment.find('.' + $.fn.appFormValidator.internal_options.field_wrapper_class).removeClass($.fn.appFormValidator.internal_options.field_wrapper_error_class);
-        newattachment.find('i').removeClass('fa-plus').addClass('fa-minus');
+        newattachment.find('i').removeClass('bx-plus').addClass('bx-minus');
         newattachment.find('button').removeClass('add_more_attachments').addClass('remove_attachment').removeClass('btn-success').addClass('btn-danger');
         addMoreAttachmentsInputKey++;
     });
@@ -533,7 +533,7 @@ function alert_float(type, message, timeout) {
     });
 
     el.append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
-    el.append('<span class="fa fa-bell-o" data-notify="icon"></span>');
+    el.append('<span class="bx bx-bell-o" data-notify="icon"></span>');
     el.append("<span class=\"alert-title\">" + message + "</span>");
 
     $("body").append(el);
@@ -938,7 +938,7 @@ function get_datatable_buttons(table) {
 
     if (!$(table).hasClass('dt-inline')) {
         table_buttons_options.push({
-            text: '<i class="fa fa-refresh"></i>',
+            text: '<i class="bx bx-refresh"></i>',
             className: 'btn btn-default-dt-options btn-dt-reload',
             action: function(e, dt, node, config) {
                 dt.ajax.reload();
@@ -952,7 +952,7 @@ function get_datatable_buttons(table) {
     /*   if ($(table).hasClass('customizable-table')) {
             table_buttons_options.push({
                 columns: '.toggleable',
-                text: '<i class="fa fa-cog"></i>',
+                text: '<i class="bx bx-cog"></i>',
                 extend: 'colvis',
                 className: 'btn btn-default-dt-options dt-column-visibility',
             });

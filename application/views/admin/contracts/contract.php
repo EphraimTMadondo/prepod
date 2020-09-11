@@ -354,7 +354,7 @@
                         <?php if(has_permission('contracts', '', 'create') || has_permission('contracts', '', 'edit')){ ?>
                         <div class="_buttons">
                            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#renew_contract_modal">
-                           <i class="fa fa-refresh"></i> <?php echo _l('contract_renew_heading'); ?>
+                           <i class="bx bx-refresh"></i> <?php echo _l('contract_renew_heading'); ?>
                            </a>
                         </div>
                         <hr />
