@@ -1758,6 +1758,8 @@ $(function() {
     table_invoices = $('table.table-invoices');
     table_estimates = $('table.table-estimates');
 
+    console.log(table_invoices, table_estimates);
+    
     if (table_invoices.length > 0 || table_estimates.length > 0) {
 
         // Invoices additional server params
