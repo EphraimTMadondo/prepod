@@ -2695,6 +2695,8 @@ function initDataTable(selector, url, notsearchable, notsortable, fnserverparams
             var $btnReload = $('.btn-dt-reload');
             $btnReload.attr('data-toggle', 'tooltip');
             $btnReload.attr('title', app.lang.dt_button_reload);
+            $btnReload.addClass('btn-icon');
+            $btnReload.html('<i class="bx bx-revision"></i>');
 
             var $btnColVis = $('.dt-column-visibility');
             $btnColVis.attr('data-toggle', 'tooltip');
