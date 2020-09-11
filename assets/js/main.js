@@ -2702,6 +2702,11 @@ function initDataTable(selector, url, notsearchable, notsortable, fnserverparams
             $btnColVis.attr('data-toggle', 'tooltip');
             $btnColVis.attr('title', app.lang.dt_button_column_visibility);
 
+            var $btnCollection = $('.buttons-collection');
+            if($btnCollection.length > 0){
+                $btnCollection .wrap("<div class='btn-group'></div>");
+            }
+
             if (t.hasClass('scroll-responsive') || app.options.scroll_responsive_tables == 1) {
                 t.wrap('<div class="table-responsive"></div>');
             }
