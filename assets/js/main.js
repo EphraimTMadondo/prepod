@@ -2609,6 +2609,7 @@ function appDataTableInline(element, options) {
         pageLength: app.options.tables_pagination_limit,
         fnRowCallback: DataTablesInlineLazyLoadImages,
         order: [0, 'asc'],
+        dom: "<'mt-2' B <'float-right' f> tip>",
         "fnDrawCallback": function(oSettings) {
 
             _table_jump_to_page(this, oSettings);
@@ -2812,6 +2813,7 @@ function initDataTable(selector, url, notsearchable, notsortable, fnserverparams
         "bDeferRender": true,
         "responsive": true,
         "autoWidth": false,
+        dom: "<'mt-2' B <'float-right' f> tip>",
         "pageLength": app.options.tables_pagination_limit,
         "lengthMenu": [length_options, length_options_names],
         "columnDefs": [{
