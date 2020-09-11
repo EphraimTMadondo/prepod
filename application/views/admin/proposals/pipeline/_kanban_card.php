@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php if ($proposal['status'] == $status) { ?>
 <li data-proposal-id="<?php echo $proposal['id']; ?>" class="<?php if($proposal['invoice_id'] != NULL || $proposal['estimate_id'] != NULL){echo 'not-sortable';} ?>">
-   <div class="panel-body">
+   <div class="card-body">
       <div class="row">
          <div class="col-md-12">
             <h4 class="bold pipeline-heading">

@@ -2,12 +2,12 @@
 <?php echo form_hidden('_attachment_sale_id',$proposal->id); ?>
 <?php echo form_hidden('_attachment_sale_type','proposal'); ?>
 <div class="card mtop20">
-   <div class="panel-body">
+   <div class="card-body">
       <div class="horizontal-scrollable-tabs preview-tabs-top">
          <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
          <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
          <div class="horizontal-tabs">
-            <ul class="nav nav-tabs nav-tabs-horizontal mbot15" role="tablist">
+            <ul class="nav nav-tabs nav-tabs-horizontal mb-1" role="tablist">
                <li role="presentation" class="active">
                   <a href="#tab_proposal" aria-controls="tab_proposal" role="tab" data-toggle="tab">
                   <?php echo _l('proposal'); ?>
@@ -327,7 +327,7 @@
                   </div>
                   <?php echo form_close(); ?>
                   <hr />
-                  <div class="panel_s mtop20 no-shadow" id="sales_notes_area">
+                  <div class="card mt-2 no-shadow" id="sales_notes_area">
                   </div>
                </div>
                <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
