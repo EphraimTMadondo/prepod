@@ -1,20 +1,20 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12">
-   <div class="card mtop20 mbot10">
+   <div class="card mt-2 mb-1">
       <div class="card-body _buttons">
          <?php $this->load->view('admin/invoices/invoices_top_stats'); ?>
          <?php if(has_permission('invoices','','create')){ ?>
-            <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-info pull-left new new-invoice-list mright5"><?php echo _l('create_new_invoice'); ?></a>
+            <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-primary float-left new new-invoice-list mr-1"><?php echo _l('create_new_invoice'); ?></a>
          <?php } ?>
          <?php if(!isset($project)){ ?>
-               <a href="<?php echo admin_url('invoices/recurring'); ?>" class="btn btn-info pull-left">
+               <a href="<?php echo admin_url('invoices/recurring'); ?>" class="btn btn-primary float-left">
                   <?php echo _l('invoices_list_recurring'); ?>
                </a>
          <?php } ?>
          <div class="display-block text-right">
-            <div class="btn-group pull-right mleft4 invoice-view-buttons btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="fa fa-filter" aria-hidden="true"></i>
+            <div class="btn-group float-right m1-1 invoice-view-buttons btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="bx bx-filter" aria-hidden="true"></i>
                </button>
                <ul class="dropdown-menu width300">
                   <li>
@@ -56,7 +56,7 @@
                   <?php if(count($invoices_sale_agents) > 0){ ?>
                   <div class="clearfix"></div>
                   <li class="divider"></li>
-                  <li class="dropdown-submenu pull-left">
+                  <li class="dropdown-submenu float-left">
                      <a href="#" tabindex="-1"><?php echo _l('sale_agent_string'); ?></a>
                      <ul class="dropdown-menu dropdown-menu-left">
                         <?php foreach($invoices_sale_agents as $agent){ ?>
@@ -83,8 +83,8 @@
                   <?php } ?>
                </ul>
             </div>
-            <a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-invoices','#invoice'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-            <a href="#" class="btn btn-default btn-with-tooltip invoices-total" onclick="slideToggle('#stats-top'); init_invoices_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="fa fa-bar-chart"></i></a>
+            <a href="#" class="btn btn-light btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-invoices','#invoice'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="bx bx-chevrons-left"></i></a>
+            <a href="#" class="btn btn-light btn-with-tooltip invoices-total" onclick="slideToggle('#stats-top'); init_invoices_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
          </div>
       </div>
    </div>
