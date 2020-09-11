@@ -56,5 +56,10 @@
 	</div>
 	<?php include_once(APPPATH.'views/admin/leads/status.php'); ?>
 	<?php init_tail(); ?>
+	<script>
+		$(function(){
+			initDataTableInline('.dt-table');
+		});
+	</script>
 </body>
 </html>

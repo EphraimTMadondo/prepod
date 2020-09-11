@@ -94,6 +94,7 @@
     		$('.add-title').removeClass('hide');
     		$('.edit-title').removeClass('hide');
     	});
+        initDataTableInline('.dt-table');
     });
     function manage_leads_sources(form) {
     	var data = $(form).serialize();
