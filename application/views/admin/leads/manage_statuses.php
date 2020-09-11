@@ -9,7 +9,7 @@
 				<div class="card mtop20">
 					<div class="card-body">
 						<div class="_buttons">
-							<a href="#" onclick="new_status(); return false;" class="btn btn-info pull-left display-block">
+							<a href="#" onclick="new_status(); return false;" class="btn btn-primary float-left">
 								<?php echo _l('lead_new_status'); ?>
 							</a>
 						</div>
@@ -36,9 +36,9 @@
 										</td>
 										<td>
 										    
-											<a href="#" onclick="edit_status(this,<?php echo $status['id']; ?>);return false;" data-color="<?php echo $status['color']; ?>" data-name="<?php echo $status['name']; ?>" data-order="<?php echo $status['statusorder']; ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
+											<a href="#" onclick="edit_status(this,<?php echo $status['id']; ?>);return false;" data-color="<?php echo $status['color']; ?>" data-name="<?php echo $status['name']; ?>" data-order="<?php echo $status['statusorder']; ?>" class="btn btn-light btn-icon"><i class="bx bx-edit"></i></a>
 											<?php if($status['isdefault'] == 0){ ?>
-											<a href="<?php echo admin_url('leads/delete_status/'.$status['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+											<a href="<?php echo admin_url('leads/delete_status/'.$status['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
 											<?php } ?>
 										</td>
 									</tr>
