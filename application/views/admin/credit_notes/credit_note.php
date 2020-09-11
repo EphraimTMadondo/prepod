@@ -168,7 +168,7 @@
              <div class="input-group">
               <span class="input-group-addon">
                 <?php if(isset($credit_note)){ ?>
-                <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-info btn-block mtop15'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                 <?php } ?>
                 <?php echo $prefix; ?></span>
                 <input type="text" name="number" class="form-control" value="<?php echo $_credit_note_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
@@ -238,13 +238,13 @@
 </div>
 </div>
 </div>
-<div class="card panel-body mtop10">
+<div class="card-body mt-1">
   <div class="row">
   <div class="col-md-4">
       <?php $this->load->view('admin/invoice_items/item_select'); ?>
   </div>
 <div class="col-md-8 text-right show_quantity_as_wrapper">
-  <div class="mtop10">
+  <div class="mt-1">
    <span><?php echo _l('show_quantity_as'); ?> </span>
    <div class="radio radio-primary radio-inline">
     <input type="radio" value="1" id="sq_1" name="show_quantity_as" data-text="<?php echo _l('credit_note_table_quantity_heading'); ?>" <?php if(isset($credit_note) && $credit_note->show_quantity_as == 1){echo 'checked';}else if(!isset($hours_quantity) && !isset($qty_hrs_quantity)){echo'checked';} ?>>
@@ -461,7 +461,7 @@
 </div>
 <div class="row">
   <div class="col-md-12 mtop15">
-   <div class="card panel-body bottom-transaction">
+   <div class="card-body bottom-transaction">
     <?php $value = (isset($credit_note) ? $credit_note->clientnote : get_option('predefined_clientnote_credit_note')); ?>
     <?php echo render_textarea('clientnote','credit_note_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
     <?php $value = (isset($credit_note) ? $credit_note->terms : get_option('predefined_terms_credit_note')); ?>
