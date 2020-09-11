@@ -628,7 +628,6 @@ function appDataTableInline(element, options) {
 
     var selector = typeof(element) !== 'undefined' ? element : '.dt-table';
     var $tables = $(selector);
-
     if ($tables.length === 0) {
         return;
     }

@@ -2590,6 +2590,150 @@ function init_rel_tasks_table(rel_id, rel_type, selector) {
 }
 
 
+function appDataTableInline(element, options) {
+
+    var selector = typeof(element) !== 'undefined' ? element : '.dt-table';
+    var $tables = $(selector);
+    if ($tables.length === 0) {
+        return;
+    }
+
+    var defaults = {
+        scrollResponsive: 0,
+        supportsButtons: false,
+        supportsLoading: false,
+        dtLengthMenuAllText: app.lang.dt_length_menu_all,
+        processing: true,
+        language: app.lang.datatables,
+        paginate: true,
+        pageLength: app.options.tables_pagination_limit,
+        fnRowCallback: DataTablesInlineLazyLoadImages,
+        order: [0, 'asc'],
+        dom: "<'mt-2' B <'float-right' f> tip>",
+        "fnDrawCallback": function(oSettings) {
+
+            _table_jump_to_page(this, oSettings);
+
+            if (oSettings.aoData.length == 0 || oSettings.aiDisplay.length == 0) {
+                $(oSettings.nTableWrapper).addClass('app_dt_empty');
+            } else {
+                $(oSettings.nTableWrapper).removeClass('app_dt_empty');
+            }
+
+            if (typeof(settings.onDrawCallback) == 'function') {
+                settings.onDrawCallback(oSettings, this);
+            }
+        },
+        "initComplete": function(oSettings, json) {
+
+            if (this.hasClass('scroll-responsive') || settings.scrollResponsive == 1) {
+                this.wrap('<div class="table-responsive"></div>');
+            }
+
+            var dtInlineEmpty = this.find('.dataTables_empty');
+            if (dtInlineEmpty.length) {
+                dtInlineEmpty.attr('colspan', this.find('thead th').length);
+            }
+
+            if (settings.supportsLoading) {
+                this.parents('.table-loading').removeClass('table-loading');
+            }
+
+            if (settings.supportsButtons) {
+                var thLastChild = $tables.find('thead th:last-child');
+
+                if (thLastChild.hasClass('options')) {
+                    thLastChild.addClass('not-export');
+                }
+
+                var thLastChild = $tables.find('thead th:last-child');
+                if (typeof(app) != 'undefined' && thLastChild.text().trim() == app.lang.options) {
+                    thLastChild.addClass('not-export');
+                }
+
+                var thFirstChild = $tables.find('thead th:first-child');
+                if (thFirstChild.find('input[type="checkbox"]').length > 0) {
+                    thFirstChild.addClass('not-export');
+                }
+
+                if (typeof(settings.onInitComplete) == 'function') {
+                    settings.onInitComplete(oSettings, json, this);
+                }
+            }
+
+        },
+    }
+
+    var settings = $.extend({}, defaults, options);
+    var length_options = [10, 25, 50, 100];
+    var length_options_names = [10, 25, 50, 100];
+
+    settings.pageLength = parseFloat(settings.pageLength);
+
+    if ($.inArray(settings.pageLength, length_options) == -1) {
+        length_options.push(settings.pageLength)
+        length_options_names.push(settings.pageLength)
+    }
+
+    length_options.sort(function(a, b) {
+        return a - b;
+    });
+
+    length_options_names.sort(function(a, b) {
+        return a - b;
+    });
+
+    length_options.push(-1);
+    length_options_names.push(settings.dtLengthMenuAllText);
+
+    var orderCol, orderType, sTypeColumns;
+    settings.lengthMenu = [length_options, length_options_names];
+
+    if (!settings.supportsButtons) {
+        settings.dom = settings.dom.replace('lB', 'l')
+    }
+
+    $.each($tables, function() {
+
+        $(this).addClass('dt-inline');
+
+        if ($(this).hasClass('scroll-responsive') || settings.scrollResponsive == 1) {
+            settings.responsive = false;
+        }
+
+        orderCol = $(this).attr('data-order-col');
+        orderType = $(this).attr('data-order-type');
+        sTypeColumns = $(this).attr('data-s-type');
+
+        if (orderCol && orderType) {
+            settings.order = [
+                [orderCol, orderType]
+            ];
+        }
+
+        if (sTypeColumns) {
+            sTypeColumns = JSON.parse(sTypeColumns);
+            var columns = $(this).find('thead th');
+            var totalColumns = columns.length;
+            settings.aoColumns = [];
+            for (var i = 0; i < totalColumns; i++) {
+                var column = $(columns[i]);
+                var sTypeColumnOption = sTypeColumns.find(function(v) {
+                    return v['column'] === column.index();
+                });
+                settings.aoColumns.push(sTypeColumnOption ? { sType: sTypeColumnOption.type } : null);
+            }
+        }
+
+        if (settings.supportsButtons) {
+            settings.buttons = get_datatable_buttons(this);
+        }
+
+        $(this).DataTable(settings);
+    });
+}
+
+
 // Datatbles inline/offline - no serverside
 function initDataTableInline(dt_table) {
     appDataTableInline(dt_table, {
@@ -2599,6 +2743,8 @@ function initDataTableInline(dt_table) {
         scrollResponsive: app.options.scroll_responsive_tables,
     });
 }
+
+
 
 // General function for all datatables serverside
 function initDataTable(selector, url, notsearchable, notsortable, fnserverparams, defaultorder) {
@@ -2667,7 +2813,7 @@ function initDataTable(selector, url, notsearchable, notsortable, fnserverparams
         "bDeferRender": true,
         "responsive": true,
         "autoWidth": false,
-        dom: "<'table-responsive mt-2' B <'float-right' f> tip>",
+        dom: "<'mt-2' B <'float-right' f> tip>",
         "pageLength": app.options.tables_pagination_limit,
         "lengthMenu": [length_options, length_options_names],
         "columnDefs": [{
