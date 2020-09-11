@@ -456,7 +456,7 @@ abstract class App_import
         $dbFieldKeys = [];
 
         $table = '<div class="table-responsive no-dt">';
-        $table .= '<table class="table table-hover table-responsive table-bordered">';
+        $table .= '<table class="table table-hover table-bordered">';
         $table .= '<thead>';
         $table .= '<tr>';
 
