@@ -29,13 +29,13 @@
             <div class="card mtop20 mbot10">
                <div class="card-body _buttons">
                   <?php if(has_permission('proposals','','create')){ ?>
-                  <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-info pull-left display-block">
+                  <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-info float-left">
                   <?php echo _l('new_proposal'); ?>
                   </a>
                   <?php } ?>
-                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-default mleft5 pull-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-default ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
                   <div class="display-block text-right">
-                     <div class="btn-group pull-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                     <div class="btn-group float-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
