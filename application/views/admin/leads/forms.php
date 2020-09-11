@@ -9,7 +9,7 @@
     <div class="card mtop20">
      <div class="card-body">
        <div class="_buttons">
-        <a href="<?php echo admin_url('leads/form'); ?>" class="btn btn-info pull-left"><?php echo _l('new_form'); ?></a>
+        <a href="<?php echo admin_url('leads/form'); ?>" class="btn btn-primary float-left"><?php echo _l('new_form'); ?></a>
       </div>
       <div class="clearfix"></div>
       <hr class="hr-panel-heading" />
