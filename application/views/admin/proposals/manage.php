@@ -33,9 +33,9 @@
                   <?php echo _l('new_proposal'); ?>
                   </a>
                   <?php } ?>
-                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-default ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-light ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
                      <div class="btn-group float-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu width300">
@@ -95,7 +95,7 @@
                            </li>
                         </ul>
                      </div>
-                     <a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-proposals','#proposal'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
+                     <a href="#" class="btn btn-light btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-proposals','#proposal'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
                   </div>
                </div>
             </div>

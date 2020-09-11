@@ -21,7 +21,7 @@
    </a>
    <?php } ?>
    <div class="media-body">
-      <div class="mtop5">
+      <div class="mt-2">
       <?php if($comment['staffid'] != 0){ ?>
          <a href="<?php echo admin_url('profile/' . $comment['staffid']); ?>"><?php echo get_staff_full_name($comment['staffid']); ?></a>
       <?php } else { ?>
