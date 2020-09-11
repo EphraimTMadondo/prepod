@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+	<div class="content-overlay"></div>
+	<div class="content-wrapper">
       <div class="row">
         <div class="_filters _hidden_inputs">
            <?php
@@ -15,16 +17,16 @@
         ?>
      </div>
      <div class="col-md-12">
-      <div class="card mtop20 mbot10">
-         <div class="panel-body _buttons">
+      <div class="card mt-2 mb-1">
+         <div class="card-body _buttons">
             <?php if(has_permission('credit_notes','','create')){ ?>
             <a href="<?php echo admin_url('credit_notes/credit_note'); ?>" class="btn btn-info pull-left display-block">
                <?php echo _l('new_credit_note'); ?>
             </a>
             <?php } ?>
             <div class="display-block text-right">
-             <div class="btn-group pull-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <div class="btn-group float-right ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-filter" aria-hidden="true"></i>
                </button>
                <ul class="dropdown-menu width300">
@@ -54,14 +56,14 @@
                   <?php } ?>
                </ul>
             </div>
-            <a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-credit-notes','#credit_note'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
+            <a href="#" class="btn btn-light btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-credit-notes','#credit_note'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
          </div>
       </div>
    </div>
    <div class="row">
       <div class="col-md-12" id="small-table">
          <div class="card">
-            <div class="panel-body">
+            <div class="card-body">
                <!-- if credit not id found in url -->
                <?php echo form_hidden('credit_note_id',$credit_note_id); ?>
                <?php $this->load->view('admin/credit_notes/table_html'); ?>

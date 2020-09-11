@@ -13,7 +13,7 @@
         <?php echo _l('confirm_invoice_credits_from_credit_note'); ?>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
+        <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo _l('close'); ?></button>
         <a href="#" class="btn btn-info" id="confirm-invoice-credit-note"><?php echo _l('confirm'); ?></a>
     </div>
 </div>

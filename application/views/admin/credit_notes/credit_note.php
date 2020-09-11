@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
- <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+	<div class="content-overlay"></div>
+	<div class="content-wrapper">
   <div class="row">
    <?php
    echo form_open($this->uri->uri_string(),array('id'=>'credit-note-form','class'=>'_transaction_form credit-note-form'));
@@ -10,9 +12,9 @@
   }
   ?>
   <div class="col-md-12">
-    <div class="panel_s mtop20 credit_note accounting-template">
+    <div class="card mt-2 credit_note accounting-template">
      <div class="additional"></div>
-     <div class="card panel-body">
+     <div class="card-body">
       <?php if(isset($credit_note)){ ?>
       <?php echo format_credit_note_status($credit_note->status); ?>
       <hr class="hr-panel-heading" />
@@ -465,10 +467,10 @@
     <?php $value = (isset($credit_note) ? $credit_note->terms : get_option('predefined_terms_credit_note')); ?>
     <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
     <div class="btn-bottom-toolbar text-right">
-     <button type="button" class="btn-tr btn btn-info mleft10 credit-note-form-submit save-and-send transaction-submit">
+     <button type="button" class="btn-tr btn btn-info ml-1 credit-note-form-submit save-and-send transaction-submit">
        <?php echo _l('save_and_send'); ?>
      </button>
-     <button class="btn-tr btn btn-info mleft10 text-right credit-note-form-submit transaction-submit">
+     <button class="btn-tr btn btn-info ml-1 text-right credit-note-form-submit transaction-submit">
        <?php echo _l('submit'); ?>
      </button>
    </div>
