@@ -84,37 +84,37 @@
 <script>
    Dropzone.autoDiscover = false;
    $(function(){
-             // Expenses additional server params
-             var Expenses_ServerParams = {};
-             $.each($('._hidden_inputs._filters input'),function(){
-               Expenses_ServerParams[$(this).attr('name')] = '[name="'+$(this).attr('name')+'"]';
-             });
-             initDataTable('.table-expenses', admin_url+'expenses/table', 'undefined', 'undefined', Expenses_ServerParams, <?php echo hooks()->apply_filters('expenses_table_default_order', json_encode(array(5,'desc'))); ?>).column(0).visible(false, false).columns.adjust();
+      // Expenses additional server params
+      var Expenses_ServerParams = {};
+      $.each($('._hidden_inputs._filters input'),function(){
+      Expenses_ServerParams[$(this).attr('name')] = '[name="'+$(this).attr('name')+'"]';
+      });
+      initDataTable('.table-expenses', admin_url+'expenses/table', 'undefined', 'undefined', Expenses_ServerParams, <?php echo hooks()->apply_filters('expenses_table_default_order', json_encode(array(5,'desc'))); ?>).column(0).visible(false, false).columns.adjust();
 
-             init_expense();
+      init_expense();
 
-             $('#expense_convert_helper_modal').on('show.bs.modal',function(){
-                var emptyNote = $('#tab_expense').attr('data-empty-note');
-                var emptyName = $('#tab_expense').attr('data-empty-name');
-                if(emptyNote == '1' && emptyName == '1') {
-                    $('#inc_field_wrapper').addClass('hide');
-                } else {
-                    $('#inc_field_wrapper').removeClass('hide');
-                    emptyNote === '1' && $('.inc_note').addClass('hide') || $('.inc_note').removeClass('hide')
-                    emptyName === '1' && $('.inc_name').addClass('hide') || $('.inc_name').removeClass('hide')
-                }
-             });
+      $('#expense_convert_helper_modal').on('show.bs.modal',function(){
+         var emptyNote = $('#tab_expense').attr('data-empty-note');
+         var emptyName = $('#tab_expense').attr('data-empty-name');
+         if(emptyNote == '1' && emptyName == '1') {
+            $('#inc_field_wrapper').addClass('hide');
+         } else {
+            $('#inc_field_wrapper').removeClass('hide');
+            emptyNote === '1' && $('.inc_note').addClass('hide') || $('.inc_note').removeClass('hide')
+            emptyName === '1' && $('.inc_name').addClass('hide') || $('.inc_name').removeClass('hide')
+         }
+      });
 
-             $('body').on('click','#expense_confirm_convert',function(){
-              var parameters = new Array();
-              if($('input[name="expense_convert_invoice_type"]:checked').val() == 'save_as_draft_true'){
-                parameters['save_as_draft'] = 'true';
-              }
-              parameters['include_name'] = $('#inc_name').prop('checked');
-              parameters['include_note'] = $('#inc_note').prop('checked');
-              window.location.href = buildUrl(admin_url+'expenses/convert_to_invoice/'+$('body').find('.expense_convert_btn').attr('data-id'), parameters);
-            });
-           });
+      $('body').on('click','#expense_confirm_convert',function(){
+      var parameters = new Array();
+      if($('input[name="expense_convert_invoice_type"]:checked').val() == 'save_as_draft_true'){
+         parameters['save_as_draft'] = 'true';
+      }
+      parameters['include_name'] = $('#inc_name').prop('checked');
+      parameters['include_note'] = $('#inc_note').prop('checked');
+      window.location.href = buildUrl(admin_url+'expenses/convert_to_invoice/'+$('body').find('.expense_convert_btn').attr('data-id'), parameters);
+   });
+   });
 </script>
 </body>
 </html>
