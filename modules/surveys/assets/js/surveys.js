@@ -74,7 +74,7 @@ function add_survey_question(type, surveyid) {
         question_area += '</div>';
         question_area += hidden_input('order[]', '');
         // used only to identify input key no saved in database
-        question_area += '<label for="' + response.data.questionid + '" class="control-label display-block">' + response.survey_question_string + ' <a href="#" onclick="update_question(this,\'' + type + '\',' + response.data.questionid + '); return false;" class="pull-right update-question-button"><i class="fa fa-refresh text-success question_update"></i></a><a href="#" class="pull-right"><i class="fa fa-remove text-danger" onclick="remove_question_from_database(this,' + response.data.questionid + '); return false;"></i></a></label>';
+        question_area += '<label for="' + response.data.questionid + '" class="control-label display-block">' + response.survey_question_string + ' <a href="#" onclick="update_question(this,\'' + type + '\',' + response.data.questionid + '); return false;" class="pull-right update-question-button"><i class="bx bx-refresh text-success question_update"></i></a><a href="#" class="pull-right"><i class="bx bx-x text-danger" onclick="remove_question_from_database(this,' + response.data.questionid + '); return false;"></i></a></label>';
         question_area += '<input type="text" onblur="update_question(this,\'' + type + '\',' + response.data.questionid + ');" data-questionid="' + response.data.questionid + '" class="form-control questionid">';
         if (type == 'textarea') {
             question_area += '<textarea class="form-control mtop20" disabled="disabled" rows="6">' + response.survey_question_only_for_preview + '</textarea>';

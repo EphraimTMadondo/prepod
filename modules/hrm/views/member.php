@@ -438,10 +438,10 @@
                      <div class="input-group">
                         <input type="password" class="form-control password" name="password" autocomplete="off">
                         <span class="input-group-addon">
-                        <a href="#password" class="show_password" onclick="showPassword('password'); return false;"><i class="fa fa-eye"></i></a>
+                        <a href="#password" class="show_password" onclick="showPassword('password'); return false;"><i class="bx bx-show"></i></a>
                         </span>
                         <span class="input-group-addon">
-                        <a href="#" class="generate_password" onclick="generatePassword(this);return false;"><i class="fa fa-refresh"></i></a>
+                        <a href="#" class="generate_password" onclick="generatePassword(this);return false;"><i class="bx bx-refresh"></i></a>
                         </span>
                      </div>
                      <?php if(isset($member)){ ?>

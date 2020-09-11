@@ -85,7 +85,7 @@
                   </li>
                        <li class="toggle_view">
                      <a href="#" onclick="survey_toggle_full_view(); return false;" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>">
-                     <i class="fa fa-expand"></i></a>
+                     <i class="bx bx-expand"></i></a>
                   </li>
                </ul>
                <div class="tab-content">
@@ -93,10 +93,10 @@
                      <div class="_buttons">
                         <?php
                            if (total_rows(db_prefix().'surveyresultsets', 'surveyid=' . $survey->surveyid) > 0) { ?>
-                        <a href="<?php echo admin_url('surveys/results/' . $survey->surveyid); ?>" target="_blank" class="btn btn-success pull-right mleft10 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_results_tooltip'); ?>"><i class="fa fa-area-chart"></i></a>
+                        <a href="<?php echo admin_url('surveys/results/' . $survey->surveyid); ?>" target="_blank" class="btn btn-success pull-right mleft10 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_results_tooltip'); ?>"><i class="bx bx-chart"></i></a>
                         <?php } ?>
                         <!-- Single button -->
-                        <a href="<?php echo site_url('survey/'.$survey->surveyid . '/' . $survey->hash); ?>" target="_blank" class="btn btn-success pull-right mleft10 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_tooltip'); ?>"><i class="fa fa-eye"></i></a>
+                        <a href="<?php echo site_url('survey/'.$survey->surveyid . '/' . $survey->hash); ?>" target="_blank" class="btn btn-success pull-right mleft10 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_tooltip'); ?>"><i class="bx bx-show"></i></a>
                         <?php if(has_permission('surveys','','edit')){ ?>
                         <div class="btn-group pull-right">
                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -143,8 +143,8 @@
                              $question_area .= '<input type="hidden" value="" name="order[]">';
                              // used only to identify input key no saved in database
                              $question_area .='<label for="'.$question['questionid'].'" class="control-label display-block">'._l('question_string').'
-                             <a href="#" onclick="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].'); return false;" class="pull-right update-question-button"><i class="fa fa-refresh text-success question_update"></i></a>
-                             <a href="#" onclick="remove_question_from_database(this,'.$question['questionid'].'); return false;" class="pull-right"><i class="fa fa-remove text-danger"></i></a>
+                             <a href="#" onclick="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].'); return false;" class="pull-right update-question-button"><i class="bx bx-refresh text-success question_update"></i></a>
+                             <a href="#" onclick="remove_question_from_database(this,'.$question['questionid'].'); return false;" class="pull-right"><i class="bx bx-x text-danger"></i></a>
                          </label>';
                          $question_area .= '<input type="text" onblur="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].');" data-questionid="'.$question['questionid'].'" class="form-control questionid" value="'.$question['question'].'">';
                          if($question['boxtype'] == 'textarea'){
@@ -276,7 +276,7 @@
                            <?php foreach($send_log as $log){ ?>
                            <p>
                               <?php if(has_permission('surveys','','delete')){ ?>
-                              <a href="<?php echo admin_url('surveys/remove_survey_send/'.$log['id']); ?>" class="_delete text-danger"><i class="fa fa-remove"></i></a>
+                              <a href="<?php echo admin_url('surveys/remove_survey_send/'.$log['id']); ?>" class="_delete text-danger"><i class="bx bx-x"></i></a>
                               <?php } ?>
                               <?php echo _l('survey_added_to_queue',_dt($log['date'])); ?>
                               ( <?php echo ($log['iscronfinished'] == 0 ? _l('survey_send_till_now'). ' ' : '') ?>

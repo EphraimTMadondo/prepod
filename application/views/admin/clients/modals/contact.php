@@ -14,7 +14,7 @@
                         <?php if(isset($contact)){ ?>
                         <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" id="contact-img" class="client-profile-image-thumb">
                         <?php if(!empty($contact->profile_image)){ ?>
-                        <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger pull-right" id="contact-remove-img"><i class="fa fa-remove"></i></a>
+                        <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger pull-right" id="contact-remove-img"><i class="bx bx-remove"></i></a>
                         <?php } ?>
                         <hr />
                         <?php } ?>
@@ -67,10 +67,10 @@
 
                             <input type="password" class="form-control password" name="password" autocomplete="false">
                             <span class="input-group-addon">
-                                <a href="#password" class="show_password" onclick="showPassword('password'); return false;"><i class="fa fa-eye"></i></a>
+                                <a href="#password" class="show_password" onclick="showPassword('password'); return false;"><i class="bx bx-show"></i></a>
                             </span>
                             <span class="input-group-addon">
-                                <a href="#" class="generate_password" onclick="generatePassword(this);return false;"><i class="fa fa-refresh"></i></a>
+                                <a href="#" class="generate_password" onclick="generatePassword(this);return false;"><i class="bx bx-refresh"></i></a>
                             </span>
                         </div>
                         <?php if(isset($contact)){ ?>
@@ -199,7 +199,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mtop10 border-right">
-                            <span><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('only_project_tasks'); ?>"></i> <?php echo _l('task'); ?></span>
+                            <span><i class="bx bx-question-circle" data-toggle="tooltip" data-title="<?php echo _l('only_project_tasks'); ?>"></i> <?php echo _l('task'); ?></span>
                         </div>
                         <div class="col-md-6 mtop10">
                             <div class="onoffswitch">
