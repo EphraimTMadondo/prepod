@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-  <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+	<div class="content-overlay"></div>
+	<div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
-        <div class="card mtop20">
-          <div class="panel-body">
+        <div class="card mt-2">
+          <div class="card-body">
             <?php if(has_permission('items','','delete')){ ?>
              <a href="#" data-toggle="modal" data-table=".table-invoice-items" data-target="#items_bulk_actions" class="hide bulk-actions-btn table-btn"><?php echo _l('bulk_actions'); ?></a>
              <div class="modal fade bulk_actions" id="items_bulk_actions" tabindex="-1" role="dialog">
