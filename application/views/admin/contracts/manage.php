@@ -7,7 +7,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="_filters _hidden_inputs hidden">
                         <?php
                         echo form_hidden('exclude_trashed_contracts',true);
@@ -27,10 +27,10 @@
                 </div>
                 <div class="card-body _buttons">
                     <?php if(has_permission('contracts','','create')){ ?>
-                    <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_contract'); ?></a>
+                    <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary float-left"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
-                    <div class="btn-group pull-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group float-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-left width300 height500">
