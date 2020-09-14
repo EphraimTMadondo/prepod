@@ -1,10 +1,12 @@
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+	<div class="content-overlay"></div>
+	<div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
-               <div class="panel-body">
+            <div class="card mt-2">
+               <div class="card-body">
                   <div class="row">
                     <div class="col-md-2 border-right">
                       <h4 class="no-margin font-bold"><i class="fa fa-legal" aria-hidden="true"></i> <?php echo htmlspecialchars(_l($title)); ?></h4>
@@ -25,22 +27,21 @@
                       </select>
                     </div> -->
                   </div>
-                   
                 <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('amounts'),
-                            _l('unit_price'),
-                            _l('original_price'),
-                            _l('depreciation'), 
-                            _l('date_buy'),
-                            _l('depreciation_value'),   
-                            _l('residual_value'),                               
-                            );
-                        render_datatable($table_data,'table_depreciation');
-                        ?>
+                  $table_data = array(
+                      _l('asset_code'),
+                      _l('asset_name'),
+                      _l('asset_group'),
+                      _l('amounts'),
+                      _l('unit_price'),
+                      _l('original_price'),
+                      _l('depreciation'), 
+                      _l('date_buy'),
+                      _l('depreciation_value'),   
+                      _l('residual_value'),                               
+                      );
+                  render_datatable($table_data,'table_depreciation');
+                ?>
                </div>
             </div>
          </div>
