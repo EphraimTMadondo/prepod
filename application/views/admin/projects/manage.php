@@ -15,7 +15,7 @@
               </a>
             <?php } ?>
             <a href="<?php echo admin_url('projects/gantt'); ?>" data-toggle="tooltip" title="<?php echo _l('project_gant'); ?>" class="btn btn-light float-right"><i class="fa fa-align-left" aria-hidden="true"></i></a>
-            <div class="btn-group float-left btn-with-tooltip-group _filter_data ml-1" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+            <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="bx bx-filter" aria-hidden="true"></i>
               </button>
