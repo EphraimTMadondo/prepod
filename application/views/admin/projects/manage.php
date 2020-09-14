@@ -10,12 +10,12 @@
           <div class="card-body">
             <div class="_buttons">
             <?php if(has_permission('projects','','create')){ ?>
-              <a href="<?php echo admin_url('projects/project'); ?>" class="btn btn-primary float-right">
+              <a href="<?php echo admin_url('projects/project'); ?>" class="btn btn-primary">
                 <?php echo _l('new_project'); ?>
               </a>
             <?php } ?>
-            <a href="<?php echo admin_url('projects/gantt'); ?>" data-toggle="tooltip" title="<?php echo _l('project_gant'); ?>" class="btn btn-light"><i class="fa fa-align-left" aria-hidden="true"></i></a>
-            <div class="btn-group float-left btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+            <a href="<?php echo admin_url('projects/gantt'); ?>" data-toggle="tooltip" title="<?php echo _l('project_gant'); ?>" class="btn btn-light float-right"><i class="fa fa-align-left" aria-hidden="true"></i></a>
+            <div class="btn-group float-left btn-with-tooltip-group _filter_data ml-1" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="bx bx-filter" aria-hidden="true"></i>
               </button>
@@ -50,7 +50,6 @@
               <div class="clearfix"></div>
               <hr class="hr-panel-heading" />
             </div>
-              <div class="row mbot15">
               <div class="col-md-12">
                 <h4 class="no-margin"><?php echo _l('projects_summary'); ?></h4>
                 <?php
@@ -60,7 +59,7 @@
                 }
                 ?>
               </div>
-              <div class="row _filters _hidden_inputs center">
+              <div class="col-md-12 _filters _hidden_inputs center">
                 <?php
                 echo form_hidden('my_projects');
                 foreach($statuses as $status){
@@ -87,7 +86,6 @@
                 </div>
                 <?php } ?>
               </div>
-            </div>
             <div class="clearfix"></div>
             <hr class="hr-panel-heading" />
             <?php echo form_hidden('custom_view'); ?>
