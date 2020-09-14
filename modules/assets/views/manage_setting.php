@@ -11,11 +11,11 @@
           <ul class="nav nav-tabs flex-column">
             <?php
             $i = 0;
-            foreach($tab as $group){
+            foreach($tab as $t){
               ?>
-              <li class="nav-item <?php if($i == 0){echo " active"; } ?>" >
-              <a class="nav-link <?php if($i == 0){echo " active"; } ?>" href="<?php echo admin_url('assets/setting?group='.$group); ?>" data-group="<?php echo htmlspecialchars($group); ?>">
-                <?php if($group == 'asset_group'){ echo '<i class="bx bx-customize"></i>'; }elseif($group == 'asset_unit'){echo '<i class="bx bx-cube"></i>';}elseif($group == 'asset_location'){echo '<i class="bx bx-navigation"></i>';}?>  <?php echo htmlspecialchars(_l($group)); ?></a>
+              <li class="nav-item <?php if($t == $group){echo " active"; } ?>" >
+              <a class="nav-link <?php if($t == $group){echo " active"; } ?>" href="<?php echo admin_url('assets/setting?group='.$t); ?>" data-group="<?php echo htmlspecialchars($t); ?>">
+                <?php if($t == 'asset_group'){ echo '<i class="bx bx-customize"></i>'; }elseif($t == 'asset_unit'){echo '<i class="bx bx-cube"></i>';}elseif($t == 'asset_location'){echo '<i class="bx bx-navigation"></i>';}?>  <?php echo htmlspecialchars(_l($t)); ?></a>
               </li>
               <?php $i++; } ?>
           </ul>
