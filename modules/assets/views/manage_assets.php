@@ -1,10 +1,12 @@
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+	<div class="content-overlay"></div>
+	<div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <div class="row">
                      <div class="col-md-4 border-right">
                       <h4 class="no-margin font-bold"><i class="fa fa-bank" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
@@ -74,7 +76,7 @@
                
      <div class="col-md-12" id="small-table" style="padding-right: 15px;padding-left: 15px;">
             <div class="card">
-               <div class="panel-body">
+               <div class="card-body">
                 <?php echo form_hidden('asset_id',$asset_id); ?>
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="all_asset">
@@ -218,7 +220,7 @@
                         <div id="additional"></div>
                     <div class="panel panel-info">
                       <div class="panel-heading"><?php echo htmlspecialchars(_l('asset_information')) ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
                         <div class="row">
                           <div class="col-md-6">
                           <?php echo render_input('assets_code','asset_code','') ?>
@@ -298,7 +300,7 @@
                     </div>
                     <div class="panel panel-info">
                       <div class="panel-heading"><?php echo htmlspecialchars(_l('supplier_information')) ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
                         <div class="row">
                           <div class="col-md-6">
                           <?php echo render_input('supplier_name','supplier_name','') ?>
