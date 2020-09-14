@@ -8,20 +8,16 @@
             <div class="card mtop20">
                <div class="card-body">
                   <div class="row">
-                      <div class="col-md-4 border-right">
-                        <h4 class="no-margin font-bold"><i class="fa fa-bank" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
-                        <hr />
-                      </div>
+                     <div class="col-md-12">
+                      <h4 class="no-margin font-bold"><i class="fa fa-bank" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
+                      <hr />
                       <a href="#" class="btn btn-light float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
-                  </div>
-                  <div class="row">    
-                    <div class="_buttons col-md-3">
-                    	<?php if (has_permission('assets', '', 'create') || is_admin()) { ?>
-                        <a href="#" onclick="new_asset(); return false;" class="btn btn-primary">
+                      <?php if (has_permission('assets', '', 'create') || is_admin()) { ?>
+                        <a href="#" onclick="new_asset(); return false;" class="btn btn-primary float-right ml-1">
                             <?php echo _l('new_asset'); ?>
                         </a>
                     	<?php } ?>
-                    </div>       
+                    </div>
                   </div>
                   <ul class="nav nav-tabs mt-2" role="tablist">
                     <li class="nav-item active">
