@@ -1,14 +1,15 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<?php init_head(); ?><!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card-body">
 						<div class="_buttons">
 							<?php if(is_admin()) { ?>
-							<a href="<?php echo admin_url('announcements/announcement'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_announcement'); ?></a>
+							<a href="<?php echo admin_url('announcements/announcement'); ?>" class="btn btn-primary"><?php echo _l('new_announcement'); ?></a>
 							<div class="clearfix"></div>
 							<hr class="hr-panel-heading" />
 							<?php } else { echo '<h4 class="no-margin bold">'._l('announcements').'</h4>';} ?>
