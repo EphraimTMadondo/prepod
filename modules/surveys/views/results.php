@@ -1,14 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-6 animated fadeIn">
                 <div class="card mtop20">
-                    <div class="panel-heading">
-                        <?php echo $title; ?>
+                    <div class="card-header">
+                        <h4 class="card-title"><?php echo $title; ?></h4>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <?php $text_questions = array(); ?>
                         <?php if(count($survey->questions) > 0){
                             foreach($survey->questions as $question){  ?>
@@ -56,11 +58,11 @@
             </div>
             <?php if(count($text_questions) > 0){ ?>
             <div class="col-md-6">
-                <div class="panel_s">
-                    <div class="panel-heading">
-                        <?php echo _l('survey_text_questions_results'); ?>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"><?php echo _l('survey_text_questions_results'); ?></h4>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <?php
                             $original_questions = $text_questions;
                             foreach($text_questions as $question){ ?>

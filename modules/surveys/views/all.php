@@ -1,18 +1,20 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card-body">
 						<?php if(has_permission('surveys','','create') || has_permission('surveys','','view')){ ?>
 						<div class="_buttons">
 							<?php if(has_permission('surveys','','create')){ ?>
-							<a href="<?php echo admin_url('surveys/survey'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_survey'); ?></a>
+							<a href="<?php echo admin_url('surveys/survey'); ?>" class="btn btn-primary"><?php echo _l('new_survey'); ?></a>
 							<?php } ?>
 							<?php if(has_permission('surveys','','view')){ ?>
-							<a href="<?php echo admin_url('surveys/mail_lists'); ?>" class="btn btn-info pull-left mleft5 display-block"><?php echo _l('mail_lists'); ?></a>
+							<a href="<?php echo admin_url('surveys/mail_lists'); ?>" class="btn btn-primary"><?php echo _l('mail_lists'); ?></a>
 							<?php } ?>
 						</div>
 						<div class="clearfix"></div>
