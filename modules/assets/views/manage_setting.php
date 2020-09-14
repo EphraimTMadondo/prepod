@@ -8,7 +8,7 @@
     <div class="col-md-3">
       <div class="card">
         <div class="card-body">
-          <ul class="nav navnav-tabs flex-column">
+          <ul class="nav nav-tabs flex-column">
             <?php
             $i = 0;
             foreach($tab as $group){
