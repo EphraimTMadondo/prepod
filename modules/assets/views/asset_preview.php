@@ -1,5 +1,5 @@
 <div class="card mtop20">
-	<div class="panel-body">
+	<div class="card-body">
 	   <div class="col-md-12 project-overview-left">
        <div class="row">
         <div class="col-md-12"><h4><?php echo htmlspecialchars($assets->assets_name); ?></h4><hr/></div>
@@ -46,8 +46,8 @@
 	    	</div> 
 	    	<div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="general_infor">
-            	 <div class="panel panel-info">
-                  <div class="panel-body">
+            	 <div class="card panel-info">
+                  <div class="card-body">
                 	<div class="row col-md-12">
                 		<h4><?php echo htmlspecialchars(_l('asset_information')) ?></h4>
                 		<hr/>
@@ -146,8 +146,8 @@
                 	  </div>
                   </div>
                  </div>    
-                 <div class="panel panel-danger backgroundscroll">
-                  <div class="panel-body">
+                 <div class="card panel-danger backgroundscroll">
+                  <div class="card-body">
                 	<div class="row col-md-12">
                 		<h4><?php echo htmlspecialchars(_l('asset_value')) ?></h4>
                 		<hr/>
