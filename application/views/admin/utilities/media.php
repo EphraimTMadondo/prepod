@@ -3,7 +3,7 @@
 <!-- BEGIN: Content-->
 <div class="app-content content">
     <div class="content-overlay"></div>
-    <div class="content-wrapper">
+    <div class="content-area-wrapper">
     <div class="row">
       <div class="col-md-12">
         <div>
@@ -191,7 +191,7 @@ define('elFinderConfig', {
                   'elfinder': 'elfinder.min',
                 //  'encoding-japanese': '//cdn.rawgit.com/polygonplanet/encoding.js/master/encoding.min'
               },
-              waitSeconds: 10 // optional
+              waitSeconds: 10 // optionall
           });
         // load JavaScripts (REQUIRED)
         load();
