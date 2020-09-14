@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="row">
     <div class="col-md-12 text-right">
-        <div class="form-group pull-right">
+        <div class="form-group float-right">
             <select class="selectpicker" name="gantt_type" onchange="gantt_filter();">
                 <option value="milestones"<?php if(!$this->input->get('gantt_type') || $this->input->get('gantt_type') == 'milestones'){echo ' selected';} ?>><?php echo _l('project_milestones'); ?></option>
                 <option value="members"<?php if($this->input->get('gantt_type') == 'members'){echo ' selected';} ?>>
@@ -15,7 +15,7 @@
             <option value="status"<?php if($this->input->get('gantt_type') == 'status'){echo ' selected';} ?>><?php echo _l('task_status'); ?></option>
         </select>
     </div>
-    <div class="form-group pull-right mright10">
+    <div class="form-group float-right mr-1">
         <select class="selectpicker" name="gantt_task_status" onchange="gantt_filter();" data-none-selected-text="<?php echo _l('task_status'); ?>">
             <option value=""><?php echo _l('task_list_all'); ?></option>
             <?php foreach($task_statuses as $status){ ?>

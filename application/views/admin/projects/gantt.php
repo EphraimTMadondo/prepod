@@ -1,10 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+	<div class="content-overlay"></div>
+	<div class="content-wrapper">
 		<div class="row">
-			<div class="card mtop20">
-				<div class="panel-body">
+			<div class="card mt-1">
+				<div class="card-body">
 					<div class="row">
 						<div class="col-md-12">
 							<h4><?php echo _l('filter_by'); ?></h4>
