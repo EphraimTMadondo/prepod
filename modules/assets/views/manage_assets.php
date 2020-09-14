@@ -22,46 +22,52 @@
                     	<?php } ?>
                     </div>       
                   </div>
-                  <ul class="nav nav-tabs" role="tablist">
+                  <ul class="nav nav-tabs mt-2" role="tablist">
                     <li class="nav-item active">
                       <a  class="nav-link active" href="#all_asset" aria-controls="all_asset" role="tab" data-toggle="tab" aria-controls="all_asset">
-                        <span class="glyphicon glyphicon-align-justify"></span>&nbsp;<?php echo _l('all_asset'); ?>
+                        <i class="bx bx-home align-middle"></i>
+                        <span class="align-middle"><?php echo _l('all_asset'); ?></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a  class="nav-link" href="#not_pending_yet" aria-controls="not_pending_yet" role="tab" data-toggle="tab" aria-controls="not_pending_yet">
-                        <span class="glyphicon glyphicon-briefcase"></span>&nbsp;<?php echo htmlspecialchars(_l('not_pending_yet')); ?>
+                        <i class="bx bx-briefcase align-middle"></i>
+                        <span class="align-middle"><?php echo htmlspecialchars(_l('not_pending_yet')); ?></span>
                       </a>
                     </li>
-
                     <li class="nav-item">
                       <a  class="nav-link" href="#using" aria-controls="using" role="tab" data-toggle="tab" aria-controls="using">
-                        <span class="glyphicon glyphicon-expand"></span>&nbsp;<?php echo htmlspecialchars(_l('using')); ?>
+                        <i class="bx bx-expand align-middle"></i>
+                        <span class="align-middle"><?php echo htmlspecialchars(_l('using')); ?></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a  class="nav-link" href="#liquidation" aria-controls="liquidation" role="tab" data-toggle="tab" aria-controls="liquidation">
-                        <i class="glyphicon glyphicon-unchecked"></i>&nbsp;<?php echo htmlspecialchars(_l('liquidation')); ?>
+                        <i class="bx bx-message-square align-middle"></i>
+                        <span class="align-middle"><?php echo htmlspecialchars(_l('liquidation')); ?></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a  class="nav-link" href="#warranty_repair" aria-controls="warranty_repair" role="tab" data-toggle="tab" aria-controls="warranty_repair">
-                        <i class="glyphicon glyphicon-cog"></i>&nbsp;<?php echo htmlspecialchars(_l('warranty_repair')); ?>
+                        <i class="bx bx-cog align-middle"></i>
+                        <span class="align-middle"><?php echo htmlspecialchars(_l('warranty_repair')); ?></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a  class="nav-link" href="#lost" aria-controls="lost" role="tab" data-toggle="tab" aria-controls="lost">
-                        <span class="glyphicon glyphicon-new-window"></span>&nbsp;<?php echo htmlspecialchars(_l('lost')); ?>
+                        <i class="bx bx-window-open align-middle"></i>
+                        <span class="align-middle"><?php echo htmlspecialchars(_l('lost')); ?></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a  class="nav-link" href="#broken" aria-controls="broken" role="tab" data-toggle="tab" aria-controls="broken">
-                        <span class="glyphicon glyphicon-remove"></span>&nbsp;<?php echo htmlspecialchars(_l('broken')); ?>
+                        <i class="bx bx-x align-middle"></i>
+                        <span class="align-middle"><?php echo htmlspecialchars(_l('broken')); ?></span>
                       </a>
                     </li>
                 </ul>
            </div>
-           <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
+           <a href="#" class="btn btn-light float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
          </div>
        </div>
      </div>
