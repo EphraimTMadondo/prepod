@@ -8,15 +8,17 @@
             <div class="card mtop20">
                <div class="card-body">
                   <div class="row">
-                     <div class="col-md-12">
+                     <div class="col-md-8">
                       <h4 class="no-margin font-bold"><i class="fa fa-bank" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
+                      <hr />
+                    </div>
+                    <div class="col-md-4">
                       <?php if (has_permission('assets', '', 'create') || is_admin()) { ?>
                         <a href="#" onclick="new_asset(); return false;" class="btn btn-primary float-right ml-1">
                             <?php echo _l('new_asset'); ?>
                         </a>
                     	<?php } ?>
                       <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
-                      <hr />
                     </div>
                   </div>
                   <ul class="nav nav-tabs mt-2" role="tablist">
