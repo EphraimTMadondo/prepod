@@ -1,11 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<?php init_head(); ?><!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-<?php if(!isset($goal)){echo '8 col-md-offset-2';} else {echo '6';} ?>">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <h4 class="no-margin"><?php echo $title; ?></h4>
                         <hr class="hr-panel-heading" />
                         <?php echo form_open($this->uri->uri_string()); ?>
@@ -44,7 +45,7 @@
                             <input type="checkbox" name="notify_when_fail" id="notify_when_fail" <?php if(isset($goal)){if($goal->notify_when_fail == 1){echo 'checked';} } else {echo 'checked';} ?>>
                             <label for="notify_when_fail"><?php echo _l('goal_notify_when_fail'); ?></label>
                         </div>
-                        <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+                        <button type="submit" class="btn btn-primary float-right"><?php echo _l('submit'); ?></button>
                         <?php echo form_close(); ?>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
             <?php if(isset($goal)){ ?>
             <div class="col-md-6">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                     <h4 class="no-margin"><?php echo _l('goal_achievement'); ?></h4>
                       <hr class="hr-panel-heading" />
                         <?php

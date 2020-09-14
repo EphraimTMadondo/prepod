@@ -11,7 +11,7 @@ if (is_staff_member()) {
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body padding-10">
+               <div class="card-body p-1">
                   <div class="widget-dragger"></div>
                   <p class="padding-5">
                      <?php echo _l('goals'); ?>
@@ -20,12 +20,12 @@ if (is_staff_member()) {
                   <?php foreach($goals as $goal){
                      ?>
                      <div class="goal padding-5 no-padding-top">
-                        <h4 class="pull-left font-medium no-mtop">
+                        <h4 class="float-left font-medium no-mtop">
                            <?php echo $goal['goal_type_name']; ?>
                            <br />
                            <small><?php echo $goal['subject']; ?></small>
                         </h4>
-                        <h4 class="pull-right bold no-mtop text-success text-right">
+                        <h4 class="float-right bold no-mtop text-success text-right">
                            <?php echo $goal['achievement']['total']; ?>
                            <br />
                            <small><?php echo _l('goal_achievement'); ?></small>
