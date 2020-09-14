@@ -28,7 +28,7 @@
               </div>
               <div class="modal-footer">
                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-               <a href="#" class="btn btn-info" onclick="items_bulk_action(this); return false;"><?php echo _l('confirm'); ?></a>
+               <a href="#" class="btn btn-primary" onclick="items_bulk_action(this); return false;"><?php echo _l('confirm'); ?></a>
              </div>
            </div>
            <!-- /.modal-content -->
@@ -40,9 +40,9 @@
      <?php hooks()->do_action('before_items_page_content'); ?>
      <?php if(has_permission('items','','create')){ ?>
        <div class="_buttons">
-        <a href="#" class="btn btn-info pull-left" data-toggle="modal" data-target="#sales_item_modal"><?php echo _l('new_invoice_item'); ?></a>
-        <a href="#" class="btn btn-info pull-left mleft5" data-toggle="modal" data-target="#groups"><?php echo _l('item_groups'); ?></a>
-        <a href="<?php echo admin_url('invoice_items/import'); ?>" class="btn btn-info pull-left mleft5"><?php echo _l('import_items'); ?></a>
+        <a href="#" class="btn btn-primary pull-left" data-toggle="modal" data-target="#sales_item_modal"><?php echo _l('new_invoice_item'); ?></a>
+        <a href="#" class="btn btn-primary pull-left mleft5" data-toggle="modal" data-target="#groups"><?php echo _l('item_groups'); ?></a>
+        <a href="<?php echo admin_url('invoice_items/import'); ?>" class="btn btn-primary pull-left mleft5"><?php echo _l('import_items'); ?></a>
       </div>
       <div class="clearfix"></div>
       <hr class="hr-panel-heading" />
@@ -89,7 +89,7 @@
           <div class="input-group">
             <input type="text" name="item_group_name" id="item_group_name" class="form-control" placeholder="<?php echo _l('item_group_name'); ?>">
             <span class="input-group-btn">
-              <button class="btn btn-info p7" type="button" id="new-item-group-insert"><?php echo _l('new_item_group'); ?></button>
+              <button class="btn btn-primary p7" type="button" id="new-item-group-insert"><?php echo _l('new_item_group'); ?></button>
             </span>
           </div>
           <hr />
@@ -113,7 +113,7 @@
                      <div class="input-group">
                       <input type="text" class="form-control">
                       <span class="input-group-btn">
-                        <button class="btn btn-info p8 update-item-group" type="button"><?php echo _l('submit'); ?></button>
+                        <button class="btn btn-primary p8 update-item-group" type="button"><?php echo _l('submit'); ?></button>
                       </span>
                     </div>
                   </div>
