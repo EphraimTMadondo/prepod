@@ -90,7 +90,7 @@
                             ?>
                         </div>
                         <?php hooks()->do_action('after_bulk_pdf_export_options'); ?>
-                        <button class="btn btn-primary" type="submit"><?php echo _l('bulk_pdf_export_button'); ?></button>
+                        <button class="btn btn-primary float-right" type="submit"><?php echo _l('bulk_pdf_export_button'); ?></button>
                         <?php echo form_close(); ?>
                     </div>
                 </div>
