@@ -22,50 +22,44 @@
                     	<?php } ?>
                     </div>       
                   </div>
-                    <br><br>
-                <div class="horizontal-scrollable-tabs preview-tabs-top">
-                  <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
-                  <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
-                  <div class="horizontal-tabs">
-                  <ul class="nav nav-tabs nav-tabs-horizontal mbot15" role="tablist">
-                 <li role="presentation" class="active">
-                     <a href="#all_asset" aria-controls="all_asset" role="tab" data-toggle="tab" aria-controls="all_asset">
-                     <span class="glyphicon glyphicon-align-justify"></span>&nbsp;<?php echo _l('all_asset'); ?>
-                     </a>
-                  </li>
-                  <li role="presentation">
-                     <a href="#not_pending_yet" aria-controls="not_pending_yet" role="tab" data-toggle="tab" aria-controls="not_pending_yet">
-                     <span class="glyphicon glyphicon-briefcase"></span>&nbsp;<?php echo htmlspecialchars(_l('not_pending_yet')); ?>
-                     </a>
-                  </li>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item active">
+                      <a  class="nav-link active" href="#all_asset" aria-controls="all_asset" role="tab" data-toggle="tab" aria-controls="all_asset">
+                        <span class="glyphicon glyphicon-align-justify"></span>&nbsp;<?php echo _l('all_asset'); ?>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link" href="#not_pending_yet" aria-controls="not_pending_yet" role="tab" data-toggle="tab" aria-controls="not_pending_yet">
+                        <span class="glyphicon glyphicon-briefcase"></span>&nbsp;<?php echo htmlspecialchars(_l('not_pending_yet')); ?>
+                      </a>
+                    </li>
 
-                  <li role="presentation">
-                     <a href="#using" aria-controls="using" role="tab" data-toggle="tab" aria-controls="using">
-                     <span class="glyphicon glyphicon-expand"></span>&nbsp;<?php echo htmlspecialchars(_l('using')); ?>
-                     </a>
-                  </li>
-                  <li role="presentation">
-                     <a href="#liquidation" aria-controls="liquidation" role="tab" data-toggle="tab" aria-controls="liquidation">
-                     <i class="glyphicon glyphicon-unchecked"></i>&nbsp;<?php echo htmlspecialchars(_l('liquidation')); ?>
-                     </a>
-                  </li>
-                  <li role="presentation">
-                     <a href="#warranty_repair" aria-controls="warranty_repair" role="tab" data-toggle="tab" aria-controls="warranty_repair">
-                     <i class="glyphicon glyphicon-cog"></i>&nbsp;<?php echo htmlspecialchars(_l('warranty_repair')); ?>
-                     </a>
-                  </li>
-                   <li role="presentation">
-                     <a href="#lost" aria-controls="lost" role="tab" data-toggle="tab" aria-controls="lost">
-                     <span class="glyphicon glyphicon-new-window"></span>&nbsp;<?php echo htmlspecialchars(_l('lost')); ?>
-                     </a>
-                  </li>
-                   <li role="presentation">
-                     <a href="#broken" aria-controls="broken" role="tab" data-toggle="tab" aria-controls="broken">
-                     <span class="glyphicon glyphicon-remove"></span>&nbsp;<?php echo htmlspecialchars(_l('broken')); ?>
-                     </a>
-                  </li>
-               </ul>
-             </div>
+                    <li class="nav-item">
+                      <a  class="nav-link" href="#using" aria-controls="using" role="tab" data-toggle="tab" aria-controls="using">
+                        <span class="glyphicon glyphicon-expand"></span>&nbsp;<?php echo htmlspecialchars(_l('using')); ?>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link" href="#liquidation" aria-controls="liquidation" role="tab" data-toggle="tab" aria-controls="liquidation">
+                        <i class="glyphicon glyphicon-unchecked"></i>&nbsp;<?php echo htmlspecialchars(_l('liquidation')); ?>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link" href="#warranty_repair" aria-controls="warranty_repair" role="tab" data-toggle="tab" aria-controls="warranty_repair">
+                        <i class="glyphicon glyphicon-cog"></i>&nbsp;<?php echo htmlspecialchars(_l('warranty_repair')); ?>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link" href="#lost" aria-controls="lost" role="tab" data-toggle="tab" aria-controls="lost">
+                        <span class="glyphicon glyphicon-new-window"></span>&nbsp;<?php echo htmlspecialchars(_l('lost')); ?>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link" href="#broken" aria-controls="broken" role="tab" data-toggle="tab" aria-controls="broken">
+                        <span class="glyphicon glyphicon-remove"></span>&nbsp;<?php echo htmlspecialchars(_l('broken')); ?>
+                      </a>
+                    </li>
+                </ul>
            </div>
            <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
          </div>
