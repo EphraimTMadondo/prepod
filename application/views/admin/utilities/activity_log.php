@@ -1,11 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<?php init_head(); ?><!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card" style="margin-top: 2rem;">
-					<div class="panel-body">
+					<div class="card-body">
 						<div class="row">
 							<div class="col-md-4">
 								<?php echo render_date_input('activity_log_date','utility_activity_log_filter_by_date','',array(),array(),'','activity-log-date'); ?>
