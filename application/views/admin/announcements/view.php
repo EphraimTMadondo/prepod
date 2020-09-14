@@ -1,11 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<?php init_head(); ?><!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-7">
                 <div class="card mtop20">
-                    <div class="panel-body tc-content">
+                    <div class="card-body tc-content">
                       <h4 class="bold no-margin"><?php echo $announcement->name; ?>
                         <?php if (is_admin()) { ?>
                           <a href="<?php echo admin_url('announcements/announcement/' . $announcement->announcementid); ?>" class="pull-right">
@@ -26,7 +27,7 @@
           <?php if(count($recent_announcements) > 0){ ?>
           <div class="col-md-5">
             <div class="card mtop20">
-                <div class="panel-body">
+                <div class="card-body">
                     <h4 class="bold no-margin"><?php echo _l('announcements_recent'); ?></h4>
                     <hr class="hr-panel-heading" />
                     <?php foreach($recent_announcements as $announcement){ ?>

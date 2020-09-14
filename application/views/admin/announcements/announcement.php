@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card-body">
 					<h4 class="no-margin">
 					<?php echo $title; ?>
 					</h4>
@@ -31,7 +33,7 @@
 							<input type="checkbox" name="showname" id="showname" <?php if(isset($announcement)){if($announcement->showname == 1){echo 'checked';}} ?>>
 							<label for="showname"><?php echo _l('announcement_show_my_name'); ?></label>
 						</div>
-						<button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+						<button type="submit" class="btn btn-primary float-right"><?php echo _l('submit'); ?></button>
 						<?php echo form_close(); ?>
 					</div>
 				</div>

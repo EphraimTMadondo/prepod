@@ -127,7 +127,7 @@
                         </li>
                         <li><a href="<?php echo base_url();?>admin/utilities/calendar"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Calendar">Calendar</span></a>
                         </li>
-                        <li><a href="<?php echo base_url();?>admin/announcements/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Announcements">Announcements</span></a>
+                        <li><a href="<?php echo base_url();?>admin/announcements"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Announcements">Announcements</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/utilities/goals"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Goals">Goals</span></a>
                         </li>
