@@ -14,7 +14,7 @@
                         <?php $text_questions = array(); ?>
                         <?php if(count($survey->questions) > 0){
                             foreach($survey->questions as $question){  ?>
-                        <div class="mbot20">
+                        <div class="mb-2">
                             <?php if($question['boxtype'] == 'checkbox' || $question['boxtype'] == 'radio'){ ?>
                             <h4 class="bold no-mbot"><?php echo $question['question']; ?></h4>
                             <hr />
