@@ -5,26 +5,25 @@
 	<div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
-               <div class="panel-body">
+            <div class="card mt-2">
+               <div class="card-body">
                   <div class="row">
                      <div class="col-md-4 border-right">
                       <h4 class="no-margin font-bold"><i class="fa fa-edit" aria-hidden="true"></i> <?php echo htmlspecialchars(_l($title)); ?></h4>
                       <hr />
                     </div>
                   </div>
-                   
                 <?php
-                        $table_data = array(
-                            _l('time'),
-                            _l('asset_name'),
-                            _l('acction_code'),
-                            _l('action'),
-                            _l('quantity_as_qty'),
-                            _l('acction_from'),
-                            _l('acction_to'),                                 
-                            );
-                        render_datatable($table_data,'table_action');
+                  $table_data = array(
+                        _l('time'),
+                        _l('asset_name'),
+                        _l('acction_code'),
+                        _l('action'),
+                        _l('quantity_as_qty'),
+                        _l('acction_from'),
+                        _l('acction_to'),                                 
+                        );
+                  render_datatable($table_data,'table_action');
                         ?>
                </div>
             </div>
@@ -32,7 +31,6 @@
       </div>
    </div>
 </div>
-
 </div>
 <?php init_tail(); ?>
 </body>
