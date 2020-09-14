@@ -1,14 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
    <div class="row">
       <div class="col-md-5" id="survey-add-edit-wrapper">
          <div class="row">
             <div class="col-md-12">
                <div class="card mtop20">
                   <?php echo form_open($this->uri->uri_string(), array('id'=>'survey_form')); ?>
-                  <div class="panel-body">
+                  <div class="card-body">
                      <h4 class="no-margin">
                         <?php echo $title; ?>
                      </h4>
@@ -60,7 +62,7 @@
                         <input type="checkbox" name="onlyforloggedin" id="onlyforloggedin" <?php if(isset($survey) && $survey->onlyforloggedin == 1){echo 'checked';} ?>>
                         <label for="onlyforloggedin"><?php echo _l('survey_add_edit_only_for_logged_in'); ?></label>
                      </div>
-                     <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
                   </div>
                   <?php echo form_close(); ?>
                </div>
@@ -70,7 +72,7 @@
       </div>
       <div class="col-md-7" id="survey_questions_wrapper">
          <div class="card mtop20">
-            <div class="panel-body">
+            <div class="card-body">
                <?php if(isset($survey)){ ?>
                <ul class="nav nav-tabs tabs-in-body-no-margin" role="tablist">
                   <li role="presentation" class="active">
@@ -93,13 +95,13 @@
                      <div class="_buttons">
                         <?php
                            if (total_rows(db_prefix().'surveyresultsets', 'surveyid=' . $survey->surveyid) > 0) { ?>
-                        <a href="<?php echo admin_url('surveys/results/' . $survey->surveyid); ?>" target="_blank" class="btn btn-success pull-right mleft10 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_results_tooltip'); ?>"><i class="bx bx-chart"></i></a>
+                        <a href="<?php echo admin_url('surveys/results/' . $survey->surveyid); ?>" target="_blank" class="btn btn-success float-right ml-1 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_results_tooltip'); ?>"><i class="bx bx-chart"></i></a>
                         <?php } ?>
                         <!-- Single button -->
-                        <a href="<?php echo site_url('survey/'.$survey->surveyid . '/' . $survey->hash); ?>" target="_blank" class="btn btn-success pull-right mleft10 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_tooltip'); ?>"><i class="bx bx-show"></i></a>
+                        <a href="<?php echo site_url('survey/'.$survey->surveyid . '/' . $survey->hash); ?>" target="_blank" class="btn btn-success float-right ml-1 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_tooltip'); ?>"><i class="bx bx-show"></i></a>
                         <?php if(has_permission('surveys','','edit')){ ?>
                         <div class="btn-group pull-right">
-                           <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            <?php echo _l('survey_insert_field'); ?> <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu">
@@ -300,7 +302,7 @@
                            <hr />
                            <?php } ?>
 
-                        <button type="submit" class="btn btn-info"><?php echo _l('survey_send_string'); ?></button>
+                        <button type="submit" class="btn btn-primary"><?php echo _l('survey_send_string'); ?></button>
                      </div>
                      <?php echo form_close(); ?>
 
