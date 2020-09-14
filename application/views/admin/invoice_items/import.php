@@ -29,8 +29,8 @@
                 <?php echo form_hidden('items_import','true'); ?>
                 <?php echo render_input('file_csv','choose_csv_file','','file'); ?>
                 <div class="form-group">
-                  <button type="button" class="btn btn-info import btn-import-submit"><?php echo _l('import'); ?></button>
-                  <button type="button" class="btn btn-info simulate btn-import-submit"><?php echo _l('simulate_import'); ?></button>
+                  <button type="button" class="btn btn-primary import btn-import-submit"><?php echo _l('import'); ?></button>
+                  <button type="button" class="btn btn-primary simulate btn-import-submit"><?php echo _l('simulate_import'); ?></button>
                 </div>
                 <?php echo form_close(); ?>
               </div>
