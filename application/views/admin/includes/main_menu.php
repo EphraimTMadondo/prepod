@@ -129,11 +129,11 @@
                         </li>
                         <li><a href="<?php echo base_url();?>admin/announcements"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Announcements">Announcements</span></a>
                         </li>
-                        <li><a href="<?php echo base_url();?>admin/utilities/goals"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Goals">Goals</span></a>
+                        <li><a href="<?php echo base_url();?>admin/goals"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Goals">Goals</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/utilities/activity_log"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Activity Log">Activity Log</span></a>
                         </li>
-                        <li><a href="<?php echo base_url();?>admin/utilities/surveys"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Surveys">Surveys</span></a>
+                        <li><a href="<?php echo base_url();?>admin/surveys"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Surveys">Surveys</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/utilities/pipe_log"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Ticket Pipe Log">Ticket Pipe Log</span></a>
                         </li>
