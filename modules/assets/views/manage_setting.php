@@ -8,14 +8,14 @@
     <div class="col-md-3">
       <div class="card">
         <div class="card-body">
-          <ul class="nav navbar-tabs flex-column">
+          <ul class="nav navnav-tabs flex-column">
             <?php
             $i = 0;
             foreach($tab as $group){
               ?>
               <li class="nav-item <?php if($i == 0){echo " active"; } ?>" >
-              <a class="nav-link" href="<?php echo admin_url('assets/setting?group='.$group); ?>" data-group="<?php echo htmlspecialchars($group); ?>">
-                <?php if($group == 'asset_group'){ echo '<i class="bx bx-cubes"></i>'; }elseif($group == 'asset_unit'){echo '<i class="bx bx-cube"></i>';}elseif($group == 'asset_location'){echo '<i class="bx bx-current-location"></i>';}?>  <?php echo htmlspecialchars(_l($group)); ?></a>
+              <a class="nav-link <?php if($i == 0){echo " active"; } ?>" href="<?php echo admin_url('assets/setting?group='.$group); ?>" data-group="<?php echo htmlspecialchars($group); ?>">
+                <?php if($group == 'asset_group'){ echo '<i class="bx bx-customize"></i>'; }elseif($group == 'asset_unit'){echo '<i class="bx bx-cube"></i>';}elseif($group == 'asset_location'){echo '<i class="bx bx-navigation"></i>';}?>  <?php echo htmlspecialchars(_l($group)); ?></a>
               </li>
               <?php $i++; } ?>
           </ul>
@@ -23,10 +23,10 @@
       </div>
     </div>
     <div class="col-md-9">
-      <div class="card mt-1">
-      <div class="card-body">
-          <?php $this->load->view($tabs['view']); ?>
-      </div>
+      <div class="card">
+        <div class="card-body">
+            <?php $this->load->view($tabs['view']); ?>
+        </div>
     </div>
   </div>
 <div class="clearfix"></div>
