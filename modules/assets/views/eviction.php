@@ -4,7 +4,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <div class="row">
                      <div class="col-md-4 border-right">
                       <h4 class="no-margin font-bold"><i class="fa fa-pencil-square" aria-hidden="true"></i> <?php echo htmlspecialchars(_l($title)); ?></h4>
