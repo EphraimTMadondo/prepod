@@ -1,21 +1,23 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
             <?php if($fixedlist == false) { ?>
             <?php if(has_permission('surveys','','create')){ ?>
-            <div class="panel_s">
-               <div class="panel-body _buttons">
-                  <a href="#" class="btn btn-default pull-left mright10" data-toggle="modal" data-target="#import_emails"><?php echo _l('btn_import_emails'); ?></a>
-                  <a href="#" class="btn btn-default pull-left" data-toggle="modal" data-target="#add_email_to_list"><?php echo _l('btn_add_email_to_list'); ?></a>
+            <div class="card">
+               <div class="card-body _buttons">
+                  <a href="#" class="btn btn-default float-left mr-1" data-toggle="modal" data-target="#import_emails"><?php echo _l('btn_import_emails'); ?></a>
+                  <a href="#" class="btn btn-default float-left" data-toggle="modal" data-target="#add_email_to_list"><?php echo _l('btn_add_email_to_list'); ?></a>
                </div>
             </div>
             <?php } ?>
             <?php } ?>
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <?php if($fixedlist == true) { ?>
                   <?php if($id == 'leads'){ ?>
                   <div class="row">
@@ -51,7 +53,7 @@
                   </div>
                   <hr class="no-mtop" />
                   <?php } else if($id == 'clients'){ ?>
-                  <div class="row mbot15">
+                  <div class="row mb-1">
                      <div class="col-md-3">
                         <div class="select-placeholder">
                            <select name="customer_groups" title="<?php echo _l('customer_groups'); ?> - <?php echo _l('customers_sort_all'); ?>" multiple id="customer_groups" class="selectpicker" data-width="100%">
@@ -74,7 +76,7 @@
                         </div>
                      </div>
                      <?php } ?>
-                     <div class="col-md-6 mtop10">
+                     <div class="col-md-6 mt-1">
                         <div class="radio radio-inline radio-info">
                            <input type="radio" name="active_customers_filter" checked id="customers_filter_all" value="">
                            <label for="customers_filter_all"><?php echo _l('customers_sort_all'); ?></label>

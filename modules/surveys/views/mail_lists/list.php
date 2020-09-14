@@ -1,26 +1,26 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<div class="panel_s">
-
-					<div class="panel-body _buttons">
+				<div class="card">
+					<div class="card-body _buttons">
 						<h4 class="no-margin">
 							<?php echo $title; ?>
 						</h4>
 						<hr class="hr-panel-heading" />
 						<?php if(isset($list)){ ?>
 							<?php if(has_permission('surveys','','create')){ ?>
-								<a href="<?php echo admin_url('surveys/mail_list'); ?>" class="btn btn-success pull-left mbot20 display-block"><?php echo _l('new_mail_list'); ?></a>
+								<a href="<?php echo admin_url('surveys/mail_list'); ?>" class="btn btn-success float-left mb-2"><?php echo _l('new_mail_list'); ?></a>
 							<?php } ?>
-							<a href="<?php echo admin_url('surveys/mail_lists'); ?>" class="btn btn-default mleft5 pull-left mbot20 display-block"><?php echo _l('mail_lists'); ?></a>
+							<a href="<?php echo admin_url('surveys/mail_lists'); ?>" class="btn btn-default ml-1 float-left mb-2"><?php echo _l('mail_lists'); ?></a>
 							<div class="clearfix"></div>
 							<hr />
 						<?php } ?>
 						<?php echo form_open($this->uri->uri_string()); ?>
-
 						<?php $value = (isset($list) ? $list->name : ''); ?>
 						<?php echo render_input('name','mail_list_add_edit_name',$value); ?>
 						<div class="form-group">
@@ -42,7 +42,7 @@
 							}
 							?>
 						</div>
-						<button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+						<button type="submit" class="btn btn-primary float-right"><?php echo _l('submit'); ?></button>
 						<?php echo form_close(); ?>
 					</div>
 				</div>
