@@ -16,7 +16,7 @@
                   <div class="row">    
                     <div class="_buttons col-md-3">
                     	<?php if (has_permission('assets', '', 'create') || is_admin()) { ?>
-                        <a href="#" onclick="new_asset(); return false;" class="btn btn-info pull-left display-block">
+                        <a href="#" onclick="new_asset(); return false;" class="btn btn-primary">
                             <?php echo _l('new_asset'); ?>
                         </a>
                     	<?php } ?>
