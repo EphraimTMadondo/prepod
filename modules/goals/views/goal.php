@@ -1,4 +1,5 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); 
+ini_set('display_errors', 1);?>
 <?php init_head(); ?><!-- BEGIN: Content-->
 <div class="app-content content">
     <div class="content-overlay"></div>
