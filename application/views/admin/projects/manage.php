@@ -6,17 +6,17 @@
 	<div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
-            <div class="card mtop20">
-              <div class="panel-body">
+            <div class="card mt-2">
+              <div class="card-body">
               <div class="_buttons">
               <?php if(has_permission('projects','','create')){ ?>
                 <a href="<?php echo admin_url('projects/project'); ?>" class="btn btn-info pull-left display-block mright5">
                   <?php echo _l('new_project'); ?>
                 </a>
               <?php } ?>
-              <a href="<?php echo admin_url('projects/gantt'); ?>" data-toggle="tooltip" title="<?php echo _l('project_gant'); ?>" class="btn btn-default"><i class="fa fa-align-left" aria-hidden="true"></i></a>
-              <div class="btn-group pull-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="<?php echo admin_url('projects/gantt'); ?>" data-toggle="tooltip" title="<?php echo _l('project_gant'); ?>" class="btn btn-light"><i class="fa fa-align-left" aria-hidden="true"></i></a>
+              <div class="btn-group float-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-filter" aria-hidden="true"></i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right width300">
