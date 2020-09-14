@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <div class="card" style="margin-top: 2rem;">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <h4 class="no-margin"><?php echo $title; ?></h4>
                         <hr class="hr-panel-heading" />
                         <?php echo form_open($this->uri->uri_string()); ?>
@@ -88,7 +90,7 @@
                             ?>
                         </div>
                         <?php hooks()->do_action('after_bulk_pdf_export_options'); ?>
-                        <button class="btn btn-info" type="submit"><?php echo _l('bulk_pdf_export_button'); ?></button>
+                        <button class="btn btn-primary" type="submit"><?php echo _l('bulk_pdf_export_button'); ?></button>
                         <?php echo form_close(); ?>
                     </div>
                 </div>
