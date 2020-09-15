@@ -395,8 +395,7 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
         }
         $select .= "<option value='" . $key . "'" . $_selected . $data_content . $data_sub_text . ">" . $val . "</option>\n";
     }
-    $select .= "        </select>\n";
-    $select .= "    </div>\n";
+    $select .= "    </select>\n";
     $select .= "</fieldset>\n";
 
     return $select;
