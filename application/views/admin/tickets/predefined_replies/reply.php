@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="card mtop20">
@@ -21,7 +23,7 @@
 						<?php echo render_input('name','predefined_reply_add_edit_name',$value,'text',$attrs); ?>
 						<?php $contents = ''; if(isset($predefined_reply)){$contents = $predefined_reply->message;} ?>
 						<?php echo render_textarea('message','',$contents,array(),array(),'','tinymce'); ?>
-						<button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
+						<button type="submit" class="btn btn-primary float-right"><?php echo _l('submit'); ?></button>
 						<?php echo form_close(); ?>
 					</div>
 				</div>
