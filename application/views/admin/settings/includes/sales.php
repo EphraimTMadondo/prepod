@@ -5,16 +5,16 @@
       <a class="nav-link active" href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_general'); ?></a>
    </li>
    <li class="nav-item" role="presentation">
-      <a href="#invoice" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('invoices'); ?></a>
+      <a class="nav-link" href="#invoice" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('invoices'); ?></a>
    </li>
    <li class="nav-item" role="presentation">
-      <a href="#credit_notes" aria-controls="credit_notes" role="tab" data-toggle="tab"><?php echo _l('credit_notes'); ?></a>
+      <a class="nav-link" href="#credit_notes" aria-controls="credit_notes" role="tab" data-toggle="tab"><?php echo _l('credit_notes'); ?></a>
    </li>
    <li class="nav-item" role="presentation">
-      <a href="#estimates" aria-controls="estimates" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_estimates'); ?></a>
+      <a class="nav-link" href="#estimates" aria-controls="estimates" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_estimates'); ?></a>
    </li>
    <li class="nav-item" role="presentation">
-      <a href="#proposals" aria-controls="proposals" role="tab" data-toggle="tab"><?php echo _l('proposals'); ?></a>
+      <a class="nav-link" href="#proposals" aria-controls="proposals" role="tab" data-toggle="tab"><?php echo _l('proposals'); ?></a>
    </li>
    <?php hooks()->do_action('after_finance_settings_last_tab'); ?>
 </ul>
