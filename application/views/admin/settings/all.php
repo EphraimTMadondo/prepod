@@ -28,7 +28,7 @@
       foreach ($tabs as $t) {
           ?>
         <li class="nav-item">
-        <a class="nav-link <?php if($t['slug'] == $group){echo 'active'; } ?>" href="<?php echo admin_url('settings?group=' . $t['slug']); ?>" data-group="<?php echo $t['slug']; ?>">
+        <a class="nav-link <?php if($t['slug'] == $this->input->get('group')){echo 'active'; } ?>" href="<?php echo admin_url('settings?group=' . $t['slug']); ?>" data-group="<?php echo $t['slug']; ?>">
           <?php echo $t['name']; ?></a>
         </li>
         <?php $i++;
