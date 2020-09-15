@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-7">
-                <div class="card mtop20">
-                    <div class="panel-body">
+                <div class="card ">
+                    <div class="card-body">
                         <h4 class="no-margin">
                            <?php echo $title; ?>
                        </h4>
@@ -109,15 +111,14 @@
                  <?php } ?>
              </div>
              <?php } ?>
-             <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+             <button type="submit" class="btn btn-primary float-right"><?php echo _l('submit'); ?></button>
              <?php echo form_close(); ?>
          </div>
      </div>
  </div>
  <div class="col-md-5">
-    <div class="card mtop20">
-
-        <div class="panel-body">
+    <div class="card ">
+        <div class="card-body">
            <h4 class="no-margin">
             <?php echo _l('staff_edit_profile_change_your_password'); ?>
         </h4>
@@ -135,7 +136,7 @@
             <label for="newpasswordr" class="control-label"><?php echo _l('staff_edit_profile_change_repeat_new_password'); ?></label>
             <input type="password" class="form-control" id="newpasswordr" name="newpasswordr">
         </div>
-        <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+        <button type="submit" class="btn btn-primary float-right"><?php echo _l('submit'); ?></button>
         <?php echo form_close(); ?>
     </div>
     <?php if($member->last_password_change != NULL){ ?>

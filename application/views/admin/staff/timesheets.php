@@ -1,12 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
       <div class="row">
          <?php if(!isset($view_all)){ ?>
          <div class="col-md-12">
-            <div class="card mtop20">
-               <div class="panel-body no-padding-bottom">
+            <div class="card">
+               <div class="card-body no-padding-bottom">
                   <?php $this->load->view('admin/staff/stats'); ?>
                </div>
             </div>
@@ -14,7 +16,7 @@
          <?php } ?>
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php if(is_admin()){ ?>
                   <?php if(isset($view_all) && get_option('show_timesheets_overview_all_members_notice_admins') == 1){ ?>
                   <div class="alert alert-info alert-dismissible" role="alert">
@@ -22,7 +24,7 @@
                      <?php echo _l('timesheets_overview_all_members_notice_admins'); ?>
                   </div>
                   <?php } ?>
-                  <a href="<?php echo site_url($this->uri->uri_string().(!isset($view_all) ? '?view=all' : '')); ?>" class="btn btn-info"><i class="fa fa-clock-o"></i>
+                  <a href="<?php echo site_url($this->uri->uri_string().(!isset($view_all) ? '?view=all' : '')); ?>" class="btn btn-primary"><i class="fa fa-clock-o"></i>
                   <?php
                      echo (isset($view_all) ? _l('my_timesheets') :  _l('view_members_timesheets'));
                      ?>
@@ -81,7 +83,7 @@
                         </div>
                      </div>
                      <div class="col-md-5ths">
-                        <a href="#" id="apply_filters_timesheets" class="btn btn-info p7 pull-left"><?php echo _l('apply'); ?></a>
+                        <a href="#" id="apply_filters_timesheets" class="btn btn-primary"><?php echo _l('apply'); ?></a>
                      </div>
                      <div class="mtop10 hide relative pull-right" id="group_by_tasks_wrapper">
                         <span><?php echo _l('group_by_task'); ?></span>

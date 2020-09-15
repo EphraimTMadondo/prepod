@@ -1,12 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
-
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card-body">
 						<?php if(has_permission('staff','','create')){ ?>
 						<div class="_buttons">
 							<a href="<?php echo admin_url('staff/member'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_staff'); ?></a>

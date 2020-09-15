@@ -5,8 +5,8 @@
 ?>
 <div class="staff_logged_time" data-toggle="tooltip" data-title="<?php echo _l('task_timesheets'); ?>" data-placement="left">
  <div class="<?php echo $column; ?> col-sm-6 col-xs-12 total-column">
-   <div class="card mtop20">
-    <div class="panel-body">
+   <div class="card">
+    <div class="card-body">
      <h3 class="text-muted _total">
        <?php echo seconds_to_time_format($logged_time['total']); ?>
      </h3>
@@ -16,7 +16,7 @@
 </div>
 <div class="<?php echo $column; ?> col-sm-6 col-xs-12 total-column">
  <div class="card">
-  <div class="panel-body">
+  <div class="card-body">
    <h3 class="text-muted _total">
      <?php echo seconds_to_time_format($logged_time['last_month']); ?>
    </h3>
@@ -26,7 +26,7 @@
 </div>
 <div class="<?php echo $column; ?> col-sm-6 col-xs-12 total-column">
  <div class="card">
-  <div class="panel-body">
+  <div class="card-body">
    <h3 class="text-muted _total">
     <?php echo seconds_to_time_format($logged_time['this_month']); ?>
   </h3>
@@ -36,7 +36,7 @@
 </div>
 <div class="<?php echo $column; ?> col-sm-6 col-xs-12 total-column">
  <div class="card">
-  <div class="panel-body">
+  <div class="card-body">
    <h3 class="text-muted _total">
      <?php echo seconds_to_time_format($logged_time['last_week']); ?>
    </h3>
@@ -46,7 +46,7 @@
 </div>
 <div class="<?php echo $column; ?> col-sm-6 col-xs-12 total-column">
  <div class="card">
-  <div class="panel-body">
+  <div class="card-body">
    <h3 class="text-muted _total">
      <?php echo seconds_to_time_format($logged_time['this_week']); ?>
    </h3>
