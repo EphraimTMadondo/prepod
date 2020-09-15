@@ -58,7 +58,7 @@
           <?php hooks()->do_action('before_settings_group_view', $tab); ?>
           <?php $this->load->view($tab['view']) ?>
           <?php hooks()->do_action('after_settings_group_view', $tab); ?>
-          <hr />
+          <hr class="hr-panel-heading" />
           <div class="btn-bottom-toolbar text-right">
             <button type="submit" class="btn btn-secondary">
               <?php echo _l('settings_save'); ?>
