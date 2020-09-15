@@ -23,9 +23,9 @@
                 <?php echo render_input('file_csv','choose_csv_file','','file'); ?>
                 <?php
                 if(is_admin() || get_option('staff_members_create_inline_customer_groups') == '1'){
-                  echo render_select_with_input_group('groups_in[]',$groups,array('id','name'),'customer_groups',($this->input->post('groups_in') ? $this->input->post('groups_in') : array()),'<a href="#" data-toggle="modal" data-target="#customer_group_modal"><i class="fa fa-plus"></i></a>',array('multiple'=>true,'data-actions-box'=>true),array(),'','',false);
+                  echo render_select_with_input_group('groups_in[]',$groups,array('id','name'),'customer_groups',($this->input->post('groups_in') ? $this->input->post('groups_in') : array()),'<a class="input-group-text" href="#" data-toggle="modal" data-target="#customer_group_modal"><i class="fa fa-plus"></i></a>',array('multiple'=>true,'data-actions-box'=>true),array(),'','select2',false);
                 } else {
-                  echo render_select('groups_in[]',$groups,array('id','name'),'customer_groups',($this->input->post('groups_in') ? $this->input->post('groups_in') : array()),array('multiple'=>true,'data-actions-box'=>true),array(),'','',false);
+                  echo render_select('groups_in[]',$groups,array('id','name'),'customer_groups',($this->input->post('groups_in') ? $this->input->post('groups_in') : array()),array('multiple'=>true,'data-actions-box'=>true),array(),'','select2',false);
                 }
                 echo render_input('default_pass_all','default_pass_clients_import',$this->input->post('default_pass_all')); ?>
                 <div class="form-group">
