@@ -17,35 +17,35 @@ if($total_gateways > 1) { ?>
         <div class="card-header" role="tab" id="<?php echo 'heading'.$gateway['id']; ?>" data-toggle="collapse" data-parent="#sms_gateways_options" href="#sms_<?php echo $gateway['id']; ?>" aria-expanded="true" aria-controls="sms_<?php echo $gateway['id']; ?>">
             <?php echo $gateway['name']; ?> <span class="float-right"><i class="fa fa-sort-down"></i></span>
         </div>
-    </div>
-    <div id="sms_<?php echo $gateway['id']; ?>" class="panel-collapse collapse<?php if($this->app_sms->get_option($gateway['id'],'active') == 1 || $total_gateways == 1){echo ' in';} ?>" role="tab-pane" aria-labelledby="<?php echo 'heading'.$gateway['id']; ?>">
-      <div class="card-body no-br-tlr no-border-color">
-        <?php
-        if(isset($gateway['info']) && $gateway['info'] != '') {
-            echo $gateway['info'];
-        }
+        <div id="sms_<?php echo $gateway['id']; ?>" class="panel-collapse collapse<?php if($this->app_sms->get_option($gateway['id'],'active') == 1 || $total_gateways == 1){echo ' in';} ?>" role="tab-pane" aria-labelledby="<?php echo 'heading'.$gateway['id']; ?>">
+            <div class="card-body no-br-tlr no-border-color">
+                <?php
+                if(isset($gateway['info']) && $gateway['info'] != '') {
+                    echo $gateway['info'];
+                }
 
-        foreach($gateway['options'] as $g_option){
-            echo render_input('settings['.$this->app_sms->option_name($gateway['id'],$g_option['name']).']',$g_option['label'],$this->app_sms->get_option($gateway['id'],$g_option['name']));
-            if(isset($g_option['info'])) {
-                echo $g_option['info'];
-            }
-        }
-        echo '<div class="sms_gateway_active">';
+                foreach($gateway['options'] as $g_option){
+                    echo render_input('settings['.$this->app_sms->option_name($gateway['id'],$g_option['name']).']',$g_option['label'],$this->app_sms->get_option($gateway['id'],$g_option['name']));
+                    if(isset($g_option['info'])) {
+                        echo $g_option['info'];
+                    }
+                }
+                echo '<div class="sms_gateway_active">';
 
-        echo render_yes_no_option($this->app_sms->option_name($gateway['id'],'active'),'Active');
-        echo '</div>';
-            if(get_option($this->app_sms->option_name($gateway['id'],'active')) == '1') {
-                echo '<hr />';
-                echo '<h4 class="mbot15">'._l('test_sms_config').'</h4>';
-                echo '<div class="form-group"><input type="text" placeholder="'._l('staff_add_edit_phonenumber').'" class="form-control test-phone" data-id="'.$gateway['id'].'"></div>';
-                echo '<div class="form-group"><textarea class="form-control sms-gateway-test-message" placeholder="'._l('test_sms_message').'" data-id="'.$gateway['id'].'" rows="4"></textarea></div>';
-                echo '<button type="button" class="btn btn-info send-test-sms" data-id="'.$gateway['id'].'">'._l('send_test_sms').'</button>';
-                echo '<div id="sms_test_response" data-id="'.$gateway['id'].'"></div>';
-            }
-        ?>
+                echo render_yes_no_option($this->app_sms->option_name($gateway['id'],'active'),'Active');
+                echo '</div>';
+                    if(get_option($this->app_sms->option_name($gateway['id'],'active')) == '1') {
+                        echo '<hr />';
+                        echo '<h4 class="mbot15">'._l('test_sms_config').'</h4>';
+                        echo '<div class="form-group"><input type="text" placeholder="'._l('staff_add_edit_phonenumber').'" class="form-control test-phone" data-id="'.$gateway['id'].'"></div>';
+                        echo '<div class="form-group"><textarea class="form-control sms-gateway-test-message" placeholder="'._l('test_sms_message').'" data-id="'.$gateway['id'].'" rows="4"></textarea></div>';
+                        echo '<button type="button" class="btn btn-info send-test-sms" data-id="'.$gateway['id'].'">'._l('send_test_sms').'</button>';
+                        echo '<div id="sms_test_response" data-id="'.$gateway['id'].'"></div>';
+                    }
+                ?>
+            </div>
+        </div>
     </div>
-</div>
 </div>
 <?php } ?>
 <hr />
