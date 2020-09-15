@@ -1,10 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active">
-    <a href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
   </li>
-  <li role="presentation">
-    <a href="#colors" aria-controls="colors" role="tab" data-toggle="tab"><?php echo _l('settings_calendar_colors_heading'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#colors" aria-controls="colors" role="tab" data-toggle="tab"><?php echo _l('settings_calendar_colors_heading'); ?></a>
   </li>
 </ul>
 <div class="tab-content mtop30">
@@ -15,11 +15,11 @@
       <label for="settings[default_view_calendar]"><?php echo _l('default_view'); ?></label>
       <br />
       <select class="selectpicker" data-width="100%" name="settings[default_view_calendar]" id="default_view_calendar">
-        <option value="month"<?php if(get_option('default_view_calendar') == 'month'){echo ' selected';} ?>><?php echo _l('month'); ?></option>
-        <option value="basicWeek""<?php if(get_option('default_view_calendar') == 'basicWeek'){echo ' selected';} ?>><?php echo _l('week'); ?></option>
-        <option value="basicDay""<?php if(get_option('default_view_calendar') == 'basicDay'){echo ' selected';} ?>><?php echo _l('day'); ?></option>
-        <option value="agendaWeek""<?php if(get_option('default_view_calendar') == 'agendaWeek'){echo ' selected';} ?>><?php echo _l('agenda'); ?> <?php echo _l('week'); ?></option>
-        <option value="agendaDay""<?php if(get_option('default_view_calendar') == 'agendaDay'){echo ' selected';} ?>><?php echo _l('agenda'); ?> <?php echo _l('day'); ?></option>
+        <option value="month <?php if(get_option('default_view_calendar') == 'month'){echo ' selected';} ?>"><?php echo _l('month'); ?></option>
+        <option value="basicWeek <?php if(get_option('default_view_calendar') == 'basicWeek'){echo ' selected';} ?>"><?php echo _l('week'); ?></option>
+        <option value="basicDay <?php if(get_option('default_view_calendar') == 'basicDay'){echo ' selected';} ?>"><?php echo _l('day'); ?></option>
+        <option value="agendaWeek <?php if(get_option('default_view_calendar') == 'agendaWeek'){echo ' selected';} ?>"><?php echo _l('agenda'); ?> <?php echo _l('week'); ?></option>
+        <option value="agendaDay <?php if(get_option('default_view_calendar') == 'agendaDay'){echo ' selected';} ?>"><?php echo _l('agenda'); ?> <?php echo _l('day'); ?></option>
       </select>
     </div>
     <hr />
