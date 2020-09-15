@@ -11,19 +11,15 @@ if($total_gateways > 1) { ?>
     </div>
 <?php } ?>
 
-<div class="panel-group" id="sms_gateways_options" role="tablist" aria-multiselectable="false">
+<div  class="accordion" id="sms_gateways_options" role="tablist" aria-multiselectable="false">
     <?php foreach($gateways as $gateway) { ?>
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="<?php echo 'heading'.$gateway['id']; ?>">
-          <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#sms_gateways_options" href="#sms_<?php echo $gateway['id']; ?>" aria-expanded="true" aria-controls="sms_<?php echo $gateway['id']; ?>">
-                <?php echo $gateway['name']; ?> <span class="float-right"><i class="fa fa-sort-down"></i></span>
-            </a>
-        </h4>
+    <div class="card collapse-header">
+        <div class="card-header" role="tab" id="<?php echo 'heading'.$gateway['id']; ?>" data-toggle="collapse" data-parent="#sms_gateways_options" href="#sms_<?php echo $gateway['id']; ?>" aria-expanded="true" aria-controls="sms_<?php echo $gateway['id']; ?>">
+            <?php echo $gateway['name']; ?> <span class="float-right"><i class="fa fa-sort-down"></i></span>
+        </div>
     </div>
     <div id="sms_<?php echo $gateway['id']; ?>" class="panel-collapse collapse<?php if($this->app_sms->get_option($gateway['id'],'active') == 1 || $total_gateways == 1){echo ' in';} ?>" role="tab-pane" aria-labelledby="<?php echo 'heading'.$gateway['id']; ?>">
       <div class="card-body no-br-tlr no-border-color">
-
         <?php
         if(isset($gateway['info']) && $gateway['info'] != '') {
             echo $gateway['info'];
