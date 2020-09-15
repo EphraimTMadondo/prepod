@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
- <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
   <?php echo form_open_multipart(
     (!isset($tab['update_url'])
     ? $this->uri->uri_string() . '?group=' . $tab['slug'] . ($this->input->get('tab') ? '&active_tab=' . $this->input->get('tab') : '')
@@ -20,7 +22,7 @@
    <?php
     } ?>
    <div class="col-md-3">
-    <ul class="card mtop20 nav navbar-pills navbar-pills-flat nav-tabs nav-stacked">
+    <ul class="card mtop20 nav nav-pills flex-column">
       <?php
       $i = 0;
       foreach ($tabs as $group) {

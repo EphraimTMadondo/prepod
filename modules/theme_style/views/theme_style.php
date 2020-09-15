@@ -15,7 +15,7 @@ $tags = get_styling_areas('tags');
             </div>
          </div>
          <div class="col-md-3 picker">
-            <ul class="nav navbar-pills navbar-pills-flat nav-tabs nav-stacked" id="theme_styling_areas">
+            <ul class="nav nav-pills flex-column" id="theme_styling_areas">
                <li role="presentation" class="active">
                   <a href="#tab_admin_styling" aria-controls="tab_admin_styling" role="tab" data-toggle="tab">
                     <?php echo _l('theme_style_admin'); ?>

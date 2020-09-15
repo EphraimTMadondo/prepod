@@ -17,7 +17,7 @@
          <?php echo form_open(admin_url('gdpr/save?page='.$page)); ?>
          <?php } ?>
          <div class="col-md-3">
-            <ul class="nav navbar-pills navbar-pills-flat nav-tabs nav-stacked">
+            <ul class="nav nav-pills flex-column">
                <li<?php if($page == 'general'){echo ' class="active"'; } ?>>
                   <a href="<?php echo admin_url('gdpr/index?page=general'); ?>"><?php echo _l('settings_group_general'); ?></a>
                </li>
