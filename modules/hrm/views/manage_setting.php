@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
- <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
     <div class="row">
      <?php if($this->session->flashdata('debug')){ ?>
        <div class="col-lg-12">
@@ -11,7 +13,7 @@
      </div>
    <?php } ?>
    <div class="col-md-3">
-    <ul class="nav navbar-pills navbar-pills-flat nav-tabs nav-stacked">
+    <ul class="nav nav-pills flex-column">
       <?php
       $i = 0;
       foreach($tab as $group){

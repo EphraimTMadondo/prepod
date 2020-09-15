@@ -8,7 +8,7 @@
         <div class="row">
             <?php hooks()->do_action('before_options_perfex_email_builder'); ?>
             <div class="col-md-3">
-                <ul class="nav navbar-pills navbar-pills-flat nav-tabs nav-stacked">
+                <ul class="nav nav-pills flex-column">
                     <li class="active"><a href="<?php echo admin_url(EMAIL_BUILDER_MODULE_NAME . '/options'); ?>"><?php echo _l('general'); ?></a></li>
                     <li class="disabled"><a href="<?php echo admin_url(EMAIL_BUILDER_MODULE_NAME . '/options?group=admin-code'); ?>" class="disabled"><?php echo _l('inject_code_admin'); ?> (In Development)</a></li>
                     <li class="disabled"><a href="<?php echo admin_url(EMAIL_BUILDER_MODULE_NAME . '/options?group=client-code'); ?>" class="disabled"><?php echo _l('inject_code_client'); ?> (In Development)</a></li>
