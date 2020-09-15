@@ -12,15 +12,15 @@
        </div>
      </div>
    <?php } ?>
-   <div class="col-md-3">
+   <div class="card card-body col-md-3">
     <ul class="nav nav-pills flex-column">
       <?php
       $i = 0;
-      foreach($tab as $group){
+      foreach($tab as $t){
         ?>
-        <li<?php if($i == 0){echo " class='active'"; } ?>>
-        <a href="<?php echo admin_url('hrm/setting?group='.$group); ?>" data-group="<?php echo htmlspecialchars($group); ?>">
-          <?php echo _l($group); ?></a>
+        <li class="nav-item">
+        <a class="nav-link <?php if($t == $group){echo 'active'; } ?>" href="<?php echo admin_url('hrm/setting?group='.$t); ?>" data-group="<?php echo htmlspecialchars($t); ?>">
+          <?php echo _l($t); ?></a>
         </li>
         <?php $i++; } ?>
       </ul>
