@@ -35,7 +35,7 @@
       } ?>
       </ul>
       <div class="card mtop20">
-       <div class="panel-body">
+       <div class="card-body">
         <a href="<?php echo admin_url('settings?group=update'); ?>" class="<?php if ($this->input->get('group') == 'update') {
           echo 'bold';
       } ?>">
@@ -61,7 +61,7 @@
   </div>
   <div class="col-md-9">
     <div class="card mtop20">
-     <div class="panel-body">
+     <div class="card-body">
       <?php hooks()->do_action('before_settings_group_view', $tab); ?>
       <?php $this->load->view($tab['view']) ?>
       <?php hooks()->do_action('after_settings_group_view', $tab); ?>

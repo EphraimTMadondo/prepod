@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s">
-   <div class="panel-body">
+<div class="card">
+   <div class="card-body">
       <h4 class="no-margin"><?php echo _l('gdpr'); ?></h4>
    </div>
 </div>
-<div class="panel_s">
-   <div class="panel-body">
+<div class="card">
+   <div class="card-body">
       <div class="col-md-12">
          <div class="mbot20">
             <?php echo get_option('gdpr_page_top_information_block'); ?>

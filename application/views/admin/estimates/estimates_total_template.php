@@ -35,8 +35,8 @@
     $name = estimate_status_by_id($data['status']);
     ?>
     <div class="col-md-5ths col-xs-12 total-column">
-      <div class="panel_s">
-        <div class="panel-body">
+      <div class="card">
+        <div class="card-body">
           <h3 class="text-muted _total">
             <?php echo app_format_money($data['total'], $data['currency_name']); ?>
           </h3>

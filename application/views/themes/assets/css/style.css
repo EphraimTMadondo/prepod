@@ -2267,8 +2267,8 @@ input[type="radio"] .styled:checked+label::after {
     border: 1px solid #bfcbd9;
 }
 
-.panel_s>.panel-heading,
-.panel_s>.panel-heading-bg {
+.card>.panel-heading,
+.card>.panel-heading-bg {
     color: inherit;
     padding: 10px;
     transition: all .3s;
@@ -2278,13 +2278,13 @@ input[type="radio"] .styled:checked+label::after {
     border: 1px solid #e4e5e7;
 }
 
-.panel_s>.panel-heading+.panel-body {
+.card>.panel-heading+.card-body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top: 0;
 }
 
-.panel_s>.panel-heading {
+.card>.panel-heading {
     font-weight: 500;
     background: #f7f9fa;
 }
@@ -2297,7 +2297,7 @@ input[type="radio"] .styled:checked+label::after {
     margin-top: 23px;
 }
 
-.panel_s>.panel-heading-bg {
+.card>.panel-heading-bg {
     background: #f7f9fa;
     border: 1px solid #dce1ef;
     padding: 7px 15px;
@@ -2305,7 +2305,7 @@ input[type="radio"] .styled:checked+label::after {
     color: #323a45;
 }
 
-.panel_s .panel-body {
+.card .card-body {
     background: #fff;
     border: 1px solid #dce1ef;
     border-radius: 4px;
@@ -2313,7 +2313,7 @@ input[type="radio"] .styled:checked+label::after {
     position: relative;
 }
 
-.panel_s>.panel-footer {
+.card>.panel-footer {
     background: #f7f9fa;
     border: 1px solid #dce1ef;
     border-top: none;
@@ -2322,7 +2322,7 @@ input[type="radio"] .styled:checked+label::after {
     padding: 10px 15px;
 }
 
-.panel_s {
+.card {
     background-color: none;
     border: none;
     -webkit-box-shadow: 0 1px 15px 1px rgba(90, 90, 90, 0.08);
@@ -2341,7 +2341,7 @@ input[type="radio"] .styled:checked+label::after {
     background-color: #4b5158;
 }
 
-#invoices_total .panel_s {
+#invoices_total .card {
     margin-bottom: 0;
 }
 
@@ -3507,7 +3507,7 @@ table.table {
     border: 1px solid #FC2D42 !important;
 }
 
-.panel-body.todo-body {
+.card-body.todo-body {
     padding: 0;
 }
 
@@ -3742,7 +3742,7 @@ body.noscroll .backdrop {
     font-size: 25px;
 }
 
-#newsfeed .newsfeed_post.pinned>.panel-body {
+#newsfeed .newsfeed_post.pinned>.card-body {
     background: #E6FAFF;
     border: 1px dashed #B9DAE2;
 }
@@ -3955,7 +3955,7 @@ body.noscroll .backdrop {
     background: #fff;
 }
 
-#task .panel-body {
+#task .card-body {
     padding-bottom: 0;
 }
 
@@ -4002,7 +4002,7 @@ body.rtl .home-activity .tab-content {
     padding-left: 15px;
 }
 
-.user-data .home-activity.panel-body {
+.user-data .home-activity.card-body {
     padding-top: 10px;
 }
 
@@ -4384,11 +4384,11 @@ h3._total {
     font-size: 20px;
 }
 
-.stats-total-currency .panel_s .panel-body {
+.stats-total-currency .card .card-body {
     padding: 13px;
 }
 
-.total-column .panel-body {
+.total-column .card-body {
     background: #f9fafc;
     padding: 10px 5px;
 }
@@ -4565,7 +4565,7 @@ table .goal-percent {
         border: 1px solid #F7F7F7;
     }
 
-    #task .panel-body {
+    #task .card-body {
         padding-bottom: 20px;
     }
 
@@ -4766,11 +4766,11 @@ table .goal-percent {
     height: 250px;
 }
 
-.ticket-reply-tools .panel-body {
+.ticket-reply-tools .card-body {
     background: #f9f9f9;
 }
 
-.ticket-reply-tools .panel-body .btn-default,
+.ticket-reply-tools .card-body .btn-default,
 .table.items tr.main .btn-default {
     border: 1px solid #CACACA;
 }
@@ -4994,7 +4994,7 @@ table.items tr.main td {
     overflow: auto;
 }
 
-#kan-ban .panel-body {
+#kan-ban .card-body {
     border-top: 0;
     border-radius: 4px;
     padding: 15px 20px;
@@ -5012,13 +5012,13 @@ table.items tr.main td {
     color: #50637c;
 }
 
-#kan-ban .panel-body .lead-name,
-#kan-ban .panel-body .task-name {
+#kan-ban .card-body .lead-name,
+#kan-ban .card-body .task-name {
     background: url(../images/dragger.png) 10px 10px no-repeat;
     padding-left: 25px;
 }
 
-#kan-ban .not-sortable .panel-body .task-name {
+#kan-ban .not-sortable .card-body .task-name {
     background: none;
 }
 
@@ -5151,7 +5151,7 @@ body.rtl a+.main-tasks-table-href-name {
     margin-top: 4px;
 }
 
-.kan-ban-body .panel_s {
+.kan-ban-body .card {
     margin-bottom: 0;
     position: relative;
 }
@@ -5759,18 +5759,18 @@ a>.label-default:focus {
     border-radius: 0;
 }
 
-.proposal-convert-modal .panel_s,
-.invoice-project .panel_s,
-.estimate-pipeline .panel_s,
-.proposal-pipeline-modal .panel_s {
+.proposal-convert-modal .card,
+.invoice-project .card,
+.estimate-pipeline .card,
+.proposal-pipeline-modal .card {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-.proposal-convert-modal .panel_s .panel-body,
-.invoice-project .panel_s .panel-body,
-.estimate-pipeline .panel_s .panel-body,
-.proposal-pipeline-modal .panel_s .panel-body {
+.proposal-convert-modal .card .card-body,
+.invoice-project .card .card-body,
+.estimate-pipeline .card .card-body,
+.proposal-pipeline-modal .card .card-body {
     padding: 5px;
     border: 0;
 }
@@ -5787,8 +5787,8 @@ a>.label-default:focus {
 
 .proposal-convert-modal .btn-tr,
 .invoice-project .btn-tr,
-.estimate-pipeline .panel_s .panel-body .single-option-buttons,
-.proposals-pipeline .panel_s .panel-body .single-option-buttons {
+.estimate-pipeline .card .card-body .single-option-buttons,
+.proposals-pipeline .card .card-body .single-option-buttons {
     display: none;
 }
 
@@ -6094,7 +6094,7 @@ body.rtl .hr-panel-heading.project-area-separation {
     margin-right: -20px;
 }
 
-.team-members .panel-body {
+.team-members .card-body {
     padding: 0;
 }
 
@@ -6153,8 +6153,8 @@ body.rtl .hr-panel-heading.project-area-separation {
     display: none;
 }
 
-.project_invoices .panel-body,
-.project_estimates .panel-body {
+.project_invoices .card-body,
+.project_estimates .card-body {
     border: 0;
     padding: 0;
 }
@@ -6855,13 +6855,13 @@ ul.dt-button-collection.dropdown-menu {
     margin-top: 10px;
 }
 
-li.task.current-user-task .panel-body,
-li.lead-kan-ban.current-user-lead .panel-body {
+li.task.current-user-task .card-body,
+li.lead-kan-ban.current-user-lead .card-body {
     background: #ecf6fb !important;
     border: 1px solid #c2e7ef !important;
 }
 
-li.task.overdue-task .panel-body {
+li.task.overdue-task .card-body {
     background: #f2dede !important;
     border: 1px solid #eab8b7 !important;
 }
@@ -7060,7 +7060,7 @@ li.task.overdue-task .panel-body {
     word-break: break-all;
 }
 
-.staff_logged_time .panel-body {
+.staff_logged_time .card-body {
     padding: 20px 5px;
 }
 
@@ -7411,7 +7411,7 @@ div.dataTables_wrapper div.dataTables_paginate {
     margin-top: 0;
 }
 
-#invoice_top_info .panel-body {
+#invoice_top_info .card-body {
     background: #f5fcff;
     padding: 5px 15px;
     border: 1px solid #c7dde6;
@@ -8123,7 +8123,7 @@ body.rtl .bootstrap-select.btn-group .dropdown-toggle .caret {
     margin-top: -10px;
 }
 
-.panel-vault .panel-body {
+.panel-vault .card-body {
     border: 0;
 }
 
@@ -8137,12 +8137,12 @@ body.rtl .bootstrap-select.btn-group .dropdown-toggle .caret {
     color: #656565;
 }
 
-.panel_s.project-menu-panel,
+.card.project-menu-panel,
 .project-top-panel {
     margin-bottom: 12px;
 }
 
-.panel_s.project-menu-panel .panel-body {
+.card.project-menu-panel .card-body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -8337,11 +8337,11 @@ textarea[data-task-ae-editor="1"] {
     opacity: 0.7;
 }
 
-.panel-body.bottom-transaction {
+.card-body.bottom-transaction {
     background: #fbfdff;
 }
 
-.modal .panel-body.bottom-transaction {
+.modal .card-body.bottom-transaction {
     background: #fff;
 }
 
@@ -8716,7 +8716,7 @@ body.system-popup {
     box-shadow: none;
 }
 
-.kan-ban-col-wrapper .panel_s:first-child {
+.kan-ban-col-wrapper .card:first-child {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -8820,8 +8820,8 @@ body.rtl .screen-options-btn {
     left: 38px;
 }
 
-.project_estimates .panel_s,
-.project_invoices .panel_s {
+.project_estimates .card,
+.project_invoices .card {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
@@ -8892,7 +8892,7 @@ body.rtl .input-group .input-group-addon {
     margin-right: -25px;
 }
 
-.panel-full .panel-body {
+.panel-full .card-body {
     border-radius: 0;
     padding-left: 25px;
     padding-right: 25px;
@@ -8905,7 +8905,7 @@ body.rtl .input-group .input-group-addon {
     }
 }
 
-body.project.project-milestones .kan-ban-col .panel_s {
+body.project.project-milestones .kan-ban-col .card {
     margin-bottom: 0;
 }
 
@@ -8939,7 +8939,7 @@ body.rtl td[align="right"] {
 }
 
 .no-br-tlr,
-.panel_s .panel-body.no-br-tlr {
+.card .card-body.no-br-tlr {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }

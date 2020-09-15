@@ -5,7 +5,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php if(!$this->input->get('project_id')){ ?>
                   <a href="<?php echo admin_url('tasks'); ?>" class="btn btn-default pull-left"><?php echo _l('back_to_tasks_list'); ?></a>
                   <?php } else { ?>
@@ -64,7 +64,7 @@
                </div>
             </div>
             <div class="card">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php foreach($overview as $month =>$data){ if(count($data) == 0){continue;} ?>
                   <h4 class="bold text-success"><?php echo  _l(date('F', mktime(0, 0, 0, $month, 1))); ?>
                      <?php if($this->input->get('project_id')){ echo ' - ' . get_project_name_by_id($this->input->get('project_id'));} ?>

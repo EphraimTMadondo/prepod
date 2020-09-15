@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="card mtop20">
-                    <div class="panel-body tc-content">
+                    <div class="card-body tc-content">
                        <h4 class="bold no-margin"><?php echo $article->subject; ?></h4>
                        <hr class="hr-panel-heading" />
                        <div class="clearfix"></div>
@@ -26,7 +26,7 @@
         <?php if(count($related_articles) > 0){ ?>
         <div class="col-md-5">
           <div class="card">
-              <div class="panel-body">
+              <div class="card-body">
                 <h4 class="bold no-margin"><?php echo _l('related_knowledgebase_articles'); ?></h4>
                  <hr class="hr-panel-heading" />
                 <ul class="mtop10 articles_list">

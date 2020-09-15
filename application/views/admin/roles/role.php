@@ -5,7 +5,7 @@
    <div class="row">
       <div class="col-md-7">
          <div class="card mtop20">
-            <div class="panel-body">
+            <div class="card-body">
                <h4 class="no-margin">
                   <?php echo $title; ?>
                </h4>
@@ -42,7 +42,7 @@
       <?php if(isset($role_staff)) { ?>
       <div class="col-md-5">
          <div class="card mtop20">
-            <div class="panel-body">
+            <div class="card-body">
                <h4 class="no-margin">
                   <?php echo _l('staff_which_are_using_role'); ?>
                </h4>

@@ -10,8 +10,8 @@ if (is_staff_member()) {
    <?php if(is_staff_member()){ ?>
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body padding-10">
+            <div class="card">
+               <div class="card-body padding-10">
                   <div class="widget-dragger"></div>
                   <p class="padding-5">
                      <?php echo _l('goals'); ?>

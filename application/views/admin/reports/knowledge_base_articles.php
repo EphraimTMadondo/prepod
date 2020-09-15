@@ -9,7 +9,7 @@
                <div class="panel-heading">
                   <?php echo _l('reports_choose_kb_group'); ?>
                </div>
-               <div class="panel-body">
+               <div class="card-body">
                   <div class="row">
                      <div class="col-md-3">
                         <select class="selectpicker" name="report-group-change" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
@@ -30,7 +30,7 @@
                      <div class="panel-heading">
                         <?php echo $group['name']; ?>
                      </div>
-                     <div class="panel-body">
+                     <div class="card-body">
                         <?php foreach($group['articles'] as $article) {
                            $total_answers = total_rows(db_prefix().'knowedge_base_article_feedback',array('articleid'=>$article['articleid']));
                            $total_yes_answers = total_rows(db_prefix().'knowedge_base_article_feedback',array('articleid'=>$article['articleid'],'answer'=>1));

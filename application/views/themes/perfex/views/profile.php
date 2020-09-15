@@ -3,13 +3,13 @@
 	<div class="col-md-8">
 		<?php echo form_open_multipart('clients/profile',array('autocomplete'=>'off')); ?>
 		<?php echo form_hidden('profile',true); ?>
-		<div class="panel_s">
-			<div class="panel-body">
+		<div class="card">
+			<div class="card-body">
 				<h4 class="no-margin section-text"><?php echo _l('clients_profile_heading'); ?></h4>
 			</div>
 		</div>
-		<div class="panel_s">
-			<div class="panel-body">
+		<div class="card">
+			<div class="card-body">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
@@ -121,13 +121,13 @@
 		<?php echo form_close(); ?>
 	</div>
 	<div class="col-md-4 contact-profile-change-password-section">
-		<div class="panel_s section-heading section-change-password">
-			<div class="panel-body">
+		<div class="card section-heading section-change-password">
+			<div class="card-body">
 				<h4 class="no-margin section-text"><?php echo _l('clients_edit_profile_change_password_heading'); ?></h4>
 			</div>
 		</div>
-		<div class="panel_s">
-			<div class="panel-body">
+		<div class="card">
+			<div class="card-body">
 				<?php echo form_open('clients/profile'); ?>
 				<?php echo form_hidden('change_password',true); ?>
 				<div class="form-group">

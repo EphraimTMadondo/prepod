@@ -57,8 +57,8 @@ class Newsfeed extends AdminController
                 $pinned_class = ' pinned';
             }
 
-            $response .= '<div class="panel_s newsfeed_post' . $pinned_class . '" data-main-postid="' . $post['postid'] . '">';
-            $response .= '<div class="panel-body post-content">';
+            $response .= '<div class="card newsfeed_post' . $pinned_class . '" data-main-postid="' . $post['postid'] . '">';
+            $response .= '<div class="card-body post-content">';
             $response .= '<div class="media">';
             $response .= '<div class="media-left">';
             $response .= '<a href="' . admin_url('profile/' . $post['creator']) . '">' . staff_profile_image($post['creator'], [

@@ -11,8 +11,8 @@
 			
 			?>
 			<div class="col-md-5 left-column">
-        <div class="panel_s accounting-template estimate">
-        <div class="panel-body">
+        <div class="card accounting-template estimate">
+        <div class="card-body">
           
           <div class="row">
              <div class="col-md-12">
@@ -103,7 +103,7 @@
 
         <div class="row">
           <div class="col-md-12 mtop15">
-             <div class="panel-body bottom-transaction">
+             <div class="card-body bottom-transaction">
                 <?php $value = (isset($contract) ? $contract->note : ''); ?>
                 <?php echo render_textarea('note','decription',$value,array('rows'=>8),array(),'mtop15'); ?>
                
@@ -123,8 +123,8 @@
 			<?php echo form_close(); ?>
 			<?php if(isset($contract)) { ?>
         <div class="col-md-7 right-column">
-          <div class="panel_s">
-              <div class="panel-body">
+          <div class="card">
+              <div class="card-body">
                 <div class="horizontal-scrollable-tabs preview-tabs-top">
                      <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
                      <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>

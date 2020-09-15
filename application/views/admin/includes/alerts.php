@@ -6,14 +6,14 @@ $companyusername = $_SESSION['current_company'];
 <?php $_announcements = get_announcements_for_user();
 if(sizeof($_announcements) > 0 && isset($dashboard) && is_staff_member()){ ?>
 <div class="col-lg-12">
-	<div class="panel_s">
+	<div class="card">
 		<?php foreach($_announcements as $__announcement){ 
 		
 		if($__announcement['company_username'] == $companyusername)
 		{
 		
 		?>
-		<div class="panel-body announcement mbot15 tc-content">
+		<div class="card-body announcement mbot15 tc-content">
 			<div class="text-info alert-dismissible" role="alert">
 				<h4 class="no-margin pull-left">
 					<?php echo _l('announcement'); ?>! <?php if($__announcement['showname'] == 1){ echo '<br /><small class="font-medium-xs">'._l('announcement_from').' '. $__announcement['userid']; } ?></small><br />

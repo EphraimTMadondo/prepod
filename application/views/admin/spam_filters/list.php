@@ -17,7 +17,7 @@
           <div class="clearfix"></div>
           <hr class="hr-panel-heading" />
           <ul class="nav nav-tabs" role="tablist" id="filters_types">
-            <li role="presentation" class="active nav-item"><a class="nav-link" href="#sender" aria-controls="sender" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_senders'); ?></a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link active" href="#sender" aria-controls="sender" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_senders'); ?></a></li>
             <li role="presentation" class="nav-item"><a class="nav-link" href="#subject" aria-controls="subject" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_subjects'); ?></a></li>
             <li role="presentation" class="nav-item"><a class="nav-link" href="#phrase" aria-controls="phrase" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_phrases'); ?></a></li>
           </ul>

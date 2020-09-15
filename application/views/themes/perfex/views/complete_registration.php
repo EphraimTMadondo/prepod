@@ -89,8 +89,8 @@ label.control-label {
     
      <?php echo form_open('authentication/complete_registration', ['id'=>'register-form']); ?>
  
-      <div class="panel_s">
-         <div class="panel-body">
+      <div class="card">
+         <div class="card-body">
                     <h1 class="text-uppercase register-heading login-title">Please enter your password below</h1>
                     <div class="form-group register-password-group underlined-input">
                         <input type="password" class="form-control custom-input" name="password" id="password" placeholder="<?php echo _l('clients_register_password'); ?>">

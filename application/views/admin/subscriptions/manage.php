@@ -20,10 +20,10 @@
         echo form_hidden('not_subscribed',!$this->input->get('status') || $this->input->get('status') && $this->input->get('status') == 'not_subscribed' ?'not_subscribed' : '');
         ?>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <div class="_buttons">
           <?php if(has_permission('subscriptions','','create')){ ?>
-            <a href="<?php echo admin_url('subscriptions/create'); ?>" class="btn btn-info pull-left display-block">
+            <a href="<?php echo admin_url('subscriptions/create'); ?>" class="btn btn-primary">
               <?php echo _l('new_subscription'); ?>
             </a>
             <?php } ?>

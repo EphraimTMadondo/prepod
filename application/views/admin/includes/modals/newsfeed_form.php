@@ -2,8 +2,8 @@
 <a href="#" class="close_newsfeed" data-close="true"><i class="fa fa-remove"></i></a>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <div class="panel_s">
-     <div class="panel-body">
+    <div class="card">
+     <div class="card-body">
       <?php echo form_open_multipart('admin/newsfeed/add_post',array('class'=>'dropzone','id'=>'new-post-form')); ?>
       <a href="<?php echo admin_url('profile'); ?>">
         <?php echo staff_profile_image($current_user->staffid,array('staff-profile-image-small')); ?>

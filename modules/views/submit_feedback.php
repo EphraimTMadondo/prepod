@@ -14,7 +14,7 @@
 
 
 
-      <div class="panel_s">
+      <div class="card">
 
          <div class="panel-heading text-uppercase open-ticket-subject">
 
@@ -22,7 +22,7 @@
 
          </div>
 
-         <div class="panel-body">
+         <div class="card-body">
 
             <div class="row">
 

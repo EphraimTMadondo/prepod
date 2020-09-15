@@ -33,8 +33,8 @@
    <div class="clearfix"></div>
    <?php } ?>
    <div class="col-lg-4 col-xs-12 col-md-12 total-column">
-      <div class="panel_s">
-         <div class="panel-body">
+      <div class="card">
+         <div class="card-body">
             <h3 class="text-muted _total">
                <?php echo app_format_money($total_result['due'], $total_result['currency']); ?>
             </h3>
@@ -43,8 +43,8 @@
       </div>
    </div>
    <div class="col-lg-4 col-xs-12 col-md-12 total-column">
-      <div class="panel_s">
-         <div class="panel-body">
+      <div class="card">
+         <div class="card-body">
             <h3 class="text-muted _total">
                <?php echo app_format_money($total_result['overdue'], $total_result['currency']); ?>
             </h3>
@@ -53,8 +53,8 @@
       </div>
    </div>
    <div class="col-lg-4 col-xs-12 col-md-12 total-column">
-      <div class="panel_s">
-         <div class="panel-body">
+      <div class="card">
+         <div class="card-body">
             <h3 class="text-muted _total">
                <?php echo app_format_money($total_result['paid'], $total_result['currency']); ?>
             </h3>

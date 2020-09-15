@@ -4,8 +4,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s mbot10">
-               <div class="panel-body _buttons">
+            <div class="card mbot10">
+               <div class="card-body _buttons">
                  
                   <a href="<?php echo admin_url('feedback'); ?>" class="btn btn-info"><?php echo _l('create_feedback_request'); ?></a>
                   
@@ -16,8 +16,8 @@
 			
 			 <?php foreach ($feedback_array as $fd) {?>
                <div class="col-md-12" id="small-table">
-                  <div class="panel_s">
-                     <div class="panel-body">
+                  <div class="card">
+                     <div class="card-body">
                         <div class="clearfix"></div>
 									<section class="write-review py-5 bg-light" id="write-review">
 										<div class="container">

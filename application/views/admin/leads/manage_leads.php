@@ -9,11 +9,11 @@
             <div class="card mtop20">
                <div class="card-body">
                   <div class="_buttons">
-                     <a href="#" onclick="init_lead(); return false;" class="btn mright5 btn-info pull-left display-block">
+                     <a href="#" onclick="init_lead(); return false;" class="btn mright5 btn-primary">
                      <?php echo _l('new_lead'); ?>
                      </a>
                      <?php if(is_admin() || get_option('allow_non_admin_members_to_import_leads') == '1'){ ?>
-                     <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-info pull-left display-block hidden-xs">
+                     <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-primary hidden-xs">
                      <?php echo _l('import_leads'); ?>
                      </a>
                      <?php } ?>

@@ -81,7 +81,7 @@
        </div>
      </div>
      <?php if(($staff_p->staffid == get_staff_user_id() || is_admin()) && !$this->input->get('notifications')) { ?>
-       <div class="panel_s">
+       <div class="card">
         <div class="card-body">
          <h4 class="no-margin">
           <?php echo _l('projects'); ?>

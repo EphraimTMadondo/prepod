@@ -4,8 +4,8 @@
     <h1 class="text-uppercase mbot20"><?php echo _l('customer_forgot_password_heading'); ?></h1>
   </div>
   <div class="col-md-4 col-md-offset-4">
-    <div class="panel_s">
-      <div class="panel-body">
+    <div class="card">
+      <div class="card-body">
         <?php echo form_open($this->uri->uri_string(),['id'=>'forgot-password-form']); ?>
         <?php echo validation_errors('<div class="alert alert-danger text-center">', '</div>'); ?>
         <?php if($this->session->flashdata('message-danger')){ ?>

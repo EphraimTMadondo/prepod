@@ -181,14 +181,14 @@ li>ul>li>a>span.menu-text {
     font-family: Rubik;
 }
 
-.panel_s .panel-body {
+.card .card-body {
     background: #fff;
     border: initial;
     border-radius: 4px;
     padding: 20px;
     position: relative;
 }
-.panel_s {
+.card {
     box-shadow:initial;
 }
 

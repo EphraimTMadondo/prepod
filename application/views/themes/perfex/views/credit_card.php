@@ -3,13 +3,13 @@
  * Stripe Credit Cards UPDATE
  */
 ?>
-<div class="panel_s section-heading section-credit-card">
-    <div class="panel-body">
+<div class="card section-heading section-credit-card">
+    <div class="card-body">
         <h4 class="no-margin section-text"><?php echo _l('update_credit_card'); ?></h4>
     </div>
 </div>
-<div class="panel_s">
-    <div class="panel-body credit-card">
+<div class="card">
+    <div class="card-body credit-card">
         <?php if(!empty($payment_method)){ ?>
             <h4><?php echo _l('credit_card_update_info'); ?></h4>
             <a href="<?php echo site_url('clients/update_credit_card'); ?>" class="btn btn-info">

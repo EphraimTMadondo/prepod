@@ -34,8 +34,8 @@
   </div>
 
   <div class="col-md-10">
-    <div class="panel_s">
-     <div class="panel-body">
+    <div class="card">
+     <div class="card-body">
       <?php $this->load->view($tabs['view']); ?>
       
     </div>

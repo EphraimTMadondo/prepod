@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div>
 <div class="_buttons">
-    <a href="#" onclick="new_unit_type(); return false;" class="btn btn-info pull-left display-block">
+    <a href="#" onclick="new_unit_type(); return false;" class="btn btn-primary">
         <?php echo _l('add_unit_type'); ?>
     </a>
 </div>

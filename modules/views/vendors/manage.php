@@ -5,13 +5,13 @@
       <div class="row">
          <div class="col-md-12">
             
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <div class="_buttons">
                      <?php if (has_permission('purchase','','create')) { ?>
                      <a href="<?php echo admin_url('purchase/vendor'); ?>" class="btn btn-info mright5 test pull-left display-block">
                      <?php echo _l('new_vendor'); ?></a>
-                     <a href="<?php echo admin_url('purchase/all_contacts'); ?>" class="btn btn-info pull-left display-block mright5">
+                     <a href="<?php echo admin_url('purchase/all_contacts'); ?>" class="btn btn-primary mright5">
                      <?php echo _l('vendor_contacts'); ?></a>
                      
                    

@@ -14,7 +14,7 @@
    <?php foreach($project_statuses as $status){ ?>
    <div class="col-md-5ths total-column">
       <div class="card">
-         <div class="panel-body">
+         <div class="card-body">
             <h3 class="text-muted _total">
                <?php $where = ($_where == '' ? '' : $_where.' AND ').'status = '.$status['id']. ' AND clientid='.$client->userid; ?>
                <?php echo total_rows(db_prefix().'projects',$where); ?>

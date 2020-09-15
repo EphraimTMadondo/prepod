@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_hidden('project_id',$project->id); ?>
-<div class="panel_s">
-    <div class="panel-body">
+<div class="card">
+    <div class="card-body">
        <h3 class="bold mtop10 project-name pull-left"><?php echo $project->name; ?>
             <span style="color:<?php echo $project_status['color']; ?>; font-size:16px;"><?php echo $project_status['name']; ?></span>
        </h3>
@@ -10,8 +10,8 @@
         <?php } ?>
    </div>
 </div>
-<div class="panel_s">
-    <div class="panel-body">
+<div class="card">
+    <div class="card-body">
         <?php get_template_part('projects/project_tabs'); ?>
         <div class="clearfix mtop15"></div>
         <?php get_template_part('projects/'.$group); ?>

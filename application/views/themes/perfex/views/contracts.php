@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s section-heading section-contracts">
-  <div class="panel-body">
+<div class="card section-heading section-contracts">
+  <div class="card-body">
     <h4 class="no-margin section-text"><?php echo _l('clients_contracts'); ?></h4>
   </div>
 </div>
-<div class="panel_s">
-  <div class="panel-body">
+<div class="card">
+  <div class="card-body">
     <div class="col-md-12">
       <h3 class="text-success contracts-summary-heading no-mtop mbot15"><?php echo _l('contract_summary_by_type'); ?></h3>
       <div class="relative" style="max-height:300px;">

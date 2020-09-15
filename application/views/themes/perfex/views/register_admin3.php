@@ -140,7 +140,7 @@ body{
     border-radius: 0%;
 }
 
-.panel_s .panel-body{
+.card .card-body{
     padding:60px;
 }
 .main-area {
@@ -195,8 +195,8 @@ p {
  <!--<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2">-->
 <div style = "text-align: center; top: 50%;" >
  <?php echo form_open('authentication/register3', ['id'=>'register-form']); ?>
-    <div class="panel_s main-area">
-        <div class="panel-body" style ="height: 100%; justify-content: space-between; ">
+    <div class="card main-area">
+        <div class="card-body" style ="height: 100%; justify-content: space-between; ">
         <h1 class="login-title">MAKE WORKSUITE TRULY YOURS</h1>
         <p style = "text-align: center; margin-bottom: 35px;font-size:15px;">We'll use this info to personalize your experience. </p>
 

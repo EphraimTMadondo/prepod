@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="pull-right">
                             <a href="<?php echo admin_url('reports/expenses/detailed_report'); ?>" class="btn btn-success"><?php echo _l('expenses_detailed_report'); ?></a>
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="checkbox checkbox-primary">
                                 <input type="checkbox" name="exclude_billable" onchange="filter_expenses();" id="exclude_billable" <?php if($this->input->get('exclude_billable')){echo 'checked';}; ?>>
                                 <label for="exclude_billable"><?php echo _l('expenses_report_exclude_billable'); ?></label>

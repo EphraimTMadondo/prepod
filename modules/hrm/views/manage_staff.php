@@ -4,11 +4,11 @@
     <div class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel_s">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <?php if (is_admin()) { ?>
                         <div class="_buttons">
-                            <a href="<?php echo admin_url('hrm/member'); ?>" class="btn mright5 btn-info pull-left display-block hidden-xs"><?php echo _l('new_staff'); ?></a>
+                            <a href="<?php echo admin_url('hrm/member'); ?>" class="btn mright5 btn-primary hidden-xs"><?php echo _l('new_staff'); ?></a>
 
                             </a>
                         </div>

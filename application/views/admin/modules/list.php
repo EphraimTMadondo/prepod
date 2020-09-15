@@ -3,7 +3,7 @@
 <div id="wrapper">
     <div class="content">
         <div class="card" style="margin-top:20px">
-            <div class="panel-body">
+            <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
                     <?php echo form_open_multipart(admin_url('modules/upload'),['id'=>'module_install_form']); ?>

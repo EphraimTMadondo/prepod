@@ -6,8 +6,8 @@
       <div class="col-md-12" id="training-add-edit-wrapper">
          <div class="row">
             <div class="col-md-12">
-               <div class="panel_s">
-                <div class="panel-body">
+               <div class="card">
+                <div class="card-body">
                   <div class="row">
                     <div class="col-md-12 margin-left-12">
                       <h4 class="modal-title pl-3">

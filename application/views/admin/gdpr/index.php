@@ -5,7 +5,7 @@
       <div class="row">
          <?php if(!is_gdpr()) { ?>
          <div class="card mtop20">
-            <div class="panel-body">
+            <div class="card-body">
                <div class="col-md-12 text-center">
                   <h4><?php echo _l('gdpr_not_enabled'); ?></h4>
                   <a href="<?php echo admin_url('gdpr/enable'); ?>" class="btn btn-info"><?php echo _l('enable_gdpr'); ?></a>
@@ -40,7 +40,7 @@
          </div>
          <div class="col-md-9">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php hooks()->do_action('before_admin_gdpr_settings'); ?>
                   <?php $this->load->view('admin/gdpr/pages/'.$page); ?>
                </div>

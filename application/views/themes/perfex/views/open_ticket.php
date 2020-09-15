@@ -5,11 +5,11 @@
 
       <?php hooks()->do_action('before_client_open_ticket_form_start'); ?>
 
-      <div class="panel_s">
+      <div class="card">
          <div class="panel-heading text-uppercase open-ticket-subject">
             <?php echo _l('clients_ticket_open_subject'); ?>
          </div>
-         <div class="panel-body">
+         <div class="card-body">
             <div class="row">
                <div class="col-md-12">
                   <div class="form-group open-ticket-subject-group">
@@ -79,8 +79,8 @@
       </div>
    </div>
    <div class="col-md-12">
-      <div class="panel_s">
-         <div class="panel-body">
+      <div class="card">
+         <div class="card-body">
             <div class="form-group open-ticket-message-group">
                <label for=""><?php echo _l('clients_ticket_open_body'); ?></label>
                <textarea name="message" id="message" class="form-control" rows="15"><?php echo set_value('message'); ?></textarea>

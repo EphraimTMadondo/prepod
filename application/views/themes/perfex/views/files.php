@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s section-heading section-files">
-    <div class="panel-body">
+<div class="card section-heading section-files">
+    <div class="card-body">
         <h4 class="no-margin section-text"><?php echo _l('customer_profile_files'); ?></h4>
     </div>
 </div>
-<div class="panel_s">
-   <div class="panel-body">
+<div class="card">
+   <div class="card-body">
        <?php echo form_open_multipart(site_url('clients/upload_files'),array('class'=>'dropzone','id'=>'files-upload')); ?>
        <input type="file" name="file" multiple class="hide"/>
        <?php echo form_close(); ?>

@@ -3,8 +3,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12" id="small-table">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                 <?php echo form_hidden('rec_channel_id', $rec_channel_id); ?>
                   <div class="row">
                      <div class="col-md-12">
@@ -12,7 +12,7 @@
                       <hr />
                     </div>
                   </div>
-                  <a href="<?php echo admin_url('recruitment/add_edit_recruitment_channel'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new'); ?></a>
+                  <a href="<?php echo admin_url('recruitment/add_edit_recruitment_channel'); ?>" class="btn btn-primary"><?php echo _l('new'); ?></a>
 
                   <div class="col-md-1 pull-right">
                       <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_campaign('.campaign_sm','#campaign_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>

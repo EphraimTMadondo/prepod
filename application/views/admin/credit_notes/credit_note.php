@@ -190,7 +190,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="panel_s no-shadow">
+      <div class="card no-shadow">
        <div class="row">
         <div class="col-md-6">
          <?php

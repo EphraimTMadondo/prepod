@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s mtop25">
-    <div class="panel-body">
+<div class="card mtop25">
+    <div class="card-body">
         <div class="col-md-12">
             <?php if(is_client_logged_in()){ ?>
                 <a href="<?php echo site_url('clients/gdpr'); ?>" class="btn btn-default pull-right">

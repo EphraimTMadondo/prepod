@@ -42,8 +42,8 @@
 </div>
 <div class="row">
    <div class="col-md-8 contract-left">
-      <div class="panel_s mtop20">
-         <div class="panel-body tc-content padding-30 contract-html-content">
+      <div class="card mtop20">
+         <div class="card-body tc-content padding-30 contract-html-content">
             <?php echo $contract->content; ?>
          </div>
       </div>

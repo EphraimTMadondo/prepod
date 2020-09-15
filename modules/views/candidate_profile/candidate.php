@@ -3,8 +3,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <div class="row">
                      <div class="col-md-12">
                       <h4 class="no-margin font-bold"> <?php echo _l($title); ?></h4>
@@ -20,7 +20,7 @@
                   <div class="col-md-7">
                     <div class="panel panel-primary">
                       <div class="panel-heading"><?php echo _l('general_infor') ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
 
                         <div class="col-md-12">
                           <label for="rec_campaign"><?php echo _l('recruitment_campaign'); ?></label>
@@ -129,7 +129,7 @@ echo render_textarea('introduce_yourself', 'introduce_yourself', $introduce_your
                   <div class="col-md-5">
                     <div class="panel panel-info">
                       <div class="panel-heading"><?php echo _l('contact_info') ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
 
                         <div class="col-md-6">
                             <?php $phonenumber = (isset($candidate) ? $candidate->phonenumber : '');
@@ -181,7 +181,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
                   <div class="col-md-12">
                     <div class="panel panel-success">
                       <div class="panel-heading"><?php echo _l('work_experience') ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
                         <div class="work_experience">
                         <?php if (isset($candidate) && count($candidate->work_experience) > 0) {
 	foreach ($candidate->work_experience as $key => $val) {
@@ -290,7 +290,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
                   <div class="col-md-12">
                     <div class="panel panel-default">
                       <div class="panel-heading"><?php echo _l('literacy') ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
                         <div class="list_literacy">
                           <?php if (isset($candidate) && count($candidate->literacy) > 0) {
 	foreach ($candidate->literacy as $key => $val) {
@@ -381,7 +381,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
                   <div class="col-md-12">
                     <div class="panel panel-warning">
                       <div class="panel-heading"><?php echo _l('family_infor') ?></div>
-                      <div class="panel-body">
+                      <div class="card-body">
                         <div class="list_family_infor">
                           <?php if (isset($candidate) && count($candidate->family_infor) > 0) {
 	foreach ($candidate->family_infor as $key => $val) {

@@ -107,7 +107,7 @@ body{
     border-radius: 0%;
 }
 
-.panel_s .panel-body{
+.card .card-body{
     padding:60px;
 }
 .main-area {
@@ -148,8 +148,8 @@ label.control-label {
 <!-- <div class="col-md-4 col-md-offset-4 text-center mbot15"> -->
 <div style = "text-align: center; top: 50%;" >
     <?php echo form_open('authentication/register2', ['id'=>'register-form']); ?>
-    <div class="panel_s main-area ">
-        <div class="panel-body" style ="height: 100%; justify-content: space-between; ">
+    <div class="card main-area ">
+        <div class="card-body" style ="height: 100%; justify-content: space-between; ">
             <h1 class = "heading login-title">COMPANY DETAILS</h1>
             <div class="form-group mtop15 register-company-group underlined-input">
                 <input type="text"  placeholder = <?php echo _l('clients_company'); ?> class="form-control custom-input" name="company" id="company" value="<?php echo set_value('company'); ?>">

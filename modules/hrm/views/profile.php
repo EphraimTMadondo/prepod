@@ -6,9 +6,9 @@
 
      <?php hooks()->do_action('before_staff_myprofile'); ?>
      <div class="col-md-12">
-      <div class="panel_s">
+      <div class="card">
 
-        <div class="panel-body">
+        <div class="card-body">
         <h4 class="no-margin">
           <?php echo _l('staff_profile_string'); ?>
         </h4>

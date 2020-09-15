@@ -4,8 +4,8 @@
     <div class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel_s">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <?php if(has_permission('hrm','','create')){ ?>
                         <div class="_buttons">
                             
@@ -34,8 +34,8 @@
                         <br>
                         <div class="row">
                            <div class="col-md-12" id="small-table">
-                              <div class="panel_s">
-                                 <div class="panel-body">
+                              <div class="card">
+                                 <div class="card-body">
                                 <div class="clearfix"></div>
 
                                  <!-- if hrmcontract id found in url -->

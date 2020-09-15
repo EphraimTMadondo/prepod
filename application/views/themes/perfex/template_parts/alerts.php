@@ -2,9 +2,9 @@
 <?php if(is_client_logged_in() && $navigationEnabled){
 $_announcements = get_announcements_for_user(false);
 if(count($_announcements) > 0){ ?>
-<div class="panel_s">
+<div class="card">
     <?php foreach($_announcements as $__announcement){ ?>
-        <div class="panel-body announcement mbot15 tc-content">
+        <div class="card-body announcement mbot15 tc-content">
             <div class="text-info alert-dismissible" role="alert">
                 <a href="<?php echo site_url('clients/dismiss_announcement/'.$__announcement['announcementid']); ?>" class="close"><span aria-hidden="true">&times;</span></a>
                 <h4 class="bold no-margin font-medium">

@@ -3,8 +3,8 @@
 	<div class="col-md-12">
 		<h3 id="greeting" class="no-mtop"></h3>
 		<?php if(has_contact_permission('projects')) { ?>
-			<div class="panel_s">
-				<div class="panel-body">
+			<div class="card">
+				<div class="card-body">
 					<h3 class="text-success projects-summary-heading no-mtop mbot15"><?php echo _l('projects_summary'); ?></h3>
 					<div class="row">
 						<?php get_template_part('projects/project_summary'); ?>
@@ -12,10 +12,10 @@
 				</div>
 			</div>
 		<?php } ?>
-		<div class="panel_s">
+		<div class="card">
 			<?php
 			if(has_contact_permission('invoices')){ ?>
-				<div class="panel-body">
+				<div class="card-body">
 					<p class="bold"><?php echo _l('clients_quick_invoice_info'); ?></p>
 					<?php if(has_contact_permission('invoices')){ ?>
 						<a href="<?php echo site_url('clients/statement'); ?>"><?php echo _l('view_account_statement'); ?></a>

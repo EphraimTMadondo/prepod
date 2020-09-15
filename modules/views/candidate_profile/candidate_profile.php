@@ -3,15 +3,15 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12" id="small-table">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <div class="row">
                      <div class="col-md-12">
                       <h4 class="no-margin font-bold"><i class="fa fa-user-o" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
                       <hr />
                     </div>
                   </div>
-                  <a href="<?php echo admin_url('recruitment/candidates'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_candidate'); ?></a>
+                  <a href="<?php echo admin_url('recruitment/candidates'); ?>" class="btn btn-primary"><?php echo _l('new_candidate'); ?></a>
                   <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-success pull-left display-block mleft5" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
                     <br><br><br>
                   <?php render_datatable(array(

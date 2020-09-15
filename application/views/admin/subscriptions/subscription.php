@@ -5,7 +5,7 @@
   <div class="row">
    <div class="col-md-5">
     <div class="card mtop20">
-     <div class="panel-body accounting-template">
+     <div class="card-body accounting-template">
       <?php if(isset($subscription)) {
        if(!empty($subscription->stripe_subscription_id)
         && $subscription->status != 'canceled' && $subscription->status != 'incomplete_expired' && $subscription->status != 'incomplete'){
@@ -49,8 +49,8 @@
           </div>
           <?php if(isset($subscription)) { ?>
            <div class="col-md-7">
-            <div class="panel_s">
-             <div class="panel-body">
+            <div class="card">
+             <div class="card-body">
               <div class="horizontal-scrollable-tabs preview-tabs-top">
                  <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
                  <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>

@@ -5,8 +5,8 @@
  	<?php echo form_hidden('cd_id',$candidate->id); ?>
  	<?php echo form_open_multipart(admin_url('recruitment/transfer_hr/'.$candidate->id),array('class'=>'transfer-form','autocomplete'=>'off')); ?>
     <div class="col-md-8 col-md-offset-2" id="small-table">
-   <div class="panel_s">
-     <div class="panel-body">
+   <div class="card">
+     <div class="card-body">
        <ul class="nav nav-tabs" role="tablist">
        	<li role="presentation" class="active">
          <a href="#tab_staff_profile" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">

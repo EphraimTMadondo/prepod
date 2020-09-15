@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-md-12">
              <div class="card mtop20">
-                 <div class="panel-body">
+                 <div class="card-body">
                     <div class="_buttons">
-                        <a href="<?php echo admin_url('custom_fields/field'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_custom_field'); ?></a>
+                        <a href="<?php echo admin_url('custom_fields/field'); ?>" class="btn btn-primary"><?php echo _l('new_custom_field'); ?></a>
                     </div>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />

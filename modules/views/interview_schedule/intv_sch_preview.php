@@ -1,5 +1,5 @@
-<div class="panel_s">
-	<div class="panel-body">
+<div class="card">
+	<div class="card-body">
   		<div class="col-md-12">
         <h4 class="isp-general-infor"><?php echo _l('general_infor') ?></h4>
          <hr class="isp-general-infor-hr" />

@@ -6,7 +6,7 @@
             <?php echo form_open($this->uri->uri_string(),array('id'=>'project_form')); ?>
             <div class="col-md-7">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <h4 class="no-margin">
                             <?php echo $title; ?>
                         </h4>
@@ -202,7 +202,7 @@
  </div>
  <div class="col-md-5">
     <div class="card mtop20">
-        <div class="panel-body" id="project-settings-area">
+        <div class="card-body" id="project-settings-area">
            <h4 class="no-margin">
                <?php echo _l('project_settings'); ?>
            </h4>

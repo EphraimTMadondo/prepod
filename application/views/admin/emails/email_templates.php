@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="row">
                             <?php hooks()->do_action('before_tickets_email_templates'); ?>
                             <div class="col-md-12">

@@ -752,7 +752,7 @@ NOTE: use percentage font sizes or else old IE chokes
 
 /* Popover
 --------------------------------------------------------------------------------------------------*/
-.fc-bootstrap3 .fc-popover .panel-body {
+.fc-bootstrap3 .fc-popover .card-body {
   padding: 0; }
 
 /* TimeGrid Slats (lines that run horizontally)

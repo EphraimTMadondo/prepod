@@ -1,14 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s section-heading section-invoices">
-    <div class="panel-body">
+<div class="card section-heading section-invoices">
+    <div class="card-body">
         <h4 class="no-margin section-text"><?php echo _l('clients_my_invoices'); ?></h4>
         <?php if(has_contact_permission('invoices')){ ?>
             <a href="<?php echo site_url('clients/statement'); ?>" class="view-account-statement"><?php echo _l('view_account_statement'); ?></a>
         <?php } ?>
     </div>
 </div>
-<div class="panel_s">
- <div class="panel-body">
+<div class="card">
+ <div class="card-body">
      <?php get_template_part('invoices_stats'); ?>
      <hr />
      <table class="table dt-table table-invoices" data-order-col="1" data-order-type="desc">

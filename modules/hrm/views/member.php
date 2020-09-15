@@ -5,8 +5,8 @@
    <div class="row">
       <?php if(isset($member)){ ?>
       <div class="col-md-12">
-         <div class="panel_s">
-            <div class="panel-body no-padding-bottom">
+         <div class="card">
+            <div class="card-body no-padding-bottom">
                <?php $this->load->view('admin/staff/stats'); ?>
             </div>
          </div>
@@ -24,8 +24,8 @@
                The staff member email exists also as support department email, according to the docs, the support department email must be unique email in the system, you must change the staff email or the support department email in order all the features to work properly.
             </div>
          <?php } ?>
-         <div class="panel_s">
-            <div class="panel-body">
+         <div class="card">
+            <div class="card-body">
               
                <h4 class="no-margin"><?php echo htmlspecialchars($member->firstname) . ' ' . htmlspecialchars($member->lastname); ?>
                   <?php if($member->last_activity && $member->staffid != get_staff_user_id()){ ?>
@@ -42,8 +42,8 @@
       <?php } ?>
       <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'staff-form','autocomplete'=>'off')); ?>
       <div class="col-md-<?php if(!isset($member)){echo '8 col-md-offset-2';} else {echo '12';} ?>" id="small-table">
-         <div class="panel_s">
-            <div class="panel-body">
+         <div class="card">
+            <div class="card-body">
                <ul class="nav nav-tabs" role="tablist">
                 <?php if(isset($member)) { ?>
                   <li role="presentation" class="active">

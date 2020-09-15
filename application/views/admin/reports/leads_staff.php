@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-md-12">
              <p class="text-info inline-block" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><i class="fa fa-question-circle"></i></p>
-             <div class="panel_s">
-                <div class="panel-body">
+             <div class="card">
+                <div class="card-body">
                     <a href="<?php echo admin_url('reports/leads'); ?>" class="btn btn-success"><?php echo _l('switch_to_staff_report'); ?></a>
                 </div>
             </div>
         </div>
         <div class="col-md-12 animated fadeIn">
             <div class="card mtop20">
-                <div class="panel-body">
+                <div class="card-body">
                     <?php echo form_open($this->uri->uri_string().'?type=staff'); ?>
                     <div class="row">
                         <div class="col-md-4">
