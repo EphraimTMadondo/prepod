@@ -3,15 +3,15 @@
   <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
   <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
   <div class="horizontal-tabs">
-    <ul class="nav nav-tabs nav-tabs-horizontal" role="tablist">
-     <li role="presentation" class="active">
-      <a href="#payment_modes_general" aria-controls="payment_modes_general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
+    <ul class="nav nav-tabs" role="tablist">
+     <li class="nav-item" role="presentation">
+      <a class="nav-link active" href="#payment_modes_general" aria-controls="payment_modes_general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
     </li>
     <?php
     foreach ($payment_gateways as $gateway) {
         ?>
-      <li role="presentation">
-        <a href="#online_payments_<?php echo $gateway['id']; ?>_tab"
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" href="#online_payments_<?php echo $gateway['id']; ?>_tab"
           aria-controls="online_payments_paypal_tab"
           role="tab"
           data-toggle="tab">
