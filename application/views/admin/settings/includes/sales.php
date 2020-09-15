@@ -1,29 +1,23 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_hidden('finance_settings'); ?>
-<div class="horizontal-scrollable-tabs">
-   <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
-   <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
-   <div class="horizontal-tabs">
-      <ul class="nav nav-tabs nav-tabs-horizontal" role="tablist">
-         <li role="presentation" class="active">
-            <a href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_general'); ?></a>
-         </li>
-         <li role="presentation">
-            <a href="#invoice" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('invoices'); ?></a>
-         </li>
-         <li role="presentation">
-            <a href="#credit_notes" aria-controls="credit_notes" role="tab" data-toggle="tab"><?php echo _l('credit_notes'); ?></a>
-         </li>
-         <li role="presentation">
-            <a href="#estimates" aria-controls="estimates" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_estimates'); ?></a>
-         </li>
-         <li role="presentation">
-            <a href="#proposals" aria-controls="proposals" role="tab" data-toggle="tab"><?php echo _l('proposals'); ?></a>
-         </li>
-         <?php hooks()->do_action('after_finance_settings_last_tab'); ?>
-      </ul>
-   </div>
-</div>
+<ul class="nav nav-tabs" role="tablist">
+   <li class="nav-item" role="presentation" >
+      <a class="nav-link active" href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_general'); ?></a>
+   </li>
+   <li class="nav-item" role="presentation">
+      <a href="#invoice" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('invoices'); ?></a>
+   </li>
+   <li class="nav-item" role="presentation">
+      <a href="#credit_notes" aria-controls="credit_notes" role="tab" data-toggle="tab"><?php echo _l('credit_notes'); ?></a>
+   </li>
+   <li class="nav-item" role="presentation">
+      <a href="#estimates" aria-controls="estimates" role="tab" data-toggle="tab"><?php echo _l('settings_sales_heading_estimates'); ?></a>
+   </li>
+   <li class="nav-item" role="presentation">
+      <a href="#proposals" aria-controls="proposals" role="tab" data-toggle="tab"><?php echo _l('proposals'); ?></a>
+   </li>
+   <?php hooks()->do_action('after_finance_settings_last_tab'); ?>
+</ul>
 <div class="tab-content">
    <div role="tabpanel" class="tab-pane active" id="general">
       <h4 class="bold">
