@@ -13,11 +13,7 @@
            <?php } else { ?>
 
                 <input type="hidden" name="payslip_id" value="">
-           <?php } ?>
-
-                                         
-
-                                   
+           <?php } ?>           
                 <div class="card-body">
                                     <h4>
                                     <?php echo _l('payslip_record'); ?>
