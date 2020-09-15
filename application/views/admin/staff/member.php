@@ -1,12 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
    <div class="row">
       <?php if(isset($member)){ ?>
       <div class="col-md-12">
-         <div class="card mtop20">
-            <div class="panel-body no-padding-bottom">
+         <div class="card">
+            <div class="card-body no-padding-bottom">
                <?php $this->load->view('admin/staff/stats'); ?>
             </div>
          </div>
@@ -25,7 +27,7 @@
             </div>
          <?php } ?>
          <div class="card">
-            <div class="panel-body">
+            <div class="card-body">
                <h4 class="no-margin"><?php echo $member->firstname . ' ' . $member->lastname; ?>
                   <?php if($member->last_activity && $member->staffid != get_staff_user_id()){ ?>
                   <small> - <?php echo _l('last_active'); ?>:
@@ -44,15 +46,15 @@
       <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'staff-form','autocomplete'=>'off')); ?>
       <div class="col-md-<?php if(!isset($member)){echo '8 col-md-offset-2';} else {echo '5';} ?>" id="small-table">
          <div class="card">
-            <div class="panel-body">
+            <div class="card-body">
                <ul class="nav nav-tabs" role="tablist">
-                  <li role="presentation" class="active">
-                     <a href="#tab_staff_profile" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
+                  <li role="presentation" class="nav-item active">
+                     <a class="nav-link" href="#tab_staff_profile" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
                      <?php echo _l('staff_profile_string'); ?>
                      </a>
                   </li>
-                  <li role="presentation">
-                     <a href="#staff_permissions" aria-controls="staff_permissions" role="tab" data-toggle="tab">
+                  <li role="presentation" class="nav-item">
+                     <a class="nav-link" href="#staff_permissions" aria-controls="staff_permissions" role="tab" data-toggle="tab">
                      <?php echo _l('staff_add_edit_permissions'); ?>
                      </a>
                   </li>
@@ -263,13 +265,13 @@
          </div>
       </div>
       <div class="btn-bottom-toolbar text-right btn-toolbar-container-out">
-         <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+         <button type="submit" class="btn btn-primary"><?php echo _l('submit'); ?></button>
       </div>
       <?php echo form_close(); ?>
       <?php if(isset($member)){ ?>
       <div class="col-md-7 small-table-right-col">
          <div class="card">
-            <div class="panel-body">
+            <div class="card-body">
                <h4 class="no-margin">
                   <?php echo _l('staff_add_edit_notes'); ?>
                </h4>
@@ -280,7 +282,7 @@
                <div class="mbot15 usernote hide inline-block full-width">
                   <?php echo form_open(admin_url('misc/add_note/'.$member->staffid . '/staff')); ?>
                   <?php echo render_textarea('description','staff_add_edit_note_description','',array('rows'=>5)); ?>
-                  <button class="btn btn-info pull-right mbot15"><?php echo _l('submit'); ?></button>
+                  <button class="btn btn-info float-right mb-1"><?php echo _l('submit'); ?></button>
                   <?php echo form_close(); ?>
                </div>
                <div class="clearfix"></div>
@@ -304,7 +306,7 @@
                               <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide inline-block full-width">
                                  <textarea name="description" class="form-control" rows="4"><?php echo clear_textarea_breaks($note['description']); ?></textarea>
                                  <div class="text-right mtop15">
-                                    <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
+                                    <button type="button" class="btn btn-light" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
                                     <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                                  </div>
                               </div>
@@ -313,8 +315,8 @@
                            <td data-order="<?php echo $note['dateadded']; ?>"><?php echo _dt($note['dateadded']); ?></td>
                            <td>
                               <?php if($note['addedfrom'] == get_staff_user_id() || has_permission('staff','','delete')){ ?>
-                              <a href="#" class="btn btn-default btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
-                              <a href="<?php echo admin_url('misc/delete_note/'.$note['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                              <a href="#" class="btn btn-light btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="bx bx-edit"></i></a>
+                              <a href="<?php echo admin_url('misc/delete_note/'.$note['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-x"></i></a>
                               <?php } ?>
                            </td>
                         </tr>
@@ -324,8 +326,8 @@
                </div>
             </div>
          </div>
-         <div class="panel_s">
-            <div class="panel-body">
+         <div class="card">
+            <div class="card-body">
                <h4 class="no-margin">
                   <?php echo _l('task_timesheets'); ?> & <?php echo _l('als_reports'); ?>
                </h4>
@@ -392,7 +394,7 @@
                                           data-trigger="manual"
                                           data-title="<?php echo _l('note'); ?>"
                                           data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button"
-                                          onclick="timer_action(this, <?php echo $t['task_id']; ?>, <?php echo $t['id']; ?>, 1);" class="btn btn-info btn-xs"><?php echo _l('save'); ?></button>'
+                                          onclick="timer_action(this, <?php echo $t['task_id']; ?>, <?php echo $t['id']; ?>, 1);" class="btn btn-primary btn-xs"><?php echo _l('save'); ?></button>'
                                           onclick="return false;"
                                           <?php } else { ?>
                                           onclick="timer_action(this, <?php echo $t['task_id']; ?>, <?php echo $t['id']; ?>, 1); return false;"
@@ -460,8 +462,8 @@
                   </table>
             </div>
          </div>
-         <div class="panel_s">
-            <div class="panel-body">
+         <div class="card">
+            <div class="card-body">
                <h4 class="no-margin">
                   <?php echo _l('projects'); ?>
                </h4>

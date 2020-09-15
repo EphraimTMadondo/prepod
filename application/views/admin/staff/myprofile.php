@@ -1,12 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-  <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
     <div class="row">
       <?php if (($staff_p->staffid == get_staff_user_id() || is_admin()) && !$this->input->get('notifications')){ ?>
       <div class="col-md-12">
-        <div class="card mtop20">
-          <div class="panel-body no-padding-bottom">
+        <div class="card">
+          <div class="card-body no-padding-bottom">
            <?php $this->load->view('admin/staff/stats'); ?>
          </div>
        </div>
@@ -16,7 +18,7 @@
      <div class="col-md-5<?php if($this->input->get('notifications')){echo ' hide';} ?>">
       <div class="card">
 
-        <div class="panel-body">
+        <div class="card-body">
         <h4 class="no-margin">
           <?php echo _l('staff_profile_string'); ?>
         </h4>
@@ -25,7 +27,7 @@
           <div class="alert alert-danger text-center"><?php echo _l('staff_profile_inactive_account'); ?></div>
           <hr />
           <?php } ?>
-          <div class="button-group mtop10 pull-right">
+          <div class="button-group mt-1 float-right">
            <?php if(!empty($staff_p->facebook)){ ?>
             <a href="<?php echo html_escape($staff_p->facebook); ?>" target="_blank" class="btn btn-default btn-icon"><i class="fa fa-facebook"></i></a>
             <?php } ?>
@@ -36,15 +38,15 @@
             <a href="skype:<?php echo html_escape($staff_p->skype); ?>" data-toggle="tooltip" title="<?php echo html_escape($staff_p->skype); ?>" target="_blank" class="btn btn-default btn-icon"><i class="fa fa-skype"></i></a>
             <?php } ?>
             <?php if(has_permission('staff','','edit') && has_permission('staff','','view')){ ?>
-            <a href="<?php echo admin_url('staff/member/'.$staff_p->staffid); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square"></i></a>
+            <a href="<?php echo admin_url('staff/member/'.$staff_p->staffid); ?>" class="btn btn-default btn-icon"><i class="bx bx-edit"></i></a>
             <?php } ?>
           </div>
           <div class="clearfix"></div>
           <?php if(is_admin($staff_p->staffid)){ ?>
-          <p class="pull-right text-info"><?php echo _l('staff_admin_profile'); ?></p>
+          <p class="float-right text-info"><?php echo _l('staff_admin_profile'); ?></p>
           <?php } ?>
           <?php echo staff_profile_image($staff_p->staffid,array('staff-profile-image-thumb'),'thumb'); ?>
-          <div class="profile mtop20 display-inline-block">
+          <div class="profile mt-2 display-inline-block">
             <h4>
             <?php echo $staff_p->firstname . ' ' . $staff_p->lastname; ?>
               <?php if($staff_p->last_activity && $staff_p->staffid != get_staff_user_id()){ ?>
@@ -80,7 +82,7 @@
      </div>
      <?php if(($staff_p->staffid == get_staff_user_id() || is_admin()) && !$this->input->get('notifications')) { ?>
        <div class="panel_s">
-        <div class="panel-body">
+        <div class="card-body">
          <h4 class="no-margin">
           <?php echo _l('projects'); ?>
         </h4>
@@ -104,7 +106,7 @@
    <?php if ($staff_p->staffid == get_staff_user_id()){ ?>
    <div class="col-md-7<?php if($this->input->get('notifications')){echo ' col-md-offset-2';} ?>">
     <div class="card">
-      <div class="panel-body">
+      <div class="card-body">
        <h4 class="no-margin">
         <?php echo _l('staff_profile_notifications'); ?>
 
