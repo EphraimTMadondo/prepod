@@ -6,26 +6,26 @@
   <?php } ?>
 </p>
 <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active">
-    <a href="#set_invoice" aria-controls="set_invoice" role="tab" data-toggle="tab"><?php echo _l('settings_sales_cron_invoice_heading'); ?></a>
+  <li class="nav-item" role="presentation" >
+    <a class="nav-link active" href="#set_invoice" aria-controls="set_invoice" role="tab" data-toggle="tab"><?php echo _l('settings_sales_cron_invoice_heading'); ?></a>
   </li>
-  <li role="presentation">
-    <a href="#estimates" aria-controls="estimates" role="tab" data-toggle="tab"><?php echo _l('estimates'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#estimates" aria-controls="estimates" role="tab" data-toggle="tab"><?php echo _l('estimates'); ?></a>
   </li>
-  <li role="presentation">
-    <a href="#proposals" aria-controls="proposals" role="tab" data-toggle="tab"><?php echo _l('proposals'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#proposals" aria-controls="proposals" role="tab" data-toggle="tab"><?php echo _l('proposals'); ?></a>
   </li>
-   <li role="presentation">
-    <a href="#expenses" aria-controls="expenses" role="tab" data-toggle="tab"><?php echo _l('expenses'); ?></a>
+   <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#expenses" aria-controls="expenses" role="tab" data-toggle="tab"><?php echo _l('expenses'); ?></a>
   </li>
-  <li role="presentation">
-    <a href="#contracts" aria-controls="contracts" role="tab" data-toggle="tab"><?php echo _l('contracts'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#contracts" aria-controls="contracts" role="tab" data-toggle="tab"><?php echo _l('contracts'); ?></a>
   </li>
-  <li role="presentation">
-    <a href="#tasks" aria-controls="tasks" role="tab" data-toggle="tab"><?php echo _l('tasks'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#tasks" aria-controls="tasks" role="tab" data-toggle="tab"><?php echo _l('tasks'); ?></a>
   </li>
-  <li role="presentation">
-    <a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab"><?php echo _l('tickets'); ?></a>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab"><?php echo _l('tickets'); ?></a>
   </li>
 
   <?php hooks()->do_action('after_cron_settings_last_tab'); ?>
