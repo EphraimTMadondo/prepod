@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 * environments.
 *
 */
-define('APP_BASE_URL', 'https://worksuite.app/prepod/');
+define('APP_BASE_URL', 'https://worksuite.app/dev2/');
 
 /*
 * --------------------------------------------------------------------------
