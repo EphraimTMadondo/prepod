@@ -96,8 +96,11 @@
                         </ul>
                      </div>
                      <a href="#" class="btn btn-light float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-proposals','#proposal'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-                      <!-- if invoiceid found in url -->
-                  <?php echo form_hidden('proposal_id',$proposal_id); ?>
+                  </div>
+               </div>
+               <div class="card-body">
+                   <!-- if invoiceid found in url -->
+                   <?php echo form_hidden('proposal_id',$proposal_id); ?>
                   <?php
                      $table_data = array(
                         _l('proposal') . ' #',
@@ -122,7 +125,6 @@
                            'data-default-order'         => get_table_last_order('proposals'),
                         ]);
                      ?>
-                  </div>
                </div>
             </div>
          </div>
