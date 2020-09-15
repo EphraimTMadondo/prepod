@@ -12,7 +12,7 @@
        </div>
      </div>
    <?php } ?>
-   <div class="col-md-2">
+   <div class="card card-body col-md-2">
     <ul class="nav nav-pills flex-column">
       <?php
       $i = 0;
