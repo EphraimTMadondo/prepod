@@ -5,8 +5,8 @@
    <div class="additional"></div>
    <div class="col-md-12">
       <ul class="nav nav-tabs profile-tabs" role="tablist">
-         <li role="presentation" class="nav-item <?php if(!$this->input->get('tab')){echo 'active';}; ?>">
-            <a href="#contact_info"  class="nav-link" aria-controls="contact_info" role="tab" data-toggle="tab">
+         <li role="presentation" class="nav-item">
+            <a href="#contact_info" class="nav-link  <?php if(!$this->input->get('tab')){echo 'active';}; ?>" aria-controls="contact_info" role="tab" data-toggle="tab">
             <?php echo _l( 'customer_profile_details'); ?>
             </a>
          </li>
@@ -15,8 +15,8 @@
             if(total_rows(db_prefix().'customfields',array('fieldto'=>'customers','active'=>1)) > 0 ){
                   $customer_custom_fields = true;
                ?>
-         <li role="presentation" class="nav-item <?php if($this->input->get('tab') == 'custom_fields'){echo 'active';}; ?>">
-            <a href="#custom_fields" class="nav-link" aria-controls="custom_fields" role="tab" data-toggle="tab">
+         <li role="presentation" class="nav-item">
+            <a href="#custom_fields" class="nav-link <?php if($this->input->get('tab') == 'custom_fields'){echo 'active';}; ?>" aria-controls="custom_fields" role="tab" data-toggle="tab">
             <?php echo hooks()->apply_filters('customer_profile_tab_custom_fields_text', _l( 'custom_fields')); ?>
             </a>
          </li>
