@@ -12,7 +12,7 @@
   }
   ?>
   <div class="col-md-12">
-    <div class="card mt-2 credit_note accounting-template">
+    <div class="card credit_note accounting-template">
      <div class="additional"></div>
      <div class="card-body">
       <?php if(isset($credit_note)){ ?>

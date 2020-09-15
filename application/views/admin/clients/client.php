@@ -5,7 +5,7 @@
   <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-             <div class="card mt-2">
+             <div class="card">
                 <?php if(isset($client) && $client->registration_confirmed == 0 && is_admin()){ ?>
                    <div class="alert alert-warning">
                       <?php echo _l('customer_requires_registration_confirmation'); ?>

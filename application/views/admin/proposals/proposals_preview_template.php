@@ -327,7 +327,7 @@
                   </div>
                   <?php echo form_close(); ?>
                   <hr />
-                  <div class="card mt-2 no-shadow" id="sales_notes_area">
+                  <div class="card no-shadow" id="sales_notes_area">
                   </div>
                </div>
                <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">

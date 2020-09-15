@@ -6,7 +6,7 @@
       <div class="content-wrapper">
          <div class="row">
             <div class="col-md-12">
-               <div class="card mt-2 _filters _hidden_inputs hidden">
+               <div class="card _filters _hidden_inputs hidden">
                   <?php
                      echo form_hidden('my_customers');
                      echo form_hidden('requires_registration_confirmation');

@@ -5,7 +5,7 @@
 	<div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mt-2">
+            <div class="card">
                <div class="card-body">
                   <div class="row">
                     <div class="col-md-2 border-right">

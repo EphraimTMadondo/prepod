@@ -6,7 +6,7 @@
 	<div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
-        <div class="card mt-2">
+        <div class="card">
           <div class="card-body">
             <?php if(has_permission('items','','delete')){ ?>
              <a href="#" data-toggle="modal" data-table=".table-invoice-items" data-target="#items_bulk_actions" class="hide bulk-actions-btn table-btn"><?php echo _l('bulk_actions'); ?></a>

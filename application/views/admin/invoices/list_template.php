@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12">
-   <div class="card mt-2 mb-1">
+   <div class="card mb-1">
       <div class="card-body _buttons">
          <?php $this->load->view('admin/invoices/invoices_top_stats'); ?>
          <?php if(has_permission('invoices','','create')){ ?>
