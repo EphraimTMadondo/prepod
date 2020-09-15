@@ -125,7 +125,7 @@
                                   if(($_available == $template->type || isset($_field['templates']) && in_array($template->slug, $_field['templates'])) && !in_array($_field['name'], $mergeLooped)){
                                     $mergeLooped[] = $_field['name'];
                                     echo '<p>'.$_field['name'];
-                                    echo '<span class="pull-right"><a href="#" class="add_merge_field">';
+                                    echo '<span class="float-right"><a href="#" class="add_merge_field">';
                                     echo $_field['key'];
                                     echo '</a>';
                                     echo '</span>';

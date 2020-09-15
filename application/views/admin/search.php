@@ -38,16 +38,16 @@
             $output = '<a href="'.admin_url('contracts/contract/'.$_result['id']).'">'.$_result['subject'].'</a>';
             break;
             case 'invoice_payment_records':
-            $output = '<a href="'.admin_url('payments/payment/'.$_result['paymentid']).'">#'.$_result['paymentid'].'<span class="pull-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
+            $output = '<a href="'.admin_url('payments/payment/'.$_result['paymentid']).'">#'.$_result['paymentid'].'<span class="float-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
             break;
             case 'invoices':
-            $output = '<a href="'.admin_url('invoices/list_invoices/'.$_result['invoiceid']).'">'.format_invoice_number($_result['invoiceid']).'<span class="pull-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
+            $output = '<a href="'.admin_url('invoices/list_invoices/'.$_result['invoiceid']).'">'.format_invoice_number($_result['invoiceid']).'<span class="float-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
             break;
             case 'credit_note':
-            $output = '<a href="'.admin_url('credit_notes/list_credit_notes/'.$_result['credit_note_id']).'">'.format_credit_note_number($_result['credit_note_id']).'<span class="pull-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
+            $output = '<a href="'.admin_url('credit_notes/list_credit_notes/'.$_result['credit_note_id']).'">'.format_credit_note_number($_result['credit_note_id']).'<span class="float-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
             break;
             case 'estimates':
-            $output = '<a href="'.admin_url('estimates/list_estimates/'.$_result['estimateid']).'">'.format_estimate_number($_result['estimateid']).'<span class="pull-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
+            $output = '<a href="'.admin_url('estimates/list_estimates/'.$_result['estimateid']).'">'.format_estimate_number($_result['estimateid']).'<span class="float-right">'.date('Y',strtotime($_result['date'])).'</span></a>';
             break;
             case 'expenses':
             $output = '<a href="'.admin_url('expenses/list_expenses/'.$_result['expenseid']).'">'.$_result['category_name']. ' - ' .app_format_money($_result['amount'], $_result['currency_name']).'</a>';
@@ -58,7 +58,7 @@
             case 'custom_fields':
             $rel_data   = get_relation_data($_result['fieldto'], $_result['relid']);
             $rel_values = get_relation_values($rel_data, $_result['fieldto']);
-            $output      = '<a class="pull-left" href="' . $rel_values['link'] . '">' . $rel_values['name'] .'<span class="pull-right">'._l($_result['fieldto']).'</span></a>';
+            $output      = '<a class="pull-left" href="' . $rel_values['link'] . '">' . $rel_values['name'] .'<span class="float-right">'._l($_result['fieldto']).'</span></a>';
             break;
             case 'invoice_items':
             $output = '<a href="'.admin_url('invoices/list_invoices/'.$_result['rel_id']).'">'.format_invoice_number($_result['rel_id']);

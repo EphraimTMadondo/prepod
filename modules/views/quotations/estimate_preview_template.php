@@ -33,21 +33,21 @@
               <p class="bold mtop15" ><?php echo _l('vendor').': '?><a href="<?php echo admin_url('purchase/vendor/'.$estimate->vendor->userid); ?>"><?php echo html_entity_decode($estimate->vendor->company); ?></a></p>
             </div>
             <div class="col-md-8">
-               <div class="pull-right _buttons">
+               <div class="float-right _buttons">
                   <?php if(has_permission('estimates','','edit')){ ?>
                   <a href="<?php echo admin_url('purchase/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
                   <?php } ?>
 
                </div>
 
-               <select name="status" id="status" class="selectpicker pull-right mright10" onchange="change_status_pur_estimate(this,<?php echo html_entity_decode($estimate->id); ?>); return false;" data-live-search="true" data-width="35%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
+               <select name="status" id="status" class="selectpicker float-right mr-1" onchange="change_status_pur_estimate(this,<?php echo html_entity_decode($estimate->id); ?>); return false;" data-live-search="true" data-width="35%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
                  <option value=""></option>
                  <option value="1" class="<?php if($estimate->status == 1) { echo 'hide';}?>"><?php echo _l('not_yet_approve'); ?></option>
                  <option value="2" class="<?php if($estimate->status == 2) { echo 'hide';}?>"><?php echo _l('approved'); ?></option>
                  <option value="3" class="<?php if($estimate->status == 3) { echo 'hide';}?>"><?php echo _l('reject'); ?></option>
                </select>
                
-               <div class="pull-right mright5">
+               <div class="float-right mr-1">
                             <?php if($check_appr && $check_appr != false){
                             if($estimate->status != 2 && ($check_approve_status == false || $check_approve_status == 'reject')){ ?>
                         <a data-toggle="tooltip" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-success lead-top-btn lead-view" data-placement="top" href="#" onclick="send_request_approve(<?php echo html_entity_decode($estimate->id); ?>); return false;"><?php echo _l('send_request_approve'); ?></a>
@@ -66,7 +66,7 @@
                                     </li>
                                       <li>
                                         <div class="row text-right col-md-12">
-                                          <a href="#" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="approve_request(<?php echo html_entity_decode($estimate->id); ?>); return false;" class="btn btn-success mright15" ><?php echo _l('approve'); ?></a>
+                                          <a href="#" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="approve_request(<?php echo html_entity_decode($estimate->id); ?>); return false;" class="btn btn-success mr-1" ><?php echo _l('approve'); ?></a>
                                          <a href="#" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="deny_request(<?php echo html_entity_decode($estimate->id); ?>); return false;" class="btn btn-warning"><?php echo _l('deny'); ?></a></div>
                                       </li>
                                    </ul>
@@ -76,7 +76,7 @@
                             
                           <?php
                            if(in_array(get_staff_user_id(), $check_approve_status['staffid']) && in_array(get_staff_user_id(), $get_staff_sign)){ ?>
-                            <button onclick="accept_action();" class="btn btn-success pull-right action-button"><?php echo _l('e_signature_sign'); ?></button>
+                            <button onclick="accept_action();" class="btn btn-success float-right action-button"><?php echo _l('e_signature_sign'); ?></button>
                           <?php }
                             ?>
                             <?php 

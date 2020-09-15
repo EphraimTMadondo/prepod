@@ -85,7 +85,7 @@
                <div class="visible-xs">
                   <div class="mtop10"></div>
                </div>
-               <div class="pull-right _buttons">
+               <div class="float-right _buttons">
                   <?php if(has_permission('estimates','','edit')){ ?>
                   <a href="<?php echo admin_url('estimates/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
                   <?php } ?>
@@ -174,7 +174,7 @@
                   </div>
                   <?php if($estimate->invoiceid == NULL){ ?>
                   <?php if(has_permission('invoices','','create') && !empty($estimate->clientid)){ ?>
-                  <div class="btn-group pull-right mleft5">
+                  <div class="btn-group float-right ml-1">
                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <?php echo _l('estimate_convert_to_invoice'); ?> <span class="caret"></span>
                      </button>
@@ -187,7 +187,7 @@
                   </div>
                   <?php } ?>
                   <?php } else { ?>
-                  <a href="<?php echo admin_url('invoices/list_invoices/'.$estimate->invoice->id); ?>" data-placement="bottom" data-toggle="tooltip" title="<?php echo _l('estimate_invoiced_date',_dt($estimate->invoiced_date)); ?>"class="btn mleft10 btn-info"><?php echo format_invoice_number($estimate->invoice->id); ?></a>
+                  <a href="<?php echo admin_url('invoices/list_invoices/'.$estimate->invoice->id); ?>" data-placement="bottom" data-toggle="tooltip" title="<?php echo _l('estimate_invoiced_date',_dt($estimate->invoiced_date)); ?>"class="btn ml-1 btn-info"><?php echo format_invoice_number($estimate->invoice->id); ?></a>
                   <?php } ?>
                </div>
             </div>
@@ -441,7 +441,7 @@
                            <div class="text">
                               <?php if(is_numeric($activity['staffid']) && $activity['staffid'] != 0){ ?>
                               <a href="<?php echo admin_url('profile/'.$activity["staffid"]); ?>">
-                              <?php echo staff_profile_image($activity['staffid'],array('staff-profile-xs-image pull-left mright5'));
+                              <?php echo staff_profile_image($activity['staffid'],array('staff-profile-xs-image pull-left mr-1'));
                                  ?>
                               </a>
                               <?php } ?>
@@ -476,7 +476,7 @@
                                  }
                                  echo $_formatted_activity;
                                  if(is_admin()){
-                                 echo '<a href="#" class="pull-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="fa fa-remove"></i></a>';
+                                 echo '<a href="#" class="float-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="fa fa-remove"></i></a>';
                                  }
                                  ?>
                            </div>

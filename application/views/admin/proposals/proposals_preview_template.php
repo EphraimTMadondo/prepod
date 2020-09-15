@@ -80,7 +80,7 @@
       </div>
       <div class="row mtop10">
          <div class="col-md-3">
-            <?php echo format_proposal_status($proposal->status,'pull-left mright5 mtop5'); ?>
+            <?php echo format_proposal_status($proposal->status,'pull-left mr-1 mtop5'); ?>
          </div>
          <div class="col-md-9 text-right _buttons proposal_buttons">
             <?php if(has_permission('proposals','','edit')){ ?>
@@ -275,7 +275,7 @@
                               <?php
                                  foreach($proposal_merge_fields as $field){
                                     foreach($field as $f){
-                                      echo '<li class="list-group-item"><b>'.$f['name'].'</b> <a href="#" class="pull-right" onclick="insert_proposal_merge_field(this); return false;">'.$f['key'].'</a></li>';
+                                      echo '<li class="list-group-item"><b>'.$f['name'].'</b> <a href="#" class="float-right" onclick="insert_proposal_merge_field(this); return false;">'.$f['key'].'</a></li>';
                                    }
                                 }
                              ?>
@@ -302,7 +302,7 @@
                                  </a>
                                  <?php } ?>
                               </p>
-                              <div class="pull-right">
+                              <div class="float-right">
                                  <img src="<?php echo site_url('download/preview_image?path='.protected_file_url_by_path(get_upload_path_by_type('proposal').$proposal->id.'/'.$proposal->signature)); ?>" class="img-responsive" alt="">
                               </div>
                            </div>
@@ -315,7 +315,7 @@
                         <div id="proposal-comments"></div>
                         <div class="clearfix"></div>
                         <textarea name="content" id="comment" rows="4" class="form-control mtop15 proposal-comment"></textarea>
-                        <button type="button" class="btn btn-info mtop10 pull-right" onclick="add_proposal_comment();"><?php echo _l('proposal_add_comment'); ?></button>
+                        <button type="button" class="btn btn-info mtop10 float-right" onclick="add_proposal_comment();"><?php echo _l('proposal_add_comment'); ?></button>
                      </div>
                   </div>
                </div>

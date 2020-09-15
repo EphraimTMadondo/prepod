@@ -4,7 +4,7 @@
 <?php } ?>
 <a href="#" class="btn btn-default" onclick="milestones_switch_view(); return false;"><i class="fa fa-th-list"></i></a>
 <?php if($milestones_found) { ?>
-   <div id="kanban-params" class="pull-right">
+   <div id="kanban-params" class="float-right">
       <div class="checkbox">
          <input type="checkbox" value="yes" id="exclude_completed_tasks" name="exclude_completed_tasks"<?php if($milestones_exclude_completed_tasks){echo ' checked';} ?> onclick="window.location.href = '<?php echo admin_url('projects/view/'.$project->id.'?group=project_milestones&exclude_completed='); ?>'+(this.checked ? 'yes' : 'no')">
          <label for="exclude_completed_tasks"><?php echo _l('exclude_completed_tasks') ?></label>

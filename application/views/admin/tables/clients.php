@@ -244,7 +244,7 @@ foreach ($rResult as $aRow) {
     if ($aRow['customerGroups']) {
         $groups = explode(',', $aRow['customerGroups']);
         foreach ($groups as $group) {
-            $groupsRow .= '<span class="label label-default mleft5 inline-block customer-group-list pointer">' . $group . '</span>';
+            $groupsRow .= '<span class="label label-default ml-1 inline-block customer-group-list pointer">' . $group . '</span>';
         }
     }
 

@@ -19,7 +19,7 @@
     <?php foreach ($list_set_tran as $li) {?>
         <tr>
              <td><?php echo html_entity_decode($li['subject']); ?></td>
-            <td><a href="<?php echo admin_url('staff/profile/' . $li['add_from']); ?>" ><?php echo staff_profile_image($li['add_from'], ['staff-profile-image-small mright5'], 'small') . get_staff_full_name($li['add_from']); ?></td>
+            <td><a href="<?php echo admin_url('staff/profile/' . $li['add_from']); ?>" ><?php echo staff_profile_image($li['add_from'], ['staff-profile-image-small mr-1'], 'small') . get_staff_full_name($li['add_from']); ?></td>
 
             <td><?php echo _d($li['add_date']); ?></td>
             <td>

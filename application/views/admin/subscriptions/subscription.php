@@ -124,7 +124,7 @@
                        <?php foreach($child_invoices as $invoice){ ?>
                          <li class="list-group-item">
                           <a href="<?php echo admin_url('invoices/list_invoices/'.$invoice->id); ?>" target="_blank"><?php echo format_invoice_number($invoice->id); ?>
-                          <span class="pull-right bold"><?php echo app_format_money($invoice->total, $invoice->currency_name); ?></span>
+                          <span class="float-right bold"><?php echo app_format_money($invoice->total, $invoice->currency_name); ?></span>
                         </a>
                         <br />
                         <span class="inline-block mtop10">

@@ -295,7 +295,7 @@
             <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
             <div class="btn-bottom-toolbar text-right">
               
-              <button type="button" class="btn-tr save_detail btn btn-info mleft10 estimate-form-submit transaction-submit">
+              <button type="button" class="btn-tr save_detail btn btn-info ml-1 estimate-form-submit transaction-submit">
               <?php echo _l('submit'); ?>
               </button>
             </div>

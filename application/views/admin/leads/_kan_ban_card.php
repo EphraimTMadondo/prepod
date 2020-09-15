@@ -10,7 +10,7 @@ if ($lead['status'] == $status['id']) { ?>
       <div class="row">
          <div class="col-md-12 lead-name">
             <?php if ($lead['assigned'] != 0) { ?>
-            <a href="<?php echo admin_url('profile/' . $lead['assigned']); ?>" data-placement="right" data-toggle="tooltip" title="<?php echo get_staff_full_name($lead['assigned']); ?>" class="pull-left mtop8 mright5">
+            <a href="<?php echo admin_url('profile/' . $lead['assigned']); ?>" data-placement="right" data-toggle="tooltip" title="<?php echo get_staff_full_name($lead['assigned']); ?>" class="pull-left mtop8 mr-1">
                <?php echo staff_profile_image($lead['assigned'], array(
                   'staff-profile-image-xs'
                   )); ?></a>
@@ -37,7 +37,7 @@ if ($lead['status'] == $status['id']) { ?>
                     </span>
                  </span>
               </small><br />
-              <span class="mright5 mtop5 inline-block text-muted" data-toggle="tooltip" data-placement="left" data-title="<?php echo _l('leads_canban_notes',$lead['total_notes']); ?>">
+              <span class="mr-1 mtop5 inline-block text-muted" data-toggle="tooltip" data-placement="left" data-title="<?php echo _l('leads_canban_notes',$lead['total_notes']); ?>">
                <i class="fa fa-sticky-note-o"></i> <?php echo $lead['total_notes']; ?>
             </span>
             <span class="mtop5 inline-block text-muted" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('lead_kan_ban_attachments',$lead['total_files']); ?>">
@@ -52,7 +52,7 @@ if ($lead['status'] == $status['id']) { ?>
             </div>
          </div>
          <?php } ?>
-         <a href="#" class="pull-right text-muted kan-ban-expand-top" onclick="slideToggle('#kan-ban-expand-<?php echo $lead['id']; ?>'); return false;">
+         <a href="#" class="float-right text-muted kan-ban-expand-top" onclick="slideToggle('#kan-ban-expand-<?php echo $lead['id']; ?>'); return false;">
             <i class="fa fa-expand" aria-hidden="true"></i>
          </a>
          <div class="clearfix no-margin"></div>

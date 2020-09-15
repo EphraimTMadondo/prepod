@@ -28,7 +28,7 @@ $config['base_url'] = '';
 $config['total_rows'] = $output['iTotalDisplayRecords'];
 $config['per_page'] = $length;
 $config['use_page_numbers'] = TRUE;
-$config['full_tag_open'] = "<ul class='pagination pagination-sm pull-right' style='position:relative; top:-25px;'>";
+$config['full_tag_open'] = "<ul class='pagination pagination-sm float-right' style='position:relative; top:-25px;'>";
 $config['full_tag_close'] ="</ul>";
 $config['num_tag_open'] = '<li>';
 $config['num_tag_close'] = '</li>';

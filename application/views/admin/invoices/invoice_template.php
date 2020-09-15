@@ -545,7 +545,7 @@
                          $new_item = true;
                         }
                         ?>
-                     <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn pull-right btn-info"><i class="fa fa-check"></i></button>
+                     <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-info"><i class="fa fa-check"></i></button>
                   </td>
                </tr>
                <?php if (isset($invoice) || isset($add_items)) {
@@ -706,7 +706,7 @@
             <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
             <div class="btn-bottom-toolbar text-right">
                 <?php if(!isset($invoice)){ ?>
-                <button class="btn-tr btn btn-default mleft10 text-right invoice-form-submit save-as-draft transaction-submit">
+                <button class="btn-tr btn btn-default ml-1 text-right invoice-form-submit save-as-draft transaction-submit">
                 <?php echo _l('save_as_draft'); ?>
                 </button>
                 <?php } ?>

@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -29,7 +31,7 @@
                             <a href="<?php echo admin_url('hrm/contract'); ?>" class="btn btn-primary"><?php echo _l('new_contract'); ?></a>
                         </div>
                         <?php } ?>
-                        <div class="btn-group pull-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                        <div class="btn-group float-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
@@ -110,7 +112,7 @@
                                   </select>
                             </div> 
 
-                            <div  class="col-md-2 leads-filter-column pull-right">
+                            <div  class="col-md-2 leads-filter-column float-right">
                                 <div class="form-group" app-field-wrapper="validity_end_date">
                                     <div class="input-group date">
                                         <input type="text" id="validity_end_date" name="validity_end_date" class="form-control datepicker" value="" autocomplete="off" placeholder="<?php echo _l('validity_end_date') ?>">
@@ -120,7 +122,7 @@
                                     </div>
                                 </div>
                             </div> 
-                            <div  class="col-md-2 leads-filter-column pull-right">
+                            <div  class="col-md-2 leads-filter-column float-right">
                                 <div class="form-group" app-field-wrapper="validity_start_date">
                                     <div class="input-group date">
                                         <input type="text" id="validity_start_date" name="validity_start_date" class="form-control datepicker" value="" autocomplete="off" placeholder="<?php echo _l('validity_start_date') ?>">

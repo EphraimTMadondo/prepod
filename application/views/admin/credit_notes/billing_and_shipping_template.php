@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-12">
                         <hr />
-                        <a href="#" class="pull-right" id="get_shipping_from_customer_profile" data-placement="left" data-toggle="tooltip" title="<?php echo _l('get_shipping_from_customer_profile'); ?>"><i class="fa fa-user"></i></a>
+                        <a href="#" class="float-right" id="get_shipping_from_customer_profile" data-placement="left" data-toggle="tooltip" title="<?php echo _l('get_shipping_from_customer_profile'); ?>"><i class="fa fa-user"></i></a>
                         <div class="clearfix"></div>
                         <div class="form-group no-mbot">
                             <div class="checkbox checkbox-primary checkbox-inline">

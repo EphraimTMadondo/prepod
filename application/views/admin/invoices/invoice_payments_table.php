@@ -14,7 +14,7 @@
             <?php foreach($invoice->payments as $payment){ ?>
             <tr class="payment">
                 <td><?php echo $payment['paymentid']; ?>
-                    <?php echo icon_btn('payments/pdf/' . $payment['paymentid'], 'file-pdf-o','btn-default pull-right'); ?>
+                    <?php echo icon_btn('payments/pdf/' . $payment['paymentid'], 'file-pdf-o','btn-default float-right'); ?>
                 </td>
                 <td><?php echo $payment['name']; ?>
                     <?php if(!empty($payment['paymentmethod'])){

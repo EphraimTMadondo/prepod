@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="pull-right mtop15">
+        <div class="float-right mtop15">
             <a href="#" class="btn btn-danger" onclick="init_credit_note(<?php echo $credit_note->id; ?>); return false;">
                 <?php echo _l('cancel'); ?>
             </a>

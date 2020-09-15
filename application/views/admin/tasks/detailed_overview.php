@@ -129,13 +129,13 @@
                            </td>
                            <td>
                               <span class="label <?php if($task['total_checklist_items'] == '0'){ echo 'label-default-light'; } else if(($task['total_finished_checklist_items'] != $task['total_checklist_items'])){ echo 'label-danger';
-                                 } else if($task['total_checklist_items'] == $task['total_finished_checklist_items']){echo 'label-success';} ?> pull-left mright5" data-toggle="tooltip" data-title="<?php echo _l('tasks_total_checklists_finished'); ?>">
+                                 } else if($task['total_checklist_items'] == $task['total_finished_checklist_items']){echo 'label-success';} ?> pull-left mr-1" data-toggle="tooltip" data-title="<?php echo _l('tasks_total_checklists_finished'); ?>">
                               <i class="fa fa-th-list"></i>
                               <?php echo $task['total_finished_checklist_items']; ?>/<?php echo $task['total_checklist_items']; ?>
                               </span>
                            </td>
                            <td data-order="<?php echo $task['total_logged_time']; ?>">
-                              <span class="label label-default-light pull-left mright5" data-toggle="tooltip" data-title="<?php echo _l('staff_stats_total_logged_time'); ?>">
+                              <span class="label label-default-light pull-left mr-1" data-toggle="tooltip" data-title="<?php echo _l('staff_stats_total_logged_time'); ?>">
                               <i class="fa fa-clock-o"></i> <?php echo seconds_to_time_format($task['total_logged_time']); ?>
                               </span>
                            </td>

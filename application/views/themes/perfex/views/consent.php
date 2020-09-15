@@ -3,7 +3,7 @@
     <div class="card-body">
         <div class="col-md-12">
             <?php if(is_client_logged_in()){ ?>
-                <a href="<?php echo site_url('clients/gdpr'); ?>" class="btn btn-default pull-right">
+                <a href="<?php echo site_url('clients/gdpr'); ?>" class="btn btn-default float-right">
                     <?php echo _l('client_go_to_dashboard'); ?>
                 </a>
             <?php } ?>

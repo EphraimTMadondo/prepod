@@ -6,7 +6,7 @@
             <span style="color:<?php echo $project_status['color']; ?>; font-size:16px;"><?php echo $project_status['name']; ?></span>
        </h3>
         <?php if($project->settings->view_tasks == 1 && $project->settings->create_tasks == 1){ ?>
-        <a href="<?php echo site_url('clients/project/'.$project->id.'?group=new_task'); ?>" class="btn btn-info pull-right mtop5"><?php echo _l('new_task'); ?></a>
+        <a href="<?php echo site_url('clients/project/'.$project->id.'?group=new_task'); ?>" class="btn btn-info float-right mtop5"><?php echo _l('new_task'); ?></a>
         <?php } ?>
    </div>
 </div>

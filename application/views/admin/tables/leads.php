@@ -152,7 +152,7 @@ foreach ($rResult as $aRow) {
         $consents    = $this->ci->gdpr_model->get_consent_purposes($aRow['id'], 'lead');
 
         foreach ($consents as $consent) {
-            $consentHTML .= '<p style="margin-bottom:0px;">' . $consent['name'] . (!empty($consent['consent_given']) ? '<i class="fa fa-check text-success pull-right"></i>' : '<i class="fa fa-remove text-danger pull-right"></i>') . '</p>';
+            $consentHTML .= '<p style="margin-bottom:0px;">' . $consent['name'] . (!empty($consent['consent_given']) ? '<i class="fa fa-check text-success float-right"></i>' : '<i class="fa fa-remove text-danger float-right"></i>') . '</p>';
         }
         $row[] = $consentHTML;
     }
@@ -187,7 +187,7 @@ foreach ($rResult as $aRow) {
     } else {
         $outputStatus = '<span class="inline-block lead-status-'.$aRow['status'].' label label-' . (empty($aRow['color']) ? 'default': '') . '" style="color:' . $aRow['color'] . ';border:1px solid ' . $aRow['color'] . '">' . $aRow['status_name'];
         if (!$locked) {
-            $outputStatus .= '<div class="dropdown inline-block mleft5 table-export-exclude">';
+            $outputStatus .= '<div class="dropdown inline-block ml-1 table-export-exclude">';
             $outputStatus .= '<a href="#" style="font-size:14px;vertical-align:middle;" class="dropdown-toggle text-dark" id="tableLeadsStatus-' . $aRow['id'] . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
             $outputStatus .= '<span data-toggle="tooltip" title="' . _l('ticket_single_change_status') . '"><i class="fa fa-caret-down" aria-hidden="true"></i></span>';
             $outputStatus .= '</a>';

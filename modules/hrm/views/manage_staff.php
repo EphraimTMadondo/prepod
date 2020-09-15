@@ -1,14 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <?php if (is_admin()) { ?>
                         <div class="_buttons">
-                            <a href="<?php echo admin_url('hrm/member'); ?>" class="btn mright5 btn-primary hidden-xs"><?php echo _l('new_staff'); ?></a>
+                            <a href="<?php echo admin_url('hrm/member'); ?>" class="btn mr-1 btn-primary hidden-xs"><?php echo _l('new_staff'); ?></a>
 
                             </a>
                         </div>

@@ -74,7 +74,7 @@
                <div class="visible-xs">
                   <div class="mtop10"></div>
                </div>
-               <div class="pull-right _buttons">
+               <div class="float-right _buttons">
                   <?php if(has_permission('credit_notes','','edit') && $credit_note->status != 3){ ?>
                   <a href="<?php echo admin_url('credit_notes/credit_note/'.$credit_note->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit',_l('credit_note_lowercase')); ?>" data-placement="bottom">
                   <i class="fa fa-pencil-square-o"></i>
@@ -388,7 +388,7 @@
                         <td>
                            <?php echo _d($credit['date']); ?>
                            <?php if(has_permission('credit_notes','','delete')) { ?>
-                           <a href="<?php echo admin_url('credit_notes/delete_credit_note_applied_credit/'.$credit['id'].'/'.$credit['credit_id'].'/'.$credit['invoice_id']); ?>" class="pull-right text-danger _delete"><i class="fa fa-trash"></i></a>
+                           <a href="<?php echo admin_url('credit_notes/delete_credit_note_applied_credit/'.$credit['id'].'/'.$credit['credit_id'].'/'.$credit['invoice_id']); ?>" class="float-right text-danger _delete"><i class="fa fa-trash"></i></a>
                            <?php } ?>
                         </td>
                      </tr>
@@ -435,13 +435,13 @@
                         <td>
                            <?php if(has_permission('credit_notes','','delete')) { ?>
                            <a href="<?php echo admin_url('credit_notes/delete_refund/'.$refund['id'].'/'.$refund['credit_note_id']); ?>"
-                              class="pull-right text-danger _delete">
+                              class="float-right text-danger _delete">
                            <i class="fa fa-trash"></i>
                            </a>
                            <?php } ?>
                            <?php if(has_permission('credit_notes','','edit')) { ?>
                            <a href="#" onclick="edit_refund(<?php echo $refund['id']; ?>); return false;"
-                              class="pull-right mright5">
+                              class="float-right mr-1">
                            <i class="fa fa-pencil-square-o"></i>
                            </a>
                            <?php } ?>

@@ -74,7 +74,7 @@ foreach ($rResult as $aRow) {
             $ata = '';
             foreach($can as $cad){
                 $ata .= '<a href="' . admin_url('recruitment/candidate/' . $cad) . '">'.candidate_profile_image($cad,[
-                    'staff-profile-image-small mright5',
+                    'staff-profile-image-small mr-1',
                     ], 'small', [
                     'data-toggle' => 'tooltip',
                     'data-title'  =>  get_candidate_name($cad),
@@ -87,7 +87,7 @@ foreach ($rResult as $aRow) {
             $ata = '';
             foreach($inv as $iv){
                 $ata .= '<a href="' . admin_url('staff/profile/' . $iv) . '">'.staff_profile_image($iv,[
-                    'staff-profile-image-small mright5',
+                    'staff-profile-image-small mr-1',
                     ], 'small', [
                     'data-toggle' => 'tooltip',
                     'data-title'  =>  get_staff_full_name($iv),

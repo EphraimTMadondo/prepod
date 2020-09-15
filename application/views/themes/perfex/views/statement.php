@@ -42,11 +42,11 @@
                </div>
             </div>
             <div class="col-md-8">
-               <div class="text-right _buttons pull-right">
-                  <a href="<?php echo site_url('clients/statement_pdf?from='.urlencode($from).'&to='.urlencode($to).'&print=true'); ?>" id="statement_print" target="_blank" class="btn btn-default btn-with-tooltip mright5" data-toggle="tooltip" title="<?php echo _l('print'); ?>" data-placement="bottom">
+               <div class="text-right _buttons float-right">
+                  <a href="<?php echo site_url('clients/statement_pdf?from='.urlencode($from).'&to='.urlencode($to).'&print=true'); ?>" id="statement_print" target="_blank" class="btn btn-default btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('print'); ?>" data-placement="bottom">
                      <i class="fa fa-print"></i>
                   </a>
-                  <a href="<?php echo site_url('clients/statement_pdf?from='.urlencode($from).'&to='.urlencode($to)); ?>" id="statement_pdf"  class="btn btn-default btn-with-tooltip mright5" data-toggle="tooltip" title="<?php echo _l('view_pdf'); ?>" data-placement="bottom">
+                  <a href="<?php echo site_url('clients/statement_pdf?from='.urlencode($from).'&to='.urlencode($to)); ?>" id="statement_pdf"  class="btn btn-default btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('view_pdf'); ?>" data-placement="bottom">
                      <i class="fa fa-file-pdf-o"></i>
                   </a>
                </div>

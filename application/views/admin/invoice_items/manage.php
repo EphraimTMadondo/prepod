@@ -41,8 +41,8 @@
      <?php if(has_permission('items','','create')){ ?>
        <div class="_buttons">
         <a href="#" class="btn btn-primary pull-left" data-toggle="modal" data-target="#sales_item_modal"><?php echo _l('new_invoice_item'); ?></a>
-        <a href="#" class="btn btn-primary pull-left mleft5" data-toggle="modal" data-target="#groups"><?php echo _l('item_groups'); ?></a>
-        <a href="<?php echo admin_url('invoice_items/import'); ?>" class="btn btn-primary pull-left mleft5"><?php echo _l('import_items'); ?></a>
+        <a href="#" class="btn btn-primary pull-left ml-1" data-toggle="modal" data-target="#groups"><?php echo _l('item_groups'); ?></a>
+        <a href="<?php echo admin_url('invoice_items/import'); ?>" class="btn btn-primary pull-left ml-1"><?php echo _l('import_items'); ?></a>
       </div>
       <div class="clearfix"></div>
       <hr class="hr-panel-heading" />

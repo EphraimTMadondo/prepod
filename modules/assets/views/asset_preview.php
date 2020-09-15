@@ -7,14 +7,14 @@
        <?php if (has_permission('assets', '', 'edit') || is_admin()) { ?>
       <div class="row">
          
-              <a href="#" onclick="allocation(); return false;" class="btn btn-primary mright5"><i class="fa fa-edit"></i><?php echo ' '.htmlspecialchars(_l('allocation')); ?></a>
-              <a href="#" onclick="recalled(); return false;" class="btn btn-primary mright5"><i class="fa fa-sign-in"></i><?php echo ' '.htmlspecialchars(_l('recalled')); ?></a>
-              <a href="#" onclick="additional(); return false;" class="btn btn-primary mright5"><i class="fa fa-plus"></i><?php echo ' '.htmlspecialchars(_l('additional')); ?></a>
-              <a href="#" onclick="noti_lost(); return false;" class="btn btn-primary mright5"><i class="fa fa-close"></i><?php echo ' '.htmlspecialchars(_l('noti_lost')); ?></a>
-              <a href="#" onclick="broken(); return false;" class="btn btn-primary mright5"><i class="fa fa-chain-broken"></i><?php echo ' '.htmlspecialchars(_l('noti_broken')); ?></a>
-              <a href="#" onclick="liquidation(); return false;" class="btn btn-primary mright5"><i class="fa fa-sign-out"></i><?php echo ' '.htmlspecialchars(_l('liquidation')); ?></a>
-              <a href="#" onclick="warranty(); return false;" class="btn btn-primary mright5"><i class="fa fa-gear"></i><?php echo ' '.htmlspecialchars(_l('warranty')); ?></a>  
-              <a href="#" onclick="new_asset(); return false;" class="btn btn-primary mright5"><?php echo htmlspecialchars(_l('add_new')); ?></a>
+              <a href="#" onclick="allocation(); return false;" class="btn btn-primary mr-1"><i class="fa fa-edit"></i><?php echo ' '.htmlspecialchars(_l('allocation')); ?></a>
+              <a href="#" onclick="recalled(); return false;" class="btn btn-primary mr-1"><i class="fa fa-sign-in"></i><?php echo ' '.htmlspecialchars(_l('recalled')); ?></a>
+              <a href="#" onclick="additional(); return false;" class="btn btn-primary mr-1"><i class="fa fa-plus"></i><?php echo ' '.htmlspecialchars(_l('additional')); ?></a>
+              <a href="#" onclick="noti_lost(); return false;" class="btn btn-primary mr-1"><i class="fa fa-close"></i><?php echo ' '.htmlspecialchars(_l('noti_lost')); ?></a>
+              <a href="#" onclick="broken(); return false;" class="btn btn-primary mr-1"><i class="fa fa-chain-broken"></i><?php echo ' '.htmlspecialchars(_l('noti_broken')); ?></a>
+              <a href="#" onclick="liquidation(); return false;" class="btn btn-primary mr-1"><i class="fa fa-sign-out"></i><?php echo ' '.htmlspecialchars(_l('liquidation')); ?></a>
+              <a href="#" onclick="warranty(); return false;" class="btn btn-primary mr-1"><i class="fa fa-gear"></i><?php echo ' '.htmlspecialchars(_l('warranty')); ?></a>  
+              <a href="#" onclick="new_asset(); return false;" class="btn btn-primary mr-1"><?php echo htmlspecialchars(_l('add_new')); ?></a>
           
             
       </div>

@@ -69,7 +69,7 @@ foreach ($rResult as $aRow) {
         if ($i == 0) {
             $_data = '<div class="mtop5">';
             $_data .= '<a href="' . admin_url('staff/profile/' . $aRow['staff_id']) . '"> ' . staff_profile_image($aRow['staff_id'], [
-                'staff-profile-image-xs mright5',
+                'staff-profile-image-xs mr-1',
                 ]) . '</a>';
             if (has_permission('staff', '', 'edit')) {
                 $_data .= ' <a href="' . admin_url('staff/member/' . $aRow['staff_id']) . '"> ' . $aRow['staff'] . '</a>';
@@ -78,7 +78,7 @@ foreach ($rResult as $aRow) {
             }
 
             if ($user_removed_as_assignee == 1) {
-                $_data .= '<span class="hidden"> - </span> <span class="mtop5 pull-right" data-toggle="tooltip" data-title="' . _l('project_activity_task_assignee_removed') . '"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>';
+                $_data .= '<span class="hidden"> - </span> <span class="mtop5 float-right" data-toggle="tooltip" data-title="' . _l('project_activity_task_assignee_removed') . '"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>';
             }
             $_data .= '</div>';
         } elseif ($aColumns[$i] == 'task_id') {
@@ -94,7 +94,7 @@ foreach ($rResult as $aRow) {
 
             $status = get_task_status_by_id($aRow['status']);
 
-            $_data .= '<span class="hidden"> - </span><span class="inline-block mtop5 mleft5 label" style="border:1px solid ' . $status['color'] . ';color:' . $status['color'] . '" task-status-table="' . $aRow['status'] . '">' . $status['name'] . '</span>';
+            $_data .= '<span class="hidden"> - </span><span class="inline-block mtop5 ml-1 label" style="border:1px solid ' . $status['color'] . ';color:' . $status['color'] . '" task-status-table="' . $aRow['status'] . '">' . $status['name'] . '</span>';
             $_data .= '</div>';
         } elseif ($aColumns[$i] == 'start_time' || $aColumns[$i] == 'end_time') {
             if ($aColumns[$i] == 'end_time' && $_data == null) {

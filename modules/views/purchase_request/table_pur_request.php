@@ -60,7 +60,7 @@ foreach ($rResult as $aRow) {
             $_data = $name;
         }elseif($aColumns[$i] == 'id'){
             if($aRow['status'] == 2){
-                $_data = '<div class="btn-group mright5" data-toggle="tooltip" title="'._l('request_quotation_tooltip').'">
+                $_data = '<div class="btn-group mr-1" data-toggle="tooltip" title="'._l('request_quotation_tooltip').'">
                            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-file-pdf-o"></i><span class="caret"></span></a>
                            <ul class="dropdown-menu dropdown-menu-right">
                               <li class="hidden-xs"><a href="'. admin_url('purchase/request_quotation_pdf/'.$aRow['id'].'?output_type=I').'">'. _l('view_pdf').'</a></li>

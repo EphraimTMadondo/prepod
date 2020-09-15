@@ -36,7 +36,7 @@
                         </span>
                      </small>
                   <?php } ?>
-                  <a href="#" onclick="small_table_full_view(); return false;" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>" class="toggle_view pull-right">
+                  <a href="#" onclick="small_table_full_view(); return false;" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>" class="toggle_view float-right">
                   <i class="fa fa-expand"></i></a>
                </h4>
             </div>
@@ -435,7 +435,7 @@
                                       if(has_permission('tasks','','delete')
                                        || (has_permission('projects','','delete') && $t['rel_type'] == 'project')
                                        || $t['staff_id'] == get_staff_user_id()){
-                                           echo '<a href="'.admin_url('tasks/delete_timesheet/'.$t['id']).'" class="pull-right text-danger mtop5"><i class="fa fa-remove"></i></a>';
+                                           echo '<a href="'.admin_url('tasks/delete_timesheet/'.$t['id']).'" class="float-right text-danger mtop5"><i class="fa fa-remove"></i></a>';
                                     }
                                  }
                               ?>

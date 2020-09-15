@@ -7,11 +7,11 @@
          <?php echo _l('create_new_invoice'); ?>
          </a>
          <?php } ?>
-         <a href="<?php echo admin_url('invoices'); ?>" class="btn btn-default pull-left mleft5">
+         <a href="<?php echo admin_url('invoices'); ?>" class="btn btn-default pull-left ml-1">
             <?php echo _l('go_back'); ?>
          </a>
          <div class="display-block text-right">
-            <div class="btn-group pull-right mleft4 invoice-view-buttons btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+            <div class="btn-group float-right mleft4 invoice-view-buttons btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <i class="fa fa-filter" aria-hidden="true"></i>
                </button>

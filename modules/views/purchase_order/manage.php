@@ -8,14 +8,14 @@
 	              	<div class="row">    
 	                    <div class="_buttons col-md-3">
 	                    	<?php if (has_permission('purchase', '', 'create') || is_admin()) { ?>
-	                        <a href="<?php echo admin_url('purchase/pur_order'); ?>"class="btn btn-info pull-left mright10 display-block">
+	                        <a href="<?php echo admin_url('purchase/pur_order'); ?>"class="btn btn-info pull-left mr-1 display-block">
 	                            <?php echo _l('new_pur_order'); ?>
 	                        </a>
 	                        <?php } ?>
 	                    </div>
 	                    
-	                    <div class="_buttons col-md-1 pull-right">
-	                    <a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs pull-right" onclick="toggle_small_pur_order_view('.table-table_pur_order','#pur_order'); return false;" data-toggle="tooltip" title="<?php echo _l('estimates_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
+	                    <div class="_buttons col-md-1 float-right">
+	                    <a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs float-right" onclick="toggle_small_pur_order_view('.table-table_pur_order','#pur_order'); return false;" data-toggle="tooltip" title="<?php echo _l('estimates_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
 	                	</div>
 	            	</div>
 	              	<div class="row">

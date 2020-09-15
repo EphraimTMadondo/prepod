@@ -120,7 +120,7 @@ foreach ($rResult as $aRow) {
 
     $subjectOutput = '<a href="' . admin_url('contracts/contract/' . $aRow['id']) . '">' . $aRow['subject'] . '</a>';
     if ($aRow['trash'] == 1) {
-        $subjectOutput .= '<span class="label label-danger pull-right">' . _l('contract_trash') . '</span>';
+        $subjectOutput .= '<span class="label label-danger float-right">' . _l('contract_trash') . '</span>';
     }
 
     $subjectOutput .= '<div class="row-options">';

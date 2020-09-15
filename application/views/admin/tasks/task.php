@@ -24,7 +24,7 @@
                    }
                   ?>
                <?php if(isset($task)){ ?>
-               <div class="pull-right mbot10 task-single-menu task-menu-options">
+               <div class="float-right mbot10 task-single-menu task-menu-options">
                   <div class="content-menu hide">
                      <ul>
                         <?php if(has_permission('tasks','','create')){ ?>
@@ -66,7 +66,7 @@
                      </ul>
                   </div>
                   <?php if(has_permission('tasks','','delete') || has_permission('tasks','','create')){ ?>
-                  <a href="#" onclick="return false;" class="trigger manual-popover mright5">
+                  <a href="#" onclick="return false;" class="trigger manual-popover mr-1">
                   <i class="fa fa-circle-thin" aria-hidden="true"></i>
                   <i class="fa fa-circle-thin" aria-hidden="true"></i>
                   <i class="fa fa-circle-thin" aria-hidden="true"></i>
@@ -88,7 +88,7 @@
                   <label for="task_visible_to_client"><?php echo _l('task_visible_to_client'); ?></label>
                </div>
                <?php if(!isset($task)){ ?>
-               <a href="#" class="pull-right" onclick="slideToggle('#new-task-attachments'); return false;">
+               <a href="#" class="float-right" onclick="slideToggle('#new-task-attachments'); return false;">
                <?php echo _l('attach_files'); ?>
                </a>
                <div id="new-task-attachments" class="hide">

@@ -467,7 +467,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
                       </div>
                     </div>
                      <hr>
-                     <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
                    <?php echo form_close(); ?>
                   </div>
 

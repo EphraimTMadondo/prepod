@@ -78,7 +78,7 @@
 </div>
 <?php } ?>
 
-<button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+<button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
 <?php echo form_close(); ?>
 </div>
 </div>

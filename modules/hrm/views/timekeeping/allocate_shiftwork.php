@@ -32,7 +32,7 @@
        <td><?php echo get_position_in_dayoff($s['position']); ?></td>
        <td><a href="<?php echo admin_url('hrm/member/'.$s["add_from"]); ?>">
                     <?php echo staff_profile_image($s['add_from'],[
-                'staff-profile-image-small mright5',
+                'staff-profile-image-small mr-1',
                 ], 'small', [
                 'data-toggle' => 'tooltip',
                 'data-title'  => get_staff_full_name($s['add_from']),
@@ -108,12 +108,12 @@
                     	<h4><?php echo _l('shifts_detail'); ?></h4>
                     	<hr/>
                     </div>
-                    <div class="col-md-12 mleft10" id="example">
+                    <div class="col-md-12 ml-1" id="example">
                     	
                     </div>
                     <?php echo form_hidden('shifts_detail'); ?>
                 </div>
-                    <button class="btn btn-info pull-right save_detail_shift"><?php echo _l('submit'); ?></button>
+                    <button class="btn btn-info float-right save_detail_shift"><?php echo _l('submit'); ?></button>
                 
             </div><!-- /.modal-content -->
             <?php echo form_close(); ?>

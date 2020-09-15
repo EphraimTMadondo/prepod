@@ -12,12 +12,12 @@
   		<div class="row col-md-12">
         <?php if(get_staff_user_id() == $proposals->approver && $proposals->status == 1){ ?>
           <div id="reject_div">
-          <a href="<?php echo admin_url('recruitment/approve_reject_proposal/'.'reject'.'/'.$proposals->id); ?>" id="reject_btn" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-warning pull-right mleft10 display-block">
+          <a href="<?php echo admin_url('recruitment/approve_reject_proposal/'.'reject'.'/'.$proposals->id); ?>" id="reject_btn" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-warning float-right ml-1 display-block">
               <?php echo _l('reject'); ?>
           </a>
           </div>
           <div id="approved_div">
-          <a href="<?php echo admin_url('recruitment/approve_reject_proposal/'.'approved'.'/'.$proposals->id); ?>" id="approved_btn" data-loading-text="<?php echo _l('wait_text'); ?>"  class="btn btn-success pull-right display-block">
+          <a href="<?php echo admin_url('recruitment/approve_reject_proposal/'.'approved'.'/'.$proposals->id); ?>" id="approved_btn" data-loading-text="<?php echo _l('wait_text'); ?>"  class="btn btn-success float-right display-block">
              <?php echo _l('approve'); ?>
           </a>
           </div>

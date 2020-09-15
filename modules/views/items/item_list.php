@@ -25,8 +25,8 @@
                         <?php } ?>
                     </div>
                     
-                     <div class="col-md-1 pull-right">
-                        <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_proposal('.proposal_sm','#proposal_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
+                     <div class="col-md-1 float-right">
+                        <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_proposal('.proposal_sm','#proposal_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
                     </div>
                     </div>
                       <?php render_datatable(array(
@@ -125,7 +125,7 @@
                                      <?php echo render_input('commodity_barcode', 'commodity_barcode','','text',array('readonly' => 'true')); ?>
                                 </div>
                               <div class="col-md-4">
-                                <a href="#" class="pull-right display-block input_method"><i class="fa fa-question-circle skucode-tooltip"  data-toggle="tooltip" title="" data-original-title="<?php echo _l('commodity_sku_code_tooltip'); ?>"></i></a>
+                                <a href="#" class="float-right display-block input_method"><i class="fa fa-question-circle skucode-tooltip"  data-toggle="tooltip" title="" data-original-title="<?php echo _l('commodity_sku_code_tooltip'); ?>"></i></a>
                                 <?php echo render_input('sku_code', 'sku_code','','',array('disabled' => 'true')); ?>
                               </div>
                               <div class="col-md-4">

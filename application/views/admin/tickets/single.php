@@ -74,7 +74,7 @@
                            echo '<br /><small>'._l('ticket_linked_to_project','<a href="'.admin_url('projects/view/'.$ticket->project_id).'">'.get_project_name_by_id($ticket->project_id).'</a>') .'</small>';
                         } ?>
                      </h3>
-                     <?php echo '<div class="label mtop5 mbot15'.(is_mobile() ? ' ' : ' mleft15 ').'p8 single-ticket-status-label" style="background:'.$ticket->statuscolor.'">'.ticket_status_translate($ticket->ticketstatusid).'</div>'; ?>
+                     <?php echo '<div class="label mtop5 mbot15'.(is_mobile() ? ' ' : ' ml-1 ').'p8 single-ticket-status-label" style="background:'.$ticket->statuscolor.'">'.ticket_status_translate($ticket->ticketstatusid).'</div>'; ?>
                      <div class="clearfix"></div>
                   </div>
                   <div class="col-md-4 text-right">
@@ -117,7 +117,7 @@
                                                 if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
                                                    <div class="float-right">
                                                       <a href="#" class="btn btn-default btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
-                                                      <a href="<?php echo admin_url('misc/delete_note/'.$note["id"]); ?>" class="mright10 _delete btn btn-danger btn-icon">
+                                                      <a href="<?php echo admin_url('misc/delete_note/'.$note["id"]); ?>" class="mr-1 _delete btn btn-danger btn-icon">
                                                          <i class="fa fa-remove"></i>
                                                       </a>
                                                    </div>
@@ -148,7 +148,7 @@
                   <?php } ?>
                   <div>
                      <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'single-ticket-form','novalidate'=>true)); ?>
-                     <a href="<?php echo admin_url('tickets/delete/'.$ticket->ticketid); ?>" class="btn btn-danger _delete btn-ticket-label mright5">
+                     <a href="<?php echo admin_url('tickets/delete/'.$ticket->ticketid); ?>" class="btn btn-danger _delete btn-ticket-label mr-1">
                         <i class="fa fa-remove"></i>
                      </a>
 
@@ -444,7 +444,7 @@
       <div class="row">
          <div class="col-md-12 text-right">
             <?php if(!empty($ticket->message)) { ?>
-               <a href="#" onclick="print_ticket_message(<?php echo $ticket->ticketid; ?>, 'ticket'); return false;" class="mright5"><i class="fa fa-print"></i></a>
+               <a href="#" onclick="print_ticket_message(<?php echo $ticket->ticketid; ?>, 'ticket'); return false;" class="mr-1"><i class="fa fa-print"></i></a>
             <?php } ?>
             <a href="#" onclick="edit_ticket_message(<?php echo $ticket->ticketid; ?>,'ticket'); return false;"><i class="fa fa-pencil-square-o"></i></a>
          </div>
@@ -527,7 +527,7 @@
          <div class="row">
             <div class="col-md-12 text-right">
                <?php if(!empty($reply['message'])) { ?>
-                  <a href="#" onclick="print_ticket_message(<?php echo $reply['id']; ?>, 'reply'); return false;" class="mright5"><i class="fa fa-print"></i></a>
+                  <a href="#" onclick="print_ticket_message(<?php echo $reply['id']; ?>, 'reply'); return false;" class="mr-1"><i class="fa fa-print"></i></a>
                <?php } ?>
                <a href="#" onclick="edit_ticket_message(<?php echo $reply['id']; ?>,'reply'); return false;"><i class="fa fa-pencil-square-o"></i></a>
             </div>

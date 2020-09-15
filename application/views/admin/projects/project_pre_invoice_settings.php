@@ -67,7 +67,7 @@
                                 if($task['status'] != Tasks_model::STATUS_COMPLETE){ $not_finished_tasks_found = true; } ?>
                                 <div class="checkbox checkbox-primary mbot15">
                                     <input type="checkbox" name="tasks[]" value="<?php echo $task['id']; ?>" <?php if($task['status'] == Tasks_model::STATUS_COMPLETE){echo 'checked ';} ?>id="<?php echo $task['id']; ?>">
-                                    <label class="inline-block full-width" for="<?php echo $task['id']; ?>"><?php echo $task['name']; ?> <?php if(total_rows(db_prefix().'taskstimers',array('task_id'=>$task['id'])) == 0 && $billing_type != 1){echo '<small class="text-danger">'._l('project_invoice_task_no_timers_found').'</small>';}; ?><small class="pull-right valign"><?php echo format_task_status($task['status']); ?></small></label>
+                                    <label class="inline-block full-width" for="<?php echo $task['id']; ?>"><?php echo $task['name']; ?> <?php if(total_rows(db_prefix().'taskstimers',array('task_id'=>$task['id'])) == 0 && $billing_type != 1){echo '<small class="text-danger">'._l('project_invoice_task_no_timers_found').'</small>';}; ?><small class="float-right valign"><?php echo format_task_status($task['status']); ?></small></label>
                                 </div>
                                 <?php } ?>
                                 </div>

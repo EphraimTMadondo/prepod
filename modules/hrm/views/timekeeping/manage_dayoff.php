@@ -46,7 +46,7 @@
               <td><?php echo get_position_in_dayoff($d['position']); ?></td>
               <td><a href="<?php echo admin_url('hrm/member/'.$d["add_from"]); ?>">
                     <?php echo staff_profile_image($d['add_from'],[
-                'staff-profile-image-small mright5',
+                'staff-profile-image-small mr-1',
                 ], 'small', [
                 'data-toggle' => 'tooltip',
                 'data-title'  => get_staff_full_name($d['add_from']),
@@ -84,7 +84,7 @@
               <td><?php echo get_position_in_dayoff($d['position']); ?></td>
               <td><a href="<?php echo admin_url('hrm/member/'.$d["add_from"]); ?>">
                     <?php echo staff_profile_image($d['add_from'],[
-                'staff-profile-image-small mright5',
+                'staff-profile-image-small mr-1',
                 ], 'small', [
                 'data-toggle' => 'tooltip',
                 'data-title'  => get_staff_full_name($d['add_from']),
@@ -122,7 +122,7 @@
               <td><?php echo get_position_in_dayoff($d['position']); ?></td>
               <td><a href="<?php echo admin_url('hrm/member/'.$d["add_from"]); ?>">
                     <?php echo staff_profile_image($d['add_from'],[
-                'staff-profile-image-small mright5',
+                'staff-profile-image-small mr-1',
                 ], 'small', [
                 'data-toggle' => 'tooltip',
                 'data-title'  => get_staff_full_name($d['add_from']),

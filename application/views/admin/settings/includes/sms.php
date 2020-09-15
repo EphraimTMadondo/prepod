@@ -17,7 +17,7 @@ if($total_gateways > 1) { ?>
         <div class="panel-heading" role="tab" id="<?php echo 'heading'.$gateway['id']; ?>">
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#sms_gateways_options" href="#sms_<?php echo $gateway['id']; ?>" aria-expanded="true" aria-controls="sms_<?php echo $gateway['id']; ?>">
-                <?php echo $gateway['name']; ?> <span class="pull-right"><i class="fa fa-sort-down"></i></span>
+                <?php echo $gateway['name']; ?> <span class="float-right"><i class="fa fa-sort-down"></i></span>
             </a>
         </h4>
     </div>
@@ -60,7 +60,7 @@ if($total_gateways > 1) { ?>
 <?php
 foreach($triggers as $trigger_name => $trigger_opts) {
 
-    echo '<a href="#" onclick="slideToggle(\'#sms_merge_fields_'.$trigger_name.'\'); return false;" class="pull-right"><small>' . _l('available_merge_fields') . '</small></a>';
+    echo '<a href="#" onclick="slideToggle(\'#sms_merge_fields_'.$trigger_name.'\'); return false;" class="float-right"><small>' . _l('available_merge_fields') . '</small></a>';
 
     $label = '<b>'.$trigger_opts['label'].'</b>';
     if(isset($trigger_opts['info']) && $trigger_opts['info'] != ''){

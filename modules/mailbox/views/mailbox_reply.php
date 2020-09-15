@@ -57,7 +57,7 @@
       <a href="<?php echo admin_url().'mailbox';?>" class="btn btn-warning close-send-template-modal"><?php echo _l('cancel'); ?></a>      
     </div>
 
-    <div class="pull-right">            
+    <div class="float-right">            
       <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">
           <i class="fa fa-paper-plane menu-icon"></i>
           <?php echo _l('mailbox_send'); ?>          

@@ -6,7 +6,7 @@
          <div class="col-md-12">
             <h4 class="bold pipeline-heading"><a href="<?php echo admin_url('estimates/list_estimates/'.$estimate['id']); ?>" onclick="estimate_pipeline_open(<?php echo $estimate['id']; ?>); return false;"><?php echo format_estimate_number($estimate['id']); ?></a>
                <?php if(has_permission('estimates','','edit')){ ?>
-               <a href="<?php echo admin_url('estimates/estimate/'.$estimate['id']); ?>" target="_blank" class="pull-right"><small><i class="fa fa-pencil-square-o" aria-hidden="true"></i></small></a>
+               <a href="<?php echo admin_url('estimates/estimate/'.$estimate['id']); ?>" target="_blank" class="float-right"><small><i class="fa fa-pencil-square-o" aria-hidden="true"></i></small></a>
                <?php } ?>
             </h4>
             <span class="inline-block full-width mbot10">

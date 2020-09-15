@@ -32,42 +32,42 @@
                   if ($estimate->status != 4 && $estimate->status != 3 && $estimate->status != 5) {
                     $can_be_accepted = true;
                     if($identity_confirmation_enabled == '0'){
-                      echo form_open($this->uri->uri_string(), array('class'=>'pull-right mtop7 action-button'));
+                      echo form_open($this->uri->uri_string(), array('class'=>'float-right mtop7 action-button'));
                       echo form_hidden('estimate_action', 4);
                       echo '<button type="submit" data-loading-text="'._l('wait_text').'" autocomplete="off" class="btn btn-success action-button accept"><i class="fa fa-check"></i> '._l('clients_accept_estimate').'</button>';
                       echo form_close();
                     } else {
-                      echo '<button type="button" id="accept_action" class="btn btn-success mright5 mtop7 pull-right action-button accept"><i class="fa fa-check"></i> '._l('clients_accept_estimate').'</button>';
+                      echo '<button type="button" id="accept_action" class="btn btn-success mr-1 mtop7 float-right action-button accept"><i class="fa fa-check"></i> '._l('clients_accept_estimate').'</button>';
                     }
                   } else if($estimate->status == 3){
                     if (($estimate->expirydate >= date('Y-m-d') || !$estimate->expirydate) && $estimate->status != 5) {
                       $can_be_accepted = true;
                       if($identity_confirmation_enabled == '0'){
-                        echo form_open($this->uri->uri_string(),array('class'=>'pull-right mtop7 action-button'));
+                        echo form_open($this->uri->uri_string(),array('class'=>'float-right mtop7 action-button'));
                         echo form_hidden('estimate_action', 4);
                         echo '<button type="submit" data-loading-text="'._l('wait_text').'" autocomplete="off" class="btn btn-success action-button accept"><i class="fa fa-check"></i> '._l('clients_accept_estimate').'</button>';
                         echo form_close();
                       } else {
-                        echo '<button type="button" id="accept_action" class="btn btn-success mright5 mtop7 pull-right action-button accept"><i class="fa fa-check"></i> '._l('clients_accept_estimate').'</button>';
+                        echo '<button type="button" id="accept_action" class="btn btn-success mr-1 mtop7 float-right action-button accept"><i class="fa fa-check"></i> '._l('clients_accept_estimate').'</button>';
                       }
                     }
                   }
                   // Is not accepted, declined and expired
                   if ($estimate->status != 4 && $estimate->status != 3 && $estimate->status != 5) {
-                    echo form_open($this->uri->uri_string(), array('class'=>'pull-right action-button mright5 mtop7'));
+                    echo form_open($this->uri->uri_string(), array('class'=>'float-right action-button mr-1 mtop7'));
                     echo form_hidden('estimate_action', 3);
                     echo '<button type="submit" data-loading-text="'._l('wait_text').'" autocomplete="off" class="btn btn-default action-button accept"><i class="fa fa-remove"></i> '._l('clients_decline_estimate').'</button>';
                     echo form_close();
                   }
                   ?>
-               <?php echo form_open($this->uri->uri_string(), array('class'=>'pull-right action-button')); ?>
-               <button type="submit" name="estimatepdf" class="btn btn-default action-button download mright5 mtop7" value="estimatepdf">
+               <?php echo form_open($this->uri->uri_string(), array('class'=>'float-right action-button')); ?>
+               <button type="submit" name="estimatepdf" class="btn btn-default action-button download mr-1 mtop7" value="estimatepdf">
                <i class="fa fa-file-pdf-o"></i>
                <?php echo _l('clients_invoice_html_btn_download'); ?>
                </button>
                <?php echo form_close(); ?>
                <?php if(is_client_logged_in() && has_contact_permission('estimates')){ ?>
-               <a href="<?php echo site_url('clients/estimates/'); ?>" class="btn btn-default pull-right mright5 mtop7 action-button go-to-portal">
+               <a href="<?php echo site_url('clients/estimates/'); ?>" class="btn btn-default float-right mr-1 mtop7 action-button go-to-portal">
                <?php echo _l('client_go_to_dashboard'); ?>
                </a>
                <?php } ?>

@@ -12,7 +12,7 @@
  <div class="usernote hide">
     <?php echo form_open(admin_url( 'misc/add_note/'.$client->userid.'/customer')); ?>
     <?php echo render_textarea( 'description', 'note_description', '',array( 'rows'=>5)); ?>
-    <button class="btn btn-info pull-right mbot15">
+    <button class="btn btn-info float-right mbot15">
         <?php echo _l( 'submit'); ?>
     </button>
     <?php echo form_close(); ?>

@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
              <p class="text-info inline-block" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><i class="fa fa-question-circle"></i></p>

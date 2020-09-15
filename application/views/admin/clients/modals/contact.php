@@ -14,7 +14,7 @@
                         <?php if(isset($contact)){ ?>
                         <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" id="contact-img" class="client-profile-image-thumb">
                         <?php if(!empty($contact->profile_image)){ ?>
-                        <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger pull-right" id="contact-remove-img"><i class="bx bx-remove"></i></a>
+                        <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger float-right" id="contact-remove-img"><i class="bx bx-remove"></i></a>
                         <?php } ?>
                         <hr />
                         <?php } ?>

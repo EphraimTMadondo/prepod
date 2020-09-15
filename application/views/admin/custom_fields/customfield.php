@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mtop20">
@@ -9,7 +11,7 @@
                         <h4 class="no-margin">
                             <?php echo $title; ?>
                             <?php if(isset($custom_field)){ ?>
-                            <a href="<?php echo admin_url('custom_fields/field'); ?>" class="btn btn-success pull-right"><?php echo _l('new_custom_field'); ?></a>
+                            <a href="<?php echo admin_url('custom_fields/field'); ?>" class="btn btn-success float-right"><?php echo _l('new_custom_field'); ?></a>
                             <div class="clearfix"></div>
                             <?php } ?>
                         </h4>
@@ -139,7 +141,7 @@
                                 <input type="checkbox" value="1" name="show_on_ticket_form" id="show_on_ticket_form" <?php if(isset($custom_field) && $custom_field->show_on_ticket_form == 1){echo 'checked';} ?>>
                                 <label for="show_on_ticket_form"><?php echo _l('show_on_ticket_form'); ?></label>
                             </div>
-                            <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+                            <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
                             <?php echo form_close(); ?>
                         </div>
                     </div>

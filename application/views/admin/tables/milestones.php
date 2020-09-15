@@ -41,7 +41,7 @@ foreach ($rResult as $aRow) {
                 'rel_id' => $project_id,
                 'rel_type' => 'project',
                 ]) > 0) {
-                $_data .= ' <span class="label label-danger mleft5 inline-block">' . _l('project_milestone_duedate_passed') . '</span>';
+                $_data .= ' <span class="label label-danger ml-1 inline-block">' . _l('project_milestone_duedate_passed') . '</span>';
             }
         }
         $row[] = $_data;

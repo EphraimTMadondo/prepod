@@ -188,7 +188,7 @@
                   <div class="text">
                      <?php if($log['staffid'] != 0){ ?>
                      <a href="<?php echo admin_url('profile/'.$log["staffid"]); ?>">
-                     <?php echo staff_profile_image($log['staffid'],array('staff-profile-xs-image pull-left mright5'));
+                     <?php echo staff_profile_image($log['staffid'],array('staff-profile-xs-image pull-left mr-1'));
                         ?>
                      </a>
                      <?php
@@ -291,7 +291,7 @@
             <input type="radio" name="contacted_indicator" id="contacted_indicator_no" value="no" checked>
             <label for="contacted_indicator_no"><?php echo _l('lead_not_contacted'); ?></label>
          </div>
-         <button type="submit" class="btn btn-info pull-right"><?php echo _l('lead_add_edit_add_note'); ?></button>
+         <button type="submit" class="btn btn-info float-right"><?php echo _l('lead_add_edit_add_note'); ?></button>
          <?php echo form_close(); ?>
          <div class="clearfix"></div>
          <hr />
@@ -302,12 +302,12 @@
                foreach($notes as $note){ ?>
             <div class="media lead-note">
                <a href="<?php echo admin_url('profile/'.$note["addedfrom"]); ?>" target="_blank">
-               <?php echo staff_profile_image($note['addedfrom'],array('staff-profile-image-small','pull-left mright10')); ?>
+               <?php echo staff_profile_image($note['addedfrom'],array('staff-profile-image-small','pull-left mr-1')); ?>
                </a>
                <div class="media-body">
                   <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
-                  <a href="#" class="pull-right text-danger" onclick="delete_lead_note(this,<?php echo $note['id']; ?>, <?php echo $lead->id; ?>);return false;"><i class="fa fa fa-times"></i></a>
-                  <a href="#" class="pull-right mright5" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
+                  <a href="#" class="float-right text-danger" onclick="delete_lead_note(this,<?php echo $note['id']; ?>, <?php echo $lead->id; ?>);return false;"><i class="fa fa fa-times"></i></a>
+                  <a href="#" class="float-right mr-1" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
                   <?php } ?>
                   <?php if(!empty($note['date_contacted'])){ ?>
                   <span data-toggle="tooltip" data-title="<?php echo _dt($note['date_contacted']); ?>">

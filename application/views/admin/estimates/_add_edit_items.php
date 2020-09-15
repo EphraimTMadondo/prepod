@@ -91,7 +91,7 @@
                        $new_item = true;
                      }
                      ?>
-                  <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn pull-right btn-info"><i class="fa fa-check"></i></button>
+                  <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-info"><i class="fa fa-check"></i></button>
                </td>
             </tr>
             <?php if (isset($estimate) || isset($add_items)) {

@@ -6,8 +6,10 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
 }
 ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <div class="_filters _hidden_inputs hidden">
@@ -32,7 +34,7 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                     <div class="card-body">
                         <div class="_buttons">
                             <?php if(has_permission('call_logs','','create')){ ?>
-                            <a href="<?php echo admin_url('call_logs/call_log'); ?>" class="btn btn-primary mright5"><?php echo _l('new_call_log'); ?></a>
+                            <a href="<?php echo admin_url('call_logs/call_log'); ?>" class="btn btn-primary mr-1"><?php echo _l('new_call_log'); ?></a>
                             <?php } ?>
                             <a href="<?php echo admin_url('call_logs/overview'); ?>" data-toggle="tooltip" title="<?php echo _l('cl_gantt_overview'); ?>" class="btn btn-default"><i class="fa fa-bar-chart" aria-hidden="true"></i> Overview</a>
 
@@ -43,7 +45,7 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                                 <div class="clearfix"></div>
                             </div>
                             <?php if($isGridView ==0){ ?>
-                            <div class="btn-group pull-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                            <div class="btn-group float-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-filter" aria-hidden="true"></i>
                                 </button>

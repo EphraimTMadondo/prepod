@@ -30,7 +30,7 @@
                </p>
                <p class="no-margin">
                   <b><?php echo _l('vault_password'); ?>: </b><span class="vault-password-fake">
-                     <?php echo str_repeat('&bull;',10);?>  </span><span class="vault-password-encrypted"></span> <a href="#" class="vault-view-password mleft10" data-toggle="tooltip" data-title="<?php echo _l('view_password'); ?>" onclick="vault_re_enter_password(<?php echo $vault_entry['id']; ?>,this); return false;"><i class="fa fa-lock" aria-hidden="true"></i></a>
+                     <?php echo str_repeat('&bull;',10);?>  </span><span class="vault-password-encrypted"></span> <a href="#" class="vault-view-password ml-1" data-toggle="tooltip" data-title="<?php echo _l('view_password'); ?>" onclick="vault_re_enter_password(<?php echo $vault_entry['id']; ?>,this); return false;"><i class="fa fa-lock" aria-hidden="true"></i></a>
                   </p>
                </div>
                <div class="col-md-6">
@@ -170,8 +170,8 @@
 <div class="team-members project-overview-team-members">
    <hr class="hr-panel-heading project-area-separation" />
    <?php if(has_permission('projects','','edit')){ ?>
-   <div class="inline-block pull-right mright10 project-member-settings" data-toggle="tooltip" data-title="<?php echo _l('add_edit_members'); ?>">
-      <a href="#" data-toggle="modal" class="pull-right" data-target="#add-edit-members"><i class="fa fa-cog"></i></a>
+   <div class="inline-block float-right mr-1 project-member-settings" data-toggle="tooltip" data-title="<?php echo _l('add_edit_members'); ?>">
+      <a href="#" data-toggle="modal" class="float-right" data-target="#add-edit-members"><i class="fa fa-cog"></i></a>
    </div>
    <?php } ?>
    <p class="bold font-size-14 project-info">
@@ -191,7 +191,7 @@
       </div>
       <div class="media-body">
          <?php if(has_permission('projects','','edit')){ ?>
-         <a href="<?php echo admin_url('projects/remove_team_member/'.$project->id.'/'.$member['staff_id']); ?>" class="pull-right text-danger _delete"><i class="fa fa fa-times"></i></a>
+         <a href="<?php echo admin_url('projects/remove_team_member/'.$project->id.'/'.$member['staff_id']); ?>" class="float-right text-danger _delete"><i class="fa fa fa-times"></i></a>
          <?php } ?>
          <h5 class="media-heading mtop5"><a href="<?php echo admin_url('profile/'.$member["staff_id"]); ?>"><?php echo get_staff_full_name($member['staff_id']); ?></a>
             <?php if(has_permission('projects','','create') || $member['staff_id'] == get_staff_user_id()){ ?>
@@ -310,7 +310,7 @@
 <?php } ?>
 <div class="project-overview-timesheets-chart">
    <hr class="hr-panel-heading" />
-   <div class="dropdown pull-right">
+   <div class="dropdown float-right">
       <a href="#" class="dropdown-toggle" type="button" id="dropdownMenuProjectLoggedTime" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
          <?php if(!$this->input->get('overview_chart')){
             echo _l('this_week');

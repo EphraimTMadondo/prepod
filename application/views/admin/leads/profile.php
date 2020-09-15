@@ -2,7 +2,7 @@
 <div class="<?php if($openEdit == true){echo 'open-edit ';} ?>lead-wrapper" <?php if(isset($lead) && ($lead->junk == 1 || $lead->lost == 1)){ echo 'lead-is-junk-or-lost';} ?>>
    <?php if(isset($lead)){ ?>
    <div class="btn-group pull-left lead-actions-left">
-      <a href="#" lead-edit class="mright10 font-medium-xs pull-left<?php if($lead_locked == true){echo ' hide';} ?>">
+      <a href="#" lead-edit class="mr-1 font-medium-xs pull-left<?php if($lead_locked == true){echo ' hide';} ?>">
          <?php echo _l('edit'); ?>
          <i class="fa fa-pencil-square-o"></i>
       </a>
@@ -56,7 +56,7 @@
          <?php } ?>
       </ul>
    </div>
-      <a data-toggle="tooltip" class="btn btn-default pull-right lead-print-btn lead-top-btn lead-view mleft5" onclick="print_lead_information(); return false;" data-placement="top" title="<?php echo _l('print'); ?>" href="#">
+      <a data-toggle="tooltip" class="btn btn-default float-right lead-print-btn lead-top-btn lead-view ml-1" onclick="print_lead_information(); return false;" data-placement="top" title="<?php echo _l('print'); ?>" href="#">
       <i class="fa fa-print"></i>
       </a>
        <?php
@@ -73,18 +73,18 @@
       ?>
       <?php if($lead_locked == false){ ?>
       <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
-         <button type="button" class="btn btn-info pull-right mleft5 lead-top-btn lead-save-btn" onclick="document.getElementById('lead-form-submit').click();">
+         <button type="button" class="btn btn-info float-right ml-1 lead-top-btn lead-save-btn" onclick="document.getElementById('lead-form-submit').click();">
               <?php echo _l('submit'); ?>
           </button>
       </div>
       <?php } ?>
       <?php if($client && (has_permission('customers','','view') || is_customer_admin(get_client_id_by_lead_id($lead->id)))){ ?>
-      <a data-toggle="tooltip" class="btn btn-success pull-right lead-top-btn lead-view" data-placement="top" title="<?php echo _l('lead_converted_edit_client_profile'); ?>" href="<?php echo admin_url('clients/client/'.get_client_id_by_lead_id($lead->id)); ?>">
+      <a data-toggle="tooltip" class="btn btn-success float-right lead-top-btn lead-view" data-placement="top" title="<?php echo _l('lead_converted_edit_client_profile'); ?>" href="<?php echo admin_url('clients/client/'.get_client_id_by_lead_id($lead->id)); ?>">
       <i class="fa fa-user-o"></i>
       </a>
    <?php } ?>
    <?php if(total_rows(db_prefix().'clients',array('leadid'=>$lead->id)) == 0){ ?>
-      <a href="#" data-toggle="tooltip" data-title="<?php echo $convert_to_client_tooltip_email_exists; ?>" class="btn btn-success pull-right lead-convert-to-customer lead-top-btn lead-view" onclick="convert_lead_to_customer(<?php echo $lead->id; ?>); return false;">
+      <a href="#" data-toggle="tooltip" data-title="<?php echo $convert_to_client_tooltip_email_exists; ?>" class="btn btn-success float-right lead-convert-to-customer lead-top-btn lead-view" onclick="convert_lead_to_customer(<?php echo $lead->id; ?>); return false;">
             <i class="fa fa-user-o"></i>
             <?php echo $text; ?>
       </a>
@@ -367,8 +367,8 @@
    <?php if($lead_locked == false){ ?>
    <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
       <hr />
-      <button type="submit" class="btn btn-info pull-right lead-save-btn" id="lead-form-submit"><?php echo _l('submit'); ?></button>
-      <button type="button" class="btn btn-default pull-right mright5" data-dismiss="modal"><?php echo _l('close'); ?></button>
+      <button type="submit" class="btn btn-info float-right lead-save-btn" id="lead-form-submit"><?php echo _l('submit'); ?></button>
+      <button type="button" class="btn btn-default float-right mr-1" data-dismiss="modal"><?php echo _l('close'); ?></button>
    </div>
    <?php } ?>
    <div class="clearfix"></div>

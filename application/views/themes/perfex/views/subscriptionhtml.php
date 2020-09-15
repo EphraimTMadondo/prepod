@@ -24,9 +24,9 @@
           </div>
           <?php
           if(!empty($publishableKey)) {
-           echo '<div class="pull-right">';
+           echo '<div class="float-right">';
            if(empty($subscription->stripe_subscription_id)) {
-             echo form_open(site_url('subscription/subscribe/' . $hash), ['class' => 'action-button pull-right mbot15', 'id'=>'sourceForm', 'onsubmit'=>'document.getElementById(\'subscribe-button\').setAttribute(\'disabled\', true);']);
+             echo form_open(site_url('subscription/subscribe/' . $hash), ['class' => 'action-button float-right mbot15', 'id'=>'sourceForm', 'onsubmit'=>'document.getElementById(\'subscribe-button\').setAttribute(\'disabled\', true);']);
              echo '<button type="submit" name="subscribe" id="subscribe-button" value="true" class="btn btn-success action-button">';
              echo _l('subscribe');
              echo '</button>';
@@ -39,7 +39,7 @@
          if (can_logged_in_contact_view_subscriptions()) {
            ?>
            <a href="<?php echo site_url('clients/subscriptions/'); ?>"
-            class="btn btn-default pull-right mright5 action-button go-to-portal">
+            class="btn btn-default float-right mr-1 action-button go-to-portal">
             <?php echo _l('client_go_to_dashboard'); ?>
           </a>
         <?php } ?>

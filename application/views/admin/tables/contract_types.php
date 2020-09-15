@@ -19,7 +19,7 @@ foreach ($rResult as $aRow) {
     for ($i = 0; $i < count($aColumns); $i++) {
         $_data = $aRow[$aColumns[$i]];
         if ($aColumns[$i] == 'name') {
-            $_data = '<a href="#" onclick="edit_type(this,' . $aRow['id'] . '); return false;" data-name="' . $aRow['name'] . '">' . $_data . '</a> ' . '<span class="badge pull-right">' . total_rows(db_prefix().'contracts', ['contract_type' => $aRow['id']]) . '</span>';
+            $_data = '<a href="#" onclick="edit_type(this,' . $aRow['id'] . '); return false;" data-name="' . $aRow['name'] . '">' . $_data . '</a> ' . '<span class="badge float-right">' . total_rows(db_prefix().'contracts', ['contract_type' => $aRow['id']]) . '</span>';
         }
         $row[] = $_data;
     }

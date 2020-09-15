@@ -68,7 +68,7 @@ foreach ($rResult as $aRow) {
             }
 
             if ($aRow['staff_article'] == 1) {
-                $_data .= '<span class="label label-default pull-right">' . _l('internal_article') . '</span>';
+                $_data .= '<span class="label label-default float-right">' . _l('internal_article') . '</span>';
             }
 
             $_data .= '<div class="row-options">';

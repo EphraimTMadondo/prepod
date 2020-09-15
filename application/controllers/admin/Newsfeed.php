@@ -71,7 +71,7 @@ class Newsfeed extends AdminController
             $response .= '<p class="media-heading no-mbot"><a href="' . admin_url('profile/' . $post['creator']) . '">' . get_staff_full_name($post['creator']) . '</a></p>';
             $response .= '<small class="post-time-ago">' . time_ago($post['datecreated']) . '</small>';
             if ($post['creator'] == get_staff_user_id() || is_admin()) {
-                $response .= '<div class="dropdown pull-right btn-post-options-wrapper">';
+                $response .= '<div class="dropdown float-right btn-post-options-wrapper">';
                 $response .= '<button class="btn btn-default dropdown-toggle btn-post-options btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-angle-down"></i></button>';
                 $response .= '<ul class="dropdown-menu">';
                 if ($post['pinned'] == 0) {
@@ -113,7 +113,7 @@ class Newsfeed extends AdminController
                         $total_left = $total_image_attachments - 6;
                         if ($total_left > 0) {
                             $next_image_attachment_url = base_url('uploads/newsfeed/' . $post['postid'] . '/' . $image_attachments[$a + 1]['file_name']);
-                            $response .= '<div class="clearfix"></div><a href="' . $next_image_attachment_url . '" class="pull-right" data-lightbox="post-' . $post['postid'] . '">+' . $total_left . ' more</a>';
+                            $response .= '<div class="clearfix"></div><a href="' . $next_image_attachment_url . '" class="float-right" data-lightbox="post-' . $post['postid'] . '">+' . $total_left . ' more</a>';
 
                             break;
                         }
@@ -276,7 +276,7 @@ class Newsfeed extends AdminController
         ]) . '</a>';
         $_comments .= '</div>'; // end comment-image
         if ($comment['userid'] == get_staff_user_id() || is_admin()) {
-            $_comments .= '<span class="pull-right"><a href="#" class="remove-post-comment" onclick="remove_post_comment(' . $comment['id'] . ',' . $comment['postid'] . '); return false;"><i class="fa fa-remove bold"></i></span></a>';
+            $_comments .= '<span class="float-right"><a href="#" class="remove-post-comment" onclick="remove_post_comment(' . $comment['id'] . ',' . $comment['postid'] . '); return false;"><i class="fa fa-remove bold"></i></span></a>';
         }
         $_comments .= '<div class="media-body">';
         $_comments .= '<p class="no-margin comment-content"><a href="' . admin_url('profile/' . $comment['userid']) . '">' . get_staff_full_name($comment['userid']) . '</a> ' . check_for_links($comment['content']) . '</p>';

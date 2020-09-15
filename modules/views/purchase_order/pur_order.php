@@ -88,7 +88,7 @@
         <div class="row col-md-12">
         <p class="bold p_style"><?php echo _l('pur_order_detail'); ?></p>
         <hr class="hr_style"/>
-         <div class="mleft10" id="example">
+         <div class="ml-1" id="example">
          </div>
          <?php echo form_hidden('pur_order_detail'); ?>
          <div class="col-md-4 col-md-offset-8">
@@ -195,7 +195,7 @@
                 <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
                 <div class="btn-bottom-toolbar text-right">
                   
-                  <button type="button" class="btn-tr save_detail btn btn-info mleft10 estimate-form-submit transaction-submit">
+                  <button type="button" class="btn-tr save_detail btn btn-info ml-1 estimate-form-submit transaction-submit">
                   <?php echo _l('submit'); ?>
                   </button>
                 </div>
