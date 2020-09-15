@@ -1,9 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="horizontal-scrollable-tabs">
-  <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
-  <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
-  <div class="horizontal-tabs">
-    <ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs" role="tablist">
      <li class="nav-item" role="presentation">
       <a class="nav-link active" href="#payment_modes_general" aria-controls="payment_modes_general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
     </li>
@@ -66,6 +62,4 @@
   </div>
 <?php
   } ?>
-</div>
-</div>
 </div>
