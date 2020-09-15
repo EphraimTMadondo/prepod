@@ -34,7 +34,7 @@
                   </a>
                   <?php } ?>
                   <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-light ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
-                     <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                     <div class="btn-group ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
