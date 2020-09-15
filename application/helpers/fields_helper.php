@@ -403,11 +403,9 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
 
 function render_select_with_input_group($name, $options, $option_attrs = [], $label = '', $selected = '', $input_group_contents = '', $select_attrs = [], $form_group_attr = [], $form_group_class = '', $select_class = '', $include_blank = true)
 {
-    $select_class .= ' _select_input_group';
+    $select_class .= 'custom-select';
     $select = render_select($name, $options, $option_attrs, $label, $selected, $select_attrs, $form_group_attr, $form_group_class, $select_class, $include_blank);
-    $select = str_replace('form-group', 'input-group input-group-select select-' . $name, $select);
-    $select = str_replace('select-placeholder ', '', $select);
-    $select = str_replace('</select>', '</select><div class="input-group-addon">' . $input_group_contents . '</div>', $select);
+    $select = str_replace('</select>', '</select><div class="input-group-append">' . $input_group_contents . '</div>', $select);
 
     $re = '/<label.*<\/label>/i';
     preg_match($re, $select, $label);
