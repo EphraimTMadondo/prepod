@@ -96,7 +96,6 @@
                         </ul>
                      </div>
                      <a href="#" class="btn btn-light float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-proposals','#proposal'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-                  </div>
                </div>
                <div class="card-body">
                    <!-- if invoiceid found in url -->
