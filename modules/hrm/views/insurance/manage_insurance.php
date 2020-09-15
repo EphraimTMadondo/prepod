@@ -11,7 +11,7 @@
                         <?php if(has_permission('hrm','','create')){ ?>
                         <div class="_buttons">
                             
-                            <a href="<?php echo admin_url('hrm/insurance'); ?>" class="btn btn-info mr-1 pull-left display-block"><?php echo _l('add_insurrance'); ?></a>
+                            <a href="<?php echo admin_url('hrm/insurance'); ?>" class="btn btn-primary"><?php echo _l('add_insurrance'); ?></a>
 
                         </div>
 
