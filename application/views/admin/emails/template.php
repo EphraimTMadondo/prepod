@@ -5,7 +5,7 @@
       <div class="row">
          <div class="col-md-6">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <h4 class="no-margin">
                      <?php echo $title; ?>
                   </h4>
@@ -80,7 +80,7 @@
          </div>
          <div class="col-md-6">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <h4 class="no-margin">
                      <?php echo _l('available_merge_fields'); ?>
                   </h4>

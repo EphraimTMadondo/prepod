@@ -4,8 +4,8 @@
   <div class="content">
     <div class="clearfix"></div>
       <div class="col-md-12">
-        <div class="panel_s">
-          <div class="panel-body">
+        <div class="card">
+          <div class="card-body">
             <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
     <div class="row">
       <div class="col-md-12">

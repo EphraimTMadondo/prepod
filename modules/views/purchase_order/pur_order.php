@@ -8,8 +8,8 @@
 			
 			?>
 			<div class="col-md-12">
-        <div class="panel_s accounting-template estimate">
-        <div class="panel-body">
+        <div class="card accounting-template estimate">
+        <div class="card-body">
           
           <div class="row">
              <div class="col-md-6">
@@ -84,7 +84,7 @@
                
           </div>
         </div>
-        <div class="panel-body mtop10">
+        <div class="card-body mtop10">
         <div class="row col-md-12">
         <p class="bold p_style"><?php echo _l('pur_order_detail'); ?></p>
         <hr class="hr_style"/>
@@ -188,7 +188,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 mtop15">
-             <div class="panel-body bottom-transaction">
+             <div class="card-body bottom-transaction">
                 <?php $value = (isset($pur_order) ? $pur_order->vendornote : ''); ?>
                 <?php echo render_textarea('vendornote','estimate_add_edit_vendor_note',$value,array(),array(),'mtop15'); ?>
                 <?php $value = (isset($pur_order) ? $pur_order->terms : ''); ?>

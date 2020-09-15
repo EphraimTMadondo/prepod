@@ -50,8 +50,8 @@
 </div>
 </div>
 <div class="clearfix"></div>
-<div class="panel_s mtop20">
-   <div class="panel-body">
+<div class="card mtop20">
+   <div class="card-body">
       <div class="col-md-10 col-md-offset-1">
          <div class="row mtop20">
             <div class="col-md-6 col-sm-6 transaction-html-info-col-left">

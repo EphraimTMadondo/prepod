@@ -94,8 +94,8 @@ class Authorize_aim extends App_Controller
                       <?php echo payment_gateway_logo(); ?>
                     </div>
                     <div class="row">
-                       <div class="panel_s">
-                          <div class="panel-body">
+                       <div class="card">
+                          <div class="card-body">
                              <h4 class="no-margin">
                                 <?php echo _l('payment_for_invoice'); ?> <a href="<?php echo site_url('invoice/' . $data['invoice']->id . '/' . $data['invoice']->hash); ?>"><?php echo format_invoice_number($data['invoice']->id); ?></a>
                              </h4>

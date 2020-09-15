@@ -10,7 +10,7 @@
              <div class="card mtop20">
                 <div class="card-body">
                     <div class="_buttons">
-                        <a href="#" onclick="new_type(); return false;" class="btn btn-info pull-left display-block"><?php echo _l('new_contract_type'); ?></a>
+                        <a href="#" onclick="new_type(); return false;" class="btn btn-primary"><?php echo _l('new_contract_type'); ?></a>
                     </div>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />

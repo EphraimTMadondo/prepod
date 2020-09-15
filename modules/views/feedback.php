@@ -6,8 +6,8 @@
         
          <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'feedback-form','class'=>'')) ;?>
          <div class="col-md-6">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   
                   <h4 class="no-margin"><?php _l('create_feedback_request'); ?></h4>
                   <hr class="hr-panel-heading" />

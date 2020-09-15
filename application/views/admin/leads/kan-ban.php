@@ -15,7 +15,7 @@ foreach ($statuses as $status) {
   ?>
   <ul class="kan-ban-col" data-col-status-id="<?php echo $status['id']; ?>" data-total-pages="<?php echo $total_pages; ?>">
     <li class="kan-ban-col-wrapper">
-      <div class="border-right panel_s">
+      <div class="border-right card">
         <?php
         $status_color = '';
         if(!empty($status["color"])){

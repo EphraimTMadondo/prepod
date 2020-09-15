@@ -1,5 +1,5 @@
-<div class="panel_s">
-	<div class="panel-body">
+<div class="card">
+	<div class="card-body">
      <div class="tab-content">    
       <div class="row">
         <div class="col-md-12">          

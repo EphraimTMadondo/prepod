@@ -26,7 +26,7 @@
 
 <div class="col-md-12 mtop15">
     <div class="card mtop20">
-        <div class="panel-body">
+        <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
                    <address class="text-right">

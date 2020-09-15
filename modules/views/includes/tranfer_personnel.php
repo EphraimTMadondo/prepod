@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');?>
 <div>
 <div class="_buttons">
-    <a href="#" onclick="new_setting_tranfer(); return false;" class="btn btn-info pull-left display-block">
+    <a href="#" onclick="new_setting_tranfer(); return false;" class="btn btn-primary">
         <?php echo _l('new'); ?>
     </a>
 </div>

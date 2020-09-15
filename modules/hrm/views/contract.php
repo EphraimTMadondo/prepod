@@ -5,7 +5,7 @@
    <div class="row">
       <?php if(isset($contracts)){ ?>
       <div class="col-md-12">
-         <div class="panel_s">
+         <div class="card">
          </div>
       </div>
       <div class="member">
@@ -17,8 +17,8 @@
       <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'staff-form','autocomplete'=>'off')); ?>
 
         <div class="col-md-12" >
-         <div class="panel_s">
-           <div class="panel-body">
+         <div class="card">
+           <div class="card-body">
                <?php if(isset($contracts)){ ?>
                   <h4 class="no-margin"><?php echo _l('edit_contract') ?> 
                   </h4>
@@ -28,7 +28,7 @@
                <?php } ?>
             </div>
             <br>
-            <div class="panel-body">
+            <div class="card-body">
               <!-- start tab -->
                <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
@@ -387,7 +387,7 @@
               </div>
               <!-- endtab -->
             </div>
-            <!-- end panel-body -->
+            <!-- end card-body -->
          </div>
       </div>
       <div class="btn-bottom-toolbar text-right btn-toolbar-container-out">

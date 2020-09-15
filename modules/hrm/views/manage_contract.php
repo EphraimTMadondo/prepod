@@ -4,7 +4,7 @@
     <div class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel_s">
+                <div class="card">
                     <div class="_filters _hidden_inputs hidden">
                         <?php
                        
@@ -23,10 +23,10 @@
                         }
                     ?>
                 </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <?php if(has_permission('hrm','','create')){ { ?>
                         <div class="_buttons">
-                            <a href="<?php echo admin_url('hrm/contract'); ?>" class="btn btn-info pull-left display-block"><?php echo _l('new_contract'); ?></a>
+                            <a href="<?php echo admin_url('hrm/contract'); ?>" class="btn btn-primary"><?php echo _l('new_contract'); ?></a>
                         </div>
                         <?php } ?>
                         <div class="btn-group pull-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
@@ -136,8 +136,8 @@
                         <br>
                         <div class="row">
                            <div class="col-md-12" id="small-table">
-                              <div class="panel_s">
-                                 <div class="panel-body">
+                              <div class="card">
+                                 <div class="card-body">
                                     <div class="clearfix"></div>
                                      <?php echo form_hidden('hrmcontractid',$hrmcontractid); ?>
                                       <!-- if hrmcontract id found in url -->

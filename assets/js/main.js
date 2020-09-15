@@ -3715,7 +3715,7 @@ function init_kanban(url, callbackUpdate, connect_with, column_px, container_px,
                     $('body').css('overflow', 'hidden');
 
                     $(ui.helper).addClass('tilt');
-                    $(ui.helper).find('.panel-body').css('background', '#fbfbfb');
+                    $(ui.helper).find('.card-body').css('background', '#fbfbfb');
                     // Start monitoring tilt direction
                     tilt_direction($(ui.helper));
                 },

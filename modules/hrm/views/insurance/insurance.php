@@ -12,8 +12,8 @@
            <?php } ?>
 
         <div class="col-md-12">
-            <div class="panel_s" >
-                <div class="panel-body">
+            <div class="card" >
+                <div class="card-body">
                                 <h4 class="publib-infor-title">
 									<span class="publib-infor"><?php echo _l('public_information'); ?></span>
                                 </h4>

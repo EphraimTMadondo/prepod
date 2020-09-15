@@ -5,7 +5,7 @@
         <div class="row">
             <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'payroll-type-form','autocomplete'=>'off')); ?>
         <div class="col-md-12">
-            <div class="panel_s" >
+            <div class="card" >
                 <?php if(isset($payslip_id)){ ?>
                 <input type="hidden" name="payslip_id" value="<?php echo htmlspecialchars($payslip_id); ?>">
            <?php } else { ?>
@@ -16,7 +16,7 @@
                                          
 
                                    
-                <div class="panel-body">
+                <div class="card-body">
                                     <h4>
                                     <?php echo _l('payslip_record'); ?>
                                     </h4>

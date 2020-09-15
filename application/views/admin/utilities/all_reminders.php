@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card" style="margin-top: 2rem;">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <h4 class="no-margin">
                             <?php echo $title; ?>
                             <?php if(!is_admin()){ ?><br />

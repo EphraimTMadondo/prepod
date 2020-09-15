@@ -5,8 +5,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                 <?php if($pur_request->status == 1){ ?>
                     <div class="ribbon info"><span class="fontz9" ><?php echo _l('not_yet_approve'); ?></span></div>
                 <?php }elseif($pur_request->status == 2){ ?>
@@ -36,7 +36,7 @@
                   <div class=" col-md-6">
                   <div class="panel panel-warning">
                     <div class="panel-heading"><?php echo _l('general_infor'); ?></div>
-                    <div class="panel-body">
+                    <div class="card-body">
                       <table class="table border table-striped martop0">
                     <tbody>
                        <tr class="project-overview">
@@ -89,7 +89,7 @@
                   <div class=" col-md-6">
                   <div class="panel panel-warning">
                     <div class="panel-heading"><?php echo _l('approval_infor'); ?></div>
-                    <div class="panel-body">
+                    <div class="card-body">
                       <div class="project-overview-right">
                         <?php if(count($list_approve_status) > 0){ ?>
                           

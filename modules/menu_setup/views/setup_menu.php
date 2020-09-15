@@ -4,8 +4,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <div class="_buttons">
                      <a href="#" onclick="save_menu();return false;" class="btn btn-info"><?php echo _l('utilities_menu_save'); ?></a>
                      <a href="<?php echo admin_url('menu_setup/reset_setup_menu'); ?>" class="btn btn-default"><?php echo _l('reset'); ?></a>

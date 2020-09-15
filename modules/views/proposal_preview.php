@@ -1,5 +1,5 @@
-<div class="panel_s">
-	<div class="panel-body">
+<div class="card">
+	<div class="card-body">
 		<?php if($proposals->status == 1){ ?>
 	    	<div class="ribbon info"><span><?php echo _l('proposal'); ?></span></div>
 		<?php }elseif($proposals->status == 2){ ?>

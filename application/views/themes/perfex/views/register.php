@@ -4,8 +4,8 @@
 </div>
 <div class="col-md-10 col-md-offset-1">
     <?php echo form_open('authentication/register', ['id'=>'register-form']); ?>
-    <div class="panel_s">
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
                     <h4 class="bold register-contact-info-heading"><?php echo _l('client_register_contact_info'); ?></h4>

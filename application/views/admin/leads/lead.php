@@ -176,7 +176,7 @@
       </div>
       <?php } ?>
       <div role="tabpanel" class="tab-pane" id="lead_activity">
-         <div class="panel_s no-shadow">
+         <div class="card no-shadow">
             <div class="activity-feed">
                <?php foreach($activity_log as $log){ ?>
                <div class="feed-item">
@@ -295,7 +295,7 @@
          <?php echo form_close(); ?>
          <div class="clearfix"></div>
          <hr />
-         <div class="panel_s no-shadow">
+         <div class="card no-shadow">
             <?php
                $len = count($notes);
                $i = 0;

@@ -11,8 +11,8 @@
   <div class="content">
     <div class="clearfix"></div>
       <div class="col-md-12">
-        <div class="panel_s">
-          <div class="panel-body">
+        <div class="card">
+          <div class="card-body">
 
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
@@ -108,8 +108,8 @@
       </div>
       <div class="col-md-12">
         <br>
-              <div class="panel_s">
-                <div class="panel-body">
+              <div class="card">
+                <div class="card-body">
                   <h4><p class="padding-5 bold"><?php echo _l('list_overdue_contract'); ?></p></h4>
                     <hr class="hr-panel-heading-dashboard">
                   <table class="table dt-table scroll-responsive">
@@ -164,8 +164,8 @@
                   </table>
                 </div>
               </div>
-              <div class="panel_s">
-                <div class="panel-body">
+              <div class="card">
+                <div class="card-body">
                   <h4><p class="padding-5 bold"><?php echo _l('list_expire_contract'); ?></p></h4>
                     <hr class="hr-panel-heading-dashboard">
                   <table class="table dt-table scroll-responsive">
@@ -222,8 +222,8 @@
                 </div>
               </div>
 
-              <div class="panel_s">
-                <div class="panel-body">
+              <div class="card">
+                <div class="card-body">
                   <h4><p class="padding-5 bold"><?php echo _l('birthday_in_month'); ?></p></h4>
                     <hr class="hr-panel-heading-dashboard">
                   <table class="table dt-table scroll-responsive">

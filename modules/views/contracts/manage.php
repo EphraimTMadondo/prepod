@@ -4,8 +4,8 @@
 	<div class="content">
 		<div class="row">
 			<div class="col-md-12" id="small-table">
-				<div class="panel_s">
-					<div class="panel-body">
+				<div class="card">
+					<div class="card-body">
 						<div class="row">
 		                 <div class="col-md-4 border-right">
 		                  <h4 class="no-margin font-bold"><i class="fa fa-file-text-o" aria-hidden="true"></i> <?php echo _l($title); ?></h4>

@@ -422,7 +422,7 @@
                </div>
                <?php echo form_close(); ?>
                <hr />
-               <div class="panel_s mtop20 no-shadow" id="sales_notes_area">
+               <div class="card mtop20 no-shadow" id="sales_notes_area">
                </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="tab_activity">

@@ -106,7 +106,7 @@ body{
     padding: 0 126px;
 }
 
-.panel_s .panel-body{
+.card .card-body{
     padding:60px;
 }
 .main-area {
@@ -136,8 +136,8 @@ body{
      <?php hooks()->do_action('clients_login_form_start'); ?>
 
      <div style = "text-align: center;">
-      <div class="panel_s main-area">
-        <div class="panel-body"   style = “text-align: center;”>
+      <div class="card main-area">
+        <div class="card-body"   style = “text-align: center;”>
           <h1 class="login-title">LOG IN</h1>
             <div id = "form-items" style = "display: inline-block; width: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-pack: center;">
                 <div class="form-group" style = "margin-bottom: 50px;">

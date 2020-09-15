@@ -5,10 +5,10 @@
         <div class="row">
             <div class="col-md-12">
                 
-                <div class="panel_s">
+                <div class="card">
                     <p class="text-info inline-block" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><i class="fa fa-question-circle"></i></p>
                     <div class="card mtop20">
-                        <div class="panel-body">
+                        <div class="card-body">
                             <a href="<?php echo admin_url('reports/leads?type=staff'); ?>" class="btn btn-success"><?php echo _l('switch_to_general_report'); ?></a>
                         </div>
                     </div>
@@ -17,11 +17,11 @@
             </div>
             <div class="col-md-6 animated fadeIn">
                 <div class="card">
-                    <div class="panel_s">
+                    <div class="card">
                         <div class="panel-heading">
                             <?php echo _l('report_this_week_leads_conversions'); ?>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <canvas class="leads-this-week" height="150" id="leads-this-week"></canvas>
                         </div>
                     </div>
@@ -30,11 +30,11 @@
             </div>
             <div class="col-md-6 animated fadeIn">
                 <div class="card">
-                <div class="panel_s">
+                <div class="card">
                     <div class="panel-heading">
                         <?php echo _l('report_leads_sources_conversions'); ?>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                        <canvas class="leads-sources-report" height="150" id="leads-sources-report"></canvas>
                 </div>
                </div>
@@ -43,12 +43,12 @@
            </div>
            <div class="col-md-12 animated fadeIn">
                <div class="card">
-                   <div class="panel_s">
+                   <div class="card">
 
                 <div class="panel-heading">
                     <?php echo _l('report_leads_monthly_conversions'); ?>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
                             <?php

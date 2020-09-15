@@ -56,7 +56,7 @@
             <?php echo '<br /><small>' . _l('milestone_total_logged_time') . ': ' . seconds_to_time_format($milestone['total_logged_time']). '</small>';
                } ?>
          </div>
-         <div class="panel-body">
+         <div class="card-body">
             <?php
                if(count($tasks) == 0){
                 echo _l('milestone_no_tasks_found');

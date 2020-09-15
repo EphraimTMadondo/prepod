@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12 no-padding animated fadeIn">
-    <div class="panel_s">
+    <div class="card">
         <?php echo form_open(admin_url('credit_notes/' . (isset($refund) ? 'edit_refund' : 'create_refund') .'/'. (isset($refund) ? $refund->id.'/'.$refund->credit_note_id : $credit_note->id)), ['id'=>'credit_note_refund_form']); ?>
-        <div class="panel-body">
+        <div class="card-body">
             <h4 class="no-margin"><?php echo _l('refund'); ?> (<?php echo format_credit_note_number($credit_note->id); ?>)</h4>
             <hr class="hr-panel-heading" />
             <div class="row">

@@ -1,5 +1,5 @@
-<div class="panel_s">
-	<div class="panel-body">
+<div class="card">
+	<div class="card-body">
 		<?php if ($campaigns->cp_status == 1) {?>
       <div class="ribbon warnings"><span><?php echo _l('planning'); ?></span></div>
 		<?php } elseif ($campaigns->cp_status == 3) {?>

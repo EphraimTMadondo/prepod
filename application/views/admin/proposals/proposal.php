@@ -24,7 +24,7 @@
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <div class="row">
                      <?php if(isset($proposal)){ ?>
                      <div class="col-md-12">

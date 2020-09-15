@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s">
-   <div class="panel-body">
+<div class="card">
+   <div class="card-body">
       <h4 class="customer-statement-heading"><?php echo _l('customer_statement'); ?></h4>
       <div class="row">
          <div class="col-md-4">
@@ -53,8 +53,8 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-md-12 mtop15">
-               <div class="panel_s">
-                  <div class="panel-body">
+               <div class="card">
+                  <div class="card-body">
                      <div class="row">
                         <div class="col-md-12">
                            <address class="text-right">

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <h4 class="no-margin">
                             <?php echo $title; ?>
                             <?php if(isset($custom_field)){ ?>

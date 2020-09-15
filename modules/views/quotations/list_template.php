@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12">
-  <div class="panel_s mbot10">
-   <div class="panel-body _buttons">
+  <div class="card mbot10">
+   <div class="card-body _buttons">
 
     <?php if(has_permission('purchase','','create')){ ?>
      <a href="<?php echo admin_url('purchase/estimate'); ?>" class="btn btn-info pull-left new"><?php echo _l('create_new_estimate'); ?></a>
@@ -23,8 +23,8 @@
 </div>
 <div class="row">
   <div class="col-md-12" id="small-table">
-    <div class="panel_s">
-      <div class="panel-body">
+    <div class="card">
+      <div class="card-body">
         <!-- if estimateid found in url -->
         <?php echo form_hidden('estimateid',$estimateid); ?>
          <?php $this->load->view('quotations/table_html'); ?>

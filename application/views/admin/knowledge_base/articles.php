@@ -8,7 +8,7 @@
    <div class="row">
       <div class="col-md-12">
          <div class="card mtop5">
-            <div class="panel-body">
+            <div class="card-body">
                <div class="_buttons">
                   <?php if($has_permission_create){ ?>
                   <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-info mright5"><?php echo _l('kb_article_new_article'); ?></a>
@@ -56,7 +56,7 @@
                                ?>
                            <ul class="kan-ban-col<?php if(!$has_permission_edit){echo ' sortable-disabled'; } ?>" data-col-group-id="<?php echo $group['groupid']; ?>">
                               <li class="kan-ban-col-wrapper">
-                                 <div class="border-right panel_s">
+                                 <div class="border-right card">
                                     <?php
                                        $group_color = 'style="background:'.$group["color"].';border:1px solid '.$group['color'].'"';
                                        ?>
@@ -101,7 +101,7 @@
                                           <ul class="sortable article-group groups<?php if(!$has_permission_edit){echo 'sortable-disabled'; } ?>" data-group-id="<?php echo $group['groupid']; ?>">
                                              <?php foreach($articles as $article) { ?>
                                              <li class="<?php if($article['active'] == 0){echo 'line-throught';} ?>" data-article-id="<?php echo $article['articleid']; ?>">
-                                                <div class="panel-body">
+                                                <div class="card-body">
                                                    <?php if($article['staff_article'] == 1){ ?>
                                                    <a href="<?php echo admin_url('knowledge_base/view/'.$article['slug']); ?>">
                                                       <?php echo $article['subject']; ?>

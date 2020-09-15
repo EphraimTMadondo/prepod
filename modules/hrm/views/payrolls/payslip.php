@@ -2,7 +2,7 @@
 <?php $this->load->model('hrm/hrm_model'); ?>
 <div>
 <div class="_buttons">
-    <a href="#" onclick="new_paysplit(); return false;" class="btn btn-info pull-left display-block">
+    <a href="#" onclick="new_paysplit(); return false;" class="btn btn-primary">
         <?php echo _l('add_payslip'); ?>
     </a>
 </div>

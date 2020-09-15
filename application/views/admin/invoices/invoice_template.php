@@ -22,7 +22,7 @@
 </div>
 <div class="card mtop20 invoice accounting-template">
    <div class="additional"></div>
-   <div class="panel-body">
+   <div class="card-body">
       <?php if(isset($invoice)){ ?>
       <?php  echo format_invoice_status($invoice->status); ?>
       <hr class="hr-panel-heading" />
@@ -242,7 +242,7 @@
                <?php echo render_custom_fields('invoice',$rel_id); ?>
          </div>
          <div class="col-md-6">
-            <div class="panel_s no-shadow">
+            <div class="card no-shadow">
 
                    <div class="form-group">
                   <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
@@ -421,7 +421,7 @@
          </div>
       </div>
    </div>
-   <div class="panel-body mtop10">
+   <div class="card-body mtop10">
       <div class="row">
          <div class="col-md-4">
             <?php $this->load->view('admin/invoice_items/item_select'); ?>
@@ -699,7 +699,7 @@
    </div>
    <div class="row">
       <div class="col-md-12 mtop15">
-         <div class="panel-body bottom-transaction">
+         <div class="card-body bottom-transaction">
             <?php $value = (isset($invoice) ? $invoice->clientnote : get_option('predefined_clientnote_invoice')); ?>
             <?php echo render_textarea('clientnote','invoice_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
             <?php $value = (isset($invoice) ? $invoice->terms : get_option('predefined_terms_invoice')); ?>

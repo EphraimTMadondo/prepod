@@ -93,8 +93,8 @@ class Two_checkout extends App_Controller
                     <?php echo payment_gateway_logo(); ?>
                  </div>
                  <div class="row">
-                    <div class="panel_s">
-                       <div class="panel-body">
+                    <div class="card">
+                       <div class="card-body">
                           <h3 class="no-margin">
                              <b><?php echo _l('payment_for_invoice'); ?></b>
                              <a href="<?php echo site_url('invoice/' . $data['invoice']->id . '/' . $data['invoice']->hash); ?>">

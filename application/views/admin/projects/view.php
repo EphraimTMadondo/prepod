@@ -6,7 +6,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20 project-top-panel panel-full">
-               <div class="panel-body _buttons">
+               <div class="card-body _buttons">
                   <div class="row">
                      <div class="col-md-7 project-heading">
                         <h3 class="hide project-name"><?php echo $project->name; ?></h3>
@@ -100,7 +100,7 @@
                </div>
             </div>
             <div class="card project-menu-panel">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php hooks()->do_action('before_render_project_view', $project->id); ?>
                   <?php $this->load->view('admin/projects/project_tabs'); ?>
                </div>
@@ -134,7 +134,7 @@
             </div>
             <?php } ?>
             <div class="card">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php $this->load->view(($tab ? $tab['view'] : 'admin/projects/project_overview')); ?>
                </div>
             </div>

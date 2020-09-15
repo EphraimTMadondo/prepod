@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s accounting-template estimate">
-   <div class="panel-body">
+<div class="card accounting-template estimate">
+   <div class="card-body">
       
       <div class="row">
          <div class="col-md-6">
@@ -131,7 +131,7 @@
             <?php echo render_custom_fields('estimate',$rel_id); ?>
          </div>
          <div class="col-md-6">
-            <div class="panel_s no-shadow">
+            <div class="card no-shadow">
               
                <div class="row">
                   <div class="col-md-12">
@@ -182,7 +182,7 @@
            
       </div>
    </div>
-   <div class="panel-body mtop10">
+   <div class="card-body mtop10">
   <div class="row">
    <div class="col-md-12">
     <p class="bold p_style"><?php echo _l('estimate_detail'); ?></p>
@@ -288,7 +288,7 @@
    </div>
    <div class="row">
       <div class="col-md-12 mtop15">
-         <div class="panel-body bottom-transaction">
+         <div class="card-body bottom-transaction">
             <?php $value = (isset($estimate) ? $estimate->vendornote : get_option('predefined_clientnote_estimate')); ?>
             <?php echo render_textarea('vendornote','estimate_add_edit_vendor_note',$value,array(),array(),'mtop15'); ?>
             <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>

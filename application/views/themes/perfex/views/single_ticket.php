@@ -10,11 +10,11 @@
     <?php set_ticket_open($ticket->clientread,$ticket->ticketid,false); ?>
     <?php echo form_hidden('ticket_id',$ticket->ticketid); ?>
     <div class="col-md-4 ticket-info">
-        <div class="panel_s">
+        <div class="card">
             <div class="panel-heading">
                 <?php echo _l('clients_single_ticket_information_heading'); ?>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
                         <h4>
@@ -96,11 +96,11 @@
             </div>
             <div class="col-md-8">
                 <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'ticket-reply')); ?>
-                <div class="panel_s single-ticket-reply-area">
+                <div class="card single-ticket-reply-area">
                     <div class="panel-heading">
                         <?php echo _l('clients_ticket_single_add_reply_heading'); ?>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <textarea name="message" class="form-control" rows="8"></textarea>
                         <?php echo form_error('message'); ?>
                     </div>
@@ -129,11 +129,11 @@
 
         </div>
         <?php echo form_close(); ?>
-        <div class="panel_s">
+        <div class="card">
             <div class="panel-heading">
                 <?php echo _l('clients_single_ticket_string'); ?>
             </div>
-            <div class="panel-body <?php if($ticket->admin == NULL){echo 'client-reply';} ?>">
+            <div class="card-body <?php if($ticket->admin == NULL){echo 'client-reply';} ?>">
                 <div class="row">
                     <div class="col-md-3 border-right">
                         <?php if($ticket->admin == NULL || $ticket->admin == 0){ ?>
@@ -176,8 +176,8 @@
         </div>
     </div>
     <?php foreach($ticket_replies as $reply){ ?>
-    <div class="panel_s">
-        <div class="panel-body <?php if($reply['admin'] == NULL){echo 'client-reply';} ?>">
+    <div class="card">
+        <div class="card-body <?php if($reply['admin'] == NULL){echo 'client-reply';} ?>">
             <div class="row">
                 <div class="col-md-3 border-right">
                     <p><?php echo $reply['submitter']; ?></p>

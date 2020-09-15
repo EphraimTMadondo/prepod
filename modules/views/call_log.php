@@ -35,8 +35,8 @@
             ?>
             <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'calllog-form')) ;?>
             <div class="col-md-6">
-                <div class="panel_s">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <h4 class="no-margin"><?php echo $title; ?></h4>
                         <hr class="hr-panel-heading" />
 
@@ -125,8 +125,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="panel_s">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <h4 class="no-margin"><?php echo _l('advanced_options'); ?></h4>
                         <hr class="hr-panel-heading" />
                         <div class="row">

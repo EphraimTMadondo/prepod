@@ -4,8 +4,8 @@
 	<div class="content">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="panel_s">
-					<div class="panel-body">
+				<div class="card">
+					<div class="card-body">
 						<div class="_buttons">
 							<a href="#__todo" data-toggle="modal" class="btn btn-info">
 								<?php echo _l('new_todo'); ?>
@@ -15,8 +15,8 @@
 						<hr class="hr-panel-heading" />
 						<div class="row">
 							<div class="col-md-6">
-								<div class="panel_s events animated fadeIn">
-									<div class="panel-body todo-body">
+								<div class="card events animated fadeIn">
+									<div class="card-body todo-body">
 										<h4 class="todo-title warning-bg"><i class="fa fa-warning"></i>
 											<?php echo _l('unfinished_todos_title'); ?></h4>
 											<ul class="list-unstyled todo unfinished-todos todos-sortable">
@@ -33,8 +33,8 @@
 									</div>
 								</div>
 								<div class="col-md-6">
-									<div class="panel_s animated fadeIn">
-										<div class="panel-body todo-body">
+									<div class="card animated fadeIn">
+										<div class="card-body todo-body">
 											<h4 class="todo-title info-bg"><i class="fa fa-check"></i>
 												<?php echo _l('finished_todos_title'); ?></h4>
 												<ul class="list-unstyled todo finished-todos todos-sortable">

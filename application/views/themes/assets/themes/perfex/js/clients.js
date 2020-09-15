@@ -322,11 +322,11 @@ function fix_phases_height() {
     if (is_mobile()) {
         return;
     }
-    var maxPhaseHeight = Math.max.apply(null, $("div.tasks-phases .panel-body").map(function() {
+    var maxPhaseHeight = Math.max.apply(null, $("div.tasks-phases .card-body").map(function() {
         return $(this).outerHeight();
     }).get());
 
-    $('div.tasks-phases .panel-body').css('min-height', maxPhaseHeight + 'px');
+    $('div.tasks-phases .card-body').css('min-height', maxPhaseHeight + 'px');
 }
 
 function taskTable() {

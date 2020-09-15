@@ -3,8 +3,8 @@
 <div id="wrapper">
 	<div class="content">
 		<div class="row">
-			<div class="panel_s mbot10">
-				<div class="panel-body">
+			<div class="card mbot10">
+				<div class="card-body">
 	              	<div class="row">    
 	                    <div class="_buttons col-md-3">
 	                    	<?php if (has_permission('purchase', '', 'create') || is_admin()) { ?>
@@ -44,8 +44,8 @@
             </div>
             <div class="row">
 				<div class="col-md-12" id="small-table">
-					<div class="panel_s">
-						<div class="panel-body">
+					<div class="card">
+						<div class="card-body">
 	                    <?php echo form_hidden('pur_orderid',$pur_orderid); ?>
 	                    <?php render_datatable(array(
 	    

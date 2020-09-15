@@ -4,8 +4,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
 	                 <div class="row">
 	                     <div class="col-md-4 border-right">
 	                      <h4 class="no-margin font-medium"><i class="fa fa-balance-scale" aria-hidden="true"></i> <?php echo _l('report_by_table'); ?></h4>

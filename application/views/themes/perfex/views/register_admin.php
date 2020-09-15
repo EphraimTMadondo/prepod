@@ -129,7 +129,7 @@ body{
     padding: 0 126px;
 }
 
-.panel_s .panel-body{
+.card .card-body{
     padding:60px;
 }
 .main-area {
@@ -150,8 +150,8 @@ body{
 
 <?php echo form_open('authentication/register', ['id'=>'register-form']); ?>
 <div style = "text-align: center; top: 50%;">
-    <div class="panel_s main-area">
-        <div class="panel-body" style ="text-align: center;">
+    <div class="card main-area">
+        <div class="card-body" style ="text-align: center;">
             <!--<div class = "form-items" style = "padding: 10px 30px 10px 30px; margin-bottom: 0px;">-->
             <div class = "" style = "">
                 <h1 class = "heading login-title">Try Worksuite for 14 days</h1>

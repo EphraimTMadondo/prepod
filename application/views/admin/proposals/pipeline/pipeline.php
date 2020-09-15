@@ -5,7 +5,7 @@ foreach ($statuses as $status) {
  ?>
  <ul class="kan-ban-col" data-col-status-id="<?php echo $status; ?>" data-total-pages="<?php echo $total_pages; ?>">
   <li class="kan-ban-col-wrapper">
-    <div class="border-right panel_s no-mbot">
+    <div class="border-right card no-mbot">
       <div class="panel-heading-bg <?php echo proposal_status_color_class($status); ?>-bg">
        <div class="kan-ban-step-indicator<?php if($i == count($statuses) -1){ echo ' kan-ban-step-indicator-full'; } ?>"></div>
        <?php echo format_proposal_status($status,'',false); ?>

@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s">
-   <div class="panel-body">
+<div class="card">
+   <div class="card-body">
       <h4 class="no-margin"><?php echo _l('subscriptions'); ?></h4>
    </div>
 </div>
-<div class="panel_s">
-   <div class="panel-body">
+<div class="card">
+   <div class="card-body">
          <table class="table dt-table table-subscriptions" data-order-col="2" data-order-type="desc">
             <thead>
                <tr>

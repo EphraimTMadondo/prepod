@@ -26,7 +26,7 @@
 <?php echo form_hidden('_attachment_sale_type','invoice'); ?>
 <div class="col-md-12 no-padding">
    <div class="card mtop20">
-      <div class="panel-body">
+      <div class="card-body">
          <?php if($invoice->recurring > 0){
             echo '<div class="ribbon info"><span>'._l('invoice_recurring_indicator').'</span></div>';
             } ?>
@@ -333,7 +333,7 @@
                </div>
                <?php echo form_close(); ?>
                <hr />
-               <div class="panel_s mtop20 no-shadow" id="sales_notes_area"></div>
+               <div class="card mtop20 no-shadow" id="sales_notes_area"></div>
             </div>
             <div role="tabpanel" class="tab-pane ptop10" id="tab_activity">
                <div class="row">

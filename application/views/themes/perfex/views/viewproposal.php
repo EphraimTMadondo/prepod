@@ -144,8 +144,8 @@
    </div>
    <div class="row">
       <div class="col-md-8 proposal-left">
-         <div class="panel_s mtop20">
-            <div class="panel-body proposal-content tc-content padding-30">
+         <div class="card mtop20">
+            <div class="card-body proposal-content tc-content padding-30">
                <?php echo $proposal->content; ?>
             </div>
          </div>

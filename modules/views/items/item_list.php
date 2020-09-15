@@ -4,8 +4,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12" id="small-table">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                 <?php echo form_hidden('item_id',$item_id); ?>
                   <div class="row">
                      <div class="col-md-12">
@@ -19,7 +19,7 @@
                         <?php if (has_permission('purchase', '', 'create') || is_admin()) { ?>
 
                           <!-- dung cho add 1 -->
-                        <a href="#" onclick="new_commodity_item(); return false;" class="btn btn-info pull-left display-block mr-4 button-margin-r-b" data-toggle="sidebar-right" data-target=".commodity_list-add-edit-modal">
+                        <a href="#" onclick="new_commodity_item(); return false;" class="btn btn-primary mr-4 button-margin-r-b" data-toggle="sidebar-right" data-target=".commodity_list-add-edit-modal">
                             <?php echo _l('add'); ?>
                         </a>
                         <?php } ?>

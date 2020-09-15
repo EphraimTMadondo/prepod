@@ -3,16 +3,16 @@
 <div id="wrapper">
     <div class="content">
         <div class="row">
-            <div class="panel_s mbot10">
-                <div class="panel-body _buttons">
+            <div class="card mbot10">
+                <div class="card-body _buttons">
                     <a href="<?php echo admin_url('call_logs'); ?>" class="btn btn-default pull-left mleft5">
                         <?php echo _l('go_back'); ?>
                     </a>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="panel_s">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <div class="col-md-4">
                             <div class="widget-wq">
                                 <h4>Today's Calls</h4>

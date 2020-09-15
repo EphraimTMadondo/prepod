@@ -3,8 +3,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12" id="small-table">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                 <?php echo form_hidden('proposal_id',$proposal_id); ?>
                   <div class="row">
                      <div class="col-md-12">
@@ -15,7 +15,7 @@
                   <div class="row">
                     <div class="col-md-3  ">
                         <?php if (has_permission('recruitment', '', 'create') || is_admin()) { ?>
-                        <a href="#" onclick="new_proposal(); return false;" class="btn btn-info pull-left display-block">
+                        <a href="#" onclick="new_proposal(); return false;" class="btn btn-primary">
                             <?php echo _l('new_proposal'); ?>
                         </a>
                         <?php } ?>

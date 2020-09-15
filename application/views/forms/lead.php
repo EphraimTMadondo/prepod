@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="card mtop25">
- <div class="panel-body">
+ <div class="card-body">
   <h4 class="pull-left"><?php echo $lead->name; ?><br /><small><?php echo get_option('companyname'); ?></small></h4>
   <?php if(get_option('gdpr_data_portability_leads') == '1'){ ?>
     <?php echo form_open($this->uri->uri_string()); ?>

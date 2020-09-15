@@ -7,8 +7,8 @@ $tags = get_styling_areas('tags');
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <a href="#" onclick="save_theme_style(); return false;" class="btn btn-info"><?php echo _l('save'); ?></a>
                   <a href="<?php echo admin_url('theme_style/reset'); ?>" data-toggle="tooltip" data-title="<?php echo _l('theme_style_reset_info'); ?>" class="btn btn-default"><?php echo _l('reset'); ?></a>
                </div>
@@ -61,8 +61,8 @@ $tags = get_styling_areas('tags');
  </ul>
 </div>
 <div class="col-md-9">
-   <div class="panel_s">
-      <div class="panel-body pickers">
+   <div class="card">
+      <div class="card-body pickers">
          <div class="tab-content">
             <div role="tabpanel" class="tab-pane ptop10 active" id="tab_admin_styling">
                <div class="row">

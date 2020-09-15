@@ -197,7 +197,7 @@
             <?php echo render_custom_fields('estimate',$rel_id); ?>
          </div>
          <div class="col-md-6">
-            <div class="panel_s no-shadow">
+            <div class="card no-shadow">
                <div class="form-group">
                   <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
                   <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo (isset($estimate) ? prep_tags_input(get_tags_in($estimate->id,'estimate')) : ''); ?>" data-role="tagsinput">
@@ -275,7 +275,7 @@
    <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
    <div class="row">
       <div class="col-md-12 mtop15">
-         <div class="panel-body bottom-transaction">
+         <div class="card-body bottom-transaction">
             <?php $value = (isset($estimate) ? $estimate->clientnote : get_option('predefined_clientnote_estimate')); ?>
             <?php echo render_textarea('clientnote','estimate_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
             <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>

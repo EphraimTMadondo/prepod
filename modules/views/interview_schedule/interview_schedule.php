@@ -4,8 +4,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12" id="small-table">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                 <?php echo form_hidden('interview_id', $interview_id); ?>
                   <div class="row">
                      <div class="col-md-12">
@@ -14,7 +14,7 @@
                     </div>
                   </div>
                   <?php if (has_permission('recruitment', '', 'delete') || is_admin()) {?>
-                  <a href="#" onclick="new_interview_schedule(); return false;" class="btn btn-info pull-left display-block"><?php echo _l('new_interview_schedule'); ?></a>
+                  <a href="#" onclick="new_interview_schedule(); return false;" class="btn btn-primary"><?php echo _l('new_interview_schedule'); ?></a>
                   <?php }?>
                   <div class="col-md-1 pull-right">
                       <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_interview_schedules('.interview_sm','#interview_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>

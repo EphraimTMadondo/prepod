@@ -28,11 +28,11 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
 
                     ?>
                 </div>
-                <div class="panel_s">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <div class="_buttons">
                             <?php if(has_permission('call_logs','','create')){ ?>
-                            <a href="<?php echo admin_url('call_logs/call_log'); ?>" class="btn btn-info pull-left display-block mright5"><?php echo _l('new_call_log'); ?></a>
+                            <a href="<?php echo admin_url('call_logs/call_log'); ?>" class="btn btn-primary mright5"><?php echo _l('new_call_log'); ?></a>
                             <?php } ?>
                             <a href="<?php echo admin_url('call_logs/overview'); ?>" data-toggle="tooltip" title="<?php echo _l('cl_gantt_overview'); ?>" class="btn btn-default"><i class="fa fa-bar-chart" aria-hidden="true"></i> Overview</a>
 

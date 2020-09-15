@@ -37,8 +37,8 @@
          <?php } ?>
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
-            <div class="panel_s mbot5">
-               <div class="panel-body padding-10">
+            <div class="card mbot5">
+               <div class="card-body padding-10">
                   <h4 class="bold">
                      #<?php echo html_entity_decode($client->userid . ' ' . $title); ?>
                     
@@ -50,8 +50,8 @@
          </div>
          <?php } ?>
          <div class="col-md-<?php if(isset($client)){echo 9;} else {echo 12;} ?>">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <?php if(isset($client)){ ?>
                   <?php echo form_hidden('isedit'); ?>
                   <?php echo form_hidden('userid', $client->userid); ?>

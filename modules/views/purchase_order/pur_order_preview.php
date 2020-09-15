@@ -2,8 +2,8 @@
 <?php echo form_hidden('_attachment_sale_id',$estimate->id); ?>
 <?php echo form_hidden('_attachment_sale_type','estimate'); ?>
 <div class="col-md-12 no-padding">
-   <div class="panel_s">
-      <div class="panel-body">
+   <div class="card">
+      <div class="card-body">
          <?php if($estimate->approve_status == 1){ ?>
            <div class="ribbon info"><span><?php echo _l('not_yet_approve'); ?></span></div>
        <?php }elseif($estimate->approve_status == 2){ ?>
@@ -247,7 +247,7 @@
                </div>
                <?php echo form_close(); ?>
                <hr />
-               <div class="panel_s mtop20 no-shadow" id="sales_notes_area">
+               <div class="card mtop20 no-shadow" id="sales_notes_area">
                </div>
             </div>
 

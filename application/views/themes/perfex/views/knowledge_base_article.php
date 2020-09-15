@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="panel_s">
-	<div class="panel-body">
+<div class="card">
+	<div class="card-body">
 		<div class="row kb-article">
 			<div class="col-md-<?php if(count($related_articles) == 0){echo '12';}else{echo '8';} ?>">
 				<h1 class="bold no-mtop kb-article-single-heading"><?php echo $article->subject; ?></h1>

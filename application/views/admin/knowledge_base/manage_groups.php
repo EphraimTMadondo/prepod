@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop20">
-                    <div class="panel-body">
+                    <div class="card-body">
                        <div class="_buttons">
                         <?php if(has_permission('knowledge_base','','create')){ ?>
                             <div class="_buttons">
-                                <a href="#" onclick="new_kb_group(); return false;" class="btn btn-info pull-left display-block">
+                                <a href="#" onclick="new_kb_group(); return false;" class="btn btn-primary">
                                     <?php echo _l('new_group'); ?>
                                 </a>
                             <?php } ?>
-                            <a href="<?php echo admin_url('knowledge_base'); ?>" class="btn btn-info pull-left display-block mleft5">
+                            <a href="<?php echo admin_url('knowledge_base'); ?>" class="btn btn-primary mleft5">
                                 <?php echo _l('als_all_articles'); ?>
                             </a>
                             <div class="clearfix"></div>

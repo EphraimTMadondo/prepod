@@ -1,13 +1,15 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card-body">
 						<div class="_buttons">
-							<a href="#" class="btn btn-info pull-left" data-toggle="modal" data-target="#tax_modal"><?php echo _l('new_tax'); ?></a>
+							<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tax_modal"><?php echo _l('new_tax'); ?></a>
 						</div>
 						<div class="clearfix"></div>
 						<hr class="hr-panel-heading" />
@@ -52,7 +54,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-					<button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+					<button type="submit" class="btn btn-primary"><?php echo _l('submit'); ?></button>
 					<?php echo form_close(); ?>
 				</div>
 			</div>

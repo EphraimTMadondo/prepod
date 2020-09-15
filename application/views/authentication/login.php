@@ -62,7 +62,7 @@
          
      </style>
      <div style = "text-align: center;">
-      <div class="panel_s" style ="
+      <div class="card" style ="
     margin: 40px 60px 52px;
     display: block;
     box-sizing: border-box;
@@ -85,7 +85,7 @@
            
            
            
-         <div class="panel-body"   style = “text-align: center;”
+         <div class="card-body"   style = “text-align: center;”
    
  >
              

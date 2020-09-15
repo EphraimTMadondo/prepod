@@ -6,8 +6,8 @@
    <div class="content">
       <div class="row">
          <div class="col-md-12">
-            <div class="panel_s">
-               <div class="panel-body">
+            <div class="card">
+               <div class="card-body">
                   <h4 class="customer-profile-group-heading"><?php echo _l($title). ' '._l('purchase_request') ; ?></h4>
                   <?php if(isset($pur_request)){
                            echo form_open(admin_url('purchase/pur_request/'.$pur_request->id),array('id'=>'add_edit_pur_request-form'));
@@ -23,7 +23,7 @@
                   <div class=" col-md-7">
                   <div class="panel panel-success">
                     <div class="panel-heading"><?php echo _l('other_infor'); ?></div>
-                    <div class="panel-body">
+                    <div class="card-body">
                       <div class="col-md-4">
                       <?php $pur_rq_code = ( isset($pur_request) ? $pur_request->pur_rq_code : '');
                       echo render_input('pur_rq_code','pur_rq_code',$pur_rq_code ); ?>
@@ -53,7 +53,7 @@
                   <div class="col-md-5">
                    <div class="panel panel-success">
                     <div class="panel-heading"><?php echo _l('general_infor'); ?></div>
-                    <div class="panel-body">
+                    <div class="card-body">
                     <table class="table border table-striped mtop0" >
                     <tbody>
                        <tr class="project-overview">

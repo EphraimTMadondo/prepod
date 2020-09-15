@@ -19,7 +19,7 @@
       <div class="clearfix"></div>
    </div>
    <div id="<?php echo 'vaultEntry-'.$entry['id']; ?>">
-      <div class="panel-body">
+      <div class="card-body">
          <div class="row">
             <div class="col-md-6 border-right">
                 <p>

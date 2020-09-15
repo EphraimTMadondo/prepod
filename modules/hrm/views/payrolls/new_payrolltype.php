@@ -5,9 +5,9 @@
         <div class="row">
             <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'payroll-type-form','autocomplete'=>'off')); ?>
         <div class="col-md-12">
-            <div class="panel_s" >
+            <div class="card" >
 
-                <div class="panel-body">
+                <div class="card-body">
 				
                     <h4 class="modal-title">
                         <?php if(isset($payroll_id)){ ?>

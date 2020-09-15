@@ -4,13 +4,13 @@
         <?php echo form_open_multipart('clients/company',['id'=>'company-profile-form']); ?>
         <!-- Required hidden field -->
         <?php echo form_hidden('company_form',true); ?>
-        <div class="panel_s section-heading section-company-profile">
-            <div class="panel-body">
+        <div class="card section-heading section-company-profile">
+            <div class="card-body">
              <h4 class="no-margin section-text"><?php echo _l('clients_profile_heading'); ?></h4>
          </div>
      </div>
-     <div class="panel_s">
-        <div class="panel-body">
+     <div class="card">
+        <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group company-profile-company-group">
