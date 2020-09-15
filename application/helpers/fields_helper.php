@@ -405,16 +405,17 @@ function render_select_with_input_group($name, $options, $option_attrs = [], $la
 {
     $select_class .= 'custom-select';
     $select = render_select($name, $options, $option_attrs, $label, $selected, $select_attrs, $form_group_attr, $form_group_class, $select_class, $include_blank);
-    $select = str_replace('form-group', 'input-group input-group-select select-' . $name, $select);
+    $select = str_replace("<fieldset class='form-group'>", "<div class='input-group'>", $select);
     $select = str_replace('select-placeholder ', '', $select);
-    $select = str_replace('</select>', '</select><div class="input-group-addon">' . $input_group_contents . '</div>', $select);
+    $select = str_replace('</select>', '</select><div class="input-group-append">' . $input_group_contents . '</div>', $select);
+    $select = str_replace('</fieldset> ', '</div>', $select);
 
     $re = '/<label.*<\/label>/i';
     preg_match($re, $select, $label);
 
     if (count($label) > 0) {
         $select = preg_replace($re, '', $select);
-        $select = '<div class="select-placeholder form-group form-group-select-input-' . $name . ' input-group-select">' . $label[0] . $select . '</div>';
+        $select = "<fieldset class='form-group'>" . $label[0] . $select . '</fieldset>';
     }
 
     return $select;
