@@ -27,9 +27,7 @@
   <li class="nav-item" role="presentation">
     <a class="nav-link" href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab"><?php echo _l('tickets'); ?></a>
   </li>
-
   <?php hooks()->do_action('after_cron_settings_last_tab'); ?>
-
 </ul>
 
 <div class="tab-content">
