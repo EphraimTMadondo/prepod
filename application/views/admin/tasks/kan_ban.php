@@ -15,7 +15,7 @@ foreach ($task_statuses as $status) {
           <div class="kan-ban-step-indicator<?php if($status['id'] == Tasks_model::STATUS_COMPLETE){ echo ' kan-ban-step-indicator-full'; } ?>"></div>
           <span class="heading"><?php echo format_task_status($status['id'],false,true); ?>
           </span>
-          <a href="#" onclick="return false;" class="pull-right color-white">
+          <a href="#" onclick="return false;" class="float-right color-white">
           </a>
         </div>
         <div class="kan-ban-content-wrapper">

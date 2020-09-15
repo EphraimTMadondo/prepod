@@ -5,13 +5,13 @@
    <?php $this->load->view('admin/clients/groups/_statement_period_select', ['onChange'=>'render_customer_statement()']); ?>
 </div>
 <div class="col-md-8 col-xs-12">
-   <div class="text-right _buttons pull-right">
+   <div class="text-right _buttons float-right">
 
-      <a href="#" id="statement_print" target="_blank" class="btn btn-default btn-with-tooltip mright5" data-toggle="tooltip" title="<?php echo _l('print'); ?>" data-placement="bottom">
+      <a href="#" id="statement_print" target="_blank" class="btn btn-default btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('print'); ?>" data-placement="bottom">
           <i class="fa fa-print"></i>
       </a>
 
-      <a href="" id="statement_pdf"  class="btn btn-default btn-with-tooltip mright5" data-toggle="tooltip" title="<?php echo _l('view_pdf'); ?>" data-placement="bottom">
+      <a href="" id="statement_pdf"  class="btn btn-default btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('view_pdf'); ?>" data-placement="bottom">
           <i class="fa fa-file-pdf-o"></i>
       </a>
 

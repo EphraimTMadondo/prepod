@@ -1,7 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mtop20">
@@ -13,7 +15,7 @@
                                     <?php echo _l('new_group'); ?>
                                 </a>
                             <?php } ?>
-                            <a href="<?php echo admin_url('knowledge_base'); ?>" class="btn btn-primary mleft5">
+                            <a href="<?php echo admin_url('knowledge_base'); ?>" class="btn btn-primary ml-1">
                                 <?php echo _l('als_all_articles'); ?>
                             </a>
                             <div class="clearfix"></div>
@@ -29,7 +31,7 @@
                                 <tbody>
                                     <?php foreach($groups as $group){ ?>
                                         <tr>
-                                            <td><?php echo $group['name']; ?> <span class="badge mleft5"><?php echo total_rows(db_prefix().'knowledge_base','articlegroup='.$group['groupid']); ?></span></td>
+                                            <td><?php echo $group['name']; ?> <span class="badge ml-1"><?php echo total_rows(db_prefix().'knowledge_base','articlegroup='.$group['groupid']); ?></span></td>
                                             <td>
                                                 <div class="onoffswitch">
                                                     <input type="checkbox" id="<?php echo $group['groupid']; ?>" data-id="<?php echo $group['groupid']; ?>" class="onoffswitch-checkbox" <?php if(!has_permission('knowledge_base','','edit')){ echo 'disabled'; } ?> data-switch-url="<?php echo admin_url(); ?>knowledge_base/change_group_status" <?php if($group['active'] == 1){echo 'checked';} ?>>

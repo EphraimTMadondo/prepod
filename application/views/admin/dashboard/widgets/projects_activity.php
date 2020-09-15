@@ -16,7 +16,7 @@
                   if($activity['staff_id'] != 0){
                   $href = admin_url('profile/'.$activity['staff_id']);
                   } else if($activity['contact_id'] != 0){
-                    $name = '<span class="label label-info inline-block mright5">'._l('is_customer_indicator') . '</span> - ' . $name;
+                    $name = '<span class="label label-info inline-block mr-1">'._l('is_customer_indicator') . '</span> - ' . $name;
                     $href = admin_url('clients/client/'.get_user_id_by_contact_id($activity['contact_id']).'?contactid='.$activity['contact_id']);
                   } else {
                   $href = '';

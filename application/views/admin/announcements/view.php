@@ -9,7 +9,7 @@
                     <div class="card-body tc-content">
                       <h4 class="bold no-margin"><?php echo $announcement->name; ?>
                         <?php if (is_admin()) { ?>
-                          <a href="<?php echo admin_url('announcements/announcement/' . $announcement->announcementid); ?>" class="pull-right">
+                          <a href="<?php echo admin_url('announcements/announcement/' . $announcement->announcementid); ?>" class="float-right">
                             <small><?php echo _l('edit'); ?></small>
                           </a>
                         <?php } ?>

@@ -21,7 +21,7 @@
 	?>
 
     <tr>
-        <td><a href="<?php echo admin_url('staff/profile/' . $gr['add_from']); ?>" ><?php echo staff_profile_image($gr['add_from'], ['staff-profile-image-small mright5'], 'small') . get_staff_full_name($gr['add_from']); ?></a></td>
+        <td><a href="<?php echo admin_url('staff/profile/' . $gr['add_from']); ?>" ><?php echo staff_profile_image($gr['add_from'], ['staff-profile-image-small mr-1'], 'small') . get_staff_full_name($gr['add_from']); ?></a></td>
         <td>
             <?php if ($gr['criteria_type'] == 'group_criteria') {
 		echo '<p class="bold"><i class="fa fa-folder-open"></i>' . ' ' . $gr['criteria_title'] . '</p>';

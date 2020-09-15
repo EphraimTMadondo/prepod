@@ -20,7 +20,7 @@
                     <div class="row">
                   <div class="col-md-12">
                     <p class="bold col-md-9 p_style"><?php echo _l('information'); ?></p>
-                    <div class="col-md-3 pull-right">
+                    <div class="col-md-3 float-right">
                         <select name="status" id="status" class="selectpicker" onchange="change_status_pur_request(this,<?php echo html_entity_decode($pur_request->id); ?>); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
                           <option value=""></option>
                           <option value="1" class="<?php if($pur_request->status == 1) { echo 'hide';}?>"><?php echo _l('not_yet_approve'); ?></option>
@@ -155,7 +155,7 @@
                         
                         <?php } ?>
                         </div>
-                        <div class="pull-right">
+                        <div class="float-right">
                             <?php 
                             if($check_appr && $check_appr != false){
                             if($pur_request->status != 2 && ($check_approve_status == false || $check_approve_status == 'reject')){ ?>
@@ -175,7 +175,7 @@
                                     </li>
                                       <li>
                                         <div class="row text-right col-md-12">
-                                          <a href="#" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="approve_request(<?php echo html_entity_decode($pur_request->id); ?>); return false;" class="btn btn-success mright15"><?php echo _l('approve'); ?></a>
+                                          <a href="#" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="approve_request(<?php echo html_entity_decode($pur_request->id); ?>); return false;" class="btn btn-success mr-1"><?php echo _l('approve'); ?></a>
                                          <a href="#" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="deny_request(<?php echo html_entity_decode($pur_request->id); ?>); return false;" class="btn btn-warning"><?php echo _l('deny'); ?></a></div>
                                       </li>
                                    </ul>
@@ -185,7 +185,7 @@
                             
                           <?php
                            if(in_array(get_staff_user_id(), $check_approve_status['staffid']) && in_array(get_staff_user_id(), $get_staff_sign)){ ?>
-                            <button onclick="accept_action();" class="btn btn-success pull-right action-button"><?php echo _l('e_signature_sign'); ?></button>
+                            <button onclick="accept_action();" class="btn btn-success float-right action-button"><?php echo _l('e_signature_sign'); ?></button>
                           <?php }
                             ?>
                             <?php 

@@ -11,10 +11,10 @@
 						</h4>
 						<hr class="hr-panel-heading" />
 						<div class="_buttons">
-							<a href="<?php echo admin_url('backup/make_backup_db'); ?>" class="btn btn-default pull-right">
+							<a href="<?php echo admin_url('backup/make_backup_db'); ?>" class="btn btn-default float-right">
 								<?php echo _l('utility_create_new_backup_db'); ?>
 							</a>
-							<a href="#" data-toggle="modal" data-target="#auto_backup_config" class="btn btn-default mright5 pull-right">
+							<a href="#" data-toggle="modal" data-target="#auto_backup_config" class="btn btn-default mr-1 float-right">
 								<?php echo _l('auto_backup'); ?>
 							</a>
 						</div>

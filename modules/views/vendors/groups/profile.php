@@ -158,7 +158,7 @@
                      <td><a href="<?php echo admin_url('profile/'.$c_admin['staff_id']); ?>">
                         <?php echo staff_profile_image($c_admin['staff_id'], array(
                            'staff-profile-image-small',
-                           'mright5'
+                           'mr-1'
                            ));
                            echo get_staff_full_name($c_admin['staff_id']); ?></a>
                      </td>
@@ -179,7 +179,7 @@
                <div class="col-md-12">
                   <div class="row">
                      <div class="col-md-6">
-                        <h4 class="no-mtop"><?php echo _l('billing_address'); ?> <a href="#" class="pull-right billing-same-as-customer"><small class="font-medium-xs"><?php echo _l('customer_billing_same_as_profile'); ?></small></a></h4>
+                        <h4 class="no-mtop"><?php echo _l('billing_address'); ?> <a href="#" class="float-right billing-same-as-customer"><small class="font-medium-xs"><?php echo _l('customer_billing_same_as_profile'); ?></small></a></h4>
                         <hr />
                         <?php $value=( isset($client) ? $client->billing_street : ''); ?>
                         <?php echo render_textarea( 'billing_street', 'billing_street',$value); ?>
@@ -195,7 +195,7 @@
                      <div class="col-md-6">
                         <h4 class="no-mtop">
                            <i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('customer_shipping_address_notice'); ?>"></i>
-                           <?php echo _l('shipping_address'); ?> <a href="#" class="pull-right customer-copy-billing-address"><small class="font-medium-xs"><?php echo _l('customer_billing_copy'); ?></small></a>
+                           <?php echo _l('shipping_address'); ?> <a href="#" class="float-right customer-copy-billing-address"><small class="font-medium-xs"><?php echo _l('customer_billing_copy'); ?></small></a>
                         </h4>
                         <hr />
                         <?php $value=( isset($client) ? $client->shipping_street : ''); ?>

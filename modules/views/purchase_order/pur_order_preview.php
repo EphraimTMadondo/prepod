@@ -75,7 +75,7 @@
               <p class="bold p_mar"><?php echo _l('vendor').': '?><a href="<?php echo admin_url('purchase/vendor/'.$estimate->vendor); ?>"><?php echo get_vendor_company_name($estimate->vendor); ?></a></p>
             </div>
             <div class="col-md-8">
-               <div class="btn-group pull-right">
+               <div class="btn-group float-right">
                   <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><?php if(is_mobile()){echo ' PDF';} ?> <span class="caret"></span></a>
                   <ul class="dropdown-menu dropdown-menu-right">
                      <li class="hidden-xs"><a href="<?php echo admin_url('purchase/purorder_pdf/'.$estimate->id.'?output_type=I'); ?>"><?php echo _l('view_pdf'); ?></a></li>
@@ -88,14 +88,14 @@
                      </li>
                   </ul>
                </div>
-               <div class="pull-right _buttons mright5">
+               <div class="float-right _buttons mr-1">
                   <?php if(has_permission('estimates','','edit')){ ?>
                   <a href="<?php echo admin_url('purchase/pur_order/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_pur_order_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
                   <?php } ?>
 
                </div>
 
-               <select name="status" id="status" class="selectpicker pull-right mright10" onchange="change_status_pur_order(this,<?php echo ($estimate->id); ?>); return false;" data-live-search="true" data-width="35%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
+               <select name="status" id="status" class="selectpicker float-right mr-1" onchange="change_status_pur_order(this,<?php echo ($estimate->id); ?>); return false;" data-live-search="true" data-width="35%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
                  <option value=""></option>
                  <option value="1" class="<?php if($estimate->approve_status == 1) { echo 'hide';}?>"><?php echo _l('not_yet_approve'); ?></option>
                  <option value="2" class="<?php if($estimate->approve_status == 2) { echo 'hide';}?>"><?php echo _l('approved'); ?></option>
@@ -276,7 +276,7 @@
                                                                 }
                                                $file_html .= '<div class="mbot15 row inline-block full-width" data-attachment-id="'. $f['id'].'">
                                               <div class="col-md-8">
-                                                 <a name="preview-purorder-btn" onclick="preview_purorder_btn(this); return false;" rel_id = "'. $f['rel_id']. '" id = "'.$f['id'].'" href="Javascript:void(0);" class="mbot10 mright5 btn btn-success pull-left" data-toggle="tooltip" title data-original-title="'. _l('preview_file').'"><i class="fa fa-eye"></i></a>
+                                                 <a name="preview-purorder-btn" onclick="preview_purorder_btn(this); return false;" rel_id = "'. $f['rel_id']. '" id = "'.$f['id'].'" href="Javascript:void(0);" class="mbot10 mr-1 btn btn-success pull-left" data-toggle="tooltip" title data-original-title="'. _l('preview_file').'"><i class="fa fa-eye"></i></a>
                                                  <div class="pull-left"><i class="'. get_mime_class($f['filetype']).'"></i></div>
                                                  <a href=" '. $href_url.'" target="_blank" download>'.$f['file_name'].'</a>
                                                  <br />
@@ -303,7 +303,7 @@
                </div>
                <div class="col-md-6 padr_div_0">
                <?php if(purorder_left_to_pay($estimate->id) > 0){ ?>
-               <a href="#" onclick="add_payment(<?php echo html_entity_decode($estimate->id); ?>); return false;" class="btn btn-success pull-right"><i class="fa fa-plus"></i><?php echo ' '._l('payment'); ?></a>
+               <a href="#" onclick="add_payment(<?php echo html_entity_decode($estimate->id); ?>); return false;" class="btn btn-success float-right"><i class="fa fa-plus"></i><?php echo ' '._l('payment'); ?></a>
                <?php } ?>
                </div>
                <div class="clearfix"></div>

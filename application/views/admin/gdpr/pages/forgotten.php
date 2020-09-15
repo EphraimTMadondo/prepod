@@ -55,9 +55,9 @@
                     <td data-order="<?php echo $request['id']; ?>"><?php echo $request['id']; ?></td>
                     <td><?php echo $request['request_from']; ?>
                         <?php if(!empty($request['contact_id'])) {
-                            echo '<span class="label label-info pull-right">Contact</span>';
+                            echo '<span class="label label-info float-right">Contact</span>';
                         } else if(!empty($request['lead_id'])) {
-                            echo '<span class="label label-info pull-right">Lead</span>';
+                            echo '<span class="label label-info float-right">Lead</span>';
                         }
                         ?>
                     </td>

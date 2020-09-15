@@ -17,15 +17,15 @@
                             <input type="checkbox" class="copy" name="tasks" id="c_tasks" checked>
                             <label for="c_tasks"><?php echo _l('tasks'); ?></label>
                         </div>
-                        <div class="checkbox checkbox-primary mleft10 tasks-copy-option">
+                        <div class="checkbox checkbox-primary ml-1 tasks-copy-option">
                             <input type="checkbox" name="tasks_include_checklist_items" id="tasks_include_checklist_items" checked>
                             <label for="tasks_include_checklist_items"><small><?php echo _l('copy_project_task_include_check_list_items'); ?></small></label>
                         </div>
-                        <div class="checkbox checkbox-primary mleft10 tasks-copy-option">
+                        <div class="checkbox checkbox-primary ml-1 tasks-copy-option">
                             <input type="checkbox" name="task_include_assignees" id="task_include_assignees" checked>
                             <label for="task_include_assignees"><small><?php echo _l('copy_project_task_include_assignees'); ?></small></label>
                         </div>
-                        <div class="checkbox checkbox-primary mleft10 tasks-copy-option">
+                        <div class="checkbox checkbox-primary ml-1 tasks-copy-option">
                             <input type="checkbox" name="task_include_followers" id="copy_project_task_include_followers" checked>
                             <label for="copy_project_task_include_followers"><small><?php echo _l('copy_project_task_include_followers'); ?></small></label>
                         </div>

@@ -247,7 +247,7 @@
                                     <?php
                                        foreach($contract_merge_fields as $field){
                                            foreach($field as $f){
-                                              echo '<li class="list-group-item"><b>'.$f['name'].'</b>  <a href="#" class="pull-right" onclick="insert_merge_field(this); return false">'.$f['key'].'</a></li>';
+                                              echo '<li class="list-group-item"><b>'.$f['name'].'</b>  <a href="#" class="float-right" onclick="insert_merge_field(this); return false">'.$f['key'].'</a></li>';
                                           }
                                        }
                                     ?>
@@ -282,7 +282,7 @@
                                  </a>
                                  <?php } ?>
                               </p>
-                              <div class="pull-right">
+                              <div class="float-right">
                                  <img src="<?php echo site_url('download/preview_image?path='.protected_file_url_by_path(get_upload_path_by_type('contract').$contract->id.'/'.$contract->signature)); ?>" class="img-responsive" alt="">
                               </div>
                            </div>
@@ -306,7 +306,7 @@
                               <div id="contract-comments"></div>
                               <div class="clearfix"></div>
                               <textarea name="content" id="comment" rows="4" class="form-control mtop15 contract-comment"></textarea>
-                              <button type="button" class="btn btn-info mtop10 pull-right" onclick="add_contract_comment();"><?php echo _l('proposal_add_comment'); ?></button>
+                              <button type="button" class="btn btn-info mtop10 float-right" onclick="add_contract_comment();"><?php echo _l('proposal_add_comment'); ?></button>
                            </div>
                         </div>
                      </div>
@@ -374,7 +374,7 @@
                                     ?>
                                  </b>
                                  <?php if($renewal['renewed_by_staff_id'] == get_staff_user_id() || is_admin()){ ?>
-                                 <a href="<?php echo admin_url('contracts/delete_renewal/'.$renewal['id'] . '/'.$renewal['contractid']); ?>" class="pull-right _delete text-danger"><i class="fa fa-remove"></i></a>
+                                 <a href="<?php echo admin_url('contracts/delete_renewal/'.$renewal['id'] . '/'.$renewal['contractid']); ?>" class="float-right _delete text-danger"><i class="fa fa-remove"></i></a>
                                  <br />
                                  <?php } ?>
                                  <small class="text-muted"><?php echo _dt($renewal['date_renewed']); ?></small>

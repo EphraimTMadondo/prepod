@@ -7,24 +7,24 @@
            		<h4 class="bold col-md-5">
            		<?php echo '#' . $candidate->candidate_code . ' - ' . $candidate->candidate_name; ?>
            		</h4>
-                 <a href="Javascript:void(0);" id="toggle_popup_approval" class="btn btn-success display-block pull-right"><i class="fa fa-user-md"></i><?php echo ' ' . _l('care') . ' '; ?><i class="fa fa-caret-down"></i></a>
+                 <a href="Javascript:void(0);" id="toggle_popup_approval" class="btn btn-success display-block float-right"><i class="fa fa-user-md"></i><?php echo ' ' . _l('care') . ' '; ?><i class="fa fa-caret-down"></i></a>
                  <ul id="popup_approval" class="dropdown-menu dropdown-menu-right min-width-440">
                   <li>
                     <br>
                     <div class="col-md-12">
-                      	<a href="#" onclick="interview(); return false;" class="btn btn-info pull-right display-block mright5 interview-background"><i class="fa fa-microphone"></i><?php echo ' ' . _l('interview'); ?></a>
-		              	<a href="#" onclick="test(); return false;" class="btn btn-info pull-right display-block mright5 test-background"><i class="fa fa-forward"></i><?php echo ' ' . _l('test'); ?></a>
-		              	<a href="#" onclick="call(); return false;" class="btn btn-info pull-right display-block mright5 call-background"><i class="fa fa-phone"></i><?php echo ' ' . _l('call'); ?></a>
-		              	<a href="#" onclick="sendmail(); return false;" class="btn btn-info pull-right display-block mright5 send_mail-background"><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
+                      	<a href="#" onclick="interview(); return false;" class="btn btn-info float-right display-block mr-1 interview-background"><i class="fa fa-microphone"></i><?php echo ' ' . _l('interview'); ?></a>
+		              	<a href="#" onclick="test(); return false;" class="btn btn-info float-right display-block mr-1 test-background"><i class="fa fa-forward"></i><?php echo ' ' . _l('test'); ?></a>
+		              	<a href="#" onclick="call(); return false;" class="btn btn-info float-right display-block mr-1 call-background"><i class="fa fa-phone"></i><?php echo ' ' . _l('call'); ?></a>
+		              	<a href="#" onclick="sendmail(); return false;" class="btn btn-info float-right display-block mr-1 send_mail-background"><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
 
                     </div>
                     <br>&nbsp;<br/>
                   </li>
                  </ul>
-                  <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-info pull-right display-block mright5" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
+                  <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-info float-right display-block mr-1" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
 
-              	  <a href="#" class="btn btn-warning pull-right mright5" data-toggle="modal" data-target="#candidate_rating"><i class="fa fa-star"></i><?php echo ' ' . _l('rate_candidate'); ?></a>
-              	  <div class="col-md-3 pull-right">
+              	  <a href="#" class="btn btn-warning float-right mr-1" data-toggle="modal" data-target="#candidate_rating"><i class="fa fa-star"></i><?php echo ' ' . _l('rate_candidate'); ?></a>
+              	  <div class="col-md-3 float-right">
               	  <select name="change_status" id="change_status" onchange="change_status_candidate(this,<?php echo html_entity_decode($candidate->id); ?>); return false;" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
 		            <option value=""></option>
 		            <option value="1" class="<?php if ($candidate->status == 1) {echo 'hide';}?>"><?php echo _l('application'); ?></option>
@@ -405,7 +405,7 @@ $inv = explode(',', $li['interviewer']);
 	$ata = '';
 	foreach ($inv as $iv) {
 		$ata .= '<a href="' . admin_url('staff/profile/' . $iv) . '">' . staff_profile_image($iv, [
-			'staff-profile-image-small mright5',
+			'staff-profile-image-small mr-1',
 		], 'small', [
 			'data-toggle' => 'tooltip',
 			'data-title' => get_staff_full_name($iv),
@@ -751,7 +751,7 @@ $count_cr = 1;
 
                   			<p><div class="star-rating">
                   				&nbsp;&nbsp;&nbsp;<?php echo html_entity_decode($count_gr . '.' . $count_cr . '. ' . $cr['criteria_title'] . ' (' . $cr['percent'] . '%)'); ?>
-                  				<div class="pull-right font-size-125">
+                  				<div class="float-right font-size-125">
 			                    <span class="fa fa-star-o margin-top-8" data-rating="1" data-id="<?php echo html_entity_decode($cr['evaluation_criteria']); ?>"></span>
 			                    <span class="fa fa-star-o margin-top-8" data-rating="2" data-id="<?php echo html_entity_decode($cr['evaluation_criteria']); ?>"></span>
 			                    <span class="fa fa-star-o margin-top-8" data-rating="3" data-id="<?php echo html_entity_decode($cr['evaluation_criteria']); ?>"></span>

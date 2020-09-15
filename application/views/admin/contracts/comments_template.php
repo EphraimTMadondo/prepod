@@ -10,15 +10,15 @@
    <?php
       echo staff_profile_image($comment['staffid'], array(
         'staff-profile-image-small',
-        'media-object img-circle pull-left mright10'
+        'media-object img-circle pull-left mr-1'
         ));
         ?>
    </a>
    <?php } ?>
    <?php if ($comment['staffid'] == get_staff_user_id() || is_admin()) { ?>
-   <a href="#" class="pull-right" onclick="remove_contract_comment(<?php echo $comment['id']; ?>); return false;">
+   <a href="#" class="float-right" onclick="remove_contract_comment(<?php echo $comment['id']; ?>); return false;">
    <i class="fa fa-times text-danger"></i>
-   <a href="#" class="pull-right mright5" onclick="toggle_contract_comment_edit(<?php echo $comment['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
+   <a href="#" class="float-right mr-1" onclick="toggle_contract_comment_edit(<?php echo $comment['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
    </a>
    <?php } ?>
    <div class="media-body">

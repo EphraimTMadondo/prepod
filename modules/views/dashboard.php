@@ -12,7 +12,7 @@
         <div class="col-md-6">
          <p class="text-dark text-uppercase bold"><?php echo _l('recruitment_dashboard');?></p>
       </div>
-         <div class="col-md-3 pull-right">
+         <div class="col-md-3 float-right">
          
          </div>
          <br>
@@ -22,7 +22,7 @@
                <a class="text-success mbot15">
                <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('total_campaign'); ?>
                </p>
-                  <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['total']); ?></span>
+                  <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['total']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -36,7 +36,7 @@
                <a class="text mbot15">
                <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('campaign_progress'); ?>
                </p>
-                  <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['inprogress']) ?></span>
+                  <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['inprogress']) ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -56,7 +56,7 @@
                <a class="text-info mbot15">
                <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-envelope"></i> <?php echo _l('campaign_planning'); ?>
                </p>
-                  <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['planning']); ?></span>
+                  <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['planning']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -77,7 +77,7 @@
                      <a class="text-warning mbot15">
                      <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-ok"></i> <?php echo _l('campaign_finish'); ?>
                      </p>
-                        <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['finish']); ?></span>
+                        <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['finish']); ?></span>
                      </a>
                      <div class="clearfix"></div>
                      <div class="progress no-margin progress-bar-mini">
@@ -111,7 +111,7 @@
                <a class="text-success mbot15">
                <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('candidates_need_to_recruit'); ?>
                </p>
-                  <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['candidate_need']); ?></span>
+                  <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['candidate_need']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -125,7 +125,7 @@
                <a class="text mbot15">
                <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('recruited_candidate'); ?>
                </p>
-                  <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['recruited']) ?></span>
+                  <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['recruited']) ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -145,7 +145,7 @@
                <a class="text-info mbot15">
                <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-envelope"></i> <?php echo _l('upcoming_interview'); ?>
                </p>
-                  <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['upcomming_intv']); ?></span>
+                  <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['upcomming_intv']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -160,7 +160,7 @@
                      <a class="text-warning mbot15">
                      <p class="text-uppercase mtop5 minheight35"><i class="hidden-sm glyphicon glyphicon-ok"></i> <?php echo _l('campaign_recruiting'); ?>
                      </p>
-                        <span class="pull-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['recruiting']); ?></span>
+                        <span class="float-right bold no-mtop fontsize24"><?php echo html_entity_decode($cp_count['recruiting']); ?></span>
                      </a>
                      <div class="clearfix"></div>
                      <div class="progress no-margin progress-bar-mini">

@@ -85,7 +85,7 @@
                      <div class="col-md-5ths">
                         <a href="#" id="apply_filters_timesheets" class="btn btn-primary"><?php echo _l('apply'); ?></a>
                      </div>
-                     <div class="mtop10 hide relative pull-right" id="group_by_tasks_wrapper">
+                     <div class="mtop10 hide relative float-right" id="group_by_tasks_wrapper">
                         <span><?php echo _l('group_by_task'); ?></span>
                         <div class="onoffswitch">
                            <input type="checkbox" name="group_by_task" class="onoffswitch-checkbox" id="group_by_task">

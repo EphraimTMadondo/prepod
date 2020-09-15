@@ -17,7 +17,7 @@
           <div class="alert alert-danger text-center"><?php echo _l('staff_profile_inactive_account'); ?></div>
           <hr />
           <?php } ?>
-          <div class="button-group mtop10 pull-right">
+          <div class="button-group mtop10 float-right">
            <?php if(!empty($member->facebook)){ ?>
             <a href="<?php echo html_escape($member->facebook); ?>" target="_blank" class="btn btn-default btn-icon"><i class="fa fa-facebook"></i></a>
             <?php } ?>

@@ -14,7 +14,7 @@
       <?php foreach($invoices_to_merge as $_inv){ ?>
       <p>
          <a href="<?php echo admin_url('invoices/list_invoices/'.$_inv->id); ?>" target="_blank"><?php echo format_invoice_number($_inv->id); ?></a> - <?php echo app_format_money($_inv->total,$_inv->currency_name); ?>
-         <span class="pull-right text-<?php echo get_invoice_status_label($_inv->status); ?>">
+         <span class="float-right text-<?php echo get_invoice_status_label($_inv->status); ?>">
          <?php echo format_invoice_status($_inv->status,'',false); ?>
          </span>
       </p>
@@ -136,7 +136,7 @@
                <div class="visible-xs">
                   <div class="mtop10"></div>
                </div>
-               <div class="pull-right">
+               <div class="float-right">
                   <?php
                      $_tooltip = _l('invoice_sent_to_email_tooltip');
                      $_tooltip_already_send = '';
@@ -234,7 +234,7 @@
                      </ul>
                   </div>
                   <?php if(has_permission('payments','','create') && abs($invoice->total) > 0){ ?>
-                  <a href="#" onclick="record_payment(<?php echo $invoice->id; ?>); return false;"  class="mleft10 pull-right btn btn-success<?php if($invoice->status == Invoices_model::STATUS_PAID || $invoice->status == Invoices_model::STATUS_CANCELLED){echo ' disabled';} ?>">
+                  <a href="#" onclick="record_payment(<?php echo $invoice->id; ?>); return false;"  class="ml-1 float-right btn btn-success<?php if($invoice->status == Invoices_model::STATUS_PAID || $invoice->status == Invoices_model::STATUS_CANCELLED){echo ' disabled';} ?>">
                      <i class="fa fa-plus-square"></i> <?php echo _l('payment'); ?></a>
                   <?php } ?>
                </div>
@@ -274,7 +274,7 @@
                            <td><?php echo _d($credit['date']); ?></td>
                            <td><?php echo app_format_money($credit['amount'], $invoice->currency_name) ?>
                               <?php if(has_permission('credit_notes','','delete')){ ?>
-                              <a href="<?php echo admin_url('credit_notes/delete_invoice_applied_credit/'.$credit['id'].'/'.$credit['credit_id'].'/'.$invoice->id); ?>" class="pull-right text-danger _delete"><i class="fa fa-trash"></i></a>
+                              <a href="<?php echo admin_url('credit_notes/delete_invoice_applied_credit/'.$credit['id'].'/'.$credit['credit_id'].'/'.$invoice->id); ?>" class="float-right text-danger _delete"><i class="fa fa-trash"></i></a>
                               <?php } ?>
                            </td>
                         </tr>
@@ -302,7 +302,7 @@
                   <?php foreach($invoice_recurring_invoices as $recurring){ ?>
                   <li class="list-group-item">
                      <a href="<?php echo admin_url('invoices/list_invoices/'.$recurring->id); ?>" onclick="init_invoice(<?php echo $recurring->id; ?>); return false;" target="_blank"><?php echo format_invoice_number($recurring->id); ?>
-                     <span class="pull-right bold"><?php echo app_format_money($recurring->total, $recurring->currency_name); ?></span>
+                     <span class="float-right bold"><?php echo app_format_money($recurring->total, $recurring->currency_name); ?></span>
                      </a>
                      <br />
                      <span class="inline-block mtop10">
@@ -351,7 +351,7 @@
                            <div class="text">
                               <?php if(is_numeric($activity['staffid']) && $activity['staffid'] != 0){ ?>
                               <a href="<?php echo admin_url('profile/'.$activity["staffid"]); ?>">
-                              <?php echo staff_profile_image($activity['staffid'],array('staff-profile-xs-image pull-left mright5'));
+                              <?php echo staff_profile_image($activity['staffid'],array('staff-profile-xs-image pull-left mr-1'));
                                  ?>
                               </a>
                               <?php } ?>
@@ -383,7 +383,7 @@
                                  }
                                  echo $_formatted_activity;
                                  if(is_admin()){
-                                 echo '<a href="#" class="pull-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="fa fa-remove"></i></a>';
+                                 echo '<a href="#" class="float-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="fa fa-remove"></i></a>';
                                  }
                                  ?>
                            </div>

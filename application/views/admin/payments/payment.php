@@ -33,7 +33,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h4 class="pull-left "><?php echo _l('payment_view_heading'); ?></h4>
-						<div class="pull-right">
+						<div class="float-right">
 							<div class="btn-group">
 
 								<a href="#" data-toggle="modal" data-target="#payment_send_to_client"
@@ -96,10 +96,10 @@
 							<div class="col-md-12 mtop30">
 								<div class="row">
 									<div class="col-md-6">
-										<p><?php echo _l('payment_date'); ?> <span class="pull-right bold"><?php echo _d($payment->date); ?></span></p>
+										<p><?php echo _l('payment_date'); ?> <span class="float-right bold"><?php echo _d($payment->date); ?></span></p>
 										<hr />
 										<p><?php echo _l('payment_view_mode'); ?>
-										<span class="pull-right bold">
+										<span class="float-right bold">
 											<?php echo $payment->name; ?>
 											<?php if(!empty($payment->paymentmethod)){
 												echo ' - ' . $payment->paymentmethod;
@@ -108,7 +108,7 @@
 										</span></p>
 										<?php if(!empty($payment->transactionid)) { ?>
 											<hr />
-											<p><?php echo _l('payment_transaction_id'); ?>: <span class="pull-right bold"><?php echo $payment->transactionid; ?></span></p>
+											<p><?php echo _l('payment_transaction_id'); ?>: <span class="float-right bold"><?php echo $payment->transactionid; ?></span></p>
 										<?php } ?>
 									</div>
 									<div class="clearfix"></div>

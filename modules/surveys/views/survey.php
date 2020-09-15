@@ -100,7 +100,7 @@
                         <!-- Single button -->
                         <a href="<?php echo site_url('survey/'.$survey->surveyid . '/' . $survey->hash); ?>" target="_blank" class="btn btn-success float-right ml-1 btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('survey_list_view_tooltip'); ?>"><i class="bx bx-show"></i></a>
                         <?php if(has_permission('surveys','','edit')){ ?>
-                        <div class="btn-group pull-right">
+                        <div class="btn-group float-right">
                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            <?php echo _l('survey_insert_field'); ?> <span class="caret"></span>
                            </button>
@@ -145,8 +145,8 @@
                              $question_area .= '<input type="hidden" value="" name="order[]">';
                              // used only to identify input key no saved in database
                              $question_area .='<label for="'.$question['questionid'].'" class="control-label display-block">'._l('question_string').'
-                             <a href="#" onclick="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].'); return false;" class="pull-right update-question-button"><i class="bx bx-refresh text-success question_update"></i></a>
-                             <a href="#" onclick="remove_question_from_database(this,'.$question['questionid'].'); return false;" class="pull-right"><i class="bx bx-x text-danger"></i></a>
+                             <a href="#" onclick="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].'); return false;" class="float-right update-question-button"><i class="bx bx-refresh text-success question_update"></i></a>
+                             <a href="#" onclick="remove_question_from_database(this,'.$question['questionid'].'); return false;" class="float-right"><i class="bx bx-x text-danger"></i></a>
                          </label>';
                          $question_area .= '<input type="text" onblur="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].');" data-questionid="'.$question['questionid'].'" class="form-control questionid" value="'.$question['question'].'">';
                          if($question['boxtype'] == 'textarea'){
@@ -203,13 +203,13 @@
                               <div class="customer-groups" style="display:none;">
 
                                  <div class="clearfix"></div>
-                                 <div class="checkbox checkbox-primary mleft10">
+                                 <div class="checkbox checkbox-primary ml-1">
                                     <input type="checkbox" checked name="ml_customers_all" id="ml_customers_all">
                                     <label for="ml_customers_all"><?php echo _l('survey_customers_all'); ?></label>
                                  </div>
                                       <hr class="hr-10" />
                                  <?php foreach($customers_groups as $group){ ?>
-                                 <div class="checkbox checkbox-primary mleft10 survey-customer-groups">
+                                 <div class="checkbox checkbox-primary ml-1 survey-customer-groups">
                                     <input type="checkbox" name="customer_group[<?php echo $group['id']; ?>]" id="ml_customer_group_<?php echo $group['id']; ?>">
                                     <label for="ml_customer_group_<?php echo $group['id']; ?>"><?php echo $group['name']; ?></label>
                                  </div>
@@ -232,14 +232,14 @@
                               </div>
                               <div class="leads-statuses" style="display:none;">
                                  <div class="clearfix"></div>
-                                  <div class="checkbox checkbox-primary mleft10">
+                                  <div class="checkbox checkbox-primary ml-1">
                                     <input type="checkbox" checked name="leads_all" id="ml_leads_all">
                                     <label for="ml_leads_all"><?php echo _l('leads_all'); ?></label>
                                  </div>
                                 <hr class="hr-10" />
 
                                  <?php foreach($leads_statuses as $status){ ?>
-                                 <div class="checkbox checkbox-primary mleft10 survey-lead-status">
+                                 <div class="checkbox checkbox-primary ml-1 survey-lead-status">
                                     <input type="checkbox" name="leads_status[<?php echo $status['id']; ?>]" id="ml_leads_status_<?php echo $status['id']; ?>">
                                     <label for="ml_leads_status_<?php echo $status['id']; ?>"><?php echo $status['name']; ?></label>
                                  </div>

@@ -6,7 +6,7 @@
 <div class="clearfix"></div>
   <div class="content hrm-fullwidth">
         <div class="row">      
-		    <div class="col-md-12 mleft5" id="example">
+		    <div class="col-md-12 ml-1" id="example">
 		            	
 		    </div>
         </div>

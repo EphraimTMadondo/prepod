@@ -5,14 +5,14 @@
   <?php if(get_option('gdpr_data_portability_leads') == '1'){ ?>
     <?php echo form_open($this->uri->uri_string()); ?>
     <?php echo form_hidden('export', true); ?>
-    <button type="submit" class="btn btn-info pull-right"><?php echo _l('dt_button_export'); ?></button>
+    <button type="submit" class="btn btn-info float-right"><?php echo _l('dt_button_export'); ?></button>
     <?php echo form_close(); ?>
   <?php } ?>
   <?php if(get_option('gdpr_lead_enable_right_to_be_forgotten') == '1'){ ?>
-    <a href="#" data-toggle="modal" data-target="#dataRemoval" class="btn btn-info pull-right mright5"><?php echo _l('request_data_removal'); ?></a>
+    <a href="#" data-toggle="modal" data-target="#dataRemoval" class="btn btn-info float-right mr-1"><?php echo _l('request_data_removal'); ?></a>
   <?php } ?>
   <?php if(get_option('gdpr_enable_consent_for_leads') == '1'){ ?>
-    <a href="<?php echo lead_consent_url($lead->id); ?>" class="btn btn-success pull-right mright5" target="_blank">
+    <a href="<?php echo lead_consent_url($lead->id); ?>" class="btn btn-success float-right mr-1" target="_blank">
       <?php echo _l('gdpr_consent'); ?>
     </a>
   <?php } ?>

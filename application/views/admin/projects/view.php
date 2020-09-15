@@ -23,7 +23,7 @@
                         <div class="visible-xs">
                            <div class="clearfix"></div>
                         </div>
-                        <?php echo '<div class="label pull-left mleft15 mtop8 p8 project-status-label-'.$project->status.'" style="background:'.$project_status['color'].'">'.$project_status['name'].'</div>'; ?>
+                        <?php echo '<div class="label pull-left ml-1 mtop8 p8 project-status-label-'.$project->status.'" style="background:'.$project_status['color'].'">'.$project_status['name'].'</div>'; ?>
                      </div>
                      <div class="col-md-5 text-right">
                         <?php if(has_permission('tasks','','create')){ ?>

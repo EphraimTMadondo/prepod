@@ -31,7 +31,7 @@ foreach ($rResult as $aRow) {
 
         if($aColumns[$i] == 'candidate_name'){
             $name = '<a href="' . admin_url('recruitment/candidate/' . $aRow['id']) . '">'.candidate_profile_image($aRow['id'],[
-                    'staff-profile-image-small mright5',
+                    'staff-profile-image-small mr-1',
                     ], 'small').'</a>';
 
             $name .= '<a href="' . admin_url('recruitment/candidate/' . $aRow['id'] ).'" >' . $aRow['candidate_name'] . '</a>';

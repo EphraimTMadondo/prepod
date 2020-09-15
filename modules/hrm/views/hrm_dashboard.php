@@ -21,7 +21,7 @@
         <div class="col-md-6">
          <p class="text-dark text-uppercase bold"><?php echo _l('hrm_dashboard');?></p>
       </div>
-         <div class="col-md-3 pull-right">
+         <div class="col-md-3 float-right">
          
          </div>
          <br>
@@ -31,7 +31,7 @@
                <a class="text-success mbot15">
                <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('total_staff'); ?>
                </p>
-                  <span class="pull-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['total_staff']); ?></span>
+                  <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['total_staff']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -45,7 +45,7 @@
                <a class="text mbot15">
                <p class="text-uppercase mtop5 hrm-colorpurple hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('new_staff_for_month'); ?>
                </p>
-                  <span class="pull-right bold no-mtop hrm-colorpurple hrm-fontsize24"><?php echo htmlspecialchars($data_dash['new_staff_in_month']); ?></span>
+                  <span class="float-right bold no-mtop hrm-colorpurple hrm-fontsize24"><?php echo htmlspecialchars($data_dash['new_staff_in_month']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -59,7 +59,7 @@
                <a class="text-info mbot15">
                <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-envelope"></i> <?php echo _l('working'); ?>
                </p>
-                  <span class="pull-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['staff_working']); ?></span>
+                  <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['staff_working']); ?></span>
                </a>
                <div class="clearfix"></div>
                <div class="progress no-margin progress-bar-mini">
@@ -74,7 +74,7 @@
                   <a class="text-danger mbot15">
                   <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('overdue_contract'); ?>
                   </p>
-                     <span class="pull-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['overdue_contract']); ?></span>
+                     <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['overdue_contract']); ?></span>
                   </a>
                   <div class="clearfix"></div>
                   <div class="progress no-margin progress-bar-mini">
@@ -88,7 +88,7 @@
                   <a class="text-muted  mbot15">
                   <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('contract_is_about_to_expire'); ?>
                   </p>
-                     <span class="pull-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['expire_contract']); ?></span>
+                     <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['expire_contract']); ?></span>
                   </a>
                   <div class="clearfix"></div>
                   <div class="progress no-margin progress-bar-mini">

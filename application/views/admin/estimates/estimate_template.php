@@ -281,10 +281,10 @@
             <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>
             <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
             <div class="btn-bottom-toolbar text-right">
-              <button type="button" class="btn-tr btn btn-info mleft10 estimate-form-submit save-and-send transaction-submit">
+              <button type="button" class="btn-tr btn btn-info ml-1 estimate-form-submit save-and-send transaction-submit">
               <?php echo _l('save_and_send'); ?>
               </button>
-              <button type="button" class="btn-tr btn btn-info mleft10 estimate-form-submit transaction-submit">
+              <button type="button" class="btn-tr btn btn-info ml-1 estimate-form-submit transaction-submit">
               <?php echo _l('submit'); ?>
               </button>
             </div>

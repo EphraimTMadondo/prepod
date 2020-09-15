@@ -11,15 +11,15 @@
             <div class="card-body">
                <div class="_buttons">
                   <?php if($has_permission_create){ ?>
-                  <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-info mright5"><?php echo _l('kb_article_new_article'); ?></a>
+                  <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-info mr-1"><?php echo _l('kb_article_new_article'); ?></a>
                   <?php } ?>
                   <?php if($has_permission_edit || $has_permission_create){ ?>
-                  <a href="<?php echo admin_url('knowledge_base/manage_groups'); ?>" class="btn btn-info mright5"><?php echo _l('als_kb_groups'); ?></a>
+                  <a href="<?php echo admin_url('knowledge_base/manage_groups'); ?>" class="btn btn-info mr-1"><?php echo _l('als_kb_groups'); ?></a>
                   <?php } ?>
                   <a href="#" class="btn btn-default hidden-xs toggle-articles-list" onclick="initKnowledgeBaseTableArticles(); return false;">
                   <i class="fa fa-th-list"></i>
                   </a>
-                  <div class="btn-group pull-right mleft4 btn-with-tooltip-group _filter_data hide" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                  <div class="btn-group float-right mleft4 btn-with-tooltip-group _filter_data hide" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <i class="fa fa-filter" aria-hidden="true"></i>
                      </button>
@@ -79,7 +79,7 @@
                                        <?php if($has_permission_edit){ ?>
                                            <a href="#"
                                            onclick="return false;"
-                                           class="pull-right color-white kanban-color-picker"
+                                           class="float-right color-white kanban-color-picker"
                                            data-placement="bottom"
                                            data-toggle="popover"
                                            data-content="<div class='kan-ban-settings cpicker-wrapper'><?php echo $kanban_colors; ?></div>"
@@ -112,13 +112,13 @@
                                                     </a>
                                                    <?php } ?>
                                                    <?php if($has_permission_edit){ ?>
-                                                   <a href="<?php echo admin_url('knowledge_base/article/'.$article['articleid']); ?>" target="_blank" class="pull-right"><span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></a>
+                                                   <a href="<?php echo admin_url('knowledge_base/article/'.$article['articleid']); ?>" target="_blank" class="float-right"><span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></a>
                                                    <?php } ?>
                                                    <div class="clearfix"></div>
                                                    <hr class="hr-10" />
                                                    <p class="pull-left no-mbot"><small><?php echo _l('article_total_views'); ?>: <?php echo $article['total_views']; ?></small></p>
                                                    <?php if($article['staff_article'] == 1){ ?>
-                                                   <span class="label label-default pull-right"><?php echo _l('internal_article'); ?></span>
+                                                   <span class="label label-default float-right"><?php echo _l('internal_article'); ?></span>
                                                    <?php } ?>
                                                 </div>
                                              </li>

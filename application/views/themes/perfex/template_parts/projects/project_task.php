@@ -47,7 +47,7 @@
                <?php } ?>
             </div>
             <div class="col-md-3">
-               <span class="task-single-status pull-right mright5 mtop15"><?php echo format_task_status($view_task->status); ?></span>
+               <span class="task-single-status float-right mr-1 mtop15"><?php echo format_task_status($view_task->status); ?></span>
             </div>
          </div>
          <?php if($project->settings->view_team_members == 1){ ?>
@@ -62,7 +62,7 @@
                   $_assignees = '';
                   foreach ($view_task->assignees as $assignee) {
                     $_assignees .= '
-                    <div data-toggle="tooltip" class="pull-left mleft5 task-user" data-title="'.get_staff_full_name($assignee['assigneeid']).'">'
+                    <div data-toggle="tooltip" class="pull-left ml-1 task-user" data-title="'.get_staff_full_name($assignee['assigneeid']).'">'
                     .staff_profile_image($assignee['assigneeid'], array(
                       'staff-profile-image-small'
                     )) .'</div>';
@@ -129,7 +129,7 @@
                      <?php if($i > $show_more_link_task_attachments){echo 'style="display:none;"';} ?>>
                      <ul class="list-unstyled">
                         <li class="mbot10 task-attachment">
-                           <div class="mbot10 pull-right task-attachment-user">
+                           <div class="mbot10 float-right task-attachment-user">
                               <?php
                                  echo _l('project_file_uploaded_by') . ' ' . (
                                     $attachment['staffid'] != 0
@@ -138,7 +138,7 @@
                                  );
                                  ?>
                               <?php if(get_option('allow_contact_to_delete_files') == 1 && $attachment['contact_id'] == get_contact_user_id()){ ?>
-                              <a href="<?php echo site_url('clients/delete_file/'.$attachment['id'].'/task?project_id='.$project->id); ?>" class="text-danger _delete pull-right"><i class="fa fa-remove"></i></a>
+                              <a href="<?php echo site_url('clients/delete_file/'.$attachment['id'].'/task?project_id='.$project->id); ?>" class="text-danger _delete float-right"><i class="fa fa-remove"></i></a>
                               <?php } ?>
                            </div>
                            <?php
@@ -238,7 +238,7 @@
             echo form_hidden('taskid',$view_task->id);
             ?>
          <textarea name="content" rows="5" class="form-control mtop15"></textarea>
-         <button type="submit" class="btn btn-info mtop10 pull-right" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off"><?php echo _l('task_single_add_new_comment'); ?></button>
+         <button type="submit" class="btn btn-info mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off"><?php echo _l('task_single_add_new_comment'); ?></button>
          <div class="clearfix"></div>
          <?php echo form_close(); } ?>
          <?php
@@ -249,10 +249,10 @@
             <?php if($comment['staffid'] != 0){ ?>
             <?php echo staff_profile_image($comment['staffid'], array(
                'staff-profile-image-small',
-               'media-object img-circle pull-left mright10'
+               'media-object img-circle pull-left mr-1'
                )); ?>
             <?php } else { ?>
-            <img src="<?php echo contact_profile_image_url($comment['contact_id']); ?>" class="client-profile-image-small media-object img-circle pull-left mright10">
+            <img src="<?php echo contact_profile_image_url($comment['contact_id']); ?>" class="client-profile-image-small media-object img-circle pull-left mr-1">
             <?php } ?>
             <div class="media-body">
                <?php if($comment['staffid'] != 0){ ?>
@@ -268,18 +268,18 @@
                   $comment_added = strtotime($comment['dateadded']);
                   $minus_1_hour = strtotime('-1 hours');
                   if(get_option('client_staff_add_edit_delete_task_comments_first_hour') == 0 || (get_option('client_staff_add_edit_delete_task_comments_first_hour') == 1 && $comment_added >= $minus_1_hour)){ ?>
-               <a href="#" onclick="remove_task_comment(<?php echo $comment['id']; ?>); return false;" class="pull-right">
+               <a href="#" onclick="remove_task_comment(<?php echo $comment['id']; ?>); return false;" class="float-right">
                <i class="fa fa-times text-danger"></i>
                </a>
-               <a href="#" onclick="edit_task_comment(<?php echo $comment['id']; ?>); return false;" class="pull-right mright5">
+               <a href="#" onclick="edit_task_comment(<?php echo $comment['id']; ?>); return false;" class="float-right mr-1">
                <i class="fa fa-pencil-square-o"></i>
                </a>
                <div data-edit-comment="<?php echo $comment['id']; ?>" class="hide">
                   <textarea rows="5" class="form-control mtop10 mbot10"><?php echo clear_textarea_breaks($comment['content']); ?></textarea>
-                  <button type="button" class="btn btn-info pull-right" onclick="save_edited_comment(<?php echo $comment['id']; ?>)">
+                  <button type="button" class="btn btn-info float-right" onclick="save_edited_comment(<?php echo $comment['id']; ?>)">
                   <?php echo _l('submit'); ?>
                   </button>
-                  <button type="button" class="btn btn-default pull-right mright5" onclick="cancel_edit_comment(<?php echo $comment['id']; ?>)">
+                  <button type="button" class="btn btn-default float-right mr-1" onclick="cancel_edit_comment(<?php echo $comment['id']; ?>)">
                   <?php echo _l('cancel'); ?>
                   </button>
                </div>

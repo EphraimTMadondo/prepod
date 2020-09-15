@@ -14,8 +14,8 @@
                   </div>
                   <a href="<?php echo admin_url('recruitment/add_edit_recruitment_channel'); ?>" class="btn btn-primary"><?php echo _l('new'); ?></a>
 
-                  <div class="col-md-1 pull-right">
-                      <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_campaign('.campaign_sm','#campaign_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
+                  <div class="col-md-1 float-right">
+                      <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_campaign('.campaign_sm','#campaign_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
                   </div>
                     <br><br><br>
                   <?php render_datatable(array(

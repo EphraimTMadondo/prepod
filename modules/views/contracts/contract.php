@@ -109,7 +109,7 @@
                
                 <div class="btn-bottom-toolbar text-right">
                   
-                  <button type="button" class="btn-tr save_detail btn btn-info mleft10 estimate-form-submit transaction-submit">
+                  <button type="button" class="btn-tr save_detail btn btn-info ml-1 estimate-form-submit transaction-submit">
                   <?php echo _l('submit'); ?>
                   </button>
                 </div>
@@ -159,7 +159,7 @@
                          </ul>
                       </div>
                       <?php if($contract->signed_status == 'not_signed') { ?>
-                      <button onclick="accept_action();" class="btn btn-success pull-right action-button mleft5"><?php echo _l('e_signature_sign'); ?></button> 
+                      <button onclick="accept_action();" class="btn btn-success float-right action-button ml-1"><?php echo _l('e_signature_sign'); ?></button> 
                       <?php }elseif($contract->signed_status == 'signed'){ ?>
                         <span class="btn success-bg content-view-status contract-html-is-signed" ><?php echo _l('signed'); ?></span>
                       <?php } ?>
@@ -180,7 +180,7 @@
                               <p class="bold"><?php echo _l('document_signature_text'); ?>
                                 
                               </p>
-                              <div class="pull-right">
+                              <div class="float-right">
                                  <img src="<?php echo site_url(PURCHASE_PATH.'contract_sign/'.$contract->id.'/signature.png'); ?>" class="img-responsive" alt="">
                               </div>
                            </div>

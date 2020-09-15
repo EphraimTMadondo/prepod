@@ -21,17 +21,17 @@
                   <div class="clearfix"></div>
                </div>
                <?php if($contract->signed == 0 && $contract->marked_as_signed == 0) { ?>
-               <button type="submit" id="accept_action" class="btn btn-success pull-right action-button"><?php echo _l('e_signature_sign'); ?></button>
+               <button type="submit" id="accept_action" class="btn btn-success float-right action-button"><?php echo _l('e_signature_sign'); ?></button>
                <?php } else { ?>
                <span class="success-bg content-view-status contract-html-is-signed"><?php echo _l('is_signed'); ?></span>
                <?php } ?>
                <?php echo form_open($this->uri->uri_string()); ?>
-               <button type="submit" class="btn btn-default pull-right action-button mright5 contract-html-pdf">
+               <button type="submit" class="btn btn-default float-right action-button mr-1 contract-html-pdf">
                <i class="fa fa-file-pdf-o"></i> <?php echo _l('clients_invoice_html_btn_download'); ?></button>
                <?php echo form_hidden('action','contract_pdf'); ?>
                <?php echo form_close(); ?>
                <?php if(is_client_logged_in() && has_contact_permission('contracts')){ ?>
-               <a href="<?php echo site_url('clients/contracts/'); ?>" class="btn btn-default mright5 pull-right action-button go-to-portal">
+               <a href="<?php echo site_url('clients/contracts/'); ?>" class="btn btn-default mr-1 float-right action-button go-to-portal">
                <?php echo _l('client_go_to_dashboard'); ?>
                </a>
                <?php } ?>
@@ -135,7 +135,7 @@
                <?php echo form_open($this->uri->uri_string()) ;?>
                <div class="contract-comment">
                   <textarea name="content" rows="4" class="form-control"></textarea>
-                  <button type="submit" class="btn btn-info mtop10 pull-right" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('proposal_add_comment'); ?></button>
+                  <button type="submit" class="btn btn-info mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('proposal_add_comment'); ?></button>
                   <?php echo form_hidden('action','contract_comment'); ?>
                </div>
                <?php echo form_close(); ?>
@@ -147,7 +147,7 @@
                    if($comment['staffid'] != 0){
                     $comment_html .= staff_profile_image($comment['staffid'], array(
                      'staff-profile-image-small',
-                     'media-object img-circle pull-left mright10'
+                     'media-object img-circle pull-left mr-1'
                   ));
                   }
                   $comment_html .= '<div class="media-body valign-middle">';

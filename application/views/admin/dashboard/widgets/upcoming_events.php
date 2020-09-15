@@ -12,7 +12,7 @@
          <div class="event padding-5">
             <span class="text-dark pull-left"><i class="fa fa-calendar-check-o"></i> <?php echo _dt($event['start']); ?></span>
             <?php if($event['public'] == 1) { ?>
-            <span class="text-success pull-right"><?php echo _l('home_public_event'); ?></span>
+            <span class="text-success float-right"><?php echo _l('home_public_event'); ?></span>
             <?php } ?>
             <div class="clearfix"></div>
             <p class="event-title"><a href="#" onclick="view_event(<?php echo $event['eventid']; ?>); return false;"><?php echo $event['title']; ?></a></p>

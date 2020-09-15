@@ -155,7 +155,7 @@
       notifications += '</div>';
       notifications += '<small class="text-muted text-right text-has-action" data-placement="right" data-toggle="tooltip" data-title="'+obj.full_date+'">' + obj.date + '</small>';
       if(obj.isread_inline == 0){
-       notifications += '<a href="#" class="text-muted pull-right not-mark-as-read-inline notification-profile" onclick="set_notification_read_inline('+obj.id+')" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('mark_as_read'); ?>"><small><i class="fa fa-circle-thin" aria-hidden="true"></i></a></small>';
+       notifications += '<a href="#" class="text-muted float-right not-mark-as-read-inline notification-profile" onclick="set_notification_read_inline('+obj.id+')" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('mark_as_read'); ?>"><small><i class="fa fa-circle-thin" aria-hidden="true"></i></a></small>';
       }
       notifications += '</div>';
       notifications += '</div>';

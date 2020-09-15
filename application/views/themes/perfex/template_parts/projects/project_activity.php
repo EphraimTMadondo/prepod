@@ -9,9 +9,9 @@
             <?php
             $fullname = $activity['fullname'];
             if($activity['staff_id'] != 0){ ?>
-            <?php echo staff_profile_image($activity['staff_id'],array('staff-profile-image-small','pull-left mright10')); ?>
+            <?php echo staff_profile_image($activity['staff_id'],array('staff-profile-image-small','pull-left mr-1')); ?>
             <?php } else if($activity['contact_id'] != 0){ ?>
-            <img src="<?php echo contact_profile_image_url($activity['contact_id']); ?>" class="client-profile-image-small pull-left mright10">
+            <img src="<?php echo contact_profile_image_url($activity['contact_id']); ?>" class="client-profile-image-small pull-left mr-1">
             <?php } ?>
             <div class="media-body">
                 <div class="display-block">

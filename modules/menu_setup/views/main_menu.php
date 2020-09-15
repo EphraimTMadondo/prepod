@@ -24,7 +24,7 @@
                      <li class="dd-item dd3-item main<?php echo (!isset($item['collapse']) ? ' dd-nochildren' : ''); ?>" data-id="<?php echo $item['slug']; ?>"<?php if($disabled){echo '  style="opacity:0.5"'; }?>>
                         <div class="dd-handle dd3-handle"></div>
                         <div class="dd3-content"><?php echo _l($item['name'],'', false); ?>
-                           <a href="#" class="text-muted toggle-menu-options main-item-options pull-right"><i class="fa fa-cog"></i></a>
+                           <a href="#" class="text-muted toggle-menu-options main-item-options float-right"><i class="fa fa-cog"></i></a>
                         </div>
                         <div class="menu-options main-item-options" style="display:none;" data-menu-options="<?php echo $item['slug']; ?>">
                            <?php if(!isset($item['collapse'])){ ?>
@@ -58,7 +58,7 @@
                            <li class="dd-item dd3-item sub-items" data-id="<?php echo $submenu['slug']; ?>"<?php if($child_disabled){echo '  style="opacity:0.5"'; }?>>
                               <div class="dd-handle dd3-handle"></div>
                               <div class="dd3-content"><?php echo _l($submenu['name'],'', false); ?>
-                                 <a href="#" class="text-muted toggle-menu-options sub-item-options pull-right"><i class="fa fa-cog"></i></a>
+                                 <a href="#" class="text-muted toggle-menu-options sub-item-options float-right"><i class="fa fa-cog"></i></a>
                               </div>
                               <div class="menu-options sub-item-options" style="display:none;" data-menu-options="<?php echo $submenu['slug']; ?>">
                                  <div class="form-group">

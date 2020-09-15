@@ -11,7 +11,7 @@
                </h4>
                <hr class="hr-panel-heading" />
                <?php if(isset($role)){ ?>
-               <a href="<?php echo admin_url('roles/role'); ?>" class="btn btn-success pull-right mbot20 display-block"><?php echo _l('new_role'); ?></a>
+               <a href="<?php echo admin_url('roles/role'); ?>" class="btn btn-success float-right mbot20 display-block"><?php echo _l('new_role'); ?></a>
                <div class="clearfix"></div>
                <?php } ?>
                <?php echo form_open($this->uri->uri_string()); ?>
@@ -34,7 +34,7 @@
                   $this->load->view('admin/staff/permissions', $permissionsData);
                ?>
                <hr />
-                  <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+                  <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
                   <?php echo form_close(); ?>
             </div>
          </div>

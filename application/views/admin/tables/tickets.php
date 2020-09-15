@@ -152,7 +152,7 @@ foreach ($rResult as $aRow) {
             // Ticket is assigned
             if ($aRow['assigned'] != 0) {
                 if ($aColumns[$i] != 'ticketid') {
-                    $_data .= '<a href="' . admin_url('profile/' . $aRow['assigned']) . '" data-toggle="tooltip" title="' . get_staff_full_name($aRow['assigned']) . '" class="pull-left mright5">' . staff_profile_image($aRow['assigned'], [
+                    $_data .= '<a href="' . admin_url('profile/' . $aRow['assigned']) . '" data-toggle="tooltip" title="' . get_staff_full_name($aRow['assigned']) . '" class="pull-left mr-1">' . staff_profile_image($aRow['assigned'], [
                         'staff-profile-image-xs',
                         ]) . '</a>';
                 }

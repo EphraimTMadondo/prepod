@@ -2,7 +2,7 @@
 <?php if($project->settings->view_tasks == 1){ ?>
 <!-- Project Tasks -->
 <?php if(!isset($view_task)) { ?>
-<div class="pull-right tasks-table<?php if($project->settings->view_milestones == 1){echo ' hide';} ?>">
+<div class="float-right tasks-table<?php if($project->settings->view_milestones == 1){echo ' hide';} ?>">
    <select class="selectpicker" name="tasksFilterByStatus[]" onchange="dt_custom_view('.table-tasks', 3, $(this).selectpicker('val'));" multiple="true" data-none-selected-text="<?php echo _l('filter_by'); ?>">
       <?php foreach($tasks_statuses as $status) { ?>
       <option value="<?php echo $status['name']; ?>"><?php echo $status['name']; ?></option>
@@ -66,7 +66,7 @@
                <div class="media-body">
                   <a href="<?php echo site_url('clients/project/'.$project->id.'?group=project_tasks&taskid='.$task['id']); ?>" class="task_milestone pull-left<?php if($task['status'] == Tasks_model::STATUS_COMPLETE){echo ' line-throught text-muted';} ?>"><?php echo $task['name']; ?></a>
                   <?php if($project->settings->edit_tasks == 1 && $task['is_added_from_contact'] == 1 && $task['addedfrom'] == get_contact_user_id()){ ?>
-                  <a href="<?php echo site_url('clients/project/'.$project->id.'?group=edit_task&taskid='.$task['id']); ?>" class="pull-right">
+                  <a href="<?php echo site_url('clients/project/'.$project->id.'?group=edit_task&taskid='.$task['id']); ?>" class="float-right">
                   <small><i class="fa fa-pencil-square-o"></i></small>
                   </a>
                   <?php } ?>

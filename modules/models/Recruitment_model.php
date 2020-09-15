@@ -1538,7 +1538,7 @@ class Recruitment_model extends App_Model {
                                 <br>
                               <div class="row " >
 
-                                <div class="col-md-11 new-kpi-al pull-right margin-left-right-20-0">';
+                                <div class="col-md-11 new-kpi-al float-right margin-left-right-20-0">';
 			$count_criter = 0;
 			foreach ($list_criter as $li) {
 				$l_i = 'fa-plus';

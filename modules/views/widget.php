@@ -25,7 +25,7 @@ if (is_staff_member()) {
                            <br />
                            <small><?php echo $goal['subject']; ?></small>
                         </h4>
-                        <h4 class="pull-right bold no-mtop text-success text-right">
+                        <h4 class="float-right bold no-mtop text-success text-right">
                            <?php echo $goal['achievement']['total']; ?>
                            <br />
                            <small><?php echo _l('goal_achievement'); ?></small>
@@ -36,7 +36,7 @@ if (is_staff_member()) {
                            </div>
                         </div>
                         <p class="text-muted pull-left mtop5"><?php echo _l('goal_progress'); ?></p>
-                        <p class="text-muted pull-right mtop5"><?php echo $goal['achievement']['percent']; ?>%</p>
+                        <p class="text-muted float-right mtop5"><?php echo $goal['achievement']['percent']; ?>%</p>
                      </div>
                   <?php } ?>
                </div>

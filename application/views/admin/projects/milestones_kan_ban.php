@@ -50,7 +50,7 @@ foreach ($milestones as $milestone) {
       <?php } ?>
     </span>
     <?php if ($milestone['id'] != 0 && (has_permission('tasks', '', 'create') || has_permission('projects', '', 'create'))) { ?>
-      <a href="#" onclick="return false;" class="pull-right text-dark" data-placement="bottom" data-toggle="popover" data-content="
+      <a href="#" onclick="return false;" class="float-right text-dark" data-placement="bottom" data-toggle="popover" data-content="
       <div class='text-center'><?php if (has_permission('tasks', '', 'create')) {
         ?><button type='button' return false;' class='btn btn-success btn-block mtop10 new-task-to-milestone'>
          <?php echo _l('new_task'); ?>

@@ -8,7 +8,7 @@
       <?php echo _l('download_all'); ?>
     </a>
   </div>
-  <div class="pull-right mbot20">
+  <div class="float-right mbot20">
    <button class="gpicker" data-on-pick="projectFileGoogleDriveSave">
     <i class="fa fa-google" aria-hidden="true"></i>
     <?php echo _l('choose_from_google_drive'); ?>

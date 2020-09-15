@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="card mbot10">
                 <div class="card-body _buttons">
-                    <a href="<?php echo admin_url('call_logs'); ?>" class="btn btn-default pull-left mleft5">
+                    <a href="<?php echo admin_url('call_logs'); ?>" class="btn btn-default pull-left ml-1">
                         <?php echo _l('go_back'); ?>
                     </a>
                 </div>

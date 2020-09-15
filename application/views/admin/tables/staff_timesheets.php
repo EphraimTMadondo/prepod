@@ -295,7 +295,7 @@ foreach ($rResult as $aRow) {
 
     $status = get_task_status_by_id($aRow['status']);
 
-    $taskName .= '<span class="hidden"> - </span><span class="inline-block pull-right mright5 label" style="border:1px solid ' . $status['color'] . ';color:' . $status['color'] . '" task-status-table="' . $aRow['status'] . '">' . $status['name'] . '</span>';
+    $taskName .= '<span class="hidden"> - </span><span class="inline-block float-right mr-1 label" style="border:1px solid ' . $status['color'] . ';color:' . $status['color'] . '" task-status-table="' . $aRow['status'] . '">' . $status['name'] . '</span>';
 
     $row[] = $taskName;
 

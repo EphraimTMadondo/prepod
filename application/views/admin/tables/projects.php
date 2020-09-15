@@ -126,7 +126,7 @@ foreach ($rResult as $aRow) {
             $member_id   = $members_ids[$key];
             $membersOutput .= '<a href="' . admin_url('profile/' . $member_id) . '">' .
             staff_profile_image($member_id, [
-                'staff-profile-image-small mright5',
+                'staff-profile-image-small mr-1',
                 ], 'small', [
                 'data-toggle' => 'tooltip',
                 'data-title'  => $member,

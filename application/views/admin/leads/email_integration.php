@@ -10,7 +10,7 @@
                <div class="card-body">
                   <?php hooks()->do_action('before_leads_email_integration_form'); ?>
                   <h4 class="pull-left"><?php echo $title; ?></h4>
-                  <a href="<?php echo admin_url('spam_filters/view/leads'); ?>" class="btn btn-info btn-xs pull-right">
+                  <a href="<?php echo admin_url('spam_filters/view/leads'); ?>" class="btn btn-info btn-xs float-right">
                   <?php echo _l('spam_filters'); ?>
                   </a>
                   <div class="clearfix"></div>

@@ -12,7 +12,7 @@
                     </div>
                   </div>
                   <a href="<?php echo admin_url('recruitment/candidates'); ?>" class="btn btn-primary"><?php echo _l('new_candidate'); ?></a>
-                  <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-success pull-left display-block mleft5" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
+                  <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-success pull-left display-block ml-1" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
                     <br><br><br>
                   <?php render_datatable(array(
 	_l('candidate_code'),

@@ -44,7 +44,7 @@ $inv = explode(',', $intv_sch->interviewer);
 $ata = '';
 foreach ($inv as $iv) {
 	$ata .= '<a href="' . admin_url('staff/profile/' . $iv) . '">' . staff_profile_image($iv, [
-		'staff-profile-image-small mright5',
+		'staff-profile-image-small mr-1',
 	], 'small', [
 		'data-toggle' => 'tooltip',
 		'data-title' => get_staff_full_name($iv),
@@ -67,7 +67,7 @@ echo html_entity_decode($ata);
                   <div class="thumbnail">
                     <div class="caption" onclick="location.href='<?php echo admin_url('recruitment/candidate/' . $cd['candidate']) ?>'">
 
-                      <h4 id="thumbnail-label"><?php echo candidate_profile_image($cd['candidate'], ['staff-profile-image-small mright5'], 'small') . ' #' . $cd['candidate_code'] . ' - ' . $cd['candidate_name']; ?></h4>
+                      <h4 id="thumbnail-label"><?php echo candidate_profile_image($cd['candidate'], ['staff-profile-image-small mr-1'], 'small') . ' #' . $cd['candidate_code'] . ' - ' . $cd['candidate_name']; ?></h4>
 
                       <p><?php echo _l('email') . ': ' . $cd['email']; ?></p>
 

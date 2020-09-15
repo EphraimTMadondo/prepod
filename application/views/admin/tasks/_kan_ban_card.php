@@ -14,14 +14,14 @@
      </div>
      <div class="col-md-6 text-right text-muted">
       <?php if($task['total_checklist_items'] > 0){ ?>
-        <span class="mright5 inline-block text-muted" data-toggle="tooltip" data-title="<?php echo _l('task_checklist_items'); ?>">
+        <span class="mr-1 inline-block text-muted" data-toggle="tooltip" data-title="<?php echo _l('task_checklist_items'); ?>">
           <i class="fa fa-check-square-o" aria-hidden="true"></i>
           <?php echo $task['total_finished_checklist_items']; ?>
           /
           <?php echo $task['total_checklist_items']; ?>
         </span>
       <?php } ?>
-      <span class="mright5 inline-block text-muted" data-toggle="tooltip" data-title="<?php echo _l('task_comments'); ?>">
+      <span class="mr-1 inline-block text-muted" data-toggle="tooltip" data-title="<?php echo _l('task_comments'); ?>">
         <i class="fa fa-comments"></i> <?php echo $task['total_comments']; ?>
       </span>
       <span class="inline-block text-muted" data-toggle="tooltip" data-title="<?php echo _l('task_view_attachments'); ?>">

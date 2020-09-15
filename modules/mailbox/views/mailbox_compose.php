@@ -44,7 +44,7 @@
       <a href="<?php echo admin_url().'mailbox';?>" class="btn btn-warning close-send-template-modal"><?php echo _l('cancel'); ?></a>       
     </div>
 
-    <div class="pull-right">   
+    <div class="float-right">   
       <?php if(!isset($mail)){?>   
       <button type="submit" name="sendmail" value="draft" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-primary">
         <i class="fa fa-file-o menu-icon"></i> <?php echo _l('mailbox_save_draft'); ?></button>

@@ -20,7 +20,7 @@
 $curent_user = get_staff_user_id();
 if ((in_array($curent_user, $manager) || $curent_user == $campaigns->cp_add_from)) {
 	?>
-        <div class="col-md-3 pull-right">
+        <div class="col-md-3 float-right">
          <select name="change_status" id="change_status" onchange="change_status_campaign(this,<?php echo html_entity_decode($campaigns->cp_id); ?>); return false;" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
             <option value=""></option>
             <option value="1" class="<?php if ($campaigns->cp_status == 1) {echo 'hide';}?>"><?php echo _l('planning'); ?></option>
@@ -70,7 +70,7 @@ foreach ($manager as $f) {
 	?>
                     <a href="<?php echo admin_url('profile/' . $f); ?>">
                         <?php echo staff_profile_image($f, [
-		'staff-profile-image-small mright5',
+		'staff-profile-image-small mr-1',
 	], 'small', [
 		'data-toggle' => 'tooltip',
 		'data-title' => get_staff_full_name($f),
@@ -136,7 +136,7 @@ foreach ($follows as $f) {
 	?>
                     <a href="<?php echo admin_url('profile/' . $f); ?>">
                         <?php echo staff_profile_image($f, [
-		'staff-profile-image-small mright5',
+		'staff-profile-image-small mr-1',
 	], 'small', [
 		'data-toggle' => 'tooltip',
 		'data-title' => get_staff_full_name($f),

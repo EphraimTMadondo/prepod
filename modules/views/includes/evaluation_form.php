@@ -20,7 +20,7 @@
  <tbody>
     <?php foreach ($list_form as $lf) {?>
     	<tr>
-    		<td><a href="<?php echo admin_url('staff/profile/' . $lf['add_from']); ?>" ><?php echo staff_profile_image($lf['add_from'], ['staff-profile-image-small mright5'], 'small') . get_staff_full_name($lf['add_from']); ?></td>
+    		<td><a href="<?php echo admin_url('staff/profile/' . $lf['add_from']); ?>" ><?php echo staff_profile_image($lf['add_from'], ['staff-profile-image-small mr-1'], 'small') . get_staff_full_name($lf['add_from']); ?></td>
     		<td><?php echo html_entity_decode($lf['form_name']); ?></td>
     		<td><?php if (get_rec_position_name($lf['position']) != '') {echo get_rec_position_name($lf['position']);} else {echo _l('all');}?></td>
     		<td><?php echo count_criteria($lf['form_id']); ?></td>
@@ -97,7 +97,7 @@ echo render_input('form_name', '<span class="text-danger">* </span>' . _l('form_
 								<br>
 	                          <div class="row " >
 
-	                            <div class="col-md-11 new-kpi-al pull-right padding-left-right-20-0">
+	                            <div class="col-md-11 new-kpi-al float-right padding-left-right-20-0">
 	                              <div id ="new_kpi" class="row paddig-top-height-0-75">
 
 	                                <div class="col-md-7 padding-right-0">

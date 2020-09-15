@@ -22,16 +22,16 @@
                         </h4>
                         <hr class="hr-10" />
                         <p>
-                            <?php echo _l('clients_ticket_single_department', '<span class="pull-right bold">'.$ticket->department_name.'</span>'); ?>
+                            <?php echo _l('clients_ticket_single_department', '<span class="float-right bold">'.$ticket->department_name.'</span>'); ?>
                         </p>
                         <hr class="hr-10" />
                         <p>
-                            <?php echo _l('clients_ticket_single_submitted','<span class="pull-right bold">'._dt($ticket->date).'</span>'); ?>
+                            <?php echo _l('clients_ticket_single_submitted','<span class="float-right bold">'._dt($ticket->date).'</span>'); ?>
                         </p>
                         <hr class="hr-10" />
                         <p>
                             <?php echo _l('ticket_dt_submitter'); ?>:
-                            <span class="pull-right bold">
+                            <span class="float-right bold">
                                  <?php echo $ticket->submitter; ?>
                             </span>
                         </p>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="ticket-status-inline">
-                                    <span class="label pull-right bold" style="background:<?php echo $ticket->statuscolor; ?>">
+                                    <span class="label float-right bold" style="background:<?php echo $ticket->statuscolor; ?>">
                                         <?php echo ticket_status_translate($ticket->ticketstatusid); ?>
                                         <?php if(get_option('allow_customer_to_change_ticket_status') == 1){ ?>
                                         <i class="fa fa-pencil-square-o pointer toggle-change-ticket-status"></i></span>
@@ -70,12 +70,12 @@
                                 </div>
                                 <hr class="hr-10" />
                                 <p>
-                                    <?php echo _l('clients_ticket_single_priority','<span class="pull-right bold">'.ticket_priority_translate($ticket->priorityid).'</span>'); ?>
+                                    <?php echo _l('clients_ticket_single_priority','<span class="float-right bold">'.ticket_priority_translate($ticket->priorityid).'</span>'); ?>
                                 </p>
                                 <?php if(get_option('services') == 1 && !empty($ticket->service_name)){ ?>
                                      <hr class="hr-10" />
                                     <p>
-                                        <?php echo _l('service') . ': <span class="pull-right bold">'.$ticket->service_name.'</span>'; ?>
+                                        <?php echo _l('service') . ': <span class="float-right bold">'.$ticket->service_name.'</span>'; ?>
                                     </p>
                                 <?php } ?>
                                 <?php
@@ -87,7 +87,7 @@
                                     }
                                  ?>
                                 <hr class="hr-10" />
-                                <p><?php echo $field['name']; ?>: <span class="pull-right bold"><?php echo $cfValue; ?></span></p>
+                                <p><?php echo $field['name']; ?>: <span class="float-right bold"><?php echo $cfValue; ?></span></p>
                                 <?php } ?>
                             </div>
                         </div>

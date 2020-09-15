@@ -65,14 +65,14 @@
                </div>
                <?php if($expense->billable == 1 && $expense->invoiceid == NULL){ ?>
                <?php if(has_permission('invoices','','create')){ ?>
-               <button type="button" class="btn btn-success pull-right mleft5 expense_convert_btn" data-id="<?php echo $expense->expenseid; ?>" data-toggle="modal" data-target="#expense_convert_helper_modal">
+               <button type="button" class="btn btn-success float-right ml-1 expense_convert_btn" data-id="<?php echo $expense->expenseid; ?>" data-toggle="modal" data-target="#expense_convert_helper_modal">
                <?php echo _l('expense_convert_to_invoice'); ?>
                </button>
                <?php } ?>
                <?php } else if($expense->invoiceid != NULL){ ?>
-               <a href="<?php echo admin_url('invoices/list_invoices/'.$expense->invoiceid); ?>" class="btn mleft10 pull-right btn-info"><?php echo format_invoice_number($invoice->id); ?></a>
+               <a href="<?php echo admin_url('invoices/list_invoices/'.$expense->invoiceid); ?>" class="btn ml-1 float-right btn-info"><?php echo format_invoice_number($invoice->id); ?></a>
                <?php } ?>
-               <div class="pull-right">
+               <div class="float-right">
                   <?php if(has_permission('expenses','','edit')){ ?>
                   <a class="btn btn-default btn-with-tooltip" href="<?php echo admin_url('expenses/expense/'.$expense->expenseid); ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('expense_edit'); ?>"><i class="fa fa-pencil-square-o"></i></a>
                   <?php } ?>
@@ -132,7 +132,7 @@
                  </b>
                </span>
                <?php if($recurring_expense->cycles == 0 || $recurring_expense->cycles != $recurring_expense->total_cycles){
-                echo '<span class="label label-default padding-5 mleft5"><i class="fa fa-question-circle fa-fw" data-toggle="tooltip" data-title="'._l('recurring_recreate_hour_notice',_l('expense')).'"></i> ' . _l('next_expense_date','<b>'._d($next_date).'</b>') .'</span>';
+                echo '<span class="label label-default padding-5 ml-1"><i class="fa fa-question-circle fa-fw" data-toggle="tooltip" data-title="'._l('recurring_recreate_hour_notice',_l('expense')).'"></i> ' . _l('next_expense_date','<b>'._d($next_date).'</b>') .'</span>';
               }
             }
             if($expense->recurring_from != NULL){ ?>

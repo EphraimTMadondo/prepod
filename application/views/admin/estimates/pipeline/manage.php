@@ -15,11 +15,11 @@
                         <div class="col-md-8">
                             <?php if(has_permission('estimates','','create')){ ?>
                             <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-info pull-left new"><?php echo _l('create_new_estimate'); ?></a>
-                            <div class="display-block pull-left mleft5">
+                            <div class="display-block pull-left ml-1">
                                 <a href="#" class="btn btn-default estimates-total" onclick="slideToggle('#stats-top'); init_estimates_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="fa fa-bar-chart"></i></a>
                             </div>
                             <?php } ?>
-                            <a href="<?php echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-default mleft5 pull-left"><?php echo _l('switch_to_list_view'); ?></a>
+                            <a href="<?php echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-default ml-1 pull-left"><?php echo _l('switch_to_list_view'); ?></a>
                         </div>
                         <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
                             <?php echo render_input('search','','','search',array('data-name'=>'search','onkeyup'=>'estimate_pipeline();'),array(),'no-margin') ?>

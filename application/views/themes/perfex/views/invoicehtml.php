@@ -28,19 +28,19 @@
                   <div class="clearfix"></div>
                </div>
                <a href="#"
-                  class="btn btn-success pull-right mleft5 mtop5 action-button invoice-html-pay-now-top hide sticky-hidden
+                  class="btn btn-success float-right ml-1 mtop5 action-button invoice-html-pay-now-top hide sticky-hidden
                   <?php if (($invoice->status != Invoices_model::STATUS_PAID && $invoice->status != Invoices_model::STATUS_CANCELLED
                      && $invoice->total > 0) && found_invoice_mode($payment_modes,$invoice->id, false)){ echo ' pay-now-top'; } ?>">
                <?php echo _l('invoice_html_online_payment_button_text'); ?>
                </a>
                <?php echo form_open($this->uri->uri_string()); ?>
-               <button type="submit" name="invoicepdf" value="invoicepdf" class="btn btn-default pull-right action-button mtop5">
+               <button type="submit" name="invoicepdf" value="invoicepdf" class="btn btn-default float-right action-button mtop5">
                <i class='fa fa-file-pdf-o'></i>
                <?php echo _l('clients_invoice_html_btn_download'); ?>
                </button>
                <?php echo form_close(); ?>
                <?php if(is_client_logged_in() && has_contact_permission('invoices')){ ?>
-               <a href="<?php echo site_url('clients/invoices/'); ?>" class="btn btn-default pull-right mtop5 mright5 action-button go-to-portal">
+               <a href="<?php echo site_url('clients/invoices/'); ?>" class="btn btn-default float-right mtop5 mr-1 action-button go-to-portal">
                <?php echo _l('client_go_to_dashboard'); ?>
                </a>
                <?php } ?>
@@ -254,7 +254,7 @@
                         <td>
                            <span class="pull-left"><?php echo $payment['paymentid']; ?></span>
                            <?php echo form_open($this->uri->uri_string()); ?>
-                           <button type="submit" value="<?php echo $payment['paymentid']; ?>" class="btn btn-icon btn-default pull-right" name="paymentpdf"><i class="fa fa-file-pdf-o"></i></button>
+                           <button type="submit" value="<?php echo $payment['paymentid']; ?>" class="btn btn-icon btn-default float-right" name="paymentpdf"><i class="fa fa-file-pdf-o"></i></button>
                            <?php echo form_close(); ?>
                         </td>
                         <td><?php echo $payment['name']; ?> <?php if(!empty($payment['paymentmethod'])){echo ' - '.$payment['paymentmethod']; } ?></td>

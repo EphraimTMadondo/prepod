@@ -26,10 +26,10 @@
                      <?php echo _l('article_total_views'); ?>: <?php echo total_rows(db_prefix().'views_tracking',array('rel_type'=>'kb_article','rel_id'=>$article->articleid)); ?>
                      </small>
                      <?php if(has_permission('knowledge_base','','create')){ ?>
-                     <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-success pull-right"><?php echo _l('kb_article_new_article'); ?></a>
+                     <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-success float-right"><?php echo _l('kb_article_new_article'); ?></a>
                      <?php } ?>
                      <?php if(has_permission('knowledge_base','','delete')){ ?>
-                     <a href="<?php echo admin_url('knowledge_base/delete_article/'.$article->articleid); ?>" class="btn btn-danger _delete pull-right mright5"><?php echo _l('delete'); ?></a>
+                     <a href="<?php echo admin_url('knowledge_base/delete_article/'.$article->articleid); ?>" class="btn btn-danger _delete float-right mr-1"><?php echo _l('delete'); ?></a>
                      <?php } ?>
                   <div class="clearfix"></div>
                   </p>
@@ -65,7 +65,7 @@
          </div>
          <?php if((has_permission('knowledge_base','','create') && !isset($article)) || has_permission('knowledge_base','','edit') && isset($article)){ ?>
          <div class="btn-bottom-toolbar btn-toolbar-container-out text-right" style="margin: 0 0 0 -10px">
-            <button type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
          </div>
          <?php } ?>
       </div>
