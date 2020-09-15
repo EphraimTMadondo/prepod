@@ -5,7 +5,7 @@
   <div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
-        <div class="card mtop20">
+        <div class="card">
           <div class="card-body">
             <?php echo $this->import->downloadSampleFormHtml(); ?>
             <?php echo $this->import->maxInputVarsWarningHtml(); ?>
@@ -29,8 +29,8 @@
                 }
                 echo render_input('default_pass_all','default_pass_clients_import',$this->input->post('default_pass_all')); ?>
                 <div class="form-group">
-                  <button type="button" class="btn btn-info import btn-import-submit"><?php echo _l('import'); ?></button>
-                  <button type="button" class="btn btn-info simulate btn-import-submit"><?php echo _l('simulate_import'); ?></button>
+                  <button type="button" class="btn btn-secondary import btn-import-submit"><?php echo _l('import'); ?></button>
+                  <button type="button" class="btn btn-secondary simulate btn-import-submit"><?php echo _l('simulate_import'); ?></button>
                 </div>
                 <?php echo form_close(); ?>
               </div>
