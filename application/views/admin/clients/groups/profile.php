@@ -185,7 +185,7 @@
                <div class="col-md-12">
                   <div class="row">
                      <div class="col-md-6">
-                        <h4 class="no-mtop"><?php echo _l('billing_address'); ?> <a href="#" class="float-right billing-same-as-customer"><small class="font-medium-xs"><?php echo _l('customer_billing_same_as_profile'); ?></small></a></h4>
+                        <h5 class="no-mtop"><?php echo _l('billing_address'); ?> <a href="#" class="float-right billing-same-as-customer"><small class="font-medium-xs"><?php echo _l('customer_billing_same_as_profile'); ?></small></a></h5>
                         <hr />
                         <?php $value=( isset($client) ? $client->billing_street : ''); ?>
                         <?php echo render_textarea( 'billing_street', 'billing_street',$value); ?>
@@ -199,10 +199,9 @@
                         <?php echo render_select( 'billing_country',$countries,array( 'country_id',array( 'short_name')), 'billing_country',$selected,array('data-none-selected-text'=>_l('dropdown_non_selected_tex')), [], '', 'select2'); ?>
                      </div>
                      <div class="col-md-6">
-                        <h4 class="no-mtop">
-                           <i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('customer_shipping_address_notice'); ?>"></i>
-                           <?php echo _l('shipping_address'); ?> <a href="#" class="float-right customer-copy-billing-address"><small class="font-medium-xs"><?php echo _l('customer_billing_copy'); ?></small></a>
-                        </h4>
+                        <h5 class="no-mtop">
+                           <i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('customer_shipping_address_notice'); ?>"></i><?php echo _l('shipping_address'); ?><a href="#" class="float-right customer-copy-billing-address"><small class="font-medium-xs"><?php echo _l('customer_billing_copy'); ?></small></a>
+                        </h5>
                         <hr />
                         <?php $value=( isset($client) ? $client->shipping_street : ''); ?>
                         <?php echo render_textarea( 'shipping_street', 'shipping_street',$value); ?>
@@ -263,7 +262,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
          </div>
       </div>
       <!-- /.modal-content -->
