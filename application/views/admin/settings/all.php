@@ -20,8 +20,8 @@
         </div>
         </div>
         <?php } ?>
-      <div class="card card-body col-md-3">
-        <ul class="nav nav-pills flex-column">
+      <div class="col-md-3">
+        <ul class="card card-body nav nav-pills flex-column">
         <?php
         $i = 0;
         foreach ($tabs as $t) {
@@ -33,38 +33,38 @@
           <?php $i++;
         } ?>
         </ul>
-      </div>
-      <div class="card mt-1 col-md-3">
-       <div class="card-body">
-        <a href="<?php echo admin_url('settings?group=update'); ?>" class="<?php if ($this->input->get('group') == 'update') {
-          echo 'bold';
-          } ?>">
-          <?php echo _l('settings_update'); ?>
-        </a>
-        <?php if (is_admin()) {
-          ?>
-          <hr class="hr-10" />
-          <a href="<?php echo admin_url('settings?group=info'); ?>" class="<?php if ($this->input->get('group') == 'info') {
+        <div class="card mt-1 col-md-3">
+          <div class="card-body">
+            <a href="<?php echo admin_url('settings?group=update'); ?>" class="<?php if ($this->input->get('group') == 'update') {
               echo 'bold';
-          } ?>">
-            System/Server Info
-          </a>
-        <?php } ?>
-        <div class="btn-bottom-toolbar text-right">
-          <button type="submit" class="btn btn-info">
-            <?php echo _l('settings_save'); ?>
-          </button>
-        </div>
+              } ?>">
+              <?php echo _l('settings_update'); ?>
+            </a>
+            <?php if (is_admin()) {
+              ?>
+              <hr class="hr-10" />
+              <a href="<?php echo admin_url('settings?group=info'); ?>" class="<?php if ($this->input->get('group') == 'info') {
+                  echo 'bold';
+              } ?>">
+                System/Server Info
+              </a>
+            <?php } ?>
+            <div class="btn-bottom-toolbar text-right">
+              <button type="submit" class="btn btn-info">
+                <?php echo _l('settings_save'); ?>
+              </button>
+            </div>
+          </div>
       </div>
     </div>
-  <div class="col-md-9">
-    <div class="card mtop20">
-     <div class="card-body">
-      <?php hooks()->do_action('before_settings_group_view', $tab); ?>
-      <?php $this->load->view($tab['view']) ?>
-      <?php hooks()->do_action('after_settings_group_view', $tab); ?>
+    <div class="col-md-9">
+      <div class="card mtop20">
+      <div class="card-body">
+        <?php hooks()->do_action('before_settings_group_view', $tab); ?>
+        <?php $this->load->view($tab['view']) ?>
+        <?php hooks()->do_action('after_settings_group_view', $tab); ?>
+      </div>
     </div>
-  </div>
 </div>
 <div class="clearfix"></div>
 </div>
