@@ -1,22 +1,25 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-  <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
         <div class="card mtop20">
-          <div class="panel-body">
+          <div class="card-body">
            <div class="_buttons">
-            <a href="#" class="btn btn-info pull-left display-block" onclick="new_spam_filter(); return false">
+            <a href="#" class="btn btn-primary" onclick="new_spam_filter(); return false">
               <?php echo _l('new_spam_filter'); ?>
             </a>
           </div>
           <div class="clearfix"></div>
           <hr class="hr-panel-heading" />
           <ul class="nav nav-tabs" role="tablist" id="filters_types">
-            <li role="presentation" class="active"><a href="#sender" aria-controls="sender" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_senders'); ?></a></li>
-            <li role="presentation"><a href="#subject" aria-controls="subject" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_subjects'); ?></a></li>
-            <li role="presentation"><a href="#phrase" aria-controls="phrase" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_phrases'); ?></a></li>
+            <li role="presentation" class="active nav-item"><a class="nav-link" href="#sender" aria-controls="sender" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_senders'); ?></a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" href="#subject" aria-controls="subject" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_subjects'); ?></a></li>
+            <li role="presentation" class="nav-item"><a class="nav-link" href="#phrase" aria-controls="phrase" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_phrases'); ?></a></li>
           </ul>
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="sender">
@@ -65,7 +68,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-        <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+        <button type="submit" class="btn btn-primary"><?php echo _l('submit'); ?></button>
       </div>
     </div><!-- /.modal-content -->
     <?php echo form_close(); ?>
