@@ -58,15 +58,12 @@
           <?php hooks()->do_action('before_settings_group_view', $tab); ?>
           <?php $this->load->view($tab['view']) ?>
           <?php hooks()->do_action('after_settings_group_view', $tab); ?>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-            <div class="btn-bottom-toolbar text-right">
-              <button type="submit" class="btn btn-secondary">
-                <?php echo _l('settings_save'); ?>
-              </button>
-            </div>
+          <hr />
+          <div class="btn-bottom-toolbar text-right">
+            <button type="submit" class="btn btn-secondary">
+              <?php echo _l('settings_save'); ?>
+            </button>
+          </div>
         </div>
       </div>
     </div>
