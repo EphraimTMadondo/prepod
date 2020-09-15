@@ -26,8 +26,8 @@
                ?>
          </div>
          <div class="col-md-12">
-            <div class="card mtop20 mbot10">
-               <div class="card-body _buttons">
+            <div class="card mtop20">
+               <div class="card-body">
                   <?php if(has_permission('proposals','','create')){ ?>
                   <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-primary float-left">
                   <?php echo _l('new_proposal'); ?>
@@ -97,14 +97,8 @@
                      </div>
                      <a href="#" class="btn btn-light float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-proposals','#proposal'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
                   </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-12" id="small-table">
-            <div class="card">
-               <div class="card-body">
-                  <!-- if invoiceid found in url -->
-                  <?php echo form_hidden('proposal_id',$proposal_id); ?>
+                   <!-- if invoiceid found in url -->
+                   <?php echo form_hidden('proposal_id',$proposal_id); ?>
                   <?php
                      $table_data = array(
                         _l('proposal') . ' #',
