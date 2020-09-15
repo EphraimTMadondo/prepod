@@ -1,7 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-    <div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 <?php if($email_exist_as_staff){ ?>
@@ -9,10 +12,10 @@
                    Some of the departments email is used as staff member email, according to the docs, the support department email must be unique email in the system, you must change the staff email or the support department email in order all the features to work properly.
                 </div>
                 <?php } ?>
-                <div class="card mtop20">
-                    <div class="panel-body">
+                <div class="card ">
+                    <div class="card-body">
                      <div class="_buttons">
-                        <a href="#" onclick="new_department(); return false;" class="btn btn-info pull-left display-block">
+                        <a href="#" onclick="new_department(); return false;" class="btn btn-primary">
                             <?php echo _l('new_department'); ?>
                         </a>
                     </div>
