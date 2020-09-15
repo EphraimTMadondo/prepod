@@ -33,7 +33,7 @@
           <?php $i++;
         } ?>
         </ul>
-        <div class="card mt-1 col-md-3">
+        <div class="card mt-1">
           <div class="card-body">
             <a href="<?php echo admin_url('settings?group=update'); ?>" class="<?php if ($this->input->get('group') == 'update') {
               echo 'bold';
