@@ -1,19 +1,17 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active">
-        <a href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" href="#general" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('settings_group_general'); ?></a>
     </li>
-    <li role="presentation">
-        <a href="#signature" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('signature'); ?></a>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" href="#signature" aria-controls="general" role="tab" data-toggle="tab"><?php echo _l('signature'); ?></a>
     </li>
-    <li role="presentation">
-        <a href="#formats" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('pdf_formats'); ?></a>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" href="#formats" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('pdf_formats'); ?></a>
     </li>
 </ul>
 <div class="tab-content mtop30">
-
     <div role="tab-pane" class="tab-pane active" id="general">
-
         <?php $fonts = get_pdf_fonts_list(); ?>
         <label class="control-label"><?php echo _l('settings_pdf_font'); ?></label>
         <select name="settings[pdf_font]" class="selectpicker" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
