@@ -1,12 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
 <?php set_ticket_open($ticket->adminread,$ticket->ticketid); ?>
-<div id="wrapper">
-   <div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <div class="horizontal-scrollable-tabs">
                      <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
                      <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
@@ -60,11 +62,11 @@
                </div>
             </div>
          </div>
-         <div class="panel_s">
-            <div class="panel-body">
+         <div class="card">
+            <div class="card-body">
                <div class="row">
                   <div class="col-md-8">
-                     <h3 class="mtop4 mbot20 pull-left">
+                     <h3 class="mtop4 mbot20">
                         <span id="ticket_subject">
                            #<?php echo $ticket->ticketid; ?> - <?php echo $ticket->subject; ?>
                         </span>
@@ -72,7 +74,7 @@
                            echo '<br /><small>'._l('ticket_linked_to_project','<a href="'.admin_url('projects/view/'.$ticket->project_id).'">'.get_project_name_by_id($ticket->project_id).'</a>') .'</small>';
                         } ?>
                      </h3>
-                     <?php echo '<div class="label mtop5 mbot15'.(is_mobile() ? ' ' : ' mleft15 ').'p8 pull-left single-ticket-status-label" style="background:'.$ticket->statuscolor.'">'.ticket_status_translate($ticket->ticketstatusid).'</div>'; ?>
+                     <?php echo '<div class="label mtop5 mbot15'.(is_mobile() ? ' ' : ' mleft15 ').'p8 single-ticket-status-label" style="background:'.$ticket->statuscolor.'">'.ticket_status_translate($ticket->ticketstatusid).'</div>'; ?>
                      <div class="clearfix"></div>
                   </div>
                   <div class="col-md-4 text-right">
@@ -113,7 +115,7 @@
                                                 </span>
                                                 <?php
                                                 if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
-                                                   <div class="pull-right">
+                                                   <div class="float-right">
                                                       <a href="#" class="btn btn-default btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
                                                       <a href="<?php echo admin_url('misc/delete_note/'.$note["id"]); ?>" class="mright10 _delete btn btn-danger btn-icon">
                                                          <i class="fa fa-remove"></i>
@@ -128,7 +130,7 @@
                                                    <textarea name="description" class="form-control" rows="4"><?php echo clear_textarea_breaks($note['description']); ?></textarea>
                                                    <div class="text-right mtop15">
                                                       <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
-                                                      <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
+                                                      <button type="button" class="btn btn-primary" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                                                    </div>
                                                 </div>
                                                 <small class="bold">
@@ -220,13 +222,13 @@
                         </div>
                         <?php echo render_textarea('message','','',array(),array(),'','tinymce'); ?>
                      </div>
-                     <div class="panel_s ticket-reply-tools">
+                     <div class="card ticket-reply-tools">
                         <div class="btn-bottom-toolbar text-right">
-                           <button type="submit" class="btn btn-info" data-form="#single-ticket-form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>">
+                           <button type="submit" class="btn btn-primary" data-form="#single-ticket-form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>">
                               <?php echo _l('ticket_single_add_response'); ?>
                            </button>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                            <div class="row">
                               <div class="col-md-5">
                                  <?php echo render_select('status',$statuses,array('ticketstatusid','name'),'ticket_single_change_status',get_option('default_ticket_reply_status'),array(),array(),'','',false); ?>
@@ -273,10 +275,10 @@
                      <label for="note_description"><?php echo _l('ticket_single_note_heading'); ?></label>
                      <textarea class="form-control" name="note_description" rows="5"></textarea>
                   </div>
-                  <a class="btn btn-info pull-right add_note_ticket"><?php echo _l('ticket_single_add_note'); ?></a>
+                  <a class="btn btn-primary float-right add_note_ticket"><?php echo _l('ticket_single_add_note'); ?></a>
                </div>
                <div role="tabpanel" class="tab-pane" id="tab_reminders">
-                  <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target=".reminder-modal-ticket-<?php echo $ticket->ticketid; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('ticket_set_reminder_title'); ?></a>
+                  <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".reminder-modal-ticket-<?php echo $ticket->ticketid; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('ticket_set_reminder_title'); ?></a>
                   <hr />
                   <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                </div>
@@ -386,7 +388,7 @@
                <div class="row">
                   <div class="col-md-12 text-center">
                      <hr />
-                     <a href="#" class="btn btn-info save_changes_settings_single_ticket">
+                     <a href="#" class="btn btn-primary save_changes_settings_single_ticket">
                         <?php echo _l('submit'); ?>
                      </a>
                   </div>
@@ -395,8 +397,8 @@
          </div>
       </div>
    </div>
-   <div class="panel_s mtop20">
-      <div class="panel-body <?php if($ticket->admin == NULL){echo 'client-reply';} ?>">
+   <div class="card mtop20">
+      <div class="card-body <?php if($ticket->admin == NULL){echo 'client-reply';} ?>">
          <div class="row">
             <div class="col-md-3 border-right ticket-submitter-info ticket-submitter-info">
                <p>
@@ -485,8 +487,8 @@
 </div>
 </div>
 <?php foreach($ticket_replies as $reply){ ?>
-   <div class="panel_s">
-      <div class="panel-body <?php if($reply['admin'] == NULL){echo 'client-reply';} ?>">
+   <div class="card">
+      <div class="card-body <?php if($reply['admin'] == NULL){echo 'client-reply';} ?>">
          <div class="row">
             <div class="col-md-3 border-right ticket-submitter-info">
                <p>
@@ -513,10 +515,10 @@
                  ?>
               </p>
               <hr />
-              <a href="<?php echo admin_url('tickets/delete_ticket_reply/'.$ticket->ticketid .'/'.$reply['id']); ?>" class="btn btn-danger pull-left _delete mright5 btn-xs"><?php echo _l('delete_ticket_reply'); ?></a>
+              <a href="<?php echo admin_url('tickets/delete_ticket_reply/'.$ticket->ticketid .'/'.$reply['id']); ?>" class="btn btn-danger _delete mr-1 btn-xs"><?php echo _l('delete_ticket_reply'); ?></a>
               <div class="clearfix"></div>
               <?php if(has_permission('tasks','','create')){ ?>
-               <a href="#" class="pull-left btn btn-default mtop5 btn-xs" onclick="convert_ticket_to_task(<?php echo $reply['id']; ?>,'reply'); return false;"><?php echo _l('convert_to_task'); ?>
+               <a href="#" class="btn btn-default mtop5 btn-xs" onclick="convert_ticket_to_task(<?php echo $reply['id']; ?>,'reply'); return false;"><?php echo _l('convert_to_task'); ?>
             </a>
             <div class="clearfix"></div>
          <?php } ?>
@@ -598,7 +600,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-primary"><?php echo _l('submit'); ?></button>
          </div>
       </div>
       <?php echo form_close(); ?>

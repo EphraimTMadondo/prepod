@@ -1,17 +1,19 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
-        <div class="card mtop20">
-         <div class="panel-body">
+        <div class="card">
+         <div class="card-body">
           <div class="_buttons">
-            <a href="<?php echo admin_url('tickets/add'); ?>" class="btn btn-info pull-left display-block mright5">
+            <a href="<?php echo admin_url('tickets/add'); ?>" class="btn btn-primary mr-1">
               <?php echo _l('new_ticket'); ?>
             </a>
             <a href="#" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('tickets_chart_weekly_opening_stats'); ?>" onclick="slideToggle('.weekly-ticket-opening',init_tickets_weekly_chart); return false;"><i class="fa fa-bar-chart"></i></a>
-            <div class="btn-group pull-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+            <div class="btn-group ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-filter" aria-hidden="true"></i>
               </button>
@@ -55,7 +57,7 @@
           <div class="panel-heading-bg">
             <?php echo _l('home_weekend_ticket_opening_statistics'); ?>
           </div>
-          <div class="panel-body">
+          <div class="card-body">
             <div class="relative" style="max-height:350px;">
               <canvas class="chart" id="weekly-ticket-openings-chart" height="350"></canvas>
             </div>
@@ -104,7 +106,7 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-      <a href="#" class="btn btn-info" onclick="tickets_bulk_action(this); return false;"><?php echo _l('confirm'); ?></a>
+      <a href="#" class="btn btn-primary" onclick="tickets_bulk_action(this); return false;"><?php echo _l('confirm'); ?></a>
     </div>
   </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->

@@ -1,13 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card-body">
 						<div class="_buttons">
-							<a href="#" onclick="new_service(); return false;" class="btn btn-info pull-left display-block"><?php echo _l('new_service'); ?></a>
+							<a href="#" onclick="new_service(); return false;" class="btn btn-primary"><?php echo _l('new_service'); ?></a>
 						</div>
 						<div class="clearfix"></div>
 						<hr class="hr-panel-heading" />

@@ -1,12 +1,15 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
-	<div class="content">
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
 		<?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'new_ticket_form')); ?>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card mtop20">
-					<div class="panel-body">
+					<div class="card">
 						<div class="row">
 							<div class="col-md-6">
 								<?php if(!isset($project_id) && !isset($contact)){ ?>
@@ -104,11 +107,11 @@
 		<div class="row">
 			<div class="col-md-12" style="padding: 20px 0px;">
 			    <div class="card">
-			        <div class="panel_s card">
-					<div class="panel-heading">
-						<?php echo _l('ticket_add_body'); ?>
+			        <div class="card">
+					<div class="card-header">
+						<h4 class="card-title"><?php echo _l('ticket_add_body'); ?></h4>
 					</div>
-					<div class="panel-body">
+					<div class="card">
 						<div class="btn-bottom-toolbar text-right">
 							<button type="submit" data-form="#new_ticket_form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info"><?php echo _l('open_ticket'); ?></button>
 						</div>
@@ -152,7 +155,7 @@
 						<div class="clearfix"></div>
 						<?php echo render_textarea('message','','',array(),array(),'','tinymce'); ?>
 					</div>
-					<div class="panel-footer attachments_area">
+					<div class="card-footer attachments_area">
 						<div class="row attachments">
 							<div class="attachment">
 								<div class="col-md-12 mbot15">
