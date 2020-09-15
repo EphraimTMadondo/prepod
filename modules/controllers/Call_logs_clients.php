@@ -54,7 +54,7 @@ class Call_logs_client extends ClientsController
                 $payment->invoice_data = $this->invoices_model->get($payment->invoiceid);
                 $paymentpdf            = payment_pdf($payment);
                 $paymentpdf->Output(mb_strtoupper(slug_it(_l('payment') . '-' . $payment->paymentid), 'UTF-8') . '.pdf', 'D');
-                die;
+                die; //uiuiuyuyu  hjhjhjk
             }
         }
 
@@ -67,7 +67,7 @@ class Call_logs_client extends ClientsController
         $data['payments']      = $this->payments_model->get_invoice_payments($id);
         $data['payment_modes'] = $this->payment_modes_model->get();
         $data['title']         = format_invoice_number($invoice->id);
-        $this->disableNavigation();
+        $this->disableNavigation(); //uyutyyu rererer
         $this->disableSubMenu();
         $data['hash']      = $hash;
         $data['invoice']   = hooks()->apply_filters('invoice_html_pdf_data', $invoice);

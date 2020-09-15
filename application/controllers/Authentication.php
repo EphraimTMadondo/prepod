@@ -8,6 +8,9 @@ class Authentication extends ClientsController
     {
         parent::__construct();
         hooks()->do_action('clients_authentication_constructor', $this);
+        //iiiii
+
+        
     }
 
     public function index()
