@@ -12,7 +12,7 @@
 </ul>
 <div class="tab-content mtop30">
 
-    <div role="tabpanel" class="tab-pane active" id="general">
+    <div role="tab-pane" class="tab-pane active" id="general">
 
         <?php $fonts = get_pdf_fonts_list(); ?>
         <label class="control-label"><?php echo _l('settings_pdf_font'); ?></label>
@@ -49,7 +49,7 @@
         <hr />
         <?php render_yes_no_option('show_page_number_on_pdf','show_page_number_on_pdf'); ?>
     </div>
-    <div role="tabpanel" class="tab-pane" id="signature">
+    <div role="tab-pane" class="tab-pane" id="signature">
      <?php render_yes_no_option('show_pdf_signature_invoice','show_pdf_signature_invoice'); ?>
      <hr />
      <?php render_yes_no_option('show_pdf_signature_estimate','show_pdf_signature_estimate'); ?>
@@ -81,7 +81,7 @@
     <?php } ?>
     <?php hooks()->do_action('after_pdf_signature_settings_fields'); ?>
 </div>
-<div role="tabpanel" class="tab-pane" id="formats">
+<div role="tab-pane" class="tab-pane" id="formats">
   <label for="pdf_format_invoice" class="control-label"><?php echo _l('invoice'); ?></label>
   <select name="settings[pdf_format_invoice]" id="pdf_format_invoice" class="selectpicker" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_invoice') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>

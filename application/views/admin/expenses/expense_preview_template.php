@@ -91,7 +91,7 @@
          <div class="clearfix"></div>
          <hr class="hr-panel-heading hr-10" />
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane ptop10 active" id="tab_expense" data-empty-note="<?php echo empty($expense->note); ?>" data-empty-name="<?php echo empty($expense->expense_name); ?>">
+            <div role="tab-pane" class="tab-pane ptop10 active" id="tab_expense" data-empty-note="<?php echo empty($expense->note); ?>" data-empty-name="<?php echo empty($expense->expense_name); ?>">
                <div class="row">
                 <?php
                 if($expense->recurring > 0 || $expense->recurring_from != NULL) {
@@ -236,7 +236,7 @@
             </div>
          </div>
           <?php if(count($child_expenses) > 0 || $expense->recurring != 0){ ?>
-         <div role="tabpanel" class="tab-pane" id="tab_child_expenses">
+         <div role="tab-pane" class="tab-pane" id="tab_child_expenses">
             <?php if(count($child_expenses) > 0){ ?>
             <h4 class="mbot25 mtop25"><?php echo _l('expenses_created_from_this_recurring_expense'); ?></h4>
             <ul class="list-group">
@@ -272,10 +272,10 @@
             <?php } ?>
          </div>
          <?php } ?>
-         <div role="tabpanel" class="tab-pane" id="tab_tasks">
+         <div role="tab-pane" class="tab-pane" id="tab_tasks">
             <?php init_relation_tasks_table(array('data-new-rel-id'=>$expense->expenseid,'data-new-rel-type'=>'expense')); ?>
          </div>
-         <div role="tabpanel" class="tab-pane" id="tab_reminders">
+         <div role="tab-pane" class="tab-pane" id="tab_reminders">
             <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-expense-<?php echo $expense->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('expense_set_reminder_title'); ?></a>
             <hr />
             <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>

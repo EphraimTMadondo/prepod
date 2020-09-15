@@ -43,7 +43,7 @@
                <hr class="hr-panel-heading" />
                <div class="row">
                   <div class="tab-content">
-                     <div role="tabpanel" class="tab-pane kb-kan-ban kan-ban-tab" id="kan-ban">
+                     <div role="tab-pane" class="tab-pane kb-kan-ban kan-ban-tab" id="kan-ban">
                         <div class="container-fluid">
                            <?php
                               if(count($groups) == 0){
@@ -133,7 +133,7 @@
                            <?php } ?>
                            </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane active" id="list_tab">
+                        <div role="tab-pane" class="tab-pane active" id="list_tab">
                            <div class="col-md-12">
                               <?php render_datatable(
                                  array(

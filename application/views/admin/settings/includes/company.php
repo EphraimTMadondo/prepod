@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div role="tabpanel" class="tab-pane" id="company_info">
+<div role="tab-pane" class="tab-pane" id="company_info">
     <p class="text-muted">
         <?php echo _l('settings_sales_company_info_note'); ?>
     </p>

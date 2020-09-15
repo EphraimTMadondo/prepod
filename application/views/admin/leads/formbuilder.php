@@ -32,10 +32,10 @@
                   <?php } ?>
                   <div class="tab-content">
                      <?php if (isset($form)) { ?>
-                     <div role="tabpanel" class="tab-pane active" id="tab_form_build">
+                     <div role="tab-pane" class="tab-pane active" id="tab_form_build">
                         <div id="build-wrap"></div>
                      </div>
-                     <div role="tabpanel" class="tab-pane" id="tab_form_integration">
+                     <div role="tab-pane" class="tab-pane" id="tab_form_integration">
                         <p><?php echo _l('form_integration_code_help'); ?></p>
                        <p>
                          <span class="label label-default">
@@ -47,7 +47,7 @@
                         <textarea class="form-control" rows="2"><iframe width="600" height="850" src="<?php echo site_url('forms/wtl/'.$form->form_key); ?>" frameborder="0" allowfullscreen></iframe></textarea>
                      </div>
                      <?php } ?>
-                     <div role="tabpanel" class="tab-pane<?php if (!isset($form)) { echo ' active'; } ?>" id="tab_form_information">
+                     <div role="tab-pane" class="tab-pane<?php if (!isset($form)) { echo ' active'; } ?>" id="tab_form_information">
                         <?php if (!isset($form)) { ?>
                         <h4 class="font-medium-xs bold no-mtop"><?php echo _l('form_builder_create_form_first'); ?></h4>
                         <hr />

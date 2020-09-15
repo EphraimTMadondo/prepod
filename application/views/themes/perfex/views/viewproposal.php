@@ -166,7 +166,7 @@
                <?php } ?>
             </ul>
             <div class="tab-content">
-               <div role="tabpanel" class="tab-pane<?php if(!$this->input->get('tab') || $this->input->get('tab') === 'summary'){echo ' active';} ?>" id="summary">
+               <div role="tab-pane" class="tab-pane<?php if(!$this->input->get('tab') || $this->input->get('tab') === 'summary'){echo ' active';} ?>" id="summary">
                   <address class="proposal-html-company-info">
                      <?php echo format_organization_info(); ?>
                   </address>
@@ -224,7 +224,7 @@
                   <?php } ?>
                </div>
                <?php if($proposal->allow_comments == 1){ ?>
-               <div role="tabpanel" class="tab-pane<?php if($this->input->get('tab') === 'discussion'){echo ' active';} ?>" id="discussion">
+               <div role="tab-pane" class="tab-pane<?php if($this->input->get('tab') === 'discussion'){echo ' active';} ?>" id="discussion">
                   <?php echo form_open($this->uri->uri_string()) ;?>
                   <div class="proposal-comment">
                      <textarea name="content" rows="4" class="form-control"></textarea>

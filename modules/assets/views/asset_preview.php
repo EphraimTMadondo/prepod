@@ -45,7 +45,7 @@
               </div>
 	    	</div> 
 	    	<div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="general_infor">
+                <div role="tab-pane" class="tab-pane active" id="general_infor">
             	 <div class="card panel-info">
                   <div class="card-body">
                 	<div class="row col-md-12">
@@ -205,7 +205,7 @@
                     </div>
                   </div>    
                 </div>
-                <div role="tabpanel" class="tab-pane" id="inventory_history">
+                <div role="tab-pane" class="tab-pane" id="inventory_history">
                 	<?php
                         $table_data = array(
                             _l('time'),
@@ -217,7 +217,7 @@
                         render_datatable($table_data,'table_inventory_history');
                         ?>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="pending_withdrawing">
+                <div role="tab-pane" class="tab-pane" id="pending_withdrawing">
                 	<?php
                         $table_data = array(
                             _l('time'),

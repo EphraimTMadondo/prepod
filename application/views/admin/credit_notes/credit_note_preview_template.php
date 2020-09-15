@@ -173,7 +173,7 @@
          <div class="clearfix"></div>
          <hr class="hr-panel-heading" />
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane ptop10 active" id="tab_credit_note">
+            <div role="tab-pane" class="tab-pane ptop10 active" id="tab_credit_note">
                <div id="credit-note-preview">
                   <div class="row">
                      <div class="col-md-6 col-sm-6">
@@ -360,7 +360,7 @@
                   <?php } ?>
                </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="invoices_credited">
+            <div role="tab-pane" class="tab-pane" id="invoices_credited">
                <?php if(count($credit_note->applied_credits) == 0) {
                   echo '<div class="alert alert-info no-mbot">';
                   echo _l('credited_invoices_not_found');
@@ -397,7 +397,7 @@
                </table>
                <?php }  ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
+            <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">
                <?php
                   $this->load->view('admin/includes/emails_tracking',array(
                      'tracked_emails'=>
@@ -405,7 +405,7 @@
                   );
                   ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_refunds">
+            <div role="tab-pane" class="tab-pane" id="tab_refunds">
                <?php if(count($credit_note->refunds) == 0) {
                   echo '<div class="alert alert-info no-mbot">';
                   echo _l('not_refunds_found');
@@ -453,7 +453,7 @@
                </table>
                <?php }  ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_reminders">
+            <div role="tab-pane" class="tab-pane" id="tab_reminders">
                <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target=".reminder-modal-credit_note-<?php echo $credit_note->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('credit_note_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>

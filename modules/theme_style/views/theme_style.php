@@ -66,7 +66,7 @@ $tags = get_styling_areas('tags');
    <div class="card">
       <div class="card-body pickers">
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane ptop10 active" id="tab_admin_styling">
+            <div role="tab-pane" class="tab-pane ptop10 active" id="tab_admin_styling">
                <div class="row">
                   <div class="col-md-12">
                      <?php
@@ -82,7 +82,7 @@ $tags = get_styling_areas('tags');
                      </div>
                   </div>
                </div>
-               <div role="tabpanel" class="tab-pane ptop10" id="tab_customers_styling">
+               <div role="tab-pane" class="tab-pane ptop10" id="tab_customers_styling">
                   <div class="row">
                      <div class="col-md-12">
                         <?php foreach(get_styling_areas('customers') as $area){ ?>
@@ -97,7 +97,7 @@ $tags = get_styling_areas('tags');
                         </div>
                      </div>
                   </div>
-                  <div role="tabpanel" class="tab-pane ptop10" id="tab_buttons_styling">
+                  <div role="tab-pane" class="tab-pane ptop10" id="tab_buttons_styling">
                      <div class="row">
                         <div class="col-md-12">
                            <?php foreach(get_styling_areas('buttons') as $area){ ?>
@@ -114,7 +114,7 @@ $tags = get_styling_areas('tags');
                            </div>
                         </div>
                      </div>
-                     <div role="tabpanel" class="tab-pane ptop10" id="tab_tabs_styling">
+                     <div role="tab-pane" class="tab-pane ptop10" id="tab_tabs_styling">
                         <div class="row">
                            <div class="col-md-12">
                               <?php foreach(get_styling_areas('tabs') as $area){ ?>
@@ -129,7 +129,7 @@ $tags = get_styling_areas('tags');
                               </div>
                            </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane ptop10" id="tab_modals_styling">
+                        <div role="tab-pane" class="tab-pane ptop10" id="tab_modals_styling">
                            <div class="row">
                               <div class="col-md-12">
                                  <?php foreach(get_styling_areas('modals') as $area){ ?>
@@ -156,7 +156,7 @@ $tags = get_styling_areas('tags');
                                  </div>
                               </div>
                            </div>
-                           <div role="tabpanel" class="tab-pane ptop10" id="tab_general_styling">
+                           <div role="tab-pane" class="tab-pane ptop10" id="tab_general_styling">
                               <div class="row">
                                  <div class="col-md-12">
                                     <?php foreach(get_styling_areas('general') as $area){ ?>
@@ -172,7 +172,7 @@ $tags = get_styling_areas('tags');
                                     </div>
                                  </div>
                               </div>
-                              <div role="tabpanel" class="tab-pane ptop10" id="tab_custom_css">
+                              <div role="tab-pane" class="tab-pane ptop10" id="tab_custom_css">
                                  <div class="form-group">
                                     <label class="bold" for="theme_style_custom_clients_and_admin_area">
                                        <i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('theme_style_ca_info'); ?>"></i>
@@ -203,7 +203,7 @@ $tags = get_styling_areas('tags');
                                  </div>
                               </div>
                               <?php if(count($tags) > 0){ ?>
-                                 <div role="tabpanel" class="tab-pane ptop10" id="tab_styling_tags">
+                                 <div role="tab-pane" class="tab-pane ptop10" id="tab_styling_tags">
                                     <div class="row">
                                        <?php foreach($tags as $area){ ?>
                                         <div class="col-md-6">

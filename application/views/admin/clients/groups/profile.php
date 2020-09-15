@@ -39,12 +39,12 @@
       <div class="tab-content mtop15">
          <?php hooks()->do_action('after_custom_profile_tab_content',isset($client) ? $client : false); ?>
          <?php if($customer_custom_fields) { ?>
-         <div role="tabpanel" class="tab-pane <?php if($this->input->get('tab') == 'custom_fields'){echo ' active';}; ?>" id="custom_fields">
+         <div role="tab-pane" class="tab-pane <?php if($this->input->get('tab') == 'custom_fields'){echo ' active';}; ?>" id="custom_fields">
             <?php $rel_id=( isset($client) ? $client->userid : false); ?>
             <?php echo render_custom_fields( 'customers',$rel_id); ?>
          </div>
          <?php } ?>
-         <div role="tabpanel" class="tab-pane<?php if(!$this->input->get('tab')){echo ' active';}; ?>" id="contact_info">
+         <div role="tab-pane" class="tab-pane<?php if(!$this->input->get('tab')){echo ' active';}; ?>" id="contact_info">
             <div class="row">
                <div class="col-md-12 mtop15 <?php if(isset($client) && (!is_empty_customer_company($client->userid) && total_rows(db_prefix().'contacts',array('userid'=>$client->userid,'is_primary'=>1)) > 0)) { echo ''; } else {echo ' hide';} ?>" id="client-show-primary-contact-wrapper">
                   <div class="checkbox checkbox-info mbot20 no-mtop">
@@ -144,7 +144,7 @@
             </div>
          </div>
          <?php if(isset($client)){ ?>
-         <div role="tabpanel" class="tab-pane" id="customer_admins">
+         <div role="tab-pane" class="tab-pane" id="customer_admins">
             <?php if (has_permission('customers', '', 'create') || has_permission('customers', '', 'edit')) { ?>
             <a href="#" data-toggle="modal" data-target="#customer_admins_assign" class="btn btn-info mbot30"><?php echo _l('assign_admin'); ?></a>
             <?php } ?>
@@ -180,7 +180,7 @@
             </table>
          </div>
          <?php } ?>
-         <div role="tabpanel" class="tab-pane" id="billing_and_shipping">
+         <div role="tab-pane" class="tab-pane" id="billing_and_shipping">
             <div class="row">
                <div class="col-md-12">
                   <div class="row">

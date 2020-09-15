@@ -33,7 +33,7 @@
 </ul>
 
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="set_invoice">
+  <div role="tab-pane" class="tab-pane active" id="set_invoice">
     <?php if(!is_invoices_overdue_reminders_enabled()){ ?>
     <div class="alert alert-warning">
       The system was not able to find sources to send overdue notices, if you want overdue notices to be sent, make sure that in <a href="<?php echo admin_url('emails'); ?>">email templates</a> the overdue notice email for invoices is enabled or at least you have configured <a href="<?php echo admin_url('settings?group=sms'); ?>">SMS</a> overdue notice. If you don't need to send overdue notices for invoices, simply ignore this message.
@@ -64,11 +64,11 @@
       <?php render_yes_no_option('create_invoice_from_recurring_only_on_paid_invoices','invoices_create_invoice_from_recurring_only_on_paid_invoices','invoices_create_invoice_from_recurring_only_on_paid_invoices_tooltip'); ?>
 
   </div>
-  <div role="tabpanel" class="tab-pane" id="tasks">
+  <div role="tab-pane" class="tab-pane" id="tasks">
    <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('tasks_reminder_notification_before_help'); ?>"></i>
    <?php echo render_input('settings[tasks_reminder_notification_before]','tasks_reminder_notification_before',get_option('tasks_reminder_notification_before'),'number'); ?>
  </div>
- <div role="tabpanel" class="tab-pane" id="contracts">
+ <div role="tab-pane" class="tab-pane" id="contracts">
       <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('hour_of_day_perform_auto_operations_format'); ?>"></i>
    <?php echo render_input('settings[contracts_auto_operations_hour]','hour_of_day_perform_auto_operations',get_option('contracts_auto_operations_hour'),'number',array('max'=>23)); ?>
 
@@ -76,11 +76,11 @@
    <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('settings_reminders_contracts_tooltip'); ?>"></i>
    <?php echo render_input('settings[contract_expiration_before]','send_expiry_reminder_before',get_option('contract_expiration_before'),'number'); ?>
  </div>
- <div role="tabpanel" class="tab-pane" id="tickets">
+ <div role="tab-pane" class="tab-pane" id="tickets">
   <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('auto_close_tickets_disable'); ?>"></i>
   <?php echo render_input('settings[autoclose_tickets_after]','auto_close_ticket_after',get_option('autoclose_tickets_after'),'number'); ?>
 </div>
-<div role="tabpanel" class="tab-pane" id="estimates">
+<div role="tab-pane" class="tab-pane" id="estimates">
       <?php if(!is_estimates_expiry_reminders_enabled()){ ?>
     <div class="alert alert-warning">
       The system was not able to find sources to send expiry reminders, if you want expiry reminders to be sent, make sure that in <a href="<?php echo admin_url('emails'); ?>">email templates</a> the expiry reminder email for estimates is enabled or at least you have configured <a href="<?php echo admin_url('settings?group=sms'); ?>">SMS</a> expiry reminder.
@@ -91,7 +91,7 @@
    <hr />
  <?php echo render_input('settings[send_estimate_expiry_reminder_before]','send_expiry_reminder_before',get_option('send_estimate_expiry_reminder_before'),'number'); ?>
 </div>
-<div role="tabpanel" class="tab-pane" id="proposals">
+<div role="tab-pane" class="tab-pane" id="proposals">
     <?php if(!is_proposals_expiry_reminders_enabled()){ ?>
     <div class="alert alert-warning">
       The system was not able to find sources to send expiry reminders, if you want expiry reminders to be sent, make sure that in <a href="<?php echo admin_url('emails'); ?>">email templates</a> the expiry reminder email for proposals is enabled or at least you have configured <a href="<?php echo admin_url('settings?group=sms'); ?>">SMS</a> expiry reminder.

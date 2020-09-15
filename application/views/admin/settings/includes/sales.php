@@ -19,7 +19,7 @@
    <?php hooks()->do_action('after_finance_settings_last_tab'); ?>
 </ul>
 <div class="tab-content">
-   <div role="tabpanel" class="tab-pane active" id="general">
+   <div role="tab-pane" class="tab-pane active" id="general">
       <h4 class="bold">
          <?php echo _l('settings_sales_general'); ?>
       </h4>
@@ -80,7 +80,7 @@
          </div>
       </div>
    </div>
-   <div role="tabpanel" class="tab-pane" id="invoice">
+   <div role="tab-pane" class="tab-pane" id="invoice">
       <div class="form-group">
          <label class="control-label" for="invoice_prefix"><?php echo _l('settings_sales_invoice_prefix'); ?></label>
          <input type="text" name="settings[invoice_prefix]" class="form-control" value="<?php echo get_option('invoice_prefix'); ?>">
@@ -135,7 +135,7 @@
       <?php echo render_textarea('settings[predefined_clientnote_invoice]','settings_predefined_clientnote',get_option('predefined_clientnote_invoice'),array('rows'=>6)); ?>
       <?php echo render_textarea('settings[predefined_terms_invoice]','settings_predefined_predefined_term',get_option('predefined_terms_invoice'),array('rows'=>6)); ?>
    </div>
-   <div role="tabpanel" class="tab-pane" id="credit_notes">
+   <div role="tab-pane" class="tab-pane" id="credit_notes">
       <div class="form-group">
          <label class="control-label" for="credit_note_prefix"><?php echo _l('credit_note_number_prefix'); ?></label>
          <input type="text" name="settings[credit_note_prefix]" id="credit_note_prefix" class="form-control" value="<?php echo get_option('credit_note_prefix'); ?>">
@@ -171,7 +171,7 @@
       <?php echo render_textarea('settings[predefined_clientnote_credit_note]','settings_predefined_clientnote',get_option('predefined_clientnote_credit_note'),array('rows'=>6)); ?>
       <?php echo render_textarea('settings[predefined_terms_credit_note]','settings_predefined_predefined_term',get_option('predefined_terms_credit_note'),array('rows'=>6)); ?>
    </div>
-   <div role="tabpanel" class="tab-pane" id="estimates">
+   <div role="tab-pane" class="tab-pane" id="estimates">
       <div class="form-group">
          <label class="control-label" for="estimate_prefix"><?php echo _l('settings_sales_estimate_prefix'); ?></label>
          <input type="text" name="settings[estimate_prefix]" class="form-control" value="<?php echo get_option('estimate_prefix'); ?>">
@@ -252,7 +252,7 @@
       <?php echo render_textarea('settings[predefined_clientnote_estimate]','settings_predefined_clientnote',get_option('predefined_clientnote_estimate'),array('rows'=>6)); ?>
       <?php echo render_textarea('settings[predefined_terms_estimate]','settings_predefined_predefined_term',get_option('predefined_terms_estimate'),array('rows'=>6)); ?>
    </div>
-   <div role="tabpanel" class="tab-pane" id="proposals">
+   <div role="tab-pane" class="tab-pane" id="proposals">
       <?php echo render_input('settings[proposal_number_prefix]','proposal_number_prefix',get_option('proposal_number_prefix')); ?>
       <hr />
       <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('invoice_due_after_help'); ?>"></i>

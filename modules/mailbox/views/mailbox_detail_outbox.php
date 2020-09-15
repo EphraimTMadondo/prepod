@@ -121,7 +121,7 @@
                               </div>
                           </div>
                       </div>
-                      <div id="collapse7" role="tabpanel" aria-labelledby="headingCollapse7" class="collapse show">
+                      <div id="collapse7" role="tab-pane" aria-labelledby="headingCollapse7" class="collapse show">
                           <div class="card-content">
                               <div class="card-body py-1">
                                 <?php echo $inbox->body?>

@@ -62,7 +62,7 @@
             </li>
          </ul>
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane<?php if(!$this->input->get('tab') || $this->input->get('tab') === 'summary'){echo ' active';} ?>" id="summary">
+            <div role="tab-pane" class="tab-pane<?php if(!$this->input->get('tab') || $this->input->get('tab') === 'summary'){echo ' active';} ?>" id="summary">
                <address class="contract-html-company-info">
                   <?php echo format_organization_info(); ?>
                </address>
@@ -131,7 +131,7 @@
                </div>
                <?php } ?>
             </div>
-            <div role="tabpanel" class="tab-pane<?php if($this->input->get('tab') === 'discussion'){echo ' active';} ?>" id="discussion">
+            <div role="tab-pane" class="tab-pane<?php if($this->input->get('tab') === 'discussion'){echo ' active';} ?>" id="discussion">
                <?php echo form_open($this->uri->uri_string()) ;?>
                <div class="contract-comment">
                   <textarea name="content" rows="4" class="form-control"></textarea>

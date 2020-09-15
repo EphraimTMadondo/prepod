@@ -51,7 +51,7 @@
               </ul>
               <div class="tab-content">
                      <!-- start -->
-                <div role="tabpanel" class="tab-pane active" id="tab_public_information">
+                <div role="tab-pane" class="tab-pane active" id="tab_public_information">
                     <div class="col-md-12">
                       <h4 class="no-margin"><?php echo _l('public_information') ?></h4>
                       <hr class="hr-panel-heading">
@@ -126,7 +126,7 @@
 
                     <!-- start -->
                                   <?php $key_total =1; $key =1 ?>
-                <div role="tabpanel" class="tab-pane" id="tab_wages_allowances">
+                <div role="tab-pane" class="tab-pane" id="tab_wages_allowances">
                     <div class="col-md-12 ">
                         <h4 class="no-margin"><?php echo _l('information_wages_allowances') ?></h4>
 						<hr class="hr-panel-heading">
@@ -363,7 +363,7 @@
                     <!-- end -->
 
                     <!-- start -->
-                <div role="tabpanel" class="tab-pane" id="tab_signed_information">
+                <div role="tab-pane" class="tab-pane" id="tab_signed_information">
                     <div class="row">
                       <div class="col-md-6">
                           <?php

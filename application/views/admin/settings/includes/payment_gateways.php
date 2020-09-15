@@ -18,7 +18,7 @@
     } ?>
   </ul>
   <div class="tab-content mtop30">
-   <div role="tabpanel" class="tab-pane active" id="payment_modes_general">
+   <div role="tab-pane" class="tab-pane active" id="payment_modes_general">
     <?php render_yes_no_option('notification_when_customer_pay_invoice', 'notification_when_customer_pay_invoice'); ?>
     <hr />
     <?php render_yes_no_option('allow_payment_amount_to_be_modified', 'settings_allow_payment_amount_to_be_modified'); ?>
@@ -26,7 +26,7 @@
   <?php
   foreach ($payment_gateways as $gateway) {
       ?>
-    <div role="tabpanel" class="tab-pane" id="online_payments_<?php echo $gateway['id']; ?>_tab">
+    <div role="tab-pane" class="tab-pane" id="online_payments_<?php echo $gateway['id']; ?>_tab">
      <h4><?php echo $gateway['instance']->getName(); ?></h4>
      <?php hooks()->do_action('before_render_payment_gateway_settings', $gateway); ?>
      <hr />

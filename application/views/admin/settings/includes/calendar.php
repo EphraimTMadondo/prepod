@@ -8,7 +8,7 @@
   </li>
 </ul>
 <div class="tab-content mtop30">
-  <div role="tabpanel" class="tab-pane active" id="general">
+  <div role="tab-pane" class="tab-pane active" id="general">
     <?php echo render_input('settings[calendar_events_limit]','calendar_events_limit',get_option('calendar_events_limit'),'number'); ?>
     <hr />
     <div class="form-group">
@@ -80,7 +80,7 @@
 
      </div>
    </div>
-   <div role="tabpanel" class="tab-pane" id="colors">
+   <div role="tab-pane" class="tab-pane" id="colors">
 
     <?php echo render_color_picker('settings[calendar_invoice_color]',_l('settings_calendar_color',_l('invoice')),get_option('calendar_invoice_color')); ?>
     <?php echo render_color_picker('settings[calendar_estimate_color]',_l('settings_calendar_color',_l('estimate')),get_option('calendar_estimate_color')); ?>

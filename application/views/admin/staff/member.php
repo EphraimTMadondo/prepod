@@ -60,7 +60,7 @@
                   </li>
                </ul>
                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="tab_staff_profile">
+                  <div role="tab-pane" class="tab-pane active" id="tab_staff_profile">
                      <?php if(total_rows(db_prefix().'emailtemplates',array('slug'=>'two-factor-authentication','active'=>0)) == 0){ ?>
                      <div class="checkbox checkbox-primary">
                         <input type="checkbox" value="1" name="two_factor_auth_enabled" id="two_factor_auth_enabled"<?php if(isset($member) && $member->two_factor_auth_enabled == 1){echo ' checked';} ?>>
@@ -232,7 +232,7 @@
                      <?php } } ?>
                   <?php } ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="staff_permissions">
+                  <div role="tab-pane" class="tab-pane" id="staff_permissions">
                      <?php
                         hooks()->do_action('staff_render_permissions');
                         $selected = '';

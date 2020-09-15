@@ -115,12 +115,12 @@
    <!-- Tab panes -->
    <div class="tab-content mtop20">
       <!-- from leads modal -->
-      <div role="tabpanel" class="tab-pane active" id="tab_lead_profile">
+      <div role="tab-pane" class="tab-pane active" id="tab_lead_profile">
          <?php $this->load->view('admin/leads/profile'); ?>
       </div>
       <?php if(isset($lead)){ ?>
       <?php if(count($mail_activity) > 0 || isset($show_email_activity) && $show_email_activity){ ?>
-      <div role="tabpanel" class="tab-pane" id="tab_email_activity">
+      <div role="tab-pane" class="tab-pane" id="tab_email_activity">
          <?php hooks()->do_action('before_lead_email_activity', array('lead'=>$lead, 'email_activity'=>$mail_activity)); ?>
          <?php foreach($mail_activity as $_mail_activity){ ?>
          <div class="lead-email-activity">
@@ -146,7 +146,7 @@
       </div>
       <?php } ?>
       <?php if(is_gdpr() && (get_option('gdpr_enable_lead_public_form') == '1' || get_option('gdpr_enable_consent_for_leads') == '1' || (get_option('gdpr_data_portability_leads') == '1') && is_admin())) { ?>
-      <div role="tabpanel" class="tab-pane" id="gdpr">
+      <div role="tab-pane" class="tab-pane" id="gdpr">
 
           <?php if(get_option('gdpr_enable_lead_public_form') == '1') { ?>
             <a href="<?php echo $lead->public_url; ?>" target="_blank" class="mtop5">
@@ -175,7 +175,7 @@
           <?php } ?>
       </div>
       <?php } ?>
-      <div role="tabpanel" class="tab-pane" id="lead_activity">
+      <div role="tab-pane" class="tab-pane" id="lead_activity">
          <div class="card no-shadow">
             <div class="activity-feed">
                <?php foreach($activity_log as $log){ ?>
@@ -219,7 +219,7 @@
             <div class="clearfix"></div>
          </div>
       </div>
-      <div role="tabpanel" class="tab-pane" id="tab_proposals_leads">
+      <div role="tab-pane" class="tab-pane" id="tab_proposals_leads">
          <?php if(has_permission('proposals','','create')){ ?>
          <a href="<?php echo admin_url('proposals/proposal?rel_type=lead&rel_id='.$lead->id); ?>" class="btn btn-info mbot25"><?php echo _l('new_proposal'); ?></a>
          <?php } ?>
@@ -248,15 +248,15 @@
             ]);
             ?>
       </div>
-      <div role="tabpanel" class="tab-pane" id="tab_tasks_leads">
+      <div role="tab-pane" class="tab-pane" id="tab_tasks_leads">
          <?php init_relation_tasks_table(array('data-new-rel-id'=>$lead->id,'data-new-rel-type'=>'lead')); ?>
       </div>
-      <div role="tabpanel" class="tab-pane" id="lead_reminders">
+      <div role="tab-pane" class="tab-pane" id="lead_reminders">
          <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-lead-<?php echo $lead->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('lead_set_reminder_title'); ?></a>
          <hr />
          <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders-leads'); ?>
       </div>
-      <div role="tabpanel" class="tab-pane" id="attachments">
+      <div role="tab-pane" class="tab-pane" id="attachments">
          <?php echo form_open('admin/leads/add_lead_attachment',array('class'=>'dropzone mtop15 mbot15','id'=>'lead-attachment-upload')); ?>
          <?php echo form_close(); ?>
          <?php if(get_option('dropbox_app_key') != ''){ ?>
@@ -275,7 +275,7 @@
          </div>
          <?php } ?>
       </div>
-      <div role="tabpanel" class="tab-pane" id="lead_notes">
+      <div role="tab-pane" class="tab-pane" id="lead_notes">
          <?php echo form_open(admin_url('leads/add_note/'.$lead->id),array('id'=>'lead-notes')); ?>
          <div class="form-group">
                 <textarea id="lead_note_description" name="lead_note_description" class="form-control" rows="4"></textarea>

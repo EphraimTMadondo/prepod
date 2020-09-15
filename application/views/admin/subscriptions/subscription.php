@@ -81,7 +81,7 @@
           </div>
         </div>
             <div class="tab-content">
-             <div role="tabpanel" class="tab-pane active" id="upcoming_invoice">
+             <div role="tab-pane" class="tab-pane active" id="upcoming_invoice">
               <?php if(!empty($subscription->stripe_subscription_id) && $subscription->status != 'canceled' && !empty($subscription->ends_at)) { ?>
                 <div class="alert alert-info">
                  <a href="https://stripe.com/docs/subscriptions/canceling-pausing#canceling" target="_blank"><i class="fa fa-link"></i></a> <?php echo _l('subscription_will_be_canceled_at_end_of_billing_period'); ?>
@@ -118,7 +118,7 @@
                     ?>
                     <?php } ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="child_invoices">
+                  <div role="tab-pane" class="tab-pane" id="child_invoices">
                     <?php if(count($child_invoices)){ ?>
                       <p class="mtop20 bold"><?php echo _l('invoices'); ?></p>
                       <br />
@@ -142,7 +142,7 @@
                      </div>
                      <?php } ?>
                    </div>
-                   <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
+                   <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">
                     <?php
                     $this->load->view('admin/includes/emails_tracking',array(
                       'tracked_emails'=>

@@ -104,7 +104,7 @@
                  </div>
                </div>
                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="general_infor">
+                  <div role="tab-pane" class="tab-pane active" id="general_infor">
                     <div class="col-md-4">
                       <?php echo render_input('campaign_code', 'campaign_code', ''); ?>
                     </div>
@@ -189,7 +189,7 @@ echo render_input('cp_salary_from', 'starting_salary_from', '', 'text', $attr);?
 
                   </div>
 
-                  <div role="tabpanel" class="tab-pane" id="candidate_request">
+                  <div role="tab-pane" class="tab-pane" id="candidate_request">
 
                     <div class="col-md-6"> <?php echo render_input('cp_ages_from', 'ages_from', '', 'number'); ?></div>
                     <div class="col-md-6"> <?php echo render_input('cp_ages_to', 'ages_to', '', 'number'); ?></div>

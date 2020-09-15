@@ -22,13 +22,13 @@
             <li role="presentation" class="nav-item"><a class="nav-link" href="#phrase" aria-controls="phrase" role="tab" data-toggle="tab"><?php echo _l('spam_filter_blocked_phrases'); ?></a></li>
           </ul>
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="sender">
+            <div role="tab-pane" class="tab-pane active" id="sender">
               <?php render_datatable(array(_l('spam_filter_content'),_l('options')),'sender'); ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="subject">
+            <div role="tab-pane" class="tab-pane" id="subject">
              <?php render_datatable(array(_l('spam_filter_content'),_l('options')),'subject'); ?>
            </div>
-           <div role="tabpanel" class="tab-pane" id="phrase">
+           <div role="tab-pane" class="tab-pane" id="phrase">
              <?php render_datatable(array(_l('spam_filter_content'),_l('options')),'phrase'); ?>
            </div>
          </div>
