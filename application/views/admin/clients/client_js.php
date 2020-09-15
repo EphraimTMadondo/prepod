@@ -208,7 +208,7 @@ $(function() {
         $('input[name="billing_city"]').val($('input[name="city"]').val());
         $('input[name="billing_state"]').val($('input[name="state"]').val());
         $('input[name="billing_zip"]').val($('input[name="zip"]').val());
-        $('select[name="billing_country"]').selectpicker('val', $('select[name="country"]').selectpicker('val'));
+        $('select[name="billing_country"]').val($('select[name="country"]').val());
     });
 
     $('.customer-copy-billing-address').on('click', function(e) {
@@ -217,7 +217,7 @@ $(function() {
         $('input[name="shipping_city"]').val($('input[name="billing_city"]').val());
         $('input[name="shipping_state"]').val($('input[name="billing_state"]').val());
         $('input[name="shipping_zip"]').val($('input[name="billing_zip"]').val());
-        $('select[name="shipping_country"]').selectpicker('val', $('select[name="billing_country"]').selectpicker('val'));
+        $('select[name="shipping_country"]').val($('select[name="billing_country"]').val());
     });
 
     $('body').on('hidden.bs.modal', '#contact', function() {
