@@ -325,7 +325,9 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
     $select .= "    <div class='input-group'>\n";
     // $select .= '<div class="select-placeholder form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
     if ($label != '') {
-        $select .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
+        $select .= "<div class='input-group-prepend'>\n";
+        $select .= '    <label for="' . $name . '" class="input-group-text">' . _l($label, '', false) . '</label>';
+        $select .= "\n</div>\n";
     }
     $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control' . $select_class . '" ' . $_select_attrs . ' data-live-search="true">';
     if ($include_blank == true) {
@@ -397,7 +399,7 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
         $select .= "<option value='" . $key . "'" . $_selected . $data_content . $data_sub_text . ">" . $val . "</option>\n";
     }
     $select .= "        </select>\n";
-    $select .= "    </div>\n";
+    $select .= "    </label>\n";
     $select .= "</fieldset>\n";
 
     return $select;
