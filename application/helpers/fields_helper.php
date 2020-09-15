@@ -403,7 +403,7 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
 
 function render_select_with_input_group($name, $options, $option_attrs = [], $label = '', $selected = '', $input_group_contents = '', $select_attrs = [], $form_group_attr = [], $form_group_class = '', $select_class = '', $include_blank = true)
 {
-    $select_class .= 'custom-select';
+    $select_class .= ' custom-select';
     $select = render_select($name, $options, $option_attrs, $label, $selected, $select_attrs, $form_group_attr, $form_group_class, $select_class, $include_blank);
     $select = str_replace("<fieldset class='form-group'>", "<div class='input-group'>", $select);
     $select = str_replace('select-placeholder ', '', $select);
