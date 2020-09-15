@@ -88,7 +88,7 @@
          <div class="clearfix"></div>
          <hr class="hr-panel-heading" />
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane ptop10 active" id="tab_estimate">
+            <div role="tab-pane" class="tab-pane ptop10 active" id="tab_estimate">
                <div id="estimate-preview">
                   <div class="row">
                      <div class="project-overview-right">

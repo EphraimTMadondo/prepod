@@ -110,7 +110,7 @@
             <div class="modal-body">
                 <div id="commodity_item_id"></div>
                 <!-- interview process start -->
-                  <div role="tabpanel" class="tab-pane active" id="interview_infor">
+                  <div role="tab-pane" class="tab-pane active" id="interview_infor">
 
                             <div class="row">
                                 <div class="col-md-6">

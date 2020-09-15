@@ -43,7 +43,7 @@
                                  <!-- if hrmcontract id found in url -->
                                  <div class="tab-content">
                                  <!-- start -->
-                                <div role="tabpanel" class="tab-pane active" id="tab_list_insurance">
+                                <div role="tab-pane" class="tab-pane active" id="tab_list_insurance">
                                    
                                     <?php
                                     $table_data = array(
@@ -58,7 +58,7 @@
                                     ?>
 
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="tab_statistic">
+                                <div role="tab-pane" class="tab-pane" id="tab_statistic">
                                     
                                 </div>
                                  </div>

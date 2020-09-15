@@ -20,7 +20,7 @@
   </div>
 </div>
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="holiday">
+  <div role="tab-pane" class="tab-pane active" id="holiday">
     <table class="table dt-table">
        <thead>
         <tr>
@@ -61,7 +61,7 @@
        </tbody>
       </table>
   </div>
-  <div role="tabpanel" class="tab-pane" id="event_break">
+  <div role="tab-pane" class="tab-pane" id="event_break">
     <table class="table dt-table">
        <thead>
         <tr>
@@ -99,7 +99,7 @@
        </tbody>
       </table>
   </div>
-  <div role="tabpanel" class="tab-pane" id="unexpected_break">
+  <div role="tab-pane" class="tab-pane" id="unexpected_break">
     <table class="table dt-table">
        <thead>
         <tr>

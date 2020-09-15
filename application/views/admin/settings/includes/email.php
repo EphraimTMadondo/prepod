@@ -8,7 +8,7 @@
 	</li>
 </ul>
 <div class="tab-content">
-	<div role="tabpanel" class="tab-pane active" id="email_config">
+	<div role="tab-pane" class="tab-pane active" id="email_config">
 		<!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
 		<input type="text" class="fake-autofill-field" name="fakeusernameremembered" value='' tabindex="-1" />
 		<input type="password" class="fake-autofill-field" name="fakepasswordremembered" value='' tabindex="-1" />
@@ -89,7 +89,7 @@
 		</div>
 
 	</div>
-	<div role="tabpanel" class="tab-pane" id="email_queue">
+	<div role="tab-pane" class="tab-pane" id="email_queue">
 		<?php if(get_option('cron_has_run_from_cli') != '1') { ?>
 			<div class="alert alert-danger">
 				This feature requires a properly configured cron job. Before activating the feature, make sure that the <a href="<?php echo admin_url('settings?group=cronjob'); ?>">cron job</a> is configured as explanation in the documentation.

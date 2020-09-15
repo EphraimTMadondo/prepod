@@ -21,7 +21,7 @@ if($total_gateways > 1) { ?>
             </a>
         </h4>
     </div>
-    <div id="sms_<?php echo $gateway['id']; ?>" class="panel-collapse collapse<?php if($this->app_sms->get_option($gateway['id'],'active') == 1 || $total_gateways == 1){echo ' in';} ?>" role="tabpanel" aria-labelledby="<?php echo 'heading'.$gateway['id']; ?>">
+    <div id="sms_<?php echo $gateway['id']; ?>" class="panel-collapse collapse<?php if($this->app_sms->get_option($gateway['id'],'active') == 1 || $total_gateways == 1){echo ' in';} ?>" role="tab-pane" aria-labelledby="<?php echo 'heading'.$gateway['id']; ?>">
       <div class="card-body no-br-tlr no-border-color">
 
         <?php

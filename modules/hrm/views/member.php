@@ -93,7 +93,7 @@
                <?php } ?>
                </ul>
                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="tab_staff_profile">
+                  <div role="tab-pane" class="tab-pane active" id="tab_staff_profile">
                      <?php if(total_rows(db_prefix().'emailtemplates',array('slug'=>'two-factor-authentication','active'=>0)) == 0){ ?>
                      <div class="checkbox checkbox-primary">
                         <input type="checkbox" value="1" name="two_factor_auth_enabled" id="two_factor_auth_enabled"<?php if(isset($member) && $member->two_factor_auth_enabled == 1){echo ' checked';} ?>>
@@ -461,7 +461,7 @@
                   </div><br>
 
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="staff_permissions">
+                  <div role="tab-pane" class="tab-pane" id="staff_permissions">
                      <?php
                         hooks()->do_action('staff_render_permissions');
                         $selected = '';
@@ -499,7 +499,7 @@
 
 
                 <?php if(isset($member)) { ?>
-                   <div role="tabpanel" class="tab-pane" id="staff_contract">
+                   <div role="tab-pane" class="tab-pane" id="staff_contract">
                   
                      <?php
                         $table_data = array(
@@ -520,7 +520,7 @@
                         ?>
                    </div>
 
-                   <div role="tabpanel" class="tab-pane" id="insurrance">
+                   <div role="tab-pane" class="tab-pane" id="insurrance">
                       <div class="insurance-info">
                         <div class="row publib-insurance-title">
                              <div class="col-md-8">
@@ -600,7 +600,7 @@
                    </div>
 
 
-                   <div role="tabpanel" class="tab-pane" id="timekeeping">
+                   <div role="tab-pane" class="tab-pane" id="timekeeping">
                     <?php  echo _l('timekeeping') ?>
                    </div>
 
@@ -609,7 +609,7 @@
                   
 
 
-                   <div role="tabpanel" class="tab-pane" id="attachments">
+                   <div role="tab-pane" class="tab-pane" id="attachments">
 
                       <?php echo form_open_multipart('admin/hrm/upload_file',array('id'=>'hrm_attachment','class'=>'dropzone')); ?>
                       <?php echo form_close(); ?>   

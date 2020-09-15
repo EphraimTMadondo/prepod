@@ -154,7 +154,7 @@
                      </div>
                   </div>
                   <div class="tab-content">
-                     <div role="tabpanel" class="tab-pane<?php if(!$this->input->get('tab') || $this->input->get('tab') == 'tab_content'){echo ' active';} ?>" id="tab_content">
+                     <div role="tab-pane" class="tab-pane<?php if(!$this->input->get('tab') || $this->input->get('tab') == 'tab_content'){echo ' active';} ?>" id="tab_content">
                         <div class="row">
                            <?php if($contract->signed == 1){ ?>
                            <div class="col-md-12">
@@ -289,7 +289,7 @@
                         </div>
                         <?php } ?>
                      </div>
-                     <div role="tabpanel" class="tab-pane" id="tab_notes">
+                     <div role="tab-pane" class="tab-pane" id="tab_notes">
                         <?php echo form_open(admin_url('contracts/add_note/'.$contract->id),array('id'=>'sales-notes','class'=>'contract-notes-form')); ?>
                         <?php echo render_textarea('description'); ?>
                         <div class="text-right">
@@ -300,7 +300,7 @@
                         <div class="card mtop20 no-shadow" id="sales_notes_area">
                         </div>
                      </div>
-                     <div role="tabpanel" class="tab-pane" id="tab_comments">
+                     <div role="tab-pane" class="tab-pane" id="tab_comments">
                         <div class="row contract-comments mtop15">
                            <div class="col-md-12">
                               <div id="contract-comments"></div>
@@ -310,7 +310,7 @@
                            </div>
                         </div>
                      </div>
-                     <div role="tabpanel" class="tab-pane<?php if($this->input->get('tab') == 'attachments'){echo ' active';} ?>" id="attachments">
+                     <div role="tab-pane" class="tab-pane<?php if($this->input->get('tab') == 'attachments'){echo ' active';} ?>" id="attachments">
                         <?php echo form_open(admin_url('contracts/add_contract_attachment/'.$contract->id),array('id'=>'contract-attachments-form','class'=>'dropzone')); ?>
                         <?php echo form_close(); ?>
                         <div class="text-right mtop15">
@@ -350,7 +350,7 @@
                               ?>
                         </div>
                      </div>
-                     <div role="tabpanel" class="tab-pane<?php if($this->input->get('tab') == 'renewals'){echo ' active';} ?>" id="renewals">
+                     <div role="tab-pane" class="tab-pane<?php if($this->input->get('tab') == 'renewals'){echo ' active';} ?>" id="renewals">
                         <?php if(has_permission('contracts', '', 'create') || has_permission('contracts', '', 'edit')){ ?>
                         <div class="_buttons">
                            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#renew_contract_modal">
@@ -410,7 +410,7 @@
                         </div>
                         <?php } ?>
                      </div>
-                     <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
+                     <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">
                         <?php
                            $this->load->view('admin/includes/emails_tracking',array(
                              'tracked_emails'=>
@@ -418,7 +418,7 @@
                            );
                            ?>
                      </div>
-                     <div role="tabpanel" class="tab-pane" id="tab_tasks">
+                     <div role="tab-pane" class="tab-pane" id="tab_tasks">
                         <?php init_relation_tasks_table(array('data-new-rel-id'=>$contract->id,'data-new-rel-type'=>'contract')); ?>
                      </div>
                   </div>

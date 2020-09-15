@@ -243,7 +243,7 @@
          <div class="clearfix"></div>
          <hr class="hr-panel-heading" />
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="tab_invoice">
+            <div role="tab-pane" class="tab-pane active" id="tab_invoice">
                <?php if($invoice->status == Invoices_model::STATUS_CANCELLED && $invoice->recurring > 0) { ?>
                <div class="alert alert-info">
                   Recurring invoice with status Cancelled <b>is still ongoing recurring invoice</b>. If you want to stop this recurring invoice you should update the invoice recurring field to <b>No</b>.
@@ -252,12 +252,12 @@
                <?php $this->load->view('admin/invoices/invoice_preview_html'); ?>
             </div>
             <?php if(count($invoice->payments) > 0) { ?>
-            <div class="tab-pane" role="tabpanel" id="invoice_payments_received">
+            <div class="tab-pane" role="tab-pane" id="invoice_payments_received">
                <?php include_once(APPPATH . 'views/admin/invoices/invoice_payments_table.php'); ?>
             </div>
             <?php } ?>
             <?php if(count($applied_credits) > 0){ ?>
-            <div class="tab-pane" role="tabpanel" id="invoice_applied_credits">
+            <div class="tab-pane" role="tab-pane" id="invoice_applied_credits">
                <div class="table-responsive">
                   <table class="table table-bordered table-hover no-mtop">
                      <thead>
@@ -284,17 +284,17 @@
                </div>
             </div>
             <?php } ?>
-            <div role="tabpanel" class="tab-pane" id="tab_tasks">
+            <div role="tab-pane" class="tab-pane" id="tab_tasks">
                <?php init_relation_tasks_table(array('data-new-rel-id'=>$invoice->id,'data-new-rel-type'=>'invoice')); ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_reminders">
+            <div role="tab-pane" class="tab-pane" id="tab_reminders">
                <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target=".reminder-modal-invoice-<?php echo $invoice->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('invoice_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$invoice->id,'name'=>'invoice','members'=>$members,'reminder_title'=>_l('invoice_set_reminder_title'))); ?>
             </div>
             <?php if(count($invoice_recurring_invoices) > 0 || $invoice->recurring != 0){ ?>
-            <div role="tabpanel" class="tab-pane" id="tab_child_invoices">
+            <div role="tab-pane" class="tab-pane" id="tab_child_invoices">
                <?php if(count($invoice_recurring_invoices)){ ?>
                <p class="mtop30 bold"><?php echo _l('invoice_add_edit_recurring_invoices_from_invoice'); ?></p>
                <br />
@@ -317,7 +317,7 @@
                <?php } ?>
             </div>
             <?php } ?>
-            <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
+            <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">
                <?php
                   $this->load->view('admin/includes/emails_tracking',array(
                      'tracked_emails'=>
@@ -325,7 +325,7 @@
                   );
                   ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_notes">
+            <div role="tab-pane" class="tab-pane" id="tab_notes">
                <?php echo form_open(admin_url('invoices/add_note/'.$invoice->id),array('id'=>'sales-notes','class'=>'invoice-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
@@ -335,7 +335,7 @@
                <hr />
                <div class="card mtop20 no-shadow" id="sales_notes_area"></div>
             </div>
-            <div role="tabpanel" class="tab-pane ptop10" id="tab_activity">
+            <div role="tab-pane" class="tab-pane ptop10" id="tab_activity">
                <div class="row">
                   <div class="col-md-12">
                      <div class="activity-feed">
@@ -393,7 +393,7 @@
                   </div>
                </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_views">
+            <div role="tab-pane" class="tab-pane" id="tab_views">
                <?php
                   $views_activity = get_views_tracking('invoice',$invoice->id);
                   if(count($views_activity) === 0) {

@@ -21,7 +21,7 @@
 </li>
 </ul>
 <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="forgotten_options">
+    <div role="tab-pane" class="tab-pane active" id="forgotten_options">
         <h4 class="no-mtop">Contacts</h4>
         <hr class="hr-panel-heading">
         <?php render_yes_no_option('gdpr_contact_enable_right_to_be_forgotten','Enable contact to request data removal'); ?>
@@ -37,7 +37,7 @@
         <?php render_yes_no_option('gdpr_after_lead_converted_delete','After lead is converted to customer, delete all lead data'); ?>
         <hr />
     </div>
-    <div role="tabpanel" class="tab-pane" id="removal_requests">
+    <div role="tab-pane" class="tab-pane" id="removal_requests">
         <table class="table dt-table scroll-responsive" data-order-type="desc" data-order-col="4">
             <thead>
                 <tr>

@@ -77,7 +77,7 @@
                <div class="card-body">
                 <?php echo form_hidden('asset_id',$asset_id); ?>
                 <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="all_asset">
+                  <div role="tab-pane" class="tab-pane active" id="all_asset">
                     <?php
                         $table_data = array(
                             _l('asset_code'),
@@ -93,7 +93,7 @@
                         render_datatable($table_data,'table_assets1',['asset_sm' => 'asset_sm']);
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="not_pending_yet">
+                  <div role="tab-pane" class="tab-pane" id="not_pending_yet">
                     <?php
                         $table_data = array(
                             _l('asset_code'),
@@ -109,7 +109,7 @@
                         render_datatable($table_data,'table_assets2',['asset_sm' => 'asset_sm']);
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="using">
+                  <div role="tab-pane" class="tab-pane" id="using">
                     <?php
                         $table_data = array(
                             _l('asset_code'),
@@ -125,7 +125,7 @@
                         render_datatable($table_data,'table_assets3',['asset_sm' => 'asset_sm']);
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="liquidation">
+                  <div role="tab-pane" class="tab-pane" id="liquidation">
                     <?php
                         $table_data = array(
                             _l('asset_code'),
@@ -141,7 +141,7 @@
                         render_datatable($table_data,'table_assets4',['asset_sm' => 'asset_sm']);
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="warranty_repair">
+                  <div role="tab-pane" class="tab-pane" id="warranty_repair">
                     <?php
                         $table_data = array(
                             _l('asset_code'),
@@ -157,7 +157,7 @@
                         render_datatable($table_data,'table_assets5',['asset_sm' => 'asset_sm']);
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="lost">
+                  <div role="tab-pane" class="tab-pane" id="lost">
                     <?php
                         $table_data = array(
                             _l('asset_code'),
@@ -173,7 +173,7 @@
                         render_datatable($table_data,'table_assets6',['asset_sm' => 'asset_sm']);
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="broken">
+                  <div role="tab-pane" class="tab-pane" id="broken">
                     <?php
                         $table_data = array(
                             _l('asset_code'),

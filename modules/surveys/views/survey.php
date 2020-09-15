@@ -91,7 +91,7 @@
                   </li>
                </ul>
                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="survey_questions_tab">
+                  <div role="tab-pane" class="tab-pane active" id="survey_questions_tab">
                      <div class="_buttons">
                         <?php
                            if (total_rows(db_prefix().'surveyresultsets', 'surveyid=' . $survey->surveyid) > 0) { ?>
@@ -189,7 +189,7 @@
                         echo $question_area;
                         ?>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="survey_send_tab">
+                  <div role="tab-pane" class="tab-pane" id="survey_send_tab">
 
                      <?php echo form_open('admin/surveys/send/'.$survey->surveyid); ?>
 

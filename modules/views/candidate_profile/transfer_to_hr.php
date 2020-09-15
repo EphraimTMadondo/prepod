@@ -24,7 +24,7 @@
         <?php } ?>
        </ul>
        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="tab_staff_profile">          	
+          <div role="tab-pane" class="tab-pane active" id="tab_staff_profile">          	
           	<div class="row">
 	          	<div class="col-md-6">
 	          		<?php $attrs = (isset($candidate) ? array() : array('autofocus'=>true)); ?>
@@ -147,7 +147,7 @@
              </div>
              <?php } ?>
           </div>
-          <div role="tabpanel" class="tab-pane" id="staff_permissions">
+          <div role="tab-pane" class="tab-pane" id="staff_permissions">
              <?php
                 hooks()->do_action('staff_render_permissions');
                 $selected = '';

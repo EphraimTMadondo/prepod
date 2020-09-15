@@ -45,7 +45,7 @@
                       <?php echo form_hidden('recruitment_channel_id', $recruitment_channel_id); ?>
                     <?php }?>
                     <!-- form_infomation start -->
-                      <div role="tabpanel" class="tab-pane active" id="form_infomation">
+                      <div role="tab-pane" class="tab-pane active" id="form_infomation">
                         <div class="row mt-5">
                            <div class="col-md-6">
 
@@ -197,7 +197,7 @@ foreach ($roles as $m) {
                     <!-- form_infomation end -->
 
                     <!-- form_builder start -->
-                     <div role="tabpanel" class="tab-pane <?php if (isset($tab) && $tab = 'form_builder') {echo 'active';}?> " id="form_builder">
+                     <div role="tab-pane" class="tab-pane <?php if (isset($tab) && $tab = 'form_builder') {echo 'active';}?> " id="form_builder">
                         <div id="form-build-wrap"></div>
                         <div id='my_formBuilder'></div>
                      </div>

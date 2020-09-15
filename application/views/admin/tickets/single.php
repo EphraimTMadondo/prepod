@@ -87,7 +87,7 @@
                   <div class="clearfix"></div>
                </div>
                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane <?php if(!$this->session->flashdata('active_tab')){echo 'active';} ?>" id="addreply">
+                  <div role="tab-pane" class="tab-pane <?php if(!$this->session->flashdata('active_tab')){echo 'active';} ?>" id="addreply">
                      <hr class="no-mtop" />
                      <?php $tags = get_tags_in($ticket->ticketid,'ticket'); ?>
                      <?php if(count($tags) > 0){ ?>
@@ -269,7 +269,7 @@
                      <?php echo form_close(); ?>
                   </div>
                </div>
-               <div role="tabpanel" class="tab-pane" id="note">
+               <div role="tab-pane" class="tab-pane" id="note">
                   <hr class="no-mtop" />
                   <div class="form-group">
                      <label for="note_description"><?php echo _l('ticket_single_note_heading'); ?></label>
@@ -277,12 +277,12 @@
                   </div>
                   <a class="btn btn-primary float-right add_note_ticket"><?php echo _l('ticket_single_add_note'); ?></a>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tab_reminders">
+               <div role="tab-pane" class="tab-pane" id="tab_reminders">
                   <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".reminder-modal-ticket-<?php echo $ticket->ticketid; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('ticket_set_reminder_title'); ?></a>
                   <hr />
                   <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                </div>
-               <div role="tabpanel" class="tab-pane" id="othertickets">
+               <div role="tab-pane" class="tab-pane" id="othertickets">
                   <hr class="no-mtop" />
                   <div class="_filters _hidden_inputs hidden tickets_filters">
                      <?php echo form_hidden('filters_ticket_id',$ticket->ticketid); ?>
@@ -291,11 +291,11 @@
                   </div>
                   <?php echo AdminTicketsTableStructure(); ?>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tasks">
+               <div role="tab-pane" class="tab-pane" id="tasks">
                   <hr class="no-mtop" />
                   <?php init_relation_tasks_table(array('data-new-rel-id'=>$ticket->ticketid,'data-new-rel-type'=>'ticket')); ?>
                </div>
-               <div role="tabpanel" class="tab-pane <?php if($this->session->flashdata('active_tab_settings')){echo 'active';} ?>" id="settings">
+               <div role="tab-pane" class="tab-pane <?php if($this->session->flashdata('active_tab_settings')){echo 'active';} ?>" id="settings">
                   <hr class="no-mtop" />
                   <div class="row">
                      <div class="col-md-6">

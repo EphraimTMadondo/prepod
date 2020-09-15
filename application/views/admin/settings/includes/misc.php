@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div class="tab-content mtop30">
-      <div role="tabpanel" class="tab-pane active" id="misc">
+      <div role="tab-pane" class="tab-pane active" id="misc">
         <?php echo render_yes_no_option('view_contract_only_logged_in','settings_require_client_logged_in_to_view_contract'); ?>
         <hr />
         <?php echo render_input('settings[dropbox_app_key]','dropbox_app_key',get_option('dropbox_app_key')); ?>
@@ -46,7 +46,7 @@
         <?php render_yes_no_option('use_minified_files','use_minified_files'); ?>
       </div>
 
-      <div role="tabpanel" class="tab-pane" id="settings_tables">
+      <div role="tab-pane" class="tab-pane" id="settings_tables">
         <?php echo render_yes_no_option('scroll_responsive_tables','scroll_responsive_tables','scroll_responsive_tables_help'); ?>
         <hr />
         <div class="form-group">
@@ -89,7 +89,7 @@
         <?php echo render_input('settings[tables_pagination_limit]','settings_general_tables_limit',get_option('tables_pagination_limit'),'number'); ?>
         <hr />
       </div>
-      <div role="tabpanel" class="tab-pane" id="inline_create">
+      <div role="tab-pane" class="tab-pane" id="inline_create">
        <?php echo render_yes_no_option('staff_members_create_inline_lead_status',_l('inline_create_option',array(
         '<b>'._l('lead_status').'</b>',
         '<b>'._l('lead').'</b>'

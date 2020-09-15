@@ -190,7 +190,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="tab-content">
-               <div role="tabpanel" class="tab-pane active" id="tab_proposal">
+               <div role="tab-pane" class="tab-pane active" id="tab_proposal">
                   <div class="row mtop10">
                      <?php if($proposal->status == 3 && !empty($proposal->acceptance_firstname) && !empty($proposal->acceptance_lastname) && !empty($proposal->acceptance_email)){ ?>
                      <div class="col-md-12">
@@ -309,7 +309,7 @@
                         </div>
                         <?php } ?>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tab_comments">
+               <div role="tab-pane" class="tab-pane" id="tab_comments">
                   <div class="row proposal-comments mtop15">
                      <div class="col-md-12">
                         <div id="proposal-comments"></div>
@@ -319,7 +319,7 @@
                      </div>
                   </div>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tab_notes">
+               <div role="tab-pane" class="tab-pane" id="tab_notes">
                   <?php echo form_open(admin_url('proposals/add_note/'.$proposal->id),array('id'=>'sales-notes','class'=>'proposal-notes-form')); ?>
                   <?php echo render_textarea('description'); ?>
                   <div class="text-right">
@@ -330,7 +330,7 @@
                   <div class="card mt-2 no-shadow" id="sales_notes_area">
                   </div>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
+               <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">
                   <?php
                      $this->load->view('admin/includes/emails_tracking',array(
                        'tracked_emails'=>
@@ -338,16 +338,16 @@
                        );
                      ?>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tab_tasks">
+               <div role="tab-pane" class="tab-pane" id="tab_tasks">
                   <?php init_relation_tasks_table(array( 'data-new-rel-id'=>$proposal->id,'data-new-rel-type'=>'proposal')); ?>
                </div>
-               <div role="tabpanel" class="tab-pane" id="tab_reminders">
+               <div role="tab-pane" class="tab-pane" id="tab_reminders">
                   <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-proposal-<?php echo $proposal->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('proposal_set_reminder_title'); ?></a>
                   <hr />
                   <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                   <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$proposal->id,'name'=>'proposal','members'=>$members,'reminder_title'=>_l('proposal_set_reminder_title'))); ?>
                </div>
-               <div role="tabpanel" class="tab-pane ptop10" id="tab_views">
+               <div role="tab-pane" class="tab-pane ptop10" id="tab_views">
                   <?php
                      $views_activity = get_views_tracking('proposal',$proposal->id);
                        if(count($views_activity) === 0) {

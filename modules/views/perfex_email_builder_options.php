@@ -17,7 +17,7 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-                        <div class="tab-pane" role="tabpanel">
+                        <div class="tab-pane" role="tab-pane">
                             <div id="alert-info" style="display: none;" role="alert" class="alert alert-dismissible"> 
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <span class="alert-content"></span>

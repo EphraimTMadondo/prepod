@@ -2,7 +2,7 @@
  <?php echo form_open(admin_url('hrm/setting_hrm_permission'), array('id'=>'setting_hrm_permission')); ?>
 
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="applicable_object">
+  <div role="tab-pane" class="tab-pane active" id="applicable_object">
 
     <div class="row">
       <h5 class="publib-infor-title hrm-borderbottomlblue">

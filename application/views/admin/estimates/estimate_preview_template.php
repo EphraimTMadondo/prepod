@@ -195,7 +195,7 @@
          <div class="clearfix"></div>
          <hr class="hr-panel-heading" />
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane ptop10 active" id="tab_estimate">
+            <div role="tab-pane" class="tab-pane ptop10 active" id="tab_estimate">
                <div id="estimate-preview">
                   <div class="row">
                      <?php if($estimate->status == 4 && !empty($estimate->acceptance_firstname) && !empty($estimate->acceptance_lastname) && !empty($estimate->acceptance_email)){ ?>
@@ -397,16 +397,16 @@
                   </div>
                </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_tasks">
+            <div role="tab-pane" class="tab-pane" id="tab_tasks">
                <?php init_relation_tasks_table(array('data-new-rel-id'=>$estimate->id,'data-new-rel-type'=>'estimate')); ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_reminders">
+            <div role="tab-pane" class="tab-pane" id="tab_reminders">
                <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-estimate-<?php echo $estimate->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('estimate_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$estimate->id,'name'=>'estimate','members'=>$members,'reminder_title'=>_l('estimate_set_reminder_title'))); ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_emails_tracking">
+            <div role="tab-pane" class="tab-pane" id="tab_emails_tracking">
                <?php
                   $this->load->view('admin/includes/emails_tracking',array(
                      'tracked_emails'=>
@@ -414,7 +414,7 @@
                   );
                   ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_notes">
+            <div role="tab-pane" class="tab-pane" id="tab_notes">
                <?php echo form_open(admin_url('estimates/add_note/'.$estimate->id),array('id'=>'sales-notes','class'=>'estimate-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
@@ -425,7 +425,7 @@
                <div class="card mtop20 no-shadow" id="sales_notes_area">
                </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_activity">
+            <div role="tab-pane" class="tab-pane" id="tab_activity">
                <div class="row">
                   <div class="col-md-12">
                      <div class="activity-feed">
@@ -486,7 +486,7 @@
                   </div>
                </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_views">
+            <div role="tab-pane" class="tab-pane" id="tab_views">
                <?php
                   $views_activity = get_views_tracking('estimate',$estimate->id);
                   if(count($views_activity) === 0) {

@@ -72,7 +72,7 @@
 		             </div>
 		        </div>
 		        <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="detail">
+                  <div role="tab-pane" class="tab-pane active" id="detail">
 
               		<p class="bold margin-top-15 general-infor-color"><?php echo _l('general_infor'); ?></p>
               		<hr class="margin-top-10 general-infor-hr"/>
@@ -329,7 +329,7 @@ echo html_entity_decode($datas);
 
                   </div>
 
-                  <div role="tabpanel" class="tab-pane" id="history_recruitment">
+                  <div role="tab-pane" class="tab-pane" id="history_recruitment">
               		<p class="bold other_infor-style"><?php echo _l('campaign_has_joined'); ?></p>
               		<hr class="other_infor-hr" />
               		<?php if ($candidate->rec_campaign > 0) {
@@ -462,7 +462,7 @@ $_data = '<a href="' . admin_url('staff/profile/' . $care['add_from']) . '">' . 
 
                   </div>
 
-                  <div role="tabpanel" class="tab-pane" id="capacity_profile">
+                  <div role="tab-pane" class="tab-pane" id="capacity_profile">
 
                   	<div class="row col-md-12">
               			<p class="bold other_infor-style"><?php echo _l('candidate_evaluation'); ?></p>
@@ -592,7 +592,7 @@ $sp1 = '';
 
                   </div>
 
-                  <div role="tabpanel" class="tab-pane" id="attachment">
+                  <div role="tab-pane" class="tab-pane" id="attachment">
                   	<div id="candidate_pv_file">
                   		<br>
 			    	  	<?php

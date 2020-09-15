@@ -109,7 +109,7 @@
          <div class="clearfix"></div>
          <hr class="hr-panel-heading" />
          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane ptop10 active" id="tab_estimate">
+            <div role="tab-pane" class="tab-pane ptop10 active" id="tab_estimate">
                <div id="estimate-preview">
                   <div class="row">
                      
@@ -233,13 +233,13 @@
                   </div>
                </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_reminders">
+            <div role="tab-pane" class="tab-pane" id="tab_reminders">
                <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-purchase_order-<?php echo html_entity_decode($estimate->id); ?>"><i class="fa fa-bell-o"></i> <?php echo _l('estimate_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$estimate->id,'name'=>'purchase_order','members'=>$members,'reminder_title'=>_l('estimate_set_reminder_title'))); ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_notes">
+            <div role="tab-pane" class="tab-pane" id="tab_notes">
                <?php echo form_open(admin_url('purchase/add_note/'.$estimate->id),array('id'=>'sales-notes','class'=>'estimate-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
@@ -251,7 +251,7 @@
                </div>
             </div>
 
-            <div role="tabpanel" class="tab-pane" id="attachment">
+            <div role="tab-pane" class="tab-pane" id="attachment">
                <?php echo form_open_multipart(admin_url('purchase/purchase_order_attachment/'.$estimate->id),array('id'=>'partograph-attachments-upload')); ?>
                 <?php echo render_input('file','file','','file'); ?>
 
@@ -297,7 +297,7 @@
                <div id="purorder_file_data"></div>
             </div>
 
-            <div role="tabpanel" class="tab-pane" id="payment_record">
+            <div role="tab-pane" class="tab-pane" id="payment_record">
                <div class="col-md-6 pad_div_0" >
                <h4 class="font-medium mbot15 bold text-success"><?php echo _l('payment_for_pur_order').' '.$estimate->pur_order_number; ?></h4>
                </div>
