@@ -15,30 +15,30 @@
      <?php if ($this->session->flashdata('debug')) {
         ?>
        <div class="col-lg-12">
-        <div class="alert alert-warning">
-         <?php echo $this->session->flashdata('debug'); ?>
-       </div>
-     </div>
-   <?php
-    } ?>
-   <div class="card card-body col-md-3">
-    <ul class="nav nav-pills flex-column">
-      <?php
-      $i = 0;
-      foreach ($tabs as $t) {
-          ?>
-        <li class="nav-item">
-        <a class="nav-link <?php if($t['slug'] == $this->input->get('group')){echo 'active'; } ?>" href="<?php echo admin_url('settings?group=' . $t['slug']); ?>" data-group="<?php echo $t['slug']; ?>">
-          <?php echo $t['name']; ?></a>
-        </li>
-        <?php $i++;
-      } ?>
-      </ul>
-      <div class="card mtop20">
+          <div class="alert alert-warning">
+          <?php echo $this->session->flashdata('debug'); ?>
+        </div>
+        </div>
+        <?php } ?>
+      <div class="card card-body col-md-3">
+        <ul class="nav nav-pills flex-column">
+        <?php
+        $i = 0;
+        foreach ($tabs as $t) {
+            ?>
+          <li class="nav-item">
+          <a class="nav-link <?php if($t['slug'] == $this->input->get('group')){echo 'active'; } ?>" href="<?php echo admin_url('settings?group=' . $t['slug']); ?>" data-group="<?php echo $t['slug']; ?>">
+            <?php echo $t['name']; ?></a>
+          </li>
+          <?php $i++;
+        } ?>
+        </ul>
+      </div>
+      <div class="card mt-1 col-md-3">
        <div class="card-body">
         <a href="<?php echo admin_url('settings?group=update'); ?>" class="<?php if ($this->input->get('group') == 'update') {
           echo 'bold';
-      } ?>">
+          } ?>">
           <?php echo _l('settings_update'); ?>
         </a>
         <?php if (is_admin()) {
@@ -49,8 +49,7 @@
           } ?>">
             System/Server Info
           </a>
-        <?php
-      } ?>
+        <?php } ?>
         <div class="btn-bottom-toolbar text-right">
           <button type="submit" class="btn btn-info">
             <?php echo _l('settings_save'); ?>
@@ -58,7 +57,6 @@
         </div>
       </div>
     </div>
-  </div>
   <div class="col-md-9">
     <div class="card mtop20">
      <div class="card-body">
