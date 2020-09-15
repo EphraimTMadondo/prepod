@@ -46,8 +46,8 @@ if($total_gateways > 1) { ?>
             </div>
         </div>
     </div>
+    <?php } ?>
 </div>
-<?php } ?>
 <hr />
 <h4 class="mbot15">
     <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('sms_trigger_disable_tip'); ?>"></i>
