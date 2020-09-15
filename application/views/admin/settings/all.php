@@ -22,16 +22,14 @@
    <?php
     } ?>
    <div class="col-md-3">
-    <ul class="card mtop20 nav nav-pills flex-column">
+    <ul class="card nav nav-pills flex-column">
       <?php
       $i = 0;
-      foreach ($tabs as $group) {
+      foreach ($tabs as $t) {
           ?>
-        <li<?php if ($i == 0) {
-              echo " class='active'";
-          } ?>>
-        <a href="<?php echo admin_url('settings?group=' . $group['slug']); ?>" data-group="<?php echo $group['slug']; ?>">
-          <?php echo $group['name']; ?></a>
+        <li class="nav-item">
+        <a class="nav-link <?php if($t == $group){echo 'active'; } ?>" href="<?php echo admin_url('settings?group=' . $t['slug']); ?>" data-group="<?php echo $t['slug']; ?>">
+          <?php echo $t['name']; ?></a>
         </li>
         <?php $i++;
       } ?>
