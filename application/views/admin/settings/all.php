@@ -33,7 +33,7 @@
           <?php $i++;
         } ?>
         </ul>
-        <div class="card mt-1">
+        <div class="card">
           <div class="card-body">
             <a href="<?php echo admin_url('settings?group=update'); ?>" class="<?php if ($this->input->get('group') == 'update') {
               echo 'bold';
@@ -49,20 +49,25 @@
                 System/Server Info
               </a>
             <?php } ?>
-            <div class="btn-bottom-toolbar text-right">
-              <button type="submit" class="btn btn-info">
-                <?php echo _l('settings_save'); ?>
-              </button>
-            </div>
           </div>
       </div>
     </div>
     <div class="col-md-9">
-      <div class="card mtop20">
-      <div class="card-body">
-        <?php hooks()->do_action('before_settings_group_view', $tab); ?>
-        <?php $this->load->view($tab['view']) ?>
-        <?php hooks()->do_action('after_settings_group_view', $tab); ?>
+      <div class="card">
+        <div class="card-body">
+          <?php hooks()->do_action('before_settings_group_view', $tab); ?>
+          <?php $this->load->view($tab['view']) ?>
+          <?php hooks()->do_action('after_settings_group_view', $tab); ?>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+            <div class="btn-bottom-toolbar text-right">
+              <button type="submit" class="btn btn-secondary">
+                <?php echo _l('settings_save'); ?>
+              </button>
+            </div>
+        </div>
       </div>
     </div>
 </div>
