@@ -321,11 +321,13 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
     if (!empty($form_group_class)) {
         $form_group_class = ' ' . $form_group_class;
     }
-    $select .= '<div class="select-placeholder form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
+    $select .= "<fieldset class='form-group'>\n";
+    $select .= "    <div class='input-group'>\n";
+    // $select .= '<div class="select-placeholder form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
     if ($label != '') {
         $select .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
     }
-    $select .= '<select id="' . $name . '" name="' . $name . '" class="selectpicker' . $select_class . '" ' . $_select_attrs . ' data-live-search="true">';
+    $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control' . $select_class . '" ' . $_select_attrs . ' data-live-search="true">';
     if ($include_blank == true) {
         $select .= '<option value=""></option>';
     }
@@ -392,10 +394,11 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
                 $data_content = ' ' . $data_content;
             }
         }
-        $select .= '<option value="' . $key . '"' . $_selected . $data_content . $data_sub_text . '>' . $val . '</option>';
+        $select .= "<option value='" . $key . "'" . $_selected . $data_content . $data_sub_text . ">" . $val . "</option>\n";
     }
-    $select .= '</select>';
-    $select .= '</div>';
+    $select .= "        </select>\n";
+    $select .= "    </div>\n";
+    $select .= "</fieldset>\n";
 
     return $select;
 }
