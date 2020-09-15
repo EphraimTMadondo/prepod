@@ -2,7 +2,7 @@
 <div>
 <div class="_buttons">
     <?php if(is_admin()){ ?>
-        <a href="<?php echo admin_url('hrm/payroll_type'); ?>" class="btn btn-info mr-1 pull-left display-block"><?php echo _l('payroll_type_add'); ?></a>
+        <a href="<?php echo admin_url('hrm/payroll_type'); ?>" class="btn btn-primary"><?php echo _l('payroll_type_add'); ?></a>
     <?php } ?>
 </div>
 <div class="clearfix"></div>
