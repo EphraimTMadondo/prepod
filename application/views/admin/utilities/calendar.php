@@ -119,7 +119,7 @@
                     <span id="renderRange" class="render-range"></span>
                 </div>
                 <!-- calendar view  -->
-                <div id="calendar3" class="calendar-content"></div>
+               
             </div>
             <!-- calendar view end  -->
         </div>
