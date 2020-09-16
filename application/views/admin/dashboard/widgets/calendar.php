@@ -16,7 +16,7 @@
                     <div id="sidebar" class="sidebar">
                         <div class="sidebar-new-schedule">
                             <!-- create new schedule button -->
-                            <button id="btn-new-schedule" type="button" class="btn btn-primary btn-block sidebar-new-schedule-btn">
+                            <button id="" type="button" class="btn btn-primary btn-block sidebar-new-schedule-btn">
                                 New schedule
                             </button>
                         </div>
