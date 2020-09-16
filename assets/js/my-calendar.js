@@ -404,7 +404,7 @@
   
   
   $("#btn-new-schedule").on("click", function (){
-      showNewPopUp(null);
+     // showNewPopUp(null);
   });
 
 })();
