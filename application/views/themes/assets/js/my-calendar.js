@@ -224,10 +224,7 @@
     var end = event.end ? new Date(event.end.getTime()) : moment().add(1, 'hours').toDate();
 
     if (useCreationPopup) {
-      cal.openCreationPopup({
-        start: start,
-        end: end
-      });
+      
     }
   }
   // new schedule create
