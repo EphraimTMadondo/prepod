@@ -12,16 +12,16 @@
                 <div class="row">
                     <div class="col-md-12">
                         <?php if(isset($contact)){ ?>
-                        <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" id="contact-img" class="img-thumbnail">
+                        <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" id="contact-img" class="img-thumbnail" width="100" height="100">
                         <?php if(!empty($contact->profile_image)){ ?>
                         <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger float-right" id="contact-remove-img"><i class="bx bx-remove"></i></a>
                         <?php } ?>
-                        <hr />
                         <?php } ?>
-                        <div id="contact-profile-image" class="form-group<?php if(isset($contact) && !empty($contact->profile_image)){echo ' hide';} ?>">
+                        <div id="contact-profile-image" class="float-right form-group<?php if(isset($contact) && !empty($contact->profile_image)){echo ' hide';} ?>">
                             <label for="profile_image" class="profile-image"><?php echo _l('client_profile_image'); ?></label>
                             <input type="file" name="profile_image" class="form-control" id="profile_image">
                         </div>
+                        <hr />
                         <?php if(isset($contact)){ ?>
                         <div class="alert alert-warning hide" role="alert" id="contact_proposal_warning">
                             <?php echo _l('proposal_warning_email_change',array(_l('contact_lowercase'),_l('contact_lowercase'),_l('contact_lowercase'))); ?>
