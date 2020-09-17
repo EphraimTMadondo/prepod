@@ -154,7 +154,9 @@
                                     </div>
                                 </div>
                                 <?php echo form_hidden('custom_view'); ?>
-                                <div class="col-md-12 mt-1">
+                                <div class="clearfix"></div>
+                                <hr class="hr-panel-heading" />
+                                <div class="col-md-12">
                                     <?php $this->load->view('admin/contracts/table_html'); ?>
                                 </div>
                             </div>
