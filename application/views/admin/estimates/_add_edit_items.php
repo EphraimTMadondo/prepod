@@ -24,7 +24,7 @@
    </div>
    <div class="table-responsive s_table">
       <table class="table estimate-items-table items table-main-estimate-edit has-calculations no-mtop">
-         <thead>
+         <thead class="thead-dark">
             <tr>
                <th></th>
                <th width="20%" align="left"><i class="fa fa-exclamation-circle" aria-hidden="true" data-toggle="tooltip" data-title="<?php echo _l('item_description_new_lines_notice'); ?>"></i> <?php echo _l('estimate_table_item_heading'); ?></th>
