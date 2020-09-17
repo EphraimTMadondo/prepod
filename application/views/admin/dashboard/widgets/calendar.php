@@ -7,7 +7,7 @@
     <div class="dt-loader hide"></div>
     <?php //$this->load->view('admin/utilities/calendar_filters'); ?>
     <!--<div id="calendar"></div>-->
-    <div id="calendar35"></div>
+    <div id="calendar3"></div>
     <!-- calendar Wrapper  -->
                 <div class="calendar-wrapper position-relative">
                     <!-- calendar app overlay -->
