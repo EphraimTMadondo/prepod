@@ -69,7 +69,7 @@
                <td class="align-top">
                   <?php
                      $default_tax = unserialize(get_option('default_tax'));
-                     $select = '<select class="display-block tax main-tax" data-style="btn-outline-light" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
+                     $select = '<select class="selectPicker display-block tax main-tax" data-style="btn-outline-light" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
                      foreach($taxes as $tax){
                        $selected = '';
                        if(is_array($default_tax)){
