@@ -51,25 +51,25 @@
          </thead>
          <tbody>
             <tr class="main">
-               <td></td>
-               <td>
+               <td class="align-top"></td>
+               <td class="align-top">
                   <textarea name="description" rows="4" class="form-control" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
                </td>
-               <td>
+               <td class="align-top">
                   <textarea name="long_description" rows="4" class="form-control" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
                </td>
                <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
-               <td>
+               <td class="align-top">
                   <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
                   <input type="text" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control-plaintext text-right">
                </td>
-               <td>
+               <td class="align-top">
                   <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
                </td>
-               <td>
+               <td class="align-top">
                   <?php
                      $default_tax = unserialize(get_option('default_tax'));
-                     $select = '<select class="selectpicker display-block tax main-tax" data-style="btn-outline-light" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
+                     $select = '<select class="display-block tax main-tax" data-style="btn-outline-light" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
                      foreach($taxes as $tax){
                        $selected = '';
                        if(is_array($default_tax)){
@@ -83,8 +83,8 @@
                      echo $select;
                      ?>
                </td>
-               <td></td>
-               <td>
+               <td class="align-top"></td>
+               <td class="align-top">
                   <?php
                      $new_item = 'undefined';
                      if(isset($estimate)){
