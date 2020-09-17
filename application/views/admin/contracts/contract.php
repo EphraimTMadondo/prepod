@@ -41,8 +41,10 @@
                      <label for="contract_value"><?php echo _l('contract_value'); ?></label>
                      <div class="input-group" data-toggle="tooltip" title="<?php echo _l('contract_value_tooltip'); ?>">
                         <input type="number" class="form-control" name="contract_value" value="<?php if(isset($contract)){echo $contract->contract_value; }?>">
-                        <div class="input-group-addon">
-                           <?php echo $base_currency->symbol; ?>
+                        <div class="input-group-append">
+                           <span class="input-group-text">
+                              <?php echo $base_currency->symbol; ?>
+                           </span>
                         </div>
                      </div>
                   </div>

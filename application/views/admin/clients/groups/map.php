@@ -7,8 +7,8 @@ if(isset($client)){ ?>
           <label for="website"><?php echo _l('customer_latitude'); ?></label>
           <div class="input-group">
            <input type="text" name="latitude" id="latitude" value="<?php echo $client->latitude; ?>" class="form-control">
-           <div class="input-group-addon">
-            <span><a href="#" tabindex="-1" class="pull-left mr-1" onclick="fetch_lat_long_from_google_cprofile(); return false;" data-toggle="tooltip" data-title="<?php echo _l('fetch_from_google') . ' - ' . _l('customer_fetch_lat_lng_usage'); ?>"><i id="gmaps-search-icon" class="fa fa-google" aria-hidden="true"></i></a></span>
+           <div class="input-group-append">
+            <span class="input-group-text"><a href="#" tabindex="-1" class="pull-left mr-1" onclick="fetch_lat_long_from_google_cprofile(); return false;" data-toggle="tooltip" data-title="<?php echo _l('fetch_from_google') . ' - ' . _l('customer_fetch_lat_lng_usage'); ?>"><i id="gmaps-search-icon" class="fa fa-google" aria-hidden="true"></i></a></span>
         </div>
     </div>
 </div>

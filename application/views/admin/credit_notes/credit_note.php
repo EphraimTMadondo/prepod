@@ -166,21 +166,20 @@
             <div class="form-group">
              <label for="number"><?php echo _l('credit_note_number'); ?></label>
              <div class="input-group">
-              <span class="input-group-addon">
+              <span class="input-group-append">
                 <?php if(isset($credit_note)){ ?>
-                <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                <a class="input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                 <?php } ?>
                 <?php echo $prefix; ?></span>
                 <input type="text" name="number" class="form-control" value="<?php echo $_credit_note_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
                 <?php if($format == 3) { ?>
-                <span class="input-group-addon">
-                  <span id="prefix_year" class="format-n-yy"><?php echo $yy; ?></span>
+                <span class="input-group-append">
+                  <span id="prefix_year" class="format-n-yy input-group-text"><?php echo $yy; ?></span>
                 </span>
                 <?php } else if($format == 4) { ?>
-                <span class="input-group-addon">
-                 <span id="prefix_month" class="format-mm-yyyy"><?php echo $mm; ?></span>
-                 /
-                 <span id="prefix_year" class="format-mm-yyyy"><?php echo $yyyy; ?></span>
+                <span class="input-group-append">
+                 <span id="prefix_month" class="format-mm-yyyy input-group-text"><?php echo $mm; ?></span>
+                 <span id="prefix_year" class="format-mm-yyyy input-group-text"><?php echo $yyyy; ?></span>
                </span>
                <?php } ?>
              </div>
@@ -404,8 +403,8 @@
 
        <input type="number" data-toggle="tooltip" data-title="<?php echo _l('numbers_not_formatted_while_editing'); ?>" value="<?php echo (isset($credit_note) ? $credit_note->discount_total : 0); ?>" class="form-control pull-left input-discount-fixed<?php if(!isset($credit_note) || (isset($credit_note) && !is_sale_discount($credit_note,'fixed'))){echo ' hide';} ?>" min="0" name="discount_total">
 
-       <div class="input-group-addon">
-        <div class="dropdown">
+       <div class="input-group-append">
+        <div class="dropdown  input-group-text">
          <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
            <span class="discount-total-type-selected">
             <?php if(!isset($credit_note) || isset($credit_note) && (is_sale_discount($credit_note,'percent') || !is_sale_discount_applied($credit_note))) {

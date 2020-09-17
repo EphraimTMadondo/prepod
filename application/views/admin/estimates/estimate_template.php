@@ -147,23 +147,23 @@
             <div class="form-group">
                <label for="number"><?php echo _l('estimate_add_edit_number'); ?></label>
                <div class="input-group">
-                  <span class="input-group-addon">
+                  <span class="input-group-prepend">
                   <?php if(isset($estimate)){ ?>
-                  <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $estimate->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mtop15'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                  <a class=" input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $estimate->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mtop15'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                    <?php }
                     echo $prefix;
                   ?>
                  </span>
                   <input type="text" name="number" class="form-control" value="<?php echo $_estimate_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
                   <?php if($format == 3) { ?>
-                  <span class="input-group-addon">
-                     <span id="prefix_year" class="format-n-yy"><?php echo $yy; ?></span>
+                  <span class="input-group-append">
+                     <span id="prefix_year" class="format-n-yy  input-group-text"><?php echo $yy; ?></span>
                   </span>
                   <?php } else if($format == 4) { ?>
-                   <span class="input-group-addon">
-                     <span id="prefix_month" class="format-mm-yyyy"><?php echo $mm; ?></span>
+                   <span class="input-group-append">
+                     <span id="prefix_month" class="format-mm-yyyy  input-group-text"><?php echo $mm; ?></span>
                      /
-                     <span id="prefix_year" class="format-mm-yyyy"><?php echo $yyyy; ?></span>
+                     <span id="prefix_year" class="format-mm-yyyy  input-group-text"><?php echo $yyyy; ?></span>
                   </span>
                   <?php } ?>
                </div>

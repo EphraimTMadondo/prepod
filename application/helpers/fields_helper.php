@@ -116,7 +116,7 @@ function render_color_picker($name, $label = '', $value = '', $input_attrs = [])
     $picker .= '<label for="' . $name . '" class="control-label">' . $label . '</label>';
     $picker .= '<div class="input-group mbot15 colorpicker-input">
     <input type="text" value="' . set_value($name, $value) . '" name="' . $name . '" id="' . $name . '" class="form-control" ' . $_input_attrs . ' />
-    <span class="input-group-addon"><i></i></span>
+    <span class="input-group-append"><i class="input-group-text"></i></span>
 </div>';
     $picker .= '</div>';
 
@@ -172,8 +172,8 @@ function render_date_input($name, $label = '', $value = '', $input_attrs = [], $
     }
     $input .= '<div class="input-group date">';
     $input .= '<input type="text" id="' . $name . '" name="' . $name . '" class="form-control datepicker' . $input_class . '" ' . $_input_attrs . ' value="' . set_value($name, $value) . '" autocomplete="off">';
-    $input .= '<div class="input-group-addon">
-    <i class="fa fa-calendar calendar-icon"></i>
+    $input .= '<div class="input-group-append">
+    <i class="fa fa-calendar calendar-icon input-group-text"></i>
 </div>';
     $input .= '</div>';
     $input .= '</div>';
@@ -463,7 +463,7 @@ if (!function_exists('render_form_builder_field')) {
             if (isset($field->subtype) && $field->subtype == 'color') {
                 echo '<div class="input-group colorpicker-input">
          <input' . (isset($field->required) ? ' required="true"': '') . ' placeholder="' . (isset($field->placeholder) ? $field->placeholder : '') . '" type="text"' . (isset($field->value) ? ' value="' . $field->value . '"' : '') . ' name="' . $field->name . '" id="' . $field->name . '" class="' . (isset($field->className) ? $field->className : '') . '" />
-             <span class="input-group-addon"><i></i></span>
+             <span class="input-group-append"><i class="input-group-text"></i></span>
          </div>';
             } elseif ($type == 'file' || $type == 'text' || $type == 'number') {
                 $ftype = isset($field->subtype) ? $field->subtype : $type;

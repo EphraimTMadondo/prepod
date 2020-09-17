@@ -14,8 +14,8 @@
    </select>
  </div>
  <?php if(has_permission('items','','create')){ ?>
- <div class="input-group-addon">
-   <a href="#" data-toggle="modal" data-target="#sales_item_modal">
+ <div class="input-group-append">
+   <a class=" input-group-text" href="#" data-toggle="modal" data-target="#sales_item_modal">
     <i class="fa fa-plus"></i>
   </a>
 </div>

@@ -99,7 +99,7 @@
                             <div class="form-group">
                                 <label for="bs_column"><?php echo _l('custom_field_column'); ?></label>
                                 <div class="input-group">
-                                    <span class="input-group-addon">col-md-</span>
+                                    <span class="input-group-prepend"><span class="input-group-text">col-md-</span></span>
                                     <input type="number" max="12" class="form-control" name="bs_column" id="bs_column" value="<?php if(!isset($custom_field)){echo 12;} else{echo $custom_field->bs_column;} ?>">
                                 </div>
                             </div>
