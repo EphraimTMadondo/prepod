@@ -60,7 +60,7 @@ foreach ($rResult as $aRow) {
     $row = [];
     $rowName = '<div class="d-flex align-items-center">';
     $rowName .= '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle"><a href="#" class="ml-1" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
-        $rowName .= '<div class="row-options">';
+        $rowName .= '<br>';
 
         $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
 
@@ -75,8 +75,6 @@ foreach ($rResult as $aRow) {
                 $rowName .= ' | <a href="' . admin_url('clients/delete_contact/' . $aRow['userid'] . '/' . $aRow['id']) . '" class="text-danger _delete">' . _l('delete') . '</a>';
             }
         }
-
-    $rowName .= '   </div>';
     $rowName .= '</div>';
 
     $row[] = $rowName;
