@@ -376,7 +376,7 @@ var ScheduleList = [];
         success: function(result){
             //$("#div1").html(result);
             //alert("Leo " + result);
-            setSchedules2(JSON.parse(result));
+           // setSchedules2(JSON.parse(result));
             
         },
         data:{
