@@ -20,3 +20,11 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .show-on-hover:hover {
 	display: block;
 }
+
+
+.fake-autofill-field {
+    height: 1px !important;
+    width: 1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+}
