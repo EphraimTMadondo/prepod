@@ -103,39 +103,7 @@ function generateNames() {
 // generate randome schedule
 function generateRandomSchedule(calendar, renderStart, renderEnd) {
 
-  var today = new Date();
-
-            
-  var d = new Date();
-  var year = d.getFullYear();
-  var month = d.getMonth();
-  var day = d.getDate();
-  var nextYear = new Date(year + 1, month, day);
-  
-  var dd = String(nextYear.getDate()).padStart(2, '0');
-  var mm = String(nextYear.getMonth() + 1).padStart(2, '0'); //January is 0!
-  var yyyy = nextYear.getFullYear();
-  
-  nextYearDate = yyyy + '/' + mm + '/'  + dd;
-  
-  alert("this is running");
-  $.ajax({
-      url: "<?php echo base_url();?>admin/utilities/get_calendar_data",
-      type: "POST",
-      success: function(result){
-          //$("#div1").html(result);
-          //alert("Leo " + result);
-          setSchedules2(JSON.parse(result));
-          
-      },
-      data:{
-          csrf_token_name:'<?Php echo $this->security->get_csrf_hash(); ?>',
-          start:'2020-01-01',
-          end:nextYearDate,
-          timezone: myTimeZone
-      }
-  });
-}
+ 
   var schedule = new ScheduleInfo();
 
   schedule.id = chance.guid();
