@@ -39,7 +39,7 @@
             </div>
             <!-- calendar sidebar end -->
             <!-- calendar view start  -->
-            <div class="calendar-view">
+            <div class="">
                 <div class="calendar-action d-flex align-items-center flex-wrap">
                     <!-- sidebar toggle button for small sceen -->
                     <button class="btn btn-icon sidebar-toggle-btn">
