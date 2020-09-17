@@ -58,10 +58,9 @@ $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
     $row = [];
-    $rowName = '<div class="d-flex align-item-center">';
-    $rowName .= '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle mr-1">';
+    $rowName = '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle mr-1">';
     $rowName .= '<a href="#" class="ml-1" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
-    $rowName .= '<div class="break"></div>';
+    $rowName .= '<br><div class="mt-1 font-small-3">';
     $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
     if (is_gdpr() && get_option('gdpr_enable_consent_for_contacts') == '1' && is_admin()) {
         $rowName .= ' | <a href="' . admin_url('clients/export/' . $aRow['id']) . '">
