@@ -62,7 +62,8 @@ foreach ($rResult as $aRow) {
     $rowName .= '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle mr-1">';
     $rowName .= '<a href="#" class="ml-1" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
     $rowName .= '</div>';
-    $rowName .= '<div class="row-options hide">';
+    $rowName .= '<div class="row-options d-flex align-items-center hide">';
+    $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
     if (is_gdpr() && get_option('gdpr_enable_consent_for_contacts') == '1' && is_admin()) {
         $rowName .= ' | <a href="' . admin_url('clients/export/' . $aRow['id']) . '">
             ' . _l('dt_button_export') . ' (' . _l('gdpr_short') . ')
@@ -73,7 +74,6 @@ foreach ($rResult as $aRow) {
             $rowName .= ' | <a href="' . admin_url('clients/delete_contact/' . $aRow['userid'] . '/' . $aRow['id']) . '" class="text-danger _delete">' . _l('delete') . '</a>';
         }
     }
-    $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
     $rowName .= '</div>';
 
 

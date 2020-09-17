@@ -230,6 +230,9 @@ $(function() {
         $('select[name="default_currency"]').prop('disabled', false);
     });
 
+    $('.has-row-options').hover(function() {
+        $(this).find('.row-options').toggleClass('hide');
+    });
 });
 
 function delete_contact_profile_image(contact_id) {
