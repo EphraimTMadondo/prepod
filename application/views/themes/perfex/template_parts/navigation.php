@@ -210,7 +210,7 @@ else
             <?php if(is_client_logged_in()) { ?>
                <li class="dropdown customers-nav-item-profile">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                     <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" data-toggle="tooltip" data-title="<?php echo html_escape($contact->firstname . ' ' .$contact->lastname); ?>" data-placement="bottom" class="client-profile-image-small mr-1">
+                     <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" data-toggle="tooltip" data-title="<?php echo html_escape($contact->firstname . ' ' .$contact->lastname); ?>" data-placement="bottom" class="img avatar mr-1">
                      <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu animated fadeIn">

@@ -121,7 +121,7 @@
               $_data .= ' <a href="' . admin_url('staff/member/' . $file['staffid'])  . '">' . get_staff_full_name($file['staffid']) . '</a>';
               echo $_data;
             } else {
-             echo ' <img src="'.contact_profile_image_url($file['contact_id'],'thumb').'" class="client-profile-image-small mrigh5">
+             echo ' <img src="'.contact_profile_image_url($file['contact_id'],'thumb').'" class="img avatar mrigh5">
              <a href="'.admin_url('clients/client/'.get_user_id_by_contact_id($file['contact_id']).'?contactid='.$file['contact_id']).'">'.get_contact_full_name($file['contact_id']).'</a>';
            }
            ?>

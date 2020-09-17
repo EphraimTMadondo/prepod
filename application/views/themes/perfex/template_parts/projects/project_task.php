@@ -252,7 +252,7 @@
                'media-object img-circle pull-left mr-1'
                )); ?>
             <?php } else { ?>
-            <img src="<?php echo contact_profile_image_url($comment['contact_id']); ?>" class="client-profile-image-small media-object img-circle pull-left mr-1">
+            <img src="<?php echo contact_profile_image_url($comment['contact_id']); ?>" class="img avatar media-object img-circle pull-left mr-1">
             <?php } ?>
             <div class="media-body">
                <?php if($comment['staffid'] != 0){ ?>
