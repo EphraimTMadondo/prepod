@@ -203,7 +203,7 @@
             
             nextYearDate = yyyy + '/' + mm + '/'  + dd;
             
-            alert("this is running");a
+            alert("this is running");
             $.ajax({
                 url: "<?php echo base_url();?>admin/utilities/get_calendar_data",
                 type: "POST",
