@@ -5,19 +5,19 @@
           <?php $this->load->view('admin/invoice_items/item_select'); ?>
       </div>
       <div class="col-md-8 text-right show_quantity_as_wrapper">
-         <div class="mtop10">
+         <div class="mt-1">
             <span><?php echo _l('show_quantity_as'); ?></span>
-            <div class="radio radio-primary radio-inline">
-               <input type="radio" value="1" id="1" name="show_quantity_as" data-text="<?php echo _l('estimate_table_quantity_heading'); ?>" <?php if(isset($estimate) && $estimate->show_quantity_as == 1){echo 'checked';}else{echo'checked';} ?>>
-               <label for="1"><?php echo _l('quantity_as_qty'); ?></label>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" value="1" id="1" name="show_quantity_as" data-text="<?php echo _l('estimate_table_quantity_heading'); ?>" <?php if(isset($estimate) && $estimate->show_quantity_as == 1){echo 'checked';}else{echo'checked';} ?>>
+               <label class="form-check-label" for="1"><?php echo _l('quantity_as_qty'); ?></label>
             </div>
-            <div class="radio radio-primary radio-inline">
-               <input type="radio" value="2" id="2" name="show_quantity_as" data-text="<?php echo _l('estimate_table_hours_heading'); ?>" <?php if(isset($estimate) && $estimate->show_quantity_as == 2){echo 'checked';} ?>>
-               <label for="2"><?php echo _l('quantity_as_hours'); ?></label>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" value="2" id="2" name="show_quantity_as" data-text="<?php echo _l('estimate_table_hours_heading'); ?>" <?php if(isset($estimate) && $estimate->show_quantity_as == 2){echo 'checked';} ?>>
+               <label class="form-check-label" for="2"><?php echo _l('quantity_as_hours'); ?></label>
             </div>
-            <div class="radio radio-primary radio-inline">
-               <input type="radio" id="3" value="3" name="show_quantity_as" data-text="<?php echo _l('estimate_table_quantity_heading'); ?>/<?php echo _l('estimate_table_hours_heading'); ?>" <?php if(isset($estimate) && $estimate->show_quantity_as == 3){echo 'checked';} ?>>
-               <label for="3"><?php echo _l('estimate_table_quantity_heading'); ?>/<?php echo _l('estimate_table_hours_heading'); ?></label>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" id="3" value="3" name="show_quantity_as" data-text="<?php echo _l('estimate_table_quantity_heading'); ?>/<?php echo _l('estimate_table_hours_heading'); ?>" <?php if(isset($estimate) && $estimate->show_quantity_as == 3){echo 'checked';} ?>>
+               <label class="form-check-label" for="3"><?php echo _l('estimate_table_quantity_heading'); ?>/<?php echo _l('estimate_table_hours_heading'); ?></label>
             </div>
          </div>
       </div>
@@ -61,7 +61,7 @@
                <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
                <td>
                   <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-                  <input type="text" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control-paintext text-right">
+                  <input type="text" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control-plaintext text-right">
                </td>
                <td>
                   <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
