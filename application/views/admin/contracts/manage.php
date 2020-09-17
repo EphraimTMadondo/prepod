@@ -94,7 +94,6 @@
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />
                     <div class="row" id="contract_summary">
-
                         <?php $minus_7_days = date('Y-m-d', strtotime("-7 days")); ?>
                         <?php $plus_7_days = date('Y-m-d', strtotime("+7 days"));
                         $where_own = array();
@@ -154,15 +153,13 @@
                                         <canvas class="chart" height="400" id="contracts-value-by-type-chart"></canvas>
                                     </div>
                                 </div>
+                                <?php echo form_hidden('custom_view'); ?>
+                                <div class="col-md-6">
+                                    <?php $this->load->view('admin/contracts/table_html'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <?php echo form_hidden('custom_view'); ?>
-                        <div class="card-body">
-                           <?php $this->load->view('admin/contracts/table_html'); ?>
-                       </div>
-                   </div>
                </div>
            </div>
        </div>
