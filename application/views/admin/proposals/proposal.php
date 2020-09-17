@@ -39,7 +39,7 @@
                         <?php echo render_input('subject','proposal_subject',$value,'text',$attrs); ?>
                         <div class="form-group select-placeholder">
                            <label for="rel_type" class="control-label"><?php echo _l('proposal_related'); ?></label>
-                           <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                           <select name="rel_type" id="rel_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                               <option value=""></option>
                               <option value="lead" <?php if((isset($proposal) && $proposal->rel_type == 'lead') || $this->input->get('rel_type')){if($rel_type == 'lead'){echo 'selected';}} ?>><?php echo _l('proposal_for_lead'); ?></option>
                               <option value="customer" <?php if((isset($proposal) &&  $proposal->rel_type == 'customer') || $this->input->get('rel_type')){if($rel_type == 'customer'){echo 'selected';}} ?>><?php echo _l('proposal_for_customer'); ?></option>
@@ -119,7 +119,7 @@
                              <div class="col-md-6">
                                <div class="form-group select-placeholder">
                                  <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
-                                 <select name="discount_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                 <select name="discount_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                   <option value="" selected><?php echo _l('no_discount'); ?></option>
                                   <option value="before_tax" <?php
                                   if(isset($estimate)){ if($estimate->discount_type == 'before_tax'){ echo 'selected'; }}?>><?php echo _l('discount_type_before_tax'); ?></option>
@@ -155,7 +155,7 @@
                                      }
                                     }
                                     ?>
-                                 <select name="status" class="selectpicker" data-width="100%" <?php echo $disabled; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                 <select name="status" class="selectpicker" data-style="btn-outline-light" data-width="100%" <?php echo $disabled; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                     <?php foreach($statuses as $status){ ?>
                                     <option value="<?php echo $status; ?>" <?php if((isset($proposal) && $proposal->status == $status) || (!isset($proposal) && $status == 0)){echo 'selected';} ?>><?php echo format_proposal_status($status,'',false); ?></option>
                                     <?php } ?>
@@ -213,10 +213,10 @@
                   </div>
                   <div class="btn-bottom-toolbar bottom-transaction text-right">
                   <p class="no-mbot pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
-                    <button type="button" class="btn btn-info ml-1 proposal-form-submit save-and-send transaction-submit">
+                    <button type="button" class="btn btn-secondary ml-1 proposal-form-submit save-and-send transaction-submit">
                         <?php echo _l('save_and_send'); ?>
                     </button>
-                    <button class="btn btn-info ml-1 proposal-form-submit transaction-submit" type="button">
+                    <button class="btn btn-secondary ml-1 proposal-form-submit transaction-submit" type="button">
                       <?php echo _l('submit'); ?>
                     </button>
                </div>
