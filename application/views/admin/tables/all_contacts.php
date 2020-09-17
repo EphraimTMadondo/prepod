@@ -58,25 +58,25 @@ $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
     $row = [];
+    $rowName = '<div class="d-flex align-items-center">';
+    $rowName .= '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle"><a href="#" class="ml-1" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
+        $rowName .= '<div class="row-options">';
 
-    $rowName = '<img src="' . contact_profile_image_url($aRow['id']) . '" class="img avatar avata-sm mr-1"><a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
+        $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
 
-    $rowName .= '<div class="row-options">';
-
-    $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
-
-    if (is_gdpr() && get_option('gdpr_enable_consent_for_contacts') == '1' && is_admin()) {
-        $rowName .= ' | <a href="' . admin_url('clients/export/' . $aRow['id']) . '">
-             ' . _l('dt_button_export') . ' (' . _l('gdpr_short') . ')
-          </a>';
-    }
-
-    if (has_permission('customers', '', 'delete') || is_customer_admin($aRow['userid'])) {
-        if ($aRow['is_primary'] == 0 || ($aRow['is_primary'] == 1 && $aRow['total_contacts'] == 1)) {
-            $rowName .= ' | <a href="' . admin_url('clients/delete_contact/' . $aRow['userid'] . '/' . $aRow['id']) . '" class="text-danger _delete">' . _l('delete') . '</a>';
+        if (is_gdpr() && get_option('gdpr_enable_consent_for_contacts') == '1' && is_admin()) {
+            $rowName .= ' | <a href="' . admin_url('clients/export/' . $aRow['id']) . '">
+                ' . _l('dt_button_export') . ' (' . _l('gdpr_short') . ')
+            </a>';
         }
-    }
 
+        if (has_permission('customers', '', 'delete') || is_customer_admin($aRow['userid'])) {
+            if ($aRow['is_primary'] == 0 || ($aRow['is_primary'] == 1 && $aRow['total_contacts'] == 1)) {
+                $rowName .= ' | <a href="' . admin_url('clients/delete_contact/' . $aRow['userid'] . '/' . $aRow['id']) . '" class="text-danger _delete">' . _l('delete') . '</a>';
+            }
+        }
+
+    $rowName .= '   </div>';
     $rowName .= '</div>';
 
     $row[] = $rowName;
