@@ -28,8 +28,6 @@
     'week.timegridSchedule.borderRadius': '4px',
   }
 
- 
-
   // calendar default on click event
   cal.on({
     'clickSchedule': function (e) {
