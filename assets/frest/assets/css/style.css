@@ -13,7 +13,10 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 	display: none;
 }
 
-.break {
-	flex-basis: 100%;
-	height: 0;
+.show-on-hover {
+	display: none;
+}
+
+.show-on-hover:hover {
+	display: block;
 }
