@@ -167,7 +167,7 @@
            </div>
        </div>
    </div>
-   <?php init_tail(); ?>
+   <?php init_tail("contracts"); ?>
    <script>
     $(function(){
 
