@@ -8,7 +8,7 @@
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 'use strict';
-
+var ScheduleList = [];
 (function (window, Calendar) {
   // variables
   var cal, resizeThrottled;
