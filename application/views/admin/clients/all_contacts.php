@@ -67,6 +67,9 @@
   <?php } ?>
   _table_api = initDataTable('.table-all-contacts', window.location.href, optionsHeading, optionsHeading, allContactsServerParams, [0,'asc']);
   if(_table_api) {
+    $('.has-row-options').hover(function(){
+      $(this).find('.row-options').toggleClass('hide');
+    });
    <?php if(is_gdpr() && get_option('gdpr_enable_consent_for_contacts') == '1'){ ?>
     _table_api.on('draw', function () {
       var tableData = $('.table-all-contacts').find('tbody tr');
