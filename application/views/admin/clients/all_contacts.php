@@ -83,6 +83,7 @@
   }
 
   $('.has-row-options').hover(function() {
+    console.log($(this));
     $(this).find('.row-options').toggleClass('hide');
   });
 });
