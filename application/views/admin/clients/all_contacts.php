@@ -82,10 +82,9 @@
     <?php } ?>
   }
 
-  if($('row-options').length > 0)
-    $('row-options').on('hover', function() {
-      $(this).toggle();
-    });
+  $('row-options').hover(function() {
+    $(this).removeClass('hide');
+  });
 });
 </script>
 </body>
