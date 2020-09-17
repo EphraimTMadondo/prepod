@@ -68,6 +68,9 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/toastr.min.js'></script>\n";
       break;
+      case "contracts":
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
+      break;
       default:
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js'></script>\n";
       break;
