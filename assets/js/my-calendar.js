@@ -362,9 +362,9 @@
   function setSchedules() {
     cal.clear();
     //generateSchedule(cal.getViewName(), cal.getDateRangeStart(), cal.getDateRangeEnd());
-    getMySchedules();
-    cal.createSchedules(ScheduleList);
-    refreshScheduleVisibility();
+   // getMySchedules();
+   // cal.createSchedules(ScheduleList);
+   // refreshScheduleVisibility();
   }
   // Events initialize
   function setEventListener() {
