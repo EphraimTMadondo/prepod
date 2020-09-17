@@ -937,8 +937,8 @@ function get_datatable_buttons(table) {
 
     if (!$(table).hasClass('dt-inline')) {
         table_buttons_options.push({
-            text: '<i class="bx bx-cloud-download"></i>',
-            className: 'btn btn-default-dt-options btn-dt-reload btn-icon',
+            text: 'Reload',
+            className: 'btn btn-default-dt-options btn-dt-reload ',
             action: function(e, dt, node, config) {
                 dt.ajax.reload();
             }
