@@ -367,7 +367,7 @@ var ScheduleList = [];
     var mm = String(nextYear.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = nextYear.getFullYear();
     
-    nextYearDate = yyyy + '/' + mm + '/'  + dd;
+   var nextYearDate = yyyy + '/' + mm + '/'  + dd;
     
     alert("this is running");
     $.ajax({
