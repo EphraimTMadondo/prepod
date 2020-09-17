@@ -81,6 +81,11 @@
     });
     <?php } ?>
   }
+
+  if($('row-options').length > 0)
+    $('row-options').on('hover', function() {
+      $(this).toggle();
+    });
 });
 </script>
 </body>
