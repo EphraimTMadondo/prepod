@@ -82,8 +82,8 @@
     <?php } ?>
   }
 
-  $('.row-options').hover(function() {
-    $(this).toggle();
+  $('.has-row-options').hover(function() {
+    $(this).find('.row-options').toggleClass('hide');
   });
 });
 </script>

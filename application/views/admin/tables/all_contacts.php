@@ -58,7 +58,7 @@ $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
     $row = [];
-    $rowName = '<div class="d-flex align-item-center">';
+    $rowName = '<div class="d-flex align-item-center has-row-options">';
     $rowName .= '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle mr-1">';
     $rowName .= '<a href="#" class="ml-1" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
     $rowName .= '</div>';
