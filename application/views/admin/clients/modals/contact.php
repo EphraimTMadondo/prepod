@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <?php if(isset($contact)){ ?>
-                        <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" id="contact-img" class="client-profile-image-thumb">
+                        <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" id="contact-img" class="img-thumbnail">
                         <?php if(!empty($contact->profile_image)){ ?>
                         <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger float-right" id="contact-remove-img"><i class="bx bx-remove"></i></a>
                         <?php } ?>
@@ -64,13 +64,12 @@
                             <?php echo _l( 'client_password'); ?>
                         </label>
                         <div class="input-group">
-
                             <input type="password" class="form-control password" name="password" autocomplete="false">
-                            <span class="input-group-addon">
-                                <a href="#password" class="show_password" onclick="showPassword('password'); return false;"><i class="bx bx-show"></i></a>
+                            <span class="input-group-apppend">
+                                <a href="#password" class="show_password input-group-text" onclick="showPassword('password'); return false;"><i class="bx bx-show"></i></a>
                             </span>
-                            <span class="input-group-addon">
-                                <a href="#" class="generate_password" onclick="generatePassword(this);return false;"><i class="bx bx-refresh"></i></a>
+                            <span class="input-group-append">
+                                <a href="#" class="generate_password input-group-text" onclick="generatePassword(this);return false;"><i class="bx bx-refresh"></i></a>
                             </span>
                         </div>
                         <?php if(isset($contact)){ ?>
