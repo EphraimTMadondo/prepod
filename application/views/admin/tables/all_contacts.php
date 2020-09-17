@@ -61,8 +61,7 @@ foreach ($rResult as $aRow) {
     $rowName = '<div class="d-flex align-item-center">';
     $rowName .= '<img width="32" height="32" src="' . contact_profile_image_url($aRow['id']) . '" class="rounded-circle mr-1">';
     $rowName .= '<a href="#" class="ml-1" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['firstname'] . '</a>';
-    $rowName .= '</div>';
-    $rowName .= '<div class="row-options d-flex align-items-center hide">';
+    $rowName .= '<br>';
     $rowName .= '<a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . _l('edit') . '</a>';
     if (is_gdpr() && get_option('gdpr_enable_consent_for_contacts') == '1' && is_admin()) {
         $rowName .= ' | <a href="' . admin_url('clients/export/' . $aRow['id']) . '">
@@ -75,7 +74,6 @@ foreach ($rResult as $aRow) {
         }
     }
     $rowName .= '</div>';
-
 
     $row[] = $rowName;
 
