@@ -356,7 +356,7 @@ var ScheduleList = [];
 
     var today = new Date();
   
-              
+    var myTimeZone = "<?Php echo get_option('default_timezone'); ?>";          
     var d = new Date();
     var year = d.getFullYear();
     var month = d.getMonth();
