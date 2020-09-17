@@ -28,25 +28,7 @@
     'week.timegridSchedule.borderRadius': '4px',
   }
 
-  // calendar initialize here
-  cal = new Calendar('#calendar3', {
-    defaultView: 'month',
-    useCreationPopup: useCreationPopup,
-    useDetailPopup: useDetailPopup,
-    calendars: CalendarList,
-    theme: themeConfig,
-    template: {
-      milestone: function (model) {
-        return '<span class="bx bx-flag align-middle"></span> <span style="background-color: ' + model.bgColor + '">' + model.title + '</span>';
-      },
-      allday: function (schedule) {
-        return getTimeTemplate(schedule, true);
-      },
-      time: function (schedule) {
-        return getTimeTemplate(schedule, false);
-      }
-    }
-  });
+ 
 
   // calendar default on click event
   cal.on({
