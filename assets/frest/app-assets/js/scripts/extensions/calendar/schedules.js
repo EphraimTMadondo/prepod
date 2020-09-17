@@ -104,7 +104,7 @@ function generateNames() {
 function generateRandomSchedule(calendar, renderStart, renderEnd) {
 
   var today = new Date();
-
+  var myTimeZone = "<?Php echo get_option('default_timezone'); ?>";  
             
   var d = new Date();
   var year = d.getFullYear();
@@ -135,7 +135,6 @@ function generateRandomSchedule(calendar, renderStart, renderEnd) {
           timezone: myTimeZone
       }
   });
-}
   var schedule = new ScheduleInfo();
 
   schedule.id = chance.guid();
@@ -178,6 +177,8 @@ function generateRandomSchedule(calendar, renderStart, renderEnd) {
 
   ScheduleList.push(schedule);
 }
+
+
 // random schedule created
 function generateSchedule(viewName, renderStart, renderEnd) {
   ScheduleList = [];
