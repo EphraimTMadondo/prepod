@@ -146,16 +146,5 @@ function generateRandomSchedule(calendar, renderStart, renderEnd) {
 }
 // random schedule created
 function generateSchedule(viewName, renderStart, renderEnd) {
-  ScheduleList = [];
-  CalendarList.forEach(function (calendar) {
-    var i = 0, length = 1;
-    if (viewName === 'month') {
-      length = 1;
-    } else if (viewName === 'day') {
-      length = 2;
-    }
-    for (i; i < length; i += 1) {
-      generateRandomSchedule(calendar, renderStart, renderEnd);
-    }
-  });
+  
 }
