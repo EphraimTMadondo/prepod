@@ -61,7 +61,7 @@
                <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
                <td>
                   <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-                  <input type="text" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control input-transparent text-right">
+                  <input type="text" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control-paintext text-right">
                </td>
                <td>
                   <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
@@ -69,7 +69,7 @@
                <td>
                   <?php
                      $default_tax = unserialize(get_option('default_tax'));
-                     $select = '<select class="selectpicker display-block tax main-tax" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
+                     $select = '<select class="selectpicker display-block tax main-tax" data-style="btn-outline-light" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
                      foreach($taxes as $tax){
                        $selected = '';
                        if(is_array($default_tax)){
@@ -91,7 +91,7 @@
                        $new_item = true;
                      }
                      ?>
-                  <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-info"><i class="fa fa-check"></i></button>
+                  <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-secondary"><i class="fa fa-check"></i></button>
                </td>
             </tr>
             <?php if (isset($estimate) || isset($add_items)) {
@@ -148,7 +148,7 @@
          </tbody>
       </table>
    </div>
-   <div class="col-md-8 col-md-offset-4">
+   <div class="col-md-8 col-md-offset-4 float-right">
       <table class="table text-right">
          <tbody>
             <tr id="subtotal">
