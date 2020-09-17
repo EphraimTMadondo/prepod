@@ -334,7 +334,7 @@ class Staff extends AdminController
                     ]) . '</a>';
                     } else {
                         $notifications[$i]['profile_image'] = '<a href="' . admin_url('clients/client/' . $notification['fromclientid']) . '">
-                    <img class="img avatar img-circle pull-left" src="' . contact_profile_image_url($notification['fromclientid']) . '"></a>';
+                    <img class="img avatar avata-sm img-circle pull-left" src="' . contact_profile_image_url($notification['fromclientid']) . '"></a>';
                     }
                 } else {
                     $notifications[$i]['profile_image'] = '';

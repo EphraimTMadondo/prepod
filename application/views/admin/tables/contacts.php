@@ -49,7 +49,7 @@ $rResult = $result['rResult'];
 foreach ($rResult as $aRow) {
     $row = [];
 
-    $rowName = '<img src="' . contact_profile_image_url($aRow['id']) . '" class="img avatar mr-1"><a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['full_name'] . '</a>';
+    $rowName = '<img src="' . contact_profile_image_url($aRow['id']) . '" class="img avatar avata-sm mr-1"><a href="#" onclick="contact(' . $aRow['userid'] . ',' . $aRow['id'] . ');return false;">' . $aRow['full_name'] . '</a>';
 
     $rowName .= '<div class="row-options">';
 

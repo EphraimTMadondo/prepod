@@ -11,7 +11,7 @@
             if($activity['staff_id'] != 0){ ?>
             <?php echo staff_profile_image($activity['staff_id'],array('staff-profile-image-small','pull-left mr-1')); ?>
             <?php } else if($activity['contact_id'] != 0){ ?>
-            <img src="<?php echo contact_profile_image_url($activity['contact_id']); ?>" class="img avatar pull-left mr-1">
+            <img src="<?php echo contact_profile_image_url($activity['contact_id']); ?>" class="img avatar avata-sm pull-left mr-1">
             <?php } ?>
             <div class="media-body">
                 <div class="display-block">

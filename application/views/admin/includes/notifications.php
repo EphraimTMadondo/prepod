@@ -22,7 +22,7 @@
             if($notification['fromuserid'] != 0){
              echo staff_profile_image($notification['fromuserid'],array('staff-profile-image-small','img-circle notification-image','pull-left'));
            } else {
-            echo '<img src="'.contact_profile_image_url($notification['fromclientid']).'" class="img avatar img-circle pull-left notification-image">';
+            echo '<img src="'.contact_profile_image_url($notification['fromclientid']).'" class="img avatar avata-sm img-circle pull-left notification-image">';
           }
         }
         ?>

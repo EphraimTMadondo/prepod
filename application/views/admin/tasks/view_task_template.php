@@ -449,7 +449,7 @@
                       'media-object img-circle pull-left mr-1'
                    )) . '</a>';
                   } elseif($comment['contact_id'] != 0) {
-                     $comments .= '<img src="'.contact_profile_image_url($comment['contact_id']).'" class="img avatar media-object img-circle pull-left mr-1">';
+                     $comments .= '<img src="'.contact_profile_image_url($comment['contact_id']).'" class="img avatar avata-sm media-object img-circle pull-left mr-1">';
                   }
                   if ($comment['staffid'] == get_staff_user_id() || is_admin()) {
                      $comment_added = strtotime($comment['dateadded']);
