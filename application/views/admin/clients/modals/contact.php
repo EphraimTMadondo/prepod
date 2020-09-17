@@ -65,8 +65,8 @@
                         </label>
                         <div class="input-group">
                             <input type="password" class="form-control password" name="password" autocomplete="false">
-                            <span class="input-group-apppend">
-                                <a href="#password" class="show_password input-group-text" onclick="showPassword('password'); return false;"><i class="bx bx-show"></i></a>
+                            <span class="input-group-append">
+                                <a href="#password" class="show_password btn  input-group-text" onclick="showPassword('password'); return false;"><i class="bx bx-show"></i></a>
                                 <a href="#" class="generate_password input-group-text" onclick="generatePassword(this);return false;">Generate</i></a>
                             </span>
                         </div>
