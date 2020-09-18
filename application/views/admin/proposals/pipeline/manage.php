@@ -44,9 +44,6 @@
             <section id="kanban-wrapper" class="mt-2">
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-primary mb-1" id="add-kanban">
-                            <i class='bx bx-add-to-queue mr-50'></i> Add New Board
-                        </button>
                         <div id="kanban-app"></div>
                     </div>
                 </div>
@@ -154,7 +151,7 @@
 <div id="convert_helper"></div>
 <script>
    $(function(){
-      proposals_pipeline();
+    init_proposals_kanban();
   });
 </script>
 </body>
