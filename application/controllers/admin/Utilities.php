@@ -92,7 +92,8 @@ class Utilities extends AdminController
     public function get_calendar_data()
     {
         if ($this->input->is_ajax_request()) {
-            echo json_encode($this->utilities_model->get_calendar_data(
+            echo "model running";
+           // echo json_encode($this->utilities_model->get_calendar_data(
                 $this->input->post('start'),
                 $this->input->post('end'),
                 '',
