@@ -5,9 +5,9 @@
         <div class="content-header row">
             <div class="col-md-8">
                 <?php if(has_permission('tasks','','create')){ ?>
-                <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-info pull-left new"><?php echo _l('new_task'); ?></a>
+                <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-primary pull-left new"><?php echo _l('new_task'); ?></a>
                 <?php } ?>
-                <a href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>" class="btn btn-default mleft10 pull-left hidden-xs">
+                <a href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>" class="btn btn-light hidden-xs">
                     <?php if($switch_kanban == 1){ echo _l('switch_to_list_view');}else{echo _l('leads_switch_to_kanban');}; ?>
                 </a>
             </div>
@@ -28,7 +28,7 @@
             <section id="kanban-wrapper">
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-primary mb-1" id="add-kanban">
+                        <button type="button" class="btn btn-secondary mb-1" id="add-kanban">
                             <i class='bx bx-add-to-queue mr-50'></i> Add New Board
                         </button>
                         <div id="kanban-app"></div>
