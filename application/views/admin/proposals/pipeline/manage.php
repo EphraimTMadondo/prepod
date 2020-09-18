@@ -45,7 +45,7 @@
                         <div class="row">
                             <div id="proposals-pipeline">
                                 <div class="container-fluid">
-                                    <div id="kan-ban"></div>
+                                    <div id="kanban-app"></div>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
 <div id="proposal">
 </div>
 <?php $this->load->view('admin/includes/modals/sales_attach_file'); ?>
-<?php init_tail(); ?>
+<?php init_tail('proposals_kanban'); ?>
 <div id="convert_helper"></div>
 <script>
    $(function(){
