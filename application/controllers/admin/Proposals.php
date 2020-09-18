@@ -702,6 +702,11 @@ class Proposals extends AdminController
     public function get_pipeline_ajax(){
         if ($this->input->is_ajax_request()) {
             if (has_permission('proposals', '', 'view') || has_permission('proposals', '', 'view_own') || get_option('allow_staff_view_proposals_assigned') == 1) {
+                $parameters = [];
+                $parameters['search'] = $this->input->get('search');
+                $parameters['sort'] = $this->input->get('sort');
+                $parameters['sort_by'] = $this->input->get('sort_by');
+
                 $statuses = $this->proposals_model->get_statuses();
                 $kanban_items = array();
                 foreach ($statuses as $status) {
@@ -712,6 +717,7 @@ class Proposals extends AdminController
                     $kanban_item['total_proposals'] = count($proposals);
                     $kanban_items[] = $kanban_item;
                 }
+                $data['parameters'] = $parameters;
                 $data['statuses'] = $statuses;
                 $data['kanban_items'] = $kanban_items;
                 $data['success'] = true;
