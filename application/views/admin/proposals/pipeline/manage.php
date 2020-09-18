@@ -150,6 +150,20 @@
 <?php init_tail('proposals_kanban'); ?>
 <div id="convert_helper"></div>
 <script>
+    function get_kanban_item(kanban_item){
+        return {
+        id: "kanban-board-" + kanban_item.status,
+        title: kanban_item.title,
+        item: kanban_item.proposals.map(proposal => {
+            id: proposal.id,
+            title: proposal.subject,
+            border: "success",
+            dueDate: proposal.open_till,
+            comment: 1,
+            attachment: 3,
+        }),
+    });
+
     function kanban_proposal(){
         if ($('#kanban-app').length === 0) { return; }
         var parameters = [];
@@ -172,17 +186,7 @@
                 var kanban_curr_el, kanban_curr_item_id, kanban_item_title, kanban_data, kanban_item, kanban_users;
 
                 // Kanban Board and Item Data passed by json
-                var kanban_board_data = response.kanban_items.map(kanban_item => {
-                    id: "kanban-board-" + kanban_item.status,
-                    title: kanban_item.title,
-                    item: kanban_item.proposals.map(proposal => {
-                        id: proposal.id,
-                        title: proposal.subject,
-                        border: "success",
-                        dueDate: proposal.open_till,
-                        comment: 1,
-                        attachment: 3,
-                    })
+                var kanban_board_data = response.kanban_items.map(get_kanban_item);
                 });
 
                 // Kanban Board
