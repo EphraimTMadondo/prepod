@@ -703,15 +703,15 @@ class Proposals extends AdminController
         if ($this->input->is_ajax_request()) {
             if (has_permission('proposals', '', 'view') || has_permission('proposals', '', 'view_own') || get_option('allow_staff_view_proposals_assigned') == 1) {
                 $data['statuses'] = $this->proposals_model->get_statuses();
-                $data['kanban_items'] = [];
+                $kanban_items = array();
                 foreach ($statuses as $status) {
-                    $kanban_item = [];
                     $kanban_item['total_pages'] = ceil($this->proposals_model->do_kanban_query($status,$this->input->get('search'),1,array(),true)/get_option('proposals_pipeline_limit'));
                     $kanban_item['proposal_status_color_class'] = proposal_status_color_class($status);
                     $kanban_item['proposals'] = $this->proposals_model->do_kanban_query($status, $this->input->get('search'), 1, array('sort_by'=>$this->input->get('sort_by'), 'sort'=>$this->input->get('sort')));
                     $kanban_item['total_proposals'] = count($proposals);
-                    $data['kanban_items'][] = $kanban_item;
+                    $kanban_items[] = $kanban_item;
                 }
+                $data['kanban_items'] = kanban_items;
                 $data['success'] = true;
                 echo json_encode($data);
             } else {
