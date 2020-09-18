@@ -338,6 +338,7 @@ var ScheduleList = [];
   }
 
   function generateSchedule(viewName, renderStart, renderEnd) {
+    getMySchedules();
     ScheduleList = [];
     CalendarList.forEach(function (calendar) {
       var i = 0, length = 1;
@@ -347,8 +348,8 @@ var ScheduleList = [];
         length = 2;
       }
 
-      getMySchedules();
       
+
       for (i; i < length; i += 1) {
         generateRandomSchedule(calendar, renderStart, renderEnd);
       }
