@@ -166,6 +166,7 @@
         }
 
         parameters['kanban'] = true;
+        console.log({parameters});
         requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
             console.log(response);
         });
