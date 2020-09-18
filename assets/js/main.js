@@ -6728,7 +6728,6 @@ function proposals_pipeline() {
 * Init proposals pipeline
 */
 function init_proposals_kanban() {
-    
     if ($('#kanban-app').length === 0) { return; }
     var parameters = [];
     var _kanban_param_val;
