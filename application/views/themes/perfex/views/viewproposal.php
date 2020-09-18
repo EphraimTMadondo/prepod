@@ -17,7 +17,7 @@
 
               echo $items->table();
               ?>
-   <div class="row mtop15">
+   <div class="row mt-1">
       <div class="col-md-6 col-md-offset-6">
          <table class="table text-right">
             <tbody>
@@ -105,17 +105,17 @@
                        echo '<span class="warning-bg content-view-status">'._l('proposal_expired').'</span>';
                      } else { ?>
                   <?php if($identity_confirmation_enabled == '1'){ ?>
-                  <button type="button" id="accept_action" class="btn btn-success float-right action-button ml-1">
+                  <button type="button" id="accept_action" class="btn btn-success pull-right action-button ml-1">
                   <i class="fa fa-check"></i> <?php echo _l('proposal_accept_info'); ?>
                   </button>
                   <?php } else { ?>
                   <?php echo form_open($this->uri->uri_string()); ?>
-                  <button type="submit" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" class="btn btn-success float-right action-button ml-1"><i class="fa fa-check"></i> <?php echo _l('proposal_accept_info'); ?></button>
+                  <button type="submit" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" class="btn btn-success pull-right action-button ml-1"><i class="fa fa-check"></i> <?php echo _l('proposal_accept_info'); ?></button>
                   <?php echo form_hidden('action','accept_proposal'); ?>
                   <?php echo form_close(); ?>
                   <?php } ?>
                   <?php echo form_open($this->uri->uri_string()); ?>
-                  <button type="submit" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" class="btn btn-default float-right action-button ml-1"><i class="fa fa-remove"></i> <?php echo _l('proposal_decline_info'); ?></button>
+                  <button type="submit" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" class="btn btn-default pull-right action-button ml-1"><i class="fa fa-remove"></i> <?php echo _l('proposal_decline_info'); ?></button>
                   <?php echo form_hidden('action','decline_proposal'); ?>
                   <?php echo form_close(); ?>
                   <?php } ?>
@@ -128,11 +128,11 @@
                      }
                      } ?>
                   <?php echo form_open($this->uri->uri_string()); ?>
-                  <button type="submit" class="btn btn-default float-right action-button ml-1"><i class="fa fa-file-pdf-o"></i> <?php echo _l('clients_invoice_html_btn_download'); ?></button>
+                  <button type="submit" class="btn btn-default pull-right action-button ml-1"><i class="fa fa-file-pdf-o"></i> <?php echo _l('clients_invoice_html_btn_download'); ?></button>
                   <?php echo form_hidden('action','proposal_pdf'); ?>
                   <?php echo form_close(); ?>
                   <?php if(is_client_logged_in() && has_contact_permission('proposals')){ ?>
-                  <a href="<?php echo site_url('clients/proposals/'); ?>" class="btn btn-default ml-1 float-right action-button go-to-portal">
+                  <a href="<?php echo site_url('clients/proposals/'); ?>" class="btn btn-default ml-1 pull-right action-button go-to-portal">
                   <?php echo _l('client_go_to_dashboard'); ?>
                   </a>
                   <?php } ?>
@@ -228,7 +228,7 @@
                   <?php echo form_open($this->uri->uri_string()) ;?>
                   <div class="proposal-comment">
                      <textarea name="content" rows="4" class="form-control"></textarea>
-                     <button type="submit" class="btn btn-info mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('proposal_add_comment'); ?></button>
+                     <button type="submit" class="btn btn-info mtop10 pull-right" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('proposal_add_comment'); ?></button>
                      <?php echo form_hidden('action','proposal_comment'); ?>
                   </div>
                   <?php echo form_close(); ?>

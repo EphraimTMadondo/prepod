@@ -8,19 +8,19 @@
          <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
          <div class="horizontal-tabs">
             <ul class="nav nav-tabs nav-tabs-horizontal mb-1" role="tablist">
-               <li role="presentation" class="active">
-                  <a href="#tab_proposal" aria-controls="tab_proposal" role="tab" data-toggle="tab">
+               <li class="nav-item" role="presentation">
+                  <a  class="active nav-link" href="#tab_proposal" aria-controls="tab_proposal" role="tab" data-toggle="tab">
                   <?php echo _l('proposal'); ?>
                   </a>
                </li>
                <?php if(isset($proposal)){ ?>
-               <li role="presentation">
-                  <a href="#tab_comments" onclick="get_proposal_comments(); return false;" aria-controls="tab_comments" role="tab" data-toggle="tab">
+               <li class="nav-item" role="presentation">
+                  <a class="nav-link" href="#tab_comments" onclick="get_proposal_comments(); return false;" aria-controls="tab_comments" role="tab" data-toggle="tab">
                   <?php echo _l('proposal_comments'); ?>
                   </a>
                </li>
-               <li role="presentation">
-                  <a href="#tab_reminders" onclick="initDataTable('.table-reminders', admin_url + 'misc/get_reminders/' + <?php echo $proposal->id ;?> + '/' + 'proposal', undefined, undefined, undefined,[1,'asc']); return false;" aria-controls="tab_reminders" role="tab" data-toggle="tab">
+               <li class="nav-item" role="presentation">
+                  <a class="nav-link" href="#tab_reminders" onclick="initDataTable('.table-reminders', admin_url + 'misc/get_reminders/' + <?php echo $proposal->id ;?> + '/' + 'proposal', undefined, undefined, undefined,[1,'asc']); return false;" aria-controls="tab_reminders" role="tab" data-toggle="tab">
                   <?php echo _l('estimate_reminders'); ?>
                   <?php
                      $total_reminders = total_rows(db_prefix().'reminders',
@@ -37,13 +37,13 @@
                      ?>
                   </a>
                </li>
-               <li role="presentation" class="tab-separator">
-                  <a href="#tab_tasks" onclick="init_rel_tasks_table(<?php echo $proposal->id; ?>,'proposal'); return false;" aria-controls="tab_tasks" role="tab" data-toggle="tab">
+               <li class="nav-item" role="presentation" class="tab-separator">
+                  <a class="nav-link" href="#tab_tasks" onclick="init_rel_tasks_table(<?php echo $proposal->id; ?>,'proposal'); return false;" aria-controls="tab_tasks" role="tab" data-toggle="tab">
                   <?php echo _l('tasks'); ?>
                   </a>
                </li>
-                 <li role="presentation" class="tab-separator">
-                     <a href="#tab_notes" onclick="get_sales_notes(<?php echo $proposal->id; ?>,'proposals'); return false" aria-controls="tab_notes" role="tab" data-toggle="tab">
+                 <li class="nav-item" role="presentation" class="tab-separator">
+                     <a class="nav-link" href="#tab_notes" onclick="get_sales_notes(<?php echo $proposal->id; ?>,'proposals'); return false" aria-controls="tab_notes" role="tab" data-toggle="tab">
                      <?php echo _l('estimate_notes'); ?>
                      <span class="notes-total">
                         <?php if($totalNotes > 0){ ?>
@@ -52,8 +52,8 @@
                      </span>
                      </a>
                   </li>
-               <li role="presentation" data-toggle="tooltip" title="<?php echo _l('emails_tracking'); ?>" class="tab-separator">
-                  <a href="#tab_emails_tracking" aria-controls="tab_emails_tracking" role="tab" data-toggle="tab">
+               <li class="nav-item" role="presentation" data-toggle="tooltip" title="<?php echo _l('emails_tracking'); ?>" class="tab-separator">
+                  <a class="nav-link" href="#tab_emails_tracking" aria-controls="tab_emails_tracking" role="tab" data-toggle="tab">
                     <?php if(!is_mobile()){ ?>
                      <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
                      <?php } else { ?>
@@ -61,8 +61,8 @@
                      <?php } ?>
                   </a>
                </li>
-               <li role="presentation" data-toggle="tooltip" data-title="<?php echo _l('view_tracking'); ?>" class="tab-separator">
-                  <a href="#tab_views" aria-controls="tab_views" role="tab" data-toggle="tab">
+               <li class="nav-item" role="presentation" data-toggle="tooltip" data-title="<?php echo _l('view_tracking'); ?>" class="tab-separator">
+                  <a class="nav-link" href="#tab_views" aria-controls="tab_views" role="tab" data-toggle="tab">
                     <?php if(!is_mobile()){ ?>
                      <i class="fa fa-eye"></i>
                      <?php } else { ?>
@@ -70,8 +70,8 @@
                      <?php } ?>
                   </a>
                </li>
-               <li role="presentation" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>" class="tab-separator toggle_view">
-                  <a href="#" onclick="small_table_full_view(); return false;">
+               <li class="nav-item" role="presentation" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>" class="tab-separator toggle_view">
+                  <a class="nav-link" href="#" onclick="small_table_full_view(); return false;">
                   <i class="fa fa-expand"></i></a>
                </li>
                <?php } ?>
