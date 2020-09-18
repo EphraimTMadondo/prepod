@@ -16,7 +16,6 @@
                         <div id="kanban-app"></div>
                     </div>
                 </div>
-
                 <!-- User new mail right area -->
                 <div class="kanban-sidebar">
                     <div class="card shadow-none quill-wrapper">
@@ -111,7 +110,6 @@
                 <!--/ User Chat profile right area -->
             </section>
             <!--/ Sample Project kanban -->
-
         </div>
     </div>
 </div>

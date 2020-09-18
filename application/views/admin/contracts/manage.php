@@ -30,7 +30,7 @@
                     <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary float-left"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
                     <div class="btn-group float-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-left width300 height500">
@@ -141,13 +141,13 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <hr class="hr-panel-heading" />
-                                <div class="col-md-6 border-right">
+                                <div class="col-md-6 mt-1 border-right">
                                     <h4><?php echo _l('contract_summary_by_type'); ?></h4>
                                     <div class="relative" style="max-height:400px">
                                         <canvas class="chart" height="400" id="contracts-by-type-chart"></canvas>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mt-1">
                                     <h4><?php echo _l('contract_summary_by_type_value'); ?> (<span data-toggle="tooltip" data-title="<?php echo _l('base_currency_string'); ?>" class="text-has-action"><?php echo $base_currency->name; ?></span>)</h4>
                                     <div class="relative" style="max-height:400px">
                                         <canvas class="chart" height="400" id="contracts-value-by-type-chart"></canvas>

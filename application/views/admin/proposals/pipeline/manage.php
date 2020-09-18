@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head(true, 'proposals_kanban'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
@@ -20,13 +20,7 @@
                                 <?php echo form_hidden('sort_type'); ?>
                                 <?php echo form_hidden('sort',(get_option('default_proposals_pipeline_sort') != '' ? get_option('default_proposals_pipeline_sort_type') : '')); ?>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card animated mtop5 fadeIn">
-                    <?php echo form_hidden('proposalid',$proposalid); ?>
-                    <div class="card-body">
-                        <div class="row">
+                            <?php echo form_hidden('proposalid',$proposalid); ?>
                             <div class="col-md-12">
                                 <div class="kanban-leads-sort">
                                     <span class="bold"><?php echo _l('proposals_pipeline_sort'); ?>: </span>

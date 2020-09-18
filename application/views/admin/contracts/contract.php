@@ -71,7 +71,7 @@
                   <?php $rel_id = (isset($contract) ? $contract->id : false); ?>
                   <?php echo render_custom_fields('contracts',$rel_id); ?>
                   <div class="btn-bottom-toolbar text-right">
-                     <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                   </div>
                   <?php echo form_close(); ?>
                </div>
