@@ -110,7 +110,7 @@ class Utilities extends AdminController
 
                 **/
             
-                   // die();
+                   die();
         }
     }
 
