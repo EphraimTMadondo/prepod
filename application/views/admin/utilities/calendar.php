@@ -183,7 +183,7 @@
     <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
         <script>
         var csrf_token_name = '<?Php echo $this->security->get_csrf_hash(); ?>'
-        var getCalendarLink = "<?php echo base_url();?>admin/utilities/get_calendar_data";
+        var getCalendarLink = "<?php echo base_url();?>index.php/admin/utilities/get_calendar_data";
         var myTimeZone = '<?Php echo get_option('default_timezone'); ?>';
         getMySchedules();
         
