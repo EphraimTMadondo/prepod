@@ -6719,15 +6719,15 @@ function proposals_pipeline_update(ui, object) {
 }
 
 // Init proposals pipeline
-function proposals_pipeline() {
-    init_kanban('proposals/get_pipeline', proposals_pipeline_update, '.pipeline-status', 347, 360);
-}
+// function proposals_pipeline() {
+//     init_kanban('proposals/get_pipeline', proposals_pipeline_update, '.pipeline-status', 347, 360);
+// }
 
 /*
 * Added by Ephraim T Madondo
 * Init proposals pipeline
 */
-function init_proposals_kanban() {
+function proposals_pipeline() {
     if ($('#kanban-app').length === 0) { return; }
     var parameters = [];
     var _kanban_param_val;
