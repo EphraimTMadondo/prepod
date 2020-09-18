@@ -102,6 +102,13 @@ class Utilities extends AdminController
                 $this->input->post()
             ));
             die();
+<<<<<<< HEAD
+=======
+
+                **/
+            
+                   // die();
+>>>>>>> parent of a5615072... fixed get_cal die
         }
     }
 
