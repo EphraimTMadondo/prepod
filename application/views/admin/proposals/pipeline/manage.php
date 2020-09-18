@@ -151,7 +151,7 @@
 <div id="convert_helper"></div>
 <script>
    $(function(){
-    init_proposals_kanban();
+    proposals_pipeline();
   });
 </script>
 </body>
