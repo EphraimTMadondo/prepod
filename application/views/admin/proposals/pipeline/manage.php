@@ -12,7 +12,7 @@
                 <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-light ml-1 float-left"><?php echo _l('switch_to_list_view'); ?></a>
             </div>
             <div class="col-md-4" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
-                <?php echo render_input('search','','','search',array('data-name'=>'search','onkeyup'=>'proposals_pipeline();'),array(),'no-margin') ?>
+                <?php echo render_input('search','','','search',array('data-name'=>'search','onkeyup'=>'kanban_proposal();'),array(),'no-margin') ?>
                 <?php echo form_hidden('sort_type'); ?>
                 <?php echo form_hidden('sort',(get_option('default_proposals_pipeline_sort') != '' ? get_option('default_proposals_pipeline_sort_type') : '')); ?>
             </div>
@@ -150,7 +150,7 @@
 <?php init_tail('proposals_kanban'); ?>
 <div id="convert_helper"></div>
 <script>
-   $(function(){
+    function kanban_proposal(){
         if ($('#kanban-app').length === 0) { return; }
         var parameters = [];
         var _kanban_param_val;
@@ -171,6 +171,10 @@
                 console.log(response);
             });
         }, 200);
+    }
+    
+   $(function(){
+    kanban_proposal();
   });
 </script>
 </body>
