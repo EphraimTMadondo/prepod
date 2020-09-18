@@ -11,7 +11,7 @@
                     <div class="todo-app-menu">
                         <div class="form-group text-center add-task">
                             <!-- new task button -->
-                            <button type="button" class="btn btn-primary add-task-btn my-1">
+                            <button type="button" class="btn btn-primary btn-block add-task-btn my-1">
                                 <i class="bx bx-plus"></i>
                                 <span>New Task</span>
                             </button>
