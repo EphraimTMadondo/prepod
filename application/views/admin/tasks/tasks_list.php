@@ -15,9 +15,6 @@
                                 <i class="bx bx-plus"></i>
                                 <span>New Task</span>
                             </button>
-                            <a href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>" class="btn btn-light hidden-xs">
-                                <?php if($switch_kanban == 1){ echo _l('switch_to_list_view');}else{echo _l('leads_switch_to_kanban');}; ?>
-                            </a>
                         </div>
                         <!-- sidebar list start -->
                         <div class="sidebar-menu-list">
@@ -249,6 +246,7 @@
                                             <span>Sort</span>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sortDropdown">
+                                            <a class="dropdown-item descending" href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>"><?php if($switch_kanban == 1){ echo _l('switch_to_list_view');}else{echo _l('leads_switch_to_kanban');}; ?></a>
                                             <a class="dropdown-item ascending" href="#">Ascending</a>
                                             <a class="dropdown-item descending" href="#">Descending</a>
                                         </div>
