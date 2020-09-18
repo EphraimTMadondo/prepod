@@ -181,11 +181,10 @@
     
         <!-- Custom JS -->
     <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
-        <script>
+    <script>
         var csrf_token_name = '<?Php echo $this->security->get_csrf_hash(); ?>'
         var getCalendarLink = "<?php echo base_url();?>admin/utilities/get_calendar_data";
         var myTimeZone = '<?Php echo get_option('default_timezone'); ?>';
-        getMySchedules();
         
         function getMySchedules(){
             var today = new Date();
@@ -203,14 +202,14 @@
             
             nextYearDate = yyyy + '/' + mm + '/'  + dd;
             
-           // alert("this is running");
+            //alert("this is running");
             $.ajax({
-                url: "<?php echo base_url();?>index.php/admin/utilities/get_calendar_data",
+                url: "<?php echo base_url();?>admin/utilities/get_calendar_data",
                 type: "POST",
                 success: function(result){
                     //$("#div1").html(result);
-                    //alert("Leo " + result);
-                    setSchedules2(JSON.parse(result));
+                    alert("Leo " + result);
+                    //setSchedules2(JSON.parse(result));
                     
                 },
                 data:{
