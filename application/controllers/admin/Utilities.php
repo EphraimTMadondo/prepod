@@ -93,6 +93,8 @@ class Utilities extends AdminController
     {
         if ($this->input->is_ajax_request()) {
             echo "model running";
+            /**
+            return "model running";
            echo json_encode($this->utilities_model->get_calendar_data(
                 $this->input->post('start'),
                 $this->input->post('end'),
@@ -101,6 +103,8 @@ class Utilities extends AdminController
                 $this->input->post()
             ));
             die();
+
+            **/
         }
     }
 
