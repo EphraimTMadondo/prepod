@@ -166,11 +166,9 @@
         }
 
         parameters['kanban'] = true;
-        delay(function() {
-            requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
-                console.log(response);
-            });
-        }, 200);
+        requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
+            console.log(response);
+        });
     }
     
    $(function(){
