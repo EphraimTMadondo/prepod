@@ -422,7 +422,7 @@ var ScheduleList = [];
     //alert("this is running");
     $.ajax({
       type : "POST",
-      url  : "/authentication/login"
+      url  : "<?php echo base_url(); ?>"
 });
    
 
