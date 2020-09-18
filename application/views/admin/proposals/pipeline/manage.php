@@ -166,9 +166,53 @@
         }
 
         parameters['kanban'] = true;
-        console.log({parameters});
         requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
-            console.log(response);
+            if(response.success){
+                var kanban_curr_el, kanban_curr_item_id, kanban_item_title, kanban_data, kanban_item, kanban_users;
+
+                // Kanban Board and Item Data passed by json
+                var kanban_board_data = response.kanban_items.map(kanban_item => {
+                    id: "kanban-board-"+kanban_item.status,
+                    title: kanban_item.title,
+                    item: kanban_item.proposals.map(proposal => {
+                        id: proposal.id,
+                        title: proposal.subject,
+                        border: "success",
+                        dueDate: proposal.open_till,
+                        comment: 1,
+                        attachment: 3,
+                    })
+                });
+
+                // Kanban Board
+                var KanbanExample = new jKanban({
+                    element: "#kanban-wrapper", // selector of the kanban container
+                    buttonContent: "+ Add New Item", // text or html content of the board button
+
+                    // click on current kanban-item
+                    click: function (el) {
+                        // kanban-overlay and sidebar display block on click of kanban-item
+                        $(".kanban-overlay").addClass("show");
+                        $(".kanban-sidebar").addClass("show");
+
+                        // Set el to var kanban_curr_el, use this variable when updating title
+                        kanban_curr_el = el;
+
+                        // Extract  the kan ban item & id and set it to respective vars
+                        kanban_item_title = $(el).contents()[0].data;
+                        kanban_curr_item_id = $(el).attr("data-eid");
+
+                        // set edit title
+                        $(".edit-kanban-item .edit-kanban-item-title").val(kanban_item_title);
+                    },
+
+                    buttonClick: function (el, boardId) {
+                    
+                    },
+                    addItemButton: true, // add a button to board for easy item creation
+                    boards: kanban_board_data // data passed from defined variable
+                });
+            }
         });
     }
     

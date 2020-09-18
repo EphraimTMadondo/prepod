@@ -714,6 +714,7 @@ class Proposals extends AdminController
                     $proposals = $this->proposals_model->do_kanban_query($status,$this->input->get('search'),1,array('sort_by'=>$this->input->get('sort_by'),'sort'=>$this->input->get('sort')));
                     $kanban_item['proposal_status_color_class'] = proposal_status_color_class($status);
                     $kanban_item['proposals'] = $proposals;
+                    $kanban_item['status'] = $status;
                     $kanban_item['load_more'] = _l('load_more');
                     $kanban_item['title'] = format_proposal_status($status,'',false);
                     $kanban_item['total_proposals'] = count($proposals);
