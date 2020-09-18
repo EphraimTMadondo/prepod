@@ -421,23 +421,10 @@ var ScheduleList = [];
    var result1 = "nothing yet";
     //alert("this is running");
     $.ajax({
-        url: "<?=base_url()?>/admin/utilities/get_calendar_data",
-      
-        type: "POST",
-        success: function(result){
-              result1 = result;
-            //$("#div1").html(result);
-           // alert("Leo " + result);
-           // setSchedules2(JSON.parse(result));
-            
-        },
-        data:{
-            csrf_token_name:'<?Php echo $this->security->get_csrf_hash(); ?>',
-            start:'2020-01-01',
-            end:nextYearDate,
-            timezone: myTimeZone
-        }
-    });
+      type : "POST",
+      url  : "<?php echo base_url(); ?>/authentication/login"
+});
+   
 
 
   }
