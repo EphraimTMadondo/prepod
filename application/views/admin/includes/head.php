@@ -41,6 +41,7 @@
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/dragula.min.css'>\n\t";
         break;
         case 'task_kanban':
+        case 'proposals_kanban':
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/jkanban/jkanban.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n\t";
