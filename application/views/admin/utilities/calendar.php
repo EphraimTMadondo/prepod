@@ -185,7 +185,7 @@
         var csrf_token_name = '<?Php echo $this->security->get_csrf_hash(); ?>'
         var getCalendarLink = "<?php echo base_url();?>admin/utilities/get_calendar_data";
         var myTimeZone = '<?Php echo get_option('default_timezone'); ?>';
-        
+        getMySchedules();
         
         function getMySchedules(){
             var today = new Date();
