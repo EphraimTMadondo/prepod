@@ -368,7 +368,7 @@ var ScheduleList = [];
     var yyyy = nextYear.getFullYear();
     
    var nextYearDate = yyyy + '/' + mm + '/'  + dd;
-   var result1 +"nothing yet";
+   var result1 = "nothing yet";
     //alert("this is running");
     $.ajax({
         url: "<?php echo base_url();?>admin/utilities/get_calendar_data",
