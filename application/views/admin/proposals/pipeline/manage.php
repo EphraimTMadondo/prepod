@@ -168,11 +168,12 @@
         parameters['kanban'] = true;
         requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
             if(response.success){
+                console.log(response);
                 var kanban_curr_el, kanban_curr_item_id, kanban_item_title, kanban_data, kanban_item, kanban_users;
 
                 // Kanban Board and Item Data passed by json
                 var kanban_board_data = response.kanban_items.map(kanban_item => {
-                    id: "kanban-board-"+kanban_item.status,
+                    id: "kanban-board-" + kanban_item.status,
                     title: kanban_item.title,
                     item: kanban_item.proposals.map(proposal => {
                         id: proposal.id,
