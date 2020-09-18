@@ -6718,28 +6718,9 @@ function proposals_pipeline_update(ui, object) {
     }
 }
 
-// Init proposals pipeline changed by Ephraim
+// Init proposals pipeline
 function proposals_pipeline() {
-    if ($('#kanban-app').length === 0) { return; }
-    var parameters = [];
-    var _kanban_param_val;
-
-    var search = $('input[name="search"]').val();
-    if (typeof(search) != 'undefined' && search !== '') { parameters['search'] = search; }
-
-    var sort_type = $('input[name="sort_type"]');
-    var sort = $('input[name="sort"]').val();
-    if (sort_type.length != 0 && sort_type.val() !== '') {
-        parameters['sort_by'] = sort_type.val();
-        parameters['sort'] = sort;
-    }
-
-    parameters['kanban'] = true;
-    delay(function() {
-        requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
-            console.log(response);
-        });
-    }, 200);
+    init_kanban('proposals/get_pipeline', proposals_pipeline_update, '.pipeline-status', 347, 360);
 }
 
 
