@@ -421,7 +421,7 @@ var ScheduleList = [];
    var result1 = "nothing yet";
     //alert("this is running");
     $.ajax({
-        url: "<?php echo base_url();?>/admin/utilities/get_calendar_data",
+        url: "<?=base_url()?>index.php/admin/utilities/get_calendar_data",
       
         type: "POST",
         success: function(result){
