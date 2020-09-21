@@ -155,6 +155,7 @@
         var parameters = [];
         var _kanban_param_val;
 
+        //Sorting parameters
         var search = $('input[name="search"]').val();
         if (typeof(search) != 'undefined' && search !== '') { parameters['search'] = search; }
 
@@ -175,14 +176,14 @@
                 var kanban_board_data = response.kanban_items.map(kanban_item => ({
                         id: "kanban-board-" + kanban_item.status,
                         title: kanban_item.title,
-                        item: kanban_item.proposals.map(proposal => {
+                        item: kanban_item.proposals.map(proposal => ({
                             id: proposal.id,
                             title: proposal.subject,
                             border: "success",
                             dueDate: proposal.open_till,
                             comment: 1,
                             attachment: 3,
-                        }),
+                        })),
                     }));
                 });
 
