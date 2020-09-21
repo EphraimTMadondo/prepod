@@ -151,7 +151,7 @@
 <div id="convert_helper"></div>
 <script>
     function get_kanban_item(kanban_item){
-        return {
+        return ({
         id: "kanban-board-" + kanban_item.status,
         title: kanban_item.title,
         item: kanban_item.proposals.map(proposal => {
@@ -162,7 +162,7 @@
             comment: 1,
             attachment: 3,
         }),
-    });
+    }));
 
     function kanban_proposal(){
         if ($('#kanban-app').length === 0) { return; }
