@@ -87,10 +87,10 @@
             <div class="btn-group">
                <a href="#" class="btn btn-light btn-icon btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf"></i><?php if(is_mobile()){echo ' PDF';} ?> <span class="caret"></span></a>
                <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="hidden-xs"><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?output_type=I'); ?>"><?php echo _l('view_pdf'); ?></a></li>
-                  <li class="hidden-xs"><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?output_type=I'); ?>" target="_blank"><?php echo _l('view_pdf_in_new_window'); ?></a></li>
+                  <li class="hidden-xs dropdown-item"><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?output_type=I'); ?>"><?php echo _l('view_pdf'); ?></a></li>
+                  <li class="hidden-xs dropdown-item"><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?output_type=I'); ?>" target="_blank"><?php echo _l('view_pdf_in_new_window'); ?></a></li>
                   <li><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id); ?>"><?php echo _l('download'); ?></a></li>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?print=true'); ?>" target="_blank">
                      <?php echo _l('print'); ?>
                      </a>
@@ -103,20 +103,20 @@
                <?php echo _l('more'); ?> <span class="caret"></span>
                </button>
                <ul class="dropdown-menu dropdown-menu-right">
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo site_url('proposal/'.$proposal->id .'/'.$proposal->hash); ?>" target="_blank"><?php echo _l('proposal_view'); ?></a>
                   </li>
                   <?php hooks()->do_action('after_proposal_view_as_client_link', $proposal); ?>
                   <?php if(!empty($proposal->open_till) && date('Y-m-d') < $proposal->open_till && ($proposal->status == 4 || $proposal->status == 1) && is_proposals_expiry_reminders_enabled()) { ?>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo admin_url('proposals/send_expiry_reminder/'.$proposal->id); ?>"><?php echo _l('send_expiry_reminder'); ?></a>
                   </li>
                   <?php } ?>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="#" data-toggle="modal" data-target="#sales_attach_file"><?php echo _l('invoice_attach_file'); ?></a>
                   </li>
                   <?php if(has_permission('proposals','','create')){ ?>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo admin_url() . 'proposals/copy/'.$proposal->id; ?>"><?php echo _l('proposal_copy'); ?></a>
                   </li>
                   <?php } ?>
@@ -124,21 +124,21 @@
                   <?php foreach($proposal_statuses as $status){
                      if(has_permission('proposals','','edit')){
                       if($proposal->status != $status){ ?>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo admin_url() . 'proposals/mark_action_status/'.$status.'/'.$proposal->id; ?>"><?php echo _l('proposal_mark_as',format_proposal_status($status,'',false)); ?></a>
                   </li>
                   <?php
                      } } } ?>
                   <?php } ?>
                   <?php if(!empty($proposal->signature) && has_permission('proposals','','delete')){ ?>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo admin_url('proposals/clear_signature/'.$proposal->id); ?>" class="_delete">
                      <?php echo _l('clear_signature'); ?>
                      </a>
                   </li>
                   <?php } ?>
                   <?php if(has_permission('proposals','','delete')){ ?>
-                  <li>
+                  <li class="dropdown-item">
                      <a href="<?php echo admin_url() . 'proposals/delete/'.$proposal->id; ?>" class="text-danger delete-text _delete"><?php echo _l('proposal_delete'); ?></a>
                   </li>
                   <?php } ?>
@@ -166,10 +166,10 @@
                      }
                      ?>
                   <?php if(has_permission('estimates','','create')){ ?>
-                  <li <?php if($disable_convert){ echo 'data-toggle="tooltip" title="'._l($help_text,_l('proposal_convert_estimate')).'"';} ?>><a href="#" <?php if($disable_convert){ echo 'style="cursor:not-allowed;" onclick="return false;"';} else {echo 'data-template="estimate" onclick="proposal_convert_template(this); return false;"';} ?>><?php echo _l('proposal_convert_estimate'); ?></a></li>
+                  <li class="dropdown-item" <?php if($disable_convert){ echo 'data-toggle="tooltip" title="'._l($help_text,_l('proposal_convert_estimate')).'"';} ?>><a href="#" <?php if($disable_convert){ echo 'style="cursor:not-allowed;" onclick="return false;"';} else {echo 'data-template="estimate" onclick="proposal_convert_template(this); return false;"';} ?>><?php echo _l('proposal_convert_estimate'); ?></a></li>
                   <?php } ?>
                   <?php if(has_permission('invoices','','create')){ ?>
-                  <li <?php if($disable_convert){ echo 'data-toggle="tooltip" title="'._l($help_text,_l('proposal_convert_invoice')).'"';} ?>><a href="#" <?php if($disable_convert){ echo 'style="cursor:not-allowed;" onclick="return false;"';} else {echo 'data-template="invoice" onclick="proposal_convert_template(this); return false;"';} ?>><?php echo _l('proposal_convert_invoice'); ?></a></li>
+                  <li class="dropdown-item" <?php if($disable_convert){ echo 'data-toggle="tooltip" title="'._l($help_text,_l('proposal_convert_invoice')).'"';} ?>><a href="#" <?php if($disable_convert){ echo 'style="cursor:not-allowed;" onclick="return false;"';} else {echo 'data-template="invoice" onclick="proposal_convert_template(this); return false;"';} ?>><?php echo _l('proposal_convert_invoice'); ?></a></li>
                   <?php } ?>
                </ul>
             </div>
