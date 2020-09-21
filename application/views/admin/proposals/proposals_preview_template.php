@@ -53,7 +53,7 @@
                <li class="nav-item" role="presentation" data-toggle="tooltip" title="<?php echo _l('emails_tracking'); ?>" class="tab-separator">
                   <a class="nav-link" href="#tab_emails_tracking" aria-controls="tab_emails_tracking" role="tab" data-toggle="tab">
                     <?php if(!is_mobile()){ ?>
-                     <i class="fa fa-envelope" aria-hidden="true"></i>
+                     <i class="bx bx-envelope" aria-hidden="true"></i>
                      <?php } else { ?>
                      <?php echo _l('emails_tracking'); ?>
                      <?php } ?>
@@ -62,7 +62,7 @@
                <li class="nav-item" role="presentation" data-toggle="tooltip" data-title="<?php echo _l('view_tracking'); ?>" class="tab-separator">
                   <a class="nav-link" href="#tab_views" aria-controls="tab_views" role="tab" data-toggle="tab">
                     <?php if(!is_mobile()){ ?>
-                     <i class="fa fa-eye"></i>
+                     <i class="bx bx-show"></i>
                      <?php } else { ?>
                      <?php echo _l('view_tracking'); ?>
                      <?php } ?>
@@ -70,7 +70,7 @@
                </li>
                <li class="nav-item" role="presentation" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>" class="tab-separator toggle_view">
                   <a class="nav-link" href="#" onclick="small_table_full_view(); return false;">
-                  <i class="fa fa-expand"></i></a>
+                  <i class="bx bx-expand"></i></a>
                </li>
                <?php } ?>
             </ul>
@@ -82,10 +82,10 @@
          </div>
          <div class="col-md-9 text-right _buttons proposal_buttons">
             <?php if(has_permission('proposals','','edit')){ ?>
-            <a href="<?php echo admin_url('proposals/proposal/'.$proposal->id); ?>" data-placement="left" data-toggle="tooltip" title="<?php echo _l('proposal_edit'); ?>" class="btn btn-default btn-with-tooltip" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
+            <a href="<?php echo admin_url('proposals/proposal/'.$proposal->id); ?>" data-placement="left" data-toggle="tooltip" title="<?php echo _l('proposal_edit'); ?>" class="btn btn-light btn-icon btn-with-tooltip" data-placement="bottom"><i class="bx bx-edit"></i></a>
             <?php } ?>
             <div class="btn-group">
-               <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><?php if(is_mobile()){echo ' PDF';} ?> <span class="caret"></span></a>
+               <a href="#" class="btn btn-light btn-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bx bx-file-pdf"></i><?php if(is_mobile()){echo ' PDF';} ?> <span class="caret"></span></a>
                <ul class="dropdown-menu dropdown-menu-right">
                   <li class="hidden-xs"><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?output_type=I'); ?>"><?php echo _l('view_pdf'); ?></a></li>
                   <li class="hidden-xs"><a href="<?php echo admin_url('proposals/pdf/'.$proposal->id.'?output_type=I'); ?>" target="_blank"><?php echo _l('view_pdf_in_new_window'); ?></a></li>
@@ -97,9 +97,9 @@
                   </li>
                </ul>
             </div>
-            <a href="#" class="btn btn-default btn-with-tooltip" data-target="#proposal_send_to_customer" data-toggle="modal"><span data-toggle="tooltip" class="btn-with-tooltip" data-title="<?php echo _l('proposal_send_to_email'); ?>" data-placement="bottom"><i class="fa fa-envelope"></i></span></a>
+            <a href="#" class="btn btn-light btn-icon btn-with-tooltip" data-target="#proposal_send_to_customer" data-toggle="modal"><span data-toggle="tooltip" class="btn-with-tooltip" data-title="<?php echo _l('proposal_send_to_email'); ?>" data-placement="bottom"><i class="bx bx-envelope"></i></span></a>
             <div class="btn-group ">
-               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <?php echo _l('more'); ?> <span class="caret"></span>
                </button>
                <ul class="dropdown-menu dropdown-menu-right">
@@ -197,7 +197,7 @@
                               _l('proposal_lowercase'),
                               '<b>'.$proposal->acceptance_firstname . ' ' . $proposal->acceptance_lastname . '</b> (<a href="mailto:'.$proposal->acceptance_email.'">'.$proposal->acceptance_email.'</a>)',
                               '<b>'. _dt($proposal->acceptance_date).'</b>',
-                              '<b>'.$proposal->acceptance_ip.'</b>'.(is_admin() ? '&nbsp;<a href="'.admin_url('proposals/clear_acceptance_info/'.$proposal->id).'" class="_delete text-muted" data-toggle="tooltip" data-title="'._l('clear_this_information').'"><i class="fa fa-remove"></i></a>' : '')
+                              '<b>'.$proposal->acceptance_ip.'</b>'.(is_admin() ? '&nbsp;<a href="'.admin_url('proposals/clear_acceptance_info/'.$proposal->id).'" class="_delete text-muted" data-toggle="tooltip" data-title="'._l('clear_this_information').'"><i class="bx bx-x"></i></a>' : '')
                               )); ?>
                         </div>
                      </div>
@@ -207,7 +207,7 @@
                            <?php
                               $tags = get_tags_in($proposal->id,'proposal');
                               if(count($tags) > 0){
-                               echo '<i class="fa fa-tag" aria-hidden="true" data-toggle="tooltip" data-title="'.html_escape(implode(', ',$tags)).'"></i>';
+                               echo '<i class="bx bx-tag" aria-hidden="true" data-toggle="tooltip" data-title="'.html_escape(implode(', ',$tags)).'"></i>';
                               }
                               ?>
                            <a href="<?php echo admin_url('proposals/proposal/'.$proposal->id); ?>">
@@ -256,7 +256,7 @@
                            ?>
                         <a href="#" data-toggle="tooltip" onclick="toggle_file_visibility(<?php echo $attachment['id']; ?>,<?php echo $proposal->id; ?>,this); return false;" data-title="<?php echo $tooltip; ?>"><i class="fa <?php echo $icon; ?>" aria-hidden="true"></i></a>
                         <?php if($attachment['staffid'] == get_staff_user_id() || is_admin()){ ?>
-                        <a href="#" class="text-danger" onclick="delete_proposal_attachment(<?php echo $attachment['id']; ?>); return false;"><i class="fa fa-times"></i></a>
+                        <a href="#" class="text-danger" onclick="delete_proposal_attachment(<?php echo $attachment['id']; ?>); return false;"><i class="bx bx-x"></i></a>
                         <?php } ?>
                      </div>
                   </div>
@@ -296,7 +296,7 @@
                               <p class="bold"><?php echo _l('document_customer_signature_text'); ?>
                                  <?php if(has_permission('proposals','','delete')){ ?>
                                  <a href="<?php echo admin_url('proposals/clear_signature/'.$proposal->id); ?>" data-toggle="tooltip" title="<?php echo _l('clear_signature'); ?>" class="_delete text-danger">
-                                 <i class="fa fa-remove"></i>
+                                 <i class="bx bx-x"></i>
                                  </a>
                                  <?php } ?>
                               </p>
@@ -340,7 +340,7 @@
                   <?php init_relation_tasks_table(array( 'data-new-rel-id'=>$proposal->id,'data-new-rel-type'=>'proposal')); ?>
                </div>
                <div role="tab-pane" class="tab-pane" id="tab_reminders">
-                  <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-proposal-<?php echo $proposal->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('proposal_set_reminder_title'); ?></a>
+                  <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-proposal-<?php echo $proposal->id; ?>"><i class="bx bx-bell"></i> <?php echo _l('proposal_set_reminder_title'); ?></a>
                   <hr />
                   <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                   <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$proposal->id,'name'=>'proposal','members'=>$members,'reminder_title'=>_l('proposal_set_reminder_title'))); ?>
