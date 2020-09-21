@@ -174,18 +174,17 @@
 
                 // Kanban Board and Item Data passed by json
                 var kanban_board_data = response.kanban_items.map(kanban_item => ({
-                        id: "kanban-board-" + kanban_item.status,
-                        title: kanban_item.title,
-                        item: kanban_item.proposals.map(proposal => ({
-                            id: proposal.id,
-                            title: proposal.subject,
-                            border: "success",
-                            dueDate: proposal.open_till,
-                            comment: 1,
-                            attachment: 3,
-                        })),
-                    }));
-                });
+                    id: "kanban-board-" + kanban_item.status,
+                    title: kanban_item.title,
+                    item: kanban_item.proposals.map(proposal => ({
+                        id: proposal.id,
+                        title: proposal.subject,
+                        border: "success",
+                        dueDate: proposal.open_till,
+                        comment: 1,
+                        attachment: 3,
+                    })),
+                }));
 
                 // Kanban Board
                 var KanbanExample = new jKanban({
