@@ -186,6 +186,8 @@
                     })),
                 }));
 
+                console.log({kanban_board_data});
+
                 // Kanban Board
                 var KanbanExample = new jKanban({
                     element: "#kanban-wrapper", // selector of the kanban container
