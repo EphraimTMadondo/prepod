@@ -186,19 +186,13 @@
                     })),
                 }));
 
-                console.log({kanban_board_data});
-
                 // Kanban Board
                 var KanbanExample = new jKanban({
                     element: "#kanban-wrapper", // selector of the kanban container
-                    buttonContent: "+ Add New Item", // text or html content of the board button
+                    buttonContent: "Load More", // text or html content of the board button
 
                     // click on current kanban-item
                     click: function (el) {
-                        // kanban-overlay and sidebar display block on click of kanban-item
-                        $(".kanban-overlay").addClass("show");
-                        $(".kanban-sidebar").addClass("show");
-
                         // Set el to var kanban_curr_el, use this variable when updating title
                         kanban_curr_el = el;
 
@@ -206,8 +200,8 @@
                         kanban_item_title = $(el).contents()[0].data;
                         kanban_curr_item_id = $(el).attr("data-eid");
 
-                        // set edit title
-                        $(".edit-kanban-item .edit-kanban-item-title").val(kanban_item_title);
+                        // open proposal modal
+                        proposal_pipeline_open(kanban_curr_item_id);
                     },
 
                     buttonClick: function (el, boardId) {
