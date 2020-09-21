@@ -4,8 +4,6 @@
 <div class="card mtop20">
    <div class="card-body">
       <div class="horizontal-scrollable-tabs preview-tabs-top">
-         <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
-         <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
          <div class="horizontal-tabs">
             <ul class="nav nav-tabs nav-tabs-horizontal mb-1" role="tablist">
                <li class="nav-item" role="presentation">
@@ -55,7 +53,7 @@
                <li class="nav-item" role="presentation" data-toggle="tooltip" title="<?php echo _l('emails_tracking'); ?>" class="tab-separator">
                   <a class="nav-link" href="#tab_emails_tracking" aria-controls="tab_emails_tracking" role="tab" data-toggle="tab">
                     <?php if(!is_mobile()){ ?>
-                     <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                     <i class="fa fa-envelope" aria-hidden="true"></i>
                      <?php } else { ?>
                      <?php echo _l('emails_tracking'); ?>
                      <?php } ?>

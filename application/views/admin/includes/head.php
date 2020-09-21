@@ -13,6 +13,7 @@
     <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/frest/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" id="favicon" href="https://worksuite.app/prepod/uploads/company/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='".base_url()."assets/builds/vendor-admin.css?v=2.4.2'>
 
     <!-- BEGIN: Vendor CSS-->
     <?php
