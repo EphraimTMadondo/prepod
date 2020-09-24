@@ -19,57 +19,16 @@
                         </div>
                         <!-- sidebar list start -->
                         <div class="sidebar-menu-list">
+                            <label class="filter-label mt-2 mb-1 pt-25"><?php echo _l('tasks_summary'); ?></label>
                             <div class="list-group">
-                                <a href="#" class="list-group-item border-0 active">
-                                    <span class="fonticon-wrap mr-50">
-                                        <i class="livicon-evo" data-options="name: list.svg; size: 24px; style: lines; strokeColor:#5A8DEE; eventOn:grandparent;"></i>
-                                    </span>
-                                    <span> All</span>
-                                </a>
-                            </div>
-                            <label class="filter-label mt-2 mb-1 pt-25">Filters</label>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item border-0">
-                                    <span class="fonticon-wrap mr-50">
-                                        <i class="livicon-evo" data-options="name: star.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent;"></i>
-                                    </span>
-                                    <span>Favourites</span>
-                                </a>
-                                <a href="#" class="list-group-item border-0">
-                                    <span class="fonticon-wrap mr-50">
-                                        <i class="livicon-evo" data-options="name: check.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent;"></i>
-                                    </span>
-                                    <span>Done</span>
-                                </a>
-                                <a href="#" class="list-group-item border-0">
-                                    <span class="fonticon-wrap mr-50">
-                                        <i class="livicon-evo" data-options="name: trash.svg; size: 24px; style: lines; strokeColor:#475f7b; eventOn:grandparent;"></i>
-                                    </span>
-                                    <span>Deleted</span>
-                                </a>
-                            </div>
-                            <label class="filter-label mt-2 mb-1 pt-25">Labels</label>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item border-0 d-flex align-items-center justify-content-between">
-                                    <span>Frontend</span>
-                                    <span class="bullet bullet-sm bullet-primary"></span>
-                                </a>
-                                <a href="#" class="list-group-item border-0 d-flex align-items-center justify-content-between">
-                                    <span>Backend</span>
-                                    <span class="bullet bullet-sm bullet-success"></span>
-                                </a>
-                                <a href="#" class="list-group-item border-0 d-flex align-items-center justify-content-between">
-                                    <span>Issue</span>
-                                    <span class="bullet bullet-sm bullet-danger"></span>
-                                </a>
-                                <a href="#" class="list-group-item border-0 d-flex align-items-center justify-content-between">
-                                    <span>Design</span>
-                                    <span class="bullet bullet-sm bullet-warning"></span>
-                                </a>
-                                <a href="#" class="list-group-item border-0 d-flex align-items-center justify-content-between">
-                                    <span>Wireframe</span>
-                                    <span class="bullet bullet-sm bullet-info"></span>
-                                </a>
+                            <?php     
+                                foreach(tasks_summary_data((isset($rel_id) ? $rel_id : null),(isset($rel_type) ? $rel_type : null)) as $summary){ ?>
+                                    <a href="#" class="list-group-item border-0 d-flex align-items-center justify-content-between">
+                                        <span><?php echo $summary['name']; ?></span>
+                                        <span class="badge badge-success"><?php echo $summary['total_my_tasks']; ?></span>
+                                    </a>
+                                    <?php } 
+                                ?>
                             </div>
                         </div>
                         <!-- sidebar list end -->
