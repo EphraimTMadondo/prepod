@@ -103,7 +103,6 @@
                                             <span>Sort</span>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sortDropdown">
-                                            <a class="dropdown-item descending" href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>"><?php if($switch_kanban == 1){ echo _l('switch_to_list_view');}else{echo _l('leads_switch_to_kanban');}; ?></a>
                                             <a class="dropdown-item ascending" href="#">Ascending</a>
                                             <a class="dropdown-item descending" href="#">Descending</a>
                                         </div>
@@ -465,3 +464,11 @@
     </div>
 </div>
 <!-- END: Content-->
+
+<script>
+$(function() {
+    requestGetJSON('tasks/table',parameters).done(function(response){
+        console.log(response);
+    });
+});
+</script>
