@@ -5,7 +5,7 @@
 <div id="newsfeed" class="animated fadeIn hide" <?php if($this->session->flashdata('newsfeed_auto')){echo 'data-newsfeed-auto';} ?>>
 </div>
 <!-- Task modal view -->
-<div class="modal fade modal-lg" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade task-modal-single" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog <?php echo get_option('task_modal_class'); ?>">
     <div class="modal-content data">
 
