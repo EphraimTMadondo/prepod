@@ -10,6 +10,12 @@
                     <!-- todo app menu -->
                     <div class="todo-app-menu">
                         <div class="form-group text-center add-task">
+                            <?php if(has_permission('tasks','','create')){ ?>
+                            <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-primary btn-block add-task-btn my-1"><?php echo _l('new_task'); ?></a>
+                            <?php } ?>
+                            <a href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>" class="btn btn-secondary btn-block add-task-btn my-1">
+                                <?php if($switch_kanban == 1){ echo _l('switch_to_list_view');}else{echo _l('leads_switch_to_kanban');}; ?>
+                            </a>
                             <!-- new task button -->
                             <button type="button" class="btn btn-primary btn-block add-task-btn my-1">
                                 <i class="bx bx-plus"></i>
@@ -225,12 +231,7 @@
             <div class="content-wrapper">
                 <div class="content-header row">
                     <div class="col-md-8">
-                        <?php if(has_permission('tasks','','create')){ ?>
-                        <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-info pull-left new"><?php echo _l('new_task'); ?></a>
-                        <?php } ?>
-                        <a href="<?php if(!$this->input->get('project_id')){ echo admin_url('tasks/switch_kanban/'.$switch_kanban); } else { echo admin_url('projects/view/'.$this->input->get('project_id').'?group=project_tasks'); }; ?>" class="btn btn-default mleft10 pull-left hidden-xs">
-                            <?php if($switch_kanban == 1){ echo _l('switch_to_list_view');}else{echo _l('leads_switch_to_kanban');}; ?>
-                        </a>
+                        
                     </div>
                     <div class="col-md-4">
                         <?php if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata('tasks_kanban_view') == 'true') { ?>
