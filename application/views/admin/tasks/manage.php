@@ -25,6 +25,7 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
 }?>
 <script>
 $(function() {
+   var parameters = [];
     requestGetJSON('tasks/table',parameters).done(function(response){
         console.log(response);
     });
