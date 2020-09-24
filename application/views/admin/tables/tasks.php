@@ -81,12 +81,12 @@ foreach ($rResult as $aRow) {
                 <p class="todo-title mx-50 m-0 truncate">' . $aRow['task_name'] . '</p>
             </div>
             <div class="todo-item-action d-flex align-items-center">
-                <div class="todo-badge-wrapper d-flex">
-                    <span class="badge badge-light-primary badge-pill">Frontend</span>
-                </div>
-                <div class="avatar ml-1">
-                    <img src="../../../app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" height="30" width="30">
-                </div>';
+                //<div class="todo-badge-wrapper d-flex">
+                //    <span class="badge badge-light-primary badge-pill">Frontend</span>
+                //</div>
+                //<div class="avatar ml-1">
+                //    <img src="../../../app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" height="30" width="30">
+                //</div>';
 
                 if ($aRow['not_finished_timer_by_current_staff']) {
                     $row .= '<a href="#" class="tasks-table-stop-timer ml-75" onclick="timer_action(this,' . $aRow['id'] . ',' . $aRow['not_finished_timer_by_current_staff'] . '); return false;"><i class="bx bx-clock"></i></a>';
