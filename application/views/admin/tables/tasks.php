@@ -69,147 +69,173 @@ $result = data_tables_init(
 $output  = $result['output'];
 $rResult = $result['rResult'];
 
-// foreach ($rResult as $aRow) {
-//     $row = [];
+foreach ($rResult as $aRow) {
+    $row = [];
 
-//     $row[] = '<div class="checkbox"><input type="checkbox" value="' . $aRow['id'] . '"><label></label></div>';
+    // $row[] = '<li class="todo-item" data-name="James Smith">
+    //     <div class="todo-title-wrapper d-flex justify-content-sm-between justify-content-end align-items-center">
+    //         <div class="todo-title-area d-flex">
+    //             <i class="bx bx-grid-vertical handle"></i>
+    //             <div class="checkbox">
+    //                 <input type="checkbox" class="checkbox-input" id="checkbox' . $aRow['id'] . '" value="' . $aRow['id'] . '">
+    //                 <label for="checkbox14"></label>
+    //             </div>
+    //             <p class="todo-title mx-50 m-0 truncate">It is a good idea to think of your PC as an office.</p>
+    //         </div>
+    //         <div class="todo-item-action d-flex align-items-center">
+    //             <div class="todo-badge-wrapper d-flex">
+    //                 <span class="badge badge-light-primary badge-pill">Frontend</span>
+    //             </div>
+    //             <div class="avatar ml-1">
+    //                 <img src="../../../app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" height="30" width="30">
+    //             </div>
+    //             <a class="todo-item-favorite ml-75"><i class="bx bx-star"></i></a>
+    //             <a class="todo-item-delete ml-75"><i class="bx bx-trash"></i></a>
+    //         </div>
+    //     </div>
+    // </li>';
 
-//     $row[] = '<a href="' . admin_url('tasks/view/' . $aRow['id']) . '" onclick="init_task_modal(' . $aRow['id'] . '); return false;">' . $aRow['id'] . '</a>';
+    $row[] = '<div class="checkbox"><input type="checkbox" "><label></label></div>';
 
-//     $outputName = '';
+    $row[] = '<a href="' . admin_url('tasks/view/' . $aRow['id']) . '" onclick="init_task_modal(' . $aRow['id'] . '); return false;">' . $aRow['id'] . '</a>';
 
-//     if ($aRow['not_finished_timer_by_current_staff']) {
-//         $outputName .= '<span class="pull-left text-danger"><i class="fa fa-clock-o fa-fw"></i></span>';
-//     }
+    $outputName = '';
 
-//     $outputName .= '<a href="' . admin_url('tasks/view/' . $aRow['id']) . '" class="display-block main-tasks-table-href-name' . (!empty($aRow['rel_id']) ? ' mbot5' : '') . '" onclick="init_task_modal(' . $aRow['id'] . '); return false;">' . $aRow['task_name'] . '</a>';
+    if ($aRow['not_finished_timer_by_current_staff']) {
+        $outputName .= '<span class="pull-left text-danger"><i class="fa fa-clock-o fa-fw"></i></span>';
+    }
 
-//     if ($aRow['rel_name']) {
-//         $relName = task_rel_name($aRow['rel_name'], $aRow['rel_id'], $aRow['rel_type']);
+    $outputName .= '<a href="' . admin_url('tasks/view/' . $aRow['id']) . '" class="display-block main-tasks-table-href-name' . (!empty($aRow['rel_id']) ? ' mbot5' : '') . '" onclick="init_task_modal(' . $aRow['id'] . '); return false;">' . $aRow['task_name'] . '</a>';
 
-//         $link = task_rel_link($aRow['rel_id'], $aRow['rel_type']);
+    if ($aRow['rel_name']) {
+        $relName = task_rel_name($aRow['rel_name'], $aRow['rel_id'], $aRow['rel_type']);
 
-//         $outputName .= '<span class="hide"> - </span><a class="text-muted task-table-related" data-toggle="tooltip" title="' . _l('task_related_to') . '" href="' . $link . '">' . $relName . '</a>';
-//     }
+        $link = task_rel_link($aRow['rel_id'], $aRow['rel_type']);
 
-//     if ($aRow['recurring'] == 1) {
-//         $outputName .= '<br /><span class="label label-primary inline-block mtop4"> ' . _l('recurring_task') . '</span>';
-//     }
+        $outputName .= '<span class="hide"> - </span><a class="text-muted task-table-related" data-toggle="tooltip" title="' . _l('task_related_to') . '" href="' . $link . '">' . $relName . '</a>';
+    }
 
-//     $outputName .= '<div class="row-options">';
+    if ($aRow['recurring'] == 1) {
+        $outputName .= '<br /><span class="label label-primary inline-block mtop4"> ' . _l('recurring_task') . '</span>';
+    }
 
-//     $class = 'text-success bold';
-//     $style = '';
+    $outputName .= '<div class="row-options">';
 
-//     $tooltip = '';
-//     if ($aRow['billed'] == 1 || !$aRow['is_assigned'] || $aRow['status'] == Tasks_model::STATUS_COMPLETE) {
-//         $class = 'text-dark disabled';
-//         $style = 'style="opacity:0.6;cursor: not-allowed;"';
-//         if ($aRow['status'] == Tasks_model::STATUS_COMPLETE) {
-//             $tooltip = ' data-toggle="tooltip" data-title="' . format_task_status($aRow['status'], false, true) . '"';
-//         } elseif ($aRow['billed'] == 1) {
-//             $tooltip = ' data-toggle="tooltip" data-title="' . _l('task_billed_cant_start_timer') . '"';
-//         } elseif (!$aRow['is_assigned']) {
-//             $tooltip = ' data-toggle="tooltip" data-title="' . _l('task_start_timer_only_assignee') . '"';
-//         }
-//     }
+    $class = 'text-success bold';
+    $style = '';
 
-//     if ($aRow['not_finished_timer_by_current_staff']) {
-//         $outputName .= '<a href="#" class="text-danger tasks-table-stop-timer" onclick="timer_action(this,' . $aRow['id'] . ',' . $aRow['not_finished_timer_by_current_staff'] . '); return false;">' . _l('task_stop_timer') . '</a>';
-//     } else {
-//         $outputName .= '<span' . $tooltip . ' ' . $style . '>
-//         <a href="#" class="' . $class . ' tasks-table-start-timer" onclick="timer_action(this,' . $aRow['id'] . '); return false;">' . _l('task_start_timer') . '</a>
-//         </span>';
-//     }
+    $tooltip = '';
+    if ($aRow['billed'] == 1 || !$aRow['is_assigned'] || $aRow['status'] == Tasks_model::STATUS_COMPLETE) {
+        $class = 'text-dark disabled';
+        $style = 'style="opacity:0.6;cursor: not-allowed;"';
+        if ($aRow['status'] == Tasks_model::STATUS_COMPLETE) {
+            $tooltip = ' data-toggle="tooltip" data-title="' . format_task_status($aRow['status'], false, true) . '"';
+        } elseif ($aRow['billed'] == 1) {
+            $tooltip = ' data-toggle="tooltip" data-title="' . _l('task_billed_cant_start_timer') . '"';
+        } elseif (!$aRow['is_assigned']) {
+            $tooltip = ' data-toggle="tooltip" data-title="' . _l('task_start_timer_only_assignee') . '"';
+        }
+    }
 
-//     if ($hasPermissionEdit) {
-//         $outputName .= '<span class="text-dark"> | </span><a href="#" onclick="edit_task(' . $aRow['id'] . '); return false">' . _l('edit') . '</a>';
-//     }
+    if ($aRow['not_finished_timer_by_current_staff']) {
+        $outputName .= '<a href="#" class="text-danger tasks-table-stop-timer" onclick="timer_action(this,' . $aRow['id'] . ',' . $aRow['not_finished_timer_by_current_staff'] . '); return false;">' . _l('task_stop_timer') . '</a>';
+    } else {
+        $outputName .= '<span' . $tooltip . ' ' . $style . '>
+        <a href="#" class="' . $class . ' tasks-table-start-timer" onclick="timer_action(this,' . $aRow['id'] . '); return false;">' . _l('task_start_timer') . '</a>
+        </span>';
+    }
 
-//     if ($hasPermissionDelete) {
-//         $outputName .= '<span class="text-dark"> | </span><a href="' . admin_url('tasks/delete_task/' . $aRow['id']) . '" class="text-danger _delete task-delete">' . _l('delete') . '</a>';
-//     }
-//     $outputName .= '</div>';
+    if ($hasPermissionEdit) {
+        $outputName .= '<span class="text-dark"> | </span><a href="#" onclick="edit_task(' . $aRow['id'] . '); return false">' . _l('edit') . '</a>';
+    }
 
-//     $row[] = $outputName;
+    if ($hasPermissionDelete) {
+        $outputName .= '<span class="text-dark"> | </span><a href="' . admin_url('tasks/delete_task/' . $aRow['id']) . '" class="text-danger _delete task-delete">' . _l('delete') . '</a>';
+    }
+    $outputName .= '</div>';
 
-//     $canChangeStatus = ($aRow['current_user_is_creator'] != '0' || $aRow['current_user_is_assigned'] || has_permission('tasks', '', 'edit'));
-//     $status          = get_task_status_by_id($aRow['status']);
-//     $outputStatus    = '';
+    $row[] = $outputName;
 
-//     $outputStatus .= '<span class="inline-block label" style="color:' . $status['color'] . ';border:1px solid ' . $status['color'] . '" task-status-table="' . $aRow['status'] . '">';
+    $canChangeStatus = ($aRow['current_user_is_creator'] != '0' || $aRow['current_user_is_assigned'] || has_permission('tasks', '', 'edit'));
+    $status          = get_task_status_by_id($aRow['status']);
+    $outputStatus    = '';
 
-//     $outputStatus .= $status['name'];
+    $outputStatus .= '<span class="inline-block label" style="color:' . $status['color'] . ';border:1px solid ' . $status['color'] . '" task-status-table="' . $aRow['status'] . '">';
 
-//     if ($canChangeStatus) {
-//         $outputStatus .= '<div class="dropdown inline-block ml-1 table-export-exclude">';
-//         $outputStatus .= '<a href="#" style="font-size:14px;vertical-align:middle;" class="dropdown-toggle text-dark" id="tableTaskStatus-' . $aRow['id'] . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-//         $outputStatus .= '<span data-toggle="tooltip" title="' . _l('ticket_single_change_status') . '"><i class="fa fa-caret-down" aria-hidden="true"></i></span>';
-//         $outputStatus .= '</a>';
+    $outputStatus .= $status['name'];
 
-//         $outputStatus .= '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="tableTaskStatus-' . $aRow['id'] . '">';
-//         foreach ($task_statuses as $taskChangeStatus) {
-//             if ($aRow['status'] != $taskChangeStatus['id']) {
-//                 $outputStatus .= '<li>
-//                   <a href="#" onclick="task_mark_as(' . $taskChangeStatus['id'] . ',' . $aRow['id'] . '); return false;">
-//                      ' . _l('task_mark_as', $taskChangeStatus['name']) . '
-//                   </a>
-//                </li>';
-//             }
-//         }
-//         $outputStatus .= '</ul>';
-//         $outputStatus .= '</div>';
-//     }
+    if ($canChangeStatus) {
+        $outputStatus .= '<div class="dropdown inline-block ml-1 table-export-exclude">';
+        $outputStatus .= '<a href="#" style="font-size:14px;vertical-align:middle;" class="dropdown-toggle text-dark" id="tableTaskStatus-' . $aRow['id'] . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+        $outputStatus .= '<span data-toggle="tooltip" title="' . _l('ticket_single_change_status') . '"><i class="fa fa-caret-down" aria-hidden="true"></i></span>';
+        $outputStatus .= '</a>';
 
-//     $outputStatus .= '</span>';
+        $outputStatus .= '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="tableTaskStatus-' . $aRow['id'] . '">';
+        foreach ($task_statuses as $taskChangeStatus) {
+            if ($aRow['status'] != $taskChangeStatus['id']) {
+                $outputStatus .= '<li>
+                  <a href="#" onclick="task_mark_as(' . $taskChangeStatus['id'] . ',' . $aRow['id'] . '); return false;">
+                     ' . _l('task_mark_as', $taskChangeStatus['name']) . '
+                  </a>
+               </li>';
+            }
+        }
+        $outputStatus .= '</ul>';
+        $outputStatus .= '</div>';
+    }
 
-//     $row[] = $outputStatus;
+    $outputStatus .= '</span>';
 
-//     $row[] = _d($aRow['startdate']);
+    $row[] = $outputStatus;
 
-//     $row[] = _d($aRow['duedate']);
+    $row[] = _d($aRow['startdate']);
 
-//     $row[] = format_members_by_ids_and_names($aRow['assignees_ids'], $aRow['assignees']);
+    $row[] = _d($aRow['duedate']);
 
-//     $row[] = render_tags($aRow['tags']);
+    $row[] = format_members_by_ids_and_names($aRow['assignees_ids'], $aRow['assignees']);
 
-//     $outputPriority = '<span style="color:' . task_priority_color($aRow['priority']) . ';" class="inline-block">' . task_priority($aRow['priority']);
+    $row[] = render_tags($aRow['tags']);
 
-//     if (has_permission('tasks', '', 'edit') && $aRow['status'] != Tasks_model::STATUS_COMPLETE) {
-//         $outputPriority .= '<div class="dropdown inline-block ml-1 table-export-exclude">';
-//         $outputPriority .= '<a href="#" style="font-size:14px;vertical-align:middle;" class="dropdown-toggle text-dark" id="tableTaskPriority-' . $aRow['id'] . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-//         $outputPriority .= '<span data-toggle="tooltip" title="' . _l('task_single_priority') . '"><i class="fa fa-caret-down" aria-hidden="true"></i></span>';
-//         $outputPriority .= '</a>';
+    $outputPriority = '<span style="color:' . task_priority_color($aRow['priority']) . ';" class="inline-block">' . task_priority($aRow['priority']);
 
-//         $outputPriority .= '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="tableTaskPriority-' . $aRow['id'] . '">';
-//         foreach ($tasksPriorities as $priority) {
-//             if ($aRow['priority'] != $priority['id']) {
-//                 $outputPriority .= '<li>
-//                   <a href="#" onclick="task_change_priority(' . $priority['id'] . ',' . $aRow['id'] . '); return false;">
-//                      ' . $priority['name'] . '
-//                   </a>
-//                </li>';
-//             }
-//         }
-//         $outputPriority .= '</ul>';
-//         $outputPriority .= '</div>';
-//     }
+    if (has_permission('tasks', '', 'edit') && $aRow['status'] != Tasks_model::STATUS_COMPLETE) {
+        $outputPriority .= '<div class="dropdown inline-block ml-1 table-export-exclude">';
+        $outputPriority .= '<a href="#" style="font-size:14px;vertical-align:middle;" class="dropdown-toggle text-dark" id="tableTaskPriority-' . $aRow['id'] . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+        $outputPriority .= '<span data-toggle="tooltip" title="' . _l('task_single_priority') . '"><i class="fa fa-caret-down" aria-hidden="true"></i></span>';
+        $outputPriority .= '</a>';
 
-//     $outputPriority .= '</span>';
-//     $row[] = $outputPriority;
+        $outputPriority .= '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="tableTaskPriority-' . $aRow['id'] . '">';
+        foreach ($tasksPriorities as $priority) {
+            if ($aRow['priority'] != $priority['id']) {
+                $outputPriority .= '<li>
+                  <a href="#" onclick="task_change_priority(' . $priority['id'] . ',' . $aRow['id'] . '); return false;">
+                     ' . $priority['name'] . '
+                  </a>
+               </li>';
+            }
+        }
+        $outputPriority .= '</ul>';
+        $outputPriority .= '</div>';
+    }
 
-//     // Custom fields add values
-//     foreach ($customFieldsColumns as $customFieldColumn) {
-//         $row[] = (strpos($customFieldColumn, 'date_picker_') !== false ? _d($aRow[$customFieldColumn]) : $aRow[$customFieldColumn]);
-//     }
+    $outputPriority .= '</span>';
+    $row[] = $outputPriority;
 
-//     $row['DT_RowClass'] = 'has-row-options';
+    // Custom fields add values
+    foreach ($customFieldsColumns as $customFieldColumn) {
+        $row[] = (strpos($customFieldColumn, 'date_picker_') !== false ? _d($aRow[$customFieldColumn]) : $aRow[$customFieldColumn]);
+    }
 
-//     if ((!empty($aRow['duedate']) && $aRow['duedate'] < date('Y-m-d')) && $aRow['status'] != Tasks_model::STATUS_COMPLETE) {
-//         $row['DT_RowClass'] .= ' text-danger';
-//     }
+    $row['DT_RowClass'] = 'has-row-options';
 
-//     $row = hooks()->apply_filters('tasks_table_row_data', $row, $aRow);
+    if ((!empty($aRow['duedate']) && $aRow['duedate'] < date('Y-m-d')) && $aRow['status'] != Tasks_model::STATUS_COMPLETE) {
+        $row['DT_RowClass'] .= ' text-danger';
+    }
 
-//     $output['aaData'][] = $row;
-// }
+    $row = hooks()->apply_filters('tasks_table_row_data', $row, $aRow);
+
+    $output['aaData'][] = $row;
+}
+
+
+
