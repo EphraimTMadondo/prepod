@@ -27,7 +27,12 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
 $(function() {
    var parameters = [];
     requestGetJSON('tasks/table',parameters).done(function(response){
-        console.log(response);
+       console.log(response);
+       if(response.aaData){
+          response.aaData.map(aRow => {
+            $('.todo-task-list-wrapper').append(aRow);
+          });
+       }
     });
 });
 </script>
