@@ -234,7 +234,7 @@ foreach ($rResult as $aRow) {
 
     $row = hooks()->apply_filters('tasks_table_row_data', $row, $aRow);
 
-    $output['aaData'][] = $row;
+    $output['aaData'][] = $aRow;
 }
 
 
