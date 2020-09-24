@@ -78,7 +78,7 @@ foreach ($rResult as $aRow) {
                     <input type="checkbox" class="checkbox-input" id="checkbox' . $aRow['id'] . '" value="' . $aRow['id'] . '">
                     <label for="checkbox14"></label>
                 </div>
-                <p class="todo-title mx-50 m-0 truncate">' . $aRow['name'] . '</p>
+                <p class="todo-title mx-50 m-0 truncate">' . $aRow['task_name'] . '</p>
             </div>
             <div class="todo-item-action d-flex align-items-center">
                 <div class="todo-badge-wrapper d-flex">
@@ -89,7 +89,7 @@ foreach ($rResult as $aRow) {
                 </div>';
 
                 if ($aRow['not_finished_timer_by_current_staff']) {
-                    $row .= '<a href="#" class="text-danger tasks-table-stop-timer ml-75" onclick="timer_action(this,' . $aRow['id'] . ',' . $aRow['not_finished_timer_by_current_staff'] . '); return false;"><i class="bx bx-clock"></i></a>';
+                    $row .= '<a href="#" class="tasks-table-stop-timer ml-75" onclick="timer_action(this,' . $aRow['id'] . ',' . $aRow['not_finished_timer_by_current_staff'] . '); return false;"><i class="bx bx-clock"></i></a>';
                 } else {
                     $row .= '<a href="#" class="' . $class . ' tasks-table-start-timer ml-75" onclick="timer_action(this,' . $aRow['id'] . '); return false;"><i class="bx bx-clock"></i></a>';
                    
