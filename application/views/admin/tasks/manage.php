@@ -23,5 +23,12 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
    } else { 
       init_tail('task_list');
 }?>
+<script>
+$(function() {
+    requestGetJSON('tasks/table',parameters).done(function(response){
+        console.log(response);
+    });
+});
+</script>
 </body>
 </html>

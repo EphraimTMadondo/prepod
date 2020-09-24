@@ -464,11 +464,3 @@
     </div>
 </div>
 <!-- END: Content-->
-
-<script>
-$(function() {
-    requestGetJSON('tasks/table',parameters).done(function(response){
-        console.log(response);
-    });
-});
-</script>
