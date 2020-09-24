@@ -70,7 +70,7 @@ $output  = $result['output'];
 $rResult = $result['rResult'];
 
 foreach ($rResult as $aRow) {
-    $row = '<li class="todo-item" data-name="' . $aRow['task_name'] . '">
+    $row = '<li class="todo-item" data-name="' . $aRow['task_name'] . '" onclick="init_task_modal(' . $aRow['id'] . '); return false;">
         <div class="todo-title-wrapper d-flex justify-content-sm-between justify-content-end align-items-center">
             <div class="todo-title-area d-flex">
                 <i class="bx bx-grid-vertical handle"></i>
