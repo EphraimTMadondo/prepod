@@ -25,7 +25,6 @@
                 </div>
                 <?php } ?>                 
              </div>
-
          </div>
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
@@ -70,7 +69,7 @@
             <?php $this->load->view('admin/clients/tabs'); ?>
          </div>
          <?php } ?>
-         <div class="col-md-<?php if(isset($client)){echo 9;} else {echo 12;} ?>">
+         <div class="col-md-12">
             <div class="card">
                <div class="card-body">
                   <?php if(isset($client)){ ?>
