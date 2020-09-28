@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<h4 class="customer-profile-group-heading"><?php echo _l('client_add_edit_profile'); ?></h4>
 <div class="row">
-   <?php echo form_open($this->uri->uri_string(),array('class'=>'client-form','autocomplete'=>'off')); ?>
+   <?php echo form_open($this->uri->uri_string(),array('class'=>'client-form col-md-12','autocomplete'=>'off')); ?>
+   <h4 class="customer-profile-group-heading ml-1 mb-1"><?php echo _l('client_add_edit_profile'); ?></h4>
    <div class="additional"></div>
    <div class="col-md-12">
       <ul class="nav nav-tabs profile-tabs" role="tablist">
