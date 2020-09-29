@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-md-6">
                 <label for="leave_type" class="control-label"><?php echo _l('leave_type'); ?></label>
-                <select name="leave_type" class="selectpicker" id="leave_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                <select name="leave_type" class="selectpicker" data-style="btn-outline-light" id="leave_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                   <option value=""></option>                  
                   <option value="holiday"><?php echo _l('holiday'); ?></option>
                   <option value="event_break"><?php echo _l('event_break'); ?></option>
@@ -187,7 +187,7 @@
                     <div class="col-md-2">
                     <div class="select-placeholder form-group">
                     <label for="timekeeping[0]"><?php echo _l('timekeeping'); ?></label>
-                        <select name="timekeeping[0]" id="timekeeping[0]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true"> 
+                        <select name="timekeeping[0]" id="timekeeping[0]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true"> 
                         
                         <option value="yes"><?php echo _l('yes'); ?></option>
                         <option value="no"><?php echo _l('no'); ?></option>
@@ -197,7 +197,7 @@
                     <div class="col-md-3">
                     <div class="select-placeholder form-group">
                     <label for="department[0]"><?php echo _l('department'); ?></label>
-                        <select name="department[0]" id="department[0]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
+                        <select name="department[0]" id="department[0]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
                          <option value=""></option> 
                           <?php foreach($departments as $dpm){ ?>
                             <option value="<?php echo htmlspecialchars($dpm['departmentid']); ?>"><?php echo htmlspecialchars($dpm['name']); ?></option>
@@ -208,7 +208,7 @@
                     <div class="col-md-3">
                     <div class="select-placeholder form-group">					   
                     <label for="position[0]"><?php echo _l('position'); ?></label>
-                        <select name="position[0]" id="position[0]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
+                        <select name="position[0]" id="position[0]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
                          <option value=""></option> 
                           <?php foreach($positions as $dpm){ ?>
                             <option value="<?php echo htmlspecialchars($dpm['position_id']); ?>"><?php echo htmlspecialchars($dpm['position_name']); ?></option>
@@ -253,7 +253,7 @@
                 </div>
                 <div class="col-md-6">
                 <label for="leave_type" class="control-label"><?php echo _l('leave_type'); ?></label>
-                <select name="leave_type" class="selectpicker" id="leave_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                <select name="leave_type" class="selectpicker" data-style="btn-outline-light" id="leave_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                   <option value=""></option>                  
                   <option value="holiday"><?php echo _l('holiday'); ?></option>
                   <option value="event_break"><?php echo _l('event_break'); ?></option>
@@ -271,7 +271,7 @@
                     <div class="col-md-3">
                     <div class="select-placeholder form-group">
                     <label for="timekeeping"><?php echo _l('timekeeping'); ?></label>
-                        <select name="timekeeping" id="timekeeping" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true"> 
+                        <select name="timekeeping" id="timekeeping" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true"> 
                         
                         <option value="yes"><?php echo _l('yes'); ?></option>
                         <option value="no"><?php echo _l('no'); ?></option>
@@ -283,7 +283,7 @@
                     <div class="col-md-3">
                     <div class="select-placeholder form-group">
                     <label for="department"><?php echo _l('department'); ?></label>
-                        <select name="department" id="department" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
+                        <select name="department" id="department" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
                          <option value="0"></option> 
                           <?php foreach($departments as $dpm){ ?>
                             <option value="<?php echo htmlspecialchars($dpm['departmentid']); ?>"><?php echo htmlspecialchars($dpm['name']); ?></option>
@@ -294,7 +294,7 @@
                     <div class="col-md-3">
                     <div class="select-placeholder form-group">							   
                     <label for="position"><?php echo _l('position'); ?></label>
-                        <select name="position" id="position" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
+                        <select name="position" id="position" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
                          <option value="0"></option> 
                           <?php foreach($positions as $dpm){ ?>
                             <option value="<?php echo htmlspecialchars($dpm['position_id']); ?>"><?php echo htmlspecialchars($dpm['position_name']); ?></option>

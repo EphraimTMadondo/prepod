@@ -46,7 +46,7 @@
 		<div class="smtp-fields<?php if(get_option('email_protocol') == 'mail'){echo ' hide'; } ?>">
 		<div class="form-group mtop15">
 				<label for="smtp_encryption"><?php echo _l('smtp_encryption'); ?></label><br />
-				<select name="settings[smtp_encryption]" class="selectpicker" data-width="100%">
+				<select name="settings[smtp_encryption]" class="selectpicker" data-style="btn-outline-light" data-width="100%">
 					<option value="" <?php if(get_option('smtp_encryption') == ''){echo 'selected';} ?>><?php echo _l('smtp_encryption_none'); ?></option>
 					<option value="ssl" <?php if(get_option('smtp_encryption') == 'ssl'){echo 'selected';} ?>>SSL</option>
 					<option value="tls" <?php if(get_option('smtp_encryption') == 'tls'){echo 'selected';} ?>>TLS</option>

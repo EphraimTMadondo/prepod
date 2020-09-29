@@ -15,7 +15,7 @@
                     <?php echo render_date_input('date','record_payment_date',_d(date('Y-m-d'))); ?>
                     <div class="form-group">
                         <label for="paymentmode" class="control-label"><?php echo _l('payment_mode'); ?></label>
-                        <select class="selectpicker" name="paymentmode" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-outline-light" name="paymentmode" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                             <option value=""></option>
                             <?php foreach($payment_modes as $mode){ ?>
                             <?php

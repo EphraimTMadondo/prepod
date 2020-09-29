@@ -21,7 +21,7 @@ $curent_user = get_staff_user_id();
 if ((in_array($curent_user, $manager) || $curent_user == $campaigns->cp_add_from)) {
 	?>
         <div class="col-md-3 float-right">
-         <select name="change_status" id="change_status" onchange="change_status_campaign(this,<?php echo html_entity_decode($campaigns->cp_id); ?>); return false;" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
+         <select name="change_status" id="change_status" onchange="change_status_campaign(this,<?php echo html_entity_decode($campaigns->cp_id); ?>); return false;" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
             <option value=""></option>
             <option value="1" class="<?php if ($campaigns->cp_status == 1) {echo 'hide';}?>"><?php echo _l('planning'); ?></option>
             <option value="3" class="<?php if ($campaigns->cp_status == 3) {echo 'hide';}?>"><?php echo _l('in_progress'); ?></option>

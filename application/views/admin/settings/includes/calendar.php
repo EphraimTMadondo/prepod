@@ -14,7 +14,7 @@
     <div class="form-group">
       <label for="settings[default_view_calendar]"><?php echo _l('default_view'); ?></label>
       <br />
-      <select class="selectpicker" data-width="100%" name="settings[default_view_calendar]" id="default_view_calendar">
+      <select class="selectpicker" data-style="btn-outline-light" data-width="100%" name="settings[default_view_calendar]" id="default_view_calendar">
         <option value="month <?php if(get_option('default_view_calendar') == 'month'){echo ' selected';} ?>"><?php echo _l('month'); ?></option>
         <option value="basicWeek <?php if(get_option('default_view_calendar') == 'basicWeek'){echo ' selected';} ?>"><?php echo _l('week'); ?></option>
         <option value="basicDay <?php if(get_option('default_view_calendar') == 'basicDay'){echo ' selected';} ?>"><?php echo _l('day'); ?></option>
@@ -24,7 +24,7 @@
     </div>
     <hr />
     <label><?php echo _l('calendar_first_day'); ?></label>
-    <select name="settings[calendar_first_day]" class="selectpicker" data-width="100%">
+    <select name="settings[calendar_first_day]" class="selectpicker" data-style="btn-outline-light" data-width="100%">
       <?php
       $weekdays = get_weekdays();
       end($weekdays);

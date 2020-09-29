@@ -52,7 +52,7 @@ $attr['required'] = '';
 echo render_input('order', '<span class="text-danger">* </span>' . _l('order') . ' ' . '<i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="' . _l('tooltip_order') . '"></i>', '', 'number', $attr);?>
 
                         <label for="send_to"><span class="text-danger">* </span><?php echo _l('send_to'); ?></label>
-                        <select name="send_to" id="send_to" onchange="change_send_to(this); return false;" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                        <select name="send_to" id="send_to" onchange="change_send_to(this); return false;" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
                             <option value=""></option>
                             <option value="candidate" ><?php echo _l('successful_candidates'); ?></option>
                             <option value="staff" ><?php echo _l('staff'); ?></option>
@@ -61,7 +61,7 @@ echo render_input('order', '<span class="text-danger">* </span>' . _l('order') .
                         <br><br>
                         <div id="email_to_div" class="hide">
                             <label for="email_to"><span class="text-danger">* </span><?php echo _l('email_to'); ?></label>
-                            <select name="email_to[]" id="email_to" class="selectpicker" multiple="true" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                            <select name="email_to[]" id="email_to" class="selectpicker" data-style="btn-outline-light" multiple="true" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
 
                             </select>
                             <br><br>

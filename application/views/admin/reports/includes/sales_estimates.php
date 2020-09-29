@@ -4,7 +4,7 @@
    <div class="col-md-4">
       <div class="form-group">
          <label for="estimate_status"><?php echo _l('estimate_status'); ?></label>
-         <select name="estimate_status" class="selectpicker" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
+         <select name="estimate_status" class="selectpicker" data-style="btn-outline-light" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
             <?php foreach($estimate_statuses as $status){ ?>
             <option value="<?php echo $status; ?>"><?php echo format_estimate_status($status,'',false) ?></option>
             <?php } ?>
@@ -15,7 +15,7 @@
    <div class="col-md-4">
       <div class="form-group">
          <label for="sale_agent_estimates"><?php echo _l('sale_agent_string'); ?></label>
-         <select name="sale_agent_estimates" class="selectpicker" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
+         <select name="sale_agent_estimates" class="selectpicker" data-style="btn-outline-light" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
             <?php foreach($estimates_sale_agents as $agent){ ?>
             <option value="<?php echo $agent['sale_agent']; ?>"><?php echo get_staff_full_name($agent['sale_agent']); ?></option>
             <?php } ?>

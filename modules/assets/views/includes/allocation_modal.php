@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="acction_to"><?php  echo htmlspecialchars(_l('receiver')); ?></label>
-                        <select name="acction_to" id="acction_to" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php  echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
+                        <select name="acction_to" id="acction_to" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php  echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
                             <option value=""></option>
                             <?php foreach($staffs as $s) { ?>
                             <option value="<?php  echo htmlspecialchars($s['staffid']); ?>"><?php  echo htmlspecialchars($s['firstname'].' '.$s['lastname']); ?></option>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="acction_from"><?php  echo htmlspecialchars(_l('provider')); ?></label>
-                        <select name="acction_from" id="acction_from" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php  echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
+                        <select name="acction_from" id="acction_from" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php  echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
                             <option value=""></option>
                             <?php foreach($staffs as $s) { ?>
                             <option value="<?php  echo htmlspecialchars($s['staffid']); ?>" <?php if($s['staffid'] == get_staff_user_id()){echo 'selected';} ?><?php  echo htmlspecialchars($s['firstname']).' '.htmlspecialchars($s['lastname']); ?></option>

@@ -150,7 +150,7 @@ if (isset($form->notify_lead_imported) && $form->notify_lead_imported == 1 || !i
                               <div class="clearfix mtop15"></div>
                               <div id="staff_notify" class="<?php if (isset($form->notify_type) && ($form->notify_type != 'specific_staff')) {echo 'd-none';}?>">
                                 <label><?php echo _l('person_in_charge'); ?></label>
-                                <select name="notify_ids_staff[]" id="notify_ids_staff" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>" multiple data-live-search="true">
+                                <select name="notify_ids_staff[]" id="notify_ids_staff" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>" multiple data-live-search="true">
                                   <?php
 $arrayselect = array();
 if (isset($form->notify_ids_staff)) {
@@ -170,7 +170,7 @@ foreach ($members as $m) {
                               </div>
                               <div id="role_notify" class="<?php if (isset($form->notify_type) && ($form->notify_type != 'roles')) {echo 'd-none';} else {echo 'hide';}?>">
                                         <label><?php echo _l('leads_email_integration_notify_roles'); ?></label>
-                                      <select name="notify_ids_roles[]" id="notify_ids_roles" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>" multiple data-live-search="true">
+                                      <select name="notify_ids_roles[]" id="notify_ids_roles" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>" multiple data-live-search="true">
 
                                       <?php
 $arrayselect = array();

@@ -216,7 +216,7 @@
                                  <?php } ?>
                                  <?php
                                 if(is_gdpr() && (get_option('gdpr_enable_consent_for_contacts') == '1')) { ?>
-                                    <select name="contacts_consent[]" title="<?php echo _l('gdpr_consent'); ?>" multiple="true" id="contacts_consent" class="selectpicker" data-width="100%">
+                                    <select name="contacts_consent[]" title="<?php echo _l('gdpr_consent'); ?>" multiple="true" id="contacts_consent" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                                       <?php foreach($purposes as $purpose) { ?>
                                       <option value="<?php echo $purpose['id']; ?>">
                                          <?php echo $purpose['name']; ?>
@@ -246,7 +246,7 @@
                                  <?php } ?>
                                   <?php
                                 if(is_gdpr() && (get_option('gdpr_enable_consent_for_leads') == '1')) { ?>
-                                    <select name="leads_consent[]" title="<?php echo _l('gdpr_consent'); ?>" multiple="true" id="leads_consent" class="selectpicker" data-width="100%">
+                                    <select name="leads_consent[]" title="<?php echo _l('gdpr_consent'); ?>" multiple="true" id="leads_consent" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                                       <?php foreach($purposes as $purpose) { ?>
                                       <option value="<?php echo $purpose['id']; ?>">
                                          <?php echo $purpose['name']; ?>

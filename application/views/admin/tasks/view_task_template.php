@@ -238,7 +238,7 @@
                                  <?php echo _l('task_single_log_user'); ?>
                                  </label>
                                  <br />
-                                 <select name="single_timesheet_staff_id" class="selectpicker" data-width="100%">
+                                 <select name="single_timesheet_staff_id" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                                     <?php foreach($task->assignees as $assignee){
                                        if((!has_permission('tasks','','create') && !has_permission('tasks','','edit') && $assignee['assigneeid'] != get_staff_user_id()) || ($task->rel_type == 'project' && !has_permission('projects','','edit') && $assignee['assigneeid'] != get_staff_user_id())){continue;}
                                        $selected = '';

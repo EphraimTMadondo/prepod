@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-md-6">
                        <label for="campaign"><?php echo _l('recruitment_campaign'); ?></label>
-                        <select name="campaign" id="campaign" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                        <select name="campaign" id="campaign" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                             <option value=""></option>
                             <?php foreach ($rec_campaigns as $s) {?>
                               <option value="<?php echo html_entity_decode($s['cp_id']); ?>" <?php if (isset($candidate) && $s['cp_id'] == $candidate->rec_campaign) {echo 'selected';}?>><?php echo html_entity_decode($s['campaign_code'] . ' - ' . $s['campaign_name']); ?></option>
@@ -90,7 +90,7 @@
 
                     <div class="col-md-12 form-group">
                         <label for="interviewer"><span class="text-danger">* </span><?php echo _l('interviewer'); ?></label>
-                        <select name="interviewer[]" id="interviewer" class="selectpicker" multiple="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                        <select name="interviewer[]" id="interviewer" class="selectpicker" data-style="btn-outline-light" multiple="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
 
                             <?php foreach ($staffs as $s) {?>
                             <option value="<?php echo html_entity_decode($s['staffid']); ?>"><?php echo html_entity_decode($s['firstname'] . ' ' . $s['lastname']); ?></option>
@@ -116,7 +116,7 @@
 
                       <div class="row col-md-12" id="candidates-item">
                         <div class="col-md-4 form-group">
-                          <select name="candidate[0]" onchange="candidate_infor_change(this); return false;" id="candidate[0]" class="selectpicker"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                          <select name="candidate[0]" onchange="candidate_infor_change(this); return false;" id="candidate[0]" class="selectpicker" data-style="btn-outline-light"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
                               <option value=""></option>
                               <?php foreach ($candidates as $s) {?>
                               <option value="<?php echo html_entity_decode($s['id']); ?>"><?php echo html_entity_decode($s['candidate_code'] . ' ' . $s['candidate_name']); ?></option>

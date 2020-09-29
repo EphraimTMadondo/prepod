@@ -154,7 +154,7 @@
                      <?php echo render_textarea('email_signature','settings_email_signature',$value, ['data-entities-encode'=>'true']); ?>
                      <div class="form-group select-placeholder">
                         <label for="direction"><?php echo _l('document_direction'); ?></label>
-                        <select class="selectpicker" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
+                        <select class="selectpicker" data-style="btn-outline-light" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
                            <option value="" <?php if(isset($member) && empty($member->direction)){echo 'selected';} ?>></option>
                            <option value="ltr" <?php if(isset($member) && $member->direction == 'ltr'){echo 'selected';} ?>>LTR</option>
                            <option value="rtl" <?php if(isset($member) && $member->direction == 'rtl'){echo 'selected';} ?>>RTL</option>
@@ -337,7 +337,7 @@
                <div class="row">
                   <div class="col-md-6">
                      <div class="select-placeholder">
-                        <select name="range" id="range" class="selectpicker" data-width="100%">
+                        <select name="range" id="range" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                            <option value="this_month" <?php if(!$this->input->get('range') || $this->input->get('range') == 'this_month'){echo 'selected';} ?>><?php echo _l('staff_stats_this_month_total_logged_time'); ?></option>
                            <option value="last_month" <?php if($this->input->get('range') == 'last_month'){echo 'selected';} ?>><?php echo _l('staff_stats_last_month_total_logged_time'); ?></option>
                            <option value="this_week" <?php if($this->input->get('range') == 'this_week'){echo 'selected';} ?>><?php echo _l('staff_stats_this_week_total_logged_time'); ?></option>

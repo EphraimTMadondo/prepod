@@ -13,7 +13,7 @@
 						</div>
 						<?php echo form_open(admin_url('projects/gantt'), array('method'=>'get','id'=>'ganttFiltersForm')); ?>
 						<div class="col-md-4">
-							<select class="selectpicker" data-none-selected-text="<?php echo _l('all'); ?>" name="status[]" data-width="100%" multiple="true">
+							<select class="selectpicker" data-style="btn-outline-light" data-none-selected-text="<?php echo _l('all'); ?>" name="status[]" data-width="100%" multiple="true">
 								<?php foreach($statuses as $status){
 									$statusSelected = in_array($status['id'], $selected_statuses);
 									?>
@@ -30,7 +30,7 @@
 			             */
 			            if(has_permission('projects','','view')){ ?>
 			            	<div class="col-md-3">
-			            		<select class="selectpicker" data-live-search="true" data-title="<?php echo _l('project_member'); ?>" name="member" data-width="100%">
+			            		<select class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-title="<?php echo _l('project_member'); ?>" name="member" data-width="100%">
 			            			<option value=""></option>
 			            			<?php foreach($project_members as $member) { ?>
 			            				<option value="<?php echo $member['staff_id']; ?>"<?php if($selectedMember == $member['staff_id']){echo ' selected'; } ?>>

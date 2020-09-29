@@ -10,7 +10,7 @@
             <div class="row mbot15">
               <div class="col-md-3 contacts-filter-column">
                <div class="select-placeholder">
-                <select name="custom_view" title="<?php echo _l('gdpr_consent'); ?>" id="custom_view" class="selectpicker" data-width="100%">
+                <select name="custom_view" title="<?php echo _l('gdpr_consent'); ?>" id="custom_view" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                  <option value=""></option>
                  <?php foreach($consent_purposes as $purpose) { ?>
                  <option value="consent_<?php echo html_entity_decode($purpose['id']); ?>">

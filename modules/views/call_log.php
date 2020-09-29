@@ -44,7 +44,7 @@
 
                         <div class="form-group select-placeholder">
                             <label for="customer_type" class="control-label"><?php echo _l('cl_related'); ?></label>
-                            <select name="customer_type" id="customer_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                            <select name="customer_type" id="customer_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                 <option value=""></option>
                                 <option value="lead" <?php if((isset($call_log) && $call_log->customer_type == 'lead') || $this->input->get('customer_type')){if($customer_type == 'lead'){echo 'selected';}} ?>><?php echo _l('cl_lead'); ?></option>
                                 <option value="customer" <?php if((isset($call_log) &&  $call_log->customer_type == 'customer') || $this->input->get('customer_type')){if($customer_type == 'customer'){echo 'selected';}} ?>><?php echo _l('cl_customer'); ?></option>
@@ -66,7 +66,7 @@
 
                         <div class="form-group select-placeholder">
                             <label for="rel_type" class="control-label"><?php echo _l('cl_type'); ?></label>
-                            <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                            <select name="rel_type" id="rel_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                 <option value=""></option>
                                 <?php foreach(get_related_to_types() as $type){ ?>
                                     <option value="<?php echo $type['key']; ?>" <?php if((isset($call_log) && $call_log->rel_type == $type['key']) || $this->input->get('rel_type')){echo 'selected';} ?>><?php echo _l($type['lang_key']); ?></option>
@@ -88,7 +88,7 @@
 
                         <div class="form-group select-placeholder" app-field-wrapper="call_direction">
                             <label for="call_direction" class="control-label"><?php echo _l('call_log_direction'); ?></label>
-                            <select name="call_direction" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                            <select name="call_direction" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                 <option value=""></option>
                                 <?php foreach(get_call_directions() as $type){ ?>
                                     <option value="<?php echo $type['key']; ?>" data-subtext="<?php if(isset($type['subtext'])){echo _l($type['subtext']);} ?>" <?php if(isset($call_log) && $call_log->call_direction == $type['key']){echo 'selected';} ?>><?php echo _l($type['lang_key']); ?></option>

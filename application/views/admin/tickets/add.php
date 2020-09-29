@@ -119,7 +119,7 @@
 							<div class="col-md-12 mbot20 before-ticket-message">
 								<div class="row">
 									<div class="col-md-6">
-										<select id="insert_predefined_reply" data-width="100%" data-live-search="true" class="selectpicker" data-title="<?php echo _l('ticket_single_insert_predefined_reply'); ?>">
+										<select id="insert_predefined_reply" data-width="100%" data-live-search="true" class="selectpicker" data-style="btn-outline-light" data-title="<?php echo _l('ticket_single_insert_predefined_reply'); ?>">
 											<?php foreach($predefined_replies as $predefined_reply){ ?>
 												<option value="<?php echo $predefined_reply['id']; ?>"><?php echo $predefined_reply['name']; ?></option>
 											<?php } ?>
@@ -131,7 +131,7 @@
 										</div>
 										<div class="col-md-6">
 											<?php $groups = get_all_knowledge_base_articles_grouped(); ?>
-											<select id="insert_knowledge_base_link" data-width="100%" class="selectpicker" data-live-search="true" onchange="insert_ticket_knowledgebase_link(this);" data-title="<?php echo _l('ticket_single_insert_knowledge_base_link'); ?>">
+											<select id="insert_knowledge_base_link" data-width="100%" class="selectpicker" data-style="btn-outline-light" data-live-search="true" onchange="insert_ticket_knowledgebase_link(this);" data-title="<?php echo _l('ticket_single_insert_knowledge_base_link'); ?>">
 												<option value=""></option>
 												<?php foreach($groups as $group){ ?>
 													<?php if(count($group['articles']) > 0){ ?>

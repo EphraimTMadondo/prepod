@@ -14,7 +14,7 @@
                <div class="card-body">
                   <div class="row">
                      <div class="col-md-3">
-                        <select class="selectpicker" name="report-group-change" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-outline-light" name="report-group-change" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <?php foreach($groups as $group){ ?>
                            <option value="<?php echo $group['groupid']; ?>"><?php echo $group['name']; ?></option>
                            <?php } ?>

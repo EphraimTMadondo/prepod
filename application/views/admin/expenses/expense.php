@@ -239,7 +239,7 @@
                      <select
                      name="repeat_every"
                      id="repeat_every"
-                     class="selectpicker"
+                     class="selectpicker" data-style="btn-outline-light"
                      data-width="100%"
                      data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"
                      <?php if(isset($expense) && !empty($expense->recurring_from)){ ?> disabled <?php } ?>>
@@ -261,7 +261,7 @@
                            <?php echo render_input('repeat_every_custom','',$value,'number',array('min'=>1)); ?>
                         </div>
                         <div class="col-md-6">
-                           <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                           <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                               <option value="day" <?php if(isset($expense) && $expense->custom_recurring == 1 && $expense->recurring_type == 'day'){echo 'selected';} ?>><?php echo _l('expense_recurring_days'); ?></option>
                               <option value="week" <?php if(isset($expense) && $expense->custom_recurring == 1 && $expense->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('expense_recurring_weeks'); ?></option>
                               <option value="month" <?php if(isset($expense) && $expense->custom_recurring == 1 && $expense->recurring_type == 'month'){echo 'selected';} ?>><?php echo _l('expense_recurring_months'); ?></option>

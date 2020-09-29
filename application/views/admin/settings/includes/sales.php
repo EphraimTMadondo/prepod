@@ -31,7 +31,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label for="decimal_separator"><?php echo _l('settings_sales_decimal_separator'); ?></label>
-               <select id="decimal_separator" class="selectpicker" name="settings[decimal_separator]" data-width="100%">
+               <select id="decimal_separator" class="selectpicker" data-style="btn-outline-light" name="settings[decimal_separator]" data-width="100%">
                   <option value=","<?php if(get_option('decimal_separator') == ','){echo ' selected';}; ?>>,</option>
                   <option value="."<?php if(get_option('decimal_separator') == '.'){echo ' selected';}; ?>>.</option>
                </select>
@@ -40,7 +40,7 @@
          <div class="col-md-6">
             <div class="form-group">
                <label for="thousand_separator"><?php echo _l('settings_sales_thousand_separator'); ?></label>
-               <select id="thousand_separator" class="selectpicker" name="settings[thousand_separator]" data-width="100%" data-show-subtext="true">
+               <select id="thousand_separator" class="selectpicker" data-style="btn-outline-light" name="settings[thousand_separator]" data-width="100%" data-show-subtext="true">
                   <option value=","<?php if(get_option('thousand_separator') == ','){echo ' selected';}; ?>>,</option>
                   <option value="."<?php if(get_option('thousand_separator') == '.'){echo ' selected';}; ?>>.</option>
                   <option value="'" data-subtext="apostrophe"<?php if(get_option('thousand_separator') == "'"){echo ' selected';}; ?>>'</option>
@@ -227,7 +227,7 @@
          </div>
          <div class="col-md-7">
             <label for="default_proposals_pipeline_sort" class="control-label"><?php echo _l('default_pipeline_sort'); ?></label>
-            <select name="settings[default_estimates_pipeline_sort]" id="default_estimates_pipeline_sort" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+            <select name="settings[default_estimates_pipeline_sort]" id="default_estimates_pipeline_sort" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <option value="datecreated" <?php if(get_option('default_estimates_pipeline_sort') == 'datecreated'){echo 'selected'; }?>><?php echo _l('estimates_sort_datecreated'); ?></option>
                <option value="date" <?php if(get_option('default_estimates_pipeline_sort') == 'date'){echo 'selected'; }?>><?php echo _l('estimates_sort_estimate_date'); ?></option>
                <option value="pipeline_order" <?php if(get_option('default_estimates_pipeline_sort') == 'pipeline_order'){echo 'selected'; }?>><?php echo _l('estimates_sort_pipeline'); ?></option>
@@ -265,7 +265,7 @@
          </div>
          <div class="col-md-7">
             <label for="default_proposals_pipeline_sort" class="control-label"><?php echo _l('default_pipeline_sort'); ?></label>
-            <select name="settings[default_proposals_pipeline_sort]" id="default_proposals_pipeline_sort" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+            <select name="settings[default_proposals_pipeline_sort]" id="default_proposals_pipeline_sort" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <option value="datecreated" <?php if(get_option('default_proposals_pipeline_sort') == 'datecreated'){echo 'selected'; }?>><?php echo _l('proposals_sort_datecreated'); ?></option>
                <option value="date" <?php if(get_option('default_proposals_pipeline_sort') == 'date'){echo 'selected'; }?>><?php echo _l('proposals_sort_proposal_date'); ?></option>
                <option value="pipeline_order" <?php if(get_option('default_proposals_pipeline_sort') == 'pipeline_order'){echo 'selected'; }?>><?php echo _l('proposals_sort_pipeline'); ?></option>

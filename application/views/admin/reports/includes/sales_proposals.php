@@ -4,7 +4,7 @@
    <div class="col-md-4">
       <div class="form-group">
          <label for="proposal_status"><?php echo _l('proposal_status'); ?></label>
-         <select name="proposal_status" class="selectpicker" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
+         <select name="proposal_status" class="selectpicker" data-style="btn-outline-light" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
             <?php foreach($proposals_statuses as $status){ ?>
             <option value="<?php echo $status; ?>"><?php echo format_proposal_status($status,'',false) ?></option>
             <?php } ?>
@@ -15,7 +15,7 @@
    <div class="col-md-4">
       <div class="form-group">
          <label for="proposals_sale_agents"><?php echo _l('sale_agent_string'); ?> (<?php echo _l('proposal_assigned'); ?>)</label>
-         <select name="proposals_sale_agents" class="selectpicker" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
+         <select name="proposals_sale_agents" class="selectpicker" data-style="btn-outline-light" multiple data-width="100%" data-none-selected-text="<?php echo _l('invoice_status_report_all'); ?>">
             <?php foreach($proposals_sale_agents as $agent){ ?>
             <option value="<?php echo $agent['sale_agent']; ?>"><?php echo get_staff_full_name($agent['sale_agent']); ?></option>
             <?php } ?>

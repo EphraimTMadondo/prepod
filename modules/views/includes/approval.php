@@ -56,7 +56,7 @@
                                 <div class="col-md-4">
                                 	<div class="select-placeholder form-group">
 		                                <label for="approver[0]"><?php echo _l('approver'); ?></label>
-		                            <select name="approver[0]" id="approver[0]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true" required>
+		                            <select name="approver[0]" id="approver[0]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true" required>
 		                                <option value=""></option>
 		                                <option value="direct_manager"><?php echo _l('direct_manager'); ?></option>
 		                                <option value="department_manager"><?php echo _l('department_manager'); ?></option>
@@ -67,7 +67,7 @@
                           		<div class="col-md-4">
                                 	<div class="select-placeholder form-group">
 		                                <label for="staff[0]"><?php echo _l('staff'); ?></label>
-		                            <select name="staff[0]" id="staff[0]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true">
+		                            <select name="staff[0]" id="staff[0]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true">
 		                                <option value=""></option>
 		                                <?php foreach($staffs as $val){
 		                                 $selected = '';
@@ -82,7 +82,7 @@
                           		<div class="col-md-4">
                                 	<div class="select-placeholder form-group">
 		                                <label for="action[0]"><?php echo _l('action'); ?></label>
-		                            <select name="action[0]" id="action[0]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true">
+		                            <select name="action[0]" id="action[0]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true">
 		                                <option value="sign"><?php echo _l('sign'); ?></option>
 		                                <option value="approve"><?php echo _l('approve'); ?></option>
 		                            </select>

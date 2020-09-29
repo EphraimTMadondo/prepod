@@ -53,7 +53,7 @@
                         echo render_input('salary_val','amount','','number'); ?>
 
                         <label for="tax" class="control-label"><?php echo _l('taxable'); ?></label>
-                        <select name="tax" class="selectpicker" id="taxable" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="tax" class="selectpicker" data-style="btn-outline-light" id="taxable" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option>                  
                            <option value="0"><?php echo _l('no'); ?></option>
                            <option value="1"><?php echo _l('yes'); ?></option>

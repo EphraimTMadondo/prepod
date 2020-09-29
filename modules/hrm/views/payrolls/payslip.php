@@ -61,7 +61,7 @@
                         <div class="row">
                         	<div class="col-md-6">
                         	   <label for="payroll_month"><?php echo _l('month') ?></label>
-                                  <select name="payroll_month" class="selectpicker" id="payroll_month" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                  <select name="payroll_month" class="selectpicker" data-style="btn-outline-light" id="payroll_month" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                     <option value=""></option> 
                                     <?php
                                     foreach($month as $m){                             
@@ -75,7 +75,7 @@
                                 <?php  $payroll_type = isset($payroll_type) ? $payroll_type : '' ; ?>
 
 	                        	<label for="payroll_type" class="control-label"><?php echo _l('payroll_type'); ?></label>
-	                        	<select name="payroll_type" class="selectpicker" id="payroll_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+	                        	<select name="payroll_type" class="selectpicker" data-style="btn-outline-light" id="payroll_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
 	                           	<option value=""></option> 
                                 <?php foreach ($payroll_type as $payrolltype){ ?>
 	                           	   <option value="<?php echo htmlspecialchars($payrolltype['id']); ?>"><?php echo htmlspecialchars($payrolltype['payroll_type_name']); ?></option>

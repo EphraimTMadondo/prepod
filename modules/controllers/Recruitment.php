@@ -877,7 +877,7 @@ class recruitment extends AdminController {
 			}
 			$html .= '<div class="row col-md-12" id="candidates-item">
                         <div class="col-md-4 form-group">
-                          <select name="candidate[' . $count . ']" onchange="candidate_infor_change(this); return false;" id="candidate[' . $count . ']" class="selectpicker"  data-live-search="true" data-width="100%" data-none-selected-text="' . _l('ticket_settings_none_assigned') . '" required>
+                          <select name="candidate[' . $count . ']" onchange="candidate_infor_change(this); return false;" id="candidate[' . $count . ']" class="selectpicker" data-style="btn-outline-light"  data-live-search="true" data-width="100%" data-none-selected-text="' . _l('ticket_settings_none_assigned') . '" required>
                               <option value=""></option>';
 			foreach ($cd as $s) {
 				$attr = '';

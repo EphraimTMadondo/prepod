@@ -26,7 +26,7 @@
 
                         <div class="col-md-12">
                           <label for="rec_campaign"><?php echo _l('recruitment_campaign'); ?></label>
-                          <select name="rec_campaign" id="rec_campaign" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                          <select name="rec_campaign" id="rec_campaign" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                             <option value=""></option>
                             <?php foreach ($rec_campaigns as $s) {?>
                               <option value="<?php echo html_entity_decode($s['cp_id']); ?>" <?php if (isset($candidate) && $s['cp_id'] == $candidate->rec_campaign) {echo 'selected';}?>><?php echo html_entity_decode($s['campaign_code'] . ' - ' . $s['campaign_name']); ?></option>
@@ -52,7 +52,7 @@ echo render_date_input('birthday', 'birthday', $birthday)?>
 
                         <div class="col-md-4">
                           <label for="gender"><?php echo _l('gender'); ?></label>
-                          <select name="gender" id="gender" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                          <select name="gender" id="gender" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                             <option value=""></option>
                             <option value="male" <?php if (isset($candidate) && $candidate->gender == 'male') {echo 'selected';}?>><?php echo _l('male'); ?></option>
                             <option value="female" <?php if (isset($candidate) && $candidate->gender == 'female') {echo 'selected';}?>><?php echo _l('female'); ?></option>
@@ -92,7 +92,7 @@ echo render_input('place_of_issue', 'place_of_issue', $place_of_issue);?>
 
                         <div class="col-md-4">
                              <label for="marital_status" class="control-label"><?php echo _l('marital_status'); ?></label>
-                        <select name="marital_status" class="selectpicker" id="marital_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="marital_status" class="selectpicker" data-style="btn-outline-light" id="marital_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="<?php echo 'single'; ?>" <?php if (isset($candidate) && $candidate->marital_status == 'single') {echo 'selected';}?> ><?php echo _l('single'); ?></option>
                            <option value="<?php echo 'married'; ?>" <?php if (isset($candidate) && $candidate->marital_status == 'married') {echo 'selected';}?>  ><?php echo _l('married'); ?></option>

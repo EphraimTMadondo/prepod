@@ -151,7 +151,7 @@
                          </div>
                          <div class="col-md-4">
                               <label for="sex" class="control-label"><?php echo _l('sex'); ?></label>
-                        <select name="sex" class="selectpicker" id="sex" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="sex" class="selectpicker" data-style="btn-outline-light" id="sex" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option>                  
                            <option value="<?php echo 'male'; ?>" <?php if(isset($member) && $member->sex == 'male'){echo 'selected';} ?>><?php echo _l('male'); ?></option>
                            <option value="<?php echo 'female'; ?>" <?php if(isset($member) && $member->sex == 'female'){echo 'selected';} ?>><?php echo _l('female'); ?></option>
@@ -181,7 +181,7 @@
                      <div class="row">
                         <div class="col-md-4">
                              <label for="marital_status" class="control-label"><?php echo _l('marital_status'); ?></label>
-                        <select name="marital_status" class="selectpicker" id="marital_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="marital_status" class="selectpicker" data-style="btn-outline-light" id="marital_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option>                  
                            <option value="<?php echo 'single'; ?>" <?php if(isset($member) && $member->marital_status == 'single'){echo 'selected';} ?>><?php echo _l('single'); ?></option>
                            <option value="<?php echo 'married'; ?>" <?php if(isset($member) && $member->marital_status == 'married'){echo 'selected';} ?>><?php echo _l('married'); ?></option>
@@ -236,7 +236,7 @@
                      <div class="row">
                         <div class="col-md-4">
                             <label for="status_work" class="control-label"><?php echo _l('status_work'); ?></label>
-                        <select name="status_work" class="selectpicker" id="status_work" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="status_work" class="selectpicker" data-style="btn-outline-light" id="status_work" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option>                  
                            <option value="<?php echo 'working'; ?>" <?php if(isset($member) && $member->status_work == 'working'){echo 'selected';} ?>><?php echo _l('working'); ?></option>
                            <option value="<?php echo 'maternity_leave'; ?>" <?php if(isset($member) && $member->status_work == 'maternity_leave'){echo 'selected';} ?>><?php echo _l('maternity_leave'); ?></option>
@@ -245,7 +245,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="job_position" class="control-label"><?php echo _l('job_position'); ?></label>
-                        <select name="job_position" class="selectpicker" id="job_position" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="job_position" class="selectpicker" data-style="btn-outline-light" id="job_position" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option> 
                            <?php foreach($positions as $p){ ?> 
                               <option value="<?php echo htmlspecialchars($p['position_id']); ?>" <?php if(isset($member) && $member->job_position == $p['position_id']){echo 'selected';} ?>><?php echo htmlspecialchars($p['position_name']); ?></option>
@@ -254,7 +254,7 @@
                         </div>
                          <div class="col-md-4">
                             <label for="workplace" class="control-label"><?php echo _l('workplace'); ?></label>
-                        <select name="workplace" class="selectpicker" id="workplace" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="workplace" class="selectpicker" data-style="btn-outline-light" id="workplace" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option>                  
                            <?php foreach($workplace as $w){ ?>
 
@@ -361,7 +361,7 @@
                          
                      <div class="form-group select-placeholder">
                         <label for="direction"><?php echo _l('document_direction'); ?></label>
-                        <select class="selectpicker" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
+                        <select class="selectpicker" data-style="btn-outline-light" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
                            <option value="" <?php if(isset($member) && empty($member->direction)){echo 'selected';} ?>></option>
                            <option value="ltr" <?php if(isset($member) && $member->direction == 'ltr'){echo 'selected';} ?>>LTR</option>
                            <option value="rtl" <?php if(isset($member) && $member->direction == 'rtl'){echo 'selected';} ?>>RTL</option>

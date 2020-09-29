@@ -105,7 +105,7 @@
                            <?php  $pro = $this->hrm_model->get_staff();?>
                            <div  class="col-md-3 leads-filter-column pull-left">
                           
-                                  <select name="staff[]" id="staff" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('als_staff'); ?>">
+                                  <select name="staff[]" id="staff" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('als_staff'); ?>">
                                     <?php foreach($pro as $s) { ?>
                                       <option value="<?php echo htmlspecialchars($s['staffid']); ?>"><?php echo htmlspecialchars($s['firstname']); ?></option>
                                       <?php } ?>

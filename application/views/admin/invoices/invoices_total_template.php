@@ -3,7 +3,7 @@
    <?php if(count($invoices_years) > 1 || isset($invoices_total_currencies)){ ?>
    <div class="col-md-12 simple-bootstrap-select mbot5">
       <?php if(isset($invoices_total_currencies)){ ?>
-      <select data-show-subtext="true" data-width="auto" class="selectpicker" name="total_currency" onchange="init_invoices_total();">
+      <select data-show-subtext="true" data-width="auto" class="selectpicker" data-style="btn-outline-light" name="total_currency" onchange="init_invoices_total();">
          <?php foreach($invoices_total_currencies as $currency){
             $selected = '';
             if(!$this->input->post('currency')){
@@ -23,7 +23,7 @@
       </select>
       <?php } ?>
       <?php if(count($invoices_years) > 1){ ?>
-      <select data-none-selected-text="<?php echo date('Y'); ?>" data-width="auto" class="selectpicker" name="invoices_total_years" onchange="init_invoices_total();" multiple="true" id="invoices_total_years">
+      <select data-none-selected-text="<?php echo date('Y'); ?>" data-width="auto" class="selectpicker" data-style="btn-outline-light" name="invoices_total_years" onchange="init_invoices_total();" multiple="true" id="invoices_total_years">
          <?php foreach($invoices_years as $year){ ?>
          <option value="<?php echo $year['year']; ?>"<?php if($this->input->post('years') && in_array($year['year'], $this->input->post('years')) || !$this->input->post('years') && date('Y') == $year['year']){echo ' selected'; } ?>><?php echo $year['year']; ?></option>
          <?php } ?>

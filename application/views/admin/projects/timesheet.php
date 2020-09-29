@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="col-md-9">
                                          <div class="form-group">
-                                                <select name="timesheet_task_id" id="timesheet_task_id" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="-">
+                                                <select name="timesheet_task_id" id="timesheet_task_id" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="-">
                                             <option value=""></option>
                                             <?php $has_permission_create = has_permission('projects','','create');
                                             foreach($tasks as $task){
@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="col-md-9">
                                       <div class="form-group">
-                                            <select name="timesheet_staff_id" id="timesheet_staff_id" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="-">
+                                            <select name="timesheet_staff_id" id="timesheet_staff_id" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="-">
                                             <option value=""></option>
                                         </select>
                                       </div>

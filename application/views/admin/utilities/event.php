@@ -33,7 +33,7 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                 <select name="reminder_before_type" id="reminder_before_type" class="selectpicker" data-width="100%">
+                 <select name="reminder_before_type" id="reminder_before_type" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                    <option value="minutes"<?php if($event->reminder_before_type == 'minutes'){echo ' selected';} ?>><?php echo _l('minutes'); ?></option>
                    <option value="hours"<?php if($event->reminder_before_type == 'hours'){echo ' selected';} ?>><?php echo _l('hours'); ?></option>
                    <option value="days"<?php if($event->reminder_before_type == 'days'){echo ' selected';} ?>><?php echo _l('days'); ?></option>

@@ -22,7 +22,7 @@
       ?>
       <label for="gdpr_contact_data_portability_allowed">On export, export the following data</label>
       <div class="select-placeholder">
-       <select name="settings[gdpr_contact_data_portability_allowed][]" data-actions-box="true" multiple title="None" id="gdpr_contact_data_portability_allowed" class="selectpicker" data-width="100%">
+       <select name="settings[gdpr_contact_data_portability_allowed][]" data-actions-box="true" multiple title="None" id="gdpr_contact_data_portability_allowed" class="selectpicker" data-style="btn-outline-light" data-width="100%">
         <option value="profile_data"<?php if(in_array('profile_data', $valAllowed)){echo ' selected';} ?>>Contact Profile Data</option>
         <option value="consent"<?php if(in_array('consent', $valAllowed)){echo ' selected';} ?>>Consent History</option>
         <option value="tickets"<?php if(in_array('tickets', $valAllowed)){echo ' selected';} ?>>Tickets</option>
@@ -82,7 +82,7 @@
       ?>
       <label for="gdpr_lead_data_portability_allowed">On export, export the following data</label>
       <div class="select-placeholder">
-       <select name="settings[gdpr_lead_data_portability_allowed][]" data-actions-box="true" multiple title="None" id="gdpr_lead_data_portability_allowed" class="selectpicker" data-width="100%">
+       <select name="settings[gdpr_lead_data_portability_allowed][]" data-actions-box="true" multiple title="None" id="gdpr_lead_data_portability_allowed" class="selectpicker" data-style="btn-outline-light" data-width="100%">
         <option value=""></option>
         <option value="profile_data"<?php if(in_array('profile_data',$valAllowed)){echo ' selected';} ?>>Profile Data</option>
         <option value="custom_fields"<?php if(in_array('custom_fields',$valAllowed)){echo ' selected';} ?>>Custom Fields</option>

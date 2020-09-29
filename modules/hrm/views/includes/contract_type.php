@@ -60,7 +60,7 @@
                         	</div>
                         	<div class="col-md-4">
 	                        	<label for="unit" class="control-label"><?php echo _l('unit'); ?></label>
-	                        	<select name="unit" class="selectpicker" id="unit" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+	                        	<select name="unit" class="selectpicker" data-style="btn-outline-light" id="unit" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
 	                           	<option value=""></option>                  
 	                           	<option value="month"><?php echo _l('month'); ?></option>
 	                           	<option value="year"><?php echo _l('year'); ?></option>
@@ -68,7 +68,7 @@
                         	</div>
                         </div>
                         <label for="insurance" class="control-label"><?php echo _l('insurrance'); ?></label>
-                        <select name="insurance" class="selectpicker" id="insurance" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="insurance" class="selectpicker" data-style="btn-outline-light" id="insurance" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                            <option value=""></option>                  
                            <option value="0"><?php echo _l('no'); ?></option>
                            <option value="1"><?php echo _l('yes'); ?></option>

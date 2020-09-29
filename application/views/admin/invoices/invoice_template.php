@@ -252,7 +252,7 @@
                   <label for="allowed_payment_modes" class="control-label"><?php echo _l('invoice_add_edit_allowed_payment_modes'); ?></label>
                   <br />
                   <?php if(count($payment_modes) > 0){ ?>
-                  <select class="selectpicker"
+                  <select class="selectpicker" data-style="btn-outline-light"
                   data-toggle="<?php echo $this->input->get('allowed_payment_modes'); ?>"
                   name="allowed_payment_modes[]"
                   data-actions-box="true"
@@ -333,7 +333,7 @@
                         <label for="recurring" class="control-label">
                         <?php echo _l('invoice_add_edit_recurring'); ?>
                         </label>
-                        <select class="selectpicker"
+                        <select class="selectpicker" data-style="btn-outline-light"
                         data-width="100%"
                         name="recurring"
                         data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"
@@ -369,7 +369,7 @@
                   <div class="col-md-6">
                      <div class="form-group select-placeholder">
                         <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
-                        <select name="discount_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="discount_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value="" selected><?php echo _l('no_discount'); ?></option>
                            <option value="before_tax" <?php
                               if(isset($invoice)){ if($invoice->discount_type == 'before_tax'){ echo 'selected'; }} ?>><?php echo _l('discount_type_before_tax'); ?></option>
@@ -383,7 +383,7 @@
                         <?php echo render_input('repeat_every_custom','',$value,'number',array('min'=>1)); ?>
                      </div>
                      <div class="col-md-6">
-                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value="day" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'day'){echo 'selected';} ?>><?php echo _l('invoice_recurring_days'); ?></option>
                            <option value="week" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('invoice_recurring_weeks'); ?></option>
                            <option value="month" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'month'){echo 'selected';} ?>><?php echo _l('invoice_recurring_months'); ?></option>

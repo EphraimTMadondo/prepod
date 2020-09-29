@@ -22,7 +22,7 @@
 		                 <div class="col-md-4">
 		                 	<div class="form-group" id="report-time">
 		                        <label for="months-report"><?php echo _l('period_datepicker'); ?></label><br />
-		                        <select class="selectpicker" name="months-report" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+		                        <select class="selectpicker" data-style="btn-outline-light" name="months-report" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
 		                           <option value=""><?php echo _l('report_sales_months_all_time'); ?></option>
 		                           <option value="this_month"><?php echo _l('this_month'); ?></option>
 		                           <option value="1"><?php echo _l('last_month'); ?></option>
@@ -42,7 +42,7 @@
 	                           ?>
 		                     <div class="form-group hide" id="year_requisition">
 		                        <label for="months-report"><?php echo _l('period_datepicker'); ?></label><br />
-		                        <select  name="year_requisition" id="year_requisition"  class="selectpicker"  data-width="100%" data-none-selected-text="<?php echo _l('filter_by').' '._l('year'); ?>">
+		                        <select  name="year_requisition" id="year_requisition"  class="selectpicker" data-style="btn-outline-light"  data-width="100%" data-none-selected-text="<?php echo _l('filter_by').' '._l('year'); ?>">
 		                              <option value="<?php echo html_entity_decode($y0); ?>" <?php echo 'selected' ?>><?php echo _l('year').' '. html_entity_decode($y0) ; ?></option>
 		                              <option value="<?php echo html_entity_decode($y1); ?>"><?php echo _l('year').' '. html_entity_decode($y1) ; ?></option>
 		                              <option value="<?php echo html_entity_decode($y2); ?>"><?php echo _l('year').' '. html_entity_decode($y2) ; ?></option>

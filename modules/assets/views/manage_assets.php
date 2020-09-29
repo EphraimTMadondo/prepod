@@ -235,7 +235,7 @@
                           </div>
                           <div class="col-md-6">
                           <label for="unit"><?php echo htmlspecialchars(_l('unit')); ?></label>
-                          <select name="unit" id="unit" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
+                          <select name="unit" id="unit" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
                             <option value=""></option>
                             <?php foreach($unit as $s) { ?>
                               <option value="<?php echo htmlspecialchars($s['unit_id']); ?>"><?php echo htmlspecialchars($s['unit_name']); ?></option>
@@ -249,7 +249,7 @@
                           </div>
                           <div class="col-md-6">
                           <label for="asset_group"><?php echo htmlspecialchars(_l('asset_group')); ?></label>
-                          <select name="asset_group" id="asset_group" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
+                          <select name="asset_group" id="asset_group" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
                             <option value=""></option>
                             <?php foreach($group as $s) { ?>
                               <option value="<?php echo htmlspecialchars($s['group_id']); ?>"><?php echo htmlspecialchars($s['group_name']); ?></option>
@@ -260,7 +260,7 @@
                         <div class="row">
                           <div class="col-md-6">
                           <label for="department"><?php echo htmlspecialchars(_l('room_management')); ?></label>
-                          <select name="department" id="department" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
+                          <select name="department" id="department" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
                             <option value=""></option>
                             <?php foreach($departments as $s) { ?>
                               <option value="<?php echo htmlspecialchars($s['departmentid']); ?>"><?php echo htmlspecialchars($s['name']); ?></option>
@@ -269,7 +269,7 @@
                           </div>
                           <div class="col-md-6">
                           <label for="asset_location"><?php echo htmlspecialchars(_l('asset_location')); ?></label>
-                          <select name="asset_location" id="asset_location" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
+                          <select name="asset_location" id="asset_location" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('ticket_settings_none_assigned')); ?>">
                             <option value=""></option>
                             <?php foreach($location as $s) { ?>
                               <option value="<?php echo htmlspecialchars($s['location_id']); ?>"><?php echo htmlspecialchars($s['location']); ?></option>

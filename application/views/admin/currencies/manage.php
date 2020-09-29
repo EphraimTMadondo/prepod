@@ -47,7 +47,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="decimal_separator"><?php echo _l('settings_sales_decimal_separator'); ?></label>
-									<select id="decimal_separator" class="selectpicker" name="decimal_separator" data-width="100%">
+									<select id="decimal_separator" class="selectpicker" data-style="btn-outline-light" name="decimal_separator" data-width="100%">
 										<option value=",">,</option>
 										<option value=".">.</option>
 									</select>
@@ -56,7 +56,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="thousand_separator"><?php echo _l('settings_sales_thousand_separator'); ?></label>
-									<select id="thousand_separator" class="selectpicker" name="thousand_separator" data-width="100%" data-show-subtext="true">
+									<select id="thousand_separator" class="selectpicker" data-style="btn-outline-light" name="thousand_separator" data-width="100%" data-show-subtext="true">
 										<option value=",">,</option>
 										<option value=".">.</option>
 										<option value="'" data-subtext="apostrophe">'</option>

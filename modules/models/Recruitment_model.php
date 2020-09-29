@@ -1522,7 +1522,7 @@ class Recruitment_model extends App_Model {
                               <div class="row margin-top-10">
                                 <div class="col-md-12">
                                     <label for="group_criteria[' . $count_group . ']" class="control-label"><span class="text-danger">* </span>' . _l('group_criteria') . '</label>
-                                      <select onchange="group_criteria_change(this)" name="group_criteria[' . $count_group . ']" class="selectpicker" id="group_criteria[' . $count_group . ']" data-width="100%" data-none-selected-text="' . _l('dropdown_non_selected_tex') . '" required>
+                                      <select onchange="group_criteria_change(this)" name="group_criteria[' . $count_group . ']" class="selectpicker" data-style="btn-outline-light" id="group_criteria[' . $count_group . ']" data-width="100%" data-none-selected-text="' . _l('dropdown_non_selected_tex') . '" required>
                                         <option value=""></option>';
 			foreach ($groups as $kpi_coll) {
 				$select = '';
@@ -1554,7 +1554,7 @@ class Recruitment_model extends App_Model {
 
 				$html .= '<div class="col-md-7 padding-right-0">
                                       <label for="evaluation_criteria[' . $count_group . '][' . $count_criter . ']" class="control-label get_id_row " value ="' . $count_criter . '" ><span class="text-danger">* </span>' . _l('evaluation_criteria') . '</label>
-                                      <select name="evaluation_criteria[' . $count_group . '][' . $count_criter . ']" class="selectpicker" id="evaluation_criteria[' . $count_group . '][' . $count_criter . ']" data-width="100%" data-none-selected-text="' . _l('dropdown_non_selected_tex') . '" data-sl-id="e_criteria[' . $count_group . ']" required>
+                                      <select name="evaluation_criteria[' . $count_group . '][' . $count_criter . ']" class="selectpicker" data-style="btn-outline-light" id="evaluation_criteria[' . $count_group . '][' . $count_criter . ']" data-width="100%" data-none-selected-text="' . _l('dropdown_non_selected_tex') . '" data-sl-id="e_criteria[' . $count_group . ']" required>
                                         <option value=""></option>';
 				foreach ($criterias as $cr) {
 					$select_cr = '';

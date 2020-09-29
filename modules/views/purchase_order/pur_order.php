@@ -23,7 +23,7 @@
                   </div>
                   <div class="col-md-6 form-group">
                     <label for="vendor"><?php echo _l('vendor'); ?></label>
-                    <select name="vendor" id="vendor" class="selectpicker" onchange="estimate_by_vendor(this); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+                    <select name="vendor" id="vendor" class="selectpicker" data-style="btn-outline-light" onchange="estimate_by_vendor(this); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                         <option value=""></option>
                         <?php foreach($vendors as $s) { ?>
                         <option value="<?php echo html_entity_decode($s['userid']); ?>" <?php if(isset($pur_order) && $pur_order->vendor == $s['userid']){ echo 'selected'; } ?>><?php echo html_entity_decode($s['company']); ?></option>
@@ -41,7 +41,7 @@
                   <?php if(get_purchase_option('purchase_order_setting') == 0 ){ ?>
                     <div class="col-md-5 form-group">
                       <label for="estimate"><small class="req text-danger">* </small><?php echo _l('estimates'); ?></label>
-                      <select name="estimate" id="estimate" class="selectpicker"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                      <select name="estimate" id="estimate" class="selectpicker" data-style="btn-outline-light"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
                         
                       </select>
                       <br><br>

@@ -15,7 +15,7 @@
                         <?php echo render_input('subject','goal_subject',$value,'text',$attrs); ?>
                         <div class="form-group select-placeholder">
                             <label for="goal_type" class="control-label"><?php echo _l('goal_type'); ?></label>
-                            <select name="goal_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                            <select name="goal_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                 <option value=""></option>
                                 <?php foreach(get_goal_types() as $type){ ?>
                                 <option value="<?php echo $type['key']; ?>" data-subtext="<?php if(isset($type['subtext'])){echo _l($type['subtext']);} ?>" <?php if(isset($goal) && $goal->goal_type == $type['key']){echo 'selected';} ?>><?php echo _l($type['lang_key']); ?></option>

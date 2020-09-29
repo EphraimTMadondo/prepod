@@ -49,7 +49,7 @@
                             ?>
                           <div class="select-placeholder form-group">
                                 <label for="fieldto"><?php echo _l('custom_field_add_edit_belongs_top'); ?></label>
-                            <select name="fieldto" id="fieldto" class="selectpicker" data-width="100%" <?php echo $disable; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                            <select name="fieldto" id="fieldto" class="selectpicker" data-style="btn-outline-light" data-width="100%" <?php echo $disable; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                 <option value=""></option>
                                 <option value="company" <?php if(isset($custom_field) && $custom_field->fieldto == 'company'){echo 'selected';} ?>><?php echo _l('custom_field_company'); ?></option>
                                 <option value="leads" <?php if(isset($custom_field) && $custom_field->fieldto == 'leads'){echo 'selected';} ?>><?php echo _l('custom_field_leads'); ?></option>
@@ -74,7 +74,7 @@
                             <?php echo render_input('name','custom_field_name',$value); ?>
                            <div class="select-placeholder form-group">
                                 <label for="type"><?php echo _l('custom_field_add_edit_type'); ?></label>
-                            <select name="type" id="type" class="selectpicker"<?php if(isset($custom_field) && total_rows(db_prefix().'customfieldsvalues',array('fieldid'=>$custom_field->id,'fieldto'=>$custom_field->fieldto)) > 0){echo ' disabled';} ?> data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true">
+                            <select name="type" id="type" class="selectpicker" data-style="btn-outline-light"<?php if(isset($custom_field) && total_rows(db_prefix().'customfieldsvalues',array('fieldid'=>$custom_field->id,'fieldto'=>$custom_field->fieldto)) > 0){echo ' disabled';} ?> data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-hide-disabled="true">
                                 <option value=""></option>
                                 <option value="input" <?php if(isset($custom_field) && $custom_field->type == 'input'){echo 'selected';} ?>>Input</option>
                                 <option value="number" <?php if(isset($custom_field) && $custom_field->type == 'number'){echo 'selected';} ?>>Number</option>

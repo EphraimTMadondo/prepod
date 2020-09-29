@@ -18,7 +18,7 @@
                         <hr class="hr-panel-heading">
                         <div class="row">
                             <div class="col-md-3 pull-left">
-                                <select name="staff_role[]" class="selectpicker" multiple="true" id="staff_role" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_role'); ?>"> 
+                                <select name="staff_role[]" class="selectpicker" data-style="btn-outline-light" multiple="true" id="staff_role" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_role'); ?>"> 
                                      <?php 
                                     foreach ($staff_role as $value) { ?>
                                       <option value="<?php echo htmlspecialchars($value['roleid']); ?>"><?php echo htmlspecialchars($value['name']); ?></option>  
@@ -26,7 +26,7 @@
                                 </select>
                             </div>
                             <div class="col-md-3 pull-left">
-                                <select name="status_work[]" class="selectpicker" multiple="true" id="status_work" data-width="100%" data-none-selected-text="<?php echo _l('fillter_by_status'); ?>"> 
+                                <select name="status_work[]" class="selectpicker" data-style="btn-outline-light" multiple="true" id="status_work" data-width="100%" data-none-selected-text="<?php echo _l('fillter_by_status'); ?>"> 
                                                    
                                     <option value=""><?php echo _l('working'); ?></option>
                                     <option value="<?php echo 'maternity_leave'; ?>"><?php echo _l('maternity_leave'); ?></option>

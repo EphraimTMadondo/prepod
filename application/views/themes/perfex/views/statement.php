@@ -5,7 +5,7 @@
       <div class="row">
          <div class="col-md-4">
             <div class="form-group">
-               <select class="selectpicker" name="range" id="range" data-width="100%" onchange="render_customer_statement();">
+               <select class="selectpicker" data-style="btn-outline-light" name="range" id="range" data-width="100%" onchange="render_customer_statement();">
                   <option value='<?php echo $period_today; ?>'
                      <?php if($period_selected == $period_today){echo ' selected';} ?>>
                      <?php echo _l('today'); ?>

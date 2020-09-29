@@ -1,6 +1,6 @@
  <div class="form-group select-placeholder">
  	<select
- 	class="selectpicker"
+ 	class="selectpicker" data-style="btn-outline-light"
  	name="range"
  	id="range"
  	data-width="100%"<?php echo (isset($onChange) ? 'onchange="'.$onChange.'"' : ''); ?>>

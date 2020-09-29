@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="staff" class="control-label"><?php echo _l('staff'); ?></label>
-                            <select name="staff" class="selectpicker" id="staff" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                            <select name="staff" class="selectpicker" data-style="btn-outline-light" id="staff" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                <option value=""></option>                  
                               <?php foreach($staff as $s){ ?>
                               <option value="<?php echo htmlspecialchars($s['staffid']); ?>"  <?php if(isset($contracts) && $contracts[0]['staff'] == $s['staffid'] ){echo 'selected';} ?>> <?php echo htmlspecialchars($s['firstname']).' '.htmlspecialchars($s['lastname']); ?></option>                  
@@ -78,7 +78,7 @@
                       <div class="row">
                         <div class="col-md-6">
                         <label for="name_contract" class="control-label"><?php echo _l('name_contract'); ?></label>
-                          <select name="name_contract" class="selectpicker" id="name_contract" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                          <select name="name_contract" class="selectpicker" data-style="btn-outline-light" id="name_contract" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                              <option value=""></option>                  
                              <?php foreach($contract_type as $c){ ?>
                               <option value="<?php echo htmlspecialchars($c['id_contracttype']); ?>" <?php if(isset($contracts) && $contracts[0]['name_contract'] == $c['id_contracttype'] ){echo 'selected';} ?>><?php echo htmlspecialchars($c['name_contracttype']); ?> </option>
@@ -91,7 +91,7 @@
                       <div class="col-md-6">
 
                         <label for="contract_status" class="control-label"><?php echo _l('contract_status'); ?></label>
-                        <select name="contract_status" class="selectpicker" id="contract_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                        <select name="contract_status" class="selectpicker" data-style="btn-outline-light" id="contract_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                           <option value=""></option> 
                           <option value="draft" <?php if(isset($contracts) && $contracts[0]['contract_status'] == 'draft' ){echo 'selected';} ?> ><?php echo _l('draft') ?></option>
                           <option value="valid" <?php if(isset($contracts) && $contracts[0]['contract_status'] == 'valid' ){echo 'selected';} ?>><?php echo _l('valid') ?></option>
@@ -168,7 +168,7 @@
                                   <label for="salary_form[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" class="control-label get_id_row" value="<?php echo htmlspecialchars($keydetails); ?>"><?php echo _l('salary_form'); ?></label>
                                   
 
-                                  <select onchange="OnSelectionChange_salsaryform (this)" name="salary_form[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" class="selectpicker" id="salary_form[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                  <select onchange="OnSelectionChange_salsaryform (this)" name="salary_form[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" class="selectpicker" data-style="btn-outline-light" id="salary_form[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                     <option value=""></option> 
                                     <?php
                                     foreach($salary_form as $s){                             
@@ -217,7 +217,7 @@
 
                                 <div class="col-md-5">
                                    <label  for="allowance_type[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" class="control-label get_id_row_allowance" value="<?php echo htmlspecialchars($keydetails); ?>"><?php echo _l('allowance_type'); ?></label>
-                                <select onchange="OnSelectionChange_allowancetype (this)" name="allowance_type[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" class="selectpicker" id="allowance_type[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                <select onchange="OnSelectionChange_allowancetype (this)" name="allowance_type[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" class="selectpicker" data-style="btn-outline-light" id="allowance_type[<?php echo htmlspecialchars($keydetails); ?>][<?php echo htmlspecialchars($keycontract); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                   <option value=""></option> 
                                   <?php
                                   foreach($allowance_type as $s){                             
@@ -288,7 +288,7 @@
                                   <label for="salary_form[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" class="control-label"><?php echo _l('salary_form'); ?></label>
                       
 
-                                  <select name="salary_form[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" class="selectpicker" id="salary_form[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                  <select name="salary_form[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" class="selectpicker" data-style="btn-outline-light" id="salary_form[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                     <option value=""></option> 
                                     <?php
                                     foreach($salary_form as $s){                             
@@ -320,7 +320,7 @@
 
                                 <div class="col-md-5">
                                    <label for="allowance_type[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" class="control-label"><?php echo _l('allowance_type'); ?></label>
-                                <select name="allowance_type[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" class="selectpicker" id="allowance_type[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                <select name="allowance_type[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" class="selectpicker" data-style="btn-outline-light" id="allowance_type[<?php echo htmlspecialchars($key_total); ?>][<?php echo htmlspecialchars($key); ?>]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                   <option value=""></option> 
                                   <?php
                                   foreach($allowance_type as $s){                             
@@ -373,7 +373,7 @@
                       </div>
                       <div class="col-md-6">
                         <label for="staff_delegate" class="control-label"><?php echo _l('staff_delegate'); ?></label>
-                            <select name="staff_delegate" class="selectpicker" id="staff_delegate" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                            <select name="staff_delegate" class="selectpicker" data-style="btn-outline-light" id="staff_delegate" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                <option value=""></option>                  
                               <?php foreach($staff as $s){ ?>
                               <option value="<?php echo htmlspecialchars($s['staffid']); ?>"  <?php if(isset($contracts) && $contracts[0]['staff_delegate'] == $s['staffid'] ){echo 'selected';} ?>> <?php echo htmlspecialchars($s['firstname']).''.htmlspecialchars($s['lastname']); ?></option>                  

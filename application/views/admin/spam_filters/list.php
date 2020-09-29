@@ -55,7 +55,7 @@
             <div id="spam_filter_additional"></div>
             <div class="form-group">
               <label for="type"><?php echo _l('spamfilter_type'); ?></label>
-              <select name="type" id="type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+              <select name="type" id="type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                 <option value=""></option>
                 <option value="sender"><?php echo _l('spamfilter_type_sender'); ?></option>
                 <option value="subject"><?php echo _l('spamfilter_type_subject'); ?></option>

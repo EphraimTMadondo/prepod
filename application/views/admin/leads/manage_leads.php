@@ -122,7 +122,7 @@
                               </div>
                               <div class="col-md-3 leads-filter-column">
                                  <div class="select-placeholder">
-                                    <select name="custom_view" title="<?php echo _l('additional_filters'); ?>" id="custom_view" class="selectpicker" data-width="100%">
+                                    <select name="custom_view" title="<?php echo _l('additional_filters'); ?>" id="custom_view" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                                        <option value=""></option>
                                        <option value="lost"><?php echo _l('lead_lost'); ?></option>
                                        <option value="junk"><?php echo _l('lead_junk'); ?></option>

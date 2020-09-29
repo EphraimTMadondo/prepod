@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-12 text-right">
         <div class="form-group float-right">
-            <select class="selectpicker" name="gantt_type" onchange="gantt_filter();">
+            <select class="selectpicker" data-style="btn-outline-light" name="gantt_type" onchange="gantt_filter();">
                 <option value="milestones"<?php if(!$this->input->get('gantt_type') || $this->input->get('gantt_type') == 'milestones'){echo ' selected';} ?>><?php echo _l('project_milestones'); ?></option>
                 <option value="members"<?php if($this->input->get('gantt_type') == 'members'){echo ' selected';} ?>>
                    <?php
@@ -16,7 +16,7 @@
         </select>
     </div>
     <div class="form-group float-right mr-1">
-        <select class="selectpicker" name="gantt_task_status" onchange="gantt_filter();" data-none-selected-text="<?php echo _l('task_status'); ?>">
+        <select class="selectpicker" data-style="btn-outline-light" name="gantt_task_status" onchange="gantt_filter();" data-none-selected-text="<?php echo _l('task_status'); ?>">
             <option value=""><?php echo _l('task_list_all'); ?></option>
             <?php foreach($task_statuses as $status){ ?>
             <option value="<?php echo $status['id']; ?>"<?php if($this->input->get('gantt_task_status') == $status['id']){echo ' selected';} ?>>

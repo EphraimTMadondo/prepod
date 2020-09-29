@@ -13,7 +13,7 @@
    <div class="row">
      <div class="col-md-6">
        <label for="per_salary_allow[]" class="control-label"><?php echo _l('permission_edit_salary_allowance'); ?></label>
-          <select name="per_salary_allow[]" id="per_salary_allow" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="per_salary_allow[]" id="per_salary_allow" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
 
         <?php if(get_hrm_option('per_salary_allow')){ $per_salary_allow = json_decode(get_hrm_option('per_salary_allow'), true) ;} ; ?>
 
@@ -24,7 +24,7 @@
      </div>
      <div class="col-md-6">
           <label for="per_insurrance[]" class="control-label"><?php echo _l('permission_edit_change_insurance_rates'); ?></label>
-          <select name="per_insurrance[]" id="per_insurrance" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="per_insurrance[]" id="per_insurrance" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
         <?php if(get_hrm_option('per_insurrance')){ $per_insurrance = json_decode(get_hrm_option('per_insurrance'), true) ;} ; ?>
 
             <?php foreach($staff as $staff_key =>  $staff_value){ ?>
@@ -38,7 +38,7 @@
    <div class="row">
      <div class="col-md-6">
        <label for="per_create_payroll_t[]" class="control-label"><?php echo _l('permission_create_salary_model'); ?></label>
-          <select name="per_create_payroll_t[]" id="per_create_payroll_t" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="per_create_payroll_t[]" id="per_create_payroll_t" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
         <?php if(get_hrm_option('per_create_payroll_t')){ $per_create_payroll_t = json_decode(get_hrm_option('per_create_payroll_t'), true) ;} ; ?>
 
             <?php foreach($staff as $staff_key =>  $staff_value){ ?>
@@ -48,7 +48,7 @@
      </div>
      <div class="col-md-6">
           <label for="per_create_payslip[]" class="control-label"><?php echo _l('permission_create_payroll'); ?></label>
-          <select name="per_create_payslip[]" id="per_create_payslip" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="per_create_payslip[]" id="per_create_payslip" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
         <?php if(get_hrm_option('per_create_payslip')){ $per_create_payslip = json_decode(get_hrm_option('per_create_payslip'), true) ;} ; ?>
 
             <?php foreach($staff as $staff_key =>  $staff_value){ ?>
@@ -63,7 +63,7 @@
    <div class="row">
      <div class="col-md-6">
        <label for="per_latch_payslip[]" class="control-label"><?php echo _l('permission_latch_payroll'); ?></label>
-          <select name="per_latch_payslip[]" id="per_latch_payslip" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="per_latch_payslip[]" id="per_latch_payslip" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
         <?php if(get_hrm_option('per_latch_payslip')){ $per_latch_payslip = json_decode(get_hrm_option('per_latch_payslip'), true) ;} ; ?>
 
             <?php foreach($staff as $staff_key =>  $staff_value){ ?>
@@ -73,7 +73,7 @@
      </div>
      <div class="col-md-6">
           <label for="per_dependen_person[]" class="control-label"><?php echo _l('permission_approved_dependencies'); ?></label>
-          <select name="per_dependen_person[]" id="per_dependen_person" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="per_dependen_person[]" id="per_dependen_person" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
         <?php if(get_hrm_option('per_dependen_person')){ $per_dependen_person = json_decode(get_hrm_option('per_dependen_person'), true) ;} ; ?>
 
             <?php foreach($staff as $staff_key =>  $staff_value){ ?>

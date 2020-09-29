@@ -14,7 +14,7 @@
       <div class="col-md-<?php if($project->settings->view_milestones == 1){ echo 6; } else {echo 12;} ?>">
         <div class="form-group">
           <label for="priority" class="control-label"><?php echo _l('task_add_edit_priority'); ?></label>
-          <select name="priority" class="selectpicker" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="priority" class="selectpicker" data-style="btn-outline-light" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
             <option value="1" <?php if($task->priority == 1){echo 'selected';} ?>><?php echo _l('task_priority_low'); ?></option>
             <option value="2" <?php if($task->priority == 2){echo 'selected';} ?>><?php echo _l('task_priority_medium'); ?></option>
             <option value="3" <?php if($task->priority == 3){echo 'selected';} ?>><?php echo _l('task_priority_high'); ?></option>
@@ -27,7 +27,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="milestone"><?php echo _l('task_milestone'); ?></label>
-          <select name="milestone" id="milestone" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+          <select name="milestone" id="milestone" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
             <option value=""></option>
             <?php foreach($milestones as $milestone){ ?>
             <option value="<?php echo $milestone['id']; ?>"<?php if($milestone['id'] == $task->milestone){echo ' selected';} ?>><?php echo $milestone['name']; ?></option>
@@ -50,7 +50,7 @@
    <?php if($project->settings->view_team_members == 1){ ?>
    <div class="form-group">
     <label for="assignees"><?php echo _l('task_single_assignees_select_title'); ?></label>
-    <select class="selectpicker" multiple="true" name="assignees[]" id="assignees" data-width="100%" data-live-search="true">
+    <select class="selectpicker" data-style="btn-outline-light" multiple="true" name="assignees[]" id="assignees" data-width="100%" data-live-search="true">
       <?php foreach($members as $member){ ?>
       <option value="<?php echo $member['staff_id']; ?>"<?php if($this->tasks_model->is_task_assignee($member['staff_id'],$task->id)){echo ' selected';} ?>><?php echo get_staff_full_name($member['staff_id']); ?></option>
       <?php } ?>

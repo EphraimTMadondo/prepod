@@ -64,7 +64,7 @@
                      <div class="form">
                         <div class="col-md-12">
                         <label for="criteria_type"><span class="text-danger">* </span><?php echo _l('criteria_type'); ?></label>
-                        <select name="criteria_type" id="criteria_type" onchange="criteria_type_change(this); return false;" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                        <select name="criteria_type" id="criteria_type" onchange="criteria_type_change(this); return false;" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
                           <option value=""></option>
                           <option value="criteria"><?php echo _l('criteria'); ?></option>
                           <option value="group_criteria"><?php echo _l('group_criteria'); ?></option>
@@ -78,7 +78,7 @@ echo render_input('criteria_title', '<span class="text-danger">* </span>' . _l('
 
                         <div id="select_group_criteria">
                             <label for="group_criteria"><span id="group_span" class="text-danger">* </span><?php echo _l('group_criteria'); ?></label>
-                            <select name="group_criteria" id="group_criteria" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                            <select name="group_criteria" id="group_criteria" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
                               <option value=""></option>
                               <?php foreach ($list_group as $gr) {?>
                                 <option value="<?php echo html_entity_decode($gr['criteria_id']); ?>"><?php echo html_entity_decode($gr['criteria_title']); ?></option>

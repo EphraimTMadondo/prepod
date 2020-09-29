@@ -14,7 +14,7 @@
     <div role="tab-pane" class="tab-pane active" id="general">
         <?php $fonts = get_pdf_fonts_list(); ?>
         <label class="control-label"><?php echo _l('settings_pdf_font'); ?></label>
-        <select name="settings[pdf_font]" class="selectpicker" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+        <select name="settings[pdf_font]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
             <?php
             foreach($fonts as $font){
                 $selected = '';
@@ -81,7 +81,7 @@
 </div>
 <div role="tab-pane" class="tab-pane" id="formats">
   <label for="pdf_format_invoice" class="control-label"><?php echo _l('invoice'); ?></label>
-  <select name="settings[pdf_format_invoice]" id="pdf_format_invoice" class="selectpicker" data-width="100%">
+  <select name="settings[pdf_format_invoice]" id="pdf_format_invoice" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_invoice') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_invoice') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
     <option value="LETTER-PORTRAIT" <?php if(get_option('pdf_format_invoice') == 'LETTER-PORTRAIT'){echo 'selected'; }?>><?php echo _l('format_letter_portrait'); ?></option>
@@ -90,7 +90,7 @@
 </select>
 <hr />
 <label for="pdf_format_estimate" class="control-label"><?php echo _l('estimate'); ?></label>
-<select name="settings[pdf_format_estimate]" id="pdf_format_estimate" class="selectpicker" data-width="100%">
+<select name="settings[pdf_format_estimate]" id="pdf_format_estimate" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_estimate') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_estimate') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
 
@@ -100,7 +100,7 @@
 </select>
 <hr />
 <label for="pdf_format_proposal" class="control-label"><?php echo _l('proposal'); ?></label>
-<select name="settings[pdf_format_proposal]" id="pdf_format_proposal" class="selectpicker" data-width="100%">
+<select name="settings[pdf_format_proposal]" id="pdf_format_proposal" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_proposal') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_proposal') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
 
@@ -110,7 +110,7 @@
 </select>
 <hr />
 <label for="pdf_format_payment" class="control-label"><?php echo _l('payment'); ?></label>
-<select name="settings[pdf_format_payment]" id="pdf_format_payment" class="selectpicker" data-width="100%">
+<select name="settings[pdf_format_payment]" id="pdf_format_payment" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_payment') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_payment') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
     <option value="LETTER-PORTRAIT" <?php if(get_option('pdf_format_payment') == 'LETTER-PORTRAIT'){echo 'selected'; }?>><?php echo _l('format_letter_portrait'); ?></option>
@@ -118,7 +118,7 @@
 </select>
 <hr />
 <label for="pdf_format_credit_note" class="control-label"><?php echo _l('credit_note'); ?></label>
-<select name="settings[pdf_format_credit_note]" id="pdf_format_credit_note" class="selectpicker" data-width="100%">
+<select name="settings[pdf_format_credit_note]" id="pdf_format_credit_note" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_credit_note') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_credit_note') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
     <option value="LETTER-PORTRAIT" <?php if(get_option('pdf_format_credit_note') == 'LETTER-PORTRAIT'){echo 'selected'; }?>><?php echo _l('format_letter_portrait'); ?></option>
@@ -126,7 +126,7 @@
 </select>
 <hr />
 <label for="pdf_format_contract" class="control-label"><?php echo _l('contract'); ?></label>
-<select name="settings[pdf_format_contract]" id="pdf_format_contract" class="selectpicker" data-width="100%">
+<select name="settings[pdf_format_contract]" id="pdf_format_contract" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_contract') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_contract') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
     <option value="LETTER-PORTRAIT" <?php if(get_option('pdf_format_contract') == 'LETTER-PORTRAIT'){echo 'selected'; }?>><?php echo _l('format_letter_portrait'); ?></option>
@@ -134,7 +134,7 @@
 </select>
 <hr />
 <label for="pdf_format_statement" class="control-label"><?php echo _l('customer_statement'); ?></label>
-<select name="settings[pdf_format_statement]" id="pdf_format_statement" class="selectpicker" data-width="100%">
+<select name="settings[pdf_format_statement]" id="pdf_format_statement" class="selectpicker" data-style="btn-outline-light" data-width="100%">
     <option value="A4-PORTRAIT" <?php if(get_option('pdf_format_statement') == 'A4-PORTRAIT'){echo 'selected'; }?>>A4 <?php echo _l('format_a4_portrait_size'); ?></option>
     <option value="A4-LANDSCAPE" <?php if(get_option('pdf_format_statement') == 'A4-LANDSCAPE'){echo 'selected'; }?>><?php echo _l('format_letter_size'); ?></option>
     <option value="LETTER-PORTRAIT" <?php if(get_option('pdf_format_statement') == 'LETTER-PORTRAIT'){echo 'selected'; }?>><?php echo _l('format_letter_portrait'); ?></option>

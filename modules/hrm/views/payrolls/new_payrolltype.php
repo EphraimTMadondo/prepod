@@ -34,7 +34,7 @@
 
                                 <label for="department_id[]" class="control-label"><?php echo _l('department_applicable'); ?></label>
                                 
-                                <select name="department_id[]" id="department_id" data-live-search="true" class="selectpicker" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                <select name="department_id[]" id="department_id" data-live-search="true" class="selectpicker" data-style="btn-outline-light" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                               <?php if(isset($payrolls->department_id)){ $payroll_dp = json_decode($payrolls->department_id, true) ;} ; ?>
 
                                   <?php foreach($departments as $dpkey =>  $dp){ ?>
@@ -48,7 +48,7 @@
                                 <br>
                                 <div class="col-md-3">
                                 <label for="role_id" class="control-label"><?php echo _l('role'); ?></label>
-                                <select name="role_id[]" id="role_id" data-live-search="true" class="selectpicker" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                <select name="role_id[]" id="role_id" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                   <?php if(isset($payrolls->role_id)){ $payroll_role = json_decode($payrolls->role_id, true) ;} ; ?>
 
                                   <?php foreach($roles as $rkey => $role){ ?>
@@ -59,7 +59,7 @@
 
                                 <div class="col-md-3">
                                 <label for="position_id" class="control-label"><?php echo _l('position_of_applicable'); ?></label>
-                                <select name="position_id[]" id="position_id" data-live-search="true" class="selectpicker" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                <select name="position_id[]" id="position_id" data-live-search="true" class="selectpicker" data-style="btn-outline-light" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                   <?php if(isset($payrolls->position_id)){ $payroll_po = json_decode($payrolls->position_id, true) ;} ; ?>
 
                                   <?php foreach($positions as $pokey => $po){ ?>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-md-6">
                                 <label for="salary_form_id" class="control-label"><?php echo _l('bl'); ?></label>
-                                <select  name="salary_form_id" class="selectpicker" id="salary_form_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                <select  name="salary_form_id" class="selectpicker" data-style="btn-outline-light" id="salary_form_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                    <option value=""></option>  
                                   <option value="1"  <?php if(isset($payrolls->salary_form_id) && $payrolls->salary_form_id == 1 ){echo 'selected';} ?>> <?php echo _l('primary'); ?></option>
                                   <option value="2"  <?php if(isset($payrolls->salary_form_id) && $payrolls->salary_form_id == 2 ){echo 'selected';} ?>> <?php echo _l('allowance'); ?></option>                  
@@ -81,7 +81,7 @@
 
                                 <div class="col-md-6">
                                 <label for="manager_id" class="control-label"><?php echo _l('manager'); ?></label>
-                                <select name="manager_id" class="selectpicker" id="manager_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                <select name="manager_id" class="selectpicker" data-style="btn-outline-light" id="manager_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                    <option value=""></option>                  
                                   <?php foreach($staffs as $sm){ ?>
                                   <option value="<?php echo htmlspecialchars($sm['staffid']); ?>"  <?php if(isset($payrolls->manager_id) && $payrolls->manager_id == $sm['staffid'] ){echo 'selected';} ?>> <?php echo htmlspecialchars($sm['firstname']).''.htmlspecialchars($sm['lastname']); ?></option>                  
@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="col-md-6">
                                <label for="follower_id" class="control-label"><?php echo _l('follower'); ?></label>
-                                <select name="follower_id" class="selectpicker" id="follower_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                <select name="follower_id" class="selectpicker" data-style="btn-outline-light" id="follower_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                    <option value=""></option>                  
                                   <?php foreach($staffs as $sf){ ?>
                                   <option value="<?php echo htmlspecialchars($sf['staffid']); ?>"  <?php if(isset($payrolls->follower_id) && $payrolls->follower_id == $sf['staffid'] ){echo 'selected';} ?>> <?php echo htmlspecialchars($sf['firstname']).''.htmlspecialchars($sf['lastname']); ?></option>                  

@@ -124,7 +124,7 @@
                <div class="project-details<?php if($rel_type != 'project'){echo ' hide';} ?>">
                   <div class="form-group">
                      <label for="milestone"><?php echo _l('task_milestone'); ?></label>
-                     <select name="milestone" id="milestone" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                     <select name="milestone" id="milestone" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                         <option value=""></option>
                         <?php foreach($milestones as $milestone){ ?>
                         <option value="<?php echo $milestone['id']; ?>" <?php if(isset($task) && $task->milestone == $milestone['id']){echo 'selected'; } ?>><?php echo $milestone['name']; ?></option>
@@ -155,7 +155,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="priority" class="control-label"><?php echo _l('task_add_edit_priority'); ?></label>
-                        <select name="priority" class="selectpicker" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="priority" class="selectpicker" data-style="btn-outline-light" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <?php foreach(get_tasks_priorities() as $priority) { ?>
                            <option value="<?php echo $priority['id']; ?>"<?php if(isset($task) && $task->priority == $priority['id'] || !isset($task) && get_option('default_task_priority') == $priority['id']){echo ' selected';} ?>><?php echo $priority['name']; ?></option>
                            <?php } ?>
@@ -166,7 +166,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="repeat_every" class="control-label"><?php echo _l('task_repeat_every'); ?></label>
-                        <select name="repeat_every" id="repeat_every" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_every" id="repeat_every" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="1-week" <?php if(isset($task) && $task->repeat_every == 1 && $task->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('week'); ?></option>
                            <option value="2-week" <?php if(isset($task) && $task->repeat_every == 2 && $task->recurring_type == 'week'){echo 'selected';} ?>>2 <?php echo _l('weeks'); ?></option>
@@ -187,7 +187,7 @@
                         <?php echo render_input('repeat_every_custom','',$value,'number',array('min'=>1)); ?>
                      </div>
                      <div class="col-md-6">
-                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value="day" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'day'){echo 'selected';} ?>><?php echo _l('task_recurring_days'); ?></option>
                            <option value="week" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('task_recurring_weeks'); ?></option>
                            <option value="month" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'month'){echo 'selected';} ?>><?php echo _l('task_recurring_months'); ?></option>
@@ -220,7 +220,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="rel_type" class="control-label"><?php echo _l('task_related_to'); ?></label>
-                        <select name="rel_type" class="selectpicker" id="rel_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="rel_type" class="selectpicker" data-style="btn-outline-light" id="rel_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="project"
                               <?php if(isset($task) || $this->input->get('rel_type')){if($rel_type == 'project'){echo 'selected';}} ?>><?php echo _l('project'); ?></option>

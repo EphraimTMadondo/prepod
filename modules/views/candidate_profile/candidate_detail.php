@@ -27,7 +27,7 @@
 
               	  <a href="#" class="btn btn-warning float-right mr-1" data-toggle="modal" data-target="#candidate_rating"><i class="fa fa-star"></i><?php echo ' ' . _l('rate_candidate'); ?></a>
               	  <div class="col-md-3 float-right">
-              	  <select name="change_status" id="change_status" onchange="change_status_candidate(this,<?php echo html_entity_decode($candidate->id); ?>); return false;" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
+              	  <select name="change_status" id="change_status" onchange="change_status_candidate(this,<?php echo html_entity_decode($candidate->id); ?>); return false;" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
 		            <option value=""></option>
 		            <option value="1" class="<?php if ($candidate->status == 1) {echo 'hide';}?>"><?php echo _l('application'); ?></option>
 		            <option value="2" class="<?php if ($candidate->status == 2) {echo 'hide';}?>"><?php echo _l('potential'); ?></option>

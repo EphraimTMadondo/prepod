@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                 <label for="staff_id" class="control-label"><?php echo _l('staff'); ?></label>
-                                <select onchange="OnSelectStaff(this)" name="staff_id" class="selectpicker" id="staff_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+                                <select onchange="OnSelectStaff(this)" name="staff_id" class="selectpicker" data-style="btn-outline-light" id="staff_id" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
                                    <option value=""></option>                  
                                   <?php foreach($staff as $s){ ?>
                                   <option value="<?php echo htmlspecialchars($s['staffid']); ?>"  <?php if(isset($insurances) && $insurances[0]['staff_id'] == $s['staffid'] ){echo 'selected';} ?>> <?php echo htmlspecialchars($s['firstname']).''.htmlspecialchars($s['lastname']); ?></option>                  

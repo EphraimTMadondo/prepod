@@ -12,7 +12,7 @@
          <label for="stripe_plan_id"><?php echo _l('billing_plan'); ?></label>
          <select id="stripe_plan_id"
           name="stripe_plan_id"
-          class="selectpicker"
+          class="selectpicker" data-style="btn-outline-light"
           data-live-search="true"
           data-width="100%"
           data-none-selected-text="<?php echo _l('stripe_subscription_select_plan'); ?>">
@@ -126,7 +126,7 @@
       <?php echo render_select('currency', $currencies, array('id', 'name', 'symbol'), 'currency', $selected,  $s_attrs, [], '', 'ays-ignore'); ?>
       <div class="form-group select-placeholder">
          <label class="control-label" for="tax"><?php echo _l('tax'); ?> (Stripe)</label>
-         <select class="selectpicker" data-width="100%" name="stripe_tax_id" data-none-selected-text="<?php echo _l('no_tax'); ?>">
+         <select class="selectpicker" data-style="btn-outline-light" data-width="100%" name="stripe_tax_id" data-none-selected-text="<?php echo _l('no_tax'); ?>">
             <option value=""></option>
             <?php foreach($stripe_tax_rates->data as $tax){
                 if($tax->inclusive) {

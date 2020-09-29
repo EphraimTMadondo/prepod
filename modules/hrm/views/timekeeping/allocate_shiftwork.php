@@ -72,7 +72,7 @@
 	 
                     <div class="col-md-6">
                     	<label for="shift_type" class="control-label"><?php echo _l('shift_type'); ?></label>
-		                <select name="shift_type" class="selectpicker" id="shift_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+		                <select name="shift_type" class="selectpicker" data-style="btn-outline-light" id="shift_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
 		                  <option value=""></option>                  
 		                  <option value="part_office_time"><?php echo _l('part_office_time'); ?></option>
 		                  <option value="overtime_shifts"><?php echo _l('overtime_shifts'); ?></option>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-md-6 mbot15">
                     	<label for="department"><?php echo _l('department'); ?></label>
-                        <select name="department" id="department" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
+                        <select name="department" id="department" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
                          <option value=""></option> 
                           <?php foreach($departments as $dpm){ ?>
                             <option value="<?php echo htmlspecialchars($dpm['departmentid']); ?>"><?php echo htmlspecialchars($dpm['name']); ?></option>
@@ -90,7 +90,7 @@
                     <div class="col-md-12 mbot15">
 					
                     	<label for="position"><?php echo _l('position'); ?></label>
-                        <select name="position" id="position" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
+                        <select name="position" id="position" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
                          <option value=""></option> 
                           <?php foreach($positions as $dpm){ ?>
                             <option value="<?php echo htmlspecialchars($dpm['position_id']); ?>"><?php echo htmlspecialchars($dpm['position_name']); ?></option>

@@ -23,7 +23,7 @@
                   <div class="col-md-12">
                     <p class="bold col-md-9 p_style"><?php echo _l('information'); ?></p>
                     <div class="col-md-3 float-right">
-                        <select name="status" id="status" class="selectpicker" onchange="change_status_pur_request(this,<?php echo html_entity_decode($pur_request->id); ?>); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
+                        <select name="status" id="status" class="selectpicker" data-style="btn-outline-light" onchange="change_status_pur_request(this,<?php echo html_entity_decode($pur_request->id); ?>); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('change_status_to'); ?>">
                           <option value=""></option>
                           <option value="1" class="<?php if($pur_request->status == 1) { echo 'hide';}?>"><?php echo _l('not_yet_approve'); ?></option>
                           <option value="2" class="<?php if($pur_request->status == 2) { echo 'hide';}?>"><?php echo _l('approved'); ?></option>

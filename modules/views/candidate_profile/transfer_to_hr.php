@@ -79,7 +79,7 @@
          	<div class="row">
 	            <div class="col-md-4">
 	                 <label for="marital_status" class="control-label"><?php echo _l('marital_status'); ?></label>
-	            <select name="marital_status" class="selectpicker" id="marital_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
+	            <select name="marital_status" class="selectpicker" data-style="btn-outline-light" id="marital_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"> 
 	               <option value=""></option>                  
 	               <option value="<?php echo 'single'; ?>" <?php if(isset($candidate) && $candidate->marital_status == 'single'){echo 'selected';} ?>><?php echo _l('single'); ?></option>
 	               <option value="<?php echo 'married'; ?>" <?php if(isset($candidate) && $candidate->marital_status == 'married'){echo 'selected';} ?>><?php echo _l('married'); ?></option>

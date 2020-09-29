@@ -3,7 +3,7 @@
 <!-- Project Tasks -->
 <?php if(!isset($view_task)) { ?>
 <div class="float-right tasks-table<?php if($project->settings->view_milestones == 1){echo ' hide';} ?>">
-   <select class="selectpicker" name="tasksFilterByStatus[]" onchange="dt_custom_view('.table-tasks', 3, $(this).selectpicker('val'));" multiple="true" data-none-selected-text="<?php echo _l('filter_by'); ?>">
+   <select class="selectpicker" data-style="btn-outline-light" name="tasksFilterByStatus[]" onchange="dt_custom_view('.table-tasks', 3, $(this).selectpicker('val'));" multiple="true" data-none-selected-text="<?php echo _l('filter_by'); ?>">
       <?php foreach($tasks_statuses as $status) { ?>
       <option value="<?php echo $status['name']; ?>"><?php echo $status['name']; ?></option>
       <?php } ?>

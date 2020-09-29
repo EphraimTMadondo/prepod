@@ -33,7 +33,7 @@
                      </div>
                      <div class="col-md-3">
                         <div class="select-placeholder">
-                           <select name="custom_view" title="<?php echo _l('additional_filters'); ?>" id="custom_view" class="selectpicker" data-width="100%">
+                           <select name="custom_view" title="<?php echo _l('additional_filters'); ?>" id="custom_view" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                               <option value=""></option>
                               <option value="lost"><?php echo _l('lead_lost'); ?></option>
                               <option value="contacted_today"><?php echo _l('lead_add_edit_contacted_today'); ?></option>
@@ -56,7 +56,7 @@
                   <div class="row mb-1">
                      <div class="col-md-3">
                         <div class="select-placeholder">
-                           <select name="customer_groups" title="<?php echo _l('customer_groups'); ?> - <?php echo _l('customers_sort_all'); ?>" multiple id="customer_groups" class="selectpicker" data-width="100%">
+                           <select name="customer_groups" title="<?php echo _l('customer_groups'); ?> - <?php echo _l('customers_sort_all'); ?>" multiple id="customer_groups" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                               <?php foreach($groups as $group){ ?>
                               <option value="<?php echo $group['id']; ?>"><?php echo $group['name']; ?></option>
                               <?php } ?>
@@ -66,7 +66,7 @@
                      <?php if(isset($consent_purposes)) { ?>
                      <div class="col-md-3">
                         <div class="select-placeholder">
-                           <select name="consent" title="<?php echo _l('gdpr_consent'); ?>" id="consent" class="selectpicker" data-width="100%">
+                           <select name="consent" title="<?php echo _l('gdpr_consent'); ?>" id="consent" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                               <?php foreach($consent_purposes as $purpose) { ?>
                               <option value="<?php echo $purpose['id']; ?>">
                                  <?php echo $purpose['name']; ?>

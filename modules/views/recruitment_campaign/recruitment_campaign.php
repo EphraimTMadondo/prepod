@@ -23,7 +23,7 @@
                         <?php }?>
                     </div>
                     <div class=" col-md-3">
-                      <select name="department_filter[]" id="department_filter" class="selectpicker" multiple="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_department'); ?>">
+                      <select name="department_filter[]" id="department_filter" class="selectpicker" data-style="btn-outline-light" multiple="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_department'); ?>">
 
                           <?php foreach ($departments as $s) {?>
                             <option value="<?php echo html_entity_decode($s['departmentid']); ?>"><?php echo html_entity_decode($s['name']); ?></option>
@@ -31,7 +31,7 @@
                         </select>
                     </div>
                     <div class=" col-md-3">
-                      <select name="position_filter[]" id="position_filter" class="selectpicker" data-live-search="true" multiple="true" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_position'); ?>">
+                      <select name="position_filter[]" id="position_filter" class="selectpicker" data-style="btn-outline-light" data-live-search="true" multiple="true" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_position'); ?>">
 
                           <?php foreach ($positions as $s) {?>
                             <option value="<?php echo html_entity_decode($s['position_id']); ?>"><?php echo html_entity_decode($s['position_name']); ?></option>
@@ -39,7 +39,7 @@
                         </select>
                     </div>
                     <div class=" col-md-2">
-                      <select name="status_filter[]" id="status_filter" class="selectpicker" data-live-search="true" multiple="true" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_status'); ?>">
+                      <select name="status_filter[]" id="status_filter" class="selectpicker" data-style="btn-outline-light" data-live-search="true" multiple="true" data-width="100%" data-none-selected-text="<?php echo _l('filter_by_status'); ?>">
 
                           <option value="1"><?php echo _l('in_progress'); ?></option>
                           <option value="2"><?php echo _l('overdue'); ?></option>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="col-md-12">
                       <label for="cp_proposal"><?php echo _l('recruitment_proposal'); ?></label>
-                        <select name="cp_proposal[]" id="proposal" class="selectpicker" multiple="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                        <select name="cp_proposal[]" id="proposal" class="selectpicker" data-style="btn-outline-light" multiple="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
 
                           <?php foreach ($rec_proposal as $s) {?>
                             <option value="<?php echo html_entity_decode($s['id']); ?>"><?php echo html_entity_decode($s['proposal_name']); ?></option>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="col-md-6">
                       <label for="position"><small class="req text-danger">* </small> <?php echo _l('position'); ?></label>
-                        <select name="cp_position" id="position" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
+                        <select name="cp_position" id="position" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" required>
                           <option value=""></option>
                           <?php foreach ($positions as $s) {?>
                             <option value="<?php echo html_entity_decode($s['position_id']); ?>"><?php echo html_entity_decode($s['position_name']); ?></option>
@@ -132,7 +132,7 @@
                     </div>
                     <div class="col-md-6">
                       <label for="department"><?php echo _l('department'); ?></label>
-                        <select name="cp_department" id="department" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                        <select name="cp_department" id="department" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                           <option value=""></option>
                           <?php foreach ($departments as $s) {?>
                             <option value="<?php echo html_entity_decode($s['departmentid']); ?>"><?php echo html_entity_decode($s['name']); ?></option>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="col-md-6">
                       <label for="form_of_work"><?php echo _l('form_of_work'); ?></label>
-                        <select name="cp_form_work" id="form_of_work" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                        <select name="cp_form_work" id="form_of_work" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                           <option value=""></option>
                           <option value="intership"><?php echo _l('intership'); ?></option>
                           <option value="full_time"><?php echo _l('full_time'); ?></option>
@@ -170,7 +170,7 @@ echo render_input('cp_salary_from', 'starting_salary_from', '', 'text', $attr);?
                     <div class="col-md-12"> <?php echo render_textarea('cp_job_description', 'job_description', '', array(), array(), '', 'tinymce') ?></div>
                     <div class="col-md-6">
                       <label for="cp_manager"><?php echo _l('manager'); ?></label>
-                      <select name="cp_manager[]" id="manager" class="selectpicker" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                      <select name="cp_manager[]" id="manager" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
 
                         <?php foreach ($staffs as $s) {?>
                           <option value="<?php echo html_entity_decode($s['staffid']); ?>"><?php echo html_entity_decode($s['firstname'] . ' ' . $s['lastname']); ?></option>
@@ -179,7 +179,7 @@ echo render_input('cp_salary_from', 'starting_salary_from', '', 'text', $attr);?
                     </div>
                     <div class="col-md-6">
                       <label for="cp_follower"><?php echo _l('follower'); ?></label>
-                      <select name="cp_follower[]" id="follower" class="selectpicker" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                      <select name="cp_follower[]" id="follower" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
 
                         <?php foreach ($staffs as $s) {?>
                           <option value="<?php echo html_entity_decode($s['staffid']); ?>"><?php echo html_entity_decode($s['firstname'] . ' ' . $s['lastname']); ?></option>
@@ -196,7 +196,7 @@ echo render_input('cp_salary_from', 'starting_salary_from', '', 'text', $attr);?
 
                     <div class="col-md-4">
                       <label for="cp_gender"><?php echo _l('gender'); ?></label>
-                      <select name="cp_gender" id="gender" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                      <select name="cp_gender" id="gender" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                         <option value=""></option>
                         <option value="male"><?php echo _l('male'); ?></option>
                         <option value="female"><?php echo _l('female'); ?></option>
@@ -230,7 +230,7 @@ echo '>=';
 
                     <div class="col-md-6">
                       <label for="literacy"><?php echo _l('literacy'); ?></label>
-                        <select name="cp_literacy" id="literacy" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>">
+                        <select name="cp_literacy" id="literacy" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>">
                           <option value=""></option>
                           <option value="primary_level"><?php echo _l('primary_level'); ?></option>
                           <option value="intermediate_level"><?php echo _l('intermediate_level'); ?></option>
@@ -249,7 +249,7 @@ echo '>=';
                     </div>
                     <div class="col-md-6">
                       <label for="experience"><?php echo _l('experience'); ?></label>
-                        <select name="cp_experience" id="experience" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
+                        <select name="cp_experience" id="experience" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>">
                           <option value=""></option>
                           <option value="no_experience_yet"><?php echo _l('no_experience_yet'); ?></option>
                           <option value="less_than_1_year"><?php echo _l('less_than_1_year'); ?></option>

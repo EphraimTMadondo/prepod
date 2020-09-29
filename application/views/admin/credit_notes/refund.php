@@ -12,7 +12,7 @@
                     <?php echo render_date_input('refunded_on', 'credit_date', isset($refund) ? _d($refund->refunded_on ) : _d(date('Y-m-d'))); ?>
                     <div class="form-group">
                         <label for="payment_mode" class="control-label"><?php echo _l('payment_mode'); ?></label>
-                        <select class="selectpicker" name="payment_mode" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-outline-light" name="payment_mode" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                             <option value=""></option>
                             <?php foreach($payment_modes as $mode){ ?>
                                 <option value="<?php echo $mode['id']; ?>"<?php if(isset($refund) && $refund->payment_mode == $mode['id']){echo ' selected'; } ?>><?php echo $mode['name']; ?></option>

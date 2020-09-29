@@ -12,7 +12,7 @@
         <hr />
         <button type="submit" class="btn btn-info float-right"><?php echo _l('new_post'); ?></button>
         <a href="#" class="btn btn-default add-post-attachments"><i data-toggle="tooltip" title="<?php echo _l('newsfeed_upload_tooltip'); ?>" class="fa fa-files-o"></i></a>
-        <select id="post-visibility" class="selectpicker" multiple name="visibility[]" data-width="60%" data-none-selected-text="<?php echo _l('newsfeed_all_departments'); ?>">
+        <select id="post-visibility" class="selectpicker" data-style="btn-outline-light" multiple name="visibility[]" data-width="60%" data-none-selected-text="<?php echo _l('newsfeed_all_departments'); ?>">
 
          <?php foreach($departments as $department){ ?>
            <option value="<?php echo $department['departmentid']; ?>"><?php echo $department['name']; ?></option>

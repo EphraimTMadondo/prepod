@@ -1322,7 +1322,7 @@ public function delete_hrm_staff_attachment($attachment_id)
                                 $from_month = (isset($value['from_month']) ? $value['from_month'] : '');
             $data_insert .=   '<label for="from_month['.$keydetails .']">'. _l('from_month').'</label>';
 
-            $data_insert .=   '<select name="from_month['. $keydetails.']" class="selectpicker"';
+            $data_insert .=   '<select name="from_month['. $keydetails.']" class="selectpicker" data-style="btn-outline-light"';
             $data_insert .=    'id="from_month['.$keydetails.']" data-width="100%"';
             $data_insert .=    'data-none-selected-text="'. _l('dropdown_non_selected_tex').'">' ;
 
@@ -1348,7 +1348,7 @@ public function delete_hrm_staff_attachment($attachment_id)
             $data_insert .=         '<label for="formality['. $keydetails .']" class="control-label">'._l(                      'formality').'</label>';
             
             $data_insert .=    '<select onchange="OnSelectReason (this)"';
-            $data_insert .=      'name="formality['. $keydetails .']" class="selectpicker"';
+            $data_insert .=      'name="formality['. $keydetails .']" class="selectpicker" data-style="btn-outline-light"';
             $data_insert .=     'id="formality['. $keydetails .']" data-width="100%" data-none-selected-text="'._l('fillter_by_status').'">';
             $data_insert .=     '  <option value=""></option>';
             $data_insert .=     '  <option value="increase"';
@@ -1362,7 +1362,7 @@ public function delete_hrm_staff_attachment($attachment_id)
              $data_insert .=        '>'. _l('decrease').'</option></select></div>                      
                                             <div class="col-md-3">';
                                     $reason = isset($value['reason']) ? $value['reason'] : '';
-            $data_insert .=         '<label for="reason['.$keydetails .']" class="control-label">'. _l('reason_').'</label><select  name="reason['.$keydetails .']" class="selectpicker" id="reason['.$keydetails .']" data-width="100%" data-none-selected-text="'. _l('fillter_by_formality').'"><option value=""></option><option value="'.$reason.'"  selected><'._l(''.$reason.'') .'></option></select></div>';
+            $data_insert .=         '<label for="reason['.$keydetails .']" class="control-label">'. _l('reason_').'</label><select  name="reason['.$keydetails .']" class="selectpicker" data-style="btn-outline-light" id="reason['.$keydetails .']" data-width="100%" data-none-selected-text="'. _l('fillter_by_formality').'"><option value=""></option><option value="'.$reason.'"  selected><'._l(''.$reason.'') .'></option></select></div>';
             
             $data_insert .=           '<div class="col-md-3">';
                             $premium_rates = isset($value['premium_rates']) ? $value['premium_rates'] : '' ;
@@ -1409,7 +1409,7 @@ public function delete_hrm_staff_attachment($attachment_id)
                 $from_month = (isset($from_month) ? $from_month : '');
         $data_null  .=        '<div class="form-group">';
         $data_null  .=        '<label for="from_month[1]">'. _l('from_month').'</label>';
-        $data_null  .=      '<select name="from_month[1]" class="selectpicker" id="from_month[1]" data-width="100%"';
+        $data_null  .=      '<select name="from_month[1]" class="selectpicker" data-style="btn-outline-light" id="from_month[1]" data-width="100%"';
 
         $data_null  .= 'data-none-selected-text="'. _l('dropdown_non_selected_tex').'">' ;
         $data_null  .=        '<option value=""></option>' ;
@@ -1423,7 +1423,7 @@ public function delete_hrm_staff_attachment($attachment_id)
         $data_null  .=   '<div class="col-md-3">';
                 $formality = isset($formality) ? $formality : '' ;
         $data_null  .=    '<label for="formality[1]" class="control-label">'. _l('formality').'</label>';
-        $data_null  .=    '<select onchange="OnSelectReason (this)" name="formality[1]" class="selectpicker" id="';
+        $data_null  .=    '<select onchange="OnSelectReason (this)" name="formality[1]" class="selectpicker" data-style="btn-outline-light" id="';
         $data_null  .= 'formality[1]" data-width="100%" data-none-selected-text="'. _l('fillter_by_status').'">'; 
         $data_null  .=        '<option value=""></option>';
         $data_null  .=        '<option value="increase">'. _l('increase').'</option>';
@@ -1434,7 +1434,7 @@ public function delete_hrm_staff_attachment($attachment_id)
         $data_null  .=    '<div class="col-md-3">';
                 $reason = isset($reason) ? $reason : '' ;
         $data_null  .=    '<label for="reason[1]" class="control-label">'. _l('reason_').'</label>';
-        $data_null  .=    '<select  name="reason[1]" class="selectpicker" id="reason[1]" data-width="100%"';
+        $data_null  .=    '<select  name="reason[1]" class="selectpicker" data-style="btn-outline-light" id="reason[1]" data-width="100%"';
 
         $data_null  .= 'data-none-selected-text="'. _l('fillter_by_formality').'">' ;
         $data_null  .=        '<option value=""></option>';

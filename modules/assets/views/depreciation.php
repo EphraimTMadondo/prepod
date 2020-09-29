@@ -13,14 +13,14 @@
                       <hr />
                     </div>
                     <!-- <div class="col-md-4">
-                      <select name="asset_groups[]" id="asset_group" class="selectpicker" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('filter_by_asset_group')); ?>">
+                      <select name="asset_groups[]" id="asset_group" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('filter_by_asset_group')); ?>">
                             <?php foreach($group as $s) { ?>
                               <option value="<?php echo htmlspecialchars($s['group_id']); ?>"><?php echo htmlspecialchars($s['group_name']); ?></option>
                               <?php } ?>
                       </select>
                     </div>
                     <div class="col-md-4">
-                      <select name="assetss[]" id="asset" class="selectpicker" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('filter_by_asset')); ?>">
+                      <select name="assetss[]" id="asset" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo htmlspecialchars(_l('filter_by_asset')); ?>">
                             <?php foreach($assets as $s) { ?>
                               <option value="<?php echo htmlspecialchars($s['id']); ?>"><?php echo htmlspecialchars($s['assets_name']); ?></option>
                               <?php } ?>

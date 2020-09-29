@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <?php
-                            echo '<select name="month" class="selectpicker" data-none-selected-text="'._l('dropdown_non_selected_tex').'">' . PHP_EOL;
+                            echo '<select name="month" class="selectpicker" data-style="btn-outline-light" data-none-selected-text="'._l('dropdown_non_selected_tex').'">' . PHP_EOL;
                             for ($m=1; $m<=12; $m++) {
                              $_selected = '';
                              if($m == date('m')){

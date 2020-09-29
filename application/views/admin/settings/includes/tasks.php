@@ -17,7 +17,7 @@
 <hr />
 <div class="form-group">
   <label for="default_task_status" class="control-label"><?php echo _l('default_task_status'); ?></label>
-  <select name="settings[default_task_status]" class="selectpicker" id="default_task_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+  <select name="settings[default_task_status]" class="selectpicker" data-style="btn-outline-light" id="default_task_status" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
     <option value="auto" <?php if(get_option('default_task_status') == 'auto'){echo 'selected';} ?>><?php echo _l('auto'); ?></option>
     <?php foreach($task_statuses as $status){ ?>
           <option value="<?php echo $status['id']; ?>"<?php if($status['id'] == get_option('default_task_status')){echo ' selected';}; ?>>
@@ -29,7 +29,7 @@
 <hr />
 <div class="form-group">
   <label for="default_task_priority" class="control-label"><?php echo _l('default_task_priority'); ?></label>
-  <select name="settings[default_task_priority]" class="selectpicker" id="default_task_priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+  <select name="settings[default_task_priority]" class="selectpicker" data-style="btn-outline-light" id="default_task_priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
     <?php foreach(get_tasks_priorities() as $priority) { ?>
     <option value="<?php echo $priority['id']; ?>"<?php if(get_option('default_task_priority') == $priority['id']){echo ' selected';} ?>><?php echo $priority['name']; ?>
     </option>

@@ -13,7 +13,7 @@
                         <?php echo form_open($this->uri->uri_string()); ?>
                         <div class="form-group select-placeholder">
                             <label for="export_type"><?php echo _l('bulk_pdf_export_select_type'); ?></label>
-                            <select name="export_type" id="export_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                            <select name="export_type" id="export_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                 <option value=""></option>
                                 <?php foreach($bulk_pdf_export_available_features as $feature){ ?>
                                     <option value="<?php echo $feature['feature']; ?>"><?php echo $feature['name']; ?></option>

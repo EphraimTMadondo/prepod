@@ -83,7 +83,7 @@
          </div>
          <div class="hide" id="merge_db_field_<?php echo $field['id']; ?>">
             <hr />
-            <select name="merge_db_fields[<?php echo $field['id']; ?>]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+            <select name="merge_db_fields[<?php echo $field['id']; ?>]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <option value=""></option>
                <?php foreach($customer_fields as $c_field){
                   if(!in_array($c_field, $not_mergable_customer_fields)){
@@ -110,7 +110,7 @@
       </div>
       <div class="hide" id="merge_db_contact_field_<?php echo $field['id']; ?>">
          <hr />
-         <select name="merge_db_contact_fields[<?php echo $field['id']; ?>]" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+         <select name="merge_db_contact_fields[<?php echo $field['id']; ?>]" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
             <option value=""></option>
             <?php foreach($contact_fields as $c_field){
                if(!in_array($c_field, $not_mergable_contact_fields)){

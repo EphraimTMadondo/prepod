@@ -66,7 +66,7 @@ echo render_input('form_name', '<span class="text-danger">* </span>' . _l('form_
 
                         <div id="select_job_position">
                             <label for="job_position"><?php echo _l('job_position'); ?></label>
-                            <select name="job_position" id="job_position" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" >
+                            <select name="job_position" id="job_position" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" >
                               <option value=""></option>
                               <?php foreach ($positions as $gr) {?>
                                 <option value="<?php echo html_entity_decode($gr['position_id']); ?>"><?php echo html_entity_decode($gr['position_name']); ?></option>
@@ -85,7 +85,7 @@ echo render_input('form_name', '<span class="text-danger">* </span>' . _l('form_
 	                          <div class="row margin-top-10">
 	                            <div class="col-md-12">
 	                                <label for="group_criteria[0]" class="control-label"><span class="text-danger">* </span><?php echo _l('group_criteria'); ?></label>
-	                                  <select onchange="group_criteria_change(this)" name="group_criteria[0]" class="selectpicker" id="group_criteria[0]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" required>
+	                                  <select onchange="group_criteria_change(this)" name="group_criteria[0]" class="selectpicker" data-style="btn-outline-light" id="group_criteria[0]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" required>
 	                                    <option value=""></option>
 	                                    <?php foreach ($list_group as $kpi_coll) {?>
 	                                  <option value="<?php echo html_entity_decode($kpi_coll['criteria_id']); ?>"> <?php echo html_entity_decode($kpi_coll['criteria_title']); ?></option>
@@ -102,7 +102,7 @@ echo render_input('form_name', '<span class="text-danger">* </span>' . _l('form_
 
 	                                <div class="col-md-7 padding-right-0">
 	                                  <label for="evaluation_criteria[0][0]" class="control-label get_id_row" value ="0" ><span class="text-danger">* </span><?php echo _l('evaluation_criteria'); ?></label>
-	                                  <select name="evaluation_criteria[0][0]" class="selectpicker" id="evaluation_criteria[0][0]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-sl-id="e_criteria[0]" required>
+	                                  <select name="evaluation_criteria[0][0]" class="selectpicker" data-style="btn-outline-light" id="evaluation_criteria[0][0]" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" data-sl-id="e_criteria[0]" required>
 
 
 	                                  </select>

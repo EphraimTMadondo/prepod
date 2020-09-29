@@ -37,7 +37,7 @@
                   <div class="row">
                      <div class="col-md-5ths">
                         <div class="select-placeholder">
-                           <select name="range" id="range" class="selectpicker" data-width="100%">
+                           <select name="range" id="range" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                               <option value="today" selected><?php echo _l('today'); ?></option>
                               <option value="this_month"><?php echo _l('staff_stats_this_month_total_logged_time'); ?></option>
                               <option value="last_month"><?php echo _l('staff_stats_last_month_total_logged_time'); ?></option>
@@ -58,7 +58,7 @@
                      <?php if(isset($view_all)){ ?>
                      <div class="col-md-5ths">
                         <div class="select-placeholder">
-                           <select name="staff_id" id="staff_id" class="selectpicker" data-width="100%">
+                           <select name="staff_id" id="staff_id" class="selectpicker" data-style="btn-outline-light" data-width="100%">
                               <option value=""><?php echo _l('all_staff_members'); ?></option>
                               <option value="<?php echo get_staff_user_id(); ?>"><?php echo get_staff_full_name(get_staff_user_id()); ?></option>
                               <?php foreach($staff_members_with_timesheets as $staff){ ?>

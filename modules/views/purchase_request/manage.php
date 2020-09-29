@@ -54,7 +54,7 @@
               <div class="row">
                 <div class="col-md-12 form-group">
                   <label for="vendor"><span class="text-danger">* </span><?php echo _l('vendor'); ?></label>
-                    <select name="vendor[]" id="vendor" class="selectpicker" required multiple="true"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+                    <select name="vendor[]" id="vendor" class="selectpicker" data-style="btn-outline-light" required multiple="true"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                         <?php foreach($vendors as $s) { ?>
                         <option value="<?php echo html_entity_decode($s['userid']); ?>"><?php echo html_entity_decode($s['company']); ?></option>
                           <?php } ?>

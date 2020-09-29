@@ -6,7 +6,7 @@
          <div class="col-md-6">
             <div class="col-md-6 form-group">
               <label for="vendor"><?php echo _l('vendor'); ?></label>
-              <select name="vendor" id="vendor" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+              <select name="vendor" id="vendor" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                   <option value=""></option>
                   <?php foreach($vendors as $s) { ?>
                   <option value="<?php echo html_entity_decode($s['userid']); ?>" <?php if(isset($estimate) && $estimate->vendor->userid == $s['userid']){ echo 'selected'; } ?>><?php echo html_entity_decode($s['company']); ?></option>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-5 form-group">
               <label for="pur_request"><?php echo _l('pur_request'); ?></label>
-              <select name="pur_request" id="pur_request" class="selectpicker"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+              <select name="pur_request" id="pur_request" class="selectpicker" data-style="btn-outline-light"  data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                 <option value=""></option>
                   <?php foreach($pur_request as $s) { ?>
                   <option value="<?php echo html_entity_decode($s['id']); ?>" <?php if(isset($estimate) && $estimate->pur_request->id == $s['id']){ echo 'selected'; } ?> ><?php echo html_entity_decode($s['pur_rq_code'].' - '.$s['pur_rq_name']); ?></option>

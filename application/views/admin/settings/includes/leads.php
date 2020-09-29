@@ -37,7 +37,7 @@ $validationFields = hooks()->apply_filters('lead_available_dupicate_validation_f
 ?>
 <div class="form-group" id="unique_validation_wrapper">
   <label for="lead_unique_validation"><?php echo _l('lead_unique_validation_on'); ?></label>
-  <select class="selectpicker" name="settings[lead_unique_validation][]" id="lead_unique_validation" data-width="100%" multiple="true" data-none-selected-text="<?php echo _l('no_validation'); ?>">
+  <select class="selectpicker" data-style="btn-outline-light" name="settings[lead_unique_validation][]" id="lead_unique_validation" data-width="100%" multiple="true" data-none-selected-text="<?php echo _l('no_validation'); ?>">
     <?php foreach($validationFields as $leadField) {
       ?>
       <option value="<?php echo $leadField['value']; ?>"<?php if(in_array($leadField['value'], $savedValidation)){echo ' selected';} ?>>
@@ -56,7 +56,7 @@ $validationFields = hooks()->apply_filters('lead_available_dupicate_validation_f
 <div class="row">
   <div class="col-md-7">
     <label for="default_leads_kanban_sort" class="control-label"><?php echo _l('default_leads_kanban_sort'); ?></label>
-    <select name="settings[default_leads_kanban_sort]" id="default_leads_kanban_sort" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+    <select name="settings[default_leads_kanban_sort]" id="default_leads_kanban_sort" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
       <option value="dateadded" <?php if(get_option('default_leads_kanban_sort') == 'dateadded'){echo 'selected'; }?>><?php echo _l('leads_sort_by_datecreated'); ?></option>
       <option value="leadorder" <?php if(get_option('default_leads_kanban_sort') == 'leadorder'){echo 'selected'; }?>><?php echo _l('leads_sort_by_kanban_order'); ?></option>
       <option value="lastcontact" <?php if(get_option('default_leads_kanban_sort') == 'lastcontact'){echo 'selected'; }?>><?php echo _l('leads_sort_by_lastcontact'); ?></option>

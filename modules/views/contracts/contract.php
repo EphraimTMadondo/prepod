@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-12">
                   <label for="pur_order"><?php echo _l('pur_order'); ?></label>
-                  <select name="pur_order" id="pur_order" class="selectpicker" onchange="view_pur_order(this); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+                  <select name="pur_order" id="pur_order" class="selectpicker" data-style="btn-outline-light" onchange="view_pur_order(this); return false;" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                     <option value=""></option>
                     <?php foreach($pur_orders as $or){ ?>
                       <option value="<?php echo html_entity_decode($or['id']); ?>" <?php if(isset($contract) && $contract->pur_order == $or['id']){ echo 'selected'; } ?>><?php echo html_entity_decode($or['pur_order_number']).' - '.html_entity_decode($or['pur_order_name']); ?></option>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="vendor"><?php echo _l('vendor'); ?></label>
-                  <select name="vendor" id="vendor" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+                  <select name="vendor" id="vendor" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                     <option value=""></option>
                     <?php foreach($vendors as $or){ ?>
                       <option value="<?php echo html_entity_decode($or['userid']); ?>" <?php if(isset($contract) && $contract->vendor == $or['userid']){ echo 'selected'; } ?>><?php echo html_entity_decode($or['company']); ?></option>
@@ -85,7 +85,7 @@
 
                 <div class="col-md-6">
                   <label for="signed_status"><?php echo _l('signed_status'); ?></label>
-                  <select name="signed_status" readonly="true" id="signed_status" class="selectpicker" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
+                  <select name="signed_status" readonly="true" id="signed_status" class="selectpicker" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('ticket_settings_none_assigned'); ?>" >
                     <option value=""></option>
                     <option value="not_signed" <?php if(isset($contract) && $contract->signed_status == 'not_signed'){ echo 'selected'; }elseif(!isset($contract)){ echo 'selected'; } ?>><?php echo _l('not_signed'); ?></option>
                     <option value="signed"  <?php if(isset($contract) && $contract->signed_status == 'signed'){ echo 'selected'; } ?>><?php echo _l('signed'); ?></option>

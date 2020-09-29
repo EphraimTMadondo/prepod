@@ -17,7 +17,7 @@
                         <a href="#" onclick="make_expense_pdf_export(); return false;" class="btn btn-default pull-left mr-1<?php if($export_not_supported){echo ' disabled';} ?>"><i class="fa fa-file-pdf-o"></i></a>
                         <a download="expenses-report-<?php echo $current_year; ?>.xls" class="btn btn-default pull-left mr-1<?php if($export_not_supported){echo ' disabled';} ?>" href="#" onclick="return ExcellentExport.excel(this, 'expenses-report-table', 'Expenses Report <?php echo $current_year; ?>');"><i class="fa fa-file-excel-o"></i></a>
                         <?php if(count($expense_years) > 0 ){ ?>
-                        <select class="selectpicker" name="expense_year" onchange="filter_expenses();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-outline-light" name="expense_year" onchange="filter_expenses();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                             <?php foreach($expense_years as $year) { ?>
                             <option value="<?php echo $year['year']; ?>"<?php if($year['year'] == $current_year){echo 'selected';} ?>>
                                 <?php echo $year['year']; ?>
@@ -29,7 +29,7 @@
                         $_currency = $base_currency;
                         if(is_using_multiple_currencies(db_prefix().'expenses')){ ?>
                         <div data-toggle="tooltip" class="pull-left mr-1" title="<?php echo _l('report_expenses_base_currency_select_explanation'); ?>">
-                            <select class="selectpicker" name="currencies" onchange="filter_expenses();"  data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" >
+                            <select class="selectpicker" data-style="btn-outline-light" name="currencies" onchange="filter_expenses();"  data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" >
                                 <?php foreach($currencies as $c) {
                                     $selected = '';
                                     if(!$this->input->get('currency')){
