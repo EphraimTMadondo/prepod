@@ -431,7 +431,7 @@
          <div class="col-md-3">
             <div class="form-group select-placeholder input-group-select form-group-select-task_select popover-250">
               <div class="input-group input-group-select">
-               <select name="task_select" data-live-search="true" id="task_select" class="selectpicker no-margin _select_input_group" data-width="100%" data-none-selected-text="<?php echo _l('bill_tasks'); ?>">
+               <select name="task_select" data-live-search="true" id="task_select" class="selectpicker no-margin _select_input_group" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('bill_tasks'); ?>">
                   <option value=""></option>
                   <?php foreach($billable_tasks as $task_billable){ ?>
                   <option value="<?php echo $task_billable['id']; ?>"<?php if($task_billable['started_timers'] == true){ ?>disabled class="text-danger important" data-subtext="<?php echo _l('invoice_task_billable_timers_found'); ?>" <?php } else {
