@@ -362,7 +362,7 @@
                         <?php if(get_option('services') == 1){ ?>
                            <div class="col-md-6">
                               <?php if(is_admin() || get_option('staff_members_create_inline_ticket_services') == '1'){
-                                 echo render_select_with_input_group('service',$services,array('serviceid','name'),'ticket_settings_service',$ticket->service,'<a href="#" onclick="new_service();return false;"><i class="fa fa-plus"></i></a>');
+                                 echo render_select_with_input_group('service',$services,array('serviceid','name'),'ticket_settings_service',$ticket->service,'<a href="#"  class="input-group-text" onclick="new_service();return false;"><i class="fa fa-plus"></i></a>');
                               } else {
                                  echo render_select('service',$services,array('serviceid','name'),'ticket_settings_service',$ticket->service);
                               }

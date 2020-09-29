@@ -46,7 +46,7 @@
                      } ?>
                   <?php $value = (isset($article) ? $article->articlegroup : ''); ?>
                   <?php if(has_permission('knowledge_base','','create')){
-                     echo render_select_with_input_group('articlegroup',get_kb_groups(),array('groupid','name'),'kb_article_add_edit_group',$value,'<a href="#" onclick="new_kb_group();return false;"><i class="fa fa-plus"></i></a>');
+                     echo render_select_with_input_group('articlegroup',get_kb_groups(),array('groupid','name'),'kb_article_add_edit_group',$value,'<a href="#"  class="input-group-text" onclick="new_kb_group();return false;"><i class="fa fa-plus"></i></a>');
                      } else {
                      echo render_select('articlegroup',get_kb_groups(),array('groupid','name'),'kb_article_add_edit_group',$value);
                      }

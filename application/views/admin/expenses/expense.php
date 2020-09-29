@@ -53,7 +53,7 @@
                   <?php
                      $selected = (isset($expense) ? $expense->category : '');
                      if(is_admin() || get_option('staff_members_create_inline_expense_categories') == '1'){
-                       echo render_select_with_input_group('category',$categories,array('id','name'),'expense_category',$selected,'<a href="#" onclick="new_category();return false;"><i class="fa fa-plus"></i></a>');
+                       echo render_select_with_input_group('category',$categories,array('id','name'),'expense_category',$selected,'<a href="#"  class="input-group-text" onclick="new_category();return false;"><i class="fa fa-plus"></i></a>');
                      } else {
                         echo render_select('category',$categories,array('id','name'),'expense_category',$selected);
                      }
