@@ -13,7 +13,10 @@
     <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/frest/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" id="favicon" href="https://worksuite.app/prepod/uploads/company/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
-
+    <?php
+      echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/pickadate/pickadate.css'>\n\t";
+      echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css'>\n\t";
+    ?>
     <!-- BEGIN: Vendor CSS-->
     <?php
       switch($page)
@@ -22,7 +25,6 @@
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/swiper.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/dragula.min.css'>\n\t";
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-time-picker.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-date-picker.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-calendar.min.css'>\n\t";
@@ -45,7 +47,6 @@
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/jkanban/jkanban.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n\t";
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/pickadate/pickadate.css'>\n\t";
         break;
         case 'mailbox':
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
