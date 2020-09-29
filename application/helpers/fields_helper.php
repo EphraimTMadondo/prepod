@@ -115,7 +115,7 @@ function render_color_picker($name, $label = '', $value = '', $input_attrs = [])
     $picker .= '<div class="form-group" app-field-wrapper="' . $name . '">';
     $picker .= '<label for="' . $name . '" class="control-label">' . $label . '</label>';
     $picker .= '<div class="input-group mbot15 colorpicker-input">
-    <input type="text" value="' . set_value($name, $value) . '" name="' . $name . '" id="' . $name . '" class="form-control" ' . $_input_attrs . ' />
+    <input type="color" value="' . set_value($name, $value) . '" name="' . $name . '" id="' . $name . '" class="form-control" ' . $_input_attrs . ' />
     <span class="input-group-append"><i class="input-group-text"></i></span>
 </div>';
     $picker .= '</div>';
