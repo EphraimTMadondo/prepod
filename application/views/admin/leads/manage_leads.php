@@ -278,7 +278,7 @@
                               }
                               $table_data = hooks()->apply_filters('leads_table_columns', $table_data);
                               render_datatable($table_data,'leads',
-                              array('customizable-table'),
+                              array('customizable-table, table-responsive'),
                               array(
                                'id'=>'table-leads',
                                'data-last-order-identifier'=>'leads',
