@@ -3114,7 +3114,7 @@ function init_progress_bars() {
 
 // All inputs used for tags
 function init_tags_inputs() {
-    appTagsInput();
+    // appTagsInput();
 }
 
 // Datatables custom view will fill input with the value
