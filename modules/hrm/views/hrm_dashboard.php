@@ -19,87 +19,85 @@
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-6">
-         <p class="text-dark text-uppercase bold"><?php echo _l('hrm_dashboard');?></p>
+      <div class="col-md-6">
+        <p class="text-dark text-uppercase bold"><?php echo _l('hrm_dashboard');?></p>
       </div>
-         <div class="col-md-3 float-right">
-         
-         </div>
-         <br>
-         <hr class="mtop15" />
-         <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
-           <div class="top_stats_wrapper hrm-minheight85">
-               <a class="text-success mbot15">
-               <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('total_staff'); ?>
-               </p>
-                  <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['total_staff']); ?></span>
-               </a>
-               <div class="clearfix"></div>
-               <div class="progress no-margin progress-bar-mini">
-                  <div class="progress-bar progress-bar-success no-percent-text not-dynamic hrm-fullwidth" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" data-percent="100%">
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
-           <div class="top_stats_wrapper hrm-minheight85">
-               <a class="text mbot15">
-               <p class="text-uppercase mtop5 hrm-colorpurple hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('new_staff_for_month'); ?>
-               </p>
-                  <span class="float-right bold no-mtop hrm-colorpurple hrm-fontsize24"><?php echo htmlspecialchars($data_dash['new_staff_in_month']); ?></span>
-               </a>
-               <div class="clearfix"></div>
-               <div class="progress no-margin progress-bar-mini">
-                  <div class="progress-bar progress-bar no-percent-text not-dynamic hrm-colorpurple" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width: <?php echo ($data_dash['new_staff_in_month']/$data_dash['total_staff'])*100; ?>%" data-percent="<?php echo ($data_dash['new_staff_in_month']/$data_dash['total_staff'])*100; ?>%">
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
-           <div class="top_stats_wrapper hrm-minheight85">
-               <a class="text-info mbot15">
-               <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-envelope"></i> <?php echo _l('working'); ?>
-               </p>
-                  <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['staff_working']); ?></span>
-               </a>
-               <div class="clearfix"></div>
-               <div class="progress no-margin progress-bar-mini">
-                  <div class="progress-bar progress-bar-info no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['staff_working']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width: <?php echo htmlspecialchars($data_dash['staff_working']/$data_dash['total_staff']*100); ?>%" data-percent=" <?php echo htmlspecialchars($data_dash['staff_working']/$data_dash['total_staff']*100); ?>%">
-                  </div>
-               </div>
-            </div>
-         </div> 
-        
-            <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
-              <div class="top_stats_wrapper hrm-minheight85">
-                  <a class="text-danger mbot15">
-                  <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('overdue_contract'); ?>
-                  </p>
-                     <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['overdue_contract']); ?></span>
-                  </a>
-                  <div class="clearfix"></div>
-                  <div class="progress no-margin progress-bar-mini">
-                     <div class="progress-bar progress-bar-danger no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['overdue_contract']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width:  <?php echo ($data_dash['overdue_contract']/$data_dash['total_staff'])*100; ?>%" data-percent=" <?php echo ($data_dash['overdue_contract']/$data_dash['total_staff'])*100; ?>%">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
-              <div class="top_stats_wrapper hrm-minheight85">
-                  <a class="text-muted  mbot15">
-                  <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('contract_is_about_to_expire'); ?>
-                  </p>
-                     <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['expire_contract']); ?></span>
-                  </a>
-                  <div class="clearfix"></div>
-                  <div class="progress no-margin progress-bar-mini">
-                     <div class="progress-bar progress-bar-default no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['expire_contract']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width:  <?php echo ($data_dash['expire_contract']/$data_dash['total_staff'])*100; ?>%" data-percent=" <?php echo ($data_dash['expire_contract']/$data_dash['total_staff'])*100; ?>%">
-                     </div>
-                  </div>
-               </div>
-            </div>
+      <div class="col-md-3 float-right">
       </div>
+      <hr />
+    </div>
+    <div class="row">
+    <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
+        <div class="top_stats_wrapper hrm-minheight85">
+            <a class="text-success mbot15">
+            <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('total_staff'); ?>
+            </p>
+              <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['total_staff']); ?></span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="progress no-margin progress-bar-mini">
+              <div class="progress-bar progress-bar-success no-percent-text not-dynamic hrm-fullwidth" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" data-percent="100%">
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
+        <div class="top_stats_wrapper hrm-minheight85">
+            <a class="text mbot15">
+            <p class="text-uppercase mtop5 hrm-colorpurple hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('new_staff_for_month'); ?>
+            </p>
+              <span class="float-right bold no-mtop hrm-colorpurple hrm-fontsize24"><?php echo htmlspecialchars($data_dash['new_staff_in_month']); ?></span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="progress no-margin progress-bar-mini">
+              <div class="progress-bar progress-bar no-percent-text not-dynamic hrm-colorpurple" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width: <?php echo ($data_dash['new_staff_in_month']/$data_dash['total_staff'])*100; ?>%" data-percent="<?php echo ($data_dash['new_staff_in_month']/$data_dash['total_staff'])*100; ?>%">
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
+        <div class="top_stats_wrapper hrm-minheight85">
+            <a class="text-info mbot15">
+            <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-envelope"></i> <?php echo _l('working'); ?>
+            </p>
+              <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['staff_working']); ?></span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="progress no-margin progress-bar-mini">
+              <div class="progress-bar progress-bar-info no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['staff_working']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width: <?php echo htmlspecialchars($data_dash['staff_working']/$data_dash['total_staff']*100); ?>%" data-percent=" <?php echo htmlspecialchars($data_dash['staff_working']/$data_dash['total_staff']*100); ?>%">
+              </div>
+            </div>
+        </div>
+      </div> 
+      <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
+        <div class="top_stats_wrapper hrm-minheight85">
+            <a class="text-danger mbot15">
+            <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('overdue_contract'); ?>
+            </p>
+                <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['overdue_contract']); ?></span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="progress no-margin progress-bar-mini">
+                <div class="progress-bar progress-bar-danger no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['overdue_contract']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width:  <?php echo ($data_dash['overdue_contract']/$data_dash['total_staff'])*100; ?>%" data-percent=" <?php echo ($data_dash['overdue_contract']/$data_dash['total_staff'])*100; ?>%">
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
+        <div class="top_stats_wrapper hrm-minheight85">
+            <a class="text-muted  mbot15">
+            <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('contract_is_about_to_expire'); ?>
+            </p>
+                <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['expire_contract']); ?></span>
+            </a>
+            <div class="clearfix"></div>
+            <div class="progress no-margin progress-bar-mini">
+                <div class="progress-bar progress-bar-default no-percent-text not-dynamic" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['expire_contract']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" style="width:  <?php echo ($data_dash['expire_contract']/$data_dash['total_staff'])*100; ?>%" data-percent=" <?php echo ($data_dash['expire_contract']/$data_dash['total_staff'])*100; ?>%">
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
       <div class="col-md-6">
         <div id="staff_chart_by_age" class="hrm-marginauto hrm-minwidth310">
       </div>
