@@ -18,7 +18,7 @@
 
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
-    <div class="row">
+    <div class="col-md-12">
       <div class="col-md-12">
         <h4><?php echo _l('hrm_dashboard');?></h4>
       </div>
