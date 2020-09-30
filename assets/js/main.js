@@ -340,9 +340,9 @@ $(function() {
         $navTabs.find('[data-group="' + tab_group + '"]').parents('li').addClass('active');
     }
     // Set moment locale
-    moment.locale(app.locale);
+    // moment.locale(app.locale);
     // Set timezone locale
-    moment.tz(app.options.timezone).format();
+    // moment.tz(app.options.timezone).format();
 
     // Init tinymce editors
     init_editor();
@@ -1053,119 +1053,119 @@ $(function() {
     });
 
     // Check if calendar exists in the DOM and init.
-    if (calendar_selector.length > 0) {
-        validate_calendar_form();
-        var calendar_settings = {
-            themeSystem: 'bootstrap3',
-            customButtons: {},
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay,viewFullCalendar,calendarFilter'
-            },
-            editable: false,
-            eventLimit: parseInt(app.options.calendar_events_limit) + 1,
+    // if (calendar_selector.length > 0) {
+    //     validate_calendar_form();
+    //     var calendar_settings = {
+    //         themeSystem: 'bootstrap3',
+    //         customButtons: {},
+    //         header: {
+    //             left: 'prev,next today',
+    //             center: 'title',
+    //             right: 'month,agendaWeek,agendaDay,viewFullCalendar,calendarFilter'
+    //         },
+    //         editable: false,
+    //         eventLimit: parseInt(app.options.calendar_events_limit) + 1,
 
-            views: {
-                day: {
-                    eventLimit: false
-                }
-            },
-            defaultView: app.options.default_view_calendar,
-            isRTL: (isRTL == 'true' ? true : false),
-            eventStartEditable: false,
-            timezone: app.options.timezone,
-            firstDay: parseInt(app.options.calendar_first_day),
-            year: moment.tz(app.options.timezone).format("YYYY"),
-            month: moment.tz(app.options.timezone).format("M"),
-            date: moment.tz(app.options.timezone).format("DD"),
-            loading: function(isLoading, view) {
-                isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-info').removeClass('btn-default').css('display', 'block');
-                !isLoading ? $('.dt-loader').addClass('hide') : $('.dt-loader').removeClass('hide');
-            },
-            eventSources: [{
-                url: admin_url + 'utilities/get_calendar_data',
-                data: function() {
-                    var params = {};
-                    $('#calendar_filters').find('input:checkbox:checked').map(function() {
-                        params[$(this).attr('name')] = true;
-                    }).get();
-                    if (!jQuery.isEmptyObject(params)) {
-                        params['calendar_filters'] = true;
-                    }
-                    return params;
-                },
-                type: 'POST',
-                error: function() {
-                    console.error('There was error fetching calendar data');
-                },
-            }, ],
-            eventLimitClick: function(cellInfo, jsEvent) {
-                $('#calendar').fullCalendar('gotoDate', cellInfo.date);
-                $('#calendar').fullCalendar('changeView', 'basicDay');
-            },
-            eventRender: function(event, element) {
-                element.attr('title', event._tooltip);
-                element.attr('onclick', event.onclick);
-                element.attr('data-toggle', 'tooltip');
-                if (!event.url) {
-                    element.click(function() { view_event(event.eventid); });
-                }
-            },
-            dayClick: function(date, jsEvent, view) {
-                var d = date.format();
-                if (!$.fullCalendar.moment(d).hasTime()) {
-                    d += ' 00:00';
-                }
-                var vformat = (app.options.time_format == 24 ? app.options.date_format + ' H:i' : app.options.date_format + ' g:i A');
-                var fmt = new DateFormatter();
-                var d1 = fmt.formatDate(new Date(d), vformat);
-                $("input[name='start'].datetimepicker").val(d1);
-                $('#newEventModal').modal('show');
-                return false;
-            }
-        };
-        if ($("body").hasClass('dashboard')) {
-            calendar_settings.customButtons.viewFullCalendar = {
-                text: app.lang.calendar_expand,
-                click: function() {
-                    window.location.href = admin_url + 'utilities/calendar';
-                }
-            };
-        }
-        calendar_settings.customButtons.calendarFilter = {
-            text: app.lang.filter_by.toLowerCase(),
-            click: function() {
-                slideToggle('#calendar_filters');
-            }
-        };
-        if (app.user_is_staff_member == 1) {
-            if (app.options.google_api !== '') {
-                calendar_settings.googleCalendarApiKey = app.options.google_api;
-            }
-            if (app.calendarIDs !== '') {
-                app.calendarIDs = JSON.parse(app.calendarIDs);
-                if (app.calendarIDs.length != 0) {
-                    if (app.options.google_api !== '') {
-                        for (var i = 0; i < app.calendarIDs.length; i++) {
-                            var _gcal = {};
-                            _gcal.googleCalendarId = app.calendarIDs[i];
-                            calendar_settings.eventSources.push(_gcal);
-                        }
-                    } else {
-                        console.error('You have setup Google Calendar IDs but you dont have specified Google API key. To setup Google API key navigate to Setup->Settings->Google');
-                    }
-                }
-            }
-        }
-        // Init calendar
-        calendar_selector.fullCalendar(calendar_settings);
-        var new_event = get_url_param('new_event');
-        if (new_event) {
-            $("input[name='start'].datetimepicker").val(get_url_param('date'));
-            $('#newEventModal').modal('show');
-        }
-    }
+    //         views: {
+    //             day: {
+    //                 eventLimit: false
+    //             }
+    //         },
+    //         defaultView: app.options.default_view_calendar,
+    //         isRTL: (isRTL == 'true' ? true : false),
+    //         eventStartEditable: false,
+    //         timezone: app.options.timezone,
+    //         firstDay: parseInt(app.options.calendar_first_day),
+    //         year: moment.tz(app.options.timezone).format("YYYY"),
+    //         month: moment.tz(app.options.timezone).format("M"),
+    //         date: moment.tz(app.options.timezone).format("DD"),
+    //         loading: function(isLoading, view) {
+    //             isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-info').removeClass('btn-default').css('display', 'block');
+    //             !isLoading ? $('.dt-loader').addClass('hide') : $('.dt-loader').removeClass('hide');
+    //         },
+    //         eventSources: [{
+    //             url: admin_url + 'utilities/get_calendar_data',
+    //             data: function() {
+    //                 var params = {};
+    //                 $('#calendar_filters').find('input:checkbox:checked').map(function() {
+    //                     params[$(this).attr('name')] = true;
+    //                 }).get();
+    //                 if (!jQuery.isEmptyObject(params)) {
+    //                     params['calendar_filters'] = true;
+    //                 }
+    //                 return params;
+    //             },
+    //             type: 'POST',
+    //             error: function() {
+    //                 console.error('There was error fetching calendar data');
+    //             },
+    //         }, ],
+    //         eventLimitClick: function(cellInfo, jsEvent) {
+    //             $('#calendar').fullCalendar('gotoDate', cellInfo.date);
+    //             $('#calendar').fullCalendar('changeView', 'basicDay');
+    //         },
+    //         eventRender: function(event, element) {
+    //             element.attr('title', event._tooltip);
+    //             element.attr('onclick', event.onclick);
+    //             element.attr('data-toggle', 'tooltip');
+    //             if (!event.url) {
+    //                 element.click(function() { view_event(event.eventid); });
+    //             }
+    //         },
+    //         dayClick: function(date, jsEvent, view) {
+    //             var d = date.format();
+    //             if (!$.fullCalendar.moment(d).hasTime()) {
+    //                 d += ' 00:00';
+    //             }
+    //             var vformat = (app.options.time_format == 24 ? app.options.date_format + ' H:i' : app.options.date_format + ' g:i A');
+    //             var fmt = new DateFormatter();
+    //             var d1 = fmt.formatDate(new Date(d), vformat);
+    //             $("input[name='start'].datetimepicker").val(d1);
+    //             $('#newEventModal').modal('show');
+    //             return false;
+    //         }
+    //     };
+    //     if ($("body").hasClass('dashboard')) {
+    //         calendar_settings.customButtons.viewFullCalendar = {
+    //             text: app.lang.calendar_expand,
+    //             click: function() {
+    //                 window.location.href = admin_url + 'utilities/calendar';
+    //             }
+    //         };
+    //     }
+    //     calendar_settings.customButtons.calendarFilter = {
+    //         text: app.lang.filter_by.toLowerCase(),
+    //         click: function() {
+    //             slideToggle('#calendar_filters');
+    //         }
+    //     };
+    //     if (app.user_is_staff_member == 1) {
+    //         if (app.options.google_api !== '') {
+    //             calendar_settings.googleCalendarApiKey = app.options.google_api;
+    //         }
+    //         if (app.calendarIDs !== '') {
+    //             app.calendarIDs = JSON.parse(app.calendarIDs);
+    //             if (app.calendarIDs.length != 0) {
+    //                 if (app.options.google_api !== '') {
+    //                     for (var i = 0; i < app.calendarIDs.length; i++) {
+    //                         var _gcal = {};
+    //                         _gcal.googleCalendarId = app.calendarIDs[i];
+    //                         calendar_settings.eventSources.push(_gcal);
+    //                     }
+    //                 } else {
+    //                     console.error('You have setup Google Calendar IDs but you dont have specified Google API key. To setup Google API key navigate to Setup->Settings->Google');
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     // Init calendar
+    //     calendar_selector.fullCalendar(calendar_settings);
+    //     var new_event = get_url_param('new_event');
+    //     if (new_event) {
+    //         $("input[name='start'].datetimepicker").val(get_url_param('date'));
+    //         $('#newEventModal').modal('show');
+    //     }
+    // }
 
     // On select with name tax apply necessary actions if tax2 exists too
     $("body").on('change', 'select[name="tax"]', function() {
