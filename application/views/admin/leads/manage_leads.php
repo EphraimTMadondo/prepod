@@ -19,8 +19,8 @@
                      <?php } ?>
                      <div class="row">
                         <div class="col-md-5">
-                           <a href="#" class="btn btn-light btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="fa fa-bar-chart"></i></a>
-                           <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-default ml-1 hidden-xs">
+                           <a href="#" class="btn btn-light btn-icon btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="bx bx-bar-chart"></i></a>
+                           <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-light ml-1 hidden-xs">
                            <?php if($switch_kanban == 1){ echo _l('leads_switch_to_kanban');}else{echo _l('switch_to_list_view');}; ?>
                            </a>
                         </div>
