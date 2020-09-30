@@ -9,17 +9,17 @@
             <div class="card mtop20">
                <div class="card-body">
                   <div class="_buttons">
-                     <a href="#" onclick="init_lead(); return false;" class="btn mr-1 btn-primary">
+                     <a href="#" onclick="init_lead(); return false;" class="btn mr-1 btn-secondary">
                      <?php echo _l('new_lead'); ?>
                      </a>
                      <?php if(is_admin() || get_option('allow_non_admin_members_to_import_leads') == '1'){ ?>
-                     <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-primary hidden-xs">
+                     <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-secondary hidden-xs">
                      <?php echo _l('import_leads'); ?>
                      </a>
                      <?php } ?>
                      <div class="row">
                         <div class="col-md-5">
-                           <a href="#" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="fa fa-bar-chart"></i></a>
+                           <a href="#" class="btn btn-light btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="fa fa-bar-chart"></i></a>
                            <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-default ml-1 hidden-xs">
                            <?php if($switch_kanban == 1){ echo _l('leads_switch_to_kanban');}else{echo _l('switch_to_list_view');}; ?>
                            </a>
