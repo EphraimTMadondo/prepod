@@ -633,8 +633,6 @@ $(function() {
     init_tags_inputs();
     // Init all color pickers
     init_color_pickers();
-    // Init tables offline (no serverside)
-    initDataTableInline();
 
     // Bootstrap switch active or inactive global function
     $("body").on('change', '.onoffswitch input', function(event, state) {
@@ -642,6 +640,9 @@ $(function() {
         if (!switch_url) { return; }
         switch_field(this);
     });
+
+    // Init tables offline (no serverside)
+    initDataTableInline();
 
     /* Custom fields hyperlink */
     // custom_fields_hyperlink();
