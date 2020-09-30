@@ -19,12 +19,11 @@
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
     <div class="col-md-12">
-      <div class="col-md-12">
-        <h4><?php echo _l('hrm_dashboard');?></h4>
-      </div>
+      <h4><?php echo _l('hrm_dashboard');?></h4>
+      <hr />
     </div>
-    <div class="row mt-2">
-    <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
+    <div class="col-md-12 mt-2">
+      <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
         <div class="top_stats_wrapper hrm-minheight85">
             <a class="text-success mbot15">
             <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('total_staff'); ?>
@@ -34,8 +33,8 @@
             <div class="clearfix"></div>
             <div class="progress no-margin progress-bar-mini">
               <div class="progress-bar progress-bar-success no-percent-text not-dynamic hrm-fullwidth" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" data-percent="100%">
-              </div>
             </div>
+          </div>
         </div>
       </div>
       <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
