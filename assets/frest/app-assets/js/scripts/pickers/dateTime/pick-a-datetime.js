@@ -288,7 +288,7 @@
   });
 
   // To remain picker opened after date range applied
-  picker.data('daterangepicker').hide = function () {};
+  // picker.data('daterangepicker').hide = function () {};
 
   // show picker on load
   picker.data('daterangepicker').show();
