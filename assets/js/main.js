@@ -3094,7 +3094,7 @@ function init_datepicker(element_date, element_time) {
 
 // Init color pickers
 function init_color_pickers() {
-    appColorPicker();
+    // appColorPicker();
 }
 
 // Init select picker
