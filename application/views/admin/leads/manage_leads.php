@@ -21,8 +21,8 @@
                      </a>
                      <a href="#" class="btn btn-light float-right btn-icon btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="bx bx-bar-chart"></i></a>
                      <?php } ?>
-                     <div class="row mt-2">
-                        <div class="col-md-5"></div>
+                     <div class="clearfix"></div>
+                     <div class="row hide leads-overview">
                         <div class="col-md-7 col-xs-12 float-right leads-search">
                            <?php if($this->session->userdata('leads_kanban_view') == 'true') { ?>
                            <div data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
@@ -32,9 +32,6 @@
                            <?php echo form_hidden('sort_type'); ?>
                            <?php echo form_hidden('sort',(get_option('default_leads_kanban_sort') != '' ? get_option('default_leads_kanban_sort_type') : '')); ?>
                         </div>
-                     </div>
-                     <div class="clearfix"></div>
-                     <div class="row hide leads-overview">
                         <hr class="hr-panel-heading" />
                         <div class="col-md-12">
                            <h4 class="no-margin"><?php echo _l('leads_summary'); ?></h4>
