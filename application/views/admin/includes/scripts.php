@@ -89,7 +89,6 @@
 <!-- BEGIN: Theme JS-->
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
