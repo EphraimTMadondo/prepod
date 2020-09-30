@@ -19,14 +19,11 @@
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
     <div class="row">
-      <div class="col-md-6">
-        <p class="text-dark text-uppercase bold"><?php echo _l('hrm_dashboard');?></p>
+      <div class="col-md-12">
+        <h4><?php echo _l('hrm_dashboard');?></h4>
       </div>
-      <div class="col-md-3 float-right">
-      </div>
-      <hr />
     </div>
-    <div class="row">
+    <div class="row mt-2">
     <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
         <div class="top_stats_wrapper hrm-minheight85">
             <a class="text-success mbot15">
