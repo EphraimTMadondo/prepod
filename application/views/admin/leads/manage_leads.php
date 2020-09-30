@@ -16,14 +16,14 @@
                      <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-secondary hidden-xs">
                      <?php echo _l('import_leads'); ?>
                      </a>
-                     <a href="#" class="btn btn-light btn-icon float-right btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="bx bx-bar-chart"></i></a>
-                     <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-light  float-right btn-sm ml-1 hidden-xs">
-                     <?php if($switch_kanban == 1){ echo _l('leads_switch_to_kanban');}else{echo _l('switch_to_list_view');}; ?>
-                     </a>
                      <?php } ?>
 
                      <div class="row mt-2">
                         <div class="col-md-5">
+                           <a href="#" class="btn btn-light btn-icon btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="bx bx-bar-chart"></i></a>
+                           <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-light btn-sm ml-1 hidden-xs">
+                           <?php if($switch_kanban == 1){ echo _l('leads_switch_to_kanban');}else{echo _l('switch_to_list_view');}; ?>
+                           </a>
                         </div>
                         <div class="col-md-7 col-xs-12 float-right leads-search">
                            <?php if($this->session->userdata('leads_kanban_view') == 'true') { ?>
