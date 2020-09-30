@@ -365,7 +365,7 @@ $(function() {
     });
 
     /* Custom fields hyperlink */
-    custom_fields_hyperlink();
+    // custom_fields_hyperlink();
     // Init lightboxes if found
     init_lightbox();
     // Init progress bars
@@ -1280,7 +1280,7 @@ $(function() {
 
     // Auto focus the lead name if user is adding new lead
     $("body").on("shown.bs.modal", '#lead-modal', function(e) {
-        custom_fields_hyperlink();
+        // custom_fields_hyperlink();
         if ($("body").find('#lead-modal input[name="leadid"]').length === 0) {
             $("body").find('#lead-modal input[name="name"]').focus();
         }
