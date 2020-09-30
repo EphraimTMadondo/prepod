@@ -342,7 +342,7 @@ $(function() {
     // Set moment locale
     moment.locale(app.locale);
     // Set timezone locale
-    moment().tz(app.options.timezone).format();
+    moment.tz(app.options.timezone).format();
 
     // Init tinymce editors
     init_editor();
