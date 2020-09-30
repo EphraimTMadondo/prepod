@@ -22,8 +22,8 @@
       <h4><?php echo _l('hrm_dashboard');?></h4>
       <hr />
     </div>
-    <div class="row mt-2">
-    <div class="col-md-12">
+    <div class="col-md-12 mt-2">
+      <div class="row">
         <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
           <div class="top_stats_wrapper hrm-minheight85">
               <a class="text-success mbot15">
