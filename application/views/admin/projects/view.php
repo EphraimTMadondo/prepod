@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head(true,'projects'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
@@ -158,7 +158,7 @@
 <?php $this->load->view('admin/projects/milestone'); ?>
 <?php $this->load->view('admin/projects/copy_settings'); ?>
 <?php $this->load->view('admin/projects/_mark_tasks_finished'); ?>
-<?php init_tail(); ?>
+<?php init_tail('projects'); ?>
 <!-- For invoices table -->
 <script>
    taskid = '<?php echo $this->input->get('taskid'); ?>';

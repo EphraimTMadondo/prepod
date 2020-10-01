@@ -118,6 +118,9 @@
       case "mailbox":
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
       break;
+      case "projects":
+         echo "<script src='".base_url()."assets/js/projects.js'></script>\n";
+      break;
       default:
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/forms/select/form-select2.js'></script>\n";
       break;
