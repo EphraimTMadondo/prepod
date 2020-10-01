@@ -14,10 +14,6 @@
                         </h4>
                         <hr class="hr-panel-heading" />
                         <?php
-                        
-         
-                        
-
                         $disable_type_edit = '';
                         if(isset($project)){
                             if($project->billing_type != 1){
@@ -199,9 +195,9 @@
              <div class="btn-bottom-toolbar text-right">
                  <button type="submit" data-form="#project_form" class="btn btn-secondary" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('submit'); ?></button>
              </div>
-         </div>
-     </div>
- </div>
+                </div>
+                </div>
+            </div>
  <div class="col-md-5">
     <div class="card mt-2">
         <div class="card-body" id="project-settings-area">
