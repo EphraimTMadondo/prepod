@@ -79,6 +79,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/toastr.min.js'></script>\n";
       break;
       case "contracts":
+      case "projects":
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
       break;
       default:
