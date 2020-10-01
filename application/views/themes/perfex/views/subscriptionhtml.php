@@ -32,7 +32,7 @@
              echo '</button>';
              echo form_close();
            } else if(isset($stripeSubscription) && $stripeSubscription->status === 'incomplete') {
-             echo '<a href="'.$stripeSubscription->latest_invoice->hosted_invoice_url.'" class="btn btn-info">'._l('subscription_complete_payment').'</a>';
+             echo '<a href="'.$stripeSubscription->latest_invoice->hosted_invoice_url.'" class="btn btn-secondary">'._l('subscription_complete_payment').'</a>';
            }
            echo '</div>';
          }

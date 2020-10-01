@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <h4 class="customer-profile-group-heading"><?php echo _l('vault'); ?></h4>
-<button class="btn btn-info mbot25" data-toggle="modal" data-target="#entryModal"><i class="fa fa-lock" aria-hidden="true"></i> <?php echo _l('new_vault_entry'); ?></button>
+<button class="btn btn-secondary mbot25" data-toggle="modal" data-target="#entryModal"><i class="fa fa-lock" aria-hidden="true"></i> <?php echo _l('new_vault_entry'); ?></button>
 <?php if(count($vault_entries) == 0){ ?>
-<div class="alert alert-info text-center">
+<div class="alert alert-secondary text-center">
    <?php echo _l('no_vault_entries'); ?>
 </div>
 <?php } ?>
@@ -100,7 +100,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
          </div>
       </div>
       <!-- /.modal-content -->

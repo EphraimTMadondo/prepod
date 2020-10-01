@@ -234,7 +234,7 @@
                </div>
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_reminders">
-               <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-purchase_order-<?php echo html_entity_decode($estimate->id); ?>"><i class="fa fa-bell-o"></i> <?php echo _l('estimate_set_reminder_title'); ?></a>
+               <a href="#" data-toggle="modal" class="btn btn-secondary" data-target=".reminder-modal-purchase_order-<?php echo html_entity_decode($estimate->id); ?>"><i class="fa fa-bell-o"></i> <?php echo _l('estimate_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$estimate->id,'name'=>'purchase_order','members'=>$members,'reminder_title'=>_l('estimate_set_reminder_title'))); ?>
@@ -243,7 +243,7 @@
                <?php echo form_open(admin_url('purchase/add_note/'.$estimate->id),array('id'=>'sales-notes','class'=>'estimate-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
-                  <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
+                  <button type="submit" class="btn btn-secondary mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
                </div>
                <?php echo form_close(); ?>
                <hr />
@@ -259,7 +259,7 @@
 
                </div>
                <div class="modal-footer bor_top_0" >
-                   <button id="obgy_btn2" type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                   <button id="obgy_btn2" type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                </div>
                 <?php echo form_close(); ?>
                
@@ -361,7 +361,7 @@
             </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                    <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                    <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                 </div>
             </div><!-- /.modal-content -->
             <?php echo form_close(); ?>

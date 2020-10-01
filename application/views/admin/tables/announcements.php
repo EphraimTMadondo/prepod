@@ -61,7 +61,7 @@ foreach ($rResult as $aRow) {
     $row['DT_RowClass'] = 'has-row-options';
 
     if (!$aRow['is_dismissed'] && $aRow['showtostaff'] == '1') {
-        $row['DT_RowClass'] .= ' alert-info';
+        $row['DT_RowClass'] .= ' alert-secondary';
     }
 
     $output['aaData'][] = $row;

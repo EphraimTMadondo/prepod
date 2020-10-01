@@ -17,7 +17,7 @@ if(isset($client)){ ?>
     <?php echo render_input( 'longitude', 'customer_longitude',$client->longitude); ?>
 </div>
 <div class="col-md-4">
-    <button class="btn btn-info label-margin" onclick="save_longitude_and_latitude(<?php echo $client->userid; ?>); return false;"><?php echo _l('submit'); ?></button>
+    <button class="btn btn-secondary label-margin" onclick="save_longitude_and_latitude(<?php echo $client->userid; ?>); return false;"><?php echo _l('submit'); ?></button>
 </div>
 </div>
 <hr />

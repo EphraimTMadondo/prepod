@@ -69,7 +69,7 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
     <?php if(count($available_creditable_invoices) > 0) { ?>
-    <button type="submit" class="btn btn-info"><?php echo _l('apply'); ?></button>
+    <button type="submit" class="btn btn-secondary"><?php echo _l('apply'); ?></button>
     <?php } ?>
 </div>
 </div>

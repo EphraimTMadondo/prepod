@@ -72,7 +72,7 @@
                            }
                            } ?>
                         <div class="btn-bottom-toolbar text-right">
-                           <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                           <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                         </div>
                      </div>
                      <?php echo form_close(); ?>
@@ -101,7 +101,7 @@
                         <?php } else {
                            if($template->slug == 'new-project-discussion-comment-to-staff' || $template->slug == 'new-project-discussion-comment-to-customer'){
                              ?>
-                        <div class="alert alert-info">
+                        <div class="alert alert-secondary">
                            <?php echo _l('email_template_discussion_info'); ?>
                         </div>
                         <?php  }

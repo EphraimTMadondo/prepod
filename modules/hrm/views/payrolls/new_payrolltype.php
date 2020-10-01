@@ -113,7 +113,7 @@
 
                     <div class="modal-footer">
                        <a href="<?php echo admin_url('hrm/payroll?group=payroll_type'); ?>"  class="btn btn-default "><?php echo _l('close'); ?></a>
-                        <button type="submit" class="btn btn-info payroll-submit"><?php echo _l('submit'); ?></button>
+                        <button type="submit" class="btn btn-secondary payroll-submit"><?php echo _l('submit'); ?></button>
                     </div>
                     </div>
                 </div><!-- /.modal-content -->

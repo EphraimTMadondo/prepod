@@ -166,7 +166,7 @@
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
             <?php if(!isset($timers_started)){ ?>
-            <button type="submit" class="btn btn-info" onclick="invoice_project(<?php echo $project_id; ?>)"><?php echo _l('invoice_project'); ?></button>
+            <button type="submit" class="btn btn-secondary" onclick="invoice_project(<?php echo $project_id; ?>)"><?php echo _l('invoice_project'); ?></button>
             <?php } ?>
         </div>
     </div>

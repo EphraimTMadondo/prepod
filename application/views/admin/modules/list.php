@@ -42,7 +42,7 @@
                                     $system_name = $module['system_name'];
                                     $database_upgrade_is_required = $this->app_modules->is_database_upgrade_required($system_name);
                                      ?>
-                                    <tr class="<?php if($module['activated'] === 1 && !$database_upgrade_is_required){echo 'alert-info';} ?><?php if($database_upgrade_is_required){echo ' alert-warning';} ?>">
+                                    <tr class="<?php if($module['activated'] === 1 && !$database_upgrade_is_required){echo 'alert-secondary';} ?><?php if($database_upgrade_is_required){echo ' alert-warning';} ?>">
                                         <td data-order="<?php echo $system_name; ?>">
                                             <p>
                                                 <b>

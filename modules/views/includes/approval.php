@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <div class="_buttons">
-	<a href="#" class="btn btn-info pull-left" onclick="new_approval_setting(); return false;"><?php echo _l('new_approval_setting'); ?></a>
+	<a href="#" class="btn btn-secondary pull-left" onclick="new_approval_setting(); return false;"><?php echo _l('new_approval_setting'); ?></a>
 </div>
 <div class="clearfix"></div>
 <hr class="hr-panel-heading" />
@@ -101,7 +101,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-				<button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+				<button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
 				<?php echo form_close(); ?>
 			</div>
 		</div>

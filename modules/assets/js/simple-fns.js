@@ -4,7 +4,7 @@
     $('form#saveEmailBuilderOptions').on('submit', function(ev) {
       ev.preventDefault();
       var $_form = $(this);
-      var $_alertInfo = $('#alert-info');
+      var $_alertInfo = $('#alert-secondary');
       var $_formData = $_form.serialize();
 
       $_form.find('input, textarea, button').prop('disabled', true);

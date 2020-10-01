@@ -143,7 +143,7 @@
 </div>
 <?php if((isset($subscription) && has_permission('subscriptions','','edit')) || !isset($subscription)){ ?>
 <div class="btn-bottom-toolbar text-right">
-   <button type="submit" class="btn btn-info" data-loading-text="<?php echo _l('wait_text'); ?>" data-form="#subscriptionForm">
+   <button type="submit" class="btn btn-secondary" data-loading-text="<?php echo _l('wait_text'); ?>" data-form="#subscriptionForm">
    <?php echo _l('save'); ?>
    </button>
 </div>

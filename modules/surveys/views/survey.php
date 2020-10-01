@@ -38,7 +38,7 @@
                           }
                           ?>
                      <div class="btn-group">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo $list['name']; ?> <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
@@ -62,7 +62,7 @@
                         <input type="checkbox" name="onlyforloggedin" id="onlyforloggedin" <?php if(isset($survey) && $survey->onlyforloggedin == 1){echo 'checked';} ?>>
                         <label for="onlyforloggedin"><?php echo _l('survey_add_edit_only_for_logged_in'); ?></label>
                      </div>
-                     <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-secondary float-right"><?php echo _l('submit'); ?></button>
                   </div>
                   <?php echo form_close(); ?>
                </div>

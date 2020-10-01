@@ -192,7 +192,7 @@
                   <div class="row mt-1">
                      <?php if($proposal->status == 3 && !empty($proposal->acceptance_firstname) && !empty($proposal->acceptance_lastname) && !empty($proposal->acceptance_email)){ ?>
                      <div class="col-md-12">
-                        <div class="alert alert-info">
+                        <div class="alert alert-secondary">
                            <?php echo _l('accepted_identity_info',array(
                               _l('proposal_lowercase'),
                               '<b>'.$proposal->acceptance_firstname . ' ' . $proposal->acceptance_lastname . '</b> (<a href="mailto:'.$proposal->acceptance_email.'">'.$proposal->acceptance_email.'</a>)',

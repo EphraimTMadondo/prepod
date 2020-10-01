@@ -273,7 +273,7 @@ function render_custom_fields($belongs_to, $rel_id = false, $where = [], $items_
                 $field_template .= '<button type="button" id="custom_fields_' . $field['fieldto'] . '_' . $field['id'] . '_btn-cancel" class="btn btn-default btn-md pull-left" value="">' . _l('cancel') . '</button>';
                 $field_template .= '</div>';
                 $field_template .= '<div class="col-md-6">';
-                $field_template .= '<button type="button" id="custom_fields_' . $field['fieldto'] . '_' . $field['id'] . '_btn-save" class="btn btn-info btn-md float-right" value="">' . _l('apply') . '</button>';
+                $field_template .= '<button type="button" id="custom_fields_' . $field['fieldto'] . '_' . $field['id'] . '_btn-save" class="btn btn-secondary btn-md float-right" value="">' . _l('apply') . '</button>';
                 $field_template .= '</div>';
                 $field_template .= '</div>';
                 $fields_html .= '<script>';

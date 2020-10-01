@@ -15,21 +15,21 @@
       <div class="col-md-4">
          <div class="gdpr-right">
             <h3 class="gdpr-right-heading"><?php echo _l('gdpr_right_to_be_informed'); ?></h3>
-            <a href="<?php echo terms_url(); ?>" class="btn btn-info"><?php echo _l('terms_and_conditions'); ?></a>
+            <a href="<?php echo terms_url(); ?>" class="btn btn-secondary"><?php echo _l('terms_and_conditions'); ?></a>
          </div>
       </div>
       <?php } ?>
       <div class="col-md-4">
          <div class="gdpr-right">
             <h3 class="gdpr-right-heading"><?php echo _l('gdpr_right_of_access'); ?></h3>
-            <a href="<?php echo site_url('clients/profile'); ?>" class="btn btn-info"><?php echo _l('edit_my_information'); ?></a>
+            <a href="<?php echo site_url('clients/profile'); ?>" class="btn btn-secondary"><?php echo _l('edit_my_information'); ?></a>
          </div>
       </div>
       <?php if(is_gdpr() && get_option('gdpr_contact_enable_right_to_be_forgotten') == '1'){ ?>
       <div class="col-md-4">
          <div class="gdpr-right">
             <h3 class="gdpr-right-heading"><?php echo _l('gdpr_right_to_erasure'); ?></h3>
-            <a href="#" data-toggle="modal" data-target="#dataRemoval" class="btn btn-info"><?php echo _l('request_data_removal'); ?></a>
+            <a href="#" data-toggle="modal" data-target="#dataRemoval" class="btn btn-secondary"><?php echo _l('request_data_removal'); ?></a>
          </div>
       </div>
       <?php } ?>
@@ -37,7 +37,7 @@
       <div class="col-md-4">
          <div class="gdpr-right">
             <h3 class="gdpr-right-heading"><?php echo _l('gdpr_right_to_data_portability'); ?></h3>
-            <a href="<?php echo site_url('clients/export'); ?>" class="btn btn-info"><?php echo _l('export_my_data'); ?></a>
+            <a href="<?php echo site_url('clients/export'); ?>" class="btn btn-secondary"><?php echo _l('export_my_data'); ?></a>
          </div>
       </div>
       <?php } ?>
@@ -45,7 +45,7 @@
       <div class="col-md-4">
          <div class="gdpr-right">
             <h3 class="gdpr-right-heading"><?php echo _l('gdpr_consent'); ?></h3>
-            <a href="<?php echo contact_consent_url(get_contact_user_id()); ?>" class="btn btn-info"><?php echo _l('gdpr_consent'); ?></a>
+            <a href="<?php echo contact_consent_url(get_contact_user_id()); ?>" class="btn btn-secondary"><?php echo _l('gdpr_consent'); ?></a>
          </div>
       </div>
       <?php } ?>
@@ -69,7 +69,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="submit" class="btn btn-info _delete"><?php echo _l('confirm'); ?></button>
+            <button type="submit" class="btn btn-secondary _delete"><?php echo _l('confirm'); ?></button>
          </div>
       </div>
       <!-- /.modal-content -->

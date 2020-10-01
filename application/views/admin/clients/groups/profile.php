@@ -146,7 +146,7 @@
          <?php if(isset($client)){ ?>
          <div role="tab-pane" class="tab-pane" id="customer_admins">
             <?php if (has_permission('customers', '', 'create') || has_permission('customers', '', 'edit')) { ?>
-            <a href="#" data-toggle="modal" data-target="#customer_admins_assign" class="btn btn-info mbot30"><?php echo _l('assign_admin'); ?></a>
+            <a href="#" data-toggle="modal" data-target="#customer_admins_assign" class="btn btn-secondary mbot30"><?php echo _l('assign_admin'); ?></a>
             <?php } ?>
             <table class="table dt-table">
                <thead>

@@ -13,10 +13,10 @@
             <div class="card-body">
                <div class="_buttons">
                   <?php if($has_permission_create){ ?>
-                  <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-info mr-1"><?php echo _l('kb_article_new_article'); ?></a>
+                  <a href="<?php echo admin_url('knowledge_base/article'); ?>" class="btn btn-secondary mr-1"><?php echo _l('kb_article_new_article'); ?></a>
                   <?php } ?>
                   <?php if($has_permission_edit || $has_permission_create){ ?>
-                  <a href="<?php echo admin_url('knowledge_base/manage_groups'); ?>" class="btn btn-info mr-1"><?php echo _l('als_kb_groups'); ?></a>
+                  <a href="<?php echo admin_url('knowledge_base/manage_groups'); ?>" class="btn btn-secondary mr-1"><?php echo _l('als_kb_groups'); ?></a>
                   <?php } ?>
                   <a href="#" class="btn btn-default hidden-xs toggle-articles-list" onclick="initKnowledgeBaseTableArticles(); return false;">
                   <i class="fa fa-th-list"></i>

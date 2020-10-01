@@ -74,7 +74,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
                         
-                         <button id="latch_assessor" type="button" class="btn btn-info intext-btn" onclick="add_unit_type(this); return false;" ><?php echo _l('submit'); ?></button>
+                         <button id="latch_assessor" type="button" class="btn btn-secondary intext-btn" onclick="add_unit_type(this); return false;" ><?php echo _l('submit'); ?></button>
                     </div>
                 </div><!-- /.modal-content -->
                 <?php echo form_close(); ?>

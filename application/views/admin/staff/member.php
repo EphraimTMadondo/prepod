@@ -282,7 +282,7 @@
                <div class="mbot15 usernote hide inline-block full-width">
                   <?php echo form_open(admin_url('misc/add_note/'.$member->staffid . '/staff')); ?>
                   <?php echo render_textarea('description','staff_add_edit_note_description','',array('rows'=>5)); ?>
-                  <button class="btn btn-info float-right mb-1"><?php echo _l('submit'); ?></button>
+                  <button class="btn btn-secondary float-right mb-1"><?php echo _l('submit'); ?></button>
                   <?php echo form_close(); ?>
                </div>
                <div class="clearfix"></div>
@@ -307,7 +307,7 @@
                                  <textarea name="description" class="form-control" rows="4"><?php echo clear_textarea_breaks($note['description']); ?></textarea>
                                  <div class="text-right mt-1">
                                     <button type="button" class="btn btn-light" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
-                                    <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
+                                    <button type="button" class="btn btn-secondary" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                                  </div>
                               </div>
                            </td>

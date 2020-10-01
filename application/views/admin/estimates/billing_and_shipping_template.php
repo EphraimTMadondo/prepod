@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="modal-footer modal-not-full-width">
-                <a href="#" class="btn btn-info save-shipping-billing"><?php echo _l('apply'); ?></a>
+                <a href="#" class="btn btn-secondary save-shipping-billing"><?php echo _l('apply'); ?></a>
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@ $tags = get_styling_areas('tags');
          <div class="col-md-12">
             <div class="card">
                <div class="card-body">
-                  <a href="#" onclick="save_theme_style(); return false;" class="btn btn-info"><?php echo _l('save'); ?></a>
+                  <a href="#" onclick="save_theme_style(); return false;" class="btn btn-secondary"><?php echo _l('save'); ?></a>
                   <a href="<?php echo admin_url('theme_style/reset'); ?>" data-toggle="tooltip" data-title="<?php echo _l('theme_style_reset_info'); ?>" class="btn btn-default"><?php echo _l('reset'); ?></a>
                </div>
             </div>

@@ -168,7 +168,7 @@
              <div class="input-group">
               <span class="input-group-append">
                 <?php if(isset($credit_note)){ ?>
-                <a class="input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                <a class="input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                 <?php } ?>
                 <?php echo $prefix; ?></span>
                 <input type="text" name="number" class="form-control" value="<?php echo $_credit_note_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
@@ -328,7 +328,7 @@
   $new_item = true;
 }
 ?>
-<button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-info"><i class="fa fa-check"></i></button>
+<button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-secondary"><i class="fa fa-check"></i></button>
 </td>
 </tr>
 <?php if (isset($credit_note) || isset($add_items)) {
@@ -466,10 +466,10 @@
     <?php $value = (isset($credit_note) ? $credit_note->terms : get_option('predefined_terms_credit_note')); ?>
     <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
     <div class="btn-bottom-toolbar text-right">
-     <button type="button" class="btn-tr btn btn-info ml-1 credit-note-form-submit save-and-send transaction-submit">
+     <button type="button" class="btn-tr btn btn-secondary ml-1 credit-note-form-submit save-and-send transaction-submit">
        <?php echo _l('save_and_send'); ?>
      </button>
-     <button class="btn-tr btn btn-info ml-1 text-right credit-note-form-submit transaction-submit">
+     <button class="btn-tr btn btn-secondary ml-1 text-right credit-note-form-submit transaction-submit">
        <?php echo _l('submit'); ?>
      </button>
    </div>

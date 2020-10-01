@@ -239,7 +239,7 @@ function ticket_message_save_as_predefined_reply_javascript()
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="button" class="btn btn-info" id="saveTicketMessagePredefinedReply"><?php echo _l('submit'); ?></button>
+            <button type="button" class="btn btn-secondary" id="saveTicketMessagePredefinedReply"><?php echo _l('submit'); ?></button>
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->

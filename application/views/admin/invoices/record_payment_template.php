@@ -30,7 +30,7 @@
                     <?php
                     if($totalAllowed === 0) {
                         ?>
-                        <div class="alert alert-info">
+                        <div class="alert alert-secondary">
                             Allowed payment modes not found for this invoice.<br />
                             Click <a href="<?php echo admin_url('invoices/invoice/'.$invoice->id.'?allowed_payment_modes=1'); ?>">here</a> to edit the invoice and allow payment modes.
                         </div>

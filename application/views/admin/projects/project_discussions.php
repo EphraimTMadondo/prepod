@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php if(!isset($discussion)){ ?>
-<a href="#" onclick="new_discussion();return false;" class="btn btn-info mbot25"><?php echo _l('new_project_discussion'); ?></a>
+<a href="#" onclick="new_discussion();return false;" class="btn btn-secondary mbot25"><?php echo _l('new_project_discussion'); ?></a>
 <?php
     $this->load->view('admin/projects/project_discussion');
     render_datatable(array(

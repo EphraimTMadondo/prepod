@@ -18,18 +18,18 @@
             </div>
             <?php } ?>
             <?php if(isset($client) && (!has_permission('customers','','view') && is_customer_admin($client->userid))){?>
-            <div class="alert alert-info">
+            <div class="alert alert-secondary">
                <?php echo _l('customer_admin_login_as_client_message',get_staff_full_name(get_staff_user_id())); ?>
             </div>
             <?php } ?>
          </div>
          <?php if($group == 'profile'){ ?>
          <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
-            <button class="btn btn-info only-save customer-form-submiter">
+            <button class="btn btn-secondary only-save customer-form-submiter">
             <?php echo _l( 'submit'); ?>
             </button>
             <?php if(!isset($client)){ ?>
-            <button class="btn btn-info save-and-add-contact customer-form-submiter">
+            <button class="btn btn-secondary save-and-add-contact customer-form-submiter">
             <?php echo _l( 'save_customer_and_add_contact'); ?>
             </button>
             <?php } ?>

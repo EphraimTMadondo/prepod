@@ -71,7 +71,7 @@
     </div>
     <?php } ?>
     <div class="col-md-12">
-        <button type="submit" class="btn btn-info"><?php echo _l('update_consent'); ?></button>
+        <button type="submit" class="btn btn-secondary"><?php echo _l('update_consent'); ?></button>
     </div>
     <?php echo form_close(); ?>
 </div>

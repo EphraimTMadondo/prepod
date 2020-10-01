@@ -2,7 +2,7 @@
 <div class="row">
     <?php if($ticket->project_id != 0){ ?>
     <div class="col-md-12 single-ticket-project-area">
-        <div class="alert alert-info">
+        <div class="alert alert-secondary">
             <?php echo _l('ticket_linked_to_project','<a href="'.site_url('clients/project/'.$ticket->project_id).'"><b>'.get_project_name_by_id($ticket->project_id).'</b></a>') ;?>
         </div>
     </div>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-2 mb-1 text-center">
-                        <button class="btn btn-info" type="submit" data-form="#ticket-reply" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('ticket_single_add_reply'); ?></button>
+                        <button class="btn btn-secondary" type="submit" data-form="#ticket-reply" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('ticket_single_add_reply'); ?></button>
                     </div>
                 </div>
             </div>

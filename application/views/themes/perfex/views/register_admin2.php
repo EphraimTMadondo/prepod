@@ -192,7 +192,7 @@ label.control-label {
             </div>
             <?php } ?>
             <div class="form-group">
-                <button type="submit" autocomplete="off"  class="btn btn-info btn-block pb-button--primary">Submit</button>
+                <button type="submit" autocomplete="off"  class="btn btn-secondary btn-block pb-button--primary">Submit</button>
             </div>
             <div class="register-company-custom-fields underlined-input" style="display:none;">
                 <?php echo render_custom_fields( 'customers','',array('show_on_client_portal'=>1)); ?>

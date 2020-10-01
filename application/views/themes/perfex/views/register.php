@@ -121,7 +121,7 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <div class="form-group">
-            <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info"><?php echo _l('clients_register_string'); ?></button>
+            <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-secondary"><?php echo _l('clients_register_string'); ?></button>
         </div>
     </div>
 </div>

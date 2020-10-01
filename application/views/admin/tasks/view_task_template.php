@@ -82,7 +82,7 @@
          <div class="clearfix"></div>
          <?php if($task->status != Tasks_model::STATUS_COMPLETE && ($task->current_user_is_assigned || has_permission('tasks','','edit') || $task->current_user_is_creator)){ ?>
          <p class="no-margin pull-left" style="<?php echo 'margin-'.(is_rtl() ? 'left' : 'right').':5px !important'; ?>">
-            <a href="#" class="btn btn-info" id="task-single-mark-complete-btn" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="mark_complete(<?php echo $task->id; ?>); return false;" data-toggle="tooltip" title="<?php echo _l('task_single_mark_as_complete'); ?>">
+            <a href="#" class="btn btn-secondary" id="task-single-mark-complete-btn" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="mark_complete(<?php echo $task->id; ?>); return false;" data-toggle="tooltip" title="<?php echo _l('task_single_mark_as_complete'); ?>">
             <i class="fa fa-check"></i>
             </a>
          </p>
@@ -115,7 +115,7 @@
             </p>
          <?php } else { ?>
          <p class="no-margin pull-left">
-            <a href="#" data-toggle="popover" data-placement="<?php echo is_mobile() ? 'bottom' : 'right'; ?>" data-html="true" data-trigger="manual" data-title="<?php echo _l('note'); ?>" data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button" onclick="timer_action(this, <?php echo $task->id; ?>, <?php echo $this->tasks_model->get_last_timer($task->id)->id; ?>);" class="btn btn-info btn-xs"><?php echo _l('save'); ?></button>' class="btn mb-1 btn-danger<?php if(!$is_assigned){echo ' disabled';} ?>" onclick="return false;">
+            <a href="#" data-toggle="popover" data-placement="<?php echo is_mobile() ? 'bottom' : 'right'; ?>" data-html="true" data-trigger="manual" data-title="<?php echo _l('note'); ?>" data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button" onclick="timer_action(this, <?php echo $task->id; ?>, <?php echo $this->tasks_model->get_last_timer($task->id)->id; ?>);" class="btn btn-secondary btn-xs"><?php echo _l('save'); ?></button>' class="btn mb-1 btn-danger<?php if(!$is_assigned){echo ' disabled';} ?>" onclick="return false;">
             <i class="fa fa-clock-o"></i> <?php echo _l('task_stop_timer'); ?>
             </a>
          </p>
@@ -164,7 +164,7 @@
                                  data-html="true"
                                  data-trigger="manual"
                                  data-title="<?php echo _l('note'); ?>"
-                                 data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button" onclick="timer_action(this, <?php echo $task->id; ?>, <?php echo $timesheet['id']; ?>, 1);" class="btn btn-info btn-xs"><?php echo _l('save'); ?></button>'
+                                 data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button" onclick="timer_action(this, <?php echo $task->id; ?>, <?php echo $timesheet['id']; ?>, 1);" class="btn btn-secondary btn-xs"><?php echo _l('save'); ?></button>'
                                  class="text-danger"
                                  onclick="return false;">
                                     <i class="fa fa-clock-o"></i>
@@ -429,7 +429,7 @@
                <span><?php echo _l('drop_files_here_to_upload'); ?></span>
             </div>
             <div class="dropzone-task-comment-previews dropzone-previews"></div>
-            <button type="button" class="btn btn-info mtop10 float-right hide" id="addTaskCommentBtn" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="add_task_comment('<?php echo $task->id; ?>');" data-comment-task-id="<?php echo $task->id; ?>">
+            <button type="button" class="btn btn-secondary mtop10 float-right hide" id="addTaskCommentBtn" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="add_task_comment('<?php echo $task->id; ?>');" data-comment-task-id="<?php echo $task->id; ?>">
             <?php echo _l('task_single_add_new_comment'); ?>
             </button>
             <?php echo form_close(); ?>
@@ -467,7 +467,7 @@
                   }
                   $comments .= '<div data-edit-comment="'.$comment['id'].'" class="hide edit-task-comment"><textarea rows="5" id="task_comment_'.$comment['id'].'" class="ays-ignore form-control">'.str_replace('[task_attachment]', '', $comment['content']).'</textarea>
                   <div class="clearfix mt-2"></div>
-                  <button type="button" class="btn btn-info float-right" onclick="save_edited_comment('.$comment['id'].','.$task->id.')">'._l('submit').'</button>
+                  <button type="button" class="btn btn-secondary float-right" onclick="save_edited_comment('.$comment['id'].','.$task->id.')">'._l('submit').'</button>
                   <button type="button" class="btn btn-default float-right mr-1" onclick="cancel_edit_comment('.$comment['id'].')">'._l('cancel').'</button>
                   </div>';
                   if($comment['file_id'] != 0){
@@ -810,7 +810,7 @@
          <div id="newTaskReminderToggle" class="mt-1" style="display:none;">
             <?php echo form_open('', array('id'=>'form-reminder-task')); ?>
             <?php $this->load->view('admin/includes/reminder_fields',['members'=>$staff_reminders, 'id'=>$task->id, 'name'=>'task']); ?>
-            <button class="btn btn-info btn-xs float-right" type="submit" id="taskReminderFormSubmit">
+            <button class="btn btn-secondary btn-xs float-right" type="submit" id="taskReminderFormSubmit">
             <?php echo _l('create_reminder'); ?>
             </button>
             <div class="clearfix"></div>

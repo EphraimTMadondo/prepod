@@ -20,7 +20,7 @@
      </div>
      <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-info">Save</button>
+      <button type="submit" class="btn btn-secondary">Save</button>
     </div>
   </div><!-- /.modal-content -->
   <?php echo form_close(); ?>

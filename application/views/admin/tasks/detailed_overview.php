@@ -59,7 +59,7 @@
                         </select>
                      </div>
                      <div class="col-md-2">
-                        <button type="submit" class="btn btn-info btn-block" style="margin-top:3px;"><?php echo _l('filter'); ?></button>
+                        <button type="submit" class="btn btn-secondary btn-block" style="margin-top:3px;"><?php echo _l('filter'); ?></button>
                      </div>
                   </div>
                   <?php echo form_close(); ?>

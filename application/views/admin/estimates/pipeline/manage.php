@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <?php if(has_permission('estimates','','create')){ ?>
-                            <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-info pull-left new"><?php echo _l('create_new_estimate'); ?></a>
+                            <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-secondary pull-left new"><?php echo _l('create_new_estimate'); ?></a>
                             <div class="display-block pull-left ml-1">
                                 <a href="#" class="btn btn-default estimates-total" onclick="slideToggle('#stats-top'); init_estimates_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="fa fa-bar-chart"></i></a>
                             </div>

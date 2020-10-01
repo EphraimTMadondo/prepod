@@ -224,7 +224,7 @@ foreach ($rResult as $aRow) {
     $row['DT_RowId'] = 'lead_' . $aRow['id'];
 
     if ($aRow['assigned'] == get_staff_user_id()) {
-        $row['DT_RowClass'] = 'alert-info';
+        $row['DT_RowClass'] = 'alert-secondary';
     }
 
     if (isset($row['DT_RowClass'])) {

@@ -77,7 +77,7 @@
             </div>
                 <div class="modal-footer">
                     <button type="" class="btn btn-default" data-dismiss="modal"><?php  echo htmlspecialchars(_l('close')); ?></button>
-                    <button id="sm_btn" type="submit" class="btn btn-info"><?php  echo htmlspecialchars(_l('submit')); ?></button>
+                    <button id="sm_btn" type="submit" class="btn btn-secondary"><?php  echo htmlspecialchars(_l('submit')); ?></button>
                 </div>
             </div><!-- /.modal-content -->
             <?php echo form_close(); ?>

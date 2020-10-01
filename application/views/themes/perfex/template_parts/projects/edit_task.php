@@ -62,7 +62,7 @@
    <textarea name="description" id="description" rows="10" class="form-control"><?php echo clear_textarea_breaks($task->description); ?></textarea>
  </div>
  <?php echo render_custom_fields('tasks',$task->id,array('show_on_client_portal'=>1)); ?>
- <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
+ <button type="submit" class="btn btn-secondary float-right"><?php echo _l('submit'); ?></button>
  <?php echo form_close(); ?>
 </div>
 </div>

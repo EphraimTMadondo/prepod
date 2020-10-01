@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-12">
             <?php if($event->userid != get_staff_user_id()){ ?>
-              <div class="alert alert-info"><?php echo _l('event_created_by','<a href="'.admin_url('profile/'.$event->userid).'" target="_blank">'.get_staff_full_name($event->userid)).'</a>'; ?></div>
+              <div class="alert alert-secondary"><?php echo _l('event_created_by','<a href="'.admin_url('profile/'.$event->userid).'" target="_blank">'.get_staff_full_name($event->userid)).'</a>'; ?></div>
             <?php } ?>
             <?php if($event->userid == get_staff_user_id() || is_admin()){ ?>
               <?php echo form_hidden('eventid',$event->eventid); ?>
@@ -88,7 +88,7 @@
     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
     <?php if($event->userid == get_staff_user_id() || is_admin()){ ?>
       <button type="button" class="btn btn-danger" onclick="delete_event(<?php echo $event->eventid; ?>); return false"><?php echo _l('delete_event'); ?></button>
-      <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+      <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
     <?php } ?>
   </div>
   <?php echo form_close(); ?>

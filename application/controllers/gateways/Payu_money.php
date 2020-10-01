@@ -118,7 +118,7 @@ class Payu_money extends App_Controller
                           </div>
                           <?php if (!$data['hash']) {
                              ?>
-                          <input type="submit" class="btn btn-info" value="<?php echo _l('submit_payment'); ?>" />
+                          <input type="submit" class="btn btn-secondary" value="<?php echo _l('submit_payment'); ?>" />
                           <?php
                              } ?>
                           </form>

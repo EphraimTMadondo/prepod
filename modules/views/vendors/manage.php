@@ -11,7 +11,7 @@
                <div class="card-body">
                   <div class="_buttons">
                      <?php if (has_permission('purchase','','create')) { ?>
-                     <a href="<?php echo admin_url('purchase/vendor'); ?>" class="btn btn-info mr-1 test pull-left display-block">
+                     <a href="<?php echo admin_url('purchase/vendor'); ?>" class="btn btn-secondary mr-1 test pull-left display-block">
                      <?php echo _l('new_vendor'); ?></a>
                      <a href="<?php echo admin_url('purchase/all_contacts'); ?>" class="btn btn-primary mr-1">
                      <?php echo _l('vendor_contacts'); ?></a>

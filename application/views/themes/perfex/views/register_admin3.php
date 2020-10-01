@@ -259,7 +259,7 @@ p {
     </div>
 
     <div class="form-group">
-        <button type="submit" autocomplete="off"  class="btn btn-info btn-block pb-button--primary">Start using Worksuite</button>
+        <button type="submit" autocomplete="off"  class="btn btn-secondary btn-block pb-button--primary">Start using Worksuite</button>
     </div>
                     
           

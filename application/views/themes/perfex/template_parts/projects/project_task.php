@@ -238,7 +238,7 @@
             echo form_hidden('taskid',$view_task->id);
             ?>
          <textarea name="content" rows="5" class="form-control mt-1"></textarea>
-         <button type="submit" class="btn btn-info mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off"><?php echo _l('task_single_add_new_comment'); ?></button>
+         <button type="submit" class="btn btn-secondary mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off"><?php echo _l('task_single_add_new_comment'); ?></button>
          <div class="clearfix"></div>
          <?php echo form_close(); } ?>
          <?php
@@ -276,7 +276,7 @@
                </a>
                <div data-edit-comment="<?php echo $comment['id']; ?>" class="hide">
                   <textarea rows="5" class="form-control mtop10 mb-1"><?php echo clear_textarea_breaks($comment['content']); ?></textarea>
-                  <button type="button" class="btn btn-info float-right" onclick="save_edited_comment(<?php echo $comment['id']; ?>)">
+                  <button type="button" class="btn btn-secondary float-right" onclick="save_edited_comment(<?php echo $comment['id']; ?>)">
                   <?php echo _l('submit'); ?>
                   </button>
                   <button type="button" class="btn btn-default float-right mr-1" onclick="cancel_edit_comment(<?php echo $comment['id']; ?>)">

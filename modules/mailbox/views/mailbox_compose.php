@@ -49,7 +49,7 @@
       <button type="submit" name="sendmail" value="draft" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-primary">
         <i class="fa fa-file-o menu-icon"></i> <?php echo _l('mailbox_save_draft'); ?></button>
       <?php } ?>
-      <button type="submit" name="sendmail" value="outbox" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">
+      <button type="submit" name="sendmail" value="outbox" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-secondary">
           <i class="fa fa-paper-plane menu-icon"></i>
           <?php echo _l('mailbox_send'); ?>          
         </button>

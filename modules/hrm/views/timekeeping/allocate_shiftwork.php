@@ -113,7 +113,7 @@
                     </div>
                     <?php echo form_hidden('shifts_detail'); ?>
                 </div>
-                    <button class="btn btn-info float-right save_detail_shift"><?php echo _l('submit'); ?></button>
+                    <button class="btn btn-secondary float-right save_detail_shift"><?php echo _l('submit'); ?></button>
                 
             </div><!-- /.modal-content -->
             <?php echo form_close(); ?>

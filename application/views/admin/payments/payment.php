@@ -21,7 +21,7 @@
 								<?php echo render_input('transactionid','payment_transaction_id',$payment->transactionid); ?>
 								<?php echo render_textarea('note','note',$payment->note,array('rows'=>7)); ?>
 								<div class="btn-bottom-toolbar text-right">
-									<button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+									<button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
 								</div>
 							</div>
 							<?php echo form_close(); ?>

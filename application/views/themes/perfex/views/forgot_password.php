@@ -15,7 +15,7 @@
         <?php } ?>
         <?php echo render_input('email','customer_forgot_password_email','','email'); ?>
         <div class="form-group">
-          <button type="submit" class="btn btn-info btn-block"><?php echo _l('customer_forgot_password_submit'); ?></button>
+          <button type="submit" class="btn btn-secondary btn-block"><?php echo _l('customer_forgot_password_submit'); ?></button>
         </div>
         <?php echo form_close(); ?>
       </div>

@@ -140,7 +140,7 @@
          <?php if(isset($client)){ ?>
          <div role="tab-pane" class="tab-pane" id="vendor_admins">
             <?php if (has_permission('purchase', '', 'create') || has_permission('purchase', '', 'edit')) { ?>
-            <a href="#" data-toggle="modal" data-target="#customer_admins_assign" class="btn btn-info mbot30"><?php echo _l('assign_admin'); ?></a>
+            <a href="#" data-toggle="modal" data-target="#customer_admins_assign" class="btn btn-secondary mbot30"><?php echo _l('assign_admin'); ?></a>
             <?php } ?>
             <table class="table dt-table">
                <thead>
@@ -257,7 +257,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
          </div>
       </div>
       <!-- /.modal-content -->

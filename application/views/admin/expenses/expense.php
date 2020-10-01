@@ -17,7 +17,7 @@
                   <?php
                      if(isset($expense) && $expense->recurring_from != NULL){
                        $recurring_expense = $this->expenses_model->get($expense->recurring_from);
-                       echo '<div class="alert alert-info">'._l('expense_recurring_from','<a href="'.admin_url('expenses/list_expenses/'.$expense->recurring_from).'" target="_blank">'.$recurring_expense->category_name.(!empty($recurring_expense->expense_name) ? ' ('.$recurring_expense->expense_name.')' : '').'</a></div>');
+                       echo '<div class="alert alert-secondary">'._l('expense_recurring_from','<a href="'.admin_url('expenses/list_expenses/'.$expense->recurring_from).'" target="_blank">'.$recurring_expense->category_name.(!empty($recurring_expense->expense_name) ? ' ('.$recurring_expense->expense_name.')' : '').'</a></div>');
                      }
                      ?>
                   <h4 class="no-margin"><?php echo $title; ?></h4>
@@ -111,7 +111,7 @@
                   <?php $rel_id = (isset($expense) ? $expense->expenseid : false); ?>
                   <?php echo render_custom_fields('expenses',$rel_id); ?>
                   <div class="btn-bottom-toolbar text-right">
-                     <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                   </div>
                </div>
             </div>

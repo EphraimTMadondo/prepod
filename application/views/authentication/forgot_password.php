@@ -14,7 +14,7 @@
     <?php $this->load->view('authentication/includes/alerts'); ?>
     <?php echo render_input('email','admin_auth_forgot_password_email',set_value('email'),'email'); ?>
     <div class="form-group">
-      <button type="submit" class="btn btn-info btn-block"><?php echo _l('admin_auth_forgot_password_button'); ?></button>
+      <button type="submit" class="btn btn-secondary btn-block"><?php echo _l('admin_auth_forgot_password_button'); ?></button>
     </div>
     <?php echo form_close(); ?>
   </div>

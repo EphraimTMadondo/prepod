@@ -25,7 +25,7 @@
                             <?php echo render_date_input('staff_report_to_date','to_date',$this->input->post('staff_report_to_date')); ?>
                         </div>
                         <div class="col-md-4 text-left">
-                            <button type="submit" class="btn btn-info label-margin"><?php echo _l('generate'); ?></button>
+                            <button type="submit" class="btn btn-secondary label-margin"><?php echo _l('generate'); ?></button>
                         </div>
                     </div>
                     <?php echo form_close(); ?>

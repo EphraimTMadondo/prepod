@@ -367,7 +367,7 @@ function init_relation_tasks_table($table_attributes = [])
         }
         // projects have button on top
         if ($table_attributes['data-new-rel-type'] != 'project') {
-            echo "<a href='#' class='btn btn-info pull-left mbot25 mr-1 new-task-relation" . $disabled . "' onclick=\"new_task_from_relation('$table_name'); return false;\" data-rel-id='" . $table_attributes['data-new-rel-id'] . "' data-rel-type='" . $table_attributes['data-new-rel-type'] . "'>" . _l('new_task') . '</a>';
+            echo "<a href='#' class='btn btn-secondary pull-left mbot25 mr-1 new-task-relation" . $disabled . "' onclick=\"new_task_from_relation('$table_name'); return false;\" data-rel-id='" . $table_attributes['data-new-rel-id'] . "' data-rel-type='" . $table_attributes['data-new-rel-type'] . "'>" . _l('new_task') . '</a>';
         }
     }
 

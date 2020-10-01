@@ -162,7 +162,7 @@
             <div class="row p15 company-profile-save-section">
                 <div class="col-md-12 text-right mt-2">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-info company-profile-save">
+                        <button type="submit" class="btn btn-secondary company-profile-save">
                             <?php echo _l('clients_edit_profile_update_btn'); ?>
                         </button>
                     </div>

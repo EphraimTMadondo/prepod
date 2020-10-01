@@ -125,7 +125,7 @@ $(function() {
                 $('#calendar').fullCalendar('changeView', 'basicDay');
             },
             loading: function(isLoading, view) {
-                isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-info').removeClass('btn-default').css('display', 'block');
+                isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-secondary').removeClass('btn-default').css('display', 'block');
                 !isLoading ? $('.dt-loader').addClass('hide') : $('.dt-loader').removeClass('hide');
             },
             isRTL: (app.options.isRTL == 'true' ? true : false),

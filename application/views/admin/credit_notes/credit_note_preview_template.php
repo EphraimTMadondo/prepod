@@ -99,7 +99,7 @@
                   </a>
                   <?php } ?>
                   <?php if($credit_note->status == 1 && !empty($credit_note->clientid)){ ?>
-                  <a href="#" data-toggle="modal" data-target="#apply_credits" class="btn btn-info">
+                  <a href="#" data-toggle="modal" data-target="#apply_credits" class="btn btn-secondary">
                   <?php echo _l('apply_to_invoice'); ?>
                   </a>
                   <?php } ?>
@@ -362,7 +362,7 @@
             </div>
             <div role="tab-pane" class="tab-pane" id="invoices_credited">
                <?php if(count($credit_note->applied_credits) == 0) {
-                  echo '<div class="alert alert-info mb-0">';
+                  echo '<div class="alert alert-secondary mb-0">';
                   echo _l('credited_invoices_not_found');
                   echo '</div>';
                   } else { ?>
@@ -407,7 +407,7 @@
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_refunds">
                <?php if(count($credit_note->refunds) == 0) {
-                  echo '<div class="alert alert-info mb-0">';
+                  echo '<div class="alert alert-secondary mb-0">';
                   echo _l('not_refunds_found');
                   echo '</div>';
                   } else { ?>
@@ -454,7 +454,7 @@
                <?php }  ?>
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_reminders">
-               <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target=".reminder-modal-credit_note-<?php echo $credit_note->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('credit_note_set_reminder_title'); ?></a>
+               <a href="#" class="btn btn-secondary btn-xs" data-toggle="modal" data-target=".reminder-modal-credit_note-<?php echo $credit_note->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('credit_note_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$credit_note->id,'name'=>'credit_note','members'=>$members,'reminder_title'=>_l('credit_note_set_reminder_title'))); ?>

@@ -31,7 +31,7 @@ foreach ($startedTimers as $timer) {
 
         $data .= 'data-content="';
         $data .= htmlspecialchars(render_textarea("timesheet_note"));
-        $data .= '<button type=\'button\' onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].');\' class=\'btn btn-info btn-xs\'>'._l('save').'</button>" ';
+        $data .= '<button type=\'button\' onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].');\' class=\'btn btn-secondary btn-xs\'>'._l('save').'</button>" ';
         $data .= 'onclick="return false;">';
     } else {
         $data .= 'onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].'); return false;\'>';

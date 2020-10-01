@@ -180,7 +180,7 @@
                <div class="input-group">
                   <span class="input-group-addon">
                   <?php if(isset($invoice)){ ?>
-                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_invoice_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $invoice->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('invoices/update_number_settings/'.$invoice->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>">
+                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_invoice_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $invoice->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('invoices/update_number_settings/'.$invoice->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>">
                     <i class="fa fa-cog"></i>
                     </a>
                   <?php }
@@ -283,7 +283,7 @@
                   </select>
                   <?php } else { ?>
                   <p><?php echo _l('invoice_add_edit_no_payment_modes_found'); ?></p>
-                  <a class="btn btn-info" href="<?php echo admin_url('paymentmodes'); ?>">
+                  <a class="btn btn-secondary" href="<?php echo admin_url('paymentmodes'); ?>">
                   <?php echo _l('new_payment_mode'); ?>
                   </a>
                   <?php } ?>
@@ -545,7 +545,7 @@
                          $new_item = true;
                         }
                         ?>
-                     <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-info"><i class="fa fa-check"></i></button>
+                     <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-secondary"><i class="fa fa-check"></i></button>
                   </td>
                </tr>
                <?php if (isset($invoice) || isset($add_items)) {
@@ -711,8 +711,8 @@
                 </button>
                 <?php } ?>
               <div class="btn-group dropup">
-                <button type="button" class="btn-tr btn btn-info invoice-form-submit transaction-submit"><?php echo _l('submit'); ?></button>
-                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn-tr btn btn-secondary invoice-form-submit transaction-submit"><?php echo _l('submit'); ?></button>
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right width200">

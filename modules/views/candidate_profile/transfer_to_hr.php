@@ -172,7 +172,7 @@
 
         </div>
         <div class=" text-right btn-toolbar-container-out">
-             <button type="submit" onclick="action_transfer_hr()" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info"><?php echo _l('transfer'); ?></button>
+             <button type="submit" onclick="action_transfer_hr()" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-secondary"><?php echo _l('transfer'); ?></button>
         </div>
         <?php echo form_close(); ?>
      </div>

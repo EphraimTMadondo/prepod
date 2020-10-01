@@ -115,7 +115,7 @@
        <hr class="hr-panel-heading" />
         <div id="notifications">
         </div>
-        <a href="#" class="btn btn-info loader"><?php echo _l('load_more'); ?></a>
+        <a href="#" class="btn btn-secondary loader"><?php echo _l('load_more'); ?></a>
       </div>
     </div>
   </div>

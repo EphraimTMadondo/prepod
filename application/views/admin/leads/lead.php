@@ -213,7 +213,7 @@
             <div class="col-md-12">
                <?php echo render_textarea('lead_activity_textarea','','',array('placeholder'=>_l('enter_activity')),array(),'mt-1'); ?>
                <div class="text-right">
-                  <button id="lead_enter_activity" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                  <button id="lead_enter_activity" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                </div>
             </div>
             <div class="clearfix"></div>
@@ -221,10 +221,10 @@
       </div>
       <div role="tab-pane" class="tab-pane" id="tab_proposals_leads">
          <?php if(has_permission('proposals','','create')){ ?>
-         <a href="<?php echo admin_url('proposals/proposal?rel_type=lead&rel_id='.$lead->id); ?>" class="btn btn-info mbot25"><?php echo _l('new_proposal'); ?></a>
+         <a href="<?php echo admin_url('proposals/proposal?rel_type=lead&rel_id='.$lead->id); ?>" class="btn btn-secondary mbot25"><?php echo _l('new_proposal'); ?></a>
          <?php } ?>
          <?php if(total_rows(db_prefix().'proposals',array('rel_type'=>'lead','rel_id'=>$lead->id))> 0 && (has_permission('proposals','','create') || has_permission('proposals','','edit'))){ ?>
-         <a href="#" class="btn btn-info mbot25" data-toggle="modal" data-target="#sync_data_proposal_data"><?php echo _l('sync_data'); ?></a>
+         <a href="#" class="btn btn-secondary mbot25" data-toggle="modal" data-target="#sync_data_proposal_data"><?php echo _l('sync_data'); ?></a>
          <?php $this->load->view('admin/proposals/sync_data',array('related'=>$lead,'rel_id'=>$lead->id,'rel_type'=>'lead')); ?>
          <?php } ?>
          <?php
@@ -252,7 +252,7 @@
          <?php init_relation_tasks_table(array('data-new-rel-id'=>$lead->id,'data-new-rel-type'=>'lead')); ?>
       </div>
       <div role="tab-pane" class="tab-pane" id="lead_reminders">
-         <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-lead-<?php echo $lead->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('lead_set_reminder_title'); ?></a>
+         <a href="#" data-toggle="modal" class="btn btn-secondary" data-target=".reminder-modal-lead-<?php echo $lead->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('lead_set_reminder_title'); ?></a>
          <hr />
          <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders-leads'); ?>
       </div>
@@ -291,7 +291,7 @@
             <input type="radio" name="contacted_indicator" id="contacted_indicator_no" value="no" checked>
             <label for="contacted_indicator_no"><?php echo _l('lead_not_contacted'); ?></label>
          </div>
-         <button type="submit" class="btn btn-info float-right"><?php echo _l('lead_add_edit_add_note'); ?></button>
+         <button type="submit" class="btn btn-secondary float-right"><?php echo _l('lead_add_edit_add_note'); ?></button>
          <?php echo form_close(); ?>
          <div class="clearfix"></div>
          <hr />
@@ -325,7 +325,7 @@
                      <?php echo render_textarea('note','',$note['description']); ?>
                      <div class="text-right">
                         <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
-                        <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
+                        <button type="button" class="btn btn-secondary" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                      </div>
                   </div>
                </div>

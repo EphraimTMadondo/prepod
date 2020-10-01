@@ -58,7 +58,7 @@
     </div>
 
     <div class="float-right">            
-      <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">
+      <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-secondary">
           <i class="fa fa-paper-plane menu-icon"></i>
           <?php echo _l('mailbox_send'); ?>          
         </button>

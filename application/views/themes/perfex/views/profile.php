@@ -111,7 +111,7 @@
 					<div class="row p15 contact-profile-save-section">
 						<div class="col-md-12 text-right mt-2">
 							<div class="form-group">
-								<button type="submit" class="btn btn-info contact-profile-save"><?php echo _l('clients_edit_profile_update_btn'); ?></button>
+								<button type="submit" class="btn btn-secondary contact-profile-save"><?php echo _l('clients_edit_profile_update_btn'); ?></button>
 							</div>
 						</div>
 					</div>
@@ -146,7 +146,7 @@
 					<?php echo form_error('newpasswordr'); ?>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-info btn-block"><?php echo _l('clients_edit_profile_change_password_btn'); ?></button>
+					<button type="submit" class="btn btn-secondary btn-block"><?php echo _l('clients_edit_profile_change_password_btn'); ?></button>
 				</div>
 				<?php echo form_close(); ?>
 			</div>

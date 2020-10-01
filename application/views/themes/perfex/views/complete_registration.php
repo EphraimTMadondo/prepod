@@ -105,7 +105,7 @@ label.control-label {
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <div class="form-group">
-                                <button id=submitBtn type="submit" autocomplete="off"  class="btn btn-info pb-button--primary"><?php echo _l('clients_register_string'); ?></button>
+                                <button id=submitBtn type="submit" autocomplete="off"  class="btn btn-secondary pb-button--primary"><?php echo _l('clients_register_string'); ?></button>
                             </div>
                         </div>
                     </div>

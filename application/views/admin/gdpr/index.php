@@ -10,7 +10,7 @@
             <div class="card-body">
                <div class="col-md-12 text-center">
                   <h4><?php echo _l('gdpr_not_enabled'); ?></h4>
-                  <a href="<?php echo admin_url('gdpr/enable'); ?>" class="btn btn-info"><?php echo _l('enable_gdpr'); ?></a>
+                  <a href="<?php echo admin_url('gdpr/enable'); ?>" class="btn btn-secondary"><?php echo _l('enable_gdpr'); ?></a>
                </div>
             </div>
          </div>
@@ -50,7 +50,7 @@
          </div>
          <?php if($save == true){ ?>
          <div class="btn-bottom-toolbar btn-toolbar-container-out text-right">
-            <button type="submit" class="btn btn-info"><?php echo _l('save'); ?></button>
+            <button type="submit" class="btn btn-secondary"><?php echo _l('save'); ?></button>
          </div>
          <?php echo form_close(); ?>
          <?php } ?>

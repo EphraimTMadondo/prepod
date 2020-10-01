@@ -187,7 +187,7 @@
                   </div>
                   <?php } ?>
                   <?php } else { ?>
-                  <a href="<?php echo admin_url('invoices/list_invoices/'.$estimate->invoice->id); ?>" data-placement="bottom" data-toggle="tooltip" title="<?php echo _l('estimate_invoiced_date',_dt($estimate->invoiced_date)); ?>"class="btn ml-1 btn-info"><?php echo format_invoice_number($estimate->invoice->id); ?></a>
+                  <a href="<?php echo admin_url('invoices/list_invoices/'.$estimate->invoice->id); ?>" data-placement="bottom" data-toggle="tooltip" title="<?php echo _l('estimate_invoiced_date',_dt($estimate->invoiced_date)); ?>"class="btn ml-1 btn-secondary"><?php echo format_invoice_number($estimate->invoice->id); ?></a>
                   <?php } ?>
                </div>
             </div>
@@ -200,7 +200,7 @@
                   <div class="row">
                      <?php if($estimate->status == 4 && !empty($estimate->acceptance_firstname) && !empty($estimate->acceptance_lastname) && !empty($estimate->acceptance_email)){ ?>
                      <div class="col-md-12">
-                        <div class="alert alert-info mbot15">
+                        <div class="alert alert-secondary mbot15">
                            <?php echo _l('accepted_identity_info',array(
                               _l('estimate_lowercase'),
                               '<b>'.$estimate->acceptance_firstname . ' ' . $estimate->acceptance_lastname . '</b> (<a href="mailto:'.$estimate->acceptance_email.'">'.$estimate->acceptance_email.'</a>)',
@@ -401,7 +401,7 @@
                <?php init_relation_tasks_table(array('data-new-rel-id'=>$estimate->id,'data-new-rel-type'=>'estimate')); ?>
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_reminders">
-               <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-estimate-<?php echo $estimate->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('estimate_set_reminder_title'); ?></a>
+               <a href="#" data-toggle="modal" class="btn btn-secondary" data-target=".reminder-modal-estimate-<?php echo $estimate->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('estimate_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$estimate->id,'name'=>'estimate','members'=>$members,'reminder_title'=>_l('estimate_set_reminder_title'))); ?>
@@ -418,7 +418,7 @@
                <?php echo form_open(admin_url('estimates/add_note/'.$estimate->id),array('id'=>'sales-notes','class'=>'estimate-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
-                  <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
+                  <button type="submit" class="btn btn-secondary mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
                </div>
                <?php echo form_close(); ?>
                <hr />

@@ -31,7 +31,7 @@ $(function(){
        $( ".form-builder-save" ).wrap( "<div class='btn-bottom-toolbar text-right'></div>" );
        var $btnToolbar = $('body').find('#tab_form_build .btn-bottom-toolbar');
        $btnToolbar = $('#tab_form_build').append($btnToolbar);
-       $btnToolbar.find('.btn').addClass('btn-info');
+       $btnToolbar.find('.btn').addClass('btn-secondary');
    },100);
 
    /*get data form to web*/

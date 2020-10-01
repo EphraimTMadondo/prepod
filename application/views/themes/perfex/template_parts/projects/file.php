@@ -22,9 +22,9 @@
                   <?php } ?>
                   <?php } ?>
                   <?php if(!empty($file->external) && $file->external == 'dropbox'){ ?>
-                  <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mb-1"><i class="fa fa-dropbox" aria-hidden="true"></i> <?php echo _l('open_in_dropbox'); ?></a><br /><br />
+                  <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-secondary mb-1"><i class="fa fa-dropbox" aria-hidden="true"></i> <?php echo _l('open_in_dropbox'); ?></a><br /><br />
                   <?php } else if(!empty($file->external) && $file->external == 'gdrive') { ?>
-                     <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mb-1">
+                     <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-secondary mb-1">
                            <i class="fa fa-google" aria-hidden="true"></i>
                            <?php echo _l('open_in_google'); ?>
                      </a>

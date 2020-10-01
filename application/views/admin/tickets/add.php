@@ -113,7 +113,7 @@
 					</div>
 					<div class="card">
 						<div class="btn-bottom-toolbar text-right">
-							<button type="submit" data-form="#new_ticket_form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info"><?php echo _l('open_ticket'); ?></button>
+							<button type="submit" data-form="#new_ticket_form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-secondary"><?php echo _l('open_ticket'); ?></button>
 						</div>
 						<div class="row">
 							<div class="col-md-12 mb-1 before-ticket-message">

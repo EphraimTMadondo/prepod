@@ -3,7 +3,7 @@
    <div class="card mt-2 mb-1">
       <div class="card-body _buttons">
          <?php if (has_permission('invoices', '', 'create')) { ?>
-         <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-info pull-left new new-invoice-list">
+         <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-secondary pull-left new new-invoice-list">
          <?php echo _l('create_new_invoice'); ?>
          </a>
          <?php } ?>

@@ -87,7 +87,7 @@
                  <div class="input-group">
                     <span class="input-group-addon">
                     <?php if(isset($estimate)){ ?>
-                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo html_entity_decode($estimate->prefix); ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo html_entity_decode($estimate->prefix); ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                      <?php }
                       echo html_entity_decode($prefix);
                     ?>
@@ -295,7 +295,7 @@
             <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
             <div class="btn-bottom-toolbar text-right">
               
-              <button type="button" class="btn-tr save_detail btn btn-info ml-1 estimate-form-submit transaction-submit">
+              <button type="button" class="btn-tr save_detail btn btn-secondary ml-1 estimate-form-submit transaction-submit">
               <?php echo _l('submit'); ?>
               </button>
             </div>

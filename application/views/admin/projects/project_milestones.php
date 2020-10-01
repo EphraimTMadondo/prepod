@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php if(has_permission('projects','','create')){ ?>
-   <a href="#" class="btn btn-info" onclick="new_milestone();return false;"><?php echo _l('new_milestone'); ?></a>
+   <a href="#" class="btn btn-secondary" onclick="new_milestone();return false;"><?php echo _l('new_milestone'); ?></a>
 <?php } ?>
 <a href="#" class="btn btn-default" onclick="milestones_switch_view(); return false;"><i class="fa fa-th-list"></i></a>
 <?php if($milestones_found) { ?>
@@ -25,7 +25,7 @@
       </div>
    </div>
 <?php } else { ?>
-   <div class="alert alert-info mt-1 mb-0">
+   <div class="alert alert-secondary mt-1 mb-0">
       <?php echo _l('no_milestones_found'); ?>
    </div>
 <?php } ?>

@@ -30,8 +30,8 @@
                 ?>
                 <?php echo render_select('responsible',$members,array('staffid',array('firstname','lastname')),'leads_import_assignee',$this->input->post('responsible')); ?>
                 <div class="form-group">
-                  <button type="button" class="btn btn-info import btn-import-submit"><?php echo _l('import'); ?></button>
-                  <button type="button" class="btn btn-info simulate btn-import-submit"><?php echo _l('simulate_import'); ?></button>
+                  <button type="button" class="btn btn-secondary import btn-import-submit"><?php echo _l('import'); ?></button>
+                  <button type="button" class="btn btn-secondary simulate btn-import-submit"><?php echo _l('simulate_import'); ?></button>
                 </div>
                 <?php echo form_close(); ?>
               </div>

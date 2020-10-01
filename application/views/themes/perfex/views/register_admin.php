@@ -189,7 +189,7 @@ body{
                     -->
                              
                 <div class="form-group">
-                    <button id=submitBtn type="submit" autocomplete="off"  class="btn btn-info btn-block  pb-button--primary" style ="border-radius: 2px;" >Continue</button>
+                    <button id=submitBtn type="submit" autocomplete="off"  class="btn btn-secondary btn-block  pb-button--primary" style ="border-radius: 2px;" >Continue</button>
                 </div>
                 <div class="register-contact-custom-fields">
                     <?php echo render_custom_fields( 'contacts','',array('show_on_client_portal'=>1)); ?>

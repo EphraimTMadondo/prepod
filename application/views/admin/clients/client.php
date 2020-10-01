@@ -20,7 +20,7 @@
                 </div>
                 <?php } ?>
                 <?php if(isset($client) && (!has_permission('customers','','view') && is_customer_admin($client->userid))){?>
-                <div class="alert alert-info">
+                <div class="alert alert-secondary">
                    <?php echo _l('customer_admin_login_as_client_message',get_staff_full_name(get_staff_user_id())); ?>
                 </div>
                 <?php } ?>                 

@@ -457,7 +457,7 @@
                   <?php } ?>
                   <div class="text-right btn-toolbar-container-out">
 				  <br>
-                     <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                   </div><br>
 
                   </div>
@@ -490,7 +490,7 @@
                      ?>
                   <?php if (is_admin()) {  ?>
                   <div class=" text-right btn-toolbar-container-out">
-                     <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                   </div>
                 <?php } ?>
                   </div>

@@ -9,7 +9,7 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="_buttons">
-							<a href="#__todo" data-toggle="modal" class="btn btn-info">
+							<a href="#__todo" data-toggle="modal" class="btn btn-secondary">
 								<?php echo _l('new_todo'); ?>
 							</a>
 						</div>

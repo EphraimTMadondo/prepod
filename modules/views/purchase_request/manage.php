@@ -17,7 +17,7 @@
 		              	<div class="row">    
 	                        <div class="_buttons col-md-3">
 	                        	<?php if (has_permission('purchase', '', 'create') || is_admin()) { ?>
-		                        <a href="<?php echo admin_url('purchase/pur_request'); ?>"class="btn btn-info pull-left mr-1 display-block">
+		                        <a href="<?php echo admin_url('purchase/pur_request'); ?>"class="btn btn-secondary pull-left mr-1 display-block">
 		                            <?php echo _l('new_pur_request'); ?>
 		                        </a>
 		                        <?php } ?>
@@ -78,7 +78,7 @@
           </div>
           <div class="modal-footer">
               <button type=""class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-              <button id="sm_btn" type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+              <button id="sm_btn" type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
           </div>
       </div><!-- /.modal-content -->
           <?php echo form_close(); ?>

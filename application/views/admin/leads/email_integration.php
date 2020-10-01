@@ -10,7 +10,7 @@
                <div class="card-body">
                   <?php hooks()->do_action('before_leads_email_integration_form'); ?>
                   <h4 class="pull-left"><?php echo $title; ?></h4>
-                  <a href="<?php echo admin_url('spam_filters/view/leads'); ?>" class="btn btn-info btn-xs float-right">
+                  <a href="<?php echo admin_url('spam_filters/view/leads'); ?>" class="btn btn-secondary btn-xs float-right">
                   <?php echo _l('spam_filters'); ?>
                   </a>
                   <div class="clearfix"></div>
@@ -28,7 +28,7 @@
                   <?php } ?>
                   <div class="btn-bottom-toolbar text-right">
                      <a href="<?php echo admin_url('leads/test_email_integration'); ?>" class="btn btn-default test-leads-email-integration"><?php echo _l('leads_email_integration_test_connection'); ?></a>
-                     <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                     <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                   </div>
                   <!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
                   <input  type="text" class="fake-autofill-field" name="fakeusernameremembered" value='' tabindex="-1"/>

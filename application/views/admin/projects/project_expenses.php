@@ -2,7 +2,7 @@
 <div id="expenses_total"></div>
 <hr />
 <?php if(has_permission('expenses','','create')){ ?>
-<a href="#" data-toggle="modal" data-target="#new_project_expense" class="btn btn-info mbot25"><?php echo _l('new_expense'); ?></a>
+<a href="#" data-toggle="modal" data-target="#new_project_expense" class="btn btn-secondary mbot25"><?php echo _l('new_expense'); ?></a>
 <?php } ?>
 <?php
    $data_expenses_filter['total_unbilled'] = $this->db->query('SELECT count(*) as num_rows FROM '.db_prefix().'expenses WHERE (SELECT 1 from '.db_prefix().'invoices WHERE '.db_prefix().'invoices.id = '.db_prefix().'expenses.invoiceid AND status != 2)')->row()->num_rows;
@@ -94,7 +94,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
          </div>
          <?php echo form_close(); ?>
       </div>

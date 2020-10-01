@@ -6,7 +6,7 @@ $triggers = $this->app_sms->get_available_triggers();
 $total_gateways = count($gateways);
 
 if($total_gateways > 1) { ?>
-    <div class="alert alert-info">
+    <div class="alert alert-secondary">
         <?php echo _l('notice_only_one_active_sms_gateway'); ?>
     </div>
 <?php } ?>
@@ -39,7 +39,7 @@ if($total_gateways > 1) { ?>
                         echo '<h4 class="mbot15">'._l('test_sms_config').'</h4>';
                         echo '<div class="form-group"><input type="text" placeholder="'._l('staff_add_edit_phonenumber').'" class="form-control test-phone" data-id="'.$gateway['id'].'"></div>';
                         echo '<div class="form-group"><textarea class="form-control sms-gateway-test-message" placeholder="'._l('test_sms_message').'" data-id="'.$gateway['id'].'" rows="4"></textarea></div>';
-                        echo '<button type="button" class="btn btn-info send-test-sms" data-id="'.$gateway['id'].'">'._l('send_test_sms').'</button>';
+                        echo '<button type="button" class="btn btn-secondary send-test-sms" data-id="'.$gateway['id'].'">'._l('send_test_sms').'</button>';
                         echo '<div id="sms_test_response" data-id="'.$gateway['id'].'"></div>';
                     }
                 ?>

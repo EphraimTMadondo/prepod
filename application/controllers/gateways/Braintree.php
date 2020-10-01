@@ -177,7 +177,7 @@ class Braintree extends App_Controller
                     <div id="bt-dropin"></div>
                  </div>
                  <div class="text-center" style="margin-top:15px;">
-                    <button class="btn btn-info" type="button" id="submit-button" style="display:none;">
+                    <button class="btn btn-secondary" type="button" id="submit-button" style="display:none;">
                     <?php echo _l('submit_payment'); ?>
                     </button>
                  </div>

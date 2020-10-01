@@ -23,7 +23,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12 center-block">
-		<button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info">          
+		<button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-secondary">          
           <?php echo _l('save'); ?>          
         </button>
 	</div>

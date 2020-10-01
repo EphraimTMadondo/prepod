@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-12">
         <h3 class="text-success pull-left no-mtop tickets-summary-heading"><?php echo _l('tickets_summary'); ?></h3>
-        <a href="<?php echo site_url('clients/open_ticket'); ?>" class="btn btn-info new-ticket float-right">
+        <a href="<?php echo site_url('clients/open_ticket'); ?>" class="btn btn-secondary new-ticket float-right">
           <?php echo _l('clients_ticket_open_subject'); ?>
         </a>
         <div class="clearfix"></div>

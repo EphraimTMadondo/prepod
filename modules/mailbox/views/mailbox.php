@@ -165,7 +165,7 @@
                                         <i class='bx bx-edit mr-25'></i> <span class="d-sm-inline d-none"><?php echo _l('mailbox_save_draft'); ?></span>
                                     </button> -->
                                 <?php } ?>
-                                <button type="submit" name="sendmail" value="outbox" class="btn-send btn btn-info">
+                                <button type="submit" name="sendmail" value="outbox" class="btn-send btn btn-secondary">
                                     <i class='bx bx-send mr-25'></i> <span class="d-sm-inline d-none"><?php echo _l('mailbox_send'); ?></span>
                                 </button>
                             </div>

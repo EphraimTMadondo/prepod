@@ -272,11 +272,11 @@ function get_styling_areas($type = 'admin')
             ],
             [
                 'name'                 => _l('theme_style_button_info'),
-                'id'                   => 'btn-info',
-                'target'               => '.btn-info',
+                'id'                   => 'btn-secondary',
+                'target'               => '.btn-secondary',
                 'css'                  => 'background-color',
-                'additional_selectors' => '.btn-info|border-color',
-                'example'              => '<button type="button" class="btn btn-info">' . _l('theme_style_button_info') . '</button>',
+                'additional_selectors' => '.btn-secondary|border-color',
+                'example'              => '<button type="button" class="btn btn-secondary">' . _l('theme_style_button_info') . '</button>',
             ],
             [
                 'name'                 => _l('theme_style_button_success'),

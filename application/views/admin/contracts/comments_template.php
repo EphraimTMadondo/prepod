@@ -39,7 +39,7 @@
          <?php if($comment['staffid'] == get_staff_user_id() || is_admin()){ ?>
          <div class="text-right">
             <button type="button" class="btn btn-default" onclick="toggle_contract_comment_edit(<?php echo $comment['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
-            <button type="button" class="btn btn-info" onclick="edit_contract_comment(<?php echo $comment['id']; ?>);"><?php echo _l('update_comment'); ?></button>
+            <button type="button" class="btn btn-secondary" onclick="edit_contract_comment(<?php echo $comment['id']; ?>);"><?php echo _l('update_comment'); ?></button>
          </div>
          <?php } ?>
       </div>

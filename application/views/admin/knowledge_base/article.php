@@ -67,7 +67,7 @@
          </div>
          <?php if((has_permission('knowledge_base','','create') && !isset($article)) || has_permission('knowledge_base','','edit') && isset($article)){ ?>
          <div class="btn-bottom-toolbar btn-toolbar-container-out text-right" style="margin: 0 0 0 -10px">
-            <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
+            <button type="submit" class="btn btn-secondary float-right"><?php echo _l('submit'); ?></button>
          </div>
          <?php } ?>
       </div>

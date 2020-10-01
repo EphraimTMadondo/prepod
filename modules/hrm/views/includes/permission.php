@@ -88,6 +88,6 @@
 </div>
 <hr/>
 <div class="text-right btn-toolbar-container-out">
-    <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+    <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
 </div>
 <?php echo form_close(); ?>

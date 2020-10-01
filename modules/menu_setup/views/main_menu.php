@@ -9,7 +9,7 @@
             <div class="card">
                <div class="card-body">
                   <div class="_buttons">
-                     <a href="#" onclick="save_menu();return false;" class="btn btn-info"><?php echo _l('utilities_menu_save'); ?></a>
+                     <a href="#" onclick="save_menu();return false;" class="btn btn-secondary"><?php echo _l('utilities_menu_save'); ?></a>
                      <a href="<?php echo admin_url('menu_setup/reset_aside_menu'); ?>" class="btn btn-default"><?php echo _l('reset'); ?></a>
                   </div>
                   <div class="clearfix"></div>

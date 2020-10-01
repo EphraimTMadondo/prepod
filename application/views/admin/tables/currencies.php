@@ -45,7 +45,7 @@ foreach ($rResult as $aRow) {
     $options = icon_btn('#' . $aRow['id'], 'pencil-square-o', 'btn-default', $attributes);
 
     if ($aRow['isdefault'] == 0) {
-        $options .= icon_btn('currencies/make_base_currency/' . $aRow['id'], 'star', 'btn-info', [
+        $options .= icon_btn('currencies/make_base_currency/' . $aRow['id'], 'star', 'btn-secondary', [
             'data-toggle' => 'tooltip',
             'title'       => _l('make_base_currency'),
             ]);

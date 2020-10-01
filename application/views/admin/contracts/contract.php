@@ -170,7 +170,7 @@
                            </div>
                            <?php } else if($contract->marked_as_signed == 1) { ?>
                               <div class="col-md-12">
-                                 <div class="alert alert-info">
+                                 <div class="alert alert-secondary">
                                     <?php echo _l('contract_marked_as_signed_info'); ?>
                                  </div>
                               </div>
@@ -295,7 +295,7 @@
                         <?php echo form_open(admin_url('contracts/add_note/'.$contract->id),array('id'=>'sales-notes','class'=>'contract-notes-form')); ?>
                         <?php echo render_textarea('description'); ?>
                         <div class="text-right">
-                           <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('contract_add_note'); ?></button>
+                           <button type="submit" class="btn btn-secondary mt-1 mbot15"><?php echo _l('contract_add_note'); ?></button>
                         </div>
                         <?php echo form_close(); ?>
                         <hr />
@@ -308,7 +308,7 @@
                               <div id="contract-comments"></div>
                               <div class="clearfix"></div>
                               <textarea name="content" id="comment" rows="4" class="form-control mt-1 contract-comment"></textarea>
-                              <button type="button" class="btn btn-info mtop10 float-right" onclick="add_contract_comment();"><?php echo _l('proposal_add_comment'); ?></button>
+                              <button type="button" class="btn btn-secondary mtop10 float-right" onclick="add_contract_comment();"><?php echo _l('proposal_add_comment'); ?></button>
                            </div>
                         </div>
                      </div>

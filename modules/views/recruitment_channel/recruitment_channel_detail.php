@@ -209,7 +209,7 @@ foreach ($roles as $m) {
                       <div class="row">
                         <div class="col-md-12">
                           <div class="modal-footer">
-                              <button id="sm_btn2" type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                              <button id="sm_btn2" type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                           </div>
                         </div>
                       </div>

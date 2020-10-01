@@ -22,7 +22,7 @@
                 <button type="button" class="btn btn-default" onclick="close_modal_manually('#convert_to_estimate')">
                     <?php echo _l('close'); ?>
                 </button>
-                <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
             </div>
         </div>
         <?php echo form_close(); ?>

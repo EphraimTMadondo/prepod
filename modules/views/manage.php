@@ -201,7 +201,7 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                 console.log("error API", err)
             },
             beforeSend: function () {
-                // showalert('Please wait...', 'alert-info');
+                // showalert('Please wait...', 'alert-secondary');
             },
             complete: function () {
             },

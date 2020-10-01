@@ -16,7 +16,7 @@
 <?php echo render_textarea('settings[gdpr_consent_public_page_top_block]','',get_option('gdpr_consent_public_page_top_block'),array(),array(),'','tinymce'); ?>
 
 <hr class="hr-panel-heading" />
-<button type="button" class="btn btn-info pull-left mr-1" onclick="conset_purpose(); return false;" data-toggle="tooltip" title="New Consent Purpose"><i class="fa fa-plus-square-o"></i></button>
+<button type="button" class="btn btn-secondary pull-left mr-1" onclick="conset_purpose(); return false;" data-toggle="tooltip" title="New Consent Purpose"><i class="fa fa-plus-square-o"></i></button>
 <h4 class="mbot30 mtop7 pull-left">Purposes of consent</h4>
 
 <div class="clearfix"></div>

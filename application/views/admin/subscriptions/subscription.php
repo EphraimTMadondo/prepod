@@ -83,7 +83,7 @@
             <div class="tab-content">
              <div role="tab-pane" class="tab-pane active" id="upcoming_invoice">
               <?php if(!empty($subscription->stripe_subscription_id) && $subscription->status != 'canceled' && !empty($subscription->ends_at)) { ?>
-                <div class="alert alert-info">
+                <div class="alert alert-secondary">
                  <a href="https://stripe.com/docs/subscriptions/canceling-pausing#canceling" target="_blank"><i class="fa fa-link"></i></a> <?php echo _l('subscription_will_be_canceled_at_end_of_billing_period'); ?>
                  <?php if(has_permission('subscriptions','','edit')){ ?>
                    <br />
@@ -98,7 +98,7 @@
                   </div>
                   <?php } ?>
                   <?php } else if(!empty($subscription->stripe_subscription_id) && $subscription->status == 'canceled') { ?>
-                    <div class="alert alert-info">
+                    <div class="alert alert-secondary">
                      <a href="https://stripe.com/docs/subscriptions/canceling-pausing#reactivating-canceled-subscriptions" target="_blank"><i class="fa fa-link"></i></a> <?php echo _l('subscription_is_canceled_no_resume'); ?>
                    </div>
                    <?php } else if(!empty($subscription->stripe_subscription_id) && $subscription->status == 'incomplete_expired') { ?>
@@ -106,7 +106,7 @@
                      <a href="https://stripe.com/docs/billing/lifecycle#incomplete" target="_blank"><i class="fa fa-link"></i></a> <?php echo _l('subscription_is_subscription_is_expired'); ?>
                    </div>
                    <?php } else if(empty($subscription->stripe_subscription_id)) { ?>
-                     <div class="alert alert-info mb-0">
+                     <div class="alert alert-secondary mb-0">
                         <?php echo _l('subscription_not_yet_subscribed'); ?>
                      </div>
                    <?php } ?>
@@ -137,7 +137,7 @@
                       <?php } ?>
                     </ul>
                     <?php } else { ?>
-                      <div class="alert alert-info mb-0">
+                      <div class="alert alert-secondary mb-0">
                        <?php echo _l('no_child_found',_l('invoices')); ?>
                      </div>
                      <?php } ?>

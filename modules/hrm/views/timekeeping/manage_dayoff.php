@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
  <h4><?php echo '<i class=" fa fa-hotel"></i> '. $title; ?></h4>
- <a href="#" onclick="new_leave(); return false;" class="btn btn-info"><?php echo _l('new_leave'); ?></a>
+ <a href="#" onclick="new_leave(); return false;" class="btn btn-secondary"><?php echo _l('new_leave'); ?></a>
  <br/><br/>
 <div class="horizontal-scrollable-tabs preview-tabs-top">
   <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
@@ -222,7 +222,7 @@
           </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                  <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                  <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
               </div>
           </div>
           <?php echo form_close(); ?>
@@ -309,7 +309,7 @@
           </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                  <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                  <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
               </div>
           </div>
           <?php echo form_close(); ?>

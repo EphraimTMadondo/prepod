@@ -4,7 +4,7 @@
    <div class="card-body _buttons">
 
     <?php if(has_permission('purchase','','create')){ ?>
-     <a href="<?php echo admin_url('purchase/estimate'); ?>" class="btn btn-info pull-left new"><?php echo _l('create_new_estimate'); ?></a>
+     <a href="<?php echo admin_url('purchase/estimate'); ?>" class="btn btn-secondary pull-left new"><?php echo _l('create_new_estimate'); ?></a>
    <?php } ?>
   <div class="display-block text-right"> 
   

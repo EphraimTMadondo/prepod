@@ -41,7 +41,7 @@
                     <div class="modal-footer">
                        <a href="<?php echo admin_url('hrm/payroll?group=payslip'); ?>"  class="btn btn-default "><?php echo _l('close'); ?></a>
                        <?php if($latch == 0){ ?>
-                        <button id="lacth_payslip" type="button" class="btn btn-info" onclick="latch_payslip(this); return false;" ><?php echo _l('latch'); ?></button>
+                        <button id="lacth_payslip" type="button" class="btn btn-secondary" onclick="latch_payslip(this); return false;" ><?php echo _l('latch'); ?></button>
                       <?php }?>
                     </div>
                     </div>

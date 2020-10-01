@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 if($invoice->status == Invoices_model::STATUS_DRAFT){ ?>
-   <div class="alert alert-info">
+   <div class="alert alert-secondary">
       <?php echo _l('invoice_draft_status_info'); ?>
    </div>
 <?php }
@@ -50,7 +50,7 @@ if($invoice->scheduled_email) { ?>
       <?php if($invoice->is_recurring_from == null
          && $recurring_invoice->cycles > 0
          && $recurring_invoice->cycles == $recurring_invoice->total_cycles) { ?>
-            <div class="alert alert-info mb-0">
+            <div class="alert alert-secondary mb-0">
                <?php echo _l('recurring_has_ended', _l('invoice_lowercase')); ?>
             </div>
          <?php } else if($show_recurring_invoice_info){ ?>

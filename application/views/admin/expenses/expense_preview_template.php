@@ -70,7 +70,7 @@
                </button>
                <?php } ?>
                <?php } else if($expense->invoiceid != NULL){ ?>
-               <a href="<?php echo admin_url('invoices/list_invoices/'.$expense->invoiceid); ?>" class="btn ml-1 float-right btn-info"><?php echo format_invoice_number($invoice->id); ?></a>
+               <a href="<?php echo admin_url('invoices/list_invoices/'.$expense->invoiceid); ?>" class="btn ml-1 float-right btn-secondary"><?php echo format_invoice_number($invoice->id); ?></a>
                <?php } ?>
                <div class="float-right">
                   <?php if(has_permission('expenses','','edit')){ ?>
@@ -119,7 +119,7 @@
                  }
                  ?>
                  <?php if($expense->recurring_from == null && $recurring_expense->cycles > 0 && $recurring_expense->cycles == $recurring_expense->total_cycles) { ?>
-                  <div class="alert alert-info mbot15">
+                  <div class="alert alert-secondary mbot15">
                    <?php echo _l('recurring_has_ended', _l('expense_lowercase')); ?>
                  </div>
                <?php } else  if($show_recurring_expense_info){ ?>
@@ -276,7 +276,7 @@
             <?php init_relation_tasks_table(array('data-new-rel-id'=>$expense->expenseid,'data-new-rel-type'=>'expense')); ?>
          </div>
          <div role="tab-pane" class="tab-pane" id="tab_reminders">
-            <a href="#" data-toggle="modal" class="btn btn-info" data-target=".reminder-modal-expense-<?php echo $expense->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('expense_set_reminder_title'); ?></a>
+            <a href="#" data-toggle="modal" class="btn btn-secondary" data-target=".reminder-modal-expense-<?php echo $expense->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('expense_set_reminder_title'); ?></a>
             <hr />
             <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
             <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$expense->id,'name'=>'expense','members'=>$members,'reminder_title'=>_l('expense_set_reminder_title'))); ?>

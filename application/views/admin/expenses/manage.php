@@ -71,7 +71,7 @@
             </div>
          </div>
          <div class="modal-footer">
-            <button type="button" class="btn btn-info" id="expense_confirm_convert"><?php echo _l('confirm'); ?></button>
+            <button type="button" class="btn btn-secondary" id="expense_confirm_convert"><?php echo _l('confirm'); ?></button>
          </div>
       </div>
       <!-- /.modal-content -->

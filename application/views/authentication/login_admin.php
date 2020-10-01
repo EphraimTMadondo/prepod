@@ -29,7 +29,7 @@
          </label>
        </div>
        <div class="form-group">
-        <button type="submit" class="btn btn-info btn-block"><?php echo _l('admin_auth_login_button'); ?></button>
+        <button type="submit" class="btn btn-secondary btn-block"><?php echo _l('admin_auth_login_button'); ?></button>
       </div>
       <div class="form-group">
         <a href="<?php echo admin_url('authentication/forgot_password'); ?>"><?php echo _l('admin_auth_login_fp'); ?></a>

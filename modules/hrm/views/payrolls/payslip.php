@@ -90,7 +90,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
 
-                    <button id="add_payslip" type="button" class="btn btn-info" onclick="add_new_payspip(this); return false;" ><?php echo _l('submit'); ?></button>
+                    <button id="add_payslip" type="button" class="btn btn-secondary" onclick="add_new_payspip(this); return false;" ><?php echo _l('submit'); ?></button>
                 </div>
             </div><!-- /.modal-content -->
             <?php echo form_close(); ?>

@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php if(!isset($discussion)){
     if($project->settings->open_discussions == 1){ ?>
-<a href="#" onclick="new_discussion();return false;" class="btn btn-info mtop5"><?php echo _l('new_project_discussion'); ?></a>
+<a href="#" onclick="new_discussion();return false;" class="btn btn-secondary mtop5"><?php echo _l('new_project_discussion'); ?></a>
 <hr />
 <!-- Miles Stones -->
 <div class="modal fade" id="discussion" tabindex="-1" role="dialog">
@@ -28,7 +28,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                <button type="submit" class="btn btn-info" data-loading-text="<?php echo _l('wait_text'); ?>" data-autocomplete="off" data-form="#discussion_form"><?php echo _l('submit'); ?></button>
+                <button type="submit" class="btn btn-secondary" data-loading-text="<?php echo _l('wait_text'); ?>" data-autocomplete="off" data-form="#discussion_form"><?php echo _l('submit'); ?></button>
             </div>
         </div>
         <!-- /.modal-content -->

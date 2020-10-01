@@ -121,7 +121,7 @@
                         </div>
 
                         <div class="btn-bottom-toolbar text-right">
-                            <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                            <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                         </div>
                     </div>
                 </div>

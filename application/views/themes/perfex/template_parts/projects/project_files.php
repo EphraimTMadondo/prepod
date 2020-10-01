@@ -4,7 +4,7 @@
   <input type="file" name="file" multiple class="hide"/>
   <?php echo form_close(); ?>
   <div class="pull-left mb-1">
-    <a href="<?php echo site_url('clients/download_all_project_files/'.$project->id); ?>" class="btn btn-info">
+    <a href="<?php echo site_url('clients/download_all_project_files/'.$project->id); ?>" class="btn btn-secondary">
       <?php echo _l('download_all'); ?>
     </a>
   </div>

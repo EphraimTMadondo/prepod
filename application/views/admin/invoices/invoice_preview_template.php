@@ -245,7 +245,7 @@
          <div class="tab-content">
             <div role="tab-pane" class="tab-pane active" id="tab_invoice">
                <?php if($invoice->status == Invoices_model::STATUS_CANCELLED && $invoice->recurring > 0) { ?>
-               <div class="alert alert-info">
+               <div class="alert alert-secondary">
                   Recurring invoice with status Cancelled <b>is still ongoing recurring invoice</b>. If you want to stop this recurring invoice you should update the invoice recurring field to <b>No</b>.
                </div>
                <?php } ?>
@@ -288,7 +288,7 @@
                <?php init_relation_tasks_table(array('data-new-rel-id'=>$invoice->id,'data-new-rel-type'=>'invoice')); ?>
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_reminders">
-               <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target=".reminder-modal-invoice-<?php echo $invoice->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('invoice_set_reminder_title'); ?></a>
+               <a href="#" class="btn btn-secondary btn-xs" data-toggle="modal" data-target=".reminder-modal-invoice-<?php echo $invoice->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('invoice_set_reminder_title'); ?></a>
                <hr />
                <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders'); ?>
                <?php $this->load->view('admin/includes/modals/reminder',array('id'=>$invoice->id,'name'=>'invoice','members'=>$members,'reminder_title'=>_l('invoice_set_reminder_title'))); ?>
@@ -329,7 +329,7 @@
                <?php echo form_open(admin_url('invoices/add_note/'.$invoice->id),array('id'=>'sales-notes','class'=>'invoice-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
-                  <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
+                  <button type="submit" class="btn btn-secondary mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
                </div>
                <?php echo form_close(); ?>
                <hr />

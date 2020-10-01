@@ -25,7 +25,7 @@ $i = 0;
         <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
         <div class="text-right">
             <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
-            <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
+            <button type="button" class="btn btn-secondary" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
           </div>
         <?php } ?>
         </div>

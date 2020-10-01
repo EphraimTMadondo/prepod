@@ -12,7 +12,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-            <button type="button" class="btn btn-info" onclick="do_share_file_contacts();"><?php echo _l('confirm'); ?></button>
+            <button type="button" class="btn btn-secondary" onclick="do_share_file_contacts();"><?php echo _l('confirm'); ?></button>
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
@@ -147,9 +147,9 @@
                         <td data-order="<?php echo $_att['dateadded']; ?>"><?php echo _dt($_att['dateadded']); ?></td>
                         <td>
                             <?php if(!isset($_att['external'])){ ?>
-                                <button type="button" data-toggle="modal" data-file-name="<?php echo $_att['file_name']; ?>" data-filetype="<?php echo $_att['filetype']; ?>" data-path="<?php echo $path; ?>" data-target="#send_file" class="btn btn-info btn-icon"><i class="fa fa-envelope"></i></button>
+                                <button type="button" data-toggle="modal" data-file-name="<?php echo $_att['file_name']; ?>" data-filetype="<?php echo $_att['filetype']; ?>" data-path="<?php echo $path; ?>" data-target="#send_file" class="btn btn-secondary btn-icon"><i class="fa fa-envelope"></i></button>
                             <?php } else if(isset($_att['external']) && !empty($_att['external'])) {
-                                echo '<a href="'.$_att['external_link'].'" class="btn btn-info btn-icon" target="_blank">'.($_att['external'] == 'dropbox' ? '<i class="fa fa-dropbox"></i>' : '<i class="fa fa-google"></i>').'</a>';
+                                echo '<a href="'.$_att['external_link'].'" class="btn btn-secondary btn-icon" target="_blank">'.($_att['external'] == 'dropbox' ? '<i class="fa fa-dropbox"></i>' : '<i class="fa fa-google"></i>').'</a>';
                             } ?>
                             <?php if($type == 'customer'){ ?>
                                 <a href="<?php echo admin_url('clients/delete_attachment/'.$_att['rel_id'].'/'.$_att['id']); ?>"  class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>

@@ -2,7 +2,7 @@
 <?php if(isset($client)){ ?>
     <h4 class="customer-profile-group-heading"><?php echo _l('call_logs'); ?></h4>
     <?php if(has_permission('call_logs','','create')){ ?>
-        <a href="<?php echo admin_url('call_logs/call_log?customer_type=customer&clientid='.$client->userid); ?>" class="btn btn-info mbot15<?php if($client->active == 0){echo ' disabled';} ?>">
+        <a href="<?php echo admin_url('call_logs/call_log?customer_type=customer&clientid='.$client->userid); ?>" class="btn btn-secondary mbot15<?php if($client->active == 0){echo ' disabled';} ?>">
             <?php echo _l('new_call_log'); ?>
         </a>
     <?php } ?>

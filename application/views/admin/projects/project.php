@@ -197,7 +197,7 @@
                  </div>
              <?php } ?>
              <div class="btn-bottom-toolbar text-right">
-                 <button type="submit" data-form="#project_form" class="btn btn-info" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('submit'); ?></button>
+                 <button type="submit" data-form="#project_form" class="btn btn-secondary" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('submit'); ?></button>
              </div>
          </div>
      </div>

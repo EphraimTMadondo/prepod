@@ -16,13 +16,13 @@
                             <?php } ?>
                         </h4>
                         <hr class="hr-panel-heading" />
-                        <div class="company_field_info mbot25 alert alert-info<?php if(isset($custom_field) && $custom_field->fieldto != 'company' || !isset($custom_field)){echo ' hide';} ?>">
+                        <div class="company_field_info mbot25 alert alert-secondary<?php if(isset($custom_field) && $custom_field->fieldto != 'company' || !isset($custom_field)){echo ' hide';} ?>">
                            <?php echo _l('custom_field_info_format_embed_info',array(
                             _l('custom_field_company'),
                             '<a href="'.admin_url('settings?group=company#settings[company_info_format]').'" target="_blank">'.admin_url('settings?group=company').'</a>'
                             )); ?>
                         </div>
-                        <div class="customers_field_info mbot25 alert alert-info<?php if(isset($custom_field) && $custom_field->fieldto != 'customers' || !isset($custom_field)){echo ' hide';} ?>">
+                        <div class="customers_field_info mbot25 alert alert-secondary<?php if(isset($custom_field) && $custom_field->fieldto != 'customers' || !isset($custom_field)){echo ' hide';} ?>">
                             <?php echo _l('custom_field_info_format_embed_info',array(
                                 _l('clients'),
                                 '<a href="'.admin_url('settings?group=clients#settings[customer_info_format]').'" target="_blank">'.admin_url('settings?group=clients').'</a>'
@@ -31,7 +31,7 @@
                              <div class="items_field_info mbot25 alert alert-warning<?php if(isset($custom_field) && $custom_field->fieldto != 'items' || !isset($custom_field)){echo ' hide';} ?>">
                                 Custom fields for items can't be included in calculation of totals.
                             </div>
-                            <div class="proposal_field_info mbot25 alert alert-info<?php if(isset($custom_field) && $custom_field->fieldto != 'proposal' || !isset($custom_field)){echo ' hide';} ?>">
+                            <div class="proposal_field_info mbot25 alert alert-secondary<?php if(isset($custom_field) && $custom_field->fieldto != 'proposal' || !isset($custom_field)){echo ' hide';} ?>">
                                 <?php echo _l('custom_field_info_format_embed_info',array(
                                     _l('proposals'),
                                     '<a href="'.admin_url('settings?group=sales&tab=proposals#settings[proposal_info_format]').'" target="_blank">'.admin_url('settings?group=sales&tab=proposals').'</a>'
@@ -141,7 +141,7 @@
                                 <input type="checkbox" value="1" name="show_on_ticket_form" id="show_on_ticket_form" <?php if(isset($custom_field) && $custom_field->show_on_ticket_form == 1){echo 'checked';} ?>>
                                 <label for="show_on_ticket_form"><?php echo _l('show_on_ticket_form'); ?></label>
                             </div>
-                            <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
+                            <button type="submit" class="btn btn-secondary float-right"><?php echo _l('submit'); ?></button>
                             <?php echo form_close(); ?>
                         </div>
                     </div>

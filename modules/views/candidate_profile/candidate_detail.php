@@ -14,16 +14,16 @@
                   <li>
                     <br>
                     <div class="col-md-12">
-                      	<a href="#" onclick="interview(); return false;" class="btn btn-info float-right display-block mr-1 interview-background"><i class="fa fa-microphone"></i><?php echo ' ' . _l('interview'); ?></a>
-		              	<a href="#" onclick="test(); return false;" class="btn btn-info float-right display-block mr-1 test-background"><i class="fa fa-forward"></i><?php echo ' ' . _l('test'); ?></a>
-		              	<a href="#" onclick="call(); return false;" class="btn btn-info float-right display-block mr-1 call-background"><i class="fa fa-phone"></i><?php echo ' ' . _l('call'); ?></a>
-		              	<a href="#" onclick="sendmail(); return false;" class="btn btn-info float-right display-block mr-1 send_mail-background"><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
+                      	<a href="#" onclick="interview(); return false;" class="btn btn-secondary float-right display-block mr-1 interview-background"><i class="fa fa-microphone"></i><?php echo ' ' . _l('interview'); ?></a>
+		              	<a href="#" onclick="test(); return false;" class="btn btn-secondary float-right display-block mr-1 test-background"><i class="fa fa-forward"></i><?php echo ' ' . _l('test'); ?></a>
+		              	<a href="#" onclick="call(); return false;" class="btn btn-secondary float-right display-block mr-1 call-background"><i class="fa fa-phone"></i><?php echo ' ' . _l('call'); ?></a>
+		              	<a href="#" onclick="sendmail(); return false;" class="btn btn-secondary float-right display-block mr-1 send_mail-background"><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
 
                     </div>
                     <br>&nbsp;<br/>
                   </li>
                  </ul>
-                  <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-info float-right display-block mr-1" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
+                  <a href="#" onclick="send_mail_candidate(); return false;" class="btn btn-secondary float-right display-block mr-1" ><i class="fa fa-envelope"></i><?php echo ' ' . _l('send_mail'); ?></a>
 
               	  <a href="#" class="btn btn-warning float-right mr-1" data-toggle="modal" data-target="#candidate_rating"><i class="fa fa-star"></i><?php echo ' ' . _l('rate_candidate'); ?></a>
               	  <div class="col-md-3 float-right">
@@ -668,7 +668,7 @@ echo form_hidden('candidate', $candidate->id);
             </div>
             <div class="modal-footer">
                 <button type=""class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                <button id="sm_btn" type="submit" onclick="submit_care_candidate(); return false;" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                <button id="sm_btn" type="submit" onclick="submit_care_candidate(); return false;" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
             </div>
         </div><!-- /.modal-content -->
             <?php echo form_close(); ?>
@@ -713,7 +713,7 @@ echo form_hidden('candidate', $candidate->id);
             </div>
             <div class="modal-footer">
                 <button type=""class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                <button id="sm_btn" type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                <button id="sm_btn" type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
             </div>
         </div><!-- /.modal-content -->
             <?php echo form_close(); ?>
@@ -778,7 +778,7 @@ $count_cr = 1;
             </div>
             <div class="modal-footer">
                 <button group="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                <button group="submit" onclick="submit_rating_candidate(); return false;" class="btn btn-info"><?php echo _l('submit'); ?></button>
+                <button group="submit" onclick="submit_rating_candidate(); return false;" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
                 <?php echo form_close(); ?>
             </div>
         </div>

@@ -73,7 +73,7 @@
       ?>
       <?php if($lead_locked == false){ ?>
       <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
-         <button type="button" class="btn btn-info float-right ml-1 lead-top-btn lead-save-btn" onclick="document.getElementById('lead-form-submit').click();">
+         <button type="button" class="btn btn-secondary float-right ml-1 lead-top-btn lead-save-btn" onclick="document.getElementById('lead-form-submit').click();">
               <?php echo _l('submit'); ?>
           </button>
       </div>
@@ -367,7 +367,7 @@
    <?php if($lead_locked == false){ ?>
    <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
       <hr />
-      <button type="submit" class="btn btn-info float-right lead-save-btn" id="lead-form-submit"><?php echo _l('submit'); ?></button>
+      <button type="submit" class="btn btn-secondary float-right lead-save-btn" id="lead-form-submit"><?php echo _l('submit'); ?></button>
       <button type="button" class="btn btn-default float-right mr-1" data-dismiss="modal"><?php echo _l('close'); ?></button>
    </div>
    <?php } ?>

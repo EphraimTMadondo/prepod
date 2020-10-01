@@ -19,7 +19,7 @@
                <div class="card-body">
                   <?php if(is_admin()){ ?>
                   <?php if(isset($view_all) && get_option('show_timesheets_overview_all_members_notice_admins') == 1){ ?>
-                  <div class="alert alert-info alert-dismissible" role="alert">
+                  <div class="alert alert-secondary alert-dismissible" role="alert">
                      <button type="button" class="close" onclick="window.location.href= '<?php echo admin_url('misc/dismiss_timesheets_notice_admins'); ?>';" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <?php echo _l('timesheets_overview_all_members_notice_admins'); ?>
                   </div>

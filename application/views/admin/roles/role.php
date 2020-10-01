@@ -36,7 +36,7 @@
                   $this->load->view('admin/staff/permissions', $permissionsData);
                ?>
                <hr />
-                  <button type="submit" class="btn btn-info float-right"><?php echo _l('submit'); ?></button>
+                  <button type="submit" class="btn btn-secondary float-right"><?php echo _l('submit'); ?></button>
                   <?php echo form_close(); ?>
             </div>
          </div>

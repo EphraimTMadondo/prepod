@@ -12,7 +12,7 @@
     <div class="card-body credit-card">
         <?php if(!empty($payment_method)){ ?>
             <h4><?php echo _l('credit_card_update_info'); ?></h4>
-            <a href="<?php echo site_url('clients/update_credit_card'); ?>" class="btn btn-info">
+            <a href="<?php echo site_url('clients/update_credit_card'); ?>" class="btn btn-secondary">
                 <?php echo _l('update_card_btn'); ?> (<?php echo $payment_method->card->brand; ?> <?php echo $payment_method->card->last4; ?>
                 </a>
                 <div<?php if(!customer_can_delete_credit_card()){ ?> data-toggle="tooltip" title="<?php echo _l('delete_credit_card_info'); ?>"<?php } ?>

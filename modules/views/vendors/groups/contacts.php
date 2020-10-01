@@ -13,7 +13,7 @@
    }
    ?>
 <div class="inline-block new-contact-wrapper" data-title="<?php echo _l('customer_contact_person_only_one_allowed'); ?>"<?php if($disable_new_contacts){ ?> data-toggle="tooltip"<?php } ?>>
-   <a href="#" onclick="vendor_contact(<?php echo html_entity_decode($client->userid); ?>); return false;" class="btn btn-info new-contact mbot25<?php if($disable_new_contacts){echo ' disabled';} ?>"><?php echo _l('new_contact'); ?></a>
+   <a href="#" onclick="vendor_contact(<?php echo html_entity_decode($client->userid); ?>); return false;" class="btn btn-secondary new-contact mbot25<?php if($disable_new_contacts){echo ' disabled';} ?>"><?php echo _l('new_contact'); ?></a>
 </div>
 <?php } ?>
 <?php

@@ -9,7 +9,7 @@
             <div class="row">
                <div class="col-md-12 border-right project_file_area">
                   <?php if(!empty($file->external) && $file->external == 'dropbox'){ ?>
-                  <a href="<?php echo htmlspecialchars($file->external_link); ?>" target="_blank" class="btn btn-info mb-1"><i class="fa fa-dropbox" aria-hidden="true"></i> <?php echo htmlspecialchars(_l('open_in_dropbox')); ?></a><br />
+                  <a href="<?php echo htmlspecialchars($file->external_link); ?>" target="_blank" class="btn btn-secondary mb-1"><i class="fa fa-dropbox" aria-hidden="true"></i> <?php echo htmlspecialchars(_l('open_in_dropbox')); ?></a><br />
                   <?php } ?>
                   <?php
                      $path = ASSETS_UPLOAD_FOLDER.'/'.$file->rel_id.'/'.$file->file_name;

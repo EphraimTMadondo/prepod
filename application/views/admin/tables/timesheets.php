@@ -164,7 +164,7 @@ foreach ($rResult as $aRow) {
                     data-content='" . render_textarea('timesheet_note') . '
                     <button type="button"
                     onclick="timer_action(this, ' . $aRow['task_id'] . ', ' . $aRow['id'] . ', ' . $adminStop . ');"
-                    class="btn btn-info btn-xs">' . _l('save')
+                    class="btn btn-secondary btn-xs">' . _l('save')
                     . "</button>'
                     class=\"text-danger\"
                     onclick=\"return false;\">

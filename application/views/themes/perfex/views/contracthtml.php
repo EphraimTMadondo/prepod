@@ -135,7 +135,7 @@
                <?php echo form_open($this->uri->uri_string()) ;?>
                <div class="contract-comment">
                   <textarea name="content" rows="4" class="form-control"></textarea>
-                  <button type="submit" class="btn btn-info mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('proposal_add_comment'); ?></button>
+                  <button type="submit" class="btn btn-secondary mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('proposal_add_comment'); ?></button>
                   <?php echo form_hidden('action','contract_comment'); ?>
                </div>
                <?php echo form_close(); ?>

@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<a href="#" onclick="new_timesheet();return false;" class="btn btn-info mbot25"><?php echo _l('record_timesheet'); ?></a>
+<a href="#" onclick="new_timesheet();return false;" class="btn btn-secondary mbot25"><?php echo _l('record_timesheet'); ?></a>
 <?php if(has_permission('projects','','create')){ ?>
     <div class="_filters _hidden_inputs timesheets_filters hidden">
         <?php

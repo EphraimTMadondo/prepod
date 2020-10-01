@@ -224,7 +224,7 @@ class Two_checkout extends App_Controller
                                 </div>
                              </div>
                           </div>
-                          <input type="submit" class="btn btn-info" value="<?php echo _l('submit_payment'); ?>" />
+                          <input type="submit" class="btn btn-secondary" value="<?php echo _l('submit_payment'); ?>" />
                           </form>
                        </div>
                     </div>

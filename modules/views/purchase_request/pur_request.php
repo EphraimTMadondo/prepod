@@ -91,7 +91,7 @@
                   </div>
                   <?php echo form_hidden('request_detail'); ?>
                     <div class="clearfix"></div>
-                    <button id="sm_btn" class="btn btn-info save_detail float-right"><?php echo _l('submit'); ?></button>
+                    <button id="sm_btn" class="btn btn-secondary save_detail float-right"><?php echo _l('submit'); ?></button>
                   <?php echo form_close(); ?>
                </div>
             </div>

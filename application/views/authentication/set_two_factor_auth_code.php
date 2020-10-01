@@ -19,7 +19,7 @@
       <a href="<?php echo admin_url('authentication'); ?>"><?php echo _l('back_to_login'); ?></a>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-info btn-block"><?php echo _l('confirm'); ?></button>
+      <button type="submit" class="btn btn-secondary btn-block"><?php echo _l('confirm'); ?></button>
     </div>
     <?php echo form_close(); ?>
   </div>
