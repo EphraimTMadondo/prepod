@@ -94,8 +94,8 @@
                      <div class="project-overview-right">
                         <?php if(count($list_approve_status) > 0){ ?>
                           
-                         <div class="row">
-                           <div class="col-md-12 project-overview-expenses-finance">
+                         <div class="col-md-12">
+                           <div class="row project-overview-expenses-finance">
                             <?php 
                               $this->load->model('staff_model');
                               $enter_charge_code = 0;
