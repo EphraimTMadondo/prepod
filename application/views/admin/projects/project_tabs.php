@@ -8,7 +8,7 @@
         foreach(filter_project_visible_tabs($tabs, $project->settings->available_features) as $key => $tab){
             $dropdown = isset($tab['collapse']) ? true : false;
             ?>
-            <li class="<?php if($key == 'project_overview' && !$this->input->get('group')){echo 'active ';} ?>project_tab_<?php echo $key; ?><?php if($dropdown){echo ' nav-tabs-submenu-parent';} ?>">
+            <li class="nav-item <?php if($key == 'project_overview' && !$this->input->get('group')){echo 'active ';} ?>project_tab_<?php echo $key; ?><?php if($dropdown){echo ' nav-tabs-submenu-parent';} ?>">
                 <a
                 data-group="<?php echo $key; ?>"
                 role="tab"
@@ -16,7 +16,7 @@
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="true"
-                    class="dropdown-toggle"
+                    class="dropdown-toggle nav-link"
                     href="#"
                     id="dropdown_<?php echo $key; ?>"<?php } else { ?>
                     href="<?php echo admin_url('projects/view/'.$project->id.'?group='.$key); ?>"

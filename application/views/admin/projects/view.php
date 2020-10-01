@@ -1,8 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<div id="wrapper">
+<!-- BEGIN: Content-->
+<div class="app-content content">
+   <div class="content-overlay"></div>
+   <div class="content-wrapper">
    <?php echo form_hidden('project_id',$project->id) ?>
-   <div class="content">
       <div class="row">
          <div class="col-md-12">
             <div class="card mtop20 project-top-panel panel-full">
@@ -10,7 +12,7 @@
                   <div class="row">
                      <div class="col-md-7 project-heading">
                         <h3 class="hide project-name"><?php echo $project->name; ?></h3>
-                        <div id="project_view_name" class="pull-left">
+                        <div id="project_view_name">
                            <select class="selectpicker" data-style="btn-outline-light" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
                               <option value="<?php echo $project->id; ?>" selected data-content="<?php echo $project->name; ?> - <small><?php echo $project->client_data->company; ?></small>">
                                 <?php echo $project->client_data->company; ?> <?php echo $project->name; ?>
