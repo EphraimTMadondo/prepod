@@ -1448,7 +1448,12 @@ $(function() {
     // }
 
     // Init are you sure on forms
-    $('form').not('#single-ticket-form,#calendar-event-form,#proposal-form').areYouSure();
+    try{
+        $('form').not('#single-ticket-form,#calendar-event-form,#proposal-form').areYouSure();
+    }
+    catch(error){
+        console.log(error);
+    }
 
     // For inline tinymce editors when content is blank a message is shown, on click this message should be hidden.
     $("body").on('click', '.editor-add-content-notice', function() {

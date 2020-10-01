@@ -5,12 +5,12 @@
     <?php $this->load->view('admin/estimates/estimates_top_stats');
     ?>
     <?php if(has_permission('estimates','','create')){ ?>
-     <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-secondary pull-left new new-estimate-btn"><?php echo _l('create_new_estimate'); ?></a>
+     <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-secondary float-left new new-estimate-btn"><?php echo _l('create_new_estimate'); ?></a>
    <?php } ?>
-   <a href="<?php echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-default ml-1 pull-left switch-pipeline hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+   <a href="<?php echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-light ml-1 float-left switch-pipeline hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
    <div class="display-block text-right">
      <div class="btn-group float-right mleft4 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-filter" aria-hidden="true"></i>
       </button>
       <ul class="dropdown-menu width300">
@@ -46,7 +46,7 @@
       <?php if(count($estimates_sale_agents) > 0){ ?>
         <div class="clearfix"></div>
         <li class="divider"></li>
-        <li class="dropdown-submenu pull-left">
+        <li class="dropdown-submenu float-left">
           <a href="#" tabindex="-1"><?php echo _l('sale_agent_string'); ?></a>
           <ul class="dropdown-menu dropdown-menu-left">
            <?php foreach($estimates_sale_agents as $agent){ ?>
@@ -70,8 +70,8 @@
 <?php } ?>
 </ul>
 </div>
-<a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-estimates','#estimate'); return false;" data-toggle="tooltip" title="<?php echo _l('estimates_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-<a href="#" class="btn btn-default btn-with-tooltip estimates-total" onclick="slideToggle('#stats-top'); init_estimates_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="fa fa-bar-chart"></i></a>
+<a href="#" class="btn btn-light btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-estimates','#estimate'); return false;" data-toggle="tooltip" title="<?php echo _l('estimates_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
+<a href="#" class="btn btn-light btn-with-tooltip estimates-total" onclick="slideToggle('#stats-top'); init_estimates_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="fa fa-bar-chart"></i></a>
 </div>
 </div>
 </div>
