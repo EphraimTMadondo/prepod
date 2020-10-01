@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="content-body">
-                <!-- Basic Kanban App -->
+            <!-- Basic Kanban App -->
             <div class="kanban-overlay"></div>
             <section id="kanban-wrapper" class="mt-2">
                 <div class="row">
