@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="horizontal-scrollable-tabs">
-  <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
-  <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
   <div class="horizontal-tabs">
     <ul class="nav nav-tabs no-margin project-tabs nav-tabs-horizontal" role="tablist">
         <?php
@@ -32,7 +30,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown_<?php echo $key; ?>">
                             <?php
                             foreach($tab['children'] as $d){
-                                echo '<li class="nav-tabs-submenu-child"><a href="'.admin_url('projects/view/'.$project->id.'?group='.$d['slug']).'" data-group="'.$d['slug'].'">'.$d['name'].'</a></li>';
+                                echo '<li class="nav-item"><a class="nav-link" href="'.admin_url('projects/view/'.$project->id.'?group='.$d['slug']).'" data-group="'.$d['slug'].'">'.$d['name'].'</a></li>';
                             }
                             ?>
                         </ul>
