@@ -116,7 +116,7 @@ function purchase_module_init_menu_items()
         $CI->app_menu->add_sidebar_children_item('purchase', [
             'slug'     => 'reports',
             'name'     => _l('reports'),
-            'icon'     => 'fa fa-bar-chart',
+            'icon'     => 'bx bx-bar-chart',
             'href'     => admin_url('purchase/reports'),
             'position' => 7,
         ]);

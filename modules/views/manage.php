@@ -36,7 +36,7 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                             <?php if(has_permission('call_logs','','create')){ ?>
                             <a href="<?php echo admin_url('call_logs/call_log'); ?>" class="btn btn-primary mr-1"><?php echo _l('new_call_log'); ?></a>
                             <?php } ?>
-                            <a href="<?php echo admin_url('call_logs/overview'); ?>" data-toggle="tooltip" title="<?php echo _l('cl_gantt_overview'); ?>" class="btn btn-default"><i class="fa fa-bar-chart" aria-hidden="true"></i> Overview</a>
+                            <a href="<?php echo admin_url('call_logs/overview'); ?>" data-toggle="tooltip" title="<?php echo _l('cl_gantt_overview'); ?>" class="btn btn-default"><i class="bx bx-bar-chart" aria-hidden="true"></i> Overview</a>
 
                             <a href="<?php echo admin_url('call_logs/switch_grid/'.$switch_grid); ?>" class="btn btn-default hidden-xs">
                                 <?php if($switch_grid == 1){ echo _l('cl_switch_to_list_view');}else{echo _l('cl_switch_to_grid_view');}; ?>

@@ -96,7 +96,7 @@
          <?php if(has_permission('tasks','','create') && count($task->timesheets) > 0){ ?>
          <p class="no-margin pull-left mr-1">
             <a href="#" class="btn btn-default mr-1" data-toggle="tooltip" data-title="<?php echo _l('task_statistics'); ?>" onclick="task_tracking_stats(<?php echo $task->id; ?>); return false;">
-            <i class="fa fa-bar-chart"></i>
+            <i class="bx bx-bar-chart"></i>
             </a>
          </p>
          <?php } ?>
