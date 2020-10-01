@@ -76,6 +76,7 @@
                 <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span class="menu-title" data-i18n="Accounting">Accounting</span></a>
                     <ul class="menu-content">
                         <li><a href="<?php echo base_url();?>admin/expenses"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Expenses">Expenses</span></a>
+                        <li><a href="<?php echo base_url();?>admin/estimates"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Estimates">Estimates</span></a>
                         <li><a href="<?php echo base_url();?>admin/invoices"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoices">Invoices</span></a>
                         <li><a href="<?php echo base_url();?>admin/payments"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Payments">Payments</span></a>
                         <li><a href="<?php echo base_url();?>admin/credit_notes"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Credit Notes">Credit Notes</span></a>

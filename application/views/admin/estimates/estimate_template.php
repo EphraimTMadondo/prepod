@@ -10,7 +10,7 @@
             <div class="f_client_id">
              <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('estimate_select_customer'); ?></label>
-                <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($estimate) && empty($estimate->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                <select id="clientid" name="clientid" data-live-search="true" data-width="100%" data-style="btn-outline-light" class="ajax-search<?php if(isset($estimate) && empty($estimate->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <?php $selected = (isset($estimate) ? $estimate->clientid : '');
                  if($selected == ''){
                    $selected = (isset($customer_id) ? $customer_id: '');
@@ -26,7 +26,7 @@
             <div class="form-group select-placeholder projects-wrapper<?php if((!isset($estimate)) || (isset($estimate) && !customer_has_projects($estimate->clientid))){ echo ' hide';} ?>">
              <label for="project_id"><?php echo _l('project'); ?></label>
              <div id="project_ajax_search_wrapper">
-               <select name="project_id" id="project_id" class="projects ajax-search" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+               <select name="project_id" id="project_id" class="projects ajax-search" data-style="btn-outline-light" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                 <?php
                   if(isset($estimate) && $estimate->project_id != 0){
                     echo '<option value="'.$estimate->project_id.'" selected>'.get_project_name_by_id($estimate->project_id).'</option>';
