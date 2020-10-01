@@ -707,9 +707,9 @@ $(function() {
     }
 
     // Init now metisMenu for the main admin sidebar
-    side_bar.metisMenu();
+        // side_bar.metisMenu();
     // Init setup menu
-    setup_menu.metisMenu();
+        // setup_menu.metisMenu();
 
     // Handle minimalize sidebar menu
     $('.hide-menu').click(function(e) {
