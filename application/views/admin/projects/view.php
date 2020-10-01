@@ -7,7 +7,7 @@
    <?php echo form_hidden('project_id',$project->id) ?>
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20 project-top-panel panel-full">
+            <div class="card mt-2 project-top-panel panel-full">
                <div class="card-body _buttons">
                   <div class="row">
                      <div class="col-md-7 project-heading">
@@ -25,7 +25,7 @@
                         <div class="visible-xs">
                            <div class="clearfix"></div>
                         </div>
-                        <?php echo '<div class="label pull-left ml-1 mtop8 p8 project-status-label-'.$project->status.'" style="background:'.$project_status['color'].'">'.$project_status['name'].'</div>'; ?>
+                        <?php echo '<div class="label float-left ml-1 mt-1 p8 project-status-label-'.$project->status.'" style="background:'.$project_status['color'].'">'.$project_status['name'].'</div>'; ?>
                      </div>
                      <div class="col-md-5 text-right">
                         <?php if(has_permission('tasks','','create')){ ?>
@@ -113,7 +113,7 @@
                  && $this->projects_model->timers_started_for_project($project->id)
                  && $tab['slug'] != 'project_milestones') {
                ?>
-            <div class="alert alert-warning project-no-started-timers-found mbot15">
+            <div class="alert alert-warning project-no-started-timers-found mb-1">
                <?php echo _l('project_not_started_status_tasks_timers_found'); ?>
             </div>
             <?php } ?>
@@ -122,7 +122,7 @@
                 && $project->status == 2
                 && $tab['slug'] != 'project_milestones') {
                ?>
-            <div class="alert alert-warning bold project-due-notice mbot15">
+            <div class="alert alert-warning bold project-due-notice mb-1">
                <?php echo _l('project_due_notice', floor((abs(time() - strtotime($project->deadline)))/(60*60*24))); ?>
             </div>
             <?php } ?>
@@ -131,7 +131,7 @@
                  && total_rows(db_prefix().'contacts',array('userid'=>$project->clientid)) > 0
                  && $tab['slug'] != 'project_milestones') {
                ?>
-            <div class="alert alert-warning project-permissions-warning mbot15">
+            <div class="alert alert-warning project-permissions-warning mb-1">
                <?php echo _l('project_customer_permission_warning'); ?>
             </div>
             <?php } ?>
