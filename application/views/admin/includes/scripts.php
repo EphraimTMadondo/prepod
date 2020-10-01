@@ -64,6 +64,7 @@
       break;
       case "task_kanban":
       case "proposals_kanban":
+      case "leads":
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/jkanban/jkanban.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
       break;

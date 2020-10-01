@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head(true, 'leads'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
@@ -397,7 +397,7 @@
    <?php echo get_staff_meta(get_staff_user_id(), 'hidden-columns-table-leads'); ?>
 </script>
 <?php include_once(APPPATH.'views/admin/leads/status.php'); ?>
-<?php init_tail(); ?>
+<?php init_tail('leads'); ?>
 <script>
    var openLeadID = '<?php echo $leadid; ?>';
 
