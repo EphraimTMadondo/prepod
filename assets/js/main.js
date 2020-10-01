@@ -6351,12 +6351,14 @@ function init_currency(id) {
 
         requestGetJSON('misc/get_currency/' + selectedCurrencyId)
             .done(function(currency) {
-                // Used for formatting money
-                accounting.settings.currency.decimal = currency.decimal_separator;
-                accounting.settings.currency.thousand = currency.thousand_separator;
-                accounting.settings.currency.symbol = currency.symbol;
-                accounting.settings.currency.format = currency.placement == 'after' ? '%v %s' : '%s%v';
-                calculate_total();
+                if (typeof(accounting) != 'undefined') {
+                    // Used for formatting money
+                    accounting.settings.currency.decimal = currency.decimal_separator;
+                    accounting.settings.currency.thousand = currency.thousand_separator;
+                    accounting.settings.currency.symbol = currency.symbol;
+                    accounting.settings.currency.format = currency.placement == 'after' ? '%v %s' : '%s%v';
+                    calculate_total();
+                }
             });
     }
 }
