@@ -1360,7 +1360,7 @@ $(function() {
     //         month: moment.tz(app.options.timezone).format("M"),
     //         date: moment.tz(app.options.timezone).format("DD"),
     //         loading: function(isLoading, view) {
-    //             isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-secondary').removeClass('btn-default').css('display', 'block');
+    //             isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-info').removeClass('btn-default').css('display', 'block');
     //             !isLoading ? $('.dt-loader').addClass('hide') : $('.dt-loader').removeClass('hide');
     //         },
     //         eventSources: [{
@@ -1500,9 +1500,9 @@ $(function() {
             }).done(function(response) {
                 response = JSON.parse(response);
                 if (response.success == true) {
-                    errorContainer.html('<div class="alert alert-success mb-0 mt-1">SMS Sent Successfully!</div>');
+                    errorContainer.html('<div class="alert alert-success mb-0 mtop15">SMS Sent Successfully!</div>');
                 } else {
-                    errorContainer.html('<div class="alert alert-warning mb-0 mt-1">' + response.error + '</div>');
+                    errorContainer.html('<div class="alert alert-warning mb-0 mtop15">' + response.error + '</div>');
                 }
             }).always(function() {
                 that.prop('disabled', false);
@@ -1974,7 +1974,7 @@ $(function() {
         if ($previewItem.find('[name="description"]').length && $previewItem.find('[name="description"]').val().trim().length > 0 &&
             $previewItem.find('[name="rate"]').val().trim().length > 0) {
 
-            $itemsTable.before('<div class="alert alert-warning mb-1" id="items-warning">' + app.lang.item_forgotten_in_preview + '<i class="fa fa-angle-double-down pointer pull-right fa-2x" style="margin-top:-4px;" onclick="add_item_to_table(\'undefined\',\'undefined\',undefined); return false;"></i></div>');
+            $itemsTable.before('<div class="alert alert-warning mbot20" id="items-warning">' + app.lang.item_forgotten_in_preview + '<i class="fa fa-angle-double-down pointer pull-right fa-2x" style="margin-top:-4px;" onclick="add_item_to_table(\'undefined\',\'undefined\',undefined); return false;"></i></div>');
 
             $('html,body').animate({
                 scrollTop: $("#items-warning").offset().top
@@ -1984,7 +1984,7 @@ $(function() {
 
         } else {
             if ($itemsTable.length && $itemsTable.find('.item').length === 0) {
-                $itemsTable.before('<div class="alert alert-warning mb-1" id="items-warning">' + app.lang.no_items_warning + '</div>');
+                $itemsTable.before('<div class="alert alert-warning mbot20" id="items-warning">' + app.lang.no_items_warning + '</div>');
                 $('html,body').animate({
                     scrollTop: $("#items-warning").offset().top
                 });
@@ -5368,7 +5368,7 @@ function timer_action(e, task_id, timer_id, adminStop) {
         popupData.content += '<div class="form-group">';
         popupData.content += '<textarea id="timesheet_note" placeholder="' + app.lang.note + '" style="margin:0 auto;width:60%;" rows="4" class="form-control"></textarea>';
         popupData.content += '</div>';
-        popupData.content += '<button type=\'button\' onclick=\'timer_action(this,document.getElementById("timer_add_task_id").value,' + timer_id + ');return false;\' class=\'btn btn-secondary\'>' + app.lang.confirm + '</button>';
+        popupData.content += '<button type=\'button\' onclick=\'timer_action(this,document.getElementById("timer_add_task_id").value,' + timer_id + ');return false;\' class=\'btn btn-info\'>' + app.lang.confirm + '</button>';
 
         popupData.message = app.lang.task_stop_timer;
         var $popupHTML = system_popup(popupData);
