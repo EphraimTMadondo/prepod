@@ -752,7 +752,7 @@ $(function() {
     mainWrapperHeightFix();
 
     // Init scrollable tabs
-    init_tabs_scrollable();
+        //init_tabs_scrollable();
 
     // Refresh top timers on click
     $('#top-timers').on('click', function() {
