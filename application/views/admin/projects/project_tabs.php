@@ -17,7 +17,7 @@
                     class="dropdown-toggle nav-link"
                     href="#"
                     id="dropdown_<?php echo $key; ?>"<?php } else { ?>
-                    class="nav-item"
+                    class="nav-link"
                     href="<?php echo admin_url('projects/view/'.$project->id.'?group='.$key); ?>"
                     <?php } ?>>
                     <i class="<?php echo $tab['icon']; ?>" aria-hidden="true"></i>
