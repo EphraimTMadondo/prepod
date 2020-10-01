@@ -9,7 +9,7 @@
                 
                 <div class="card">
                     <p class="text-info inline-block" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><i class="fa fa-question-circle"></i></p>
-                    <div class="card mtop20">
+                    <div class="card mt-2">
                         <div class="card-body">
                             <a href="<?php echo admin_url('reports/leads?type=staff'); ?>" class="btn btn-success"><?php echo _l('switch_to_general_report'); ?></a>
                         </div>
@@ -67,7 +67,7 @@
                   </div>
               </div>
               <div class="relative" style="max-height:400px;">
-                <canvas class="leads-monthly chart mtop20" id="leads-monthly" height="400"></canvas>
+                <canvas class="leads-monthly chart mt-2" id="leads-monthly" height="400"></canvas>
             </div>
         </div>
     </div>

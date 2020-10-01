@@ -6,14 +6,14 @@
     <div class="content-wrapper">
    <div class="row">
       <div class="col-md-7">
-         <div class="card mtop20">
+         <div class="card mt-2">
             <div class="card-body">
                <h4 class="no-margin">
                   <?php echo $title; ?>
                </h4>
                <hr class="hr-panel-heading" />
                <?php if(isset($role)){ ?>
-               <a href="<?php echo admin_url('roles/role'); ?>" class="btn btn-success float-right mbot20 display-block"><?php echo _l('new_role'); ?></a>
+               <a href="<?php echo admin_url('roles/role'); ?>" class="btn btn-success float-right mb-1 display-block"><?php echo _l('new_role'); ?></a>
                <div class="clearfix"></div>
                <?php } ?>
                <?php echo form_open($this->uri->uri_string()); ?>
@@ -43,7 +43,7 @@
       </div>
       <?php if(isset($role_staff)) { ?>
       <div class="col-md-5">
-         <div class="card mtop20">
+         <div class="card mt-2">
             <div class="card-body">
                <h4 class="no-margin">
                   <?php echo _l('staff_which_are_using_role'); ?>

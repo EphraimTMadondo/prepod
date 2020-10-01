@@ -9,7 +9,7 @@
                <a href="<?php echo admin_url('estimates/estimate/'.$estimate['id']); ?>" target="_blank" class="float-right"><small><i class="fa fa-pencil-square-o" aria-hidden="true"></i></small></a>
                <?php } ?>
             </h4>
-            <span class="inline-block full-width mbot10">
+            <span class="inline-block full-width mb-1">
             <a href="<?php echo admin_url('clients/client/'.$estimate['clientid']); ?>" target="_blank">
             <?php echo $estimate['company']; ?>
             </a>

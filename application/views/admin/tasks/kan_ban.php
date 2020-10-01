@@ -33,7 +33,7 @@ foreach ($task_statuses as $status) {
                  <a href="#" class="btn btn-default btn-block<?php if($total_pages <= 1){echo ' disabled';} ?>" data-page="1" onclick="kanban_load_more(<?php echo $status['id']; ?>,this,'tasks/tasks_kanban_load_more',265,360); return false;";><?php echo _l('load_more'); ?></a>
                </li>
                <?php } ?>
-               <li class="text-center not-sortable mtop30 kanban-empty<?php if($total_tasks > 0){echo ' hide';} ?>">
+               <li class="text-center not-sortable mt-2 kanban-empty<?php if($total_tasks > 0){echo ' hide';} ?>">
                 <h4>
                   <i class="fa fa-circle-o-notch" aria-hidden="true"></i><br /><br />
                   <?php echo _l('no_tasks_found'); ?></h4>

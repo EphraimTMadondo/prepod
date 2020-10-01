@@ -4,7 +4,7 @@
       <div class="col-md-12">
          <div class="row">
             <div class="col-md-9">
-               <h3 class="no-mbot bold pull-left">
+               <h3 class="mb-0 bold pull-left">
                   <?php if($project->settings->edit_tasks == 1 && $view_task->is_added_from_contact == 1 && $view_task->addedfrom == get_contact_user_id()){ ?>
                   <a href="<?php echo site_url('clients/project/'.$project->id.'?group=edit_task&taskid='.$view_task->id); ?>">
                   <i class="fa fa-pencil-square-o"></i>
@@ -43,17 +43,17 @@
                <?php } ?>
                <?php if($view_task->billed == 1){ ?>
                <div class="clearfix"></div>
-               <p class="no-mbot mtop15"><?php echo _l('task_is_billed',format_invoice_number($view_task->invoice_id)); ?></p>
+               <p class="mb-0 mt-1"><?php echo _l('task_is_billed',format_invoice_number($view_task->invoice_id)); ?></p>
                <?php } ?>
             </div>
             <div class="col-md-3">
-               <span class="task-single-status float-right mr-1 mtop15"><?php echo format_task_status($view_task->status); ?></span>
+               <span class="task-single-status float-right mr-1 mt-1"><?php echo format_task_status($view_task->status); ?></span>
             </div>
          </div>
          <?php if($project->settings->view_team_members == 1){ ?>
          <div class="clearfix"></div>
          <hr />
-         <div class="row mbot20">
+         <div class="row mb-1">
             <div class="col-md-3">
                <i class="fa fa-user-o"></i> <span class="bold"><?php echo _l('task_single_assignees'); ?></span>
             </div>
@@ -128,8 +128,8 @@
                      data-num="<?php echo $i; ?>"
                      <?php if($i > $show_more_link_task_attachments){echo 'style="display:none;"';} ?>>
                      <ul class="list-unstyled">
-                        <li class="mbot10 task-attachment">
-                           <div class="mbot10 float-right task-attachment-user">
+                        <li class="mb-1 task-attachment">
+                           <div class="mb-1 float-right task-attachment-user">
                               <?php
                                  echo _l('project_file_uploaded_by') . ' ' . (
                                     $attachment['staffid'] != 0
@@ -216,11 +216,11 @@
          <?php } ?>
          <?php if($project->settings->upload_files == 1){ ?>
          <hr />
-         <?php echo form_open_multipart(site_url('clients/project/'.$project->id),array('class'=>'dropzone mtop15','id'=>'task-file-upload')); ?>
+         <?php echo form_open_multipart(site_url('clients/project/'.$project->id),array('class'=>'dropzone mt-1','id'=>'task-file-upload')); ?>
          <input type="file" name="file" multiple class="hide"/>
          <input type="hidden" name="task_id" value="<?php echo $view_task->id; ?>" class="hide"/>
          <?php echo form_close(); ?>
-         <div class="text-right mtop15">
+         <div class="text-right mt-1">
             <button class="gpicker" data-on-pick="taskFileGoogleDriveSave">
             <i class="fa fa-google" aria-hidden="true"></i>
             <?php echo _l('choose_from_google_drive'); ?>
@@ -237,7 +237,7 @@
             echo form_hidden('action','new_task_comment');
             echo form_hidden('taskid',$view_task->id);
             ?>
-         <textarea name="content" rows="5" class="form-control mtop15"></textarea>
+         <textarea name="content" rows="5" class="form-control mt-1"></textarea>
          <button type="submit" class="btn btn-info mtop10 float-right" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off"><?php echo _l('task_single_add_new_comment'); ?></button>
          <div class="clearfix"></div>
          <?php echo form_close(); } ?>
@@ -245,7 +245,7 @@
             if(count($view_task->comments) > 0){
               echo '<div id="task-comments">';
               foreach($view_task->comments as $comment){ ?>
-         <div class="mbot10 mtop10 task-comment" data-commentid="<?php echo $comment['id']; ?>" id="comment_<?php echo $comment['id']; ?>">
+         <div class="mb-1 mtop10 task-comment" data-commentid="<?php echo $comment['id']; ?>" id="comment_<?php echo $comment['id']; ?>">
             <?php if($comment['staffid'] != 0){ ?>
             <?php echo staff_profile_image($comment['staffid'], array(
                'staff-profile-image-small',
@@ -275,7 +275,7 @@
                <i class="fa fa-pencil-square-o"></i>
                </a>
                <div data-edit-comment="<?php echo $comment['id']; ?>" class="hide">
-                  <textarea rows="5" class="form-control mtop10 mbot10"><?php echo clear_textarea_breaks($comment['content']); ?></textarea>
+                  <textarea rows="5" class="form-control mtop10 mb-1"><?php echo clear_textarea_breaks($comment['content']); ?></textarea>
                   <button type="button" class="btn btn-info float-right" onclick="save_edited_comment(<?php echo $comment['id']; ?>)">
                   <?php echo _l('submit'); ?>
                   </button>

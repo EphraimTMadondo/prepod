@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                         <div class="float-right">
                             <a href="<?php echo admin_url('reports/expenses/detailed_report'); ?>" class="btn btn-success"><?php echo _l('expenses_detailed_report'); ?></a>
@@ -209,10 +209,10 @@
                                     <hr />
                                     <div class="row">
                                       <div class="col-md-6">
-                                          <p class="text-muted mbot20"><?php echo _l('not_billable_expenses_by_categories'); ?></p>
+                                          <p class="text-muted mb-1"><?php echo _l('not_billable_expenses_by_categories'); ?></p>
                                       </div>
                                       <div class="col-md-6">
-                                          <p class="text-muted mbot20"><?php echo _l('billable_expenses_by_categories'); ?></p>
+                                          <p class="text-muted mb-1"><?php echo _l('billable_expenses_by_categories'); ?></p>
                                       </div>
                                       <div class="col-md-6">
                                         <canvas id="expenses_chart_not_billable" height="390"></canvas>

@@ -23,7 +23,7 @@
          <div class="alert alert-warning">
             Before performing an update, it is <b>strongly recommended to create a full backup</b> of your current installation <b>(files and database)</b> and review the changelog.
          </div>
-         <h3 class="bold text-center mbot20"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php echo _l('update_available'); ?></h3>
+         <h3 class="bold text-center mb-1"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php echo _l('update_available'); ?></h3>
          <div class="update_app_wrapper" data-wait-text="<?php echo _l('wait_text'); ?>" data-original-text="<?php echo _l('update_now'); ?>">
           <?php if(count($update_errors) == 0){ ?>
             <p class="bold mbot5">Upgrade Function</p>
@@ -40,9 +40,9 @@
           <a href="#" id="update_app" class="btn btn-success">Download files</a>
        <?php } ?>
     </div>
-    <div id="update_messages" class="mtop25 text-left"></div>
+    <div id="update_messages" class="mt-2 text-left"></div>
  <?php } else { ?>
-   <h3 class="bold mbot20 text-success"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php echo _l('using_latest_version'); ?></h3>
+   <h3 class="bold mb-1 text-success"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> <?php echo _l('using_latest_version'); ?></h3>
 <?php } ?>
 <?php if(count($update_errors) > 0){ ?>
    <p class="text-danger">Please fix the errors listed below.</p>

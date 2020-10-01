@@ -7,7 +7,7 @@
       <?php echo form_open($this->uri->uri_string(),array('id'=>'article-form')); ?>
       <div class="row">
          <div class="col-md-8 col-md-offset-2">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <h4 class="no-margin">
                      <?php echo $title; ?>

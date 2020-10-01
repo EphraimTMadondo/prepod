@@ -155,7 +155,7 @@ body{
             <!--<div class = "form-items" style = "padding: 10px 30px 10px 30px; margin-bottom: 0px;">-->
             <div class = "" style = "">
                 <h1 class = "heading login-title">Try Worksuite for 14 days</h1>
-                <div class="form-group mtop15 register-firstname-group" style = "margin-bottom: 50px;" >
+                <div class="form-group mt-1 register-firstname-group" style = "margin-bottom: 50px;" >
                     <p style = "text-align: center; margin-bottom: 65px;font-size:15px;">Immediate access. No credit card required. </p>
                     <div style= "display: flex; position: relative; border-bottom: 2px solid; justify-content: space-between;flex: 1; color: #b9babb;">  
                         <img src = "<?php echo base_url();?>uploads/company/profile.png" style = "height: 20px; margin: 17px 0px; "</img>
@@ -181,7 +181,7 @@ body{
                     <label class="control-label" for="title"><?php echo _l('contact_position'); ?></label>
                     <input type="text" class="form-control" name="title" id="title" value="<?php echo set_value('title'); ?>">
                 </div>
-                <div class="form-group mtop15 register-company-group">
+                <div class="form-group mt-1 register-company-group">
                     <label class="control-label" for="company"><?php echo _l('clients_company'); ?></label>
                     <input type="text" class="form-control" name="company" id="company" value="<?php echo set_value('company'); ?>">
                     <?php echo form_error('company'); ?>

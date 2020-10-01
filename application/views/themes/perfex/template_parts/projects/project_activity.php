@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="mtop15"></div>
+<div class="mt-1"></div>
 <div class="activity-feed">
     <?php if($project->settings->view_activity_log == 1){ ?>
     <?php foreach($activity as $activity){
@@ -15,7 +15,7 @@
             <?php } ?>
             <div class="media-body">
                 <div class="display-block">
-                    <p class="mtop5 no-mbot">
+                    <p class="mtop5 mb-0">
                         <?php echo $fullname . ' - <b>'.$activity['description'].'</b>'; ?>
                     </p>
                     <p class="text-muted mtop5"><?php echo $activity['additional_data']; ?></p>

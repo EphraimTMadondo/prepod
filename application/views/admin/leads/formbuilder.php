@@ -9,7 +9,7 @@
    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                <?php if (isset($form)) { ?>
                   <ul class="nav nav-tabs" role="tablist">
@@ -201,7 +201,7 @@
                                  } ?>>
                                  <label for="assigned"><?php echo _l('notify_assigned_user'); ?></label>
                               </div>
-                              <div class="clearfix mtop15"></div>
+                              <div class="clearfix mt-1"></div>
                               <div id="specific_staff_notify" class="<?php if (isset($form) && $form->notify_type != 'specific_staff') {
                                      echo 'hide';
                                  } ?>">

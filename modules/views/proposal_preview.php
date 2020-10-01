@@ -160,7 +160,7 @@
 		                                }
 		               $file_html .= '<div class="mbot15 row inline-block full-width" data-attachment-id="'. $f['id'].'">
 		              <div class="col-md-8">
-		                 <a name="preview-ase-btn" onclick="preview_proposal_btn(this); return false;" rel_id = "'. $f['rel_id']. '" id = "'.$f['id'].'" href="Javascript:void(0);" class="mbot10 btn btn-success pull-left margin-right-5" data-toggle="tooltip" title data-original-title="'. _l('preview_file').'"><i class="fa fa-eye"></i></a>
+		                 <a name="preview-ase-btn" onclick="preview_proposal_btn(this); return false;" rel_id = "'. $f['rel_id']. '" id = "'.$f['id'].'" href="Javascript:void(0);" class="mb-1 btn btn-success pull-left margin-right-5" data-toggle="tooltip" title data-original-title="'. _l('preview_file').'"><i class="fa fa-eye"></i></a>
 		                 <div class="pull-left"><i class="'. get_mime_class($f['filetype']).'"></i></div>
 		                 <a href=" '. $href_url.'" target="_blank" download>'.$f['file_name'].'</a>
 		                 <br />

@@ -7,7 +7,7 @@
         <div class="row">
             <?php echo form_open($this->uri->uri_string(),array('id'=>'project_form')); ?>
             <div class="col-md-7">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                         <h4 class="no-margin">
                             <?php echo $title; ?>
@@ -203,7 +203,7 @@
      </div>
  </div>
  <div class="col-md-5">
-    <div class="card mtop20">
+    <div class="card mt-2">
         <div class="card-body" id="project-settings-area">
            <h4 class="no-margin">
                <?php echo _l('project_settings'); ?>
@@ -241,7 +241,7 @@
                     </label>
                 </div>
             <?php } else { ?>
-                <div class="form-group mtop15 select-placeholder project-available-features">
+                <div class="form-group mt-1 select-placeholder project-available-features">
                     <label for="available_features"><?php echo _l('visible_tabs'); ?></label>
                     <select name="settings[<?php echo $setting; ?>][]" id="<?php echo $setting; ?>" multiple="true" class="selectpicker" data-style="btn-outline-light" id="available_features" data-width="100%" data-actions-box="true" data-hide-disabled="true">
                         <?php foreach(get_project_tabs_admin() as $tab) {

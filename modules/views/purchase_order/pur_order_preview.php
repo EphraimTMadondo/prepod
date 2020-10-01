@@ -225,7 +225,7 @@
                         </table>
                      </div>                                          
                      <?php if($estimate->terms != ''){ ?>
-                     <div class="col-md-12 mtop15">
+                     <div class="col-md-12 mt-1">
                         <p class="bold text-muted"><?php echo _l('terms_and_conditions'); ?></p>
                         <p><?php echo html_entity_decode($estimate->terms); ?></p>
                      </div>
@@ -243,11 +243,11 @@
                <?php echo form_open(admin_url('purchase/add_note/'.$estimate->id),array('id'=>'sales-notes','class'=>'estimate-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
-                  <button type="submit" class="btn btn-info mtop15 mbot15"><?php echo _l('estimate_add_note'); ?></button>
+                  <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
                </div>
                <?php echo form_close(); ?>
                <hr />
-               <div class="card mtop20 no-shadow" id="sales_notes_area">
+               <div class="card mt-2 no-shadow" id="sales_notes_area">
                </div>
             </div>
 
@@ -276,7 +276,7 @@
                                                                 }
                                                $file_html .= '<div class="mbot15 row inline-block full-width" data-attachment-id="'. $f['id'].'">
                                               <div class="col-md-8">
-                                                 <a name="preview-purorder-btn" onclick="preview_purorder_btn(this); return false;" rel_id = "'. $f['rel_id']. '" id = "'.$f['id'].'" href="Javascript:void(0);" class="mbot10 mr-1 btn btn-success pull-left" data-toggle="tooltip" title data-original-title="'. _l('preview_file').'"><i class="fa fa-eye"></i></a>
+                                                 <a name="preview-purorder-btn" onclick="preview_purorder_btn(this); return false;" rel_id = "'. $f['rel_id']. '" id = "'.$f['id'].'" href="Javascript:void(0);" class="mb-1 mr-1 btn btn-success pull-left" data-toggle="tooltip" title data-original-title="'. _l('preview_file').'"><i class="fa fa-eye"></i></a>
                                                  <div class="pull-left"><i class="'. get_mime_class($f['filetype']).'"></i></div>
                                                  <a href=" '. $href_url.'" target="_blank" download>'.$f['file_name'].'</a>
                                                  <br />

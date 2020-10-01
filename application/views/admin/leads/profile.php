@@ -98,7 +98,7 @@
       <hr class="no-margin" />
    </div>
 
-   <div class="alert alert-warning hide mtop20" role="alert" id="lead_proposal_warning">
+   <div class="alert alert-warning hide mt-2" role="alert" id="lead_proposal_warning">
       <?php echo _l('proposal_warning_email_change',array(_l('lead_lowercase'),_l('lead_lowercase'),_l('lead_lowercase'))); ?>
       <hr />
       <a href="#" onclick="update_all_proposal_emails_linked_to_lead(<?php echo $lead->id; ?>); return false;">
@@ -159,7 +159,7 @@
             <p class="text-muted lead-field-heading"><?php echo _l('lead_add_edit_assigned'); ?></p>
             <p class="bold font-medium-xs mbot15"><?php echo (isset($lead) && $lead->assigned != 0 ? get_staff_full_name($lead->assigned) : '-') ?></p>
             <p class="text-muted lead-field-heading"><?php echo _l('tags'); ?></p>
-            <p class="bold font-medium-xs mbot10">
+            <p class="bold font-medium-xs mb-1">
                <?php
                   if(isset($lead)){
                     $tags = get_tags_in($lead->id,'lead');
@@ -250,9 +250,9 @@
                echo render_select('assigned',$members,array('staffid',array('firstname','lastname')),'lead_add_edit_assigned',$selected,$assigned_attrs); ?>
          </div>
          <div class="clearfix"></div>
-            <hr class="mtop5 mbot10" />
+            <hr class="mtop5 mb-1" />
              <div class="col-md-12">
-                  <div class="form-group no-mbot" id="inputTagsWrapper">
+                  <div class="form-group mb-0" id="inputTagsWrapper">
                      <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
                      <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo (isset($lead) ? prep_tags_input(get_tags_in($lead->id,'lead')) : ''); ?>" data-role="tagsinput">
                   </div>
@@ -349,7 +349,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-12 mtop15">
+         <div class="col-md-12 mt-1">
             <?php $rel_id = (isset($lead) ? $lead->id : false); ?>
             <?php echo render_custom_fields('leads',$rel_id); ?>
          </div>

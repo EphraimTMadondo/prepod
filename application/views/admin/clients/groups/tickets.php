@@ -24,7 +24,7 @@ if(isset($client)){
         echo '</div>';
     }
 
-    echo '<div class="row mtop20">';
+    echo '<div class="row mt-2">';
      echo '<div class="col-md-12">';
          echo AdminTicketsTableStructure('table-tickets-single');
      echo '</div>';

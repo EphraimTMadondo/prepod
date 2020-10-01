@@ -201,7 +201,7 @@ function render_custom_fields($belongs_to, $rel_id = false, $where = [], $items_
             } elseif ($field['type'] == 'checkbox') {
                 $fields_html .= '<div class="form-group chk">';
 
-                $fields_html .= '<br /><label class="control-label' . ($field['display_inline'] == 0 ? ' no-mbot': '') . '" for="' . $cf_name . '[]">' . $field_name . '</label>' . ($field['display_inline'] == 1 ? ' <br />': '');
+                $fields_html .= '<br /><label class="control-label' . ($field['display_inline'] == 0 ? ' mb-0': '') . '" for="' . $cf_name . '[]">' . $field_name . '</label>' . ($field['display_inline'] == 1 ? ' <br />': '');
 
                 $options = explode(',', $field['options']);
 

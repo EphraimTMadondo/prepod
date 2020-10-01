@@ -72,7 +72,7 @@
 </li>
 <?php } ?>
 <?php if(count($_notifications) != 0){ ?>
-  <li class="divider no-mbot"></li>
+  <li class="divider mb-0"></li>
 <?php } ?>
 <li class="text-center">
   <?php if(count($_notifications) > 0){ ?>

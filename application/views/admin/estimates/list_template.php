@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12">
-  <div class="card mbot10 mtop20">
+  <div class="card mb-1 mt-2">
    <div class="card-body _buttons">
     <?php $this->load->view('admin/estimates/estimates_top_stats');
     ?>

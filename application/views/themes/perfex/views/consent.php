@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="card mtop25">
+<div class="card mt-2">
     <div class="card-body">
         <div class="col-md-12">
             <?php if(is_client_logged_in()){ ?>
@@ -7,8 +7,8 @@
                     <?php echo _l('client_go_to_dashboard'); ?>
                 </a>
             <?php } ?>
-            <h1 class="mbot20"><?php echo hooks()->apply_filters('consent_public_page_heading', get_option('companyname')); ?></h1>
-            <div class="tc-content mbot20">
+            <h1 class="mb-1"><?php echo hooks()->apply_filters('consent_public_page_heading', get_option('companyname')); ?></h1>
+            <div class="tc-content mb-1">
                 <?php echo get_option('gdpr_consent_public_page_top_block'); ?>
             </div>
         </div>
@@ -36,16 +36,16 @@
                     <div class="col-md-12">
                      <?php
                      if(!empty($purpose['opt_in_purpose_description']) && !empty($purpose['consent_given'])) { ?>
-                     <p class="no-mbot mtop10">
+                     <p class="mb-0 mtop10">
                         <?php echo $purpose['opt_in_purpose_description']; ?>
                     </p>
                     <?php } else if(!empty($purpose['description']) && empty($purpose['consent_given'])) { ?>
-                    <p class="no-mbot mtop10">
+                    <p class="mb-0 mtop10">
                         <?php echo $purpose['description']; ?>
                     </p>
                     <?php } ?>
                     <hr />
-                    <div class="mtop15">
+                    <div class="mt-1">
                         <?php
                         if(empty($purpose['consent_given'])) { ?>
                         <div class="radio radio-inline">

@@ -6,7 +6,7 @@
    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <?php hooks()->do_action('before_leads_email_integration_form'); ?>
                   <h4 class="pull-left"><?php echo $title; ?></h4>
@@ -14,15 +14,15 @@
                   <?php echo _l('spam_filters'); ?>
                   </a>
                   <div class="clearfix"></div>
-                  <hr class="hr-panel-heading no-mbot" />
+                  <hr class="hr-panel-heading mb-0" />
                   <?php echo form_open($this->uri->uri_string(),array('id'=>'leads-email-integration')); ?>
                   <?php if(!function_exists('iconv')){ ?>
-                  <div class="alert alert-danger mtop15 no-mbot">
+                  <div class="alert alert-danger mt-1 mb-0">
                      You need to enable <b>iconv</b> php extension in order to use this feature. You can enable it via php.ini or contact your hosting provider to enable this extension.
                   </div>
                   <?php } ?>
                   <?php if($mail->email != "" && total_rows(db_prefix().'departments',array('email'=>$mail->email)) > 0){ ?>
-                  <div class="alert alert-danger mtop15 no-mbot">
+                  <div class="alert alert-danger mt-1 mb-0">
                      The email address <b><?php echo $mail->email; ?></b> is used <b>also</b> as a <b>support department</b> email. For leads email integration you must configure unique email if you want everything to work properly.
                   </div>
                   <?php } ?>
@@ -136,7 +136,7 @@
                               <input type="radio" class="ays-ignore" name="notify_type" id="assigned" value="assigned" <?php if($mail->notify_type == 'assigned'){echo 'checked';} ?>>
                               <label for="assigned"><?php echo _l('notify_assigned_user'); ?></label>
                            </div>
-                           <div class="clearfix mtop15"></div>
+                           <div class="clearfix mt-1"></div>
                            <div id="role_notify" class="<?php if($mail->notify_type != 'roles'){echo 'hide';} ?>">
                               <?php
                                  $selected = array();

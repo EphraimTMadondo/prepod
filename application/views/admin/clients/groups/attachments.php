@@ -26,7 +26,7 @@
     <?php echo form_open_multipart(admin_url('clients/upload_attachment/'.$client->userid),array('class'=>'dropzone','id'=>'client-attachments-upload')); ?>
     <input type="file" name="file" multiple />
     <?php echo form_close(); ?>
-    <div class="text-right mtop15">
+    <div class="text-right mt-1">
         <button class="gpicker" data-on-pick="customerGoogleDriveSave">
             <i class="fa fa-google" aria-hidden="true"></i>
             <?php echo _l('choose_from_google_drive'); ?>
@@ -34,7 +34,7 @@
         <div id="dropbox-chooser"></div>
     </div>
     <div class="attachments">
-        <div class="mtop25">
+        <div class="mt-2">
 
             <table class="table dt-table scroll-responsive" data-order-col="2" data-order-type="desc">
                 <thead>
@@ -100,7 +100,7 @@
                                 <a href="<?php if($is_image){ echo isset($lightBoxUrl) ? $lightBoxUrl : $img_url; } else {echo $attachment_url; } ?>"<?php if($is_image){ ?> data-lightbox="customer-profile" <?php } ?> class="display-block mbot5">
                                     <?php if($is_image){ ?>
                                         <div class="table-image">
-                                            <div class="text-center"><i class="fa fa-spinner fa-spin mtop30"></i></div>
+                                            <div class="text-center"><i class="fa fa-spinner fa-spin mt-2"></i></div>
                                             <img src="#" class="img-table-loading" data-orig="<?php echo $img_url; ?>">
                                         </div>
                                     <?php } else { ?>

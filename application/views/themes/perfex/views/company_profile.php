@@ -97,11 +97,11 @@
         <?php if(get_option('allow_primary_contact_to_view_edit_billing_and_shipping') == 1 && is_primary_contact()){ ?>
             <div class="col-md-12">
                 <h3 class="company-profile-billing-shipping-heading"><?php echo _l('billing_shipping'); ?></h3>
-                <hr class="no-mbot"/>
+                <hr class="mb-0"/>
             </div>
             <div class="col-md-6">
                 <?php $countries= get_all_countries(); ?>
-                <h4 class="mbot15 mtop20 company-profile-billing-address-heading"><?php echo _l('billing_address'); ?></h4>
+                <h4 class="mbot15 mt-2 company-profile-billing-address-heading"><?php echo _l('billing_address'); ?></h4>
                 <div class="form-group company-profile-billing-street-group">
                     <label for="billing_street"><?php echo _l('billing_street'); ?></label>
                     <textarea name="billing_street" id="billing_street" class="form-control" rows="4"><?php echo clear_textarea_breaks($client->billing_street); ?></textarea>
@@ -130,7 +130,7 @@
             </div>
 
             <div class="col-md-6">
-                <h4 class="mbot15 mtop20 company-profile-shipping-address-heading"><?php echo _l('shipping_address'); ?></h4>
+                <h4 class="mbot15 mt-2 company-profile-shipping-address-heading"><?php echo _l('shipping_address'); ?></h4>
                 <div class="form-group company-profile-shipping-street-group">
                     <label for="shipping_street"><?php echo _l('shipping_street'); ?></label>
                     <textarea name="shipping_street" id="shipping_street" class="form-control" rows="4"><?php echo clear_textarea_breaks($client->shipping_street); ?></textarea>
@@ -160,7 +160,7 @@
         <?php } ?>
         <?php if($contact->is_primary == 1){ ?>
             <div class="row p15 company-profile-save-section">
-                <div class="col-md-12 text-right mtop20">
+                <div class="col-md-12 text-right mt-2">
                     <div class="form-group">
                         <button type="submit" class="btn btn-info company-profile-save">
                             <?php echo _l('clients_edit_profile_update_btn'); ?>

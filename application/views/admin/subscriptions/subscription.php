@@ -6,7 +6,7 @@
     <div class="content-wrapper">
   <div class="row">
    <div class="col-md-5">
-    <div class="card mtop20">
+    <div class="card mt-2">
      <div class="card-body accounting-template">
       <?php if(isset($subscription)) {
        if(!empty($subscription->stripe_subscription_id)
@@ -106,7 +106,7 @@
                      <a href="https://stripe.com/docs/billing/lifecycle#incomplete" target="_blank"><i class="fa fa-link"></i></a> <?php echo _l('subscription_is_subscription_is_expired'); ?>
                    </div>
                    <?php } else if(empty($subscription->stripe_subscription_id)) { ?>
-                     <div class="alert alert-info no-mbot">
+                     <div class="alert alert-info mb-0">
                         <?php echo _l('subscription_not_yet_subscribed'); ?>
                      </div>
                    <?php } ?>
@@ -120,7 +120,7 @@
                   </div>
                   <div role="tab-pane" class="tab-pane" id="child_invoices">
                     <?php if(count($child_invoices)){ ?>
-                      <p class="mtop20 bold"><?php echo _l('invoices'); ?></p>
+                      <p class="mt-2 bold"><?php echo _l('invoices'); ?></p>
                       <br />
                       <ul class="list-group">
                        <?php foreach($child_invoices as $invoice){ ?>
@@ -137,7 +137,7 @@
                       <?php } ?>
                     </ul>
                     <?php } else { ?>
-                      <div class="alert alert-info no-mbot">
+                      <div class="alert alert-info mb-0">
                        <?php echo _l('no_child_found',_l('invoices')); ?>
                      </div>
                      <?php } ?>

@@ -53,11 +53,11 @@ if ($noTimersWithoutTask
     && !(get_option('auto_stop_tasks_timers_on_new_timer') == 1
         && total_rows(db_prefix().'taskstimers','staff_id='.get_staff_user_id().' AND end_time IS NULL') > 0)
     ) {
-    echo '<button class="mtop15 text-center btn btn-success started-timers-button top-dropdown-btn" onclick="timer_action(this,0); return false;"><i class="fa fa-clock-o"></i> '._l('task_start_timer').'</button>';
+    echo '<button class="mt-1 text-center btn btn-success started-timers-button top-dropdown-btn" onclick="timer_action(this,0); return false;"><i class="fa fa-clock-o"></i> '._l('task_start_timer').'</button>';
 }
 
 if (is_admin()) {
-    echo '<div class="text-center mtop15 view-all-timesheets">';
+    echo '<div class="text-center mt-1 view-all-timesheets">';
     echo '<a href="'.admin_url('staff/timesheets?view=all').'">'._l('view_members_timesheets').'</a>';
     echo '</div>';
 }

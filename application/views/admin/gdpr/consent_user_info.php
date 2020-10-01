@@ -26,11 +26,11 @@ foreach($purposes as $purpose) { ?>
         <div class="col-md-12">
             <?php
             if(!empty($purpose['opt_in_purpose_description']) && !empty($purpose['consent_given'])) { ?>
-                <p class="no-mbot mtop10">
+                <p class="mb-0 mtop10">
                     <?php echo $purpose['opt_in_purpose_description']; ?>
                 </p>
             <?php } else if(!empty($purpose['description']) && empty($purpose['consent_given'])) { ?>
-                <p class="no-mbot mtop10">
+                <p class="mb-0 mtop10">
                     <?php echo $purpose['description']; ?>
                 </p>
             <?php } ?>

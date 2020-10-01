@@ -18,7 +18,7 @@ class PhpVersionNotice extends AbstractMessage
     public function getMessage()
     {
         ?>
-        <div class="mtop15"></div>
+        <div class="mt-1"></div>
         <h4><strong>Outdated PHP Version Detected!</strong></h4><hr />
         <p>
             The system detected that the version of <b>PHP (<?php echo PHP_VERSION; ?>)</b> your server is using is outdated and no longer supported.

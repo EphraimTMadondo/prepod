@@ -63,7 +63,7 @@ $validationFields = hooks()->apply_filters('lead_available_dupicate_validation_f
     </select>
   </div>
   <div class="col-md-5">
-   <div class="mtop30 text-right">
+   <div class="mt-2 text-right">
     <div class="radio radio-inline radio-primary">
       <input type="radio" id="k_desc" name="settings[default_leads_kanban_sort_type]" value="asc" <?php if(get_option('default_leads_kanban_sort_type') == 'asc'){echo 'checked';} ?>>
       <label for="k_desc"><?php echo _l('order_ascending'); ?></label>

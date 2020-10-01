@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="card mtop25">
+<div class="card mt-2">
  <div class="card-body">
   <h4 class="pull-left"><?php echo $lead->name; ?><br /><small><?php echo get_option('companyname'); ?></small></h4>
   <?php if(get_option('gdpr_data_portability_leads') == '1'){ ?>
@@ -64,7 +64,7 @@
 <?php } ?>
 <?php if(get_option('gdpr_lead_attachments_on_public_form') == '1') {
   if(count($lead->attachments) > 0 ){
-   echo '<div class="col-md-12 mtop20 mbot15"><h4>' . _l('lead_attachments') . '</h4></div>';
+   echo '<div class="col-md-12 mt-2 mbot15"><h4>' . _l('lead_attachments') . '</h4></div>';
    $data = '';
    foreach($lead->attachments as $key => $attachment) {
     $attachment_url = site_url('download/file/l_attachment_key/'.$attachment['attachment_key']);

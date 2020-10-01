@@ -29,7 +29,7 @@
                      } ?>
                   <?php if (!empty($file->external) && $file->external == 'dropbox') {
                          ?>
-                     <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mbot20">
+                     <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mb-1">
                         <i class="fa fa-dropbox" aria-hidden="true"></i>
                         <?php echo _l('open_in_dropbox'); ?>
                      </a>
@@ -37,7 +37,7 @@
                   <?php
                      } elseif (!empty($file->external) && $file->external == 'gdrive') {
                          ?>
-                     <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mbot20">
+                     <a href="<?php echo $file->external_link; ?>" target="_blank" class="btn btn-info mb-1">
                            <i class="fa fa-google" aria-hidden="true"></i>
                            <?php echo _l('open_in_google'); ?>
                      </a>

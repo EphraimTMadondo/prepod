@@ -12,7 +12,7 @@
                         <div class="col-md-4">
                             <?php echo render_date_input('activity_log_date','utility_activity_log_filter_by_date','',array(),array(),'','activity-log-date'); ?>
                         </div>
-                        <div class="col-md-8 text-right mtop20">
+                        <div class="col-md-8 text-right mt-2">
                             <a class="btn btn-danger _delete" href="<?php echo admin_url('utilities/clear_pipe_log'); ?>"><?php echo _l('clear_activity_log'); ?></a>
                         </div>
                     </div>

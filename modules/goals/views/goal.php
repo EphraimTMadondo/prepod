@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-<?php if(!isset($goal)){echo '8 col-md-offset-2';} else {echo '6';} ?>">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                         <h4 class="no-margin"><?php echo $title; ?></h4>
                         <hr class="hr-panel-heading" />
@@ -52,7 +52,7 @@
             </div>
             <?php if(isset($goal)){ ?>
             <div class="col-md-6">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                     <h4 class="no-margin"><?php echo _l('goal_achievement'); ?></h4>
                       <hr class="hr-panel-heading" />
@@ -96,7 +96,7 @@
                   <small><?php echo _l('goal_total',$achievement['total']); ?></small>
               </h3>
               <?php if($goal->goal_type == 1){
-                echo '<p class="text-muted text-center no-mbot">' . _l('goal_income_shown_in_base_currency') . '</p>';
+                echo '<p class="text-muted text-center mb-0">' . _l('goal_income_shown_in_base_currency') . '</p>';
             }
             if((isset($finished) && $goal->notified == 0) && ($goal->notify_when_achieve == 1 || $goal->notify_when_fail == 1)){
                 echo '<p class="text-center text-info">'._l('goal_notify_when_end_date_arrives').'</p>';
@@ -105,7 +105,7 @@
             }
             echo $help_text;
             ?>
-            <div class="achievement mtop30" data-toggle="tooltip" title="<?php echo _l('goal_total',$achievement['total']); ?>">
+            <div class="achievement mt-2" data-toggle="tooltip" title="<?php echo _l('goal_total',$achievement['total']); ?>">
                 <div class="goal-progress" data-thickness="40" data-reverse="true">
                     <strong class="goal-percent"></strong>
                 </div>

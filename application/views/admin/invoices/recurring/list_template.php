@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12">
-   <div class="card mtop20 mbot10">
+   <div class="card mt-2 mb-1">
       <div class="card-body _buttons">
          <?php if (has_permission('invoices', '', 'create')) { ?>
          <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-info pull-left new new-invoice-list">

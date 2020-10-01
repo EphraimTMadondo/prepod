@@ -36,7 +36,7 @@
 
             $usersWorking = rtrim($usersWorking, ', ');
             ?>
-         <p class="mbot20 info-block">
+         <p class="mb-1 info-block">
             <?php echo _l((count($startedTimers) == 1
                ? 'task_users_working_on_tasks_single'
                : 'task_users_working_on_tasks_multiple'),$usersWorking);
@@ -49,7 +49,7 @@
             $task_rel_value = get_relation_values($task_rel_data,$task->rel_type);
             echo '<h4 class="bold font-medium mbot15">'._l('task_single_related').': <a href="'.$task_rel_value['link'].'" target="_blank">'.$task_rel_value['name'].'</a>';
             if($task->rel_type == 'project' && $task->milestone != 0){
-             echo '<div class="mtop5 mbot20 font-normal">' . _l('task_milestone') . ': ';
+             echo '<div class="mtop5 mb-1 font-normal">' . _l('task_milestone') . ': ';
              $milestones = get_project_milestones($task->rel_id);
              if(has_permission('tasks','','edit') && count($milestones) > 1){ ?>
          <span class="task-single-menu task-menu-milestones">
@@ -109,13 +109,13 @@
             $is_assigned = $task->current_user_is_assigned;
             if(!$this->tasks_model->is_timer_started($task->id)) { ?>
             <p class="no-margin pull-left"<?php if(!$is_assigned){ ?> data-toggle="tooltip" data-title="<?php echo _l('task_start_timer_only_assignee'); ?>"<?php } ?>>
-               <a href="#" class="mbot10 btn<?php if(!$is_assigned || $task->status == Tasks_model::STATUS_COMPLETE){echo ' disabled btn-default';}else {echo ' btn-success';} ?>" onclick="timer_action(this, <?php echo $task->id; ?>); return false;">
+               <a href="#" class="mb-1 btn<?php if(!$is_assigned || $task->status == Tasks_model::STATUS_COMPLETE){echo ' disabled btn-default';}else {echo ' btn-success';} ?>" onclick="timer_action(this, <?php echo $task->id; ?>); return false;">
                <i class="fa fa-clock-o"></i> <?php echo _l('task_start_timer'); ?>
                </a>
             </p>
          <?php } else { ?>
          <p class="no-margin pull-left">
-            <a href="#" data-toggle="popover" data-placement="<?php echo is_mobile() ? 'bottom' : 'right'; ?>" data-html="true" data-trigger="manual" data-title="<?php echo _l('note'); ?>" data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button" onclick="timer_action(this, <?php echo $task->id; ?>, <?php echo $this->tasks_model->get_last_timer($task->id)->id; ?>);" class="btn btn-info btn-xs"><?php echo _l('save'); ?></button>' class="btn mbot10 btn-danger<?php if(!$is_assigned){echo ' disabled';} ?>" onclick="return false;">
+            <a href="#" data-toggle="popover" data-placement="<?php echo is_mobile() ? 'bottom' : 'right'; ?>" data-html="true" data-trigger="manual" data-title="<?php echo _l('note'); ?>" data-content='<?php echo render_textarea('timesheet_note'); ?><button type="button" onclick="timer_action(this, <?php echo $task->id; ?>, <?php echo $this->tasks_model->get_last_timer($task->id)->id; ?>);" class="btn btn-info btn-xs"><?php echo _l('save'); ?></button>' class="btn mb-1 btn-danger<?php if(!$is_assigned){echo ' disabled';} ?>" onclick="return false;">
             <i class="fa fa-clock-o"></i> <?php echo _l('task_stop_timer'); ?>
             </a>
          </p>
@@ -284,12 +284,12 @@
             } ?>
          <div class="clearfix"></div>
          <hr />
-         <a href="#" onclick="add_task_checklist_item('<?php echo $task->id; ?>', undefined, this); return false" class="mbot10 inline-block">
+         <a href="#" onclick="add_task_checklist_item('<?php echo $task->id; ?>', undefined, this); return false" class="mb-1 inline-block">
          <span class="new-checklist-item"><i class="fa fa-plus-circle"></i>
          <?php echo _l('add_checklist_item'); ?>
          </span>
          </a>
-         <div class="form-group no-mbot checklist-templates-wrapper simple-bootstrap-select task-single-checklist-templates<?php if(count($checklistTemplates) == 0){echo ' hide';}  ?>">
+         <div class="form-group mb-0 checklist-templates-wrapper simple-bootstrap-select task-single-checklist-templates<?php if(count($checklistTemplates) == 0){echo ' hide';}  ?>">
             <select id="checklist_items_templates" class="selectpicker checklist-items-template-select" data-none-selected-text="<?php echo _l('insert_checklist_templates') ?>" data-width="100%" data-live-search="true">
                <option value=""></option>
                <?php foreach($checklistTemplates as $chkTemplate){ ?>
@@ -328,8 +328,8 @@
                   <?php ob_start(); ?>
                   <div data-num="<?php echo $i; ?>" data-commentid="<?php echo $attachment['comment_file_id']; ?>" data-comment-attachment="<?php echo $attachment['task_comment_id']; ?>" data-task-attachment-id="<?php echo $attachment['id']; ?>" class="task-attachment-col col-md-6<?php if($i > $show_more_link_task_attachments){echo ' hide task-attachment-col-more';} ?>">
                      <ul class="list-unstyled task-attachment-wrapper" data-placement="right" data-toggle="tooltip" data-title="<?php echo $attachment['file_name']; ?>" >
-                        <li class="mbot10 task-attachment<?php if(strtotime($attachment['dateadded']) >= strtotime('-16 hours')){echo ' highlight-bg'; } ?>">
-                           <div class="mbot10 float-right task-attachment-user">
+                        <li class="mb-1 task-attachment<?php if(strtotime($attachment['dateadded']) >= strtotime('-16 hours')){echo ' highlight-bg'; } ?>">
+                           <div class="mb-1 float-right task-attachment-user">
                               <?php if($attachment['staffid'] == get_staff_user_id() || is_admin()){ ?>
                               <a href="#" class="float-right" onclick="remove_task_attachment(this,<?php echo $attachment['id']; ?>); return false;">
                               <i class="fa fa fa-times"></i>
@@ -420,7 +420,7 @@
          <?php } ?>
          <hr />
          <a href="#" id="taskCommentSlide" onclick="slideToggle('.tasks-comments'); return false;">
-            <h4 class="mbot20 font-medium"><?php echo _l('task_comments'); ?></h4>
+            <h4 class="mb-1 font-medium"><?php echo _l('task_comments'); ?></h4>
          </a>
          <div class="tasks-comments inline-block full-width simple-editor"<?php if(count($task->comments) == 0){echo ' style="display:none"';} ?>>
             <?php echo form_open_multipart(admin_url('tasks/add_task_comment'),array('id'=>'task-comment-form','class'=>'dropzone dropzone-manual','style'=>'min-height:auto;background-color:#fff;')); ?>
@@ -466,7 +466,7 @@
                    $comments .= '<span class="label label-info mtop5 mbot5 inline-block">'._l('is_customer_indicator').'</span><br /><a href="' . admin_url('clients/client/'.get_user_id_by_contact_id($comment['contact_id']) .'?contactid='.$comment['contact_id'] ) . '" class="pull-left" target="_blank">' . get_contact_full_name($comment['contact_id']) . '</a> <br />';
                   }
                   $comments .= '<div data-edit-comment="'.$comment['id'].'" class="hide edit-task-comment"><textarea rows="5" id="task_comment_'.$comment['id'].'" class="ays-ignore form-control">'.str_replace('[task_attachment]', '', $comment['content']).'</textarea>
-                  <div class="clearfix mtop20"></div>
+                  <div class="clearfix mt-2"></div>
                   <button type="button" class="btn btn-info float-right" onclick="save_edited_comment('.$comment['id'].','.$task->id.')">'._l('submit').'</button>
                   <button type="button" class="btn btn-default float-right mr-1" onclick="cancel_edit_comment('.$comment['id'].')">'._l('cancel').'</button>
                   </div>';
@@ -503,7 +503,7 @@
          </div>
       </div>
       <div class="col-md-4 task-single-col-right">
-         <div class="float-right mbot10 task-single-menu task-menu-options">
+         <div class="float-right mb-1 task-single-menu task-menu-options">
             <div class="content-menu hide">
                <ul>
                   <?php if(has_permission('tasks','','edit')) { ?>
@@ -794,7 +794,7 @@
                         if(!empty($reminder['description'])) {
                            echo $reminder['description'];
                         } else {
-                           echo '<p class="text-muted no-mbot">'._l('no_description_provided').'</p>';
+                           echo '<p class="text-muted mb-0">'._l('no_description_provided').'</p>';
                         }
                         ?>
                   </div>
@@ -807,7 +807,7 @@
          </ul>
          <?php } ?>
          <div class="clearfix"></div>
-         <div id="newTaskReminderToggle" class="mtop15" style="display:none;">
+         <div id="newTaskReminderToggle" class="mt-1" style="display:none;">
             <?php echo form_open('', array('id'=>'form-reminder-task')); ?>
             <?php $this->load->view('admin/includes/reminder_fields',['members'=>$staff_reminders, 'id'=>$task->id, 'name'=>'task']); ?>
             <button class="btn btn-info btn-xs float-right" type="submit" id="taskReminderFormSubmit">

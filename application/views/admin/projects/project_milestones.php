@@ -25,11 +25,11 @@
       </div>
    </div>
 <?php } else { ?>
-   <div class="alert alert-info mtop15 no-mbot">
+   <div class="alert alert-info mt-1 mb-0">
       <?php echo _l('no_milestones_found'); ?>
    </div>
 <?php } ?>
-<div id="milestones-table" class="hide mtop25">
+<div id="milestones-table" class="hide mt-2">
    <?php render_datatable(array(
       _l('milestone_name'),
       _l('milestone_due_date'),

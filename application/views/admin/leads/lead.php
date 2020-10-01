@@ -113,7 +113,7 @@
   </div>
    </div>
    <!-- Tab panes -->
-   <div class="tab-content mtop20">
+   <div class="tab-content mt-2">
       <!-- from leads modal -->
       <div role="tab-pane" class="tab-pane active" id="tab_lead_profile">
          <?php $this->load->view('admin/leads/profile'); ?>
@@ -167,7 +167,7 @@
               <hr class="hr-margin-n-15" />
             <?php } ?>
           <?php if(get_option('gdpr_enable_consent_for_leads') == '1') { ?>
-            <h4 class="no-mbot">
+            <h4 class="mb-0">
                 <?php echo _l('gdpr_consent'); ?>
             </h4>
           <?php $this->load->view('admin/gdpr/lead_consent'); ?>
@@ -211,7 +211,7 @@
                <?php } ?>
             </div>
             <div class="col-md-12">
-               <?php echo render_textarea('lead_activity_textarea','','',array('placeholder'=>_l('enter_activity')),array(),'mtop15'); ?>
+               <?php echo render_textarea('lead_activity_textarea','','',array('placeholder'=>_l('enter_activity')),array(),'mt-1'); ?>
                <div class="text-right">
                   <button id="lead_enter_activity" class="btn btn-info"><?php echo _l('submit'); ?></button>
                </div>
@@ -257,7 +257,7 @@
          <?php render_datatable(array( _l( 'reminder_description'), _l( 'reminder_date'), _l( 'reminder_staff'), _l( 'reminder_is_notified')), 'reminders-leads'); ?>
       </div>
       <div role="tab-pane" class="tab-pane" id="attachments">
-         <?php echo form_open('admin/leads/add_lead_attachment',array('class'=>'dropzone mtop15 mbot15','id'=>'lead-attachment-upload')); ?>
+         <?php echo form_open('admin/leads/add_lead_attachment',array('class'=>'dropzone mt-1 mbot15','id'=>'lead-attachment-upload')); ?>
          <?php echo form_close(); ?>
          <?php if(get_option('dropbox_app_key') != ''){ ?>
          <hr />
@@ -270,7 +270,7 @@
         </div>
          <?php } ?>
          <?php if(count($lead->attachments) > 0) { ?>
-         <div class="mtop20" id="lead_attachments">
+         <div class="mt-2" id="lead_attachments">
             <?php $this->load->view('admin/leads/leads_attachments_template', array('attachments'=>$lead->attachments)); ?>
          </div>
          <?php } ?>
@@ -321,7 +321,7 @@
                   <div data-note-description="<?php echo $note['id']; ?>" class="text-muted">
                      <?php echo check_for_links(app_happy_text($note['description'])); ?>
                   </div>
-                  <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide mtop15">
+                  <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide mt-1">
                      <?php echo render_textarea('note','',$note['description']); ?>
                      <div class="text-right">
                         <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>

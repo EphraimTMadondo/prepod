@@ -913,19 +913,19 @@ b {
     margin-top: 10px;
 }
 
-.mtop15 {
+.mt-1 {
     margin-top: 15px;
 }
 
-.mtop20 {
+.mt-2 {
     margin-top: 20px;
 }
 
-.mtop25 {
+.mt-2 {
     margin-top: 25px;
 }
 
-.mtop30 {
+.mt-2 {
     margin-top: 30px;
 }
 
@@ -937,7 +937,7 @@ b {
     margin-bottom: 5px;
 }
 
-.mbot10 {
+.mb-1 {
     margin-bottom: 10px;
 }
 
@@ -945,7 +945,7 @@ b {
     margin-bottom: 15px;
 }
 
-.mbot20 {
+.mb-1 {
     margin-bottom: 20px;
 }
 
@@ -981,7 +981,7 @@ b {
     padding: 30px !important;
 }
 
-.no-mbot {
+.mb-0 {
     margin-bottom: 0px;
 }
 

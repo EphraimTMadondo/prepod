@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="col-md-12 animated fadeIn">
-            <div class="card mtop20">
+            <div class="card mt-2">
                 <div class="card-body">
                     <?php echo form_open($this->uri->uri_string().'?type=staff'); ?>
                     <div class="row">
@@ -31,7 +31,7 @@
                     <?php echo form_close(); ?>
                     <hr />
                     <div class="relative" style="max-height:380px">
-                        <canvas class="leads-staff-report mtop20" height="380" id="leads-staff-report"></canvas>
+                        <canvas class="leads-staff-report mt-2" height="380" id="leads-staff-report"></canvas>
                     </div>
                 </div>
             </div>

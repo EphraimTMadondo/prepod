@@ -8,7 +8,7 @@
       <div class="col-md-5" id="survey-add-edit-wrapper">
          <div class="row">
             <div class="col-md-12">
-               <div class="card mtop20">
+               <div class="card mt-2">
                   <?php echo form_open($this->uri->uri_string(), array('id'=>'survey_form')); ?>
                   <div class="card-body">
                      <h4 class="no-margin">
@@ -71,7 +71,7 @@
          </div>
       </div>
       <div class="col-md-7" id="survey_questions_wrapper">
-         <div class="card mtop20">
+         <div class="card mt-2">
             <div class="card-body">
                <?php if(isset($survey)){ ?>
                <ul class="nav nav-tabs tabs-in-body-no-margin" role="tablist">
@@ -150,7 +150,7 @@
                          </label>';
                          $question_area .= '<input type="text" onblur="update_question(this,\''.$question['boxtype'].'\','.$question['questionid'].');" data-questionid="'.$question['questionid'].'" class="form-control questionid" value="'.$question['question'].'">';
                          if($question['boxtype'] == 'textarea'){
-                          $question_area .= '<textarea class="form-control mtop20" disabled="disabled" rows="6">'._l('survey_question_only_for_preview').'</textarea>';
+                          $question_area .= '<textarea class="form-control mt-2" disabled="disabled" rows="6">'._l('survey_question_only_for_preview').'</textarea>';
                         } else if($question['boxtype'] == 'checkbox' || $question['boxtype'] == 'radio'){
                           $question_area .= '<div class="row">';
                           $x = 0;
@@ -179,7 +179,7 @@
                         // end box row
                         $question_area .= '</div>';
                         } else {
-                        $question_area .= '<input type="text" class="form-control mtop20" disabled="disabled" value="'._l('survey_question_only_for_preview').'">';
+                        $question_area .= '<input type="text" class="form-control mt-2" disabled="disabled" value="'._l('survey_question_only_for_preview').'">';
                         }
                         $question_area .= '</div>';
                         $question_area .= '</li>';

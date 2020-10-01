@@ -144,7 +144,7 @@
 </div>
 <div class="col-md-5 text-center project-percent-col mtop10">
    <p class="bold"><?php echo _l('project_progress_text'); ?></p>
-   <div class="project-progress relative mtop15" data-value="<?php echo $percent_circle; ?>" data-size="150" data-thickness="22" data-reverse="true">
+   <div class="project-progress relative mt-1" data-value="<?php echo $percent_circle; ?>" data-size="150" data-thickness="22" data-reverse="true">
       <strong class="project-percent"></strong>
    </div>
 </div>
@@ -163,7 +163,7 @@
    <hr class="hr-panel-heading project-area-separation" />
    <p class="bold font-size-14 project-info"><?php echo _l('project_description'); ?></p>
    <?php if(empty($project->description)){
-      echo '<p class="text-muted no-mbot mtop15">' . _l('no_description_project') . '</p>';
+      echo '<p class="text-muted mb-0 mt-1">' . _l('no_description_project') . '</p>';
    }
    echo check_for_links($project->description); ?>
 </div>
@@ -180,7 +180,7 @@
    <div class="clearfix"></div>
    <?php
    if(count($members) == 0){
-      echo '<p class="text-muted mtop10 no-mbot">'._l('no_project_members').'</p>';
+      echo '<p class="text-muted mtop10 mb-0">'._l('no_project_members').'</p>';
    }
    foreach($members as $member){ ?>
    <div class="media">

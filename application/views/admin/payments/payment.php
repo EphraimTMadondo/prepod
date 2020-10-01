@@ -93,7 +93,7 @@
 							<div class="col-md-12 text-center">
 								<h3 class="text-uppercase"><?php echo _l('payment_receipt'); ?></h3>
 							</div>
-							<div class="col-md-12 mtop30">
+							<div class="col-md-12 mt-2">
 								<div class="row">
 									<div class="col-md-6">
 										<p><?php echo _l('payment_date'); ?> <span class="float-right bold"><?php echo _d($payment->date); ?></span></p>
@@ -120,7 +120,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-12 mtop30">
+							<div class="col-md-12 mt-2">
 								<h4><?php echo _l('payment_for_string'); ?></h4>
 								<div class="table-responsive">
 									<table class="table table-borderd table-hover">

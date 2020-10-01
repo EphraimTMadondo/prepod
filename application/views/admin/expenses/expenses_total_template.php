@@ -30,7 +30,7 @@
 </div>
 <?php } ?>
 <div class="col-md-5ths col-xs-12 total-column">
-  <div class="card no-mbot">
+  <div class="card mb-0">
     <div class="card-body">
       <h3 class="text-muted _total">
        <?php echo $totals['all']['total']; ?>
@@ -40,7 +40,7 @@
  </div>
 </div>
 <div class="col-md-5ths col-xs-12 total-column">
-  <div class="card no-mbot">
+  <div class="card mb-0">
     <div class="card-body">
       <h3 class="text-muted _total">
        <?php echo $totals['billable']['total']; ?>
@@ -50,7 +50,7 @@
  </div>
 </div>
 <div class="col-md-5ths col-xs-12 total-column">
-  <div class="card no-mbot">
+  <div class="card mb-0">
     <div class="card-body">
       <h3 class="text-muted _total">
        <?php echo $totals['non_billable']['total']; ?>
@@ -60,7 +60,7 @@
  </div>
 </div>
 <div class="col-md-5ths col-xs-12 total-column">
-  <div class="card no-mbot">
+  <div class="card mb-0">
     <div class="card-body">
       <h3 class="text-muted _total">
        <?php echo $totals['unbilled']['total']; ?>
@@ -70,7 +70,7 @@
  </div>
 </div>
 <div class="col-md-5ths col-xs-12 total-column">
-  <div class="card no-mbot">
+  <div class="card mb-0">
     <div class="card-body">
       <h3 class="text-muted _total">
        <?php echo $totals['billed']['total']; ?>

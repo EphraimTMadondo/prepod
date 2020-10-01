@@ -37,7 +37,7 @@
 								</div>
 							<?php } ?>
 							<?php if(is_client_using_multiple_currencies()){ ?>
-								<div id="currency" class="form-group mtop15" data-toggle="tooltip" title="<?php echo _l('clients_home_currency_select_tooltip'); ?>">
+								<div id="currency" class="form-group mt-1" data-toggle="tooltip" title="<?php echo _l('clients_home_currency_select_tooltip'); ?>">
 									<select data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>" class="form-control" name="currency">
 										<?php foreach($currencies as $currency){
 											$selected = '';

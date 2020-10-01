@@ -7,7 +7,7 @@
     <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="card mtop20">
+				<div class="card mt-2">
 					<div class="card-body">
 						<div class="_buttons">
 							<a href="#" onclick="new_priority(); return false;" class="btn btn-primary"><?php echo _l('new_ticket_priority'); ?></a>

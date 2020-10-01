@@ -10,7 +10,7 @@
         <a class="nav-link" href="#formats" aria-controls="invoice" role="tab" data-toggle="tab"><?php echo _l('pdf_formats'); ?></a>
     </li>
 </ul>
-<div class="tab-content mtop30">
+<div class="tab-content mt-2">
     <div role="tab-pane" class="tab-pane active" id="general">
         <?php $fonts = get_pdf_fonts_list(); ?>
         <label class="control-label"><?php echo _l('settings_pdf_font'); ?></label>

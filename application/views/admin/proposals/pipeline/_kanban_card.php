@@ -10,7 +10,7 @@
                <a href="<?php echo admin_url('proposals/proposal/'.$proposal['id']); ?>" target="_blank" class="float-right"><small><i class="fa fa-pencil-square-o" aria-hidden="true"></i></small></a>
                <?php } ?>
             </h4>
-            <span class="mbot10 inline-block full-width">
+            <span class="mb-1 inline-block full-width">
             <?php
                if($proposal['rel_type'] == 'lead'){
                  echo '<a href="'.admin_url('leads/index/'.$proposal['rel_id']).'" onclick="init_lead('.$proposal['rel_id'].'); return false;" data-toggle="tooltip" data-title="'._l('lead').'">' .$proposal['proposal_to'].'</a><br />';

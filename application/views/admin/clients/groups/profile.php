@@ -36,7 +36,7 @@
          <?php hooks()->do_action('after_customer_admins_tab',$client); ?>
          <?php } ?>
       </ul>
-      <div class="tab-content mtop15">
+      <div class="tab-content mt-1">
          <?php hooks()->do_action('after_custom_profile_tab_content',isset($client) ? $client : false); ?>
          <?php if($customer_custom_fields) { ?>
          <div role="tab-pane" class="tab-pane <?php if($this->input->get('tab') == 'custom_fields'){echo ' active';}; ?>" id="custom_fields">
@@ -46,8 +46,8 @@
          <?php } ?>
          <div role="tab-pane" class="tab-pane<?php if(!$this->input->get('tab')){echo ' active';}; ?>" id="contact_info">
             <div class="row">
-               <div class="col-md-12 mtop15 <?php if(isset($client) && (!is_empty_customer_company($client->userid) && total_rows(db_prefix().'contacts',array('userid'=>$client->userid,'is_primary'=>1)) > 0)) { echo ''; } else {echo ' hide';} ?>" id="client-show-primary-contact-wrapper">
-                  <div class="checkbox checkbox-info mbot20 no-mtop">
+               <div class="col-md-12 mt-1 <?php if(isset($client) && (!is_empty_customer_company($client->userid) && total_rows(db_prefix().'contacts',array('userid'=>$client->userid,'is_primary'=>1)) > 0)) { echo ''; } else {echo ' hide';} ?>" id="client-show-primary-contact-wrapper">
+                  <div class="checkbox checkbox-info mb-1 no-mtop">
                      <input type="checkbox" name="show_primary_contact"<?php if(isset($client) && $client->show_primary_contact == 1){echo ' checked';}?> value="1" id="show_primary_contact">
                      <label for="show_primary_contact"><?php echo _l('show_primary_contact',_l('invoices').', '._l('estimates').', '._l('payments').', '._l('credit_notes')); ?></label>
                   </div>

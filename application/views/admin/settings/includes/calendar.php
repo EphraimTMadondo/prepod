@@ -7,7 +7,7 @@
     <a class="nav-link" href="#colors" aria-controls="colors" role="tab" data-toggle="tab"><?php echo _l('settings_calendar_colors_heading'); ?></a>
   </li>
 </ul>
-<div class="tab-content mtop30">
+<div class="tab-content mt-2">
   <div role="tab-pane" class="tab-pane active" id="general">
     <?php echo render_input('settings[calendar_events_limit]','calendar_events_limit',get_option('calendar_events_limit'),'number'); ?>
     <hr />

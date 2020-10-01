@@ -20,7 +20,7 @@ $i = 0;
         <div data-note-description="<?php echo $note['id']; ?>">
            <?php echo check_for_links($note['description']); ?>
         </div>
-        <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide mtop15">
+        <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide mt-1">
             <?php echo render_textarea('note','',$note['description']); ?>
         <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
         <div class="text-right">

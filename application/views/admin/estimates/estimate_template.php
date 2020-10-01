@@ -149,7 +149,7 @@
                <div class="input-group">
                   <span class="input-group-prepend">
                   <?php if(isset($estimate)){ ?>
-                  <a class=" input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $estimate->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mtop15'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                  <a class=" input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $estimate->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                    <?php }
                     echo $prefix;
                   ?>
@@ -274,12 +274,12 @@
    </div>
    <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
    <div class="row">
-      <div class="col-md-12 mtop15">
+      <div class="col-md-12 mt-1">
          <div class="card-body bottom-transaction">
             <?php $value = (isset($estimate) ? $estimate->clientnote : get_option('predefined_clientnote_estimate')); ?>
-            <?php echo render_textarea('clientnote','estimate_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
+            <?php echo render_textarea('clientnote','estimate_add_edit_client_note',$value,array(),array(),'mt-1'); ?>
             <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>
-            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
+            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
             <div class="btn-bottom-toolbar text-right">
               <button type="button" class="btn-tr btn btn-info ml-1 estimate-form-submit save-and-send transaction-submit">
               <?php echo _l('save_and_send'); ?>

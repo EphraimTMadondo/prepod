@@ -32,7 +32,7 @@
                      <option value="period"<?php if($custom_period){echo ' selected';} ?>><?php echo _l('period_datepicker'); ?></option>
                   </select>
                </div>
-               <div class="row mtop15">
+               <div class="row mt-1">
                   <div class="col-md-12 period<?php if(!$custom_period){echo ' hide';} ?>">
                      <?php echo render_date_input('period-from','',($custom_period ? $from : ''),array('onchange'=>'render_customer_statement();')); ?>
                   </div>
@@ -52,7 +52,7 @@
                </div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-md-12 mtop15">
+            <div class="col-md-12 mt-1">
                <div class="card">
                   <div class="card-body">
                      <div class="row">
@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-md-12">
                            <div class="text-center bold">
-                              <p class="mbot20"><?php echo _l('customer_statement_info',array($from,$to)); ?></p>
+                              <p class="mb-1"><?php echo _l('customer_statement_info',array($from,$to)); ?></p>
                            </div>
                            <div class="table-responsive">
                               <table class="table table-bordered table-striped">

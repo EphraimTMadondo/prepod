@@ -47,7 +47,7 @@
                       <br><br>
                     </div>
                     <div class="col-md-1 pad_div_0">
-                      <a href="#" onclick="coppy_pur_estimate(); return false;" class="btn btn-success mtop25" data-toggle="tooltip" title="<?php echo _l('coppy_pur_estimate'); ?>">
+                      <a href="#" onclick="coppy_pur_estimate(); return false;" class="btn btn-success mt-2" data-toggle="tooltip" title="<?php echo _l('coppy_pur_estimate'); ?>">
                       <i class="fa fa-clone"></i>
                       </a>
                     </div>
@@ -189,12 +189,12 @@
         </div>
         </div>
         <div class="row">
-          <div class="col-md-12 mtop15">
+          <div class="col-md-12 mt-1">
              <div class="card-body bottom-transaction">
                 <?php $value = (isset($pur_order) ? $pur_order->vendornote : ''); ?>
-                <?php echo render_textarea('vendornote','estimate_add_edit_vendor_note',$value,array(),array(),'mtop15'); ?>
+                <?php echo render_textarea('vendornote','estimate_add_edit_vendor_note',$value,array(),array(),'mt-1'); ?>
                 <?php $value = (isset($pur_order) ? $pur_order->terms : ''); ?>
-                <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
+                <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
                 <div class="btn-bottom-toolbar text-right">
                   
                   <button type="button" class="btn-tr save_detail btn btn-info ml-1 estimate-form-submit transaction-submit">

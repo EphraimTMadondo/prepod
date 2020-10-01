@@ -105,7 +105,7 @@
          </div>
       </div>
    </div>
-   <div class="col-md-12 text-center mtop20">
+   <div class="col-md-12 text-center mt-2">
       <button type="submit" class="btn btn-info" data-form="#open-new-ticket-form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('submit'); ?></button>
    </div>
 </div>

@@ -11,7 +11,7 @@
 	<?php echo _l('calendar'); ?>
 	<?php if(get_option('google_api_key') != ''){ ?>
 		<small>
-			<a href="<?php echo admin_url('departments'); ?>" class="mbot10 display-block"><?php echo _l('setup_calendar_by_departments'); ?></a>
+			<a href="<?php echo admin_url('departments'); ?>" class="mb-1 display-block"><?php echo _l('setup_calendar_by_departments'); ?></a>
 		</small>
 	<?php } ?>
 </h4>

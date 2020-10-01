@@ -9,7 +9,7 @@
        <?php echo form_open_multipart(site_url('clients/upload_files'),array('class'=>'dropzone','id'=>'files-upload')); ?>
        <input type="file" name="file" multiple class="hide"/>
        <?php echo form_close(); ?>
-       <div class="mtop15 mbot15 text-right">
+       <div class="mt-1 mbot15 text-right">
         <button class="gpicker" data-on-pick="customerFileGoogleDriveSave">
             <i class="fa fa-google" aria-hidden="true"></i>
             <?php echo _l('choose_from_google_drive'); ?>
@@ -24,7 +24,7 @@
             <h4 class="no-margin"><?php echo _l('no_files_found'); ?></h4>
         </div>
     <?php } else { ?>
-        <table class="table dt-table mtop15 table-files" data-order-col="1" data-order-type="desc">
+        <table class="table dt-table mt-1 table-files" data-order-col="1" data-order-type="desc">
            <thead>
             <tr>
                 <th class="th-files-file"><?php echo _l('customer_attachments_file'); ?></th>
@@ -61,7 +61,7 @@
                     class="display-block mbot5">
                     <?php if($is_image){ ?>
                         <div class="table-image">
-                          <div class="text-center"><i class="fa fa-spinner fa-spin mtop30"></i></div>
+                          <div class="text-center"><i class="fa fa-spinner fa-spin mt-2"></i></div>
                           <img src="#" class="img-table-loading" data-orig="<?php echo $img_url; ?>">
                       </div>
                   <?php } else { ?>

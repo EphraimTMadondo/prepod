@@ -10,7 +10,7 @@ if (is_staff_member()) {
    <?php if(is_staff_member()){ ?>
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body p-1">
                   <div class="widget-dragger"></div>
                   <p class="padding-5">

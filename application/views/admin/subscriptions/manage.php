@@ -4,7 +4,7 @@
   <div class="content">
     <div class="row">
      <div class="col-md-12">
-      <div class="card mtop20">
+      <div class="card mt-2">
        <div class="_filters _hidden_inputs">
         <?php
         foreach(get_subscriptions_statuses() as $status) {
@@ -61,7 +61,7 @@
               <?php foreach(subscriptions_summary() as $summary){ ?>
                 <div class="col-md-2 col-xs-6 border-right">
                   <h3 class="bold no-mtop"><?php echo $summary['total']; ?></h3>
-                  <p style="color:<?php echo $summary['color']; ?>" class="no-mbot">
+                  <p style="color:<?php echo $summary['color']; ?>" class="mb-0">
                     <?php echo _l('subscription_'.$summary['id']); ?>
                   </p>
                 </div>

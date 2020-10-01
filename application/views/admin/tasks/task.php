@@ -24,7 +24,7 @@
                    }
                   ?>
                <?php if(isset($task)){ ?>
-               <div class="float-right mbot10 task-single-menu task-menu-options">
+               <div class="float-right mb-1 task-single-menu task-menu-options">
                   <div class="content-menu hide">
                      <ul>
                         <?php if(has_permission('tasks','','create')){ ?>
@@ -297,7 +297,7 @@
                <p class="bold"><?php echo _l('task_add_edit_description'); ?></p>
                <?php
                // onclick and onfocus used for convert ticket to task too
-               echo render_textarea('description','',(isset($task) ? $task->description : ''),array('rows'=>6,'placeholder'=>_l('task_add_description'),'data-task-ae-editor'=>true, !is_mobile() ? 'onclick' : 'onfocus'=>(!isset($task) || isset($task) && $task->description == '' ? 'init_editor(\'.tinymce-task\', {height:200, auto_focus: true});' : '')),array(),'no-mbot','tinymce-task'); ?>
+               echo render_textarea('description','',(isset($task) ? $task->description : ''),array('rows'=>6,'placeholder'=>_l('task_add_description'),'data-task-ae-editor'=>true, !is_mobile() ? 'onclick' : 'onfocus'=>(!isset($task) || isset($task) && $task->description == '' ? 'init_editor(\'.tinymce-task\', {height:200, auto_focus: true});' : '')),array(),'mb-0','tinymce-task'); ?>
             </div>
          </div>
       </div>

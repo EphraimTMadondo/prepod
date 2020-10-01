@@ -71,7 +71,7 @@ $tags = get_styling_areas('tags');
                   <div class="col-md-12">
                      <?php
                      foreach(get_styling_areas('admin') as $area){ ?>
-                        <label class="bold mbot10 inline-block"><?php echo $area['name']; ?></label>
+                        <label class="bold mb-1 inline-block"><?php echo $area['name']; ?></label>
                         <?php render_theme_styling_picker($area['id'],
                            get_custom_style_values('admin',$area['id']),
                            $area['target'],$area['css'],
@@ -86,7 +86,7 @@ $tags = get_styling_areas('tags');
                   <div class="row">
                      <div class="col-md-12">
                         <?php foreach(get_styling_areas('customers') as $area){ ?>
-                           <label class="bold mbot10 inline-block"><?php echo $area['name']; ?></label>
+                           <label class="bold mb-1 inline-block"><?php echo $area['name']; ?></label>
                            <?php render_theme_styling_picker($area['id'],
                               get_custom_style_values('customers',$area['id']),
                               $area['target'],$area['css'],
@@ -101,7 +101,7 @@ $tags = get_styling_areas('tags');
                      <div class="row">
                         <div class="col-md-12">
                            <?php foreach(get_styling_areas('buttons') as $area){ ?>
-                              <label class="bold mbot10 inline-block"><?php echo $area['name']; ?></label>
+                              <label class="bold mb-1 inline-block"><?php echo $area['name']; ?></label>
                               <?php render_theme_styling_picker($area['id'],
                                  get_custom_style_values('buttons',$area['id']),
                                  $area['target'],$area['css'],
@@ -118,7 +118,7 @@ $tags = get_styling_areas('tags');
                         <div class="row">
                            <div class="col-md-12">
                               <?php foreach(get_styling_areas('tabs') as $area){ ?>
-                                 <label class="bold mbot10 inline-block"><?php echo $area['name']; ?></label>
+                                 <label class="bold mb-1 inline-block"><?php echo $area['name']; ?></label>
                                  <?php render_theme_styling_picker($area['id'],
                                     get_custom_style_values('tabs',$area['id']),
                                     $area['target'],$area['css'],
@@ -133,7 +133,7 @@ $tags = get_styling_areas('tags');
                            <div class="row">
                               <div class="col-md-12">
                                  <?php foreach(get_styling_areas('modals') as $area){ ?>
-                                    <label class="bold mbot10 inline-block"><?php echo $area['name']; ?></label>
+                                    <label class="bold mb-1 inline-block"><?php echo $area['name']; ?></label>
                                     <?php render_theme_styling_picker($area['id'],
                                        get_custom_style_values('modals',$area['id']),
                                        $area['target'],$area['css'],
@@ -160,7 +160,7 @@ $tags = get_styling_areas('tags');
                               <div class="row">
                                  <div class="col-md-12">
                                     <?php foreach(get_styling_areas('general') as $area){ ?>
-                                       <label class="bold mbot10 inline-block"><?php echo $area['name']; ?></label>
+                                       <label class="bold mb-1 inline-block"><?php echo $area['name']; ?></label>
                                        <?php render_theme_styling_picker($area['id'],
                                           get_custom_style_values('general',$area['id']),
                                           $area['target'],$area['css'],
@@ -207,7 +207,7 @@ $tags = get_styling_areas('tags');
                                     <div class="row">
                                        <?php foreach($tags as $area){ ?>
                                         <div class="col-md-6">
-                                          <label class="bold mbot10 inline-block">
+                                          <label class="bold mb-1 inline-block">
                                              <strong><?php echo $area['name']; ?></strong>
                                           </label>
                                           <?php render_theme_styling_picker($area['id'],

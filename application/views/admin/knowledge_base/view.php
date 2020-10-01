@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-7">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body tc-content">
                        <h4 class="bold no-margin"><?php echo $article->subject; ?></h4>
                        <hr class="hr-panel-heading" />
@@ -15,9 +15,9 @@
                          <?php echo $article->description; ?>
                        </div>
                        <hr />
-                       <h4 class="mtop20"><?php echo _l('clients_knowledge_base_find_useful'); ?></h4>
+                       <h4 class="mt-2"><?php echo _l('clients_knowledge_base_find_useful'); ?></h4>
                        <div class="answer_response"></div>
-                       <div class="btn-group mtop15 article_useful_buttons" role="group">
+                       <div class="btn-group mt-1 article_useful_buttons" role="group">
                         <input type="hidden" name="articleid" value="<?php echo $article->articleid; ?>">
                         <button type="button" data-answer="1" class="btn btn-success"><?php echo _l('clients_knowledge_base_find_useful_yes'); ?></button>
                         <button type="button" data-answer="0" class="btn btn-danger"><?php echo _l('clients_knowledge_base_find_useful_no'); ?></button>

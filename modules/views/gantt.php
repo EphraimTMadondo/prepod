@@ -5,7 +5,7 @@
     <div class="content-overlay"></div>
     <div class="content-wrapper">
         <div class="row">
-            <div class="card mbot10">
+            <div class="card mb-1">
                 <div class="card-body _buttons">
                     <a href="<?php echo admin_url('call_logs'); ?>" class="btn btn-default pull-left ml-1">
                         <?php echo _l('go_back'); ?>

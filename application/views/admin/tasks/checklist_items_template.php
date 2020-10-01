@@ -3,7 +3,7 @@
 <?php if(count($checklists) > 0){ ?>
 <h4 class="bold chk-heading th font-medium"><?php echo _l('task_checklist_items'); ?></h4>
 <?php } ?>
-<div class="progress mtop15 hide">
+<div class="progress mt-1 hide">
     <div class="progress-bar not-dynamic progress-bar-default task-progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
     </div>
 </div>
@@ -25,7 +25,7 @@
         <?php } ?>
     </div>
     <?php if($list['finished'] == 1 || $list['addedfrom'] != get_staff_user_id()){ ?>
-    <p class="font-medium-xs mtop15 text-muted checklist-item-info">
+    <p class="font-medium-xs mt-1 text-muted checklist-item-info">
         <?php
             if($list['addedfrom'] != get_staff_user_id()) {
                 echo _l('task_created_by',get_staff_full_name($list['addedfrom']));

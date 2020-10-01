@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div id="stats-top" class="hide">
   <div id="invoices_total"></div>
-  <div class="card mtop20">
+  <div class="card mt-2">
     <div class="card-body">
       <?php
       $where_all = '';

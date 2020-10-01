@@ -17,7 +17,7 @@
     <?php
     } ?>
   </ul>
-  <div class="tab-content mtop30">
+  <div class="tab-content mt-2">
    <div role="tab-pane" class="tab-pane active" id="payment_modes_general">
     <?php render_yes_no_option('notification_when_customer_pay_invoice', 'notification_when_customer_pay_invoice'); ?>
     <hr />

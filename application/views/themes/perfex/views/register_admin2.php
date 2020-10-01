@@ -151,12 +151,12 @@ label.control-label {
     <div class="card main-area ">
         <div class="card-body" style ="height: 100%; justify-content: space-between; ">
             <h1 class = "heading login-title">COMPANY DETAILS</h1>
-            <div class="form-group mtop15 register-company-group underlined-input">
+            <div class="form-group mt-1 register-company-group underlined-input">
                 <input type="text"  placeholder = <?php echo _l('clients_company'); ?> class="form-control custom-input" name="company" id="company" value="<?php echo set_value('company'); ?>">
                 <?php echo form_error('company'); ?>
             </div>
                     
-            <div class="form-group mtop15 register-company-group underlined-input">
+            <div class="form-group mt-1 register-company-group underlined-input">
                 <input type="text"  placeholder ="Company Username" class="form-control custom-input" name="company_username" id="company_username" value="<?php echo set_value('company_username'); ?>">
                 <?php echo form_error('company_username'); ?>
             </div>

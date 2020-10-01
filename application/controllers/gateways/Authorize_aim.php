@@ -89,7 +89,7 @@ class Authorize_aim extends App_Controller
         <?php echo payment_gateway_head(_l('payment_for_invoice') . ' ' . format_invoice_number($data['invoice']->id)); ?>
            <body class="gateway-authorize-aim">
               <div class="container">
-                 <div class="col-md-8 col-md-offset-2 mtop30">
+                 <div class="col-md-8 col-md-offset-2 mt-2">
                     <div class="mbot30 text-center">
                       <?php echo payment_gateway_logo(); ?>
                     </div>
@@ -100,12 +100,12 @@ class Authorize_aim extends App_Controller
                                 <?php echo _l('payment_for_invoice'); ?> <a href="<?php echo site_url('invoice/' . $data['invoice']->id . '/' . $data['invoice']->hash); ?>"><?php echo format_invoice_number($data['invoice']->id); ?></a>
                              </h4>
                              <hr />
-                             <h4 class="mbot20"><?php echo _l('payment_total', app_format_money($data['total'], $data['invoice']->currency_name)); ?></h4>
+                             <h4 class="mb-1"><?php echo _l('payment_total', app_format_money($data['total'], $data['invoice']->currency_name)); ?></h4>
                              <?php echo form_open(site_url('gateways/authorize_aim/complete_purchase'), ['novalidate' => true, 'id' => 'authorize_form']); ?>
                              <?php echo form_hidden('invoiceid', $data['invoice']->id); ?>
                              <?php echo form_hidden('total', $data['total']); ?>
                              <div>
-                                <div class="form-group mtop15">
+                                <div class="form-group mt-1">
                                    <label class="control-label">
                                    <?php echo _l('payment_credit_card_number'); ?>
                                    </label>
@@ -141,7 +141,7 @@ class Authorize_aim extends App_Controller
                                 </div>
                                 <hr />
                                 <h4><?php echo _l('billing_address'); ?></h4>
-                                <div class="form-group mtop15">
+                                <div class="form-group mt-1">
                                    <label class="control-label">
                                    <?php echo _l('payment_cardholder_name'); ?>
                                    </label>

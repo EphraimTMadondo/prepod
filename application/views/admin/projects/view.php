@@ -13,7 +13,7 @@
                      <div class="col-md-7 project-heading">
                         <h3 class="hide project-name"><?php echo $project->name; ?></h3>
                         <div id="project_view_name">
-                           <select class="selectpicker" data-style="btn-outline-light" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
+                           <select class="selectpicker " data-style="btn-outline-light" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
                               <option value="<?php echo $project->id; ?>" selected data-content="<?php echo $project->name; ?> - <small><?php echo $project->client_data->company; ?></small>">
                                 <?php echo $project->client_data->company; ?> <?php echo $project->name; ?>
                               </option>
@@ -25,17 +25,17 @@
                         <div class="visible-xs">
                            <div class="clearfix"></div>
                         </div>
-                        <?php echo '<div class="label float-left ml-1 mt-1 p8 project-status-label-'.$project->status.'" style="background:'.$project_status['color'].'">'.$project_status['name'].'</div>'; ?>
+                        <?php echo '<div class="badge badge-'.$project_status['color'].' float-right ml-1 mt-1 p8 project-status-label-'.$project->status.'">'.$project_status['name'].'</div>'; ?>
                      </div>
                      <div class="col-md-5 text-right">
                         <?php if(has_permission('tasks','','create')){ ?>
-                        <a href="#" onclick="new_task_from_relation(undefined,'project',<?php echo $project->id; ?>); return false;" class="btn btn-info"><?php echo _l('new_task'); ?></a>
+                        <a href="#" onclick="new_task_from_relation(undefined,'project',<?php echo $project->id; ?>); return false;" class="btn btn-secondary"><?php echo _l('new_task'); ?></a>
                         <?php } ?>
                         <?php
                            $invoice_func = 'pre_invoice_project';
                            ?>
                         <?php if(has_permission('invoices','','create')){ ?>
-                        <a href="#" onclick="<?php echo $invoice_func; ?>(<?php echo $project->id; ?>); return false;" class="invoice-project btn btn-info<?php if($project->client_data->active == 0){echo ' disabled';} ?>"><?php echo _l('invoice_project'); ?></a>
+                        <a href="#" onclick="<?php echo $invoice_func; ?>(<?php echo $project->id; ?>); return false;" class="invoice-project btn btn-secondary<?php if($project->client_data->active == 0){echo ' disabled';} ?>"><?php echo _l('invoice_project'); ?></a>
                         <?php } ?>
                         <?php
                            $project_pin_tooltip = _l('pin_project');
@@ -44,7 +44,7 @@
                            }
                            ?>
                         <div class="btn-group">
-                           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            <?php echo _l('more'); ?> <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu dropdown-menu-right width200 project-actions">

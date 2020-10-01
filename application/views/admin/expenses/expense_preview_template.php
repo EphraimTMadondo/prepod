@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12 no-padding">
-   <div class="card mtop20">
+   <div class="card mt-2">
       <div class="card-body">
          <?php if($expense->recurring == 1){
             echo '<div class="ribbon info"><span>'._l('expense_recurring_indicator').'</span></div>';
@@ -136,7 +136,7 @@
               }
             }
             if($expense->recurring_from != NULL){ ?>
-              <?php echo '<p class="text-muted no-mbot'.($show_recurring_expense_info ? ' mtop15': '').'">'._l('expense_recurring_from','<a href="'.admin_url('expenses/list_expenses/'.$expense->recurring_from).'" onclick="init_expense('.$expense->recurring_from.');return false;">'.$recurring_expense->category_name.(!empty($recurring_expense->expense_name) ? ' ('.$recurring_expense->expense_name.')' : '').'</a></p>'); ?>
+              <?php echo '<p class="text-muted mb-0'.($show_recurring_expense_info ? ' mt-1': '').'">'._l('expense_recurring_from','<a href="'.admin_url('expenses/list_expenses/'.$expense->recurring_from).'" onclick="init_expense('.$expense->recurring_from.');return false;">'.$recurring_expense->category_name.(!empty($recurring_expense->expense_name) ? ' ('.$recurring_expense->expense_name.')' : '').'</a></p>'); ?>
             <?php } ?>
           </div>
           <div class="clearfix"></div>
@@ -196,7 +196,7 @@
                      foreach($custom_fields as $field){ ?>
                   <?php $value = get_custom_field_value($expense->expenseid, $field['id'], 'expenses');
                      if($value == ''){continue;} ?>
-                  <div class="row mbot10">
+                  <div class="row mb-1">
                      <div class="col-md-12 mtop5">
                         <p class="mbot5">
                            <span class="bold"><?php echo ucfirst($field['name']); ?></span>
@@ -238,7 +238,7 @@
           <?php if(count($child_expenses) > 0 || $expense->recurring != 0){ ?>
          <div role="tab-pane" class="tab-pane" id="tab_child_expenses">
             <?php if(count($child_expenses) > 0){ ?>
-            <h4 class="mbot25 mtop25"><?php echo _l('expenses_created_from_this_recurring_expense'); ?></h4>
+            <h4 class="mbot25 mt-2"><?php echo _l('expenses_created_from_this_recurring_expense'); ?></h4>
             <ul class="list-group">
                <?php foreach($child_expenses as $recurring){ ?>
                <li class="list-group-item">

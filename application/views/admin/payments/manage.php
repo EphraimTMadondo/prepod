@@ -4,7 +4,7 @@
 <div class="app-content content">
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
-		<div class="card mtop20">
+		<div class="card mt-2">
 			<div class="card-body">
 				<?php $this->load->view('admin/payments/table_html'); ?>
 			</div>

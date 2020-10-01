@@ -18,7 +18,7 @@
               <?php echo render_input('title','utility_calendar_new_event_placeholder',$event->title); ?>
               <?php echo render_textarea('description','event_description',$event->description,array('rows'=>5)); ?>
               <?php echo render_datetime_input('start','utility_calendar_new_event_start_date',_dt($event->start)); ?>
-              <div class="clearfix mtop15"></div>
+              <div class="clearfix mt-1"></div>
               <?php echo render_datetime_input('end','utility_calendar_new_event_end_date',_dt($event->end)); ?>
               <?php if(total_rows('emailtemplates', ['active'=>1,'slug'=>'event-notification-to-staff']) > 0){ ?>
               <div class="form-group">

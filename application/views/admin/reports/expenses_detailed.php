@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                         <a href="<?php echo admin_url('reports/expenses'); ?>" class="btn btn-default pull-left"><?php echo _l('go_back'); ?></a>
                         <?php $this->load->view('admin/expenses/filter_by_template'); ?>

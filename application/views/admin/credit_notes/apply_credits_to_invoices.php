@@ -63,7 +63,7 @@
     </div>
 </div>
 <?php } else { ?>
-<p class="bold no-mbot"><?php echo _l('credit_note_no_invoices_available'); ?></p>
+<p class="bold mb-0"><?php echo _l('credit_note_no_invoices_available'); ?></p>
 <?php } ?>
 </div>
 <div class="modal-footer">

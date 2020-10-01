@@ -286,7 +286,7 @@
                   <?php echo form_close(); ?>
                </div>
                <div class="clearfix"></div>
-               <div class="mtop15">
+               <div class="mt-1">
                   <table class="table dt-table scroll-responsive" data-order-col="2" data-order-type="desc">
                      <thead>
                         <tr>
@@ -305,7 +305,7 @@
                               </div>
                               <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide inline-block full-width">
                                  <textarea name="description" class="form-control" rows="4"><?php echo clear_textarea_breaks($note['description']); ?></textarea>
-                                 <div class="text-right mtop15">
+                                 <div class="text-right mt-1">
                                     <button type="button" class="btn btn-light" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
                                     <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                                  </div>
@@ -345,7 +345,7 @@
                            <option value="period" <?php if($this->input->get('range') == 'period'){echo 'selected';} ?>><?php echo _l('period_datepicker'); ?></option>
                         </select>
                      </div>
-                     <div class="row mtop15">
+                     <div class="row mt-1">
                         <div class="col-md-12 period <?php if($this->input->get('range') != 'period'){echo 'hide';} ?>">
                            <?php echo render_date_input('period-from','',$this->input->get('period-from')); ?>
                         </div>

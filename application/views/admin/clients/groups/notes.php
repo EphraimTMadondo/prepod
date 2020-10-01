@@ -3,7 +3,7 @@
 <h4 class="customer-profile-group-heading"><?php echo _l('contracts_notes_tab'); ?></h4>
 <div class="col-md-12">
 
- <a href="#" class="btn btn-success mtop15 mbot10" onclick="slideToggle('.usernote'); return false;"><?php echo _l('new_note'); ?></a>
+ <a href="#" class="btn btn-success mt-1 mb-1" onclick="slideToggle('.usernote'); return false;"><?php echo _l('new_note'); ?></a>
  <div class="clearfix"></div>
 <div class="row">
      <hr class="hr-panel-heading" />
@@ -18,7 +18,7 @@
     <?php echo form_close(); ?>
 </div>
 <div class="clearfix"></div>
-<div class="mtop15">
+<div class="mt-1">
     <table class="table dt-table scroll-responsive" data-order-col="2" data-order-type="desc">
         <thead>
             <tr>
@@ -45,7 +45,7 @@
                 </div>
                 <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide">
                     <textarea name="description" class="form-control" rows="4"><?php echo clear_textarea_breaks($note['description']); ?></textarea>
-                    <div class="text-right mtop15">
+                    <div class="text-right mt-1">
                       <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
                       <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                   </div>

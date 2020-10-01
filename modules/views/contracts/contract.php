@@ -104,10 +104,10 @@
         </div>
 
         <div class="row">
-          <div class="col-md-12 mtop15">
+          <div class="col-md-12 mt-1">
              <div class="card-body bottom-transaction">
                 <?php $value = (isset($contract) ? $contract->note : ''); ?>
-                <?php echo render_textarea('note','decription',$value,array('rows'=>8),array(),'mtop15'); ?>
+                <?php echo render_textarea('note','decription',$value,array('rows'=>8),array(),'mt-1'); ?>
                
                 <div class="btn-bottom-toolbar text-right">
                   
@@ -170,14 +170,14 @@
                     <div class="editable tc-content div_content">
                        <?php
                           if(empty($contract->content)){
-                           echo hooks()->apply_filters('new_contract_default_content', '<span class="text-danger text-uppercase mtop15 editor-add-content-notice"> ' . _l('click_to_add_content') . '</span>');
+                           echo hooks()->apply_filters('new_contract_default_content', '<span class="text-danger text-uppercase mt-1 editor-add-content-notice"> ' . _l('click_to_add_content') . '</span>');
                           } else {
                            echo html_entity_decode($contract->content);
                           }
                           ?>
                     </div>
                     <?php if($contract->signed_status == 'signed') { ?>
-                        <div class="row mtop25">
+                        <div class="row mt-2">
                            <div class="col-md-6 col-md-offset-6 text-right">
                               <p class="bold"><?php echo _l('document_signature_text'); ?>
                                 

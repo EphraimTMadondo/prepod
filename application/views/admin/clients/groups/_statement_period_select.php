@@ -50,7 +50,7 @@ _d(date('Y-m-d',strtotime(date(date('Y',strtotime('last year')). '-12-31'))))
 <option value="period"><?php echo _l('period_datepicker'); ?></option>
 </select>
 </div>
-<div class="row mtop15">
+<div class="row mt-1">
 	<div class="col-md-12 period hide">
 		<?php echo render_date_input('period-from','','',array('onchange'=>isset($onChange) ? $onChange : '')); ?>
 	</div>

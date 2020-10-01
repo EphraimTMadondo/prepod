@@ -6,7 +6,7 @@
    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <div class="_buttons">
                      <a href="#" onclick="init_lead(); return false;" class="btn mr-1 btn-secondary">
@@ -191,7 +191,7 @@
                               </div>
                               <?php if(has_permission('leads','','view')){ ?>
                               <div class="col-md-3 leads-filter-column">
-                                 <?php echo render_select('view_assigned',$staff,array('staffid',array('firstname','lastname')),'','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_dt_assigned')),array(),'no-mbot'); ?>
+                                 <?php echo render_select('view_assigned',$staff,array('staffid',array('firstname','lastname')),'','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_dt_assigned')),array(),'mb-0'); ?>
                               </div>
                               <?php } ?>
                               <div class="col-md-3 leads-filter-column">
@@ -209,13 +209,13 @@
                                      }
                                     }
                                     echo '<div id="leads-filter-status">';
-                                    echo render_select('view_status[]',$statuses,array('id','name'),'',$selected,array('data-width'=>'100%','data-none-selected-text'=>_l('leads_all'),'multiple'=>true,'data-actions-box'=>true),array(),'no-mbot','',false);
+                                    echo render_select('view_status[]',$statuses,array('id','name'),'',$selected,array('data-width'=>'100%','data-none-selected-text'=>_l('leads_all'),'multiple'=>true,'data-actions-box'=>true),array(),'mb-0','',false);
                                     echo '</div>';
                                     ?>
                               </div>
                               <div class="col-md-3 leads-filter-column">
                                  <?php
-                                    echo render_select('view_source',$sources,array('id','name'),'','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_source')),array(),'no-mbot');
+                                    echo render_select('view_source',$sources,array('id','name'),'','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_source')),array(),'mb-0');
                                     ?>
                               </div>
                               <div class="col-md-3 leads-filter-column">
@@ -285,7 +285,7 @@
                                              <input type="text" class="tagsinput" id="tags_bulk" name="tags_bulk" value="" data-role="tagsinput">
                                           </div>
                                           <hr />
-                                          <div class="form-group no-mbot">
+                                          <div class="form-group mb-0">
                                              <div class="radio radio-primary radio-inline">
                                                 <input type="radio" name="leads_bulk_visibility" id="leads_bulk_public" value="public">
                                                 <label for="leads_bulk_public">

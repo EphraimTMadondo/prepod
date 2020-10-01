@@ -68,7 +68,7 @@ class Newsfeed extends AdminController
 
             $response .= '</div>';
             $response .= '<div class="media-body">';
-            $response .= '<p class="media-heading no-mbot"><a href="' . admin_url('profile/' . $post['creator']) . '">' . get_staff_full_name($post['creator']) . '</a></p>';
+            $response .= '<p class="media-heading mb-0"><a href="' . admin_url('profile/' . $post['creator']) . '">' . get_staff_full_name($post['creator']) . '</a></p>';
             $response .= '<small class="post-time-ago">' . time_ago($post['datecreated']) . '</small>';
             if ($post['creator'] == get_staff_user_id() || is_admin()) {
                 $response .= '<div class="dropdown float-right btn-post-options-wrapper">';
@@ -86,13 +86,13 @@ class Newsfeed extends AdminController
             $response .= '<small class="text-muted">' . _l('newsfeed_published_post') . ': ' . _dt($post['datecreated']) . '</small>';
             $response .= '</div>';
             $response .= '</div>'; // media end
-            $response .= '<div class="post-content mtop20 display-block">';
+            $response .= '<div class="post-content mt-2 display-block">';
             if (!empty($visible_departments)) {
                 $visible_departments = substr($visible_departments, 0, -2);
                 $response .= '<i class="fa fa-question-circle" data-toggle="tooltip" data-title="' . _l('newsfeed_newsfeed_post_only_visible_to_departments', $visible_departments) . '"></i> ';
             }
             $response .= check_for_links($post['content']);
-            $response .= '<div class="clearfix mbot10"></div>';
+            $response .= '<div class="clearfix mb-1"></div>';
             $image_attachments       = $this->newsfeed_model->get_post_attachments($post['postid'], true);
             $total_image_attachments = count($image_attachments);
             $non_image_attachments   = $this->newsfeed_model->get_post_attachments($post['postid']);
@@ -106,7 +106,7 @@ class Newsfeed extends AdminController
                     if ($total_image_attachments <= 3) {
                         $_wrapper_additional_class .= 'post-image-wrapper-' . $total_image_attachments . ' ';
                     }
-                    $response .= '<div class="post-image-wrapper ' . $_wrapper_additional_class . 'mbot10">';
+                    $response .= '<div class="post-image-wrapper ' . $_wrapper_additional_class . 'mb-1">';
                     $response .= '<a href="' . base_url('uploads/newsfeed/' . $post['postid'] . '/' . $attachment['file_name']) . '" data-lightbox="post-' . $post['postid'] . '"><img src="' . base_url('uploads/newsfeed/' . $post['postid'] . '/' . $attachment['file_name']) . '" class="img img-responsive"></a>';
                     $response .= '</div>';
                     if ($a == 5) {

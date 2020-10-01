@@ -4,7 +4,7 @@
     <div class="content email-templates">
         <div class="row">
             <div class="col-md-12">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body">
                         <div class="row">
                             <?php hooks()->do_action('before_tickets_email_templates'); ?>

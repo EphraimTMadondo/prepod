@@ -15,7 +15,7 @@
          </div>
          <?php } ?>
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <?php if(is_admin()){ ?>
                   <?php if(isset($view_all) && get_option('show_timesheets_overview_all_members_notice_admins') == 1){ ?>
@@ -46,7 +46,7 @@
                               <option value="period"><?php echo _l('period_datepicker'); ?></option>
                            </select>
                         </div>
-                        <div class="row mtop15">
+                        <div class="row mt-1">
                            <div class="col-md-12 period hide">
                               <?php echo render_date_input('period-from'); ?>
                            </div>

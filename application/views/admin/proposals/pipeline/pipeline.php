@@ -5,7 +5,7 @@ foreach ($statuses as $status) {
  ?>
   <ul class="kan-ban-col" data-col-status-id="<?php echo $status; ?>" data-total-pages="<?php echo $total_pages; ?>">
     <li class="kan-ban-col-wrapper">
-      <div class="border-right card no-mbot">
+      <div class="border-right card mb-0">
         <div class="panel-heading-bg <?php echo proposal_status_color_class($status); ?>-bg">
         <div class="kan-ban-step-indicator<?php if($i == count($statuses) -1){ echo ' kan-ban-step-indicator-full'; } ?>"></div>
         <?php echo format_proposal_status($status,'',false); ?>
@@ -25,7 +25,7 @@ foreach ($statuses as $status) {
               <a href="#" class="btn btn-default btn-block<?php if($total_pages <= 1){echo ' disabled';} ?>" data-page="1" onclick="kanban_load_more(<?php echo $status; ?>,this,'proposals/pipeline_load_more',347,360); return false;";><?php echo _l('load_more'); ?></a>
             </li>
             <?php } ?>
-            <li class="text-center not-sortable mtop30 kanban-empty<?php if($total_proposals > 0){echo ' hide';} ?>">
+            <li class="text-center not-sortable mt-2 kanban-empty<?php if($total_proposals > 0){echo ' hide';} ?>">
               <h4>
                 <i class="fa fa-circle-o-notch" aria-hidden="true"></i><br /><br />
                 <?php echo _l('no_proposals_found'); ?></h4>

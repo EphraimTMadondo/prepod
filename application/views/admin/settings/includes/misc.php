@@ -14,7 +14,7 @@
       </a>
     </li>
   </ul>
-<div class="tab-content mtop30">
+<div class="tab-content mt-2">
   <div role="tab-pane" class="tab-pane active" id="misc">
     <?php echo render_yes_no_option('view_contract_only_logged_in','settings_require_client_logged_in_to_view_contract'); ?>
     <hr />

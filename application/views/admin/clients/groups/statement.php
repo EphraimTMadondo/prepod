@@ -24,8 +24,8 @@
 </div>
 <div class="clearfix"></div>
 
-<div class="col-md-12 mtop15">
-    <div class="card mtop20">
+<div class="col-md-12 mt-1">
+    <div class="card mt-2">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">

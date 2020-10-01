@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12 no-padding animated fadeIn">
-    <div class="card mtop20">
+    <div class="card mt-2">
         <?php echo form_open(admin_url('invoices/record_payment'),array('id'=>'record_payment_form')); ?>
         <?php echo form_hidden('invoiceid',$invoice->id); ?>
         <div class="card-body">
@@ -39,7 +39,7 @@
                     $pr_template = total_rows(db_prefix().'emailtemplates',array('slug'=>'invoice-payment-recorded','active'=>0)) == 0;
                     $sms_trigger = is_sms_trigger_active(SMS_TRIGGER_PAYMENT_RECORDED);
                     if($pr_template || $sms_trigger){ ?>
-                    <div class="checkbox checkbox-primary mtop15 inline-block">
+                    <div class="checkbox checkbox-primary mt-1 inline-block">
                         <input type="checkbox" name="do_not_send_email_template" id="do_not_send_email_template">
                         <label for="do_not_send_email_template">
                             <?php
@@ -56,7 +56,7 @@
                             </label>
                     </div>
                     <?php } ?>
-                    <div class="checkbox checkbox-primary mtop15 do_not_redirect hide inline-block">
+                    <div class="checkbox checkbox-primary mt-1 do_not_redirect hide inline-block">
                         <input type="checkbox" name="do_not_redirect" id="do_not_redirect" checked>
                         <label for="do_not_redirect"><?php echo _l('do_not_redirect_payment'); ?></label>
                     </div>
@@ -70,13 +70,13 @@
                         </div>
                 </div>
             </div>
-            <div class="float-right mtop15">
+            <div class="float-right mt-1">
                 <a href="#" class="btn btn-danger" onclick="init_invoice(<?php echo $invoice->id; ?>); return false;"><?php echo _l('cancel'); ?></a>
                 <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" data-form="#record_payment_form" class="btn btn-success"><?php echo _l('submit'); ?></button>
             </div>
             <?php
             if($payments){ ?>
-            <div class="mtop25 inline-block full-width">
+            <div class="mt-2 inline-block full-width">
                 <h5 class="bold"><?php echo _l('invoice_payments_received'); ?></h5>
                 <?php include_once(APPPATH . 'views/admin/invoices/invoice_payments_table.php'); ?>
             </div>

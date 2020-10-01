@@ -10,7 +10,7 @@
          <hr />
          <p><?php echo $survey->viewdescription; ?></p>
          <?php if(count($survey->questions) > 0){
-            $question_area = '<ul class="list-unstyled mtop25">';
+            $question_area = '<ul class="list-unstyled mt-2">';
             foreach($survey->questions as $question){
              $question_area .= '<li>';
              $question_area .= '<div class="form-group">';
@@ -48,7 +48,7 @@
             </div>
          </div>
          <?php } else { ?>
-         <p class="no-margin text-center bold mtop20"><?php echo _l('survey_no_questions'); ?></p>
+         <p class="no-margin text-center bold mt-2"><?php echo _l('survey_no_questions'); ?></p>
          <?php } ?>
       </div>
       <?php echo form_close(); ?>

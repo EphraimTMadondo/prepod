@@ -23,7 +23,7 @@
             ?>
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <div class="row">
                      <?php if(isset($proposal)){ ?>
@@ -130,11 +130,11 @@
                            </div>
                         <?php $fc_rel_id = (isset($proposal) ? $proposal->id : false); ?>
                         <?php echo render_custom_fields('proposal',$fc_rel_id); ?>
-                         <div class="form-group no-mbot">
+                         <div class="form-group mb-0">
                            <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
                            <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo (isset($proposal) ? prep_tags_input(get_tags_in($proposal->id,'proposal')) : ''); ?>" data-role="tagsinput">
                         </div>
-                        <div class="form-group mtop10 no-mbot">
+                        <div class="form-group mtop10 mb-0">
                             <p><?php echo _l('proposal_allow_comments'); ?></p>
                             <div class="onoffswitch">
                               <input type="checkbox" id="allow_comments" class="onoffswitch-checkbox" <?php if((isset($proposal) && $proposal->allow_comments == 1) || !isset($proposal)){echo 'checked';}; ?> value="on" name="allow_comments">
@@ -212,7 +212,7 @@
                      </div>
                   </div>
                   <div class="btn-bottom-toolbar bottom-transaction text-right">
-                  <p class="no-mbot pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
+                  <p class="mb-0 pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
                     <button type="button" class="btn btn-secondary ml-1 proposal-form-submit save-and-send transaction-submit">
                         <?php echo _l('save_and_send'); ?>
                     </button>

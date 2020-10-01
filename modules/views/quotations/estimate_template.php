@@ -25,7 +25,7 @@
               <br><br>
             </div>
             <div class="col-md-1 pad_div_0">
-              <a href="#" onclick="coppy_pur_request(); return false;" class="btn btn-success mtop25" data-toggle="tooltip" title="<?php echo _l('coppy_pur_request'); ?>">
+              <a href="#" onclick="coppy_pur_request(); return false;" class="btn btn-success mt-2" data-toggle="tooltip" title="<?php echo _l('coppy_pur_request'); ?>">
               <i class="fa fa-clone"></i>
               </a>
             </div>
@@ -87,7 +87,7 @@
                  <div class="input-group">
                     <span class="input-group-addon">
                     <?php if(isset($estimate)){ ?>
-                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo html_entity_decode($estimate->prefix); ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mtop15'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
+                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo html_entity_decode($estimate->prefix); ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                      <?php }
                       echo html_entity_decode($prefix);
                     ?>
@@ -287,12 +287,12 @@
     </div>
    </div>
    <div class="row">
-      <div class="col-md-12 mtop15">
+      <div class="col-md-12 mt-1">
          <div class="card-body bottom-transaction">
             <?php $value = (isset($estimate) ? $estimate->vendornote : get_option('predefined_clientnote_estimate')); ?>
-            <?php echo render_textarea('vendornote','estimate_add_edit_vendor_note',$value,array(),array(),'mtop15'); ?>
+            <?php echo render_textarea('vendornote','estimate_add_edit_vendor_note',$value,array(),array(),'mt-1'); ?>
             <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>
-            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
+            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
             <div class="btn-bottom-toolbar text-right">
               
               <button type="button" class="btn-tr save_detail btn btn-info ml-1 estimate-form-submit transaction-submit">

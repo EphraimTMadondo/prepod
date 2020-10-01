@@ -121,7 +121,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 mtop20 mbot20 text-center">
+                    <div class="col-md-12 mt-2 mb-1 text-center">
                         <button class="btn btn-info" type="submit" data-form="#ticket-reply" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>"><?php echo _l('ticket_single_add_reply'); ?></button>
                     </div>
                 </div>

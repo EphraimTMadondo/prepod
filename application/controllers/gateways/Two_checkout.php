@@ -88,7 +88,7 @@ class Two_checkout extends App_Controller
        <?php echo payment_gateway_head(_l('payment_for_invoice') . ' ' . format_invoice_number($data['invoice']->id)); ?>
         <body class="gateway-2checkout">
            <div class="container">
-              <div class="col-md-8 col-md-offset-2 mtop30">
+              <div class="col-md-8 col-md-offset-2 mt-2">
                  <div class="mbot30 text-center">
                     <?php echo payment_gateway_logo(); ?>
                  </div>
@@ -137,7 +137,7 @@ class Two_checkout extends App_Controller
                              </div>
                           </div>
                           <div>
-                             <div class="form-group mtop15">
+                             <div class="form-group mt-1">
                                 <label class="control-label">
                                 CVC
                                 </label>

@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="mtop15 preview-top-wrapper">
+<div class="mt-1 preview-top-wrapper">
    <div class="row">
       <div class="col-md-3">
          <div class="mbot30">
@@ -15,7 +15,7 @@
          <div class="row">
             <div class="col-md-12">
                <div class="pull-left">
-                  <h3 class="bold no-mtop invoice-html-number no-mbot">
+                  <h3 class="bold no-mtop invoice-html-number mb-0">
                      <span class="sticky-visible hide">
                      <?php echo format_invoice_number($invoice->id); ?>
                      </span>
@@ -51,10 +51,10 @@
    </div>
 </div>
 <div class="clearfix"></div>
-<div class="card mtop20">
+<div class="card mt-2">
    <div class="card-body">
       <div class="col-md-10 col-md-offset-1">
-         <div class="row mtop20">
+         <div class="row mt-2">
             <div class="col-md-6 col-sm-6 transaction-html-info-col-left">
                <h4 class="bold invoice-html-number"><?php echo format_invoice_number($invoice->id); ?></h4>
                <address class="invoice-html-company-info">
@@ -73,26 +73,26 @@
                   <?php echo format_customer_info($invoice, 'invoice', 'shipping'); ?>
                </address>
                <?php } ?>
-               <p class="no-mbot invoice-html-date">
+               <p class="mb-0 invoice-html-date">
                   <span class="bold">
                   <?php echo _l('invoice_data_date'); ?>
                   </span>
                   <?php echo _d($invoice->date); ?>
                </p>
                <?php if(!empty($invoice->duedate)){ ?>
-               <p class="no-mbot invoice-html-duedate">
+               <p class="mb-0 invoice-html-duedate">
                   <span class="bold"><?php echo _l('invoice_data_duedate'); ?></span>
                   <?php echo _d($invoice->duedate); ?>
                </p>
                <?php } ?>
                <?php if($invoice->sale_agent != 0 && get_option('show_sale_agent_on_invoices') == 1){ ?>
-               <p class="no-mbot invoice-html-sale-agent">
+               <p class="mb-0 invoice-html-sale-agent">
                   <span class="bold"><?php echo _l('sale_agent_string'); ?>:</span>
                   <?php echo get_staff_full_name($invoice->sale_agent); ?>
                </p>
                <?php } ?>
                <?php if($invoice->project_id != 0 && get_option('show_project_on_invoice') == 1){ ?>
-               <p class="no-mbot invoice-html-project">
+               <p class="mb-0 invoice-html-project">
                   <span class="bold"><?php echo _l('project'); ?>:</span>
                   <?php echo get_project_name_by_id($invoice->project_id); ?>
                </p>
@@ -101,7 +101,7 @@
                   foreach($pdf_custom_fields as $field){
                     $value = get_custom_field_value($invoice->id,$field['id'],'invoice');
                     if($value == ''){continue;} ?>
-               <p class="no-mbot">
+               <p class="mb-0">
                   <span class="bold"><?php echo $field['name']; ?>: </span>
                   <?php echo $value; ?>
                </p>
@@ -213,7 +213,7 @@
                   $attachment_url = $attachment['external_link'];
                   }
                   ?>
-               <div class="col-md-12 mbot10">
+               <div class="col-md-12 mb-1">
                   <div class="pull-left"><i class="<?php echo get_mime_class($attachment['filetype']); ?>"></i></div>
                   <a href="<?php echo $attachment_url; ?>"><?php echo $attachment['file_name']; ?></a>
                </div>
@@ -303,7 +303,7 @@
                      <?php }
                         }
                         } ?>
-                     <div class="form-group mtop25">
+                     <div class="form-group mt-2">
                         <?php if(get_option('allow_payment_amount_to_be_modified') == 1){ ?>
                         <label for="amount" class="control-label"><?php echo _l('invoice_html_amount'); ?></label>
                         <div class="input-group">

@@ -45,7 +45,7 @@
     <hr />
     <?php echo render_input('settings[automatically_resend_invoice_overdue_reminder_after]','automatically_resend_invoice_overdue_reminder_after',get_option('automatically_resend_invoice_overdue_reminder_after'),'number'); ?>
     <hr />
-    <h4 class="mbot20 font-medium"><?php echo _l('invoices_list_recurring'); ?></h4>
+    <h4 class="mb-1 font-medium"><?php echo _l('invoices_list_recurring'); ?></h4>
     <div class="radio radio-info">
       <input type="radio" id="generate_and_send" name="settings[new_recurring_invoice_action]" value="generate_and_send"<?php if(get_option('new_recurring_invoice_action') == 'generate_and_send'){echo ' checked';} ?>>
       <label for="generate_and_send"><?php echo _l('reccuring_invoice_option_gen_and_send'); ?></label>

@@ -51,13 +51,13 @@
                         </div>
 
                         <?php if(count($billable_tasks) == 0 && count($not_billable_tasks) == 0 && count($expenses) == 0){ ?>
-                        <p class="text-danger mtop15"><?php echo _l('invoice_project_nothing_to_bill'); ?></p>
+                        <p class="text-danger mt-1"><?php echo _l('invoice_project_nothing_to_bill'); ?></p>
                         <?php } else { ?>
                         <hr />
                         <a href="#" onclick="slideToggle('#pre_invoice_project_tasks'); return false;"><b class="label label-info font-medium-xs inline-block"><?php echo _l('invoice_project_see_billed_tasks'); ?></b></a>
 
                         <div style="display:none;" id="pre_invoice_project_tasks">
-                            <div class="checkbox mtop15">
+                            <div class="checkbox mt-1">
                                 <input type="checkbox" id="project_invoice_select_all_tasks" class="invoice_select_all_tasks">
                                 <label for="project_invoice_select_all_tasks"><?php echo _l('project_invoice_select_all_tasks'); ?></label>
                             </div>
@@ -90,7 +90,7 @@
                          </span></a>
                          <div style="display:none;" id="expenses_who_will_be_billed">
 
-                          <div class="checkbox mtop20">
+                          <div class="checkbox mt-2">
                             <input type="checkbox" id="project_invoice_select_all_expenses" class="invoice_select_all_expenses">
                             <label for="project_invoice_select_all_expenses"><?php echo _l('project_invoice_select_all_expenses'); ?></label>
                         </div>

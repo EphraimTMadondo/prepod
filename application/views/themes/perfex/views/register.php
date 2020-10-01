@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4 class="bold register-contact-info-heading"><?php echo _l('client_register_contact_info'); ?></h4>
-                    <div class="form-group mtop15 register-firstname-group">
+                    <div class="form-group mt-1 register-firstname-group">
                         <label class="control-label" for="firstname"><?php echo _l('clients_firstname'); ?></label>
                         <input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo set_value('firstname'); ?>">
                         <?php echo form_error('firstname'); ?>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-md-6">
                     <h4 class="bold register-company-info-heading"><?php echo _l('client_register_company_info'); ?></h4>
-                    <div class="form-group mtop15 register-company-group">
+                    <div class="form-group mt-1 register-company-group">
                         <label class="control-label" for="company"><?php echo _l('clients_company'); ?></label>
                         <input type="text" class="form-control" name="company" id="company" value="<?php echo set_value('company'); ?>">
                         <?php echo form_error('company'); ?>

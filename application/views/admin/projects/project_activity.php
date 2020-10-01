@@ -23,8 +23,8 @@
                     $checked = '';
                 }
                 ?>
-                <p class="mtop10 no-mbot"><?php echo $fullname . ' - <b>'.$activity['description'].'</b>'; ?></p>
-                <p class="no-mbot text-muted mleft30 mtop5"><?php echo $activity['additional_data']; ?></p>
+                <p class="mtop10 mb-0"><?php echo $fullname . ' - <b>'.$activity['description'].'</b>'; ?></p>
+                <p class="mb-0 text-muted mleft30 mtop5"><?php echo $activity['additional_data']; ?></p>
             </div>
         </div>
         <div class="col-md-4 text-right">

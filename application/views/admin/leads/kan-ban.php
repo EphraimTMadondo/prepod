@@ -56,7 +56,7 @@ foreach ($statuses as $status) {
               </a>
              </li>
              <?php } ?>
-             <li class="text-center not-sortable mtop30 kanban-empty<?php if($total_leads > 0){echo ' hide';} ?>">
+             <li class="text-center not-sortable mt-2 kanban-empty<?php if($total_leads > 0){echo ' hide';} ?>">
               <h4>
                 <i class="fa fa-circle-o-notch" aria-hidden="true"></i><br /><br />
                 <?php echo _l('no_leads_found'); ?></h4>

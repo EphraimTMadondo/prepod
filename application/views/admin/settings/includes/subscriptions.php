@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php render_yes_no_option('show_subscriptions_in_customers_area','show_subscriptions_in_customers_area','show_subscriptions_in_customers_area_help'); ?>
 <hr />
-<h4 class="mbot20 font-medium"><?php echo _l('after_subscription_payment_succeeded'); ?></h4>
+<h4 class="mb-1 font-medium"><?php echo _l('after_subscription_payment_succeeded'); ?></h4>
 <div class="radio radio-info">
   <input type="radio" id="send_invoice_and_receipt" name="settings[after_subscription_payment_captured]" value="send_invoice_and_receipt"<?php if(get_option('after_subscription_payment_captured') == 'send_invoice_and_receipt'){echo ' checked';} ?>>
   <label for="send_invoice_and_receipt"><?php echo _l('subscription_option_send_payment_receipt_and_invoice'); ?>

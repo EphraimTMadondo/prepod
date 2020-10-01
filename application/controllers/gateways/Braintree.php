@@ -80,7 +80,7 @@ class Braintree extends App_Controller
   <?php echo payment_gateway_head(_l('payment_for_invoice') . ' ' . format_invoice_number($data['invoice']->id)); ?>
   <body class="gateway-braintree">
      <div class="container">
-     <div class="col-md-8 col-md-offset-2 mtop30">
+     <div class="col-md-8 col-md-offset-2 mt-2">
         <div class="mbot30 text-center">
            <?php echo payment_gateway_logo(); ?>
         </div>

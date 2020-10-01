@@ -21,7 +21,7 @@ class CloudFlare extends AbstractMessage
 	public function getMessage()
 	{
 		?>
-		<div class="mtop15"></div>
+		<div class="mt-1"></div>
 		<h4><strong>Cloudflare usage detected</strong></h4><hr />
 		<ul>
 			<li>When using Cloudflare with the application <strong>you must disable ROCKET LOADER</strong> feature from Cloudflare options in order everything to work properly. <br /><strong><small>NOTE: The script can't check if Rocket Loader is enabled/disabled in your Cloudflare account. If Rocket Loader is already disabled you can ignore this warning.</small></strong></li>

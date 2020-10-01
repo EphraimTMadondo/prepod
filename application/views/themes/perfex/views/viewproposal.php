@@ -77,7 +77,7 @@
       ob_end_clean();
       $proposal->content = str_replace('{proposal_items}',$items,$proposal->content);
       ?>
-   <div class="mtop15 preview-top-wrapper">
+   <div class="mt-1 preview-top-wrapper">
       <div class="row">
          <div class="col-md-3">
             <div class="mbot30">
@@ -144,14 +144,14 @@
    </div>
    <div class="row">
       <div class="col-md-8 proposal-left">
-         <div class="card mtop20">
+         <div class="card mt-2">
             <div class="card-body proposal-content tc-content padding-30">
                <?php echo $proposal->content; ?>
             </div>
          </div>
       </div>
       <div class="col-md-4 proposal-right">
-         <div class="inner mtop20 proposal-html-tabs">
+         <div class="inner mt-2 proposal-html-tabs">
             <ul class="nav nav-tabs nav-tabs-flat mbot15" role="tablist">
                <li role="presentation" class="<?php if(!$this->input->get('tab') || $this->input->get('tab') === 'summary'){echo 'active';} ?>">
                   <a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">
@@ -177,7 +177,7 @@
                   <address class="no-margin proposal-html-info">
                      <?php echo format_proposal_info($proposal, 'html'); ?>
                   </address>
-                  <div class="row mtop20">
+                  <div class="row mt-2">
                      <?php if($proposal->total != 0){ ?>
                      <div class="col-md-12 proposal-html-total">
                         <h4 class="bold mbot30"><?php echo _l('proposal_total_info',app_format_money($proposal->total, $proposal->currency_name)); ?></h4>
@@ -236,7 +236,7 @@
                   <?php
                      $proposal_comments = '';
                      foreach ($comments as $comment) {
-                      $proposal_comments .= '<div class="proposal_comment mtop10 mbot20" data-commentid="' . $comment['id'] . '">';
+                      $proposal_comments .= '<div class="proposal_comment mtop10 mb-1" data-commentid="' . $comment['id'] . '">';
                       if($comment['staffid'] != 0){
                         $proposal_comments .= staff_profile_image($comment['staffid'], array(
                           'staff-profile-image-small',

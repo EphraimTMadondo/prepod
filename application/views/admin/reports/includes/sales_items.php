@@ -5,7 +5,7 @@
       Sales Report may not work properly because ONLY_FULL_GROUP_BY is enabled, consult with your hosting provider to disable ONLY_FULL_GROUP_BY in sql_mode configuration. In case the items report is working properly you can just ignore this message.
     </div>
   <?php } ?>
-  <p class="mbot20 text-info"><?php echo _l('item_report_paid_invoices_notice'); ?></p>
+  <p class="mb-1 text-info"><?php echo _l('item_report_paid_invoices_notice'); ?></p>
   <?php if(count($invoices_sale_agents) > 0 ) { ?>
     <div class="row">
      <div class="col-md-4">

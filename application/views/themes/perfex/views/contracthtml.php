@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="mtop15 preview-top-wrapper">
+<div class="mt-1 preview-top-wrapper">
    <div class="row">
       <div class="col-md-3">
          <div class="mbot30">
@@ -42,14 +42,14 @@
 </div>
 <div class="row">
    <div class="col-md-8 contract-left">
-      <div class="card mtop20">
+      <div class="card mt-2">
          <div class="card-body tc-content padding-30 contract-html-content">
             <?php echo $contract->content; ?>
          </div>
       </div>
    </div>
    <div class="col-md-4 contract-right">
-      <div class="inner mtop20 contract-html-tabs">
+      <div class="inner mt-2 contract-html-tabs">
          <ul class="nav nav-tabs nav-tabs-flat mbot15" role="tablist">
             <li role="presentation" class="<?php if(!$this->input->get('tab') || $this->input->get('tab') === 'summary'){echo 'active';} ?>">
                <a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">
@@ -66,7 +66,7 @@
                <address class="contract-html-company-info">
                   <?php echo format_organization_info(); ?>
                </address>
-               <div class="row mtop20">
+               <div class="row mt-2">
                   <?php if($contract->contract_value != 0){ ?>
                   <div class="col-md-12 contract-value">
                      <h4 class="bold mbot30">
@@ -143,7 +143,7 @@
                <?php
                   $comment_html = '';
                   foreach ($comments as $comment) {
-                   $comment_html .= '<div class="contract_comment mtop10 mbot20" data-commentid="' . $comment['id'] . '">';
+                   $comment_html .= '<div class="contract_comment mtop10 mb-1" data-commentid="' . $comment['id'] . '">';
                    if($comment['staffid'] != 0){
                     $comment_html .= staff_profile_image($comment['staffid'], array(
                      'staff-profile-image-small',

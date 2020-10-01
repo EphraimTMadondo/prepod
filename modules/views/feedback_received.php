@@ -6,7 +6,7 @@
     <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mbot10">
+            <div class="card mb-1">
                <div class="card-body _buttons">
                  
                   <a href="<?php echo admin_url('feedback'); ?>" class="btn btn-info"><?php echo _l('create_feedback_request'); ?></a>

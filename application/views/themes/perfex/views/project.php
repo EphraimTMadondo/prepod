@@ -13,7 +13,7 @@
 <div class="card">
     <div class="card-body">
         <?php get_template_part('projects/project_tabs'); ?>
-        <div class="clearfix mtop15"></div>
+        <div class="clearfix mt-1"></div>
         <?php get_template_part('projects/'.$group); ?>
     </div>
 </div>

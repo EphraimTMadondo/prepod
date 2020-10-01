@@ -58,7 +58,7 @@
            }
         }
         if($found_custom_fields == true){
-         echo '<h4 class="bold text-center mtop30">'._l('copy_custom_fields_convert_to_customer').'</h4><hr />';
+         echo '<h4 class="bold text-center mt-2">'._l('copy_custom_fields_convert_to_customer').'</h4><hr />';
       }
       foreach ($custom_fields as $field) {
          $value = get_custom_field_value($lead->id, $field['id'], 'leads');

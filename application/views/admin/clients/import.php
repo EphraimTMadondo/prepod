@@ -17,7 +17,7 @@
               <?php echo $this->import->createSampleTableHtml(true); ?>
             <?php } ?>
             <div class="row">
-              <div class="col-md-4 mtop15">
+              <div class="col-md-4 mt-1">
                 <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'import_form')) ;?>
                 <?php echo form_hidden('clients_import','true'); ?>
                 <?php echo render_input('file_csv','choose_csv_file','','file'); ?>

@@ -26,7 +26,7 @@
                ?>
          </div>
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <?php if(has_permission('proposals','','create')){ ?>
                   <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-primary float-left">

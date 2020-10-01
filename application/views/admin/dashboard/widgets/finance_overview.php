@@ -12,7 +12,7 @@
                      <div class="row">
                         <div class="col-md-12">
                            <p class="text-dark text-uppercase center"><?php echo _l('home_invoice_overview'); ?></p>
-                           <hr class="mtop15" />
+                           <hr class="mt-1" />
                         </div>
                         <?php $percent_data = get_invoices_percent_by_status(6); ?>
                         <div class="col-md-12 text-stats-wrapper">
@@ -100,7 +100,7 @@
                      <div class="row">
                         <div class="col-md-12 text-stats-wrapper">
                            <p class="text-dark text-uppercase center"><?php echo _l('home_estimate_overview'); ?></p>
-                           <hr class="mtop15" />
+                           <hr class="mt-1" />
                         </div>
                         <?php
                            // Add not sent
@@ -134,7 +134,7 @@
                      <div class="row">
                         <div class="col-md-12 text-stats-wrapper">
                            <p class="text-dark text-uppercase center"><?php echo _l('home_proposal_overview'); ?></p>
-                           <hr class="mtop15" />
+                           <hr class="mt-1" />
                         </div>
                         <?php foreach($proposal_statuses as $status){
                            $url = admin_url('proposals/list_proposals?status='.$status);

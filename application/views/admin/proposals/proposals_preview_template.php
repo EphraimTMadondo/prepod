@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_hidden('_attachment_sale_id',$proposal->id); ?>
 <?php echo form_hidden('_attachment_sale_type','proposal'); ?>
-<div class="card mtop20">
+<div class="card mt-2">
    <div class="card-body">
       <div class="horizontal-scrollable-tabs preview-tabs-top">
          <div class="horizontal-tabs">
@@ -291,7 +291,7 @@
                         ?>
                   </div>
                       <?php if(!empty($proposal->signature)) { ?>
-                        <div class="row mtop25">
+                        <div class="row mt-2">
                            <div class="col-md-6 col-md-offset-6 text-right">
                               <p class="bold"><?php echo _l('document_customer_signature_text'); ?>
                                  <?php if(has_permission('proposals','','delete')){ ?>

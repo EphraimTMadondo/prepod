@@ -16,7 +16,7 @@ if ($lead['status'] == $status['id']) { ?>
                   )); ?></a>
                   <?php  } ?>
                   <a href="<?php echo admin_url('leads/index/'.$lead['id']); ?>" onclick="init_lead(<?php echo $lead['id']; ?>);return false;" class="pull-left">
-                     <span class="inline-block mtop10 mbot10">#<?php echo $lead['id'] . ' - ' . $lead['lead_name']; ?></span>
+                     <span class="inline-block mtop10 mb-1">#<?php echo $lead['id'] . ' - ' . $lead['lead_name']; ?></span>
                   </a>
                </div>
                <div class="col-md-6 text-muted">

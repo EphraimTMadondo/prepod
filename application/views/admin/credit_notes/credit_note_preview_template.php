@@ -199,20 +199,20 @@
                            <?php echo format_customer_info($credit_note, 'credit_note', 'shipping'); ?>
                         </address>
                         <?php } ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold">
                            <?php echo _l('credit_note_date'); ?>:
                            </span>
                            <?php echo _d($credit_note->date)?>
                         </p>
                         <?php if(!empty($credit_note->reference_no)){ ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo _l('reference_no'); ?>:</span>
                            <?php echo $credit_note->reference_no; ?>
                         </p>
                         <?php } ?>
                         <?php if($credit_note->project_id != 0 && get_option('show_project_on_credit_note') == '1'){ ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo _l('project'); ?>:</span>
                            <?php echo get_project_name_by_id($credit_note->project_id); ?>
                         </p>
@@ -221,7 +221,7 @@
                            foreach($pdf_custom_fields as $field){
                               $value = get_custom_field_value($credit_note->id,$field['id'],'credit_note');
                               if($value == ''){continue;} ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo $field['name']; ?>: </span>
                            <?php echo $value; ?>
                         </p>
@@ -320,13 +320,13 @@
                         </table>
                      </div>
                      <?php if($credit_note->clientnote != ''){ ?>
-                     <div class="col-md-12 mtop15">
+                     <div class="col-md-12 mt-1">
                         <p class="bold text-muted"><?php echo _l('credit_note_client_note'); ?></p>
                         <p><?php echo $credit_note->clientnote; ?></p>
                      </div>
                      <?php } ?>
                      <?php if($credit_note->terms != ''){ ?>
-                     <div class="col-md-12 mtop15">
+                     <div class="col-md-12 mt-1">
                         <p class="bold text-muted"><?php echo _l('terms_and_conditions'); ?></p>
                         <p><?php echo $credit_note->terms; ?></p>
                      </div>
@@ -362,7 +362,7 @@
             </div>
             <div role="tab-pane" class="tab-pane" id="invoices_credited">
                <?php if(count($credit_note->applied_credits) == 0) {
-                  echo '<div class="alert alert-info no-mbot">';
+                  echo '<div class="alert alert-info mb-0">';
                   echo _l('credited_invoices_not_found');
                   echo '</div>';
                   } else { ?>
@@ -407,7 +407,7 @@
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_refunds">
                <?php if(count($credit_note->refunds) == 0) {
-                  echo '<div class="alert alert-info no-mbot">';
+                  echo '<div class="alert alert-info mb-0">';
                   echo _l('not_refunds_found');
                   echo '</div>';
                   } else { ?>

@@ -118,7 +118,7 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                         <div class="clearfix"></div>
                         <hr class="hr-panel-heading" />
 
-                        <div class="clearfix mtop20"></div>
+                        <div class="clearfix mt-2"></div>
                         <?php if($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl_grid_view') == 'true') { ?>
                             <div class="grid-tab" id="grid-tab">
                                 <div class="row">

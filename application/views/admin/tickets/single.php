@@ -7,7 +7,7 @@
     <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <div class="horizontal-scrollable-tabs">
                      <div class="scroller arrow-left"><i class="fa fa-angle-left"></i></div>
@@ -66,7 +66,7 @@
             <div class="card-body">
                <div class="row">
                   <div class="col-md-8">
-                     <h3 class="mtop4 mbot20">
+                     <h3 class="mtop4 mb-1">
                         <span id="ticket_subject">
                            #<?php echo $ticket->ticketid; ?> - <?php echo $ticket->subject; ?>
                         </span>
@@ -80,7 +80,7 @@
                   <div class="col-md-4 text-right">
                      <div class="row">
                         <div class="col-md-6 col-md-offset-6">
-                           <?php echo render_select('status_top',$statuses,array('ticketstatusid','name'),'',$ticket->status,array(),array(),'no-mbot','',false); ?>
+                           <?php echo render_select('status_top',$statuses,array('ticketstatusid','name'),'',$ticket->status,array(),array(),'mb-0','',false); ?>
                         </div>
                      </div>
                   </div>
@@ -128,7 +128,7 @@
                                                 </div>
                                                 <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide inline-block full-width">
                                                    <textarea name="description" class="form-control" rows="4"><?php echo clear_textarea_breaks($note['description']); ?></textarea>
-                                                   <div class="text-right mtop15">
+                                                   <div class="text-right mt-1">
                                                       <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
                                                       <button type="button" class="btn btn-primary" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
                                                    </div>
@@ -185,7 +185,7 @@
                         </a>
                      </span>
 
-                     <div class="mtop15">
+                     <div class="mt-1">
                         <?php
                         $use_knowledge_base = get_option('use_knowledge_base');
                         ?>
@@ -199,7 +199,7 @@
                            </div>
                            <?php if($use_knowledge_base == 1){ ?>
                               <div class="visible-xs">
-                                 <div class="mtop15"></div>
+                                 <div class="mt-1"></div>
                               </div>
                               <div class="col-md-6">
                                  <?php $groups = get_all_knowledge_base_articles_grouped(); ?>
@@ -328,7 +328,7 @@
                        <?php echo render_select('department',$departments,array('departmentid','name'),'ticket_settings_departments',$ticket->department); ?>
                     </div>
                     <div class="col-md-6">
-                     <div class="form-group mbot20">
+                     <div class="form-group mb-1">
                         <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
                         <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo prep_tags_input(get_tags_in($ticket->ticketid,'ticket')); ?>" data-role="tagsinput">
                      </div>
@@ -397,7 +397,7 @@
          </div>
       </div>
    </div>
-   <div class="card mtop20">
+   <div class="card mt-2">
       <div class="card-body <?php if($ticket->admin == NULL){echo 'client-reply';} ?>">
          <div class="row">
             <div class="col-md-3 border-right ticket-submitter-info ticket-submitter-info">

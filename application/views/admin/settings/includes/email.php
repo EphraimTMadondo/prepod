@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div class="smtp-fields<?php if(get_option('email_protocol') == 'mail'){echo ' hide'; } ?>">
-		<div class="form-group mtop15">
+		<div class="form-group mt-1">
 				<label for="smtp_encryption"><?php echo _l('smtp_encryption'); ?></label><br />
 				<select name="settings[smtp_encryption]" class="selectpicker" data-style="btn-outline-light" data-width="100%">
 					<option value="" <?php if(get_option('smtp_encryption') == ''){echo 'selected';} ?>><?php echo _l('smtp_encryption_none'); ?></option>

@@ -46,11 +46,11 @@ if($invoice->scheduled_email) { ?>
 }
 ?>
 <div class="col-md-12">
-   <div class="mbot10">
+   <div class="mb-1">
       <?php if($invoice->is_recurring_from == null
          && $recurring_invoice->cycles > 0
          && $recurring_invoice->cycles == $recurring_invoice->total_cycles) { ?>
-            <div class="alert alert-info no-mbot">
+            <div class="alert alert-info mb-0">
                <?php echo _l('recurring_has_ended', _l('invoice_lowercase')); ?>
             </div>
          <?php } else if($show_recurring_invoice_info){ ?>
@@ -74,7 +74,7 @@ if($invoice->scheduled_email) { ?>
          ?>
       </div>
       <?php if($invoice->is_recurring_from != NULL){ ?>
-         <?php echo '<p class="text-muted'.($show_recurring_invoice_info ? ' mtop15': '').'">'._l('invoice_recurring_from','<a href="'.admin_url('invoices/list_invoices/'.$invoice->is_recurring_from).'" onclick="init_invoice('.$invoice->is_recurring_from.');return false;">'.format_invoice_number($invoice->is_recurring_from).'</a></p>'); ?>
+         <?php echo '<p class="text-muted'.($show_recurring_invoice_info ? ' mt-1': '').'">'._l('invoice_recurring_from','<a href="'.admin_url('invoices/list_invoices/'.$invoice->is_recurring_from).'" onclick="init_invoice('.$invoice->is_recurring_from.');return false;">'.format_invoice_number($invoice->is_recurring_from).'</a></p>'); ?>
       <?php } ?>
    </div>
    <div class="clearfix"></div>
@@ -82,7 +82,7 @@ if($invoice->scheduled_email) { ?>
 <?php } ?>
 <?php if($invoice->project_id != 0){ ?>
    <div class="col-md-12">
-      <h4 class="font-medium mtop15 mbot20"><?php echo _l('related_to_project',array(
+      <h4 class="font-medium mt-1 mb-1"><?php echo _l('related_to_project',array(
          _l('invoice_lowercase'),
          _l('project_lowercase'),
          '<a href="'.admin_url('projects/view/'.$invoice->project_id).'" target="_blank">' . $invoice->project_data->name . '</a>',
@@ -118,14 +118,14 @@ if($invoice->scheduled_email) { ?>
          <?php echo format_customer_info($invoice, 'invoice', 'shipping'); ?>
       </address>
    <?php } ?>
-   <p class="no-mbot">
+   <p class="mb-0">
       <span class="bold">
          <?php echo _l('invoice_data_date'); ?>
       </span>
       <?php echo $invoice->date; ?>
    </p>
    <?php if(!empty($invoice->duedate)){ ?>
-      <p class="no-mbot">
+      <p class="mb-0">
          <span class="bold">
             <?php echo _l('invoice_data_duedate'); ?>
          </span>
@@ -133,13 +133,13 @@ if($invoice->scheduled_email) { ?>
       </p>
    <?php } ?>
    <?php if($invoice->sale_agent != 0 && get_option('show_sale_agent_on_invoices') == 1){ ?>
-      <p class="no-mbot">
+      <p class="mb-0">
          <span class="bold"><?php echo _l('sale_agent_string'); ?>: </span>
          <?php echo get_staff_full_name($invoice->sale_agent); ?>
       </p>
    <?php } ?>
    <?php if($invoice->project_id != 0 && get_option('show_project_on_invoice') == 1){ ?>
-      <p class="no-mbot">
+      <p class="mb-0">
          <span class="bold"><?php echo _l('project'); ?>:</span>
          <?php echo get_project_name_by_id($invoice->project_id); ?>
       </p>
@@ -148,7 +148,7 @@ if($invoice->scheduled_email) { ?>
    foreach($pdf_custom_fields as $field){
     $value = get_custom_field_value($invoice->id,$field['id'],'invoice');
     if($value == ''){continue;} ?>
-    <p class="no-mbot">
+    <p class="mb-0">
       <span class="bold"><?php echo $field['name']; ?>: </span>
       <?php echo $value; ?>
    </p>
@@ -275,13 +275,13 @@ if($invoice->scheduled_email) { ?>
 <?php } ?>
 <hr />
 <?php if($invoice->clientnote != ''){ ?>
-   <div class="col-md-12 row mtop15">
+   <div class="col-md-12 row mt-1">
       <p class="bold text-muted"><?php echo _l('invoice_note'); ?></p>
       <p><?php echo $invoice->clientnote; ?></p>
    </div>
 <?php } ?>
 <?php if($invoice->terms != ''){ ?>
-   <div class="col-md-12 row mtop15">
+   <div class="col-md-12 row mt-1">
       <p class="bold text-muted"><?php echo _l('terms_and_conditions'); ?></p>
       <p><?php echo $invoice->terms; ?></p>
    </div>

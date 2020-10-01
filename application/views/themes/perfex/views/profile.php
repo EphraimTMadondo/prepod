@@ -109,7 +109,7 @@
 						<?php } ?>
 					</div>
 					<div class="row p15 contact-profile-save-section">
-						<div class="col-md-12 text-right mtop20">
+						<div class="col-md-12 text-right mt-2">
 							<div class="form-group">
 								<button type="submit" class="btn btn-info contact-profile-save"><?php echo _l('clients_edit_profile_update_btn'); ?></button>
 							</div>

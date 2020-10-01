@@ -21,7 +21,7 @@
 							</a>
 						</div>
 						<div class="clearfix"></div>
-						<p class="mtop20 text-info bold">
+						<p class="mt-2 text-info bold">
 							<?php echo _l('utility_db_backup_note'); ?>
 						</p>
 

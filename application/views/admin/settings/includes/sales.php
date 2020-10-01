@@ -235,7 +235,7 @@
             </select>
          </div>
          <div class="col-md-5">
-            <div class="mtop30 text-right">
+            <div class="mt-2 text-right">
                <div class="radio radio-inline radio-primary">
                   <input type="radio" id="k_desc_estimate" name="settings[default_estimates_pipeline_sort_type]" value="asc" <?php if(get_option('default_estimates_pipeline_sort_type') == 'asc'){echo 'checked';} ?>>
                   <label for="k_desc_estimate"><?php echo _l('order_ascending'); ?></label>
@@ -273,7 +273,7 @@
             </select>
          </div>
          <div class="col-md-5">
-            <div class="mtop30 text-right">
+            <div class="mt-2 text-right">
                <div class="radio radio-inline radio-primary">
                   <input type="radio" id="k_desc_proposal" name="settings[default_proposals_pipeline_sort_type]" value="asc" <?php if(get_option('default_proposals_pipeline_sort_type') == 'asc'){echo 'checked';} ?>>
                   <label for="k_desc_proposal"><?php echo _l('order_ascending'); ?></label>
@@ -306,7 +306,7 @@
       <?php $custom_fields = get_custom_fields('proposal');
       if(count($custom_fields) > 0){
         echo '<hr />';
-        echo '<p class="no-mbot font-medium"><b>'._l('custom_fields').'</b></p>';
+        echo '<p class="mb-0 font-medium"><b>'._l('custom_fields').'</b></p>';
         if(total_rows(db_prefix().'customfields',array('fieldto'=>'proposal','show_on_client_portal'=>1)) == 0){
           echo '<p>' . _l('custom_field_pdf_html_help'). '</p>';
           echo '<hr />';

@@ -10,9 +10,9 @@
              echo form_hidden('is_edit','true');
             }
             ?>
-         <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'expense-form','class'=>'dropzone dropzone-manual col-md-12 mbot20')) ;?>
+         <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'expense-form','class'=>'dropzone dropzone-manual col-md-12 mb-1')) ;?>
          <div class="col-md-6">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <?php
                      if(isset($expense) && $expense->recurring_from != NULL){
@@ -117,7 +117,7 @@
             </div>
          </div>
          <div class="col-md-6">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <h4 class="no-margin"><?php echo _l('advanced_options'); ?></h4>
                   <hr class="hr-panel-heading" />
@@ -223,7 +223,7 @@
                       </div>
                     <?php } ?>
                   </div>
-                  <div class="clearfix mtop15"></div>
+                  <div class="clearfix mt-1"></div>
                   <div class="row">
                      <div class="col-md-6">
                         <?php $selected = (isset($expense) ? $expense->paymentmode : ''); ?>

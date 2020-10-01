@@ -248,32 +248,32 @@
                            <?php echo format_customer_info($estimate, 'estimate', 'shipping'); ?>
                         </address>
                         <?php } ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold">
                            <?php echo _l('estimate_data_date'); ?>:
                            </span>
                            <?php echo $estimate->date; ?>
                         </p>
                         <?php if(!empty($estimate->expirydate)){ ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo _l('estimate_data_expiry_date'); ?>:</span>
                            <?php echo $estimate->expirydate; ?>
                         </p>
                         <?php } ?>
                         <?php if(!empty($estimate->reference_no)){ ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo _l('reference_no'); ?>:</span>
                            <?php echo $estimate->reference_no; ?>
                         </p>
                         <?php } ?>
                         <?php if($estimate->sale_agent != 0 && get_option('show_sale_agent_on_estimates') == 1){ ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo _l('sale_agent_string'); ?>:</span>
                            <?php echo get_staff_full_name($estimate->sale_agent); ?>
                         </p>
                         <?php } ?>
                         <?php if($estimate->project_id != 0 && get_option('show_project_on_estimate') == 1){ ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo _l('project'); ?>:</span>
                            <?php echo get_project_name_by_id($estimate->project_id); ?>
                         </p>
@@ -282,7 +282,7 @@
                            foreach($pdf_custom_fields as $field){
                            $value = get_custom_field_value($estimate->id,$field['id'],'estimate');
                            if($value == ''){continue;} ?>
-                        <p class="no-mbot">
+                        <p class="mb-0">
                            <span class="bold"><?php echo $field['name']; ?>: </span>
                            <?php echo $value; ?>
                         </p>
@@ -383,13 +383,13 @@
                      <?php } ?>
                      <?php } ?>
                      <?php if($estimate->clientnote != ''){ ?>
-                     <div class="col-md-12 mtop15">
+                     <div class="col-md-12 mt-1">
                         <p class="bold text-muted"><?php echo _l('estimate_note'); ?></p>
                         <p><?php echo $estimate->clientnote; ?></p>
                      </div>
                      <?php } ?>
                      <?php if($estimate->terms != ''){ ?>
-                     <div class="col-md-12 mtop15">
+                     <div class="col-md-12 mt-1">
                         <p class="bold text-muted"><?php echo _l('terms_and_conditions'); ?></p>
                         <p><?php echo $estimate->terms; ?></p>
                      </div>
@@ -418,11 +418,11 @@
                <?php echo form_open(admin_url('estimates/add_note/'.$estimate->id),array('id'=>'sales-notes','class'=>'estimate-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
-                  <button type="submit" class="btn btn-info mtop15 mbot15"><?php echo _l('estimate_add_note'); ?></button>
+                  <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
                </div>
                <?php echo form_close(); ?>
                <hr />
-               <div class="card mtop20 no-shadow" id="sales_notes_area">
+               <div class="card mt-2 no-shadow" id="sales_notes_area">
                </div>
             </div>
             <div role="tab-pane" class="tab-pane" id="tab_activity">
@@ -490,7 +490,7 @@
                <?php
                   $views_activity = get_views_tracking('estimate',$estimate->id);
                   if(count($views_activity) === 0) {
-                     echo '<h4 class="no-mbot">'._l('not_viewed_yet',_l('estimate_lowercase')).'</h4>';
+                     echo '<h4 class="mb-0">'._l('not_viewed_yet',_l('estimate_lowercase')).'</h4>';
                   }
                   foreach($views_activity as $activity){ ?>
                <p class="text-success no-margin">

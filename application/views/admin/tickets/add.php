@@ -8,7 +8,7 @@
 		<?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'new_ticket_form')); ?>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="card mtop20">
+				<div class="card mt-2">
 					<div class="card">
 						<div class="row">
 							<div class="col-md-6">
@@ -116,7 +116,7 @@
 							<button type="submit" data-form="#new_ticket_form" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" class="btn btn-info"><?php echo _l('open_ticket'); ?></button>
 						</div>
 						<div class="row">
-							<div class="col-md-12 mbot20 before-ticket-message">
+							<div class="col-md-12 mb-1 before-ticket-message">
 								<div class="row">
 									<div class="col-md-6">
 										<select id="insert_predefined_reply" data-width="100%" data-live-search="true" class="selectpicker" data-style="btn-outline-light" data-title="<?php echo _l('ticket_single_insert_predefined_reply'); ?>">
@@ -127,7 +127,7 @@
 									</div>
 									<?php if(get_option('use_knowledge_base') == 1){ ?>
 										<div class="visible-xs">
-											<div class="mtop15"></div>
+											<div class="mt-1"></div>
 										</div>
 										<div class="col-md-6">
 											<?php $groups = get_all_knowledge_base_articles_grouped(); ?>

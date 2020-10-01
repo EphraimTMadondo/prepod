@@ -6,7 +6,7 @@
    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20 mbot10">
+            <div class="card mt-2 mb-1">
                <div class="card-body _buttons">
                   <?php if(has_permission('expenses','','create')){ ?>
                   <a href="<?php echo admin_url('expenses/expense'); ?>" class="btn btn-primary"><?php echo _l('new_expense'); ?></a>

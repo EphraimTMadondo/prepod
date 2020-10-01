@@ -10,7 +10,7 @@
 		<a href="#" class="btn btn-info mbot15" data-toggle="modal" data-target="#client_zip_invoices">
 			<?php echo _l('zip_invoices'); ?>
 		</a>
-		<div id="invoices_total" class="mbot20"></div>
+		<div id="invoices_total" class="mb-1"></div>
 		<?php
 		$this->load->view('admin/invoices/table_html', array('class'=>'invoices-single-client'));
 		$this->load->view('admin/clients/modals/zip_invoices');

@@ -16,7 +16,7 @@
          
          </div>
          <br>
-         <hr class="mtop15" />         
+         <hr class="mt-1" />         
          <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
            <div class="top_stats_wrapper minheight85">
                <a class="text-success mbot15">

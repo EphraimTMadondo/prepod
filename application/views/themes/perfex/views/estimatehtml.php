@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="mtop15 preview-top-wrapper">
+<div class="mt-1 preview-top-wrapper">
    <div class="row">
       <div class="col-md-3">
          <div class="mbot30">
@@ -15,7 +15,7 @@
          <div class="row">
             <div class="col-md-12">
                <div class="pull-left">
-                  <h3 class="bold no-mtop estimate-html-number no-mbot">
+                  <h3 class="bold no-mtop estimate-html-number mb-0">
                      <span class="sticky-visible hide">
                      <?php echo format_estimate_number($estimate->id); ?>
                      </span>
@@ -78,10 +78,10 @@
    </div>
 </div>
 <div class="clearfix"></div>
-<div class="card mtop20">
+<div class="card mt-2">
    <div class="card-body">
       <div class="col-md-10 col-md-offset-1">
-         <div class="row mtop20">
+         <div class="row mt-2">
             <div class="col-md-6 col-sm-6 transaction-html-info-col-left">
                <h4 class="bold estimate-html-number"><?php echo format_estimate_number($estimate->id); ?></h4>
                <address class="estimate-html-company-info">
@@ -100,32 +100,32 @@
                   <?php echo format_customer_info($estimate, 'estimate', 'shipping'); ?>
                </address>
                <?php } ?>
-               <p class="no-mbot estimate-html-date">
+               <p class="mb-0 estimate-html-date">
                   <span class="bold">
                   <?php echo _l('estimate_data_date'); ?>
                   </span>
                   <?php echo _d($estimate->date); ?>
                </p>
                <?php if(!empty($estimate->expirydate)){ ?>
-               <p class="no-mbot estimate-html-expiry-date">
+               <p class="mb-0 estimate-html-expiry-date">
                   <span class="bold"><?php echo _l('estimate_data_expiry_date'); ?></span>
                   <?php echo _d($estimate->expirydate); ?>
                </p>
                <?php } ?>
                <?php if(!empty($estimate->reference_no)){ ?>
-               <p class="no-mbot estimate-html-reference-no">
+               <p class="mb-0 estimate-html-reference-no">
                   <span class="bold"><?php echo _l('reference_no'); ?>:</span>
                   <?php echo $estimate->reference_no; ?>
                </p>
                <?php } ?>
                <?php if($estimate->sale_agent != 0 && get_option('show_sale_agent_on_estimates') == 1){ ?>
-               <p class="no-mbot estimate-html-sale-agent">
+               <p class="mb-0 estimate-html-sale-agent">
                   <span class="bold"><?php echo _l('sale_agent_string'); ?>:</span>
                   <?php echo get_staff_full_name($estimate->sale_agent); ?>
                </p>
                <?php } ?>
                <?php if($estimate->project_id != 0 && get_option('show_project_on_estimate') == 1){ ?>
-               <p class="no-mbot estimate-html-project">
+               <p class="mb-0 estimate-html-project">
                   <span class="bold"><?php echo _l('project'); ?>:</span>
                   <?php echo get_project_name_by_id($estimate->project_id); ?>
                </p>
@@ -134,7 +134,7 @@
                   foreach($pdf_custom_fields as $field){
                     $value = get_custom_field_value($estimate->id,$field['id'],'estimate');
                     if($value == ''){continue;} ?>
-               <p class="no-mbot">
+               <p class="mb-0">
                   <span class="bold"><?php echo $field['name']; ?>: </span>
                   <?php echo $value; ?>
                </p>

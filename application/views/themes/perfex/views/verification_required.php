@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-body">
 
-            <div class="alert alert-warning no-mbot verification-required-alert">
+            <div class="alert alert-warning mb-0 verification-required-alert">
                 <h4 class="verification-required-heading"><?php echo _l('email_verification_required_message'); ?></h4>
                 <p class="bold verification-required-message"><?php echo _l('email_verification_required_message_mail', site_url('verification/resend')); ?></p>
             </div>

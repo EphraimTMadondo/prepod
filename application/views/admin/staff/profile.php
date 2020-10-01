@@ -103,7 +103,7 @@
                     <?php
                     foreach ($staff_departments as $staff_department) {
                      if($staff_department['departmentid'] == $department['departmentid']){ ?>
-                     <div class="chip-circle mtop20"><?php echo $staff_department['name']; ?></div>
+                     <div class="chip-circle mt-2"><?php echo $staff_department['name']; ?></div>
                      <?php }
                  }
 

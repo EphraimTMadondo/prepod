@@ -26,7 +26,7 @@
                         </div>
                         <div class="timesheet-start-end-time">
                             <div class="col-md-12">
-                                <div class="form-group no-mbot">
+                                <div class="form-group mb-0">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="control-label" for="start_time"><?php echo _l('project_timesheet_start_time'); ?></label>
@@ -39,7 +39,7 @@
                             </div>
 
                            <div class="col-md-12">
-                                <div class="form-group no-mbot">
+                                <div class="form-group mb-0">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="control-label" for="end_time"><?php echo _l('project_timesheet_end_time'); ?></label>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="timesheet-duration hide">
                          <div class="col-md-12">
-                            <div class="form-group no-mbot">
+                            <div class="form-group mb-0">
                                 <div class="row">
                                     <div class="col-md-3 popover-250">
                                         <label class="control-label" for="timesheet_duration">
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mtop15">
+                        <div class="row mt-1">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                          <div class="row mtop15">
+                          <div class="row mt-1">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-3">

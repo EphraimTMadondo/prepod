@@ -37,7 +37,7 @@
                 <div class="row text-center">
               <?php echo staff_profile_image($member->staffid,array('staff-profile-image-thumb'),'thumb'); ?>
                 </div>
-              <div class="profile mtop20 display-inline-block">
+              <div class="profile mt-2 display-inline-block">
 
                 <h4 class="text-center">
 

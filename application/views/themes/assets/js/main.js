@@ -1498,9 +1498,9 @@ $(function() {
             }).done(function(response) {
                 response = JSON.parse(response);
                 if (response.success == true) {
-                    errorContainer.html('<div class="alert alert-success no-mbot mtop15">SMS Sent Successfully!</div>');
+                    errorContainer.html('<div class="alert alert-success mb-0 mt-1">SMS Sent Successfully!</div>');
                 } else {
-                    errorContainer.html('<div class="alert alert-warning no-mbot mtop15">' + response.error + '</div>');
+                    errorContainer.html('<div class="alert alert-warning mb-0 mt-1">' + response.error + '</div>');
                 }
             }).always(function() {
                 that.prop('disabled', false);
@@ -1970,7 +1970,7 @@ $(function() {
         if ($previewItem.find('[name="description"]').length && $previewItem.find('[name="description"]').val().trim().length > 0 &&
             $previewItem.find('[name="rate"]').val().trim().length > 0) {
 
-            $itemsTable.before('<div class="alert alert-warning mbot20" id="items-warning">' + app.lang.item_forgotten_in_preview + '<i class="fa fa-angle-double-down pointer pull-right fa-2x" style="margin-top:-4px;" onclick="add_item_to_table(\'undefined\',\'undefined\',undefined); return false;"></i></div>');
+            $itemsTable.before('<div class="alert alert-warning mb-1" id="items-warning">' + app.lang.item_forgotten_in_preview + '<i class="fa fa-angle-double-down pointer pull-right fa-2x" style="margin-top:-4px;" onclick="add_item_to_table(\'undefined\',\'undefined\',undefined); return false;"></i></div>');
 
             $('html,body').animate({
                 scrollTop: $("#items-warning").offset().top
@@ -1980,7 +1980,7 @@ $(function() {
 
         } else {
             if ($itemsTable.length && $itemsTable.find('.item').length === 0) {
-                $itemsTable.before('<div class="alert alert-warning mbot20" id="items-warning">' + app.lang.no_items_warning + '</div>');
+                $itemsTable.before('<div class="alert alert-warning mb-1" id="items-warning">' + app.lang.no_items_warning + '</div>');
                 $('html,body').animate({
                     scrollTop: $("#items-warning").offset().top
                 });

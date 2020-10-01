@@ -20,7 +20,7 @@
             <label for="mark_all_tasks_as_completed"><?php echo _l('project_mark_all_tasks_as_completed'); ?></label>
         </div>
         <?php if(total_rows(db_prefix().'emailtemplates',array('slug'=>'project-finished-to-customer','active'=>0)) == 0 && total_rows(db_prefix().'contacts',array('userid'=>$project->clientid,'active'=>1)) > 0){ ?>
-        <div class="form-group project_marked_as_finished hide no-mbot">
+        <div class="form-group project_marked_as_finished hide mb-0">
             <hr />
             <div class="checkbox checkbox-primary">
                 <input type="checkbox" name="project_marked_as_finished_email_to_contacts" id="project_marked_as_finished_email_to_contacts">

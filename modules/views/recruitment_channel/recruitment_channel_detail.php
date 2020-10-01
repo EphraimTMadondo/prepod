@@ -147,7 +147,7 @@ if (isset($form->notify_lead_imported) && $form->notify_lead_imported == 1 || !i
                                  <label for="assigned"><?php echo _l('notify_assigned_user'); ?></label>
                               </div>
 
-                              <div class="clearfix mtop15"></div>
+                              <div class="clearfix mt-1"></div>
                               <div id="staff_notify" class="<?php if (isset($form->notify_type) && ($form->notify_type != 'specific_staff')) {echo 'd-none';}?>">
                                 <label><?php echo _l('person_in_charge'); ?></label>
                                 <select name="notify_ids_staff[]" id="notify_ids_staff" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('not_required'); ?>" multiple data-live-search="true">

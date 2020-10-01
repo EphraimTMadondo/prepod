@@ -10,7 +10,7 @@
     <a class="nav-link" href="#ticket_form" aria-controls="ticket_form" role="tab" data-toggle="tab"><?php echo _l('ticket_form'); ?></a>
   </li>
 </ul>
-<div class="tab-content mtop30">
+<div class="tab-content mt-2">
   <div role="tab-pane" class="tab-pane active" id="set_tickets_general">
     <?php render_yes_no_option('services','settings_tickets_use_services'); ?>
     <hr />
@@ -67,7 +67,7 @@
     <h4 class="bold">Embed form</h4>
     <p><?php echo _l('form_integration_code_help'); ?></p>
     <textarea class="form-control" rows="2"><iframe width="600" height="850" src="<?php echo site_url('forms/ticket'); ?>" frameborder="0" allowfullscreen></iframe></textarea>
-    <p class="bold mtop15">When placing the iframe snippet code consider the following:</p>
+    <p class="bold mt-1">When placing the iframe snippet code consider the following:</p>
     <p class="<?php if(strpos(site_url(),'http://') !== false){echo 'bold text-success';} ?>">1. If the protocol of your installation is http use a http page inside the iframe.</p>
     <p class="<?php if(strpos(site_url(),'https://') !== false){echo 'bold text-success';} ?>">2. If the protocol of your installation is https use a https page inside the iframe.</p>
     <p>None SSL installation will need to place the link in non ssl eq. landing page and backwards.</p>

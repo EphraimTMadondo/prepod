@@ -7,7 +7,7 @@
 </div>
 <?php } ?>
 <?php foreach($vault_entries as $entry){ ?>
-<div class="card mtop20 panel panel-default panel-vault">
+<div class="card mt-2 panel panel-default panel-vault">
    <div class="panel-heading" role="tab" id="<?php echo 'vaultEntryHeading-'.$entry['id']; ?>">
       <h4 class="panel-title pull-left">
          <?php echo $entry['server_address']; ?>
@@ -49,7 +49,7 @@
                 </span></p>
                <p>
               <?php if(!empty($entry['last_updated_from'])){ ?>
-               <p class="text-muted no-mbot"><?php echo _l('vault_entry_last_update',$entry['last_updated_from']); ?> -
+               <p class="text-muted mb-0"><?php echo _l('vault_entry_last_update',$entry['last_updated_from']); ?> -
                 <span class="text-has-action" data-toggle="tooltip" data-title="<?php echo _dt($entry['last_updated']); ?>">
                 <?php echo time_ago($entry['last_updated']); ?></p>
               </span>

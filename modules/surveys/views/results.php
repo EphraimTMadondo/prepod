@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-6 animated fadeIn">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-header">
                         <h4 class="card-title"><?php echo $title; ?></h4>
                     </div>
@@ -16,7 +16,7 @@
                             foreach($survey->questions as $question){  ?>
                         <div class="mb-2">
                             <?php if($question['boxtype'] == 'checkbox' || $question['boxtype'] == 'radio'){ ?>
-                            <h4 class="bold no-mbot"><?php echo $question['question']; ?></h4>
+                            <h4 class="bold mb-0"><?php echo $question['question']; ?></h4>
                             <hr />
                             <?php $x = 0;
                                 foreach($question['box_descriptions'] as $box_description){ ?>
@@ -66,7 +66,7 @@
                         <?php
                             $original_questions = $text_questions;
                             foreach($text_questions as $question){ ?>
-                        <h4 class="bold no-mbot"><?php echo $question['question']; ?></h4>
+                        <h4 class="bold mb-0"><?php echo $question['question']; ?></h4>
                         <a href="#questionid_<?php echo $question['questionid']; ?>" data-toggle="modal"><?php echo _l('survey_view_all_answers'); ?></a>
                         <?php
                             $answers = surveys_get_text_question_answers($question['questionid'],$question['rel_id']);
@@ -83,7 +83,7 @@
                                             <?php
                                                 $i = 1;
                                                 foreach($answers as $answer) { ?>
-                                            <li class="text-success mbot10"><?php echo $i, ': ' .$answer['answer']; ?></li>
+                                            <li class="text-success mb-1"><?php echo $i, ': ' .$answer['answer']; ?></li>
                                             <?php
                                                 $i++;
                                                 } ?>

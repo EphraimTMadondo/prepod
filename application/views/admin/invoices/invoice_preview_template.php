@@ -25,7 +25,7 @@
 <?php echo form_hidden('_attachment_sale_id',$invoice->id); ?>
 <?php echo form_hidden('_attachment_sale_type','invoice'); ?>
 <div class="col-md-12 no-padding">
-   <div class="card mtop20">
+   <div class="card mt-2">
       <div class="card-body">
          <?php if($invoice->recurring > 0){
             echo '<div class="ribbon info"><span>'._l('invoice_recurring_indicator').'</span></div>';
@@ -128,7 +128,7 @@
                <?php echo format_invoice_status($invoice->status,'mtop5'); ?>
                <?php if($invoice->status == Invoices_model::STATUS_PARTIALLY || $invoice->status == Invoices_model::STATUS_OVERDUE){
                   if($invoice->duedate && date('Y-m-d') > date('Y-m-d',strtotime(to_sql_date($invoice->duedate)))){
-                    echo '<p class="text-danger mtop15 no-mbot">'._l('invoice_is_overdue',floor((abs(time() - strtotime(to_sql_date($invoice->duedate))))/(60*60*24))).'</p>';
+                    echo '<p class="text-danger mt-1 mb-0">'._l('invoice_is_overdue',floor((abs(time() - strtotime(to_sql_date($invoice->duedate))))/(60*60*24))).'</p>';
                   }
                   } ?>
             </div>
@@ -296,7 +296,7 @@
             <?php if(count($invoice_recurring_invoices) > 0 || $invoice->recurring != 0){ ?>
             <div role="tab-pane" class="tab-pane" id="tab_child_invoices">
                <?php if(count($invoice_recurring_invoices)){ ?>
-               <p class="mtop30 bold"><?php echo _l('invoice_add_edit_recurring_invoices_from_invoice'); ?></p>
+               <p class="mt-2 bold"><?php echo _l('invoice_add_edit_recurring_invoices_from_invoice'); ?></p>
                <br />
                <ul class="list-group">
                   <?php foreach($invoice_recurring_invoices as $recurring){ ?>
@@ -329,11 +329,11 @@
                <?php echo form_open(admin_url('invoices/add_note/'.$invoice->id),array('id'=>'sales-notes','class'=>'invoice-notes-form')); ?>
                <?php echo render_textarea('description'); ?>
                <div class="text-right">
-                  <button type="submit" class="btn btn-info mtop15 mbot15"><?php echo _l('estimate_add_note'); ?></button>
+                  <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('estimate_add_note'); ?></button>
                </div>
                <?php echo form_close(); ?>
                <hr />
-               <div class="card mtop20 no-shadow" id="sales_notes_area"></div>
+               <div class="card mt-2 no-shadow" id="sales_notes_area"></div>
             </div>
             <div role="tab-pane" class="tab-pane ptop10" id="tab_activity">
                <div class="row">
@@ -397,7 +397,7 @@
                <?php
                   $views_activity = get_views_tracking('invoice',$invoice->id);
                   if(count($views_activity) === 0) {
-                     echo '<h4 class="no-mbot">'._l('not_viewed_yet',_l('invoice_lowercase')).'</h4>';
+                     echo '<h4 class="mb-0">'._l('not_viewed_yet',_l('invoice_lowercase')).'</h4>';
                   }
                   foreach($views_activity as $activity){ ?>
                <p class="text-success no-margin">

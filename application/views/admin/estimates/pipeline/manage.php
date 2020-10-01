@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <div class="card mtop20">
+                <div class="card mt-2">
                     <div class="card-body _buttons">
                        <?php if(has_permission('estimates','','create')){
                         $this->load->view('admin/estimates/estimates_top_stats');

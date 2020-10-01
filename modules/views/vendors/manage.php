@@ -22,7 +22,7 @@
                  
                   
                   
-                  <div class="clearfix mtop20"></div>
+                  <div class="clearfix mt-2"></div>
                   <div class="row col-md-12"><hr/></div>
                   <?php
                      $table_data = array();

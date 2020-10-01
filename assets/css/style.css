@@ -2533,7 +2533,7 @@ body.rtl .mleft40 {
     margin-bottom: 5px;
 }
 
-.mbot10 {
+.mb-1 {
     margin-bottom: 10px;
 }
 
@@ -2541,7 +2541,7 @@ body.rtl .mleft40 {
     margin-bottom: 15px !important;
 }
 
-.mbot20 {
+.mb-1 {
     margin-bottom: 20px;
 }
 
@@ -2569,7 +2569,7 @@ body.rtl .mleft40 {
     margin-top: 0 !important;
 }
 
-.no-mbot {
+.mb-0 {
     margin-bottom: 0 !important;
 }
 
@@ -2609,19 +2609,19 @@ body.rtl .mleft40 {
     margin-top: 10px;
 }
 
-.mtop15 {
+.mt-1 {
     margin-top: 15px;
 }
 
-.mtop20 {
+.mt-2 {
     margin-top: 20px;
 }
 
-.mtop25 {
+.mt-2 {
     margin-top: 25px;
 }
 
-.mtop30 {
+.mt-2 {
     margin-top: 30px;
 }
 

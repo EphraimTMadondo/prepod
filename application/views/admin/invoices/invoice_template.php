@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="card mtop20 <?php if(!isset($invoice) || (isset($invoice) && count($invoices_to_merge) == 0 && (isset($invoice) && !isset($invoice_from_project) && count($expenses_to_bill) == 0 || $invoice->status == Invoices_model::STATUS_CANCELLED))){echo ' hide';} ?>" id="invoice_top_info">
+<div class="card mt-2 <?php if(!isset($invoice) || (isset($invoice) && count($invoices_to_merge) == 0 && (isset($invoice) && !isset($invoice_from_project) && count($expenses_to_bill) == 0 || $invoice->status == Invoices_model::STATUS_CANCELLED))){echo ' hide';} ?>" id="invoice_top_info">
    <div class="card-body">
       <div class="row">
          <div id="merge" class="col-md-6">
@@ -20,7 +20,7 @@
       </div>
    </div>
 </div>
-<div class="card mtop20 invoice accounting-template">
+<div class="card mt-2 invoice accounting-template">
    <div class="additional"></div>
    <div class="card-body">
       <?php if(isset($invoice)){ ?>
@@ -180,7 +180,7 @@
                <div class="input-group">
                   <span class="input-group-addon">
                   <?php if(isset($invoice)){ ?>
-                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_invoice_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $invoice->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('invoices/update_number_settings/'.$invoice->id); ?>' class='btn btn-info btn-block mtop15'><?php echo _l('submit'); ?></button>">
+                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_invoice_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $invoice->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('invoices/update_number_settings/'.$invoice->id); ?>' class='btn btn-info btn-block mt-1'><?php echo _l('submit'); ?></button>">
                     <i class="fa fa-cog"></i>
                     </a>
                   <?php }
@@ -698,12 +698,12 @@
       <?php echo form_hidden('expense_id'); ?>
    </div>
    <div class="row">
-      <div class="col-md-12 mtop15">
+      <div class="col-md-12 mt-1">
          <div class="card-body bottom-transaction">
             <?php $value = (isset($invoice) ? $invoice->clientnote : get_option('predefined_clientnote_invoice')); ?>
-            <?php echo render_textarea('clientnote','invoice_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
+            <?php echo render_textarea('clientnote','invoice_add_edit_client_note',$value,array(),array(),'mt-1'); ?>
             <?php $value = (isset($invoice) ? $invoice->terms : get_option('predefined_terms_invoice')); ?>
-            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
+            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
             <div class="btn-bottom-toolbar text-right">
                 <?php if(!isset($invoice)){ ?>
                 <button class="btn-tr btn btn-default ml-1 text-right invoice-form-submit save-as-draft transaction-submit">

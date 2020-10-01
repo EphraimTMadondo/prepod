@@ -80,7 +80,7 @@
 <?php $custom_fields = get_custom_fields('customers');
 if(count($custom_fields) > 0){
 	echo '<hr />';
-	echo '<p class="no-mbot font-medium"><b>'._l('custom_fields').'</b></p>';
+	echo '<p class="mb-0 font-medium"><b>'._l('custom_fields').'</b></p>';
 	if(total_rows(db_prefix().'customfields',array('fieldto'=>'customers','show_on_client_portal'=>1)) == 0){
 		echo '<p>' . _l('custom_field_pdf_html_help'). '</p>';
 		echo '<hr />';

@@ -7,7 +7,7 @@
    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-6 left-column">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <?php echo form_open($this->uri->uri_string(),array('id'=>'contract-form')); ?>
                   <div class="form-group">
@@ -244,7 +244,7 @@
                               <?php if(isset($contract_merge_fields)){ ?>
                               <hr class="hr-panel-heading" />
                               <p class="bold mtop10 text-right"><a href="#" onclick="slideToggle('.avilable_merge_fields'); return false;"><?php echo _l('available_merge_fields'); ?></a></p>
-                              <div class=" avilable_merge_fields mtop15 hide">
+                              <div class=" avilable_merge_fields mt-1 hide">
                                  <ul class="list-group">
                                     <?php
                                        foreach($contract_merge_fields as $field){
@@ -268,14 +268,14 @@
                            style="border:1px solid #d2d2d2;min-height:70px; border-radius:4px;">
                            <?php
                               if(empty($contract->content) && staff_can('edit','contracts')){
-                               echo hooks()->apply_filters('new_contract_default_content', '<span class="text-danger text-uppercase mtop15 editor-add-content-notice"> ' . _l('click_to_add_content') . '</span>');
+                               echo hooks()->apply_filters('new_contract_default_content', '<span class="text-danger text-uppercase mt-1 editor-add-content-notice"> ' . _l('click_to_add_content') . '</span>');
                               } else {
                                echo $contract->content;
                               }
                               ?>
                         </div>
                         <?php if(!empty($contract->signature)) { ?>
-                        <div class="row mtop25">
+                        <div class="row mt-2">
                            <div class="col-md-6 col-md-offset-6 text-right">
                               <p class="bold"><?php echo _l('document_customer_signature_text'); ?>
                                  <?php if($contract->signed == 1 && has_permission('contracts','','delete')){ ?>
@@ -295,19 +295,19 @@
                         <?php echo form_open(admin_url('contracts/add_note/'.$contract->id),array('id'=>'sales-notes','class'=>'contract-notes-form')); ?>
                         <?php echo render_textarea('description'); ?>
                         <div class="text-right">
-                           <button type="submit" class="btn btn-info mtop15 mbot15"><?php echo _l('contract_add_note'); ?></button>
+                           <button type="submit" class="btn btn-info mt-1 mbot15"><?php echo _l('contract_add_note'); ?></button>
                         </div>
                         <?php echo form_close(); ?>
                         <hr />
-                        <div class="card mtop20 no-shadow" id="sales_notes_area">
+                        <div class="card mt-2 no-shadow" id="sales_notes_area">
                         </div>
                      </div>
                      <div role="tab-pane" class="tab-pane" id="tab_comments">
-                        <div class="row contract-comments mtop15">
+                        <div class="row contract-comments mt-1">
                            <div class="col-md-12">
                               <div id="contract-comments"></div>
                               <div class="clearfix"></div>
-                              <textarea name="content" id="comment" rows="4" class="form-control mtop15 contract-comment"></textarea>
+                              <textarea name="content" id="comment" rows="4" class="form-control mt-1 contract-comment"></textarea>
                               <button type="button" class="btn btn-info mtop10 float-right" onclick="add_contract_comment();"><?php echo _l('proposal_add_comment'); ?></button>
                            </div>
                         </div>
@@ -315,7 +315,7 @@
                      <div role="tab-pane" class="tab-pane<?php if($this->input->get('tab') == 'attachments'){echo ' active';} ?>" id="attachments">
                         <?php echo form_open(admin_url('contracts/add_contract_attachment/'.$contract->id),array('id'=>'contract-attachments-form','class'=>'dropzone')); ?>
                         <?php echo form_close(); ?>
-                        <div class="text-right mtop15">
+                        <div class="text-right mt-1">
                            <button class="gpicker" data-on-pick="contractGoogleDriveSave">
                               <i class="fa fa-google" aria-hidden="true"></i>
                               <?php echo _l('choose_from_google_drive'); ?>
@@ -325,7 +325,7 @@
                         </div>
                         <!-- <img src="https://drive.google.com/uc?id=14mZI6xBjf-KjZzVuQe8-rjtv_wXEbDTw" /> -->
 
-                        <div id="contract_attachments" class="mtop30">
+                        <div id="contract_attachments" class="mt-2">
                            <?php
                               $data = '<div class="row">';
                               foreach($contract->attachments as $attachment) {

@@ -5,7 +5,7 @@
     <div class="content-overlay"></div>
     <div class="content-wrapper">
 		<div class="row">
-			<div class="card mbot10">
+			<div class="card mb-1">
 				<div class="card-body">
 	              	<div class="row">    
 	                    <div class="_buttons col-md-3">
@@ -35,10 +35,10 @@
 	                		2 => ['id' => '3', 'name' => _l('reject')],
 	                		3 => ['id' => '4', 'name' => _l('canclled')],];
 
-	                        echo render_select('status[]',$statuses,array('id','name'),'status','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_all'),'multiple'=>true,'data-actions-box'=>true),array(),'no-mbot','',false); ?>
+	                        echo render_select('status[]',$statuses,array('id','name'),'status','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_all'),'multiple'=>true,'data-actions-box'=>true),array(),'mb-0','',false); ?>
 	                    </div>
 	                    <div class="col-md-3">
-	                        <?php echo render_select('vendor[]',$vendors,array('userid','company'),'vendor','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_all'),'multiple'=>true,'data-actions-box'=>true),array(),'no-mbot','',false); ?>
+	                        <?php echo render_select('vendor[]',$vendors,array('userid','company'),'vendor','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_all'),'multiple'=>true,'data-actions-box'=>true),array(),'mb-0','',false); ?>
 	                    </div>
 	                    
 	              	</div>

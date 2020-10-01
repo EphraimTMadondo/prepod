@@ -7,7 +7,7 @@
 <div class="card">
    <div class="card-body">
       <div class="col-md-12">
-         <div class="mbot20">
+         <div class="mb-1">
             <?php echo get_option('gdpr_page_top_information_block'); ?>
          </div>
       </div>

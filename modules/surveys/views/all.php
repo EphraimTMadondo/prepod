@@ -6,7 +6,7 @@
     <div class="content-wrapper">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="card mtop20">
+				<div class="card mt-2">
 					<div class="card-body">
 						<?php if(has_permission('surveys','','create') || has_permission('surveys','','view')){ ?>
 						<div class="_buttons">

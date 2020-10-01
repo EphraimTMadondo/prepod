@@ -13,9 +13,9 @@
                      <a href="<?php echo admin_url('menu_setup/reset_setup_menu'); ?>" class="btn btn-default"><?php echo _l('reset'); ?></a>
                   </div>
                   <div class="clearfix"></div>
-                  <hr class="hr-panel-heading no-mbot" />
+                  <hr class="hr-panel-heading mb-0" />
                   <div class="clearfix"></div>
-                  <h4 class="bold mtop15"><?php echo _l('active_menu_items'); ?></h4>
+                  <h4 class="bold mt-1"><?php echo _l('active_menu_items'); ?></h4>
                   <hr />
                   <div class="dd active">
                      <?php

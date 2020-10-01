@@ -945,7 +945,7 @@ public function upload_file()
             $data .= '<div class="display-block contract-attachment-wrapper">';
             $data .= '<div class="col-md-10">';
             $data .= '<div class="col-md-1">';
-            $data .= '<a name="preview-btn" onclick="preview_file_staff(this); return false;" rel_id = "'.$attachment['rel_id'].'" id = "'.$attachment['id'].'" href="Javascript:void(0);" class="mbot10 btn btn-success pull-left" data-toggle="tooltip" title data-original-title="'._l("preview_file").'">';
+            $data .= '<a name="preview-btn" onclick="preview_file_staff(this); return false;" rel_id = "'.$attachment['rel_id'].'" id = "'.$attachment['id'].'" href="Javascript:void(0);" class="mb-1 btn btn-success pull-left" data-toggle="tooltip" title data-original-title="'._l("preview_file").'">';
             $data .= '<i class="fa fa-eye"></i>'; 
             $data .= '</a>';
             $data .= '</div>';

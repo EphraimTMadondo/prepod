@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="row mtop15">
+<div class="row mt-1">
  <div class="col-md-6">
   <div class="panel-heading project-info-bg no-radius"><?php echo _l('project_overview'); ?></div>
   <div class="card-body no-radius">
@@ -79,7 +79,7 @@
 </div>
 <div class="col-md-6 text-center">
  <p class="bold"><?php echo _l('project_progress_text'); ?></p>
- <div class="project-progress relative mtop30" data-thickness="22" data-reverse="true" data-size="170" data-value="<?php echo $percent; ?>">
+ <div class="project-progress relative mt-2" data-thickness="22" data-reverse="true" data-size="170" data-value="<?php echo $percent; ?>">
    <strong class="project-percent"></strong>
  </div>
 </div>
@@ -202,7 +202,7 @@
   <div class="panel-heading project-info-bg no-radius"><?php echo _l('project_description'); ?></div>
   <div class="card-body no-radius tc-content project-description">
     <?php if(empty($project->description)){
-     echo '<p class="text-muted text-center no-mbot">' . _l('no_description_project') . '</p>';
+     echo '<p class="text-muted text-center mb-0">' . _l('no_description_project') . '</p>';
    }
    echo check_for_links($project->description); ?>
  </div>

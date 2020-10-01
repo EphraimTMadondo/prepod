@@ -459,12 +459,12 @@
 <div id="removed-items"></div>
 </div>
 <div class="row">
-  <div class="col-md-12 mtop15">
+  <div class="col-md-12 mt-1">
    <div class="card-body bottom-transaction">
     <?php $value = (isset($credit_note) ? $credit_note->clientnote : get_option('predefined_clientnote_credit_note')); ?>
-    <?php echo render_textarea('clientnote','credit_note_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
+    <?php echo render_textarea('clientnote','credit_note_add_edit_client_note',$value,array(),array(),'mt-1'); ?>
     <?php $value = (isset($credit_note) ? $credit_note->terms : get_option('predefined_terms_credit_note')); ?>
-    <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
+    <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
     <div class="btn-bottom-toolbar text-right">
      <button type="button" class="btn-tr btn btn-info ml-1 credit-note-form-submit save-and-send transaction-submit">
        <?php echo _l('save_and_send'); ?>

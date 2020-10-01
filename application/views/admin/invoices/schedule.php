@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="col-md-12 no-padding animated fadeIn">
-    <div class="card mtop20">
+    <div class="card mt-2">
         <?php echo form_open($formUrl, array('id'=>'schedule_send_form')); ?>
         <div class="card-body">
             <h4 class="no-margin"><?php echo _l('schedule_email_for', format_invoice_number($invoice->id)); ?></h4>
@@ -48,7 +48,7 @@
                     ); ?>
                 </div>
             </div>
-            <div class="float-right mtop15">
+            <div class="float-right mt-1">
                 <a href="#" class="btn btn-danger" onclick="init_invoice(<?php echo $invoice->id; ?>); return false;"><?php echo _l('cancel'); ?></a>
                 <button type="submit" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" data-form="#schedule_send_form" class="btn btn-success"><?php echo _l('schedule'); ?></button>
             </div>

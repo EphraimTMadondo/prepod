@@ -7,7 +7,7 @@
     <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="panel-heading">
                   <?php echo _l('reports_choose_kb_group'); ?>
                </div>
@@ -52,7 +52,7 @@
                                  <div class="col-md-8">
                                     <span class="bold">
                                     <?php if($article['staff_article'] == 1){ ?>
-                                    <span class="label label-default mr-1 inline-block mbot10"><?php echo _l('internal_article'); ?></span>
+                                    <span class="label label-default mr-1 inline-block mb-1"><?php echo _l('internal_article'); ?></span>
                                     <?php } ?>
                                     <?php echo $article['subject']; ?></span>
                                     (<?php echo _l('kb_report_total_answers'); ?>: <?php echo $total_answers; ?>)

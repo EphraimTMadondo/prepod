@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="mtop15 preview-top-wrapper">
+<div class="mt-1 preview-top-wrapper">
    <div class="row">
       <div class="col-md-3">
          <div class="mbot30">
@@ -50,10 +50,10 @@
 </div>
 </div>
 <div class="clearfix"></div>
-<div class="card mtop20">
+<div class="card mt-2">
    <div class="card-body">
       <div class="col-md-10 col-md-offset-1">
-         <div class="row mtop20">
+         <div class="row mt-2">
             <div class="col-md-6 col-sm-6 transaction-html-info-col-left">
                <address class="subscription-html-company-info">
                   <?php echo format_organization_info(); ?>
@@ -72,13 +72,13 @@
                      <?php echo format_customer_info($invoice, 'invoice', 'shipping'); ?>
                   </address>
                <?php } ?>
-               <p class="no-mbot subscription-number">
+               <p class="mb-0 subscription-number">
                   <span class="bold">
                      <?php echo _l('subscription'); ?> #:
                   </span>
                   <?php echo $subscription->id; ?>
                </p>
-               <p class="no-mbot subscription-date">
+               <p class="mb-0 subscription-date">
                   <span class="bold">
                      <?php echo _l('subscription_date'); ?>:
                   </span>
@@ -90,7 +90,7 @@
                </p>
                <?php if (!empty($subscription->date)) {
                   ?>
-                  <p class="no-mbot subscription-first-billing-date">
+                  <p class="mb-0 subscription-first-billing-date">
                      <span class="bold">
                         <?php echo _l('first_billing_date'); ?>:
                      </span>
@@ -107,7 +107,7 @@
               <?php } ?>
               <?php if ($invoice->project_id != 0 && get_option('show_project_on_invoice') == 1) {
                ?>
-               <p class="no-mbot subscription-project">
+               <p class="mb-0 subscription-project">
                   <span class="bold"><?php echo _l('project'); ?>:</span>
                   <?php echo get_project_name_by_id($invoice->project_id); ?>
                </p>

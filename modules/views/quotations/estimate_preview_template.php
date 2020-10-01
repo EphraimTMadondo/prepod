@@ -30,7 +30,7 @@
          </div>
          <div class="row">
             <div class="col-md-4">
-              <p class="bold mtop15" ><?php echo _l('vendor').': '?><a href="<?php echo admin_url('purchase/vendor/'.$estimate->vendor->userid); ?>"><?php echo html_entity_decode($estimate->vendor->company); ?></a></p>
+              <p class="bold mt-1" ><?php echo _l('vendor').': '?><a href="<?php echo admin_url('purchase/vendor/'.$estimate->vendor->userid); ?>"><?php echo html_entity_decode($estimate->vendor->company); ?></a></p>
             </div>
             <div class="col-md-8">
                <div class="float-right _buttons">
@@ -272,7 +272,7 @@
                         </table>
                      </div>                                          
                      <?php if($estimate->terms != ''){ ?>
-                     <div class="col-md-12 mtop15">
+                     <div class="col-md-12 mt-1">
                         <p class="bold text-muted"><?php echo _l('terms_and_conditions'); ?></p>
                         <p><?php echo html_entity_decode($estimate->terms); ?></p>
                      </div>

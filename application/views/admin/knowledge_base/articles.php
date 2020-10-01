@@ -118,7 +118,7 @@
                                                    <?php } ?>
                                                    <div class="clearfix"></div>
                                                    <hr class="hr-10" />
-                                                   <p class="pull-left no-mbot"><small><?php echo _l('article_total_views'); ?>: <?php echo $article['total_views']; ?></small></p>
+                                                   <p class="pull-left mb-0"><small><?php echo _l('article_total_views'); ?>: <?php echo $article['total_views']; ?></small></p>
                                                    <?php if($article['staff_article'] == 1){ ?>
                                                    <span class="label label-default float-right"><?php echo _l('internal_article'); ?></span>
                                                    <?php } ?>

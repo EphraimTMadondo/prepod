@@ -19,7 +19,7 @@
          <?php } ?>
        </select>
        <div class="dz-message" data-dz-message><span></span></div>
-       <div class="dropzone-previews mtop25"></div>
+       <div class="dropzone-previews mt-2"></div>
        <?php echo form_close(); ?>
      </div>
    </div>

@@ -71,7 +71,7 @@ foreach($triggers as $trigger_name => $trigger_opts) {
     }
 
     if($merge_fields != ''){
-        echo '<div id="sms_merge_fields_'.$trigger_name.'" style="display:none;" class="mbot10">';
+        echo '<div id="sms_merge_fields_'.$trigger_name.'" style="display:none;" class="mb-1">';
         echo substr($merge_fields,0,-2);
         echo '<hr class="hr-10" />';
         echo '</div>';

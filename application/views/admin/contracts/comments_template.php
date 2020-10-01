@@ -34,7 +34,7 @@
       <div data-contract-comment="<?php echo $comment['id']; ?>">
          <?php echo check_for_links($comment['content']); ?>
       </div>
-      <div data-contract-comment-edit-textarea="<?php echo $comment['id']; ?>" class="hide mtop15">
+      <div data-contract-comment-edit-textarea="<?php echo $comment['id']; ?>" class="hide mt-1">
          <?php echo render_textarea('comment-content','',$comment['content']); ?>
          <?php if($comment['staffid'] == get_staff_user_id() || is_admin()){ ?>
          <div class="text-right">
