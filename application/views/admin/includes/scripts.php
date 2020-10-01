@@ -114,9 +114,6 @@
       case "task_list":
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-todo.js'></script>\n";
       break;
-      case "task_kanban":
-         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-kanban.js'></script>\n";
-      break;
       case "mailbox":
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
       break;
