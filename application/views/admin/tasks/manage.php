@@ -41,7 +41,7 @@ function kanban_tasks(){
    }
 
    parameters['kanban'] = true;
-   requestGetJSON('proposals/get_pipeline_ajax',parameters).done(function(response){
+   requestGetJSON('tasks/get_pipeline_ajax',parameters).done(function(response){
       if(response.success){
             console.log(response);
             var kanban_curr_el, kanban_curr_item_id, kanban_item_title, kanban_data, kanban_item, kanban_users;
@@ -50,11 +50,11 @@ function kanban_tasks(){
             var kanban_board_data = response.kanban_items.map(kanban_item => ({
                id: "kanban-board-" + kanban_item.status,
                title: kanban_item.title,
-               item: kanban_item.proposals.map(proposal => ({
-                  id: proposal.id,
-                  title: proposal.subject,
+               item: kanban_item.tasks.map(task => ({
+                  id: task.id,
+                  title: task.subject,
                   border: "success",
-                  dueDate: proposal.open_till,
+                  dueDate: task.open_till,
                   comment: 1,
                   attachment: 3,
                })),
@@ -74,8 +74,8 @@ function kanban_tasks(){
                   kanban_item_title = $(el).contents()[0].data;
                   kanban_curr_item_id = $(el).attr("data-eid");
 
-                  // open proposal modal
-                  proposal_pipeline_open(kanban_curr_item_id);
+                  // open task modal
+                  task_pipeline_open(kanban_curr_item_id);
                },
 
                buttonClick: function (el, boardId) {

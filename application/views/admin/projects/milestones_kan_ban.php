@@ -25,8 +25,8 @@ foreach ($milestones as $milestone) {
  $total_tasks = count($tasks);
 
  if($milestone['id'] == 0 && count($tasks) == 0){
-  continue;
-}
+    continue;
+  }
 ?>
 <ul class="kan-ban-col milestone-column<?php if(!has_permission('projects','','edit') || $milestone['id'] == 0){echo ' milestone-not-sortable';}; ?>" data-col-status-id="<?php echo $milestone['id']; ?>" data-total-pages="<?php echo $total_pages; ?>">
  <li class="kan-ban-col-wrapper">

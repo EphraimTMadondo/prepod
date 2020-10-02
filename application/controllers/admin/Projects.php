@@ -628,33 +628,57 @@ class Projects extends AdminController
     // Added by Ephraim T Madondo
     public function get_pipeline_ajax(){
         if ($this->input->is_ajax_request()) {
-            if (has_permission('proposals', '', 'view') || has_permission('proposals', '', 'view_own') || get_option('allow_staff_view_proposals_assigned') == 1) {
-                $parameters = [];
-                $parameters['search'] = $this->input->get('search');
-                $parameters['sort'] = $this->input->get('sort');
-                $parameters['sort_by'] = $this->input->get('sort_by');
+            $data['milestones_exclude_completed_tasks'] = $this->input->get('exclude_completed_tasks') && $this->input->get('exclude_completed_tasks') == 'yes';
 
-                $statuses = $this->proposals_model->get_statuses();
+            $data['project_id'] = $this->input->get('project_id');
+            $data['milestones'] = [];
+    
+            $data['milestones'][] = [
+              'name'              => _l('milestones_uncategorized'),
+              'id'                => 0,
+              'total_logged_time' => $this->projects_model->calc_milestone_logged_time($data['project_id'], 0),
+              'color'             => null,
+              ];
+    
+            $_milestones = $this->projects_model->get_milestones($data['project_id']);
+    
+            foreach ($_milestones as $milestone) {
                 $kanban_items = array();
-                foreach ($statuses as $status) {
-                    $kanban_item['total_pages'] = ceil($this->proposals_model->do_kanban_query($status,$this->input->get('search'),1,array(),true)/get_option('proposals_pipeline_limit'));
-                    $proposals = $this->proposals_model->do_kanban_query($status,$this->input->get('search'),1,array('sort_by'=>$this->input->get('sort_by'),'sort'=>$this->input->get('sort')));
-                    $kanban_item['proposal_status_color_class'] = proposal_status_color_class($status);
-                    $kanban_item['proposals'] = $proposals;
-                    $kanban_item['status'] = $status;
-                    $kanban_item['load_more'] = _l('load_more');
-                    $kanban_item['title'] = format_proposal_status($status,'',false);
-                    $kanban_item['total_proposals'] = count($proposals);
-                    $kanban_items[] = $kanban_item;
+                $milestonesTasksWhere = array();
+                if ($milestones_exclude_completed_tasks) {
+                    $milestonesTasksWhere['status !='] = Tasks_model::STATUS_COMPLETE;
                 }
-                $data['parameters'] = $parameters;
-                $data['statuses'] = $statuses;
+                $cpicker = '';
+                if (has_permission('projects', '', 'create') && $milestone['id'] != 0) {
+                    foreach (get_system_favourite_colors() as $color) {
+                        $color_selected_class = 'cpicker-small';
+                        $cpicker .= "<div class='kanban-cpicker cpicker ".$color_selected_class."' data-color='".$color."' style='background:".$color.";border:1px solid ".$color."'></div>";
+                    }
+                }
+
+                $milestone_color = '';
+
+                if (!empty($milestone["color"]) && !is_null($milestone['color'])) {
+                    $milestone_color = ' style="background:'.$milestone["color"].';border:1px solid '.$milestone['color'].'"';
+                }
+
+                $total_pages = ceil($this->projects_model->do_milestones_kanban_query($milestone['id'], $project_id, 1, $milestonesTasksWhere, true)/get_option('tasks_kanban_limit'));
+                $kanban_item['total_pages'] = $total_pages;
+
+                $tasks = $this->projects_model->do_milestones_kanban_query($milestone['id'], $project_id, 1, $milestonesTasksWhere);
+                $total_tasks = count($tasks);
+                $kanban_item['tasks'] = $tasks;
+                $kanban_item['total_tasks'] = $total_tasks; 
+                $kanban_item['title'] = $milestone['name']; 
+                $kanban_items[] = $kanban_item;
+                $kanban_item['load_more'] = _l('load_more');
                 $data['kanban_items'] = $kanban_items;
                 $data['success'] = true;
                 echo json_encode($data);
-            } else {
-                ajax_access_denied();
             }
+            
+            $data['success'] = true;
+            echo json_encode($data);
         };
     }
 
