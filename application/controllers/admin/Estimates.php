@@ -554,6 +554,40 @@ class Estimates extends AdminController
         }
     }
 
+
+    // Added by Ephraim T Madondo
+    public function get_pipeline_ajax(){
+        if ($this->input->is_ajax_request()) {
+            if (has_permission('proposals', '', 'view') || has_permission('proposals', '', 'view_own') || get_option('allow_staff_view_proposals_assigned') == 1) {
+                $parameters = [];
+                $parameters['search'] = $this->input->get('search');
+                $parameters['sort'] = $this->input->get('sort');
+                $parameters['sort_by'] = $this->input->get('sort_by');
+
+                $statuses = $this->proposals_model->get_statuses();
+                $kanban_items = array();
+                foreach ($statuses as $status) {
+                    $kanban_item['total_pages'] = ceil($this->proposals_model->do_kanban_query($status,$this->input->get('search'),1,array(),true)/get_option('proposals_pipeline_limit'));
+                    $proposals = $this->proposals_model->do_kanban_query($status,$this->input->get('search'),1,array('sort_by'=>$this->input->get('sort_by'),'sort'=>$this->input->get('sort')));
+                    $kanban_item['proposal_status_color_class'] = proposal_status_color_class($status);
+                    $kanban_item['proposals'] = $proposals;
+                    $kanban_item['status'] = $status;
+                    $kanban_item['load_more'] = _l('load_more');
+                    $kanban_item['title'] = format_proposal_status($status,'',false);
+                    $kanban_item['total_proposals'] = count($proposals);
+                    $kanban_items[] = $kanban_item;
+                }
+                $data['parameters'] = $parameters;
+                $data['statuses'] = $statuses;
+                $data['kanban_items'] = $kanban_items;
+                $data['success'] = true;
+                echo json_encode($data);
+            } else {
+                ajax_access_denied();
+            }
+        };
+    }
+
     public function pipeline_load_more()
     {
         $status = $this->input->get('status');

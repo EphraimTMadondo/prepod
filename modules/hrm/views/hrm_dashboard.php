@@ -6,7 +6,7 @@
    $contract_type_chart = json_encode($this->hrm_model->contract_type_chart());
 ?>
 
-<?php init_head(); ?>
+<?php init_head(true, 'hrm'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
@@ -286,7 +286,7 @@
       </div>
 </div>
 
-<?php init_tail(); ?>
+<?php init_tail('hrm'); ?>
  <script>
 
         staff_chart_by_age('staff_chart_by_age',<?php echo ''.$staff_chart_by_age; ?>, <?php echo json_encode(_l('staff_chart_by_age')); ?>);
