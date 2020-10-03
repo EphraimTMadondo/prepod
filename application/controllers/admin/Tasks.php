@@ -59,8 +59,9 @@ class Tasks extends AdminController
                 $where['rel_id'] = $this->input->get('project_id');
                 $where['rel_type'] = 'project';
             }
+            $kanban_items = array();
+            $task_statuses = $this->tasks_model->get_statuses();
             foreach ($task_statuses as $status) {
-                $kanban_items = array();
                 $kanban_item['total_pages'] = ceil($this->tasks_model->do_kanban_query($status['id'],$this->input->get('search'),1,true,$where)/get_option('tasks_kanban_limit'));
                 $tasks = $this->tasks_model->do_kanban_query($status['id'],$this->input->get('search'),1,false,$where);
                 $kanban_item['total_tasks'] = count($tasks);
