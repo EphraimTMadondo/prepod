@@ -76,7 +76,7 @@ function kanban_tasks(){
                   kanban_curr_item_id = $(el).attr("data-eid");
 
                   // open task modal
-                  task_pipeline_open(kanban_curr_item_id);
+                  init_task_modal(kanban_curr_item_id);
                },
 
                buttonClick: function (el, boardId) {
@@ -201,7 +201,6 @@ $(function() {
    kanban_tasks();
    var parameters = [];
     requestGetJSON('tasks/table',parameters).done(function(response){
-       console.log(response);
        if(response.aaData){
           response.aaData.map(aRow => {
             $('.todo-task-list-wrapper').append(aRow);
