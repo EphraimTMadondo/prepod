@@ -69,12 +69,12 @@ class Tasks extends AdminController
                 $kanban_item['load_more'] = _l('load_more');
                 $kanban_item['title'] = format_task_status($status['id'],false,true);
                 $kanban_items[] = $kanban_item;
-                $data['where'] = $where;
-                $data['statuses'] = $statuses;
-                $data['kanban_items'] = $kanban_items;
-                $data['success'] = true;
-                echo json_encode($data);
             }
+            $data['where'] = $where;
+            $data['statuses'] = $task_statuses;
+            $data['kanban_items'] = $kanban_items;
+            $data['success'] = true;
+            echo json_encode($data);
         };
     }
 

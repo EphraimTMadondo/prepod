@@ -58,6 +58,32 @@ class Leads extends AdminController
         echo $this->load->view('admin/leads/kan-ban', $data, true);
     }
 
+        // Added by Ephraim T Madondo
+        public function get_pipeline_ajax(){
+            if ($this->input->is_ajax_request()) {
+
+                if (!is_staff_member()) {
+                    ajax_access_denied();
+                }
+                $lead_statuses = $this->leads_model->get_status();
+                foreach ($lead_statuses as $status) {
+                    $kanban_items = array();
+                    $kanban_item['total_pages'] = ceil($this->leads_model->do_kanban_query($status['id'],$this->input->get('search'),1,array(),true)/get_option('leads_kanban_limit'));
+                    $leads = $this->leads_model->do_kanban_query($status['id'],$this->input->get('search'),1,array('sort_by'=>$this->input->get('sort_by'),'sort'=>$this->input->get('sort')));
+                    $kanban_item['total_leads'] = count($leads);
+                    $kanban_item['leads'] = $leads;
+                    $kanban_item['status'] = $status;
+                    $kanban_item['load_more'] = _l('load_more');
+                    $kanban_item['title'] = format_estimate_status($status['id'],false,true);
+                    $kanban_items[] = $kanban_item;
+                }
+                $data['statuses'] = $lead_statuses;
+                $data['kanban_items'] = $kanban_items;
+                $data['success'] = true;
+                echo json_encode($data);
+            };
+        }
+
     /* Add or update lead */
     public function lead($id = '')
     {

@@ -196,7 +196,7 @@ function kanban_tasks(){
                }
             }
       }
-   }).catch(error => console.log(error)).fail(error => console.log(error));
+   }).catch(error => console.error(error)).fail(error => console.error(error));
 }
 $(function() {
    kanban_tasks();

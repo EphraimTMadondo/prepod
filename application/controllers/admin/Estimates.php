@@ -557,6 +557,7 @@ class Estimates extends AdminController
     // Added by Ephraim T Madondo
     public function get_pipeline_ajax(){
         if ($this->input->is_ajax_request()) {
+            $estimate_statuses = $this->estimates_model->get_statuses();
             foreach ($estimate_statuses as $status) {
                 $kanban_items = array();
                 $kanban_item['total_pages'] =  ceil($this->estimates_model->do_kanban_query($status,$this->input->get('search'),1,array(),true)/get_option('estimates_pipeline_limit'));
@@ -567,11 +568,11 @@ class Estimates extends AdminController
                 $kanban_item['load_more'] = _l('load_more');
                 $kanban_item['title'] = format_estimate_status($status['id'],false,true);
                 $kanban_items[] = $kanban_item;
-                $data['statuses'] = $estimate_statuses;
-                $data['kanban_items'] = $kanban_items;
-                $data['success'] = true;
-                echo json_encode($data);
             }
+            $data['statuses'] = $estimate_statuses;
+            $data['kanban_items'] = $kanban_items;
+            $data['success'] = true;
+            echo json_encode($data);
         };
     }
 

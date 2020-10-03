@@ -672,11 +672,8 @@ class Projects extends AdminController
                 $kanban_item['title'] = $milestone['name']; 
                 $kanban_items[] = $kanban_item;
                 $kanban_item['load_more'] = _l('load_more');
-                $data['kanban_items'] = $kanban_items;
-                $data['success'] = true;
-                echo json_encode($data);
             }
-            
+            $data['kanban_items'] = $kanban_items;
             $data['success'] = true;
             echo json_encode($data);
         };
