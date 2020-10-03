@@ -45,7 +45,6 @@ function kanban_tasks(){
    requestGetJSON('tasks/get_pipeline_ajax',parameters).done(function(response){
       console.log(response);
       if(response.success){
-            console.log(response);
             var kanban_curr_el, kanban_curr_item_id, kanban_item_title, kanban_data, kanban_item, kanban_users;
 
             // Kanban Board and Item Data passed by json
@@ -54,9 +53,9 @@ function kanban_tasks(){
                title: kanban_item.title,
                item: kanban_item.tasks.map(task => ({
                   id: task.id,
-                  title: task.subject,
+                  title: task.name,
                   border: "success",
-                  dueDate: task.open_till,
+                  dueDate: task.startdate,
                   comment: 1,
                   attachment: 3,
                })),
