@@ -26,6 +26,7 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
 <script>
 function kanban_tasks(){
    if ($('#kanban-app').length === 0) { return; }
+   console.log("initialising kanban...");
    var parameters = [];
    var _kanban_param_val;
 
@@ -42,6 +43,7 @@ function kanban_tasks(){
 
    parameters['kanban'] = true;
    requestGetJSON('tasks/get_pipeline_ajax',parameters).done(function(response){
+      console.log(response);
       if(response.success){
             console.log(response);
             var kanban_curr_el, kanban_curr_item_id, kanban_item_title, kanban_data, kanban_item, kanban_users;
