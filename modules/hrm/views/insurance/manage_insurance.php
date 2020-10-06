@@ -82,9 +82,6 @@
 <script>
 
 $(function(){
-    var tree_dep = $('#hrm_derpartment_tree').comboTree({
-              source : <?php echo ''.$dep_tree; ?>
-            });
     var ContractsServerParams = {
         "hrm_deparment": "input[name='hrm_deparment']",
         "hrm_staff"    : "select[name='staff[]']",
@@ -94,6 +91,11 @@ $(function(){
     table_insurance = $('table.table-table_insurance');
     initDataTable(table_insurance,admin_url + 'hrm/table_insurance', undefined, undefined, ContractsServerParams);
 
+    
+    var tree_dep = $('#hrm_derpartment_tree').comboTree({
+              source : <?php echo ''.$dep_tree; ?>
+            });
+            
     $('#hrm_derpartment_tree').on('change', function() {
                 $('#hrm_deparment').val(tree_dep.getSelectedItemsId());
                 table_insurance.DataTable().ajax.reload()

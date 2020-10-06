@@ -31,7 +31,7 @@
               <!-- start tab -->
                <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="nav-item active">
-                   <a class="nav-link" href="#tab_public_information" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
+                   <a class="nav-link active" href="#tab_public_information" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
                    <span class="glyphicon glyphicon-file"></span>&nbsp;<?php echo _l('public_information'); ?>
                    </a>
                 </li>

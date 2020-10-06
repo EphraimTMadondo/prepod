@@ -12,8 +12,8 @@
        </div>
      </div>
    <?php } ?>
-   <div class="card card-body col-md-2">
-    <ul class="nav nav-pills flex-column">
+   <div class="card col-md-2">
+    <ul class="nav nav-pills mt-1 flex-column">
       <?php
       $i = 0;
       foreach($tab as $t){
