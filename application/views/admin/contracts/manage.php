@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-body _buttons">
                     <?php if(has_permission('contracts','','create')){ ?>
-                    <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary float-left"><?php echo _l('new_contract'); ?></a>
+                    <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
                     <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
                         <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,7 +91,7 @@
                             <?php } ?>
                         </ul>
                     </div>
-                    <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+                    <a href="#" onClick="$('.stats-top').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />
                     <div class="row" id="contract_summary">
@@ -106,49 +106,47 @@
                         <?php
                                  $companyusername =  $_SESSION['current_company'];
                         ?>
-                        <div class="col-md-12">
-                            <h4 class="no-margin text-success"><?php echo _l('contract_summary_heading'); ?></h4>
-                            
-                                                                                                                
+                        <div class="col-md-12 stats-top hide">
+                            <h4 class="no-margin text-success"><?php echo _l('contract_summary_heading'); ?></h4>                                                                           
                         </div>
-                        <div class="col-md-2 col-xs-6 border-right">
+                        <div class="col-md-2 col-xs-6 border-right stats-top hide">
                             <h3 class="bold">
                                          <?php echo total_rows(db_prefix().'contracts','(DATE(dateend) >"'.date('Y-m-d').'" AND company_username='."'$companyusername'".' AND trash=0' .(count($where_own) > 0 ? ' AND addedfrom='.get_staff_user_id() : '').') OR (DATE(dateend) IS NULL AND company_username='."'$companyusername'".' AND trash=0' .(count($where_own) > 0 ? ' AND addedfrom='.get_staff_user_id() : '').')'); ?>                            </h3>
                         
                             <span class="text-info"><?php echo _l('contract_summary_active'); ?></span>
                         </div>
-                        <div class="col-md-2 col-xs-6 border-right">
-                <h3 class="bold"><?php echo total_rows(db_prefix().'contracts',array_merge(array('DATE(dateend) <'=>date('Y-m-d'),'trash'=>0,"company_username='$companyusername'"),$where_own)); ?></h3>
+                        <div class="col-md-2 col-xs-6 border-right stats-top hide">
+                            <h3 class="bold"><?php echo total_rows(db_prefix().'contracts',array_merge(array('DATE(dateend) <'=>date('Y-m-d'),'trash'=>0,"company_username='$companyusername'"),$where_own)); ?></h3>
 
                             <span class="text-danger"><?php echo _l('contract_summary_expired'); ?></span>
                         </div>
-                        <div class="col-md-2 col-xs-6 border-right">
+                        <div class="col-md-2 col-xs-6 border-right stats-top hide">
                             <h3 class="bold"><?php
                                 echo total_rows(
                                  db_prefix().'contracts','dateend BETWEEN "'.$minus_7_days.'" AND "'.$plus_7_days.'" AND trash=0 AND dateend is NOT NULL AND dateend >"'.date('Y-m-d').'"' .' AND company_username='."'$companyusername'". (count($where_own) > 0 ? ' AND addedfrom='.get_staff_user_id() : '')); ?></h3>
 
                                 <span class="text-warning"><?php echo _l('contract_summary_about_to_expire'); ?></span>
                             </div>
-                            <div class="col-md-2 col-xs-6 border-right">
+                            <div class="col-md-2 col-xs-6 border-right stats-top hide">
                                 <h3 class="bold"><?php
                                         echo total_rows(db_prefix().'contracts','dateadded BETWEEN "'.$minus_7_days.'" AND "'.$plus_7_days.'" AND trash=0'.' AND company_username='."'$companyusername'". (count($where_own) > 0 ? ' AND addedfrom='.get_staff_user_id() : '')); ?></h3>
 
                                     <span class="text-success"><?php echo _l('contract_summary_recently_added'); ?></span>
                                 </div>
-                                <div class="col-md-2 col-xs-6">
+                                <div class="col-md-2 col-xs-6 stats-top hide">
                                     <h3 class="bold"><?php echo total_rows(db_prefix().'contracts',"company_username='$companyusername'".' AND trash=1'); ?></h3>
 
                                     <span class="text-muted"><?php echo _l('contract_summary_trash'); ?></span>
                                 </div>
-                                <div class="clearfix"></div>
-                                <hr class="hr-panel-heading" />
-                                <div class="col-md-6 mt-1 border-right">
+                                <div class="clearfix stats-top hide"></div>
+                                <hr class="hr-panel-heading stats-top hide" />
+                                <div class="col-md-6 mt-1 border-right stats-top hide">
                                     <h4><?php echo _l('contract_summary_by_type'); ?></h4>
                                     <div class="relative" style="max-height:400px">
                                         <canvas class="chart" height="400" id="contracts-by-type-chart"></canvas>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mt-1">
+                                <div class="col-md-6 mt-1 stats-top hide">
                                     <h4><?php echo _l('contract_summary_by_type_value'); ?> (<span data-toggle="tooltip" data-title="<?php echo _l('base_currency_string'); ?>" class="text-has-action"><?php echo $base_currency->name; ?></span>)</h4>
                                     <div class="relative" style="max-height:400px">
                                         <canvas class="chart" height="400" id="contracts-value-by-type-chart"></canvas>
