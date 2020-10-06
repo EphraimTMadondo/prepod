@@ -1,16 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div>
-<div class="clearfix"></div>
-<h4><?php echo _l($title); ?></h4>
-<hr class="hr-panel-heading" />
-<div class="clearfix"></div>
-  <div class="content hrm-fullwidth">
-        <div class="row">      
-		    <div class="col-md-12 ml-1" id="example">
-		            	
-		    </div>
-        </div>
-  </div>
+  <div class="clearfix"></div>
+  <h4><?php echo _l($title); ?></h4>
+  <hr class="hr-panel-heading" />
+  <div class="clearfix"></div>
+  <div id="example"></div>
 </div>
 <script>       
 var dataObject = <?php echo json_encode($staff_row); ?>;
