@@ -98,6 +98,6 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     width: 40;
 }
 
-tr td{
+.dataTable tr td{
     white-space: nowrap;
 }

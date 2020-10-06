@@ -15,36 +15,33 @@
          <?php echo form_hidden('contractid',$contracts[0]['id_contract']); ?>
       </div>
       <?php } ?>
-    
+        <div class="col-md-12" > 
       <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'staff-form','autocomplete'=>'off')); ?>
-
-        <div class="col-md-12" >
          <div class="card">
-           <div class="card-body">
+           <div class="card-header">
                <?php if(isset($contracts)){ ?>
-                  <h4 class="no-margin"><?php echo _l('edit_contract') ?> 
+                  <h4 class="card-title"><?php echo _l('edit_contract') ?> 
                   </h4>
                <?php }else{?>
-                 <h4 class="no-margin"><?php echo _l('new_contract') ?> 
+                 <h4 class="card-title"><?php echo _l('new_contract') ?> 
                  </h4>
                <?php } ?>
             </div>
-            <br>
             <div class="card-body">
               <!-- start tab -->
                <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                   <a href="#tab_public_information" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
+                <li role="presentation" class="nav-item active">
+                   <a class="nav-link" href="#tab_public_information" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
                    <span class="glyphicon glyphicon-file"></span>&nbsp;<?php echo _l('public_information'); ?>
                    </a>
                 </li>
-               <li role="presentation" >
-                   <a href="#tab_wages_allowances" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
+               <li role="presentation"  class="nav-item" >
+                   <a class="nav-link" href="#tab_wages_allowances" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
                    <span class="glyphicon glyphicon-usd"></span>&nbsp;<?php echo _l('wages_allowances'); ?>
                    </a>
                 </li>
-                <li role="presentation">
-                   <a href="#tab_signed_information" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
+                <li role="presentation"  class="nav-item">
+                   <a class="nav-link" href="#tab_signed_information" aria-controls="tab_staff_profile" role="tab" data-toggle="tab">
                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<?php echo _l('signed_information'); ?>
                    </a>
                 </li>
@@ -85,9 +82,6 @@
                              <?php }?>
                           </select>
                         </div>
-
-
-
                       <div class="col-md-6">
 
                         <label for="contract_status" class="control-label"><?php echo _l('contract_status'); ?></label>
@@ -388,17 +382,13 @@
 
               </div>
               <!-- endtab -->
+                <button type="submit" class="btn btn-secondary mt-1 float-right"><?php echo _l('submit'); ?></button>
             </div>
             <!-- end card-body -->
+            <?php echo form_close(); ?>
          </div>
       </div>
-      <div class="btn-bottom-toolbar text-right btn-toolbar-container-out">
-         <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
-      </div>
-      <?php echo form_close(); ?>
    </div>
-
-   <div class="btn-bottom-pusher"></div>
 </div>
 <?php init_tail(); ?>
 </body>
