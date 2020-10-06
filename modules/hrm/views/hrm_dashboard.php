@@ -21,8 +21,9 @@
     <div class="col-md-12">
       <h4><?php echo _l('hrm_dashboard');?></h4>
       <hr />
+      <a href="#" onclick="slideToggle('#stats-top'); return false;" class="float-right btn btn-light ml-1 btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
     </div>
-    <div class="col-md-12 mt-2">
+    <div id="stats-top" class="col-md-12 mt-1 hide">
       <div class="row">
         <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
           <div class="top_stats_wrapper hrm-minheight85">
