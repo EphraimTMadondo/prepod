@@ -91,6 +91,10 @@
         case "task_list":
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/app-todo.css'>\n\t";
         break;
+        case "hrm":
+        case "purchase":
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/plugins/handsontable/handsontable.full.min.css'>\n\t";
+        break;
         case "task_kanban":
         case "proposals_kanban":
         case "leads":

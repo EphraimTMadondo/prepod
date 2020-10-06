@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(); ?>
+<?php init_head(true, "hrm"); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
     <div class="content-overlay"></div>
@@ -77,7 +77,7 @@
         </div>
     </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail("hrm"); ?>
 
 <script>
 
