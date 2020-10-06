@@ -179,9 +179,6 @@
 <?php init_tail(); ?>
 <script>
 
-    var tree_dep = $('#hrm_derpartment_tree').comboTree({
-              source : <?php echo ''.$dep_tree; ?>
-            });
 
      var ContractsServerParams = {
         "hrm_deparment": "input[name='hrm_deparment']",
@@ -196,6 +193,10 @@
     table_contract = $('table.table-table_contract');
     initDataTable(table_contract, admin_url+'hrm/table_contract', undefined, undefined, ContractsServerParams,<?php echo hooks()->apply_filters('contracts_table_default_order', json_encode(array(6,'asc'))); ?>);
 
+    var tree_dep = $('#hrm_derpartment_tree').comboTree({
+              source : <?php echo ''.$dep_tree; ?>
+            });
+            
     //combotree department
      $('#hrm_derpartment_tree').on('change', function() {
                 $('#hrm_deparment').val(tree_dep.getSelectedItemsId());

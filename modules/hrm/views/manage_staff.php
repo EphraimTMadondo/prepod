@@ -91,12 +91,6 @@
 <?php init_tail(); ?>
 <script>
 $(function(){
-//combotree
-    var tree_dep = $('#hrm_derpartment_tree').comboTree({
-              source : <?php echo ''.$dep_tree; ?>
-            });
-    
-//combotree end
      var StaffServerParams = {
         "status_work": "[name='status_work[]']",
         "hrm_deparment": "input[name='hrm_deparment']",
@@ -112,6 +106,14 @@ $(function(){
                     .responsive.recalc();
             });
         });
+    
+    //combotree
+    var tree_dep = $('#hrm_derpartment_tree').comboTree({
+                source : <?php echo ''.$dep_tree; ?>
+                });
+        
+    //combotree end
+    
     //combotree department
      $('#hrm_derpartment_tree').on('change', function() {
                 $('#hrm_deparment').val(tree_dep.getSelectedItemsId());

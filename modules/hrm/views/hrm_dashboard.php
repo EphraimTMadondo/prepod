@@ -26,20 +26,6 @@
       <div class="row">
         <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
           <div class="top_stats_wrapper hrm-minheight85">
-              <a class="text-success mbot15">
-              <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('total_staff'); ?>
-              </p>
-                <span class="float-right bold no-mtop hrm-fontsize24"><?php echo htmlspecialchars($data_dash['total_staff']); ?></span>
-              </a>
-              <div class="clearfix"></div>
-              <div class="progress no-margin progress-bar-mini">
-                <div class="progress-bar progress-bar-success no-percent-text not-dynamic hrm-fullwidth" role="progressbar" aria-valuenow="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" aria-valuemin="0" aria-valuemax="<?php echo htmlspecialchars($data_dash['total_staff']); ?>" data-percent="100%">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
-          <div class="top_stats_wrapper hrm-minheight85">
               <a class="text mbot15">
               <p class="text-uppercase mtop5 hrm-colorpurple hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-edit"></i> <?php echo _l('new_staff_for_month'); ?>
               </p>
@@ -52,7 +38,7 @@
               </div>
           </div>
         </div>
-        <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
+        <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
           <div class="top_stats_wrapper hrm-minheight85">
               <a class="text-info mbot15">
               <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-envelope"></i> <?php echo _l('working'); ?>
@@ -66,7 +52,7 @@
               </div>
           </div>
         </div> 
-        <div class="quick-stats-invoices col-xs-12 col-md-2 col-sm-6">
+        <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
           <div class="top_stats_wrapper hrm-minheight85">
               <a class="text-danger mbot15">
               <p class="text-uppercase mtop5 hrm-minheight35"><i class="hidden-sm glyphicon glyphicon-remove"></i> <?php echo _l('overdue_contract'); ?>
