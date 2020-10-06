@@ -7,25 +7,25 @@
   <div class="row">
     <div class="col-md-3">
       <div class="card">
-        <div class="card-body">
-          <ul class="nav nav-tabs flex-column">
-            <?php
-            $i = 0;
-            foreach($tab as $t){
-              ?>
-              <li class="nav-item <?php if($t == $group){echo " active"; } ?>" >
-              <a class="nav-link <?php if($t == $group){echo " active"; } ?>" href="<?php echo admin_url('assets/setting?group='.$t); ?>" data-group="<?php echo htmlspecialchars($t); ?>">
-                <?php if($t == 'asset_group'){ echo '<i class="bx bx-customize"></i>'; }elseif($t == 'asset_unit'){echo '<i class="bx bx-cube"></i>';}elseif($t == 'asset_location'){echo '<i class="bx bx-navigation"></i>';}?>  <?php echo htmlspecialchars(_l($t)); ?></a>
-              </li>
-              <?php $i++; } ?>
-          </ul>
-        </div>
+        <ul class="nav nav-tabs flex-column m-1">
+          <?php
+          $i = 0;
+          foreach($tab as $t){
+            ?>
+            <li class="nav-item <?php if($t == $group){echo " active"; } ?>" >
+            <a class="nav-link <?php if($t == $group){echo " active"; } ?>" href="<?php echo admin_url('assets/setting?group='.$t); ?>" data-group="<?php echo htmlspecialchars($t); ?>">
+              <?php if($t == 'asset_group'){ echo '<i class="bx bx-customize"></i>'; }elseif($t == 'asset_unit'){echo '<i class="bx bx-cube"></i>';}elseif($t == 'asset_location'){echo '<i class="bx bx-navigation"></i>';}?>  <?php echo htmlspecialchars(_l($t)); ?></a>
+            </li>
+            <?php $i++; } ?>
+        </ul>
       </div>
     </div>
     <div class="col-md-9">
       <div class="card">
-        <?php $this->load->view($tabs['view']); ?>
-      </div>
+        <div class="card-body">
+            <?php $this->load->view($tabs['view']); ?>
+        </div>
+    </div>
   </div>
 <div class="clearfix"></div>
 </div>
