@@ -19,8 +19,13 @@
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
     <div class="col-md-12">
-      <h4><?php echo _l('hrm_dashboard');?></h4>
-      <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 btn-with-tooltip cursor-pointer" data-toggle="collapse" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+      <div class="col-md-8">
+        <h4><?php echo _l('hrm_dashboard');?></h4>
+      </div>
+      <div class="col-md-4">
+        <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 btn-with-tooltip cursor-pointer" data-toggle="collapse" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+      </div>
+      <hr />
     </div>
     <div id="stats-top" class="col-md-12 mt-1 hide">
       <div class="row">
