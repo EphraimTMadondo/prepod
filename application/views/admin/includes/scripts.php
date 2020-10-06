@@ -70,7 +70,6 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
       break;
       case "task_list":
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
       break;
@@ -86,8 +85,6 @@
       case "purchase":
          echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
       break;
-      default:
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js'></script>\n";
       break;
    }
 ?>
@@ -128,7 +125,6 @@
          echo "<script src='".base_url()."assets/js/projects.js'></script>\n";
       break;
       default:
-         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/forms/select/form-select2.js'></script>\n";
       break;
    }
 ?>
