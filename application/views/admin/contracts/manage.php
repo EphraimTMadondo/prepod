@@ -29,8 +29,8 @@
                     <?php if(has_permission('contracts','','create')){ ?>
                     <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary float-left"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
-                    <div class="btn-group float-right btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                        <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-left width300 height500">
@@ -91,9 +91,10 @@
                             <?php } ?>
                         </ul>
                     </div>
+                    <a href="#" onClick="$('#contract_summary').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />
-                    <div class="row" id="contract_summary">
+                    <div class="row hide" id="contract_summary">
                         <?php $minus_7_days = date('Y-m-d', strtotime("-7 days")); ?>
                         <?php $plus_7_days = date('Y-m-d', strtotime("+7 days"));
                         $where_own = array();

@@ -193,7 +193,7 @@
                         $companyusername = $_SESSION['current_company'];
                         ?>
                      <hr class="hr-panel-heading" />
-                     <div class="row mbot15 " id="stats-top">
+                     <div class="row mbot15 hide" id="stats-top">
                         <div class="col-md-12">
                            <h4 class="no-margin"><?php echo _l('customers_summary'); ?></h4>
                         </div>
