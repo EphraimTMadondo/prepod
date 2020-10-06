@@ -20,8 +20,8 @@
 
     <div class="col-md-12">
       <h4><?php echo _l('hrm_dashboard');?></h4>
+      <button class="float-right btn btn-light ml-1 btn-with-tooltip" data-toggle="stats-top" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></button>
       <hr />
-      <a href="#" onclick="slideToggle('#stats-top'); return false;" class="float-right btn btn-light ml-1 btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
     </div>
     <div id="stats-top" class="col-md-12 mt-1 hide">
       <div class="row">
