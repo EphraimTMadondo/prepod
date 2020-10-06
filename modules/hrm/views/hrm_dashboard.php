@@ -20,9 +20,9 @@
 
     <div class="col-md-12">
       <h4><?php echo _l('hrm_dashboard');?></h4>
-      <a href="#stats-top" class="float-right btn btn-light ml-1 btn-with-tooltip cursor-pointer" data-toggle="collapse" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+      <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 btn-with-tooltip cursor-pointer" data-toggle="collapse" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
     </div>
-    <div id="stats-top" class="col-md-12 mt-1 collapse">
+    <div id="stats-top" class="col-md-12 mt-1 hide">
       <div class="row">
         <div class="quick-stats-invoices col-xs-12 col-md-3 col-sm-6">
           <div class="top_stats_wrapper hrm-minheight85">
