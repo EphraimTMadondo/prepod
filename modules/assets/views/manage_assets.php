@@ -3,204 +3,188 @@
 <div class="app-content content">
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
-      <div class="row">
-         <div class="col-md-12">
-            <div class="card mt-2">
-               <div class="card-body">
-                  <div class="row">
-                     <div class="col-md-8">
-                      <h4 class="no-margin font-bold"><i class="fa fa-bank" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
-                      <hr />
-                    </div>
-                    <div class="col-md-4">
-                      <?php if (has_permission('assets', '', 'create') || is_admin()) { ?>
-                        <a href="#" onclick="new_asset(); return false;" class="btn btn-primary float-right ml-1">
-                            <?php echo _l('new_asset'); ?>
-                        </a>
-                    	<?php } ?>
-                      <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
-                    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card mt-2">
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                    <h4 class="no-margin font-bold"><i class="fa fa-bank" aria-hidden="true"></i> <?php echo _l($title); ?></h4>
+                    <hr />
                   </div>
-                  <ul class="nav nav-tabs mt-2" role="tablist">
-                    <li class="nav-item active">
-                      <a  class="nav-link active" href="#all_asset" aria-controls="all_asset" role="tab" data-toggle="tab" aria-controls="all_asset">
-                        <i class="bx bx-home align-middle"></i>
-                        <span class="align-middle"><?php echo _l('all_asset'); ?></span>
+                  <div class="col-md-4">
+                    <?php if (has_permission('assets', '', 'create') || is_admin()) { ?>
+                      <a href="#" onclick="new_asset(); return false;" class="btn btn-primary float-right ml-1">
+                          <?php echo _l('new_asset'); ?>
                       </a>
-                    </li>
-                    <li class="nav-item">
-                      <a  class="nav-link" href="#not_pending_yet" aria-controls="not_pending_yet" role="tab" data-toggle="tab" aria-controls="not_pending_yet">
-                        <i class="bx bx-briefcase align-middle"></i>
-                        <span class="align-middle"><?php echo htmlspecialchars(_l('not_pending_yet')); ?></span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a  class="nav-link" href="#using" aria-controls="using" role="tab" data-toggle="tab" aria-controls="using">
-                        <i class="bx bx-expand align-middle"></i>
-                        <span class="align-middle"><?php echo htmlspecialchars(_l('using')); ?></span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a  class="nav-link" href="#liquidation" aria-controls="liquidation" role="tab" data-toggle="tab" aria-controls="liquidation">
-                        <i class="bx bx-message-square align-middle"></i>
-                        <span class="align-middle"><?php echo htmlspecialchars(_l('liquidation')); ?></span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a  class="nav-link" href="#warranty_repair" aria-controls="warranty_repair" role="tab" data-toggle="tab" aria-controls="warranty_repair">
-                        <i class="bx bx-cog align-middle"></i>
-                        <span class="align-middle"><?php echo htmlspecialchars(_l('warranty_repair')); ?></span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a  class="nav-link" href="#lost" aria-controls="lost" role="tab" data-toggle="tab" aria-controls="lost">
-                        <i class="bx bx-window-open align-middle"></i>
-                        <span class="align-middle"><?php echo htmlspecialchars(_l('lost')); ?></span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a  class="nav-link" href="#broken" aria-controls="broken" role="tab" data-toggle="tab" aria-controls="broken">
-                        <i class="bx bx-x align-middle"></i>
-                        <span class="align-middle"><?php echo htmlspecialchars(_l('broken')); ?></span>
-                      </a>
-                    </li>
-                </ul>
-           </div>
-         </div>
-       </div>
-     </div>
-     
-
-               
-     <div class="col-md-12" id="small-table" style="padding-right: 15px;padding-left: 15px;">
-            <div class="card">
-               <div class="card-body">
-                <?php echo form_hidden('asset_id',$asset_id); ?>
-                <div class="tab-content">
-                  <div role="tab-pane" class="tab-pane active" id="all_asset">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets1',['asset_sm' => 'asset_sm']);
-                        ?>
-                  </div>
-                  <div role="tab-pane" class="tab-pane" id="not_pending_yet">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets2',['asset_sm' => 'asset_sm']);
-                        ?>
-                  </div>
-                  <div role="tab-pane" class="tab-pane" id="using">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets3',['asset_sm' => 'asset_sm']);
-                        ?>
-                  </div>
-                  <div role="tab-pane" class="tab-pane" id="liquidation">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets4',['asset_sm' => 'asset_sm']);
-                        ?>
-                  </div>
-                  <div role="tab-pane" class="tab-pane" id="warranty_repair">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets5',['asset_sm' => 'asset_sm']);
-                        ?>
-                  </div>
-                  <div role="tab-pane" class="tab-pane" id="lost">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets6',['asset_sm' => 'asset_sm']);
-                        ?>
-                  </div>
-                  <div role="tab-pane" class="tab-pane" id="broken">
-                    <?php
-                        $table_data = array(
-                            _l('asset_code'),
-                            _l('asset_name'),
-                            _l('asset_group'),
-                            _l('date_buy'),
-                            _l('amount_allocate'),       
-                            _l('amount_rest'),
-                            _l('original_price'),
-                            _l('unit'),
-                            _l('department'),                           
-                            );
-                        render_datatable($table_data,'table_assets7',['asset_sm' => 'asset_sm']);
-                        ?>
+                    <?php } ?>
+                    <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_asset('.asset_sm','#asset_sm_view'); return false;" data-toggle="tooltip" title="<?php echo htmlspecialchars(_l('invoices_toggle_table_tooltip')); ?>"><i class="fa fa-angle-double-left"></i></a>
                   </div>
                 </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-7 small-table-right-col">
-            <div id="asset_sm_view" class="hide">
-            </div>
-         </div>
-
+                <ul class="nav nav-tabs mt-2" role="tablist">
+                  <li class="nav-item active">
+                    <a  class="nav-link active" href="#all_asset" aria-controls="all_asset" role="tab" data-toggle="tab" aria-controls="all_asset">
+                      <i class="bx bx-home align-middle"></i>
+                      <span class="align-middle"><?php echo _l('all_asset'); ?></span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a  class="nav-link" href="#not_pending_yet" aria-controls="not_pending_yet" role="tab" data-toggle="tab" aria-controls="not_pending_yet">
+                      <i class="bx bx-briefcase align-middle"></i>
+                      <span class="align-middle"><?php echo htmlspecialchars(_l('not_pending_yet')); ?></span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a  class="nav-link" href="#using" aria-controls="using" role="tab" data-toggle="tab" aria-controls="using">
+                      <i class="bx bx-expand align-middle"></i>
+                      <span class="align-middle"><?php echo htmlspecialchars(_l('using')); ?></span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a  class="nav-link" href="#liquidation" aria-controls="liquidation" role="tab" data-toggle="tab" aria-controls="liquidation">
+                      <i class="bx bx-message-square align-middle"></i>
+                      <span class="align-middle"><?php echo htmlspecialchars(_l('liquidation')); ?></span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a  class="nav-link" href="#warranty_repair" aria-controls="warranty_repair" role="tab" data-toggle="tab" aria-controls="warranty_repair">
+                      <i class="bx bx-cog align-middle"></i>
+                      <span class="align-middle"><?php echo htmlspecialchars(_l('warranty_repair')); ?></span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a  class="nav-link" href="#lost" aria-controls="lost" role="tab" data-toggle="tab" aria-controls="lost">
+                      <i class="bx bx-window-open align-middle"></i>
+                      <span class="align-middle"><?php echo htmlspecialchars(_l('lost')); ?></span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a  class="nav-link" href="#broken" aria-controls="broken" role="tab" data-toggle="tab" aria-controls="broken">
+                      <i class="bx bx-x align-middle"></i>
+                      <span class="align-middle"><?php echo htmlspecialchars(_l('broken')); ?></span>
+                    </a>
+                  </li>
+              </ul>
+              <?php echo form_hidden('asset_id',$asset_id); ?>
+              <div class="tab-content">
+                <div role="tab-pane" class="tab-pane active" id="all_asset">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets1',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+                <div role="tab-pane" class="tab-pane" id="not_pending_yet">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets2',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+                <div role="tab-pane" class="tab-pane" id="using">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets3',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+                <div role="tab-pane" class="tab-pane" id="liquidation">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets4',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+                <div role="tab-pane" class="tab-pane" id="warranty_repair">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets5',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+                <div role="tab-pane" class="tab-pane" id="lost">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets6',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+                <div role="tab-pane" class="tab-pane" id="broken">
+                  <?php
+                      $table_data = array(
+                          _l('asset_code'),
+                          _l('asset_name'),
+                          _l('asset_group'),
+                          _l('date_buy'),
+                          _l('amount_allocate'),       
+                          _l('amount_rest'),
+                          _l('original_price'),
+                          _l('unit'),
+                          _l('department'),                           
+                          );
+                      render_datatable($table_data,'table_assets7',['asset_sm' => 'asset_sm']);
+                      ?>
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
-   </div>
-</div>
+    </div>
+  </div>
 <div class="modal fade" id="assets" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <?php echo form_open_multipart(admin_url('assets/asset'),array('id'=>'assets-form')); ?>
