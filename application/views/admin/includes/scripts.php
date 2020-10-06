@@ -84,7 +84,7 @@
       break;
       case "hrm":
       case "purchase":
-         echo "<script src='".base_url()."assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
+         echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
       break;
       default:
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js'></script>\n";

@@ -93,7 +93,7 @@
         break;
         case "hrm":
         case "purchase":
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/plugins/handsontable/handsontable.full.min.css'>\n\t";
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.css'>\n\t";
         break;
         case "task_kanban":
         case "proposals_kanban":
