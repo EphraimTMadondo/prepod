@@ -23,10 +23,8 @@
       </div>
     </div>
     <div class="col-md-9">
-      <div class="card">
-        <div class="card-body">
-            <?php $this->load->view($tabs['view']); ?>
-        </div>
+      <div class="card p-1">
+        <?php $this->load->view($tabs['view']); ?>
     </div>
   </div>
 <div class="clearfix"></div>
