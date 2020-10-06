@@ -9,10 +9,10 @@
       <li role="presentation" class="nav-item active">
         <a class="nav-link active" href="#holiday" aria-controls="holiday" role="tab" data-toggle="tab"><?php echo _l('holiday'); ?></a>
       </li>
-      <li role="presentation">
+      <li class="nav-item" role="presentation">
         <a class="nav-link" href="#event_break" aria-controls="event_break" role="tab" data-toggle="tab"><?php echo _l('event_break'); ?></a>
       </li>
-      <li role="presentation">
+      <li class="nav-item" role="presentation">
         <a class="nav-link" href="#unexpected_break" aria-controls="unexpected_break" role="tab" data-toggle="tab"><?php echo _l('unexpected_break'); ?></a>
       </li>
     </ul>
