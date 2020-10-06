@@ -47,7 +47,7 @@
                         <?php } ?>
                         <a href="<?php echo admin_url('clients/all_contacts'); ?>"  class="btn btn-primary mr-1 mb-1">
                         <?php echo _l('customer_contacts'); ?></a>
-                        <div class="btn-group mb-1 float-right">
+                        <div class="btn-group mb-1">
                            <div class="dropdown">
                               <button class="btn btn-light dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Filters
@@ -180,9 +180,9 @@
                            <span<?php if($contactsTemplate != ''){ ?> class="pointer text-has-action" data-toggle="popover" data-title="<?php echo _l('customers_summary_logged_in_today'); ?>" data-html="true" data-content="<?php echo $contactsTemplate; ?>" data-placement="bottom" <?php } ?>><?php echo _l('customers_summary_logged_in_today'); ?></span>
                            </span>
                         </div>
+                        <hr class="hr-panel-heading" />
                      </div>
                      <?php } ?>
-                     <hr class="hr-panel-heading" />
                      <a href="#" data-toggle="modal" data-target="#customers_ nio no-bpk_action" class="bulk-actions-btn table-btn buttons-html5 hide" data-table=".table-clients"><?php echo _l('bulk_actions'); ?></a>
                      <div class="modal fade bulk_actions" id="customers_bulk_action" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
