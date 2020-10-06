@@ -8,7 +8,7 @@
             <div class="card">
                <div class="card-body">
                   <div class="row">
-                    <div class="col-md-2 border-right">
+                    <div class="col-md-12">
                       <h4 class="no-margin font-bold"><i class="fa fa-legal" aria-hidden="true"></i> <?php echo htmlspecialchars(_l($title)); ?></h4>
                       <hr />
                     </div>
