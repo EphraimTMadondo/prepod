@@ -23,9 +23,9 @@
       </div>
     </div>
     <div class="col-md-9">
-      <div class="card p-1">
+      <div class="card">
         <?php $this->load->view($tabs['view']); ?>
-    </div>
+      </div>
   </div>
 <div class="clearfix"></div>
 </div>
