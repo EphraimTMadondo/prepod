@@ -43,21 +43,21 @@ $staff_mail_list_row = [
     '<a href="' . site_url('admin/surveys/mail_list_view/staff') . '" data-toggle="tooltip" title="' . _l('cant_edit_mail_list') . '">' . _l('survey_send_mail_list_staff') . '</a>',
     '--',
     '--',
-    '<a href="' . site_url('admin/surveys/mail_list_view/staff') . '" class="btn btn-default btn-icon" ><i class="fa fa-eye"></i>',
+    '<a href="' . site_url('admin/surveys/mail_list_view/staff') . '" class="btn btn-light btn-icon" ><i class="fa fa-eye"></i>',
     ];
 $clients_mail_list_row = [
     '--',
     '<a href="' . site_url('admin/surveys/mail_list_view/clients') . '" data-toggle="tooltip" title="' . _l('cant_edit_mail_list') . '">' . _l('customer_contacts') . '</a>',
     '--',
     '--',
-    '<a href="' . site_url('admin/surveys/mail_list_view/clients') . '" class="btn btn-default btn-icon" ><i class="fa fa-eye"></i>',
+    '<a href="' . site_url('admin/surveys/mail_list_view/clients') . '" class="btn btn-light btn-icon" ><i class="fa fa-eye"></i>',
     ];
 $leads_mail_list_row = [
     '--',
     '<a href="' . site_url('admin/surveys/mail_list_view/leads') . '" data-toggle="tooltip" title="' . _l('cant_edit_mail_list') . '">' . _l('leads') . '</a>',
     '--',
     '--',
-    '<a href="' . site_url('admin/surveys/mail_list_view/leads') . '" class="btn btn-default btn-icon" ><i class="fa fa-eye"></i>',
+    '<a href="' . site_url('admin/surveys/mail_list_view/leads') . '" class="btn btn-light btn-icon" ><i class="fa fa-eye"></i>',
     ];
 // Add clients and staff mail lists to top always
 array_unshift($output['aaData'], $staff_mail_list_row);

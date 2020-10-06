@@ -63,7 +63,7 @@
      <?php if(get_option('allow_contact_to_delete_files') == 1) { ?>
        <td>
         <?php if($file['contact_id'] == get_contact_user_id()){ ?>
-          <a href="<?php echo site_url('clients/delete_file/'.$file['id'].'/project'); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+          <a href="<?php echo site_url('clients/delete_file/'.$file['id'].'/project'); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
         <?php } ?>
       </td>
     <?php } ?>

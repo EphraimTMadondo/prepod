@@ -74,7 +74,7 @@
                <?php } ?>
                <div class="float-right">
                   <?php if(has_permission('expenses','','edit')){ ?>
-                  <a class="btn btn-default btn-with-tooltip" href="<?php echo admin_url('expenses/expense/'.$expense->expenseid); ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('expense_edit'); ?>"><i class="fa fa-pencil-square-o"></i></a>
+                  <a class="btn btn-default btn-with-tooltip" href="<?php echo admin_url('expenses/expense/'.$expense->expenseid); ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('expense_edit'); ?>"><i class="bx bx-pencil"></i></a>
                   <?php } ?>
                   <a class="btn btn-default btn-with-tooltip" href="#" onclick="print_expense_information(); return false;" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('print'); ?>">
                     <i class="fa fa-print"></i>
@@ -83,7 +83,7 @@
                   <a class="btn btn-default btn-with-tooltip" href="<?php echo admin_url('expenses/copy/'.$expense->expenseid); ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('expense_copy'); ?>"><i class="fa fa-clone"></i></a>
                   <?php } ?>
                   <?php if(has_permission('expenses','','delete')){ ?>
-                  <a class="btn btn-danger btn-with-tooltip _delete" href="<?php echo admin_url('expenses/delete/'.$expense->expenseid); ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('expense_delete'); ?>"><i class="fa fa-remove"></i></a>
+                  <a class="btn btn-danger btn-with-tooltip _delete" href="<?php echo admin_url('expenses/delete/'.$expense->expenseid); ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo _l('expense_delete'); ?>"><i class="bx bx-trash"></i></a>
                   <?php } ?>
                </div>
             </div>

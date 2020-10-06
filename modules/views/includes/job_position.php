@@ -20,8 +20,8 @@
        <td><?php echo html_entity_decode($job['position_id']); ?></td>
        <td><?php echo html_entity_decode($job['position_name']); ?></td>
        <td>
-         <a href="#" onclick="edit_job_position(this,<?php echo html_entity_decode($job['position_id']); ?>); return false" data-name="<?php echo html_entity_decode($job['position_name']); ?>" data-position_description="<?php echo html_entity_decode($job['position_description']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<?php echo admin_url('recruitment/delete_job_position/' . $job['position_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+         <a href="#" onclick="edit_job_position(this,<?php echo html_entity_decode($job['position_id']); ?>); return false" data-name="<?php echo html_entity_decode($job['position_name']); ?>" data-position_description="<?php echo html_entity_decode($job['position_description']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+          <a href="<?php echo admin_url('recruitment/delete_job_position/' . $job['position_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php }?>

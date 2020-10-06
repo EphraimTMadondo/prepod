@@ -99,8 +99,8 @@
        <td><?php echo get_staff_full_name($pr['manager_id']); ?></td>
        <td><?php echo get_staff_full_name($pr['follower_id']); ?></td>
        <td>
-         <a href="<?php echo admin_url('hrm/payroll_type/'.$pr['id']); ?>" class="btn btn-default btn-icon" title= "<?php echo _l('update') ?>"><i class="fa fa-pencil-square-o"></i></a>
-         <a href="<?php echo admin_url('hrm/delete_payroll_type/'.$pr['id']); ?>" class="btn btn-danger btn-icon _delete" title= "<?php echo _l('delete') ?>"><i class="fa fa-remove"></i></a>
+         <a href="<?php echo admin_url('hrm/payroll_type/'.$pr['id']); ?>" class="btn btn-light btn-icon" title= "<?php echo _l('update') ?>"><i class="bx bx-pencil"></i></a>
+         <a href="<?php echo admin_url('hrm/delete_payroll_type/'.$pr['id']); ?>" class="btn btn-danger btn-icon _delete" title= "<?php echo _l('delete') ?>"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php } ?>

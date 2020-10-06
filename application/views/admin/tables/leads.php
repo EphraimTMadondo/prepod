@@ -152,7 +152,7 @@ foreach ($rResult as $aRow) {
         $consents    = $this->ci->gdpr_model->get_consent_purposes($aRow['id'], 'lead');
 
         foreach ($consents as $consent) {
-            $consentHTML .= '<p style="margin-bottom:0px;">' . $consent['name'] . (!empty($consent['consent_given']) ? '<i class="fa fa-check text-success float-right"></i>' : '<i class="fa fa-remove text-danger float-right"></i>') . '</p>';
+            $consentHTML .= '<p style="margin-bottom:0px;">' . $consent['name'] . (!empty($consent['consent_given']) ? '<i class="fa fa-check text-success float-right"></i>' : '<i class="bx bx-trash text-danger float-right"></i>') . '</p>';
         }
         $row[] = $consentHTML;
     }

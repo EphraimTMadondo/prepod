@@ -15,7 +15,7 @@
         <label for=""><span class="hide"><?php echo $list['description']; ?></span></label>
         <textarea data-taskid="<?php echo $task_id; ?>" name="checklist-description" rows="1"<?php if($list['addedfrom'] != get_staff_user_id() && !has_permission('tasks','','edit')){echo ' disabled';} ?>><?php echo clear_textarea_breaks($list['description']); ?></textarea>
         <?php if(has_permission('tasks','','delete') || $list['addedfrom'] == get_staff_user_id()){ ?>
-        <a href="#" class="float-right text-muted remove-checklist" onclick="delete_checklist_item(<?php echo $list['id']; ?>,this); return false;"><i class="fa fa-remove"></i>
+        <a href="#" class="float-right text-muted remove-checklist" onclick="delete_checklist_item(<?php echo $list['id']; ?>,this); return false;"><i class="bx bx-trash"></i>
         </a>
         <?php } ?>
         <?php if(has_permission('checklist_templates','','create')){ ?>

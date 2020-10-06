@@ -116,9 +116,9 @@
                                                 <?php
                                                 if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
                                                    <div class="float-right">
-                                                      <a href="#" class="btn btn-default btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
+                                                      <a href="#" class="btn btn-light btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="bx bx-pencil"></i></a>
                                                       <a href="<?php echo admin_url('misc/delete_note/'.$note["id"]); ?>" class="mr-1 _delete btn btn-danger btn-icon">
-                                                         <i class="fa fa-remove"></i>
+                                                         <i class="bx bx-trash"></i>
                                                       </a>
                                                    </div>
                                                 <?php } ?>
@@ -149,7 +149,7 @@
                   <div>
                      <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'single-ticket-form','novalidate'=>true)); ?>
                      <a href="<?php echo admin_url('tickets/delete/'.$ticket->ticketid); ?>" class="btn btn-danger _delete btn-ticket-label mr-1">
-                        <i class="fa fa-remove"></i>
+                        <i class="bx bx-trash"></i>
                      </a>
 
                      <?php if(!empty($ticket->priority_name)){ ?>
@@ -446,7 +446,7 @@
             <?php if(!empty($ticket->message)) { ?>
                <a href="#" onclick="print_ticket_message(<?php echo $ticket->ticketid; ?>, 'ticket'); return false;" class="mr-1"><i class="fa fa-print"></i></a>
             <?php } ?>
-            <a href="#" onclick="edit_ticket_message(<?php echo $ticket->ticketid; ?>,'ticket'); return false;"><i class="fa fa-pencil-square-o"></i></a>
+            <a href="#" onclick="edit_ticket_message(<?php echo $ticket->ticketid; ?>,'ticket'); return false;"><i class="bx bx-pencil"></i></a>
          </div>
       </div>
       <div data-ticket-id="<?php echo $ticket->ticketid; ?>" class="tc-content">
@@ -529,7 +529,7 @@
                <?php if(!empty($reply['message'])) { ?>
                   <a href="#" onclick="print_ticket_message(<?php echo $reply['id']; ?>, 'reply'); return false;" class="mr-1"><i class="fa fa-print"></i></a>
                <?php } ?>
-               <a href="#" onclick="edit_ticket_message(<?php echo $reply['id']; ?>,'reply'); return false;"><i class="fa fa-pencil-square-o"></i></a>
+               <a href="#" onclick="edit_ticket_message(<?php echo $reply['id']; ?>,'reply'); return false;"><i class="bx bx-pencil"></i></a>
             </div>
          </div>
          <div class="clearfix"></div>

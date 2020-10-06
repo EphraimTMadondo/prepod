@@ -90,7 +90,7 @@
                </div>
                <div class="float-right _buttons mr-1">
                   <?php if(has_permission('estimates','','edit')){ ?>
-                  <a href="<?php echo admin_url('purchase/pur_order/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_pur_order_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
+                  <a href="<?php echo admin_url('purchase/pur_order/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_pur_order_tooltip'); ?>" data-placement="bottom"><i class="bx bx-pencil"></i></a>
                   <?php } ?>
 
                </div>
@@ -323,7 +323,7 @@
                            <td><?php echo get_payment_mode_by_id($pay['paymentmode']); ?></td>
                            <td><?php echo html_entity_decode($pay['transactionid']); ?></td>
                            <td><?php echo _d($pay['date']); ?></td>
-                           <td> <a href="<?php echo admin_url('purchase/delete_payment/'.$pay['id'].'/'.$estimate->id); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a></td>
+                           <td> <a href="<?php echo admin_url('purchase/delete_payment/'.$pay['id'].'/'.$estimate->id); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a></td>
                         </tr>
                      <?php } ?>
                   </tbody>

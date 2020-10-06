@@ -53,8 +53,8 @@
                 ]); ?>
                  </a></td>
               <td>
-               <a href="#" onclick="edit_day_off(this,<?php echo htmlspecialchars($d['id']); ?>); return false" data-off_reason="<?php echo htmlspecialchars($d['off_reason']); ?>" data-off_type="<?php echo htmlspecialchars($d['off_type']); ?>" data-break_date="<?php echo htmlspecialchars($d['break_date']); ?>" data-timekeeping="<?php echo htmlspecialchars($d['timekeeping']); ?>" data-department="<?php echo htmlspecialchars($d['department']); ?>" data-position="<?php echo htmlspecialchars($d['position']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-                <a href="<?php echo admin_url('hrm/delete_day_off/'.$d['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+               <a href="#" onclick="edit_day_off(this,<?php echo htmlspecialchars($d['id']); ?>); return false" data-off_reason="<?php echo htmlspecialchars($d['off_reason']); ?>" data-off_type="<?php echo htmlspecialchars($d['off_type']); ?>" data-break_date="<?php echo htmlspecialchars($d['break_date']); ?>" data-timekeeping="<?php echo htmlspecialchars($d['timekeeping']); ?>" data-department="<?php echo htmlspecialchars($d['department']); ?>" data-position="<?php echo htmlspecialchars($d['position']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+                <a href="<?php echo admin_url('hrm/delete_day_off/'.$d['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
               </td>
             </tr>
           <?php } }?>
@@ -91,8 +91,8 @@
                 ]); ?>
                  </a></td>
               <td>
-                <a href="#" onclick="edit_day_off(this,<?php echo htmlspecialchars($d['id']); ?>); return false" data-off_reason="<?php echo htmlspecialchars($d['off_reason']); ?>" data-off_type="<?php echo htmlspecialchars($d['off_type']); ?>" data-break_date="<?php echo htmlspecialchars($d['break_date']); ?>" data-timekeeping="<?php echo htmlspecialchars($d['timekeeping']); ?>" data-department="<?php echo htmlspecialchars($d['department']); ?>" data-position="<?php echo htmlspecialchars($d['position']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-                <a href="<?php echo admin_url('hrm/delete_day_off/'.$d['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                <a href="#" onclick="edit_day_off(this,<?php echo htmlspecialchars($d['id']); ?>); return false" data-off_reason="<?php echo htmlspecialchars($d['off_reason']); ?>" data-off_type="<?php echo htmlspecialchars($d['off_type']); ?>" data-break_date="<?php echo htmlspecialchars($d['break_date']); ?>" data-timekeeping="<?php echo htmlspecialchars($d['timekeeping']); ?>" data-department="<?php echo htmlspecialchars($d['department']); ?>" data-position="<?php echo htmlspecialchars($d['position']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+                <a href="<?php echo admin_url('hrm/delete_day_off/'.$d['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
               </td>
             </tr>
           <?php } ?>
@@ -129,8 +129,8 @@
                 ]); ?>
                  </a></td>
               <td>
-                <a href="#" onclick="edit_day_off(this,<?php echo htmlspecialchars($d['id']); ?>); return false" data-off_reason="<?php echo htmlspecialchars($d['off_reason']); ?>" data-off_type="<?php echo htmlspecialchars($d['off_type']); ?>" data-break_date="<?php echo htmlspecialchars($d['break_date']); ?>" data-timekeeping="<?php echo htmlspecialchars($d['timekeeping']); ?>" data-department="<?php echo htmlspecialchars($d['department']); ?>" data-position="<?php echo htmlspecialchars($d['position']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-                <a href="<?php echo admin_url('hrm/delete_day_off/'.$d['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                <a href="#" onclick="edit_day_off(this,<?php echo htmlspecialchars($d['id']); ?>); return false" data-off_reason="<?php echo htmlspecialchars($d['off_reason']); ?>" data-off_type="<?php echo htmlspecialchars($d['off_type']); ?>" data-break_date="<?php echo htmlspecialchars($d['break_date']); ?>" data-timekeeping="<?php echo htmlspecialchars($d['timekeeping']); ?>" data-department="<?php echo htmlspecialchars($d['department']); ?>" data-position="<?php echo htmlspecialchars($d['position']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+                <a href="<?php echo admin_url('hrm/delete_day_off/'.$d['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
               </td>
             </tr>
           <?php } ?>

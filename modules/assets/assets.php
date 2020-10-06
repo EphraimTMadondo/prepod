@@ -73,7 +73,7 @@ function assets_module_init_menu_items()
         $CI->app_menu->add_sidebar_children_item('assets', [
             'slug'     => 'allocations',
             'name'     => _l('allocation'),
-            'icon'     => 'fa fa-pencil-square-o',
+            'icon'     => 'bx bx-pencil',
             'href'     => admin_url('assets/allocation'),
             'position' => 2,
         ]);

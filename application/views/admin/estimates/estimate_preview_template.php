@@ -87,7 +87,7 @@
                </div>
                <div class="float-right _buttons">
                   <?php if(has_permission('estimates','','edit')){ ?>
-                  <a href="<?php echo admin_url('estimates/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
+                  <a href="<?php echo admin_url('estimates/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="bx bx-pencil"></i></a>
                   <?php } ?>
                   <div class="btn-group">
                      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><?php if(is_mobile()){echo ' PDF';} ?> <span class="caret"></span></a>
@@ -205,7 +205,7 @@
                               _l('estimate_lowercase'),
                               '<b>'.$estimate->acceptance_firstname . ' ' . $estimate->acceptance_lastname . '</b> (<a href="mailto:'.$estimate->acceptance_email.'">'.$estimate->acceptance_email.'</a>)',
                               '<b>'. _dt($estimate->acceptance_date).'</b>',
-                              '<b>'.$estimate->acceptance_ip.'</b>'.(is_admin() ? '&nbsp;<a href="'.admin_url('estimates/clear_acceptance_info/'.$estimate->id).'" class="_delete text-muted" data-toggle="tooltip" data-title="'._l('clear_this_information').'"><i class="fa fa-remove"></i></a>' : '')
+                              '<b>'.$estimate->acceptance_ip.'</b>'.(is_admin() ? '&nbsp;<a href="'.admin_url('estimates/clear_acceptance_info/'.$estimate->id).'" class="_delete text-muted" data-toggle="tooltip" data-title="'._l('clear_this_information').'"><i class="bx bx-trash"></i></a>' : '')
                               )); ?>
                         </div>
                      </div>
@@ -476,7 +476,7 @@
                                  }
                                  echo $_formatted_activity;
                                  if(is_admin()){
-                                 echo '<a href="#" class="float-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="fa fa-remove"></i></a>';
+                                 echo '<a href="#" class="float-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="bx bx-trash"></i></a>';
                                  }
                                  ?>
                            </div>

@@ -20,8 +20,8 @@
        <td><?php  echo htmlspecialchars($c['location_id']); ?></td>
        <td> <a href="#" onclick="edit_asset_location(this,<?php  echo htmlspecialchars($c['location_id']); ?>); return false" data-name="<?php  echo htmlspecialchars($c['location']); ?>"><?php  echo htmlspecialchars($c['location']); ?></td>
        <td>
-         <a href="#" onclick="edit_asset_location(this,<?php  echo htmlspecialchars($c['location_id']); ?>); return false" data-name="<?php  echo htmlspecialchars($c['location']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<?php echo admin_url('assets/delete_asset_location/'.$c['location_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+         <a href="#" onclick="edit_asset_location(this,<?php  echo htmlspecialchars($c['location_id']); ?>); return false" data-name="<?php  echo htmlspecialchars($c['location']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+          <a href="<?php echo admin_url('assets/delete_asset_location/'.$c['location_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php } ?>

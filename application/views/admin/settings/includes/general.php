@@ -10,7 +10,7 @@
 				</div>
 				<?php if(has_permission('settings','','delete')){ ?>
 					<div class="col-md-3 text-right">
-						<a href="<?php echo admin_url('settings/remove_company_logo'); ?>" data-toggle="tooltip" title="<?php echo _l('settings_general_company_remove_logo_tooltip'); ?>" class="_delete text-danger"><i class="fa fa-remove"></i></a>
+						<a href="<?php echo admin_url('settings/remove_company_logo'); ?>" data-toggle="tooltip" title="<?php echo _l('settings_general_company_remove_logo_tooltip'); ?>" class="_delete text-danger"><i class="bx bx-trash"></i></a>
 					</div>
 				<?php } ?>
 			</div>
@@ -29,7 +29,7 @@
 				</div>
 				<?php if(has_permission('settings','','delete')){ ?>
 					<div class="col-md-3 text-right">
-						<a href="<?php echo admin_url('settings/remove_company_logo/dark'); ?>" data-toggle="tooltip" title="<?php echo _l('settings_general_company_remove_logo_tooltip'); ?>" class="_delete text-danger"><i class="fa fa-remove"></i></a>
+						<a href="<?php echo admin_url('settings/remove_company_logo/dark'); ?>" data-toggle="tooltip" title="<?php echo _l('settings_general_company_remove_logo_tooltip'); ?>" class="_delete text-danger"><i class="bx bx-trash"></i></a>
 					</div>
 				<?php } ?>
 			</div>
@@ -50,7 +50,7 @@
 					</div>
 					<?php if(has_permission('settings','','delete')){ ?>
 						<div class="col-md-3 text-right">
-							<a href="<?php echo admin_url('settings/remove_favicon'); ?>" class="_delete text-danger"><i class="fa fa-remove"></i></a>
+							<a href="<?php echo admin_url('settings/remove_favicon'); ?>" class="_delete text-danger"><i class="bx bx-trash"></i></a>
 						</div>
 					<?php } ?>
 				</div>

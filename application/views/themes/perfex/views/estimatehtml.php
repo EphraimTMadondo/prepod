@@ -56,7 +56,7 @@
                   if ($estimate->status != 4 && $estimate->status != 3 && $estimate->status != 5) {
                     echo form_open($this->uri->uri_string(), array('class'=>'float-right action-button mr-1 mtop7'));
                     echo form_hidden('estimate_action', 3);
-                    echo '<button type="submit" data-loading-text="'._l('wait_text').'" autocomplete="off" class="btn btn-default action-button accept"><i class="fa fa-remove"></i> '._l('clients_decline_estimate').'</button>';
+                    echo '<button type="submit" data-loading-text="'._l('wait_text').'" autocomplete="off" class="btn btn-default action-button accept"><i class="bx bx-trash"></i> '._l('clients_decline_estimate').'</button>';
                     echo form_close();
                   }
                   ?>

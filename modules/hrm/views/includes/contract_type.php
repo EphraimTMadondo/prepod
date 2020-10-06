@@ -26,8 +26,8 @@
        <td><?php echo htmlspecialchars($c['duration']).' '._l($c['unit']); ?></td>
        <td><?php if($c['insurance'] == 0){echo _l('no');}else{echo _l('yes');}?></td>
        <td>
-         <a href="#" onclick="edit_contract_type(this,<?php echo htmlspecialchars($c['id_contracttype']); ?>); return false" data-name="<?php echo htmlspecialchars($c['name_contracttype']);  ?>" data-contracttype="<?php echo htmlspecialchars($c['contracttype']);  ?>" data-duration="<?php echo htmlspecialchars($c['duration']);  ?>" data-insurance="<?php echo htmlspecialchars($c['insurance']);?>" data-unit="<?php echo htmlspecialchars($c['unit']);?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<?php echo admin_url('hrm/delete_contract_type/'.$c['id_contracttype']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+         <a href="#" onclick="edit_contract_type(this,<?php echo htmlspecialchars($c['id_contracttype']); ?>); return false" data-name="<?php echo htmlspecialchars($c['name_contracttype']);  ?>" data-contracttype="<?php echo htmlspecialchars($c['contracttype']);  ?>" data-duration="<?php echo htmlspecialchars($c['duration']);  ?>" data-insurance="<?php echo htmlspecialchars($c['insurance']);?>" data-unit="<?php echo htmlspecialchars($c['unit']);?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+          <a href="<?php echo admin_url('hrm/delete_contract_type/'.$c['id_contracttype']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php } ?>

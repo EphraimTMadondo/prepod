@@ -7,7 +7,7 @@
             <h4 class="bold pipeline-heading">
                <a href="<?php echo admin_url('proposals/list_proposals/'.$proposal['id']); ?>" data-toggle="tooltip" data-title="<?php echo $proposal['subject']; ?>" onclick="proposal_pipeline_open(<?php echo $proposal['id']; ?>); return false;"><?php echo format_proposal_number($proposal['id']); ?></a>
                <?php if(has_permission('estimates','','edit')){ ?>
-               <a href="<?php echo admin_url('proposals/proposal/'.$proposal['id']); ?>" target="_blank" class="float-right"><small><i class="fa fa-pencil-square-o" aria-hidden="true"></i></small></a>
+               <a href="<?php echo admin_url('proposals/proposal/'.$proposal['id']); ?>" target="_blank" class="float-right"><small><i class="bx bx-pencil" aria-hidden="true"></i></small></a>
                <?php } ?>
             </h4>
             <span class="mb-1 inline-block full-width">

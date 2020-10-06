@@ -23,9 +23,9 @@
 
             <td><?php echo _d($li['add_date']); ?></td>
             <td>
-                <a href="#" onclick="edit_setting_tranfer(this,<?php echo html_entity_decode($li['set_id']); ?>); return false" data-subject="<?php echo html_entity_decode($li['subject']); ?>" data-send_to="<?php echo html_entity_decode($li['send_to']); ?>"  data-email_to="<?php echo html_entity_decode($li['email_to']); ?>" data-order="<?php echo html_entity_decode($li['order']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
+                <a href="#" onclick="edit_setting_tranfer(this,<?php echo html_entity_decode($li['set_id']); ?>); return false" data-subject="<?php echo html_entity_decode($li['subject']); ?>" data-send_to="<?php echo html_entity_decode($li['send_to']); ?>"  data-email_to="<?php echo html_entity_decode($li['email_to']); ?>" data-order="<?php echo html_entity_decode($li['order']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
 
-                <a href="<?php echo admin_url('recruitment/delete_setting_tranfer/' . $li['set_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                <a href="<?php echo admin_url('recruitment/delete_setting_tranfer/' . $li['set_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
             </td>
         </tr>
     <?php }?>

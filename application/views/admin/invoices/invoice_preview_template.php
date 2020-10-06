@@ -145,7 +145,7 @@
                      }
                      ?>
                   <?php if(has_permission('invoices','','edit')){ ?>
-                  <a href="<?php echo admin_url('invoices/invoice/'.$invoice->id); ?>" data-toggle="tooltip" title="<?php echo _l('edit_invoice_tooltip'); ?>" class="btn btn-default btn-with-tooltip" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
+                  <a href="<?php echo admin_url('invoices/invoice/'.$invoice->id); ?>" data-toggle="tooltip" title="<?php echo _l('edit_invoice_tooltip'); ?>" class="btn btn-default btn-with-tooltip" data-placement="bottom"><i class="bx bx-pencil"></i></a>
                   <?php } ?>
                   <div class="btn-group">
                      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><?php if(is_mobile()){echo ' PDF';} ?> <span class="caret"></span></a>
@@ -383,7 +383,7 @@
                                  }
                                  echo $_formatted_activity;
                                  if(is_admin()){
-                                 echo '<a href="#" class="float-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="fa fa-remove"></i></a>';
+                                 echo '<a href="#" class="float-right text-danger" onclick="delete_sale_activity('.$activity['id'].'); return false;"><i class="bx bx-trash"></i></a>';
                                  }
                                  ?>
                            </div>

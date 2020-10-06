@@ -17,7 +17,7 @@
    <?php if ($comment['staffid'] == get_staff_user_id() || is_admin()) { ?>
    <a href="#" class="float-right" onclick="remove_proposal_comment(<?php echo $comment['id']; ?>); return false;">
    <i class="fa fa-times text-danger"></i>
-   <a href="#" class="float-right mr-1" onclick="toggle_proposal_comment_edit(<?php echo $comment['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
+   <a href="#" class="float-right mr-1" onclick="toggle_proposal_comment_edit(<?php echo $comment['id']; ?>);return false;"><i class="bx bx-pencil"></i></a>
    </a>
    <?php } ?>
    <div class="media-body">

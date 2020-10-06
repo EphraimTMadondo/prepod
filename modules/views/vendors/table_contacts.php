@@ -68,7 +68,7 @@ foreach ($rResult as $aRow) {
         $consentHTML = '<p class="bold"><a href="#" onclick="view_contact_consent(' . $aRow['id'] . '); return false;">' . _l('view_consent') . '</a></p>';
         $consents    = $this->ci->gdpr_model->get_consent_purposes($aRow['id'], 'contact');
         foreach ($consents as $consent) {
-            $consentHTML .= '<p class="m-bot-0">' . $consent['name'] . (!empty($consent['consent_given']) ? '<i class="fa fa-check text-success float-right"></i>' : '<i class="fa fa-remove text-danger float-right"></i>') . '</p>';
+            $consentHTML .= '<p class="m-bot-0">' . $consent['name'] . (!empty($consent['consent_given']) ? '<i class="fa fa-check text-success float-right"></i>' : '<i class="bx bx-trash text-danger float-right"></i>') . '</p>';
         }
         $row[] = $consentHTML;
     }

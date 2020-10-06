@@ -114,7 +114,7 @@
                                                     </a>
                                                    <?php } ?>
                                                    <?php if($has_permission_edit){ ?>
-                                                   <a href="<?php echo admin_url('knowledge_base/article/'.$article['articleid']); ?>" target="_blank" class="float-right"><span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></a>
+                                                   <a href="<?php echo admin_url('knowledge_base/article/'.$article['articleid']); ?>" target="_blank" class="float-right"><span><i class="bx bx-pencil" aria-hidden="true"></i></span></a>
                                                    <?php } ?>
                                                    <div class="clearfix"></div>
                                                    <hr class="hr-10" />

@@ -75,7 +75,7 @@
             <td>
                 <?php if($file['contact_id'] == get_contact_user_id()){ ?>
                     <a href="<?php echo site_url('clients/delete_file/'.$file['id'].'/general'); ?>"
-                        class="btn btn-danger btn-icon _delete file-delete"><i class="fa fa-remove"></i></a>
+                        class="btn btn-danger btn-icon _delete file-delete"><i class="bx bx-trash"></i></a>
                     <?php } ?>
                 </td>
             <?php } ?>

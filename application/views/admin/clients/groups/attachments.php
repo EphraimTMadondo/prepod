@@ -138,7 +138,7 @@
                                         $contacts_selected = substr($contacts_selected,0,-1);
                                     }
                                     if($names != ''){
-                                        echo '<a href="#" onclick="do_share_file_contacts(\''.$contacts_selected.'\','.$_att['id'].'); return false;"><i class="fa fa-pencil-square-o"></i></a> ' . _l('share_file_with_show',mb_substr($names, 0,-2));
+                                        echo '<a href="#" onclick="do_share_file_contacts(\''.$contacts_selected.'\','.$_att['id'].'); return false;"><i class="bx bx-pencil"></i></a> ' . _l('share_file_with_show',mb_substr($names, 0,-2));
                                     }
                                 }
                             }
@@ -152,7 +152,7 @@
                                 echo '<a href="'.$_att['external_link'].'" class="btn btn-secondary btn-icon" target="_blank">'.($_att['external'] == 'dropbox' ? '<i class="fa fa-dropbox"></i>' : '<i class="fa fa-google"></i>').'</a>';
                             } ?>
                             <?php if($type == 'customer'){ ?>
-                                <a href="<?php echo admin_url('clients/delete_attachment/'.$_att['rel_id'].'/'.$_att['id']); ?>"  class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                                <a href="<?php echo admin_url('clients/delete_attachment/'.$_att['rel_id'].'/'.$_att['id']); ?>"  class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
                             <?php } ?>
                         </td>
                     <?php } ?>

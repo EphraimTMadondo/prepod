@@ -169,7 +169,7 @@ class Newsfeed extends AdminController
         $_likes = '';
         $_likes .= '<div class="panel-footer user-post-like">';
         if (!$this->newsfeed_model->user_liked_post($id)) {
-            $_likes .= '<button type="button" class="btn btn-default btn-icon" onclick="like_post(' . $id . ')"> <i class="fa fa-heart"></i></button>';
+            $_likes .= '<button type="button" class="btn btn-light btn-icon" onclick="like_post(' . $id . ')"> <i class="fa fa-heart"></i></button>';
         } else {
             $_likes .= '<button type="button" class="btn btn-danger btn-icon" onclick="unlike_post(' . $id . ')"> <i class="fa fa-heart-o"></i></button>';
         }
@@ -276,7 +276,7 @@ class Newsfeed extends AdminController
         ]) . '</a>';
         $_comments .= '</div>'; // end comment-image
         if ($comment['userid'] == get_staff_user_id() || is_admin()) {
-            $_comments .= '<span class="float-right"><a href="#" class="remove-post-comment" onclick="remove_post_comment(' . $comment['id'] . ',' . $comment['postid'] . '); return false;"><i class="fa fa-remove bold"></i></span></a>';
+            $_comments .= '<span class="float-right"><a href="#" class="remove-post-comment" onclick="remove_post_comment(' . $comment['id'] . ',' . $comment['postid'] . '); return false;"><i class="bx bx-trash bold"></i></span></a>';
         }
         $_comments .= '<div class="media-body">';
         $_comments .= '<p class="no-margin comment-content"><a href="' . admin_url('profile/' . $comment['userid']) . '">' . get_staff_full_name($comment['userid']) . '</a> ' . check_for_links($comment['content']) . '</p>';

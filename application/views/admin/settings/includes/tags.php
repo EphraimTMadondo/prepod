@@ -16,7 +16,7 @@ $totalTags = count($tags);
                     </div>
                     <input type="text" name="tags[<?php echo $tag['id']; ?>]" value="<?php echo $tag['name']; ?>" class="form-control">
                     <div class="input-group-addon">
-                      <a class="btn btn-danger _delete" href="<?php echo admin_url('settings/delete_tag/'.$tag['id']); ?>"><i class="fa fa-remove"></i></a>
+                      <a class="btn btn-danger _delete" href="<?php echo admin_url('settings/delete_tag/'.$tag['id']); ?>"><i class="bx bx-trash"></i></a>
                   </div>
               </div>
           </div>

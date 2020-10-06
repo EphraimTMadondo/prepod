@@ -13,8 +13,8 @@
          <?php echo $entry['server_address']; ?>
       </h4>
       <?php if($entry['creator'] == get_staff_user_id() || is_admin()){ ?>
-      <a href="<?php echo admin_url('clients/vault_entry_delete/'.$entry['id']); ?>" class="float-right text-danger _delete"><i class="fa fa-remove"></i></a>
-      <a href="#" onclick="edit_vault_entry(<?php echo $entry['id']; ?>); return false;" class="float-right text-muted"><i class="fa fa-pencil-square-o mr-1"></i></a>
+      <a href="<?php echo admin_url('clients/vault_entry_delete/'.$entry['id']); ?>" class="float-right text-danger _delete"><i class="bx bx-trash"></i></a>
+      <a href="#" onclick="edit_vault_entry(<?php echo $entry['id']; ?>); return false;" class="float-right text-muted"><i class="bx bx-pencil mr-1"></i></a>
       <?php } ?>
       <div class="clearfix"></div>
    </div>

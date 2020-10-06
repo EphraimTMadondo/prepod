@@ -34,7 +34,7 @@
                                 <?php echo staff_profile_image($current_user->staffid,array('img','img-responsive','staff-profile-image-thumb'),'thumb'); ?>
                             </div>
                             <div class="col-md-3 text-right">
-                                <a href="<?php echo admin_url('staff/remove_staff_profile_image'); ?>"><i class="fa fa-remove"></i></a>
+                                <a href="<?php echo admin_url('staff/remove_staff_profile_image'); ?>"><i class="bx bx-trash"></i></a>
                             </div>
                         </div>
                     </div>

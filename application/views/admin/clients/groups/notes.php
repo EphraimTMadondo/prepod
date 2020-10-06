@@ -64,8 +64,8 @@
         </td>
         <td>
             <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
-            <a href="#" class="btn btn-default btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
-            <a href="<?php echo admin_url('misc/delete_note/'. $note['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+            <a href="#" class="btn btn-light btn-icon" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="bx bx-pencil"></i></a>
+            <a href="<?php echo admin_url('misc/delete_note/'. $note['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
             <?php } ?>
         </td>
     </tr>

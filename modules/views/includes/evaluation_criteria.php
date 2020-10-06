@@ -34,12 +34,12 @@
         <td><?php echo _d($gr['add_date']); ?></td>
         <td>
             <?php if (has_permission('recruitment', '', 'edit') || is_admin()) {?>
-            <a href="#" onclick="edit_evaluation_criteria(this,<?php echo html_entity_decode($gr['criteria_id']); ?>); return false;" data-criteria_title="<?php echo html_entity_decode($gr['criteria_title']); ?>" data-criteria_type="<?php echo html_entity_decode($gr['criteria_type']); ?>" data-description="<?php echo html_entity_decode($gr['description']); ?>" data-group_criteria="<?php echo html_entity_decode($gr['group_criteria']); ?>" data-score_des1="<?php echo html_entity_decode($gr['score_des1']); ?>" data-score_des2="<?php echo html_entity_decode($gr['score_des2']); ?>" data-score_des3="<?php echo html_entity_decode($gr['score_des3']); ?>" data-score_des4="<?php echo html_entity_decode($gr['score_des4']); ?>" data-score_des5="<?php echo html_entity_decode($gr['score_des5']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i>
+            <a href="#" onclick="edit_evaluation_criteria(this,<?php echo html_entity_decode($gr['criteria_id']); ?>); return false;" data-criteria_title="<?php echo html_entity_decode($gr['criteria_title']); ?>" data-criteria_type="<?php echo html_entity_decode($gr['criteria_type']); ?>" data-description="<?php echo html_entity_decode($gr['description']); ?>" data-group_criteria="<?php echo html_entity_decode($gr['group_criteria']); ?>" data-score_des1="<?php echo html_entity_decode($gr['score_des1']); ?>" data-score_des2="<?php echo html_entity_decode($gr['score_des2']); ?>" data-score_des3="<?php echo html_entity_decode($gr['score_des3']); ?>" data-score_des4="<?php echo html_entity_decode($gr['score_des4']); ?>" data-score_des5="<?php echo html_entity_decode($gr['score_des5']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i>
             </a>
             <?php }?>
 
             <?php if (has_permission('recruitment', '', 'delete') || is_admin()) {?>
-            <a href="<?php echo admin_url('recruitment/delete_evaluation_criteria/' . $gr['criteria_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+            <a href="<?php echo admin_url('recruitment/delete_evaluation_criteria/' . $gr['criteria_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
              <?php }?>
         </td>
     </tr>

@@ -71,7 +71,7 @@
 							</div>
 							<?php if(has_permission('payments','','delete')){ ?>
 								<a href="<?php echo admin_url('payments/delete/'.$payment->paymentid); ?>" class="btn btn-danger _delete">
-									<i class="fa fa-remove"></i>
+									<i class="bx bx-trash"></i>
 								</a>
 							<?php } ?>
 						</div>

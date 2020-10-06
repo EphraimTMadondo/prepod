@@ -4,7 +4,7 @@
    <div class="btn-group pull-left lead-actions-left">
       <a href="#" lead-edit class="mr-1 font-medium-xs pull-left<?php if($lead_locked == true){echo ' hide';} ?>">
          <?php echo _l('edit'); ?>
-         <i class="fa fa-pencil-square-o"></i>
+         <i class="bx bx-pencil"></i>
       </a>
       <a href="#" class="font-medium-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="lead-more-btn">
       <?php echo _l('more'); ?>
@@ -49,7 +49,7 @@
          <?php if(((is_lead_creator($lead->id) || has_permission('leads','','delete')) && $lead_locked == false) || is_admin()){ ?>
          <li>
             <a href="<?php echo admin_url('leads/delete/'.$lead->id); ?>" class="text-danger delete-text _delete" data-toggle="tooltip" title="">
-              <i class="fa fa-remove"></i>
+              <i class="bx bx-trash"></i>
               <?php echo _l('lead_edit_delete_tooltip'); ?>
             </a>
          </li>

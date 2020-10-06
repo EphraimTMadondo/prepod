@@ -28,8 +28,8 @@
 									<td><?php echo $priority['priorityid']; ?></td>
 									<td><a href="#" onclick="edit_priority(this,<?php echo $priority['priorityid']; ?>);return false;" data-name="<?php echo $priority['name']; ?>"><?php echo $priority['name']; ?></a></td>
 									<td>
-										<a href="#" onclick="edit_priority(this,<?php echo $priority['priorityid']; ?>); return false" data-name="<?php echo $priority['name']; ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-										<a href="<?php echo admin_url('tickets/delete_priority/'.$priority['priorityid']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+										<a href="#" onclick="edit_priority(this,<?php echo $priority['priorityid']; ?>); return false" data-name="<?php echo $priority['name']; ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+										<a href="<?php echo admin_url('tickets/delete_priority/'.$priority['priorityid']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
 									</td>
 								</tr>
 								<?php } ?>

@@ -47,7 +47,7 @@
                            <?php } ?>
                            <?php if(has_permission('customers','','delete')){ ?>
                            <li>
-                              <a href="<?php echo admin_url('clients/delete/'.$client->userid); ?>" class="text-danger delete-text _delete"><i class="fa fa-remove"></i> <?php echo _l('delete'); ?>
+                              <a href="<?php echo admin_url('clients/delete/'.$client->userid); ?>" class="text-danger delete-text _delete"><i class="bx bx-trash"></i> <?php echo _l('delete'); ?>
                               </a>
                            </li>
                            <?php } ?>

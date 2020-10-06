@@ -40,10 +40,10 @@
                                             </td>
                                             <td>
                                                 <?php if(has_permission('knowledge_base','','edit')){ ?>
-                                                    <a href="#" onclick="edit_kb_group(this,<?php echo $group['groupid']; ?>); return false" data-name="<?php echo $group['name']; ?>" data-color="<?php echo $group['color']; ?>" data-description="<?php echo clear_textarea_breaks($group['description']); ?>" data-order="<?php echo $group['group_order']; ?>" data-active="<?php echo $group['active']; ?>" data-slug="<?php echo $group['group_slug']; ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
+                                                    <a href="#" onclick="edit_kb_group(this,<?php echo $group['groupid']; ?>); return false" data-name="<?php echo $group['name']; ?>" data-color="<?php echo $group['color']; ?>" data-description="<?php echo clear_textarea_breaks($group['description']); ?>" data-order="<?php echo $group['group_order']; ?>" data-active="<?php echo $group['active']; ?>" data-slug="<?php echo $group['group_slug']; ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
                                                 <?php } ?>
                                                 <?php if(has_permission('knowledge_base','','delete')){ ?>
-                                                    <a href="<?php echo admin_url('knowledge_base/delete_group/'.$group['groupid']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                                                    <a href="<?php echo admin_url('knowledge_base/delete_group/'.$group['groupid']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
                                                 <?php } ?>
                                             </td>
                                         </tr>

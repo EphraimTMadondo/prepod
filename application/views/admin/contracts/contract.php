@@ -280,7 +280,7 @@
                               <p class="bold"><?php echo _l('document_customer_signature_text'); ?>
                                  <?php if($contract->signed == 1 && has_permission('contracts','','delete')){ ?>
                                  <a href="<?php echo admin_url('contracts/clear_signature/'.$contract->id); ?>" data-toggle="tooltip" title="<?php echo _l('clear_signature'); ?>" class="_delete text-danger">
-                                 <i class="fa fa-remove"></i>
+                                 <i class="bx bx-trash"></i>
                                  </a>
                                  <?php } ?>
                               </p>
@@ -376,7 +376,7 @@
                                     ?>
                                  </b>
                                  <?php if($renewal['renewed_by_staff_id'] == get_staff_user_id() || is_admin()){ ?>
-                                 <a href="<?php echo admin_url('contracts/delete_renewal/'.$renewal['id'] . '/'.$renewal['contractid']); ?>" class="float-right _delete text-danger"><i class="fa fa-remove"></i></a>
+                                 <a href="<?php echo admin_url('contracts/delete_renewal/'.$renewal['id'] . '/'.$renewal['contractid']); ?>" class="float-right _delete text-danger"><i class="bx bx-trash"></i></a>
                                  <br />
                                  <?php } ?>
                                  <small class="text-muted"><?php echo _dt($renewal['date_renewed']); ?></small>

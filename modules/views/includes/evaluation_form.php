@@ -27,12 +27,12 @@
     		<td><?php echo _d($lf['add_date']); ?></td>
     		<td>
     			<?php if (has_permission('recruitment', '', 'edit') || is_admin()) {?>
-	            <a href="#" onclick="edit_evaluation_form(this,<?php echo html_entity_decode($lf['form_id']); ?>); return false;" data-form_name="<?php echo html_entity_decode($lf['form_name']); ?>" data-position="<?php echo html_entity_decode($lf['position']); ?>"  class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i>
+	            <a href="#" onclick="edit_evaluation_form(this,<?php echo html_entity_decode($lf['form_id']); ?>); return false;" data-form_name="<?php echo html_entity_decode($lf['form_name']); ?>" data-position="<?php echo html_entity_decode($lf['position']); ?>"  class="btn btn-light btn-icon"><i class="bx bx-pencil"></i>
 	            </a>
 	            <?php }?>
 
 	            <?php if (has_permission('recruitment', '', 'delete') || is_admin()) {?>
-	            <a href="<?php echo admin_url('recruitment/delete_evaluation_form/' . $lf['form_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+	            <a href="<?php echo admin_url('recruitment/delete_evaluation_form/' . $lf['form_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
 	             <?php }?>
     		</td>
     	</tr>

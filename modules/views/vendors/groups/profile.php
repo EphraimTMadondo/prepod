@@ -165,7 +165,7 @@
                      <td data-order="<?php echo html_entity_decode($c_admin['date_assigned']); ?>"><?php echo _dt($c_admin['date_assigned']); ?></td>
                      <?php if(has_permission('customers','','create') || has_permission('customers','','edit')){ ?>
                      <td>
-                        <a href="<?php echo admin_url('purchase/delete_vendor_admin/'.$client->userid.'/'.$c_admin['staff_id']); ?>" class="btn btn-danger _delete btn-icon"><i class="fa fa-remove"></i></a>
+                        <a href="<?php echo admin_url('purchase/delete_vendor_admin/'.$client->userid.'/'.$c_admin['staff_id']); ?>" class="btn btn-danger _delete btn-icon"><i class="bx bx-trash"></i></a>
                      </td>
                      <?php } ?>
                   </tr>

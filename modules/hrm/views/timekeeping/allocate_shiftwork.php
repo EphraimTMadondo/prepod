@@ -41,8 +41,8 @@
        </td>
        <td><?php echo _d($s['date_create']); ?></td>
        <td>
-         <a href="#" onclick="edit_shift_setting(this,<?php echo htmlspecialchars($s['id']); ?>); return false" data-shift_name="<?php echo htmlspecialchars($s['shift_name']); ?>" data-shift_code="<?php echo htmlspecialchars($s['shift_code']); ?>" data-shift_type="<?php echo htmlspecialchars($s['shift_type']); ?>" data-department="<?php echo htmlspecialchars($s['department']); ?>" data-position="<?php echo htmlspecialchars($s['position']); ?>" data-from_date="<?php echo _d($s['from_date']); ?>" data-to_date="<?php echo _d($s['to_date']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<?php echo admin_url('hrm/delete_shift/'.$s['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+         <a href="#" onclick="edit_shift_setting(this,<?php echo htmlspecialchars($s['id']); ?>); return false" data-shift_name="<?php echo htmlspecialchars($s['shift_name']); ?>" data-shift_code="<?php echo htmlspecialchars($s['shift_code']); ?>" data-shift_type="<?php echo htmlspecialchars($s['shift_type']); ?>" data-department="<?php echo htmlspecialchars($s['department']); ?>" data-position="<?php echo htmlspecialchars($s['position']); ?>" data-from_date="<?php echo _d($s['from_date']); ?>" data-to_date="<?php echo _d($s['to_date']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+          <a href="<?php echo admin_url('hrm/delete_shift/'.$s['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php } ?> 

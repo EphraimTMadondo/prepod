@@ -77,7 +77,7 @@
                <div class="float-right _buttons">
                   <?php if(has_permission('credit_notes','','edit') && $credit_note->status != 3){ ?>
                   <a href="<?php echo admin_url('credit_notes/credit_note/'.$credit_note->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit',_l('credit_note_lowercase')); ?>" data-placement="bottom">
-                  <i class="fa fa-pencil-square-o"></i>
+                  <i class="bx bx-pencil"></i>
                   </a>
                   <?php } ?>
                   <div class="btn-group">
@@ -442,7 +442,7 @@
                            <?php if(has_permission('credit_notes','','edit')) { ?>
                            <a href="#" onclick="edit_refund(<?php echo $refund['id']; ?>); return false;"
                               class="float-right mr-1">
-                           <i class="fa fa-pencil-square-o"></i>
+                           <i class="bx bx-pencil"></i>
                            </a>
                            <?php } ?>
                            <?php echo $refund['note']; ?>

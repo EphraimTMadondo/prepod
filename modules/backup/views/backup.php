@@ -51,7 +51,7 @@
 											<?php echo date('M dS, Y, g:i a',filectime($fullPath)); ?>
 										</td>
 										<td>
-											<a href="<?php echo admin_url('backup/delete/'.$backupNameNoExtension); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+											<a href="<?php echo admin_url('backup/delete/'.$backupNameNoExtension); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
 										</td>
 									</tr>
 								<?php } ?>

@@ -35,7 +35,7 @@
             <div class="col-md-8">
                <div class="float-right _buttons">
                   <?php if(has_permission('estimates','','edit')){ ?>
-                  <a href="<?php echo admin_url('purchase/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
+                  <a href="<?php echo admin_url('purchase/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="bx bx-pencil"></i></a>
                   <?php } ?>
 
                </div>

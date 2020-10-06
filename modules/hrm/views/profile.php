@@ -19,16 +19,16 @@
           <?php } ?>
           <div class="button-group mtop10 float-right">
            <?php if(!empty($member->facebook)){ ?>
-            <a href="<?php echo html_escape($member->facebook); ?>" target="_blank" class="btn btn-default btn-icon"><i class="fa fa-facebook"></i></a>
+            <a href="<?php echo html_escape($member->facebook); ?>" target="_blank" class="btn btn-light btn-icon"><i class="fa fa-facebook"></i></a>
             <?php } ?>
             <?php if(!empty($member->linkedin)){ ?>
-            <a href="<?php echo html_escape($member->linkedin); ?>" class="btn btn-default btn-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="<?php echo html_escape($member->linkedin); ?>" class="btn btn-light btn-icon"><i class="fa fa-linkedin"></i></a>
             <?php } ?>
             <?php if(!empty($member->skype)){ ?>
-            <a href="skype:<?php echo html_escape($member->skype); ?>" data-toggle="tooltip" title="<?php echo html_escape($member->skype); ?>" target="_blank" class="btn btn-default btn-icon"><i class="fa fa-skype"></i></a>
+            <a href="skype:<?php echo html_escape($member->skype); ?>" data-toggle="tooltip" title="<?php echo html_escape($member->skype); ?>" target="_blank" class="btn btn-light btn-icon"><i class="fa fa-skype"></i></a>
             <?php } ?>
             <?php if(has_permission('staff','','edit') && has_permission('staff','','view')){ ?>
-            <a href="<?php echo admin_url('staff/member/'.$member->staffid); ?>" class="btn btn-default btn-icon" title="<?php echo _l('edit') ?>"><i class="fa fa-pencil-square"></i></a>
+            <a href="<?php echo admin_url('staff/member/'.$member->staffid); ?>" class="btn btn-light btn-icon" title="<?php echo _l('edit') ?>"><i class="fa fa-pencil-square"></i></a>
             <?php } ?>
           </div>
 

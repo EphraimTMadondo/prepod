@@ -32,9 +32,9 @@
 										<?php echo _l('ticket_statuses_table_total',total_rows(db_prefix().'tickets',array('status'=>$status['ticketstatusid']))); ?>
 									</td>
 									<td>
-										<a href="#" onclick="edit_status(this,<?php echo $status['ticketstatusid']; ?>); return false" data-name="<?php echo $status['name']; ?>" data-color="<?php echo $status['statuscolor']; ?>" data-order="<?php echo $status['statusorder']; ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
+										<a href="#" onclick="edit_status(this,<?php echo $status['ticketstatusid']; ?>); return false" data-name="<?php echo $status['name']; ?>" data-color="<?php echo $status['statuscolor']; ?>" data-order="<?php echo $status['statusorder']; ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
 										<?php if ($status['isdefault'] == 0) { ?>
-										<a href="<?php echo admin_url('tickets/delete_ticket_status/'.$status['ticketstatusid']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+										<a href="<?php echo admin_url('tickets/delete_ticket_status/'.$status['ticketstatusid']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
 										<?php } ?>
 									</td>
 								</tr>

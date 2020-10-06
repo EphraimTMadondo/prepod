@@ -115,7 +115,7 @@
                   <?php echo form_close(); ?>
                   <?php } ?>
                   <?php echo form_open($this->uri->uri_string()); ?>
-                  <button type="submit" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" class="btn btn-default pull-right action-button mleft5"><i class="fa fa-remove"></i> <?php echo _l('proposal_decline_info'); ?></button>
+                  <button type="submit" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" class="btn btn-default pull-right action-button mleft5"><i class="bx bx-trash"></i> <?php echo _l('proposal_decline_info'); ?></button>
                   <?php echo form_hidden('action','decline_proposal'); ?>
                   <?php echo form_close(); ?>
                   <?php } ?>

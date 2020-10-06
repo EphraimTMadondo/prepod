@@ -307,7 +307,7 @@
                <div class="media-body">
                   <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
                   <a href="#" class="float-right text-danger" onclick="delete_lead_note(this,<?php echo $note['id']; ?>, <?php echo $lead->id; ?>);return false;"><i class="fa fa fa-times"></i></a>
-                  <a href="#" class="float-right mr-1" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
+                  <a href="#" class="float-right mr-1" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="bx bx-pencil"></i></a>
                   <?php } ?>
                   <?php if(!empty($note['date_contacted'])){ ?>
                   <span data-toggle="tooltip" data-title="<?php echo _dt($note['date_contacted']); ?>">

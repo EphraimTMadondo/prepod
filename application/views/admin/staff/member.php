@@ -96,7 +96,7 @@
                               <?php echo staff_profile_image($member->staffid,array('img','img-responsive','staff-profile-image-thumb'),'thumb'); ?>
                            </div>
                            <div class="col-md-3 text-right">
-                              <a href="<?php echo admin_url('staff/remove_staff_profile_image/'.$member->staffid); ?>"><i class="fa fa-remove"></i></a>
+                              <a href="<?php echo admin_url('staff/remove_staff_profile_image/'.$member->staffid); ?>"><i class="bx bx-trash"></i></a>
                            </div>
                         </div>
                      </div>
@@ -435,7 +435,7 @@
                                       if(has_permission('tasks','','delete')
                                        || (has_permission('projects','','delete') && $t['rel_type'] == 'project')
                                        || $t['staff_id'] == get_staff_user_id()){
-                                           echo '<a href="'.admin_url('tasks/delete_timesheet/'.$t['id']).'" class="float-right text-danger mtop5"><i class="fa fa-remove"></i></a>';
+                                           echo '<a href="'.admin_url('tasks/delete_timesheet/'.$t['id']).'" class="float-right text-danger mtop5"><i class="bx bx-trash"></i></a>';
                                     }
                                  }
                               ?>

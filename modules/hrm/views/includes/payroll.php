@@ -24,8 +24,8 @@
        <td><?php echo app_format_money($c['salary_val'],$base_currency->symbol); ?></td>
        <td><?php if($c['tax'] == 0){echo _l('no');}else{echo _l('yes');}?></td>
        <td>
-         <a href="#" onclick="edit_salary_form(this,<?php echo htmlspecialchars($c['form_id']); ?>); return false" data-taxable="<?php echo htmlspecialchars($c['tax']); ?>" data-name="<?php echo htmlspecialchars($c['form_name']); ?>" data-amount="<?php echo htmlspecialchars($c['salary_val']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<?php echo admin_url('hrm/delete_salary_form/'.$c['form_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+         <a href="#" onclick="edit_salary_form(this,<?php echo htmlspecialchars($c['form_id']); ?>); return false" data-taxable="<?php echo htmlspecialchars($c['tax']); ?>" data-name="<?php echo htmlspecialchars($c['form_name']); ?>" data-amount="<?php echo htmlspecialchars($c['salary_val']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+          <a href="<?php echo admin_url('hrm/delete_salary_form/'.$c['form_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php } ?>

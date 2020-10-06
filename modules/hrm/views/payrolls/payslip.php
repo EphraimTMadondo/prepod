@@ -36,8 +36,8 @@
               <?php  } ?>
             </td>
             <td>
-                <a href="<?php echo admin_url('hrm/payroll_table/'.$pay['id']); ?>" class="btn btn-default btn-icon" ><i class="fa fa-eye"></i></a>
-                <a href="<?php echo admin_url('hrm/delete_payroll_table/'.$pay['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+                <a href="<?php echo admin_url('hrm/payroll_table/'.$pay['id']); ?>" class="btn btn-light btn-icon" ><i class="fa fa-eye"></i></a>
+                <a href="<?php echo admin_url('hrm/delete_payroll_table/'.$pay['id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
             </td>
         </tr>
     <?php } ?>

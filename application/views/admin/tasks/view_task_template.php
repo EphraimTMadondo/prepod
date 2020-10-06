@@ -179,7 +179,7 @@
                            <?php
                               if(!$task->billed){
                                    if(has_permission('tasks','','delete') || (has_permission('projects','','delete') && $task->rel_type == 'project') || $timesheet['staff_id'] == get_staff_user_id()){
-                                    echo '<a href="'.admin_url('tasks/delete_timesheet/'.$timesheet['id']).'" class="task-single-delete-timesheet float-right text-danger mtop5" data-task-id="'.$task->id.'"><i class="fa fa-remove"></i></a>';
+                                    echo '<a href="'.admin_url('tasks/delete_timesheet/'.$timesheet['id']).'" class="task-single-delete-timesheet float-right text-danger mtop5" data-task-id="'.$task->id.'"><i class="bx bx-trash"></i></a>';
                                  }
                               }
                               if($timesheet['time_spent'] == NULL){
@@ -274,7 +274,7 @@
          </div>
          <div class="clearfix"></div>
          <h4 class="th font-medium mbot15 pull-left"><?php echo _l('task_view_description'); ?></h4>
-         <?php if(has_permission('tasks','','edit')){ ?><a href="#" onclick="edit_task_inline_description(this,<?php echo $task->id; ?>); return false;" class="pull-left mtop10 ml-1 font-medium-xs"><i class="fa fa-pencil-square-o"></i></a>
+         <?php if(has_permission('tasks','','edit')){ ?><a href="#" onclick="edit_task_inline_description(this,<?php echo $task->id; ?>); return false;" class="pull-left mtop10 ml-1 font-medium-xs"><i class="bx bx-pencil"></i></a>
          <?php } ?>
          <div class="clearfix"></div>
          <?php if(!empty($task->description)){
@@ -456,7 +456,7 @@
                      $minus_1_hour = strtotime('-1 hours');
                      if(get_option('client_staff_add_edit_delete_task_comments_first_hour') == 0 || (get_option('client_staff_add_edit_delete_task_comments_first_hour') == 1 && $comment_added >= $minus_1_hour) || is_admin()){
                        $comments .= '<span class="float-right"><a href="#" onclick="remove_task_comment(' . $comment['id'] . '); return false;"><i class="fa fa-times text-danger"></i></span></a>';
-                       $comments .= '<span class="float-right mr-1"><a href="#" onclick="edit_task_comment(' . $comment['id'] . '); return false;"><i class="fa fa-pencil-square-o"></i></span></a>';
+                       $comments .= '<span class="float-right mr-1"><a href="#" onclick="edit_task_comment(' . $comment['id'] . '); return false;"><i class="bx bx-pencil"></i></span></a>';
                     }
                   }
                   $comments .= '<div class="media-body">';
@@ -787,7 +787,7 @@
                         <i class="fa fa-edit"></i>
                         </a>
                         <?php } ?>
-                        <a href="<?php echo admin_url('tasks/delete_reminder/' . $task->id . '/' . $reminder['id']); ?>" class="text-danger delete-reminder"><i class="fa fa-remove"></i></a>
+                        <a href="<?php echo admin_url('tasks/delete_reminder/' . $task->id . '/' . $reminder['id']); ?>" class="text-danger delete-reminder"><i class="bx bx-trash"></i></a>
                         <?php } ?>
                      </p>
                      <?php
@@ -844,7 +844,7 @@
                foreach ($task->assignees as $assignee) {
                 $_remove_assigne = '';
                 if(has_permission('tasks','','edit') || has_permission('tasks','','create')){
-                  $_remove_assigne = ' <a href="#" class="remove-task-user text-danger" onclick="remove_assignee(' . $assignee['id'] . ',' . $task->id . '); return false;"><i class="fa fa-remove"></i></a>';
+                  $_remove_assigne = ' <a href="#" class="remove-task-user text-danger" onclick="remove_assignee(' . $assignee['id'] . ',' . $task->id . '); return false;"><i class="bx bx-trash"></i></a>';
                }
                $_assignees .= '
                <div class="task-user"  data-toggle="tooltip" data-title="'.html_escape($assignee['full_name']).'">
@@ -886,7 +886,7 @@
                foreach ($task->followers as $follower) {
                  $_remove_follower = '';
                  if(has_permission('tasks','','edit') || has_permission('tasks','','create')){
-                   $_remove_follower = ' <a href="#" class="remove-task-user text-danger" onclick="remove_follower(' . $follower['id'] . ',' . $task->id . '); return false;"><i class="fa fa-remove"></i></a>';
+                   $_remove_follower = ' <a href="#" class="remove-task-user text-danger" onclick="remove_follower(' . $follower['id'] . ',' . $task->id . '); return false;"><i class="bx bx-trash"></i></a>';
                 }
                 $_followers .= '
                 <span class="task-user" data-toggle="tooltip" data-title="'.html_escape($follower['full_name']).'">

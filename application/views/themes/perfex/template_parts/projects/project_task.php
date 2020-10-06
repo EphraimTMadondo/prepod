@@ -7,7 +7,7 @@
                <h3 class="mb-0 bold pull-left">
                   <?php if($project->settings->edit_tasks == 1 && $view_task->is_added_from_contact == 1 && $view_task->addedfrom == get_contact_user_id()){ ?>
                   <a href="<?php echo site_url('clients/project/'.$project->id.'?group=edit_task&taskid='.$view_task->id); ?>">
-                  <i class="fa fa-pencil-square-o"></i>
+                  <i class="bx bx-pencil"></i>
                   </a>
                   <?php } ?> <?php echo $view_task->name; ?>
                </h3>
@@ -138,7 +138,7 @@
                                  );
                                  ?>
                               <?php if(get_option('allow_contact_to_delete_files') == 1 && $attachment['contact_id'] == get_contact_user_id()){ ?>
-                              <a href="<?php echo site_url('clients/delete_file/'.$attachment['id'].'/task?project_id='.$project->id); ?>" class="text-danger _delete float-right"><i class="fa fa-remove"></i></a>
+                              <a href="<?php echo site_url('clients/delete_file/'.$attachment['id'].'/task?project_id='.$project->id); ?>" class="text-danger _delete float-right"><i class="bx bx-trash"></i></a>
                               <?php } ?>
                            </div>
                            <?php
@@ -272,7 +272,7 @@
                <i class="fa fa-times text-danger"></i>
                </a>
                <a href="#" onclick="edit_task_comment(<?php echo $comment['id']; ?>); return false;" class="float-right mr-1">
-               <i class="fa fa-pencil-square-o"></i>
+               <i class="bx bx-pencil"></i>
                </a>
                <div data-edit-comment="<?php echo $comment['id']; ?>" class="hide">
                   <textarea rows="5" class="form-control mtop10 mb-1"><?php echo clear_textarea_breaks($comment['content']); ?></textarea>

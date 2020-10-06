@@ -72,7 +72,7 @@ $("body").on('loaded.bs.select change', 'select.ajax-search', function(e) {
     if ($elmWrapper.find('.ajax-clear-values').length === 0) {
         var id = $(this).attr('id');
         var dropdownToggle = $elmWrapper.addClass('ajax-remove-values-option').find('button.dropdown-toggle');
-        dropdownToggle.after('<span class="pointer ajax-clear-values" onclick="deselect_ajax_search(this); return false;" data-id="' + id + '"><i class="fa fa-remove"></i></span>');
+        dropdownToggle.after('<span class="pointer ajax-clear-values" onclick="deselect_ajax_search(this); return false;" data-id="' + id + '"><i class="bx bx-trash"></i></span>');
     }
 });
 
@@ -538,7 +538,7 @@ $(function() {
             return;
         }
 
-        top_search_button.html('<i class="fa fa-remove"></i>').addClass('search_remove');
+        top_search_button.html('<i class="bx bx-trash"></i>').addClass('search_remove');
 
         delay(function() {
             if (q == original_top_search_val) {
@@ -2447,7 +2447,7 @@ function _make_task_checklist_items_deletable() {
         $.each(itemsSelect, function(i, item) {
             var $item = $(item);
             if ($(itemsHtml[i]).find('.checklist-item-template-remove').length === 0) {
-                $(itemsHtml[i]).find('a > span.text').after('<small class="checklist-item-template-remove" onclick="remove_checklist_item_template(' + $item.attr('value') + '); event.stopPropagation();"><i class="fa fa-remove"></i></small>');
+                $(itemsHtml[i]).find('a > span.text').after('<small class="checklist-item-template-remove" onclick="remove_checklist_item_template(' + $item.attr('value') + '); event.stopPropagation();"><i class="bx bx-trash"></i></small>');
             }
         });
     }
@@ -7058,7 +7058,7 @@ function set_search_history(history) {
     var $searchHistory = $('#search-history');
     var historyHtml = '';
     for (var i = 0; i < history.length; i++) {
-        historyHtml += '<li data-index="' + i + '"><a href="#" class="history">' + history[i] + ' <span class="remove-history pointer pull-right" style="z-index:1500"><i class="fa fa-remove"></i></span></a></li>';
+        historyHtml += '<li data-index="' + i + '"><a href="#" class="history">' + history[i] + ' <span class="remove-history pointer pull-right" style="z-index:1500"><i class="bx bx-trash"></i></span></a></li>';
     }
     $searchHistory.html(historyHtml);
 }

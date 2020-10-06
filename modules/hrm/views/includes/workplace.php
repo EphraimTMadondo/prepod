@@ -20,8 +20,8 @@
        <td><?php echo htmlspecialchars($w['workplace_id']); ?></td>
        <td><?php echo htmlspecialchars($w['workplace_name']); ?></td>
        <td>
-         <a href="#" onclick="edit_workplace(this,<?php echo htmlspecialchars($w['workplace_id']); ?>); return false" data-name="<?php echo htmlspecialchars($w['workplace_name']); ?>" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></a>
-          <a href="<?php echo admin_url('hrm/delete_workplace/'.$w['workplace_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="fa fa-remove"></i></a>
+         <a href="#" onclick="edit_workplace(this,<?php echo htmlspecialchars($w['workplace_id']); ?>); return false" data-name="<?php echo htmlspecialchars($w['workplace_name']); ?>" class="btn btn-light btn-icon"><i class="bx bx-pencil"></i></a>
+          <a href="<?php echo admin_url('hrm/delete_workplace/'.$w['workplace_id']); ?>" class="btn btn-danger btn-icon _delete"><i class="bx bx-trash"></i></a>
        </td>
     </tr>
     <?php } ?>

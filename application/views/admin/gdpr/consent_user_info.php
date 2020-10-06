@@ -20,7 +20,7 @@ foreach($purposes as $purpose) { ?>
             <?php if(!empty($purpose['consent_given'])) { ?>
                 <i class="fa fa-check fa-2x text-success" aria-hidden="true"></i>
             <?php } else { ?>
-                <i class="fa fa-remove fa-2x text-danger" aria-hidden="true"></i>
+                <i class="bx bx-trash fa-2x text-danger" aria-hidden="true"></i>
             <?php } ?>
         </div>
         <div class="col-md-12">

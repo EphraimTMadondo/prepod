@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<a href="#" class="close_newsfeed" data-close="true"><i class="fa fa-remove"></i></a>
+<a href="#" class="close_newsfeed" data-close="true"><i class="bx bx-trash"></i></a>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="card">
