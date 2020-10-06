@@ -47,7 +47,6 @@
                         <?php } ?>
                         <a href="<?php echo admin_url('clients/all_contacts'); ?>"  class="btn btn-primary mr-1 mb-1">
                         <?php echo _l('customer_contacts'); ?></a>
-                        <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                         <div class="btn-group mb-1 float-right">
                            <div class="dropdown">
                               <button class="btn btn-light dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -125,6 +124,7 @@
                               </ul>
                            </div>
                         </div>
+                        <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                      </div>
                      <div class="clearfix"></div>
                      <?php if(has_permission('customers','','view') || have_assigned_customers()) {
@@ -138,7 +138,7 @@
                         $companyusername = $_SESSION['current_company'];
                         ?>
                      <hr class="hr-panel-heading" />
-                     <div class="row mbot15 " class="stats-top">
+                     <div class="row mbot15 " id="stats-top">
                         <div class="col-md-12">
                            <h4 class="no-margin"><?php echo _l('customers_summary'); ?></h4>
                         </div>
