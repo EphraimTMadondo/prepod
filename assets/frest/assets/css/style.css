@@ -87,3 +87,13 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .onoffswitch-checkbox:disabled+.onoffswitch-label {
     opacity: 0.5;
 }
+
+.staff-profile-image-small{
+    height:30;
+    width: 30;
+}
+
+.contact-profile-image{
+    height:30;
+    width: 30;
+}
