@@ -89,11 +89,15 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 }
 
 .staff-profile-image-small{
-    height:30;
-    width: 30;
+    height:40;
+    width: 40;
 }
 
 .contact-profile-image{
-    height:30;
-    width: 30;
+    height:40;
+    width: 40;
+}
+
+tr td{
+    white-space: nowrap;
 }
