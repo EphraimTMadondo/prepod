@@ -85,6 +85,7 @@
       case "purchase":
          echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
       break;
+      default:
       break;
    }
 ?>
