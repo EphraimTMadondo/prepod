@@ -91,9 +91,9 @@
                             <?php } ?>
                         </ul>
                     </div>
-                    <a href="#" onClick="$('.stats-top').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+                    <a href="#" onClick="toggleStats();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                     <div class="clearfix"></div>
-                    <hr class="hr-panel-heading" />
+                    <hr class="hr-panel-heading stats-top" />
                     <div class="row" id="contract_summary">
                         <?php $minus_7_days = date('Y-m-d', strtotime("-7 days")); ?>
                         <?php $plus_7_days = date('Y-m-d', strtotime("+7 days"));
@@ -165,6 +165,50 @@
    </div>
    <?php init_tail("contracts"); ?>
    <script>
+
+    function toggleStats() {
+        $('.stats-top').toggle();
+
+        new Chart($('#contracts-by-type-chart'), {
+            type: 'bar',
+            data: <?php echo $chart_types; ?>,
+            options: {
+                legend: {
+                    display: false,
+                },
+                responsive: true,
+                maintainAspectRatio:false,
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            suggestedMin: 0,
+                        }
+                    }]
+                }
+            }
+        });
+        new Chart($('#contracts-value-by-type-chart'), {
+            type: 'line',
+            data: <?php echo $chart_types_values; ?>,
+            options: {
+                responsive: true,
+                legend: {
+                    display: false,
+                },
+                maintainAspectRatio:false,
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            suggestedMin: 0,
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
     $(function(){
 
         var ContractsServerParams = {};
