@@ -34,7 +34,7 @@
                   </a>
                   <?php } ?>
                   <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
-                  <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+                  <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
                      <option value="" data-tokens="<?php echo _l('proposals_list_all'); ?>"><?php echo _l('proposals_list_all'); ?></option>
                      <?php foreach($statuses as $status){ ?>
                         <option value="proposals_<?php echo $status; ?>" data-tokens="<?php echo format_proposal_status($status,'',false); ?>"><?php echo format_proposal_status($status,'',false); ?></option>

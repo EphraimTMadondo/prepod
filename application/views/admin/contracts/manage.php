@@ -29,7 +29,7 @@
                     <?php if(has_permission('contracts','','create')){ ?>
                     <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
-                    <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+                    <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
                         <option value="exclude_trashed_contracts" data-tokens="<?php echo _l('contracts_view_exclude_trashed'); ?>"><?php echo _l('contracts_view_exclude_trashed'); ?></option>
                         <?php if(count($groups) > 0){ ?>
                             <optgroup label="<?php echo _l('customer_groups'); ?>">
