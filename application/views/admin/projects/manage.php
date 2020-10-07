@@ -26,8 +26,8 @@
                 <?php } ?>
             </select>
             <a href="#" onClick="$('.stats-top').toggle();" class="float-right btn btn-primary ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
-              <div class="col-md-12 stats-top">
-                <h4 class="no-marginmt-1"><?php echo _l('projects_summary'); ?></h4>
+              <div class="col-md-12 stats-top hide">
+                <h4 class="mt-1"><?php echo _l('projects_summary'); ?></h4>
                 <?php
                 $_where = '';
                 if(!has_permission('projects','','view')){
@@ -35,7 +35,7 @@
                 }
                 ?>
               </div>
-              <div class="col-md-12 stats-top mt-1 row _filters _hidden_inputs center">
+              <div class="col-md-12 stats-top hide mt-1 row _filters _hidden_inputs center">
                 <?php
                 echo form_hidden('my_projects');
                 foreach($statuses as $status){
