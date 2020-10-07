@@ -33,20 +33,20 @@
                   <?php echo _l('new_proposal'); ?>
                   </a>
                   <?php } ?>
-                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-light ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
                      <div class="btn-group ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-filter" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu width300">
-                           <li>
+                           <li class="dropdown-item">
                               <a href="#" data-cview="all" onclick="dt_custom_view('','.table-proposals',''); return false;">
                               <?php echo _l('proposals_list_all'); ?>
                               </a>
                            </li>
                            <li class="divider"></li>
                            <?php foreach($statuses as $status){ ?>
-                           <li class="<?php if($this->input->get('status') == $status){echo 'active';} ?>">
+                           <li class="dropdown-item <?php if($this->input->get('status') == $status){echo 'active';} ?>">
                               <a href="#" data-cview="proposals_<?php echo $status; ?>" onclick="dt_custom_view('proposals_<?php echo $status; ?>','.table-proposals','proposals_<?php echo $status; ?>'); return false;">
                               <?php echo format_proposal_status($status,'',false); ?>
                               </a>
@@ -55,7 +55,7 @@
                            <?php if(count($years) > 0){ ?>
                            <li class="divider"></li>
                            <?php foreach($years as $year){ ?>
-                           <li class="active">
+                           <li class="dropdown-item active">
                               <a href="#" data-cview="year_<?php echo $year['year']; ?>" onclick="dt_custom_view(<?php echo $year['year']; ?>,'.table-proposals','year_<?php echo $year['year']; ?>'); return false;"><?php echo $year['year']; ?>
                               </a>
                            </li>
@@ -68,7 +68,7 @@
                               <a href="#" tabindex="-1"><?php echo _l('sale_agent_string'); ?></a>
                               <ul class="dropdown-menu dropdown-menu-left">
                                  <?php foreach($proposals_sale_agents as $agent){ ?>
-                                 <li>
+                                 <li class="dropdown-item">
                                     <a href="#" data-cview="sale_agent_<?php echo $agent['sale_agent']; ?>" onclick="dt_custom_view('sale_agent_<?php echo $agent['sale_agent']; ?>','.table-proposals','sale_agent_<?php echo $agent['sale_agent']; ?>'); return false;"><?php echo get_staff_full_name($agent['sale_agent']); ?>
                                     </a>
                                  </li>
@@ -78,17 +78,17 @@
                            <?php } ?>
                            <div class="clearfix"></div>
                            <li class="divider"></li>
-                           <li>
+                           <li class="dropdown-item">
                               <a href="#" data-cview="expired" onclick="dt_custom_view('expired','.table-proposals','expired'); return false;">
                               <?php echo _l('proposal_expired'); ?>
                               </a>
                            </li>
-                           <li>
+                           <li class="dropdown-item">
                               <a href="#" data-cview="leads_related" onclick="dt_custom_view('leads_related','.table-proposals','leads_related'); return false;">
                               <?php echo _l('proposals_leads_related'); ?>
                               </a>
                            </li>
-                           <li>
+                           <li class="dropdown-item">
                               <a href="#" data-cview="customers_related" onclick="dt_custom_view('customers_related','.table-proposals','customers_related'); return false;">
                               <?php echo _l('proposals_customers_related'); ?>
                               </a>

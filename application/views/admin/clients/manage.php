@@ -102,7 +102,7 @@
                               </optgroup>
                            <?php } ?>
                         </select>
-                        <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-light ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+                        <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-primary ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                      </div>
                      <div class="clearfix"></div>
                      <?php if(has_permission('customers','','view') || have_assigned_customers()) {
