@@ -13,7 +13,6 @@
                   <?php } ?>
                   <?php $this->load->view('admin/expenses/filter_by_template'); ?>
                   <a href="#" onclick="slideToggle('#stats-top'); return false;" class="float-right btn btn-light ml-1 btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
-                  <a href="#" class="btn btn-light float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-expenses','#expense'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="bx bx-chevrons-left"></i></a>
                   <div id="stats-top" class="hide">
                      <hr />
                      <div id="expenses_total"></div>

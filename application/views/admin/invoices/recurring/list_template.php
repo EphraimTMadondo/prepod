@@ -46,12 +46,6 @@
                </li>
                <?php } ?>
             </div>
-            <a href="#"
-              class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs"
-              onclick="toggle_small_view('.table-invoices','#invoice'); return false;"
-              data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>">
-              <i class="fa fa-angle-double-left"></i>
-            </a>
          </div>
       </div>
    </div>

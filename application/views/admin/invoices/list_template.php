@@ -83,7 +83,6 @@
                   <?php } ?>
                </ul>
             </div>
-            <a href="#" class="btn btn-light btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view('.table-invoices','#invoice'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="bx bx-chevrons-left"></i></a>
             <a href="#" class="btn btn-light btn-with-tooltip invoices-total" onclick="slideToggle('#stats-top'); init_invoices_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
          </div>
       </div>

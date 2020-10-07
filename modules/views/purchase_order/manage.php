@@ -15,10 +15,6 @@
 	                        </a>
 	                        <?php } ?>
 	                    </div>
-	                    
-	                    <div class="_buttons col-md-1 float-right">
-	                    <a href="#" class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs float-right" onclick="toggle_small_pur_order_view('.table-table_pur_order','#pur_order'); return false;" data-toggle="tooltip" title="<?php echo _l('estimates_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-	                	</div>
 	            	</div>
 	              	<div class="row">
 	              		<hr>

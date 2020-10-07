@@ -18,10 +18,6 @@
                   <?php if (has_permission('recruitment', '', 'delete') || is_admin()) {?>
                   <a href="#" onclick="new_interview_schedule(); return false;" class="btn btn-primary"><?php echo _l('new_interview_schedule'); ?></a>
                   <?php }?>
-                  <div class="col-md-1 float-right">
-                      <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_interview_schedules('.interview_sm','#interview_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-                  </div>
-
                     <br><br><br>
                   <?php render_datatable(array(
 

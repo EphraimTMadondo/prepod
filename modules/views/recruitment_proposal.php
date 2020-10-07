@@ -47,11 +47,8 @@
                           <option value="4"><?php echo _l('reject'); ?></option>
                       </select>
                     </div> 
-                    <div class="col-md-1 float-right">
-                        <a href="#" class="btn btn-default float-right btn-with-tooltip toggle-small-view hidden-xs" onclick="toggle_small_view_proposal('.proposal_sm','#proposal_sm_view'); return false;" data-toggle="tooltip" title="<?php echo _l('invoices_toggle_table_tooltip'); ?>"><i class="fa fa-angle-double-left"></i></a>
-                    </div>
-                    </div>
-                    <br><br>
+                  </div>
+                  <br><br>
                   <?php render_datatable(array(
                         _l('proposal_name'),
                         _l('position'),
