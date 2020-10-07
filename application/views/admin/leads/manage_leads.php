@@ -77,9 +77,8 @@
                            <?php if(get_option('default_leads_kanban_sort') == 'lastcontact'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_lastcontact'); ?>
                            </a>
                         </div>
-                        <div class="row">
-                           <!-- Basic Kanban App -->
-                           <div class="kanban-overlay"></div>
+                        <!-- Basic Kanban App -->
+                        <div class="kanban-overlay"></div>
                            <section id="kanban-wrapper" class="mt-2">
                               <div class="row">
                                  <div class="col-12">
@@ -180,7 +179,6 @@
                               <!--/ User Chat profile right area -->
                            </section>
                            <!--/ Sample Project kanban -->
-                        </div>
                      </div>
                      <?php } else { ?>
                      <div class="row" id="leads-table">
