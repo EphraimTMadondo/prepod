@@ -42,8 +42,8 @@
             <?php echo $total_by_status; ?> / <?php echo $total_invoices; ?>
           </div>
           <div class="col-md-12">
-            <div class="progress progress-bar-<?php echo get_invoice_status_label($status); ?> progress-sm no-margin">
-              <div class="progress-bar progress-label" role="progressbar" aria-valuenow="<?php echo $percent; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percent; ?>%">
+            <div class="progress progress-bar-<?php echo get_invoice_status_label($status); ?> no-margin">
+              <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%" data-percent="<?php echo $percent; ?>">
               </div>
             </div>
           </div>
