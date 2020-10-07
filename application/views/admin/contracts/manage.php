@@ -29,68 +29,36 @@
                     <?php if(has_permission('contracts','','create')){ ?>
                     <a href="<?php echo admin_url('contracts/contract'); ?>" class="btn btn-primary"><?php echo _l('new_contract'); ?></a>
                     <?php } ?>
-                    <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-filter" aria-hidden="true"></i>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-left width300 height500">
-                            <li class="active dropdown-item filter-group" data-filter-group="trash">
-                                <a href="#" data-cview="exclude_trashed_contracts" onclick="dt_custom_view('exclude_trashed_contracts','.table-contracts','exclude_trashed_contracts'); return false;">
-                                    <?php echo _l('contracts_view_exclude_trashed'); ?>
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#" data-cview="all" onclick="dt_custom_view('','.table-contracts',''); return false;">
-                                    <?php echo _l('contracts_view_all'); ?>
-                                </a>
-                            </li>
-                            <li class="filter-group dropdown-item" data-filter-group="date">
-                                <a href="#" data-cview="expired"  onclick="dt_custom_view('expired','.table-contracts','expired'); return false;">
-                                    <?php echo _l('contracts_view_expired'); ?>
-                                </a>
-                            </li>
-                            <li class="filter-group dropdown-item" data-filter-group="date">
-                                <a href="#" data-cview="without_dateend"  onclick="dt_custom_view('without_dateend','.table-contracts','without_dateend'); return false;">
-                                    <?php echo _l('contracts_view_without_dateend'); ?>
-                                </a>
-                            </li>
-                            <li class="filter-group dropdown-item" data-filter-group="trash">
-                                <a href="#" data-cview="trash"  onclick="dt_custom_view('trash','.table-contracts','trash'); return false;">
-                                    <?php echo _l('contracts_view_trash'); ?>
-                                </a>
-                            </li>
-                            <?php if(count($years) > 0){ ?>
-                            <li class="divider"></li>
+                    <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+                        <option value="exclude_trashed_contracts" data-tokens="<?php echo _l('contracts_view_exclude_trashed'); ?>"><?php echo _l('contracts_view_exclude_trashed'); ?></option>
+                        <?php if(count($groups) > 0){ ?>
+                            <optgroup label="<?php echo _l('customer_groups'); ?>">
+                                <?php foreach($groups as $group){ ?>
+                                <option value="customer_group_<?php echo $group['id']; ?>" data-tokens="<?php echo $group['name']; ?>"><?php echo $group['name']; ?></option>
+                                <?php } ?>
+                            </optgroup>
+                        <?php } ?>
+                        <option value="exclude_trashed_contracts" data-tokens="<?php echo _l('contracts_view_exclude_trashed'); ?>"><?php echo _l('contracts_view_exclude_trashed'); ?></option>
+                        <option value="" data-tokens="<?php echo _l('contracts_view_all'); ?>"><?php echo _l('contracts_view_all'); ?></option>
+                        <option value="expired" data-tokens="<?php echo _l('contracts_view_expired'); ?>"><?php echo _l('contracts_view_expired'); ?></option>
+                        <option value="without_dateend" data-tokens="<?php echo _l('contracts_view_without_dateend'); ?>"><?php echo _l('contracts_view_without_dateend'); ?></option>
+                        <option value="trash" data-tokens="<?php echo _l('contracts_view_trash'); ?>"><?php echo _l('contracts_view_trash'); ?></option>
+                        <?php if(count($years) > 0){ ?>
                             <?php foreach($years as $year){ ?>
-                            <li class="active dropdown-item">
-                                <a href="#" data-cview="year_<?php echo $year['year']; ?>" onclick="dt_custom_view(<?php echo $year['year']; ?>,'.table-contracts','year_<?php echo $year['year']; ?>'); return false;"><?php echo $year['year']; ?>
-                                </a>
-                            </li>
+                                <option value="year_<?php echo $year['year']; ?>" data-tokens="<?php echo _l('customers_assigned_to_me'); ?>"><?php echo $year['year']; ?></option>
                             <?php } ?>
+                        <?php } ?>
+                        <optgroup label="<?php echo _l('months'); ?>">
+                            <?php for ($m = 1; $m <= 12; $m++) { ?>
+                                <option value="contracts_by_month_<?php echo $m; ?>" data-tokens="<?php echo _l(date('F', mktime(0, 0, 0, $m, 1))); ?>"><?php echo _l(date('F', mktime(0, 0, 0, $m, 1))); ?></option>
                             <?php } ?>
-                            <div class="clearfix"></div>
-                            <li class="divider"></li>
-                            <li class="dropdown-submenu pull-left">
-                                <a href="#" tabindex="-1"><?php echo _l('months'); ?></a>
-                                <ul class="dropdown-menu dropdown-menu-left">
-                                    <?php for ($m = 1; $m <= 12; $m++) { ?>
-                                    <li class="dropdown-item"><a href="#" data-cview="contracts_by_month_<?php echo $m; ?>" onclick="dt_custom_view(<?php echo $m; ?>,'.table-contracts','contracts_by_month_<?php echo $m; ?>'); return false;"><?php echo _l(date('F', mktime(0, 0, 0, $m, 1))); ?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                            <div class="clearfix"></div>
-                            <?php if(count($contract_types) > 0){ ?>
-                            <li class="divider"></li>
+                        </optgroup>
+                        <?php if(count($contract_types) > 0){ ?>
                             <?php foreach($contract_types as $type){ ?>
-                            <li class="dropdown-item">
-                                <a href="#" data-cview="contracts_by_type_<?php echo $type['id']; ?>" onclick="dt_custom_view('contracts_by_type_<?php echo $type['id']; ?>','.table-contracts','contracts_by_type_<?php echo $type['id']; ?>'); return false;">
-                                    <?php echo $type['name']; ?>
-                                </a>
-                            </li>
+                                <option value="contracts_by_type_<?php echo $type['id']; ?>" data-tokens="<?php echo $type['name']; ?>"><?php echo $type['name']; ?></option>
                             <?php } ?>
-                            <?php } ?>
-                        </ul>
-                    </div>
+                        <?php } ?>
+                    </select>
                     <a href="#" onClick="toggleStats();" class="float-right btn btn-primary ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading stats-top hide" />
@@ -165,6 +133,12 @@
    </div>
    <?php init_tail("contracts"); ?>
    <script>
+
+   function custom_view(){
+      var view = $('#select-filter').val();
+      console.log(view);
+      dt_custom_view(view,'.table-contracts',view);
+   }
 
     function toggleStats() {
         $('.stats-top').toggle();

@@ -36,17 +36,6 @@
                   <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
                   <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
                      <option value="" data-tokens="<?php echo _l('proposals_list_all'); ?>"><?php echo _l('proposals_list_all'); ?></option>
-                     <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
-                        <option value="requires_registration_confirmation" data-tokens="<?php echo _l('customer_requires_registration_confirmation'); ?>"><?php echo _l('customer_requires_registration_confirmation'); ?></option>
-                     <?php } ?>
-                     <option value="my_customers" data-tokens="<?php echo _l('customers_assigned_to_me'); ?>"><?php echo _l('customers_assigned_to_me'); ?></option>
-                     <?php if(count($groups) > 0){ ?>
-                        <optgroup label="<?php echo _l('customer_groups'); ?>">
-                           <?php foreach($groups as $group){ ?>
-                              <option value="customer_group_<?php echo $group['id']; ?>" data-tokens="<?php echo $group['name']; ?>"><?php echo $group['name']; ?></option>
-                           <?php } ?>
-                        </optgroup>
-                     <?php } ?>
                      <?php foreach($statuses as $status){ ?>
                         <option value="proposals_<?php echo $status; ?>" data-tokens="<?php echo format_proposal_status($status,'',false); ?>"><?php echo format_proposal_status($status,'',false); ?></option>
                      <?php } ?>
