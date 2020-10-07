@@ -29,11 +29,11 @@
             <div class="card mt-2">
                <div class="card-body">
                   <?php if(has_permission('proposals','','create')){ ?>
-                  <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-primary float-left">
+                  <a href="<?php echo admin_url('proposals/proposal'); ?>" class="btn btn-primary ">
                   <?php echo _l('new_proposal'); ?>
                   </a>
                   <?php } ?>
-                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary ml-1 float-left hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+                  <a href="<?php echo admin_url('proposals/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
                   <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
                      <option value="" data-tokens="<?php echo _l('proposals_list_all'); ?>"><?php echo _l('proposals_list_all'); ?></option>
                      <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
