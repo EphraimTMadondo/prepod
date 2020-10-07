@@ -47,7 +47,7 @@
                         <?php } ?>
                         <a href="<?php echo admin_url('clients/all_contacts'); ?>"  class="btn btn-primary mr-1 mb-1">
                         <?php echo _l('customer_contacts'); ?></a>
-                        <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange>
+                        <select class="selectpicker mb-1" id="select-filter" data-live-search="true" onChange="custom_view()">
                            <option value="" data-tokens="<?php echo _l('customers_sort_all'); ?>"><?php echo _l('customers_sort_all'); ?></option>
                            <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
                               <option value="requires_registration_confirmation" data-tokens="<?php echo _l('customer_requires_registration_confirmation'); ?>"><?php echo _l('customer_requires_registration_confirmation'); ?></option>
