@@ -338,6 +338,7 @@
 <script>
    function custom_view(){
       var view = $('select-filter').val();
+      console.log(view);
       dt_custom_view(view,'.table-clients',view);
    }
 
