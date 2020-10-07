@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div id="stats-top" class="hide">
+  <div id="invoices_total"></div>
   <?php
     $where_all = '';
     $has_permission_view = has_permission('invoices','','view');
@@ -50,7 +51,6 @@
         </div>
       </div>
     <?php } ?>
-    <div id="invoices_total"></div>
   </div>
 <hr />
 </div>
