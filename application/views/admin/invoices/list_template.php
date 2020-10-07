@@ -4,102 +4,61 @@
       <div class="card-body _buttons">
          <?php $this->load->view('admin/invoices/invoices_top_stats'); ?>
          <?php if(has_permission('invoices','','create')){ ?>
-            <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-primary float-left new new-invoice-list mr-1"><?php echo _l('create_new_invoice'); ?></a>
+            <a href="<?php echo admin_url('invoices/invoice'); ?>" class="btn btn-primary new new-invoice-list "><?php echo _l('create_new_invoice'); ?></a>
          <?php } ?>
          <?php if(!isset($project)){ ?>
-               <a href="<?php echo admin_url('invoices/recurring'); ?>" class="btn btn-primary float-left">
+               <a href="<?php echo admin_url('invoices/recurring'); ?>" class="btn btn-primary">
                   <?php echo _l('invoices_list_recurring'); ?>
                </a>
          <?php } ?>
-         <div class="display-block text-right">
-            <div class="btn-group float-left ml-1 invoice-view-buttons btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="bx bx-filter" aria-hidden="true"></i>
-               </button>
-               <ul class="dropdown-menu width300">
-                  <li>
-                     <a href="#" data-cview="all" onclick="dt_custom_view('','.table-invoices',''); return false;">
-                     <?php echo _l('invoices_list_all'); ?>
-                     </a>
-                  </li>
-                  <li class="divider"></li>
-                  <li class="<?php if($this->input->get('filter') == 'not_sent'){echo 'active';} ?>">
-                     <a href="#" data-cview="not_sent" onclick="dt_custom_view('not_sent','.table-invoices','not_sent'); return false;">
-                     <?php echo _l('not_sent_indicator'); ?>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#" data-cview="not_have_payment" onclick="dt_custom_view('not_have_payment','.table-invoices','not_have_payment'); return false;">
-                     <?php echo _l('invoices_list_not_have_payment'); ?>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="#" data-cview="recurring" onclick="dt_custom_view('recurring','.table-invoices','recurring'); return false;">
-                     <?php echo _l('invoices_list_recurring'); ?>
-                     </a>
-                  </li>
-                  <li class="divider"></li>
-                  <?php foreach($invoices_statuses as $status){ ?>
-                  <li class="<?php if($status == $this->input->get('status')){echo 'active';} ?>">
-                     <a href="#" data-cview="invoices_<?php echo $status; ?>" onclick="dt_custom_view('invoices_<?php echo $status; ?>','.table-invoices','invoices_<?php echo $status; ?>'); return false;"><?php echo format_invoice_status($status,'',false); ?></a>
-                  </li>
+         <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+            <option value="" data-tokens="<?php echo _l('customers_sort_all'); ?>"><?php echo _l('customers_sort_all'); ?></option>
+            <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
+               <option value="requires_registration_confirmation" data-tokens="<?php echo _l('customer_requires_registration_confirmation'); ?>"><?php echo _l('customer_requires_registration_confirmation'); ?></option>
+            <?php } ?>
+            <option value="my_customers" data-tokens="<?php echo _l('customers_assigned_to_me'); ?>"><?php echo _l('customers_assigned_to_me'); ?></option>
+            <?php if(count($groups) > 0){ ?>
+               <optgroup label="<?php echo _l('customer_groups'); ?>">
+                  <?php foreach($groups as $group){ ?>
+                     <option value="customer_group_<?php echo $group['id']; ?>" data-tokens="<?php echo $group['name']; ?>"><?php echo $group['name']; ?></option>
                   <?php } ?>
-                  <?php if(count($invoices_years) > 0){ ?>
-                  <li class="divider"></li>
-                  <?php foreach($invoices_years as $year){ ?>
-                  <li class="active">
-                     <a href="#" data-cview="year_<?php echo $year['year']; ?>" onclick="dt_custom_view(<?php echo $year['year']; ?>,'.table-invoices','year_<?php echo $year['year']; ?>'); return false;"><?php echo $year['year']; ?>
-                     </a>
-                  </li>
+               </optgroup>
+            <?php } ?>
+
+
+            <option value="" data-tokens="<?php echo _l('invoices_list_all'); ?>"><?php echo _l('invoices_list_all'); ?></option>
+            <option value="not_sent" data-tokens="<?php echo _l('not_sent_indicator'); ?>"><?php echo _l('not_sent_indicator'); ?></option>
+            <option value="not_have_payment" data-tokens="<?php echo _l('invoices_list_not_have_payment'); ?>"><?php echo _l('invoices_list_not_have_payment'); ?></option>
+            <option value="recurring" data-tokens="<?php echo _l('invoices_list_recurring'); ?>"><?php echo _l('invoices_list_recurring'); ?></option>
+            <?php foreach($invoices_statuses as $status){ ?>
+               <option value="invoices_<?php echo $status; ?>" data-tokens="<?php echo format_invoice_status($status,'',false); ?>"><?php echo format_invoice_status($status,'',false); ?></option>
+            <?php } ?>
+
+            <?php if(count($invoices_years) > 0){ ?>
+               <?php foreach($invoices_years as $year){ ?>
+                  <option value="year_<?php echo $year['year']; ?>" data-tokens="<?php echo $year['year']; ?>"><?php echo $year['year']; ?></option>
+               <?php } ?>
+            <?php } ?>
+            <?php if(count($invoices_sale_agents) > 0){ ?>
+               <optgroup label="<?php echo _l('sale_agent_string'); ?>">
+                  <?php foreach($invoices_sale_agents as $agent){ ?>
+                     <option value="sale_agent_<?php echo $agent['sale_agent']; ?>" data-tokens="<?php echo $agent['full_name']; ?>"><?php echo $agent['full_name']; ?></option>
                   <?php } ?>
-                  <?php } ?>
-                  <?php if(count($invoices_sale_agents) > 0){ ?>
-                  <div class="clearfix"></div>
-                  <li class="divider"></li>
-                  <li class="dropdown-submenu float-left">
-                     <a href="#" tabindex="-1"><?php echo _l('sale_agent_string'); ?></a>
-                     <ul class="dropdown-menu dropdown-menu-left">
-                        <?php foreach($invoices_sale_agents as $agent){ ?>
-                        <li>
-                           <a href="#" data-cview="sale_agent_<?php echo $agent['sale_agent']; ?>" onclick="dt_custom_view(<?php echo $agent['sale_agent']; ?>,'.table-invoices','sale_agent_<?php echo $agent['sale_agent']; ?>'); return false;"><?php echo $agent['full_name']; ?>
-                           </a>
-                        </li>
-                        <?php } ?>
-                     </ul>
-                  </li>
-                  <?php } ?>
-                  <div class="clearfix"></div>
-                  <?php if(count($payment_modes) > 0){ ?>
-                  <li class="divider"></li>
-                  <?php } ?>
-                  <?php foreach($payment_modes as $mode){
-                     if(total_rows(db_prefix().'invoicepaymentrecords',array('paymentmode'=>$mode['id'])) == 0){continue;}
-                     ?>
-                  <li>
-                     <a href="#" data-cview="invoice_payments_by_<?php echo $mode['id']; ?>" onclick="dt_custom_view('<?php echo $mode['id']; ?>','.table-invoices','invoice_payments_by_<?php echo $mode['id']; ?>'); return false;">
-                     <?php echo _l('invoices_list_made_payment_by',$mode['name']); ?>
-                     </a>
-                  </li>
-                  <?php } ?>
-               </ul>
-            </div>
-            <a href="#" class="btn btn-light btn-with-tooltip invoices-total" onclick="slideToggle('#stats-top'); init_invoices_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
-         </div>
+               </optgroup>
+            <?php } ?>
+            
+            <?php foreach($payment_modes as $mode){
+               if(total_rows(db_prefix().'invoicepaymentrecords',array('paymentmode'=>$mode['id'])) == 0){continue;}
+               ?>
+               <option value="invoice_payments_by_<?php echo $mode['id']; ?>" data-tokens="<?php echo _l('invoices_list_made_payment_by',$mode['name']); ?>"><?php echo _l('invoices_list_made_payment_by',$mode['name']); ?></option>
+            <?php } ?>
+         </select>
+         <a href="#" class="btn btn-primary btn-with-tooltip invoices-total" onclick="slideToggle('#stats-top'); init_invoices_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
       </div>
-   </div>
-   <div class="row">
-      <div class="col-md-12" id="small-table">
-         <div class="card">
-            <div class="card-body">
-               <!-- if invoiceid found in url -->
-               <?php echo form_hidden('invoiceid',$invoiceid); ?>
-               <?php $this->load->view('admin/invoices/table_html'); ?>
-            </div>
-         </div>
-      </div>
-      <div class="col-md-7 small-table-right-col">
-         <div id="invoice" class="hide">
-         </div>
+      <div class="card-body">
+         <!-- if invoiceid found in url -->
+         <?php echo form_hidden('invoiceid',$invoiceid); ?>
+         <?php $this->load->view('admin/invoices/table_html'); ?>
       </div>
    </div>
 </div>

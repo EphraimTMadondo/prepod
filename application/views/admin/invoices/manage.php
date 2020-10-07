@@ -16,6 +16,12 @@
 <script>var hidden_columns = [2,6,7,8];</script>
 <?php init_tail(); ?>
 <script>
+	function custom_view(){
+      var view = $('#select-filter').val();
+      console.log(view);
+      dt_custom_view(view,'.table-invoices',view);
+   }
+
 	$(function(){
 		init_invoice();
 	});
