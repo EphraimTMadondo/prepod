@@ -36,31 +36,33 @@
                 ?>
               </div>
               <div class="col-md-12 stats-top hide mt-1 _filters _hidden_inputs center">
-                <?php
-                echo form_hidden('my_projects');
-                foreach($statuses as $status){
-                  $value = $status['id'];
-                    if($status['filter_default'] == false && !$this->input->get('status')){
-                      $value = '';
-                    } else if($this->input->get('status')) {
-                      $value = ($this->input->get('status') == $status['id'] ? $status['id'] : "");
-                    }
-                    echo form_hidden('project_status_'.$status['id'],$value);
-                  ?>
-                  <?
-                    $companyusername = $_SESSION['current_company'];
-                  ?>
-                  <div class="col-md-2 col-xs-6 border-right">
-                  <?php $where = ($_where == '' ? '' : $_where.' AND ').'status = '.$status['id']." AND company_username = '$companyusername'"; ?>
+                <div class="row">
+                  <?php
+                  echo form_hidden('my_projects');
+                  foreach($statuses as $status){
+                    $value = $status['id'];
+                      if($status['filter_default'] == false && !$this->input->get('status')){
+                        $value = '';
+                      } else if($this->input->get('status')) {
+                        $value = ($this->input->get('status') == $status['id'] ? $status['id'] : "");
+                      }
+                      echo form_hidden('project_status_'.$status['id'],$value);
+                    ?>
+                    <?
+                      $companyusername = $_SESSION['current_company'];
+                    ?>
+                    <div class="col-md-2 col-xs-6 border-right">
+                    <?php $where = ($_where == '' ? '' : $_where.' AND ').'status = '.$status['id']." AND company_username = '$companyusername'"; ?>
 
-                  <a href="#" onclick="dt_custom_view('project_status_<?php echo $status['id']; ?>','.table-projects','project_status_<?php echo $status['id']; ?>',true); return false;">
-                    <h3 class="bold"><?php echo total_rows(db_prefix().'projects',$where); ?></h3>
-                    <span style="color:<?php echo $status['color']; ?>" project-status-<?php echo $status['id']; ?>">
-                    <?php echo $status['name']; ?>
-                    </span>
-                  </a>
+                    <a href="#" onclick="dt_custom_view('project_status_<?php echo $status['id']; ?>','.table-projects','project_status_<?php echo $status['id']; ?>',true); return false;">
+                      <h3 class="bold"><?php echo total_rows(db_prefix().'projects',$where); ?></h3>
+                      <span style="color:<?php echo $status['color']; ?>" project-status-<?php echo $status['id']; ?>">
+                      <?php echo $status['name']; ?>
+                      </span>
+                    </a>
+                  </div>
+                  <?php } ?>
                 </div>
-                <?php } ?>
               </div>
             <div class="clearfix"></div>
             <hr class="hr-panel-heading" />
