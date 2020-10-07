@@ -17,51 +17,26 @@
         ?>
      </div>
      <div class="col-md-12">
-      <div class="card mb-1">
-         <div class="card-body _buttons">
-            <?php if(has_permission('credit_notes','','create')){ ?>
-            <a href="<?php echo admin_url('credit_notes/credit_note'); ?>" class="btn btn-primary float-left display-block">
-               <?php echo _l('new_credit_note'); ?>
-            </a>
-            <?php } ?>
-            <div class="display-block text-right">
-             <div class="btn-group float-left ml-1 btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-               <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-filter" aria-hidden="true"></i>
-               </button>
-               <ul class="dropdown-menu width300">
-                  <li>
-                     <a href="#" data-cview="all" onclick="dt_custom_view('','.table-credit-notes',''); return false;">
-                        <?php echo _l('credit_notes_list_all'); ?>
-                     </a>
-                  </li>
-                  <li class="divider"></li>
+         <div class="card mb-1">
+            <div class="card-body _buttons">
+               <?php if(has_permission('credit_notes','','create')){ ?>
+               <a href="<?php echo admin_url('credit_notes/credit_note'); ?>" class="btn btn-primary float-left display-block">
+                  <?php echo _l('new_credit_note'); ?>
+               </a>
+               <?php } ?>
+               <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+                  <option value="" data-tokens="<?php echo _l('credit_notes_list_all'); ?>"><?php echo _l('credit_notes_list_all'); ?></option>
                   <?php foreach($statuses as $status){ ?>
-                  <li class="<?php if(isset($status['filter_default']) && $status['filter_default']){echo 'active';} ?>">
-                     <a href="#" data-cview="credit_notes_status_<?php echo $status['id']; ?>" onclick="dt_custom_view('credit_notes_status_<?php echo $status['id']; ?>','.table-credit-notes','credit_notes_status_<?php echo $status['id']; ?>'); return false;">
-                        <?php echo format_credit_note_status($status['id'],true); ?>
-                     </a>
-                  </li>
+                     <option value="credit_notes_status_<?php echo $status['id']; ?>" data-tokens="<?php echo format_credit_note_status($status['id'],true); ?>"><?php echo format_credit_note_status($status['id'],true); ?></option>
                   <?php } ?>
-                  <div class="clearfix"></div>
                   <?php
-                  if(count($years) > 0){ ?>
-                  <li class="divider"></li>
-                  <?php foreach($years as $year){ ?>
-                  <li class="active">
-                     <a href="#" data-cview="year_<?php echo $year['year']; ?>" onclick="dt_custom_view(<?php echo $year['year']; ?>,'.table-credit-notes','year_<?php echo $year['year']; ?>'); return false;"><?php echo $year['year']; ?>
-                     </a>
-                  </li>
+                     if(count($years) > 0){ ?>
+                     <?php foreach($years as $year){ ?>
+                        <option value="" data-tokens="year_<?php echo $year['year']; ?>"><?php echo $year['year']; ?></option>
+                     <?php } ?>
                   <?php } ?>
-                  <?php } ?>
-               </ul>
+               </select>
             </div>
-         </div>
-      </div>
-   </div>
-   <div class="row">
-      <div class="col-md-12" id="small-table">
-         <div class="card">
             <div class="card-body">
                <!-- if credit not id found in url -->
                <?php echo form_hidden('credit_note_id',$credit_note_id); ?>
@@ -69,14 +44,7 @@
             </div>
          </div>
       </div>
-      <div class="col-md-7 small-table-right-col">
-         <div id="credit_note" class="hide">
-         </div>
-      </div>
    </div>
-</div>
-</div>
-</div>
 </div>
 <?php $this->load->view('admin/includes/modals/sales_attach_file'); ?>
 <script>
@@ -84,6 +52,11 @@
 </script>
 <?php init_tail(); ?>
 <script>
+	function custom_view(){
+      var view = $('#select-filter').val();
+      dt_custom_view(view,'.<?php echo $filter_table_name?>',view);
+   }
+
    $(function(){
        var Credit_Notes_ServerParams = {};
      $.each($('._hidden_inputs._filters input'),function(){
