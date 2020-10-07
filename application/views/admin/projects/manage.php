@@ -14,41 +14,17 @@
                 <?php echo _l('new_project'); ?>
               </a>
             <?php } ?>
-            <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-              <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="bx bx-filter" aria-hidden="true"></i>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-right width300">
-                <li>
-                  <a href="#" data-cview="all" onclick="dt_custom_view('','.table-projects',''); return false;">
-                    <?php echo _l('expenses_list_all'); ?>
-                  </a>
-                </li>
-                <?php
+            <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+              <option value="" data-tokens="<?php echo _l('expenses_list_all'); ?>"><?php echo _l('expenses_list_all'); ?></option>
+              <?php
                 // Only show this filter if user has permission for projects view otherwise wont need this becuase by default this filter will be applied
                 if(has_permission('projects','','view')){ ?>
-                <li>
-                  <a href="#" data-cview="my_projects" onclick="dt_custom_view('my_projects','.table-projects','my_projects'); return false;">
-                    <?php echo _l('home_my_projects'); ?>
-                  </a>
-                </li>
+                <option value="my_projects" data-tokens="<?php echo _l('home_my_projects'); ?>"><?php echo _l('home_my_projects'); ?></option>
                 <?php } ?>
-                <li class="divider"></li>
-                <?php foreach($statuses as $status){ 
-                
-              
-                ?>
-                  <li class="<?php if($status['filter_default'] == true && !$this->input->get('status') || $this->input->get('status') == $status['id']){echo 'active';} ?>">
-                    <a href="#" data-cview="<?php echo 'project_status_'.$status['id']; ?>" onclick="dt_custom_view('project_status_<?php echo $status['id']; ?>','.table-projects','project_status_<?php echo $status['id']; ?>'); return false;">
-                      <?php echo $status['name']; ?>
-                    </a>
-                  </li>
-                  <?php } ?>
-                </ul>
-              </div>
-              <div class="clearfix"></div>
-              <hr class="hr-panel-heading" />
-            </div>
+                <?php foreach($statuses as $status){ ?>
+                  <option value="<?php echo 'project_status_'.$status['id']; ?>" data-tokens="<?php echo $status['name']; ?>"><?php echo $status['name']; ?></option>
+                <?php } ?>
+            </select>
               <div class="col-md-12">
                 <h4 class="no-margin"><?php echo _l('projects_summary'); ?></h4>
                 <?php
