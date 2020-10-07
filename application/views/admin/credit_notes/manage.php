@@ -54,7 +54,7 @@
 <script>
 	function custom_view(){
       var view = $('#select-filter').val();
-      dt_custom_view(view,'.<?php echo $filter_table_name?>',view);
+      dt_custom_view(view,'.table-credit-notes',view);
    }
 
    $(function(){

@@ -47,7 +47,7 @@
                     echo form_hidden('project_status_'.$status['id'],$value);
                   ?>
                   <?
-                              $companyusername = $_SESSION['current_company'];
+                    $companyusername = $_SESSION['current_company'];
                   ?>
                   <div class="col-md-2 col-xs-6 border-right">
                   <?php $where = ($_where == '' ? '' : $_where.' AND ').'status = '.$status['id']." AND company_username = '$companyusername'"; ?>
@@ -74,6 +74,11 @@
 <?php $this->load->view('admin/projects/copy_settings'); ?>
 <?php init_tail(); ?>
 <script>
+function custom_view(){
+  var view = $('#select-filter').val();
+  dt_custom_view(view,'.table-projects',view);
+}
+
 $(function(){
      var ProjectsServerParams = {};
 
