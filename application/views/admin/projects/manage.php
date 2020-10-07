@@ -34,7 +34,7 @@
                 }
                 ?>
               </div>
-              <div class="col-md-12 row _filters _hidden_inputs center">
+              <div class="col-md-12 mt-1 row _filters _hidden_inputs center">
                 <?php
                 echo form_hidden('my_projects');
                 foreach($statuses as $status){
