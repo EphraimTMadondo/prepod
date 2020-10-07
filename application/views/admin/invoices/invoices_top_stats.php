@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div id="stats-top" class="hide">
   <div id="invoices_total"></div>
-  <div class="card mt-2">
+  <div class="card">
     <div class="card-body">
       <?php
       $where_all = '';
@@ -18,7 +18,7 @@
       }
       $total_invoices = total_rows(db_prefix().'invoices',$where_all);
       ?>
-      <div class="row text-left quick-top-stats">
+      <div class="row col-md-12 text-left quick-top-stats">
         <?php foreach($invoices_statuses as $status){
           if($status == Invoices_model::STATUS_CANCELLED){
             continue;
@@ -34,7 +34,7 @@
         $total_by_status = total_rows(db_prefix().'invoices',$where);
         $percent = ($total_invoices > 0 ? number_format(($total_by_status * 100) / $total_invoices,2) : 0);
         ?>
-        <div class="col-lg-5ths col-md-5ths">
+        <div class="col-lg-5ths col-md-5ths m-1">
           <div class="row">
             <div class="col-md-7">
               <a href="#" data-cview="invoices_<?php echo $status; ?>" onclick="dt_custom_view('invoices_<?php echo $status; ?>','.table-invoices','invoices_<?php echo $status; ?>',true); return false;">
