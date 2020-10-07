@@ -12,27 +12,17 @@
                   <a href="<?php echo admin_url('expenses/expense'); ?>" class="btn btn-primary"><?php echo _l('new_expense'); ?></a>
                   <?php } ?>
                   <?php $this->load->view('admin/expenses/filter_by_template'); ?>
-                  <a href="#" onclick="slideToggle('#stats-top'); return false;" class="float-right btn btn-light ml-1 btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
+                  <a href="#" onclick="slideToggle('#stats-top'); return false;" class="float-right btn btn-primary btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                   <div id="stats-top" class="hide">
                      <hr />
                      <div id="expenses_total"></div>
                   </div>
                </div>
-            </div>
-            <div class="row">
-               <div class="col-md-12" id="small-table">
-                  <div class="card">
-                     <div class="card-body">
-                        <div class="clearfix"></div>
-                        <!-- if expenseid found in url -->
-                        <?php echo form_hidden('expenseid',$expenseid); ?>
-                        <?php $this->load->view('admin/expenses/table_html'); ?>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-7 small-table-right-col">
-                  <div id="expense" class="hide">
-                  </div>
+               <div class="card-body">
+                  <div class="clearfix"></div>
+                  <!-- if expenseid found in url -->
+                  <?php echo form_hidden('expenseid',$expenseid); ?>
+                  <?php $this->load->view('admin/expenses/table_html'); ?>
                </div>
             </div>
          </div>
@@ -80,7 +70,17 @@
 <!-- /.modal -->
 <script>var hidden_columns = [4,5,6,7,8,9];</script>
 <?php init_tail(); ?>
+<?php 
+   if(!isset($filter_table_name)){
+      $filter_table_name = '.table-expenses';
+  }
+?>
 <script>
+	function custom_view(){
+      var view = $('#select-filter').val();
+      dt_custom_view(view,'.<?php echo $filter_table_name?>',view);
+   }
+
    Dropzone.autoDiscover = false;
    $(function(){
       // Expenses additional server params

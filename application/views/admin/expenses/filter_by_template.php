@@ -20,74 +20,29 @@ foreach($categories as $category){
 }
 ?>
 </div>
-<div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bx bx-filter" aria-hidden="true"></i>
-    </button>
 
-    <ul class="dropdown-menu dropdown-menu-right width300">
-        <li>
-            <a href="#" data-cview="all" onclick="dt_custom_view('','<?php echo $filter_table_name; ?>',''); return false;">
-                <?php echo _l('expenses_list_all'); ?>
-            </a>
-        </li>
-        <li class="divider"></li>
-        <li>
-            <a href="#" data-cview="billable" onclick="dt_custom_view('billable','<?php echo $filter_table_name; ?>','billable'); return false;">
-                <?php echo _l('expenses_list_billable'); ?>
-            </a>
-        </li>
-        <li>
-            <a href="#" data-cview="non-billable" onclick="dt_custom_view('non-billable','<?php echo $filter_table_name; ?>','non-billable'); return false;">
-                <?php echo _l('expenses_list_non_billable'); ?>
-            </a>
-        </li>
-        <li>
-        <a href="#" data-cview="invoiced" onclick="dt_custom_view('invoiced','<?php echo $filter_table_name; ?>','invoiced'); return false;">
-                <?php echo _l('expenses_list_invoiced'); ?>
-            </a>
-        </li>
-        <li>
-            <a href="#" data-cview="unbilled" onclick="dt_custom_view('unbilled','<?php echo $filter_table_name; ?>','unbilled'); return false;">
-                <?php echo _l('expenses_list_unbilled'); ?>
-            </a>
-        </li>
-        <li>
-            <a href="#" data-cview="recurring" onclick="dt_custom_view('recurring','<?php echo $filter_table_name; ?>','recurring'); return false;">
-                <?php echo _l('expenses_list_recurring'); ?>
-            </a>
-        </li>
-        <?php if(count($years) > 0){ ?>
-            <li class="divider years-divider"></li>
-            <?php foreach($years as $year){ ?>
-                <li class="active expenses-filter-year">
-                    <a href="#" data-cview="year_<?php echo $year['year']; ?>" onclick="dt_custom_view(<?php echo $year['year']; ?>,'<?php echo $filter_table_name; ?>','year_<?php echo $year['year']; ?>'); return false;"><?php echo $year['year']; ?></a>
-                </li>
-                <?php } ?>
-                <?php } ?>
-                <?php if(count($categories) > 0){ ?>
-                   <div class="clearfix"></div>
-                   <li class="divider"></li>
-                   <li class="dropdown-submenu pull-left">
-                     <a href="#" tabindex="-1"><?php echo _l('expenses_filter_by_categories'); ?></a>
-                     <ul class="dropdown-menu dropdown-menu-left">
-                        <?php foreach($categories as $category){ ?>
-                            <li>
-                                <a href="#" data-cview="expenses_by_category_<?php echo $category['id']; ?>" onclick="dt_custom_view(<?php echo $category['id']; ?>,'<?php echo $filter_table_name; ?>','expenses_by_category_<?php echo $category['id']; ?>'); return false;"><?php echo $category['name']; ?></a>
-                            </li>
-                            <?php } ?>
-                        </ul>
-                    </li>
-                    <?php } ?>
-                    <div class="clearfix"></div>
-                    <li class="divider months-divider"></li>
-                    <li class="dropdown-submenu pull-left expenses-filter-month-wrapper">
-                      <a href="#" tabindex="-1"><?php echo _l('months'); ?></a>
-                      <ul class="dropdown-menu dropdown-menu-left">
-                        <?php for ($m = 1; $m <= 12; $m++) { ?>
-                          <li class="expenses-filter-month"><a href="#" data-cview="expenses_by_month_<?php echo $m; ?>" onclick="dt_custom_view(<?php echo $m; ?>,'<?php echo $filter_table_name; ?>','expenses_by_month_<?php echo $m; ?>'); return false;"><?php echo _l(date('F', mktime(0, 0, 0, $m, 1))); ?></a></li>
-                          <?php } ?>
-                      </ul>
-                  </li>
-              </ul>
-          </div>
+<select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+    <option value="" data-tokens="<?php echo _l('expenses_list_all'); ?>"><?php echo _l('expenses_list_all'); ?></option>
+    <option value="billable" data-tokens="<?php echo _l('expenses_list_billable'); ?>"><?php echo _l('expenses_list_billable'); ?></option>
+    <option value="non-billable" data-tokens="<?php echo _l('expenses_list_non_billable'); ?>"><?php echo _l('expenses_list_non_billable'); ?></option>
+    <option value="invoiced" data-tokens="<?php echo _l('expenses_list_invoiced'); ?>"><?php echo _l('expenses_list_invoiced'); ?></option>
+    <option value="unbilled" data-tokens="<?php echo _l('expenses_list_unbilled'); ?>"><?php echo _l('expenses_list_unbilled'); ?></option>
+    <option value="recurring" data-tokens="<?php echo _l('expenses_list_recurring'); ?>"><?php echo _l('expenses_list_recurring'); ?></option>
+    <?php if(count($years) > 0){ ?>
+        <?php foreach($years as $year){ ?>
+            <option value="year_<?php echo $year['year']; ?>" data-tokens="<?php echo $year['year']; ?>"><?php echo $year['year']; ?></option>
+        <?php } ?>
+    <?php } ?>
+    <?php if(count($categories) > 0){ ?>
+        <optgroup label="<?php echo _l('expenses_filter_by_categories'); ?>">
+            <?php foreach($categories as $category){ ?>
+                <option value="expenses_by_category_<?php echo $category['id']; ?>" data-tokens="<?php echo $category['name']; ?>"><?php echo $category['name']; ?></option>
+            <?php } ?>
+        </optgroup>
+    <?php } ?>
+    <optgroup label="<?php echo _l('months'); ?>">
+        <?php for ($m = 1; $m <= 12; $m++) { ?>
+            <option value="expenses_by_month_<?php echo $m; ?>" data-tokens="<?php echo _l(date('F', mktime(0, 0, 0, $m, 1))); ?>"><?php echo _l(date('F', mktime(0, 0, 0, $m, 1))); ?></option>
+        <?php } ?>
+    </optgroup>
+</select>
