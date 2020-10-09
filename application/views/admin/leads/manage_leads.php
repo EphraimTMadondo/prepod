@@ -6,7 +6,7 @@
    <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mt-2">
+            <div class="mt-1">
                <div class="card-body">
                   <div class="_buttons">
                      <a href="#" onclick="init_lead(); return false;" class="btn btn-primary">

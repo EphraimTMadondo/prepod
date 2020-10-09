@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body">
                      <div class="_buttons">
-                        <a href="#" class="btn btn-primary pull-left" data-toggle="modal" data-target="#customer_group_modal"><?php echo _l('new_customer_group'); ?></a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#customer_group_modal"><?php echo _l('new_customer_group'); ?></a>
                     </div>
                     <div class="clearfix"></div>
                     <hr class="hr-panel-heading" />

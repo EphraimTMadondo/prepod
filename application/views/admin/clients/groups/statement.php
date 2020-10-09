@@ -7,15 +7,15 @@
 <div class="col-md-8 col-xs-12">
    <div class="text-right _buttons float-right">
 
-      <a href="#" id="statement_print" target="_blank" class="btn btn-default btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('print'); ?>" data-placement="bottom">
+      <a href="#" id="statement_print" target="_blank" class="btn btn-primary btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('print'); ?>" data-placement="bottom">
           <i class="fa fa-print"></i>
       </a>
 
-      <a href="" id="statement_pdf"  class="btn btn-default btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('view_pdf'); ?>" data-placement="bottom">
+      <a href="" id="statement_pdf"  class="btn btn-primary btn-with-tooltip mr-1" data-toggle="tooltip" title="<?php echo _l('view_pdf'); ?>" data-placement="bottom">
           <i class="fa fa-file-pdf-o"></i>
       </a>
 
-      <a href="#" class="btn-with-tooltip btn btn-default" data-toggle="modal" data-target="#statement_send_to_client"><span data-toggle="tooltip" data-title="<?php echo _l('send_to_email'); ?>" data-placement="bottom"><i class="fa fa-envelope"></i></span></a>
+      <a href="#" class="btn-with-tooltip btn btn-primary" data-toggle="modal" data-target="#statement_send_to_client"><span data-toggle="tooltip" data-title="<?php echo _l('send_to_email'); ?>" data-placement="bottom"><i class="fa fa-envelope"></i></span></a>
 </div>
 </div>
 <div class="clearfix"></div>
