@@ -60,7 +60,7 @@ foreach ($rResult as $aRow) {
         <div class="media-body">
             <div class="user-details">
                 <div class="mail-items">
-                    <span class="list-group-item-text text-truncate">'.$aRow['subject'].'</span>
+                    <span class="list-group-item-text text-truncate">'.trim($aRow['subject']).'</span>
                 </div>
                 <div class="mail-meta-item">
                     <span class="float-right">
@@ -69,8 +69,8 @@ foreach ($rResult as $aRow) {
                 </div>
             </div>
             <div class="mail-message">
-                <p class="list-group-item-text truncate mb-0 float-left">
-                '.$aRow['body'].'
+                <p class="list-group-item-text truncate mb-0">
+                '.trim(strip_tags($aRow['body'])).'
                 </p>
             </div>
             <div class="mail-meta-item">
