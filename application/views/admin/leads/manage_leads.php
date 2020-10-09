@@ -21,18 +21,6 @@
                      </a>
                      <a href="#" class="btn btn-primary float-right btn-icon btn-with-tooltip" data-toggle="tooltip" data-title="<?php echo _l('leads_summary'); ?>" data-placement="bottom" onclick="slideToggle('.leads-overview'); return false;"><i class="bx bx-bar-chart"></i></a>
                      <?php } ?>
-                     <div class="row mt-3">
-                        <div class="col-md-5"></div>
-                        <div class="col-md-7 col-xs-12 float-right leads-search">
-                           <?php if($this->session->userdata('leads_kanban_view') == 'true') { ?>
-                           <div data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
-                              <?php echo render_input('search','','','search',array('data-name'=>'search','onkeyup'=>'leads_kanban();','placeholder'=>_l('leads_search')),array(),'no-margin') ?>
-                           </div>
-                           <?php } ?>
-                           <?php echo form_hidden('sort_type'); ?>
-                           <?php echo form_hidden('sort',(get_option('default_leads_kanban_sort') != '' ? get_option('default_leads_kanban_sort_type') : '')); ?>
-                        </div>
-                     </div>
                      <div class="clearfix"></div>
                      <div class="row hide leads-overview">
                         <hr class="hr-panel-heading" />
@@ -63,19 +51,32 @@
                      <?php
                         if($this->session->has_userdata('leads_kanban_view') && $this->session->userdata('leads_kanban_view') == 'true') { ?>
                      <div class="active kan-ban-tab" id="kan-ban-tab" style="overflow:auto;">
-                        <div class="kanban-leads-sort">
-                           <span class="bold"><?php echo _l('leads_sort_by'); ?>: </span>
-                           <a href="#" onclick="leads_kanban_sort('dateadded'); return false" class="dateadded">
-                           <?php if(get_option('default_leads_kanban_sort') == 'dateadded'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_datecreated'); ?>
-                           </a>
-                           |
-                           <a href="#" onclick="leads_kanban_sort('leadorder');return false;" class="leadorder">
-                           <?php if(get_option('default_leads_kanban_sort') == 'leadorder'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_kanban_order'); ?>
-                           </a>
-                           |
-                           <a href="#" onclick="leads_kanban_sort('lastcontact');return false;" class="lastcontact">
-                           <?php if(get_option('default_leads_kanban_sort') == 'lastcontact'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_lastcontact'); ?>
-                           </a>
+                        <div class="row">
+                           <div class="col-md-5">
+                              <div class="kanban-leads-sort">
+                                 <span class="bold"><?php echo _l('leads_sort_by'); ?>: </span>
+                                 <a href="#" onclick="leads_kanban_sort('dateadded'); return false" class="dateadded">
+                                 <?php if(get_option('default_leads_kanban_sort') == 'dateadded'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_datecreated'); ?>
+                                 </a>
+                                 |
+                                 <a href="#" onclick="leads_kanban_sort('leadorder');return false;" class="leadorder">
+                                 <?php if(get_option('default_leads_kanban_sort') == 'leadorder'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_kanban_order'); ?>
+                                 </a>
+                                 |
+                                 <a href="#" onclick="leads_kanban_sort('lastcontact');return false;" class="lastcontact">
+                                 <?php if(get_option('default_leads_kanban_sort') == 'lastcontact'){echo '<i class="kanban-sort-icon fa fa-sort-amount-'.strtolower(get_option('default_leads_kanban_sort_type')).'"></i> ';} ?><?php echo _l('leads_sort_by_lastcontact'); ?>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="col-md-7 col-xs-12 float-right leads-search">
+                              <?php if($this->session->userdata('leads_kanban_view') == 'true') { ?>
+                              <div data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
+                                 <?php echo render_input('search','','','search',array('data-name'=>'search','onkeyup'=>'leads_kanban();','placeholder'=>_l('leads_search')),array(),'no-margin') ?>
+                              </div>
+                              <?php } ?>
+                              <?php echo form_hidden('sort_type'); ?>
+                              <?php echo form_hidden('sort',(get_option('default_leads_kanban_sort') != '' ? get_option('default_leads_kanban_sort_type') : '')); ?>
+                           </div>
                         </div>
                         <!-- Basic Kanban App -->
                         <div class="kanban-overlay"></div>
