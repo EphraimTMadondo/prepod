@@ -10,7 +10,7 @@
             <div class="card mt-2 project-top-panel panel-full">
                <div class="card-body _buttons">
                   <div class="row">
-                     <div class="col-md-7 project-heading">
+                     <div class="col-md-5 project-heading">
                         <h3 class="hide project-name"><?php echo $project->name; ?></h3>
                         <div id="project_view_name">
                            <select class="selectpicker " data-style="btn-outline-primary" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
@@ -27,7 +27,7 @@
                         </div>
                         <?php echo '<div class="badge badge-'.$project_status['color'].' float-right ml-1 mt-1 p8 project-status-label-'.$project->status.'">'.$project_status['name'].'</div>'; ?>
                      </div>
-                     <div class="col-md-5 text-right">
+                     <div class="col-md-7 text-right">
                         <?php if(has_permission('tasks','','create')){ ?>
                         <a href="#" onclick="new_task_from_relation(undefined,'project',<?php echo $project->id; ?>); return false;" class="btn btn-primary"><?php echo _l('new_task'); ?></a>
                         <?php } ?>
