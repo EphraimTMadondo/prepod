@@ -173,8 +173,8 @@ function render_date_input($name, $label = '', $value = '', $input_attrs = [], $
     $input .= '<div class="input-group date">';
     $input .= '<input type="text" id="' . $name . '" name="' . $name . '" class="form-control pickadate datepicker' . $input_class . '" ' . $_input_attrs . ' value="' . set_value($name, $value) . '" autocomplete="off">';
     $input .= '<div class="input-group-append">
-    <i class="fa fa-calendar calendar-icon input-group-text"></i>
-</div>';
+        <i class="fa fa-calendar calendar-icon input-group-text"></i>
+    </div>';
     $input .= '</div>';
     $input .= '</div>';
 

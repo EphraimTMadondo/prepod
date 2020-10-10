@@ -104,7 +104,7 @@
                               <div class="input-group date">
                                  <input type="text" class="form-control pickadate datepicker" id="report-from" name="report-from">
                                  <div class="input-group-append">
-                                    <i class="fa fa-calendar calendar-icon"></i>
+                                    <i class="input-group-text fa fa-calendar calendar-icon"></i>
                                  </div>
                               </div>
                            </div>
@@ -113,7 +113,7 @@
                               <div class="input-group date">
                                  <input type="text" class="form-control pickadate datepicker" disabled="disabled" id="report-to" name="report-to">
                                  <div class="input-group-append">
-                                    <i class="fa fa-calendar calendar-icon"></i>
+                                    <i class="input-group-text fa fa-calendar calendar-icon"></i>
                                  </div>
                               </div>
                            </div>
