@@ -58,7 +58,7 @@
                                 ?>
                             </div>
                         </div>
-                        <canvas class="leads-monthly chart" id="leads-monthly" height="400"></canvas>
+                        <canvas class="leads-monthly chart" id="leads-monthly" height="200"></canvas>
                     </div>
                 </div>
             </div>
