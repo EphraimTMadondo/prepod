@@ -207,7 +207,7 @@
                      </label>
                      <div class="input-group">
                         <input type="number" class="form-control"<?php if($value == 0){echo ' disabled'; } ?> name="cycles" id="cycles" value="<?php echo $value; ?>" <?php if(isset($task) && $task->total_cycles > 0){echo 'min="'.($task->total_cycles).'"';} ?>>
-                        <div class="input-group-addon">
+                        <div class="input-group-append">
                            <div class="checkbox">
                               <input type="checkbox"<?php if($value == 0){echo ' checked';} ?> id="unlimited_cycles">
                               <label for="unlimited_cycles"><?php echo _l('cycles_infinity'); ?></label>

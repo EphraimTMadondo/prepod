@@ -33,7 +33,7 @@
 									foreach($custom_fields as $field){ ?>
 										<div class="input-group list_custom_field mbot15">
 											<input type="text" name="list_custom_fields_update[<?php echo $field['customfieldid']; ?>]" value="<?php echo $field['fieldname']; ?>" class="form-control">
-											<span class="input-group-addon">
+											<span class="input-group-append">
 												<a href="#" onclick="remove_list_custom_field(this,<?php echo $field['customfieldid']; ?>)"><i class="bx bx-trash"></i></a>
 											</span>
 										</div>
@@ -65,7 +65,7 @@
 			name = 'list_custom_fields_update[' + listid + ']'
 		}
 
-		$('.list_custom_fields_area').append('<div class="input-group list_custom_field mbot15"><input type="text" name="' + name + '" placeholder="Enter field name" class="form-control"><span class="input-group-addon"><a href="#" onclick="remove_list_custom_field(this)"><i class="bx bx-trash"></i></a></span></div>')
+		$('.list_custom_fields_area').append('<div class="input-group list_custom_field mbot15"><input type="text" name="' + name + '" placeholder="Enter field name" class="form-control"><span class="input-group-append"><a href="#" onclick="remove_list_custom_field(this)"><i class="bx bx-trash"></i></a></span></div>')
 	}
 	// Remove mail list custom field / if is edit removes from database
 	function remove_list_custom_field(field, fieldid) {

@@ -202,7 +202,7 @@ echo render_input('cp_salary_from', 'starting_salary_from', '', 'text', $attr);?
                     <div class="col-md-4">
                       <label for="profit"><?php echo _l('height') ?></label>
                       <div class="input-group">
-                        <span  class="input-group-addon">
+                        <span  class="input-group-append">
                                  <?php
 echo '>=';
 ?>
@@ -214,7 +214,7 @@ echo '>=';
                     <div class="col-md-4">
                       <label for="profit"><?php echo _l('weight') ?></label>
                       <div class="input-group">
-                        <span  class="input-group-addon">
+                        <span  class="input-group-append">
                                  <?php
 echo '>=';
 ?>

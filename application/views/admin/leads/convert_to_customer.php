@@ -139,10 +139,10 @@
       <label for="password" class="control-label"><?php echo _l('client_password'); ?></label>
       <div class="input-group">
          <input type="password" class="form-control password" name="password" autocomplete="off">
-         <span class="input-group-addon">
+         <span class="input-group-append">
             <a href="#password" class="show_password" onclick="showPassword('password');return false;"><i class="bx bx-show"></i></a>
          </span>
-         <span class="input-group-addon">
+         <span class="input-group-append">
             <a href="#" class="generate_password" onclick="generatePassword(this);return false;"><i class="bx bx-refresh"></i></a>
          </span>
       </div>

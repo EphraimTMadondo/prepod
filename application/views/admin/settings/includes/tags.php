@@ -11,11 +11,11 @@ $totalTags = count($tags);
               <span class="settings-tag-name"></span>
               <div class="form-group mb-0 settings-tag-input">
                   <div class="input-group">
-                    <div class="input-group-addon">
+                    <div class="input-group-append">
                         <?php echo total_rows(db_prefix().'taggables',array('tag_id'=>$tag['id'])); ?>
                     </div>
                     <input type="text" name="tags[<?php echo $tag['id']; ?>]" value="<?php echo $tag['name']; ?>" class="form-control">
-                    <div class="input-group-addon">
+                    <div class="input-group-append">
                       <a class="btn btn-danger _delete" href="<?php echo admin_url('settings/delete_tag/'.$tag['id']); ?>"><i class="bx bx-trash"></i></a>
                   </div>
               </div>

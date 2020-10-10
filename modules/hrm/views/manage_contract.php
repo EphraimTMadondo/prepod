@@ -116,7 +116,7 @@
                                 <div class="form-group" app-field-wrapper="validity_end_date">
                                     <div class="input-group date">
                                         <input type="text" id="validity_end_date" name="validity_end_date" class="form-control pickadate datepicker" value="" autocomplete="off" placeholder="<?php echo _l('validity_end_date') ?>">
-                                            <div class="input-group-addon">
+                                            <div class="input-group-append">
                                             <i class="fa fa-calendar calendar-icon"></i>
                                             </div>
                                     </div>
@@ -126,7 +126,7 @@
                                 <div class="form-group" app-field-wrapper="validity_start_date">
                                     <div class="input-group date">
                                         <input type="text" id="validity_start_date" name="validity_start_date" class="form-control pickadate datepicker" value="" autocomplete="off" placeholder="<?php echo _l('validity_start_date') ?>">
-                                            <div class="input-group-addon">
+                                            <div class="input-group-append">
                                             <i class="fa fa-calendar calendar-icon"></i>
                                             </div>
                                     </div>

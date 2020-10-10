@@ -308,7 +308,7 @@
                         <label for="amount" class="control-label"><?php echo _l('invoice_html_amount'); ?></label>
                         <div class="input-group">
                            <input type="number" required max="<?php echo $invoice->total_left_to_pay; ?>" data-total="<?php echo $invoice->total_left_to_pay; ?>" name="amount" class="form-control" value="<?php echo $invoice->total_left_to_pay; ?>">
-                           <span class="input-group-addon">
+                           <span class="input-group-append">
                            <?php echo $invoice->symbol; ?>
                            </span>
                         </div>

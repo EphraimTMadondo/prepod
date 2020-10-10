@@ -1792,7 +1792,7 @@
 
         if (newElement.parentNode.classList.contains('input-group') &&
             (newElement.previousElementSibling || newElement.nextElementSibling) &&
-            (newElement.previousElementSibling || newElement.nextElementSibling).classList.contains('input-group-addon')
+            (newElement.previousElementSibling || newElement.nextElementSibling).classList.contains('input-group-append')
         ) {
           newElement.classList.add('bs3-has-addon');
         }

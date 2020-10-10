@@ -275,7 +275,7 @@
                <label for="website"><?php echo _l('lead_website'); ?></label>
                <div class="input-group">
                   <input type="text" name="website" id="website" value="<?php echo $lead->website; ?>" class="form-control">
-                  <div class="input-group-addon">
+                  <div class="input-group-append">
                      <span>
                       <a href="<?php echo maybe_add_http($lead->website); ?>" target="_blank" tabindex="-1">
                         <i class="fa fa-globe"></i>

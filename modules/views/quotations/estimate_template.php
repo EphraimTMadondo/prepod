@@ -85,7 +85,7 @@
               <div class="form-group">
                  <label for="number"><?php echo _l('estimate_add_edit_number'); ?></label>
                  <div class="input-group">
-                    <span class="input-group-addon">
+                    <span class="input-group-append">
                     <?php if(isset($estimate)){ ?>
                     <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_estimate_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo html_entity_decode($estimate->prefix); ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('estimates/update_number_settings/'.$estimate->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                      <?php }
@@ -94,11 +94,11 @@
                    </span>
                     <input type="text" name="number" class="form-control" value="<?php echo html_entity_decode($_estimate_number); ?>" data-isedit="<?php echo html_entity_decode($isedit); ?>" data-original-number="<?php echo html_entity_decode($data_original_number); ?>">
                     <?php if($format == 3) { ?>
-                    <span class="input-group-addon">
+                    <span class="input-group-append">
                        <span id="prefix_year" class="format-n-yy"><?php echo html_entity_decode($yy); ?></span>
                     </span>
                     <?php } else if($format == 4) { ?>
-                     <span class="input-group-addon">
+                     <span class="input-group-append">
                        <span id="prefix_month" class="format-mm-yyyy"><?php echo html_entity_decode($mm); ?></span>
                        /
                        <span id="prefix_year" class="format-mm-yyyy"><?php echo html_entity_decode($yyyy); ?></span>
@@ -202,7 +202,7 @@
 
                               <input type="text" disabled="true" class="form-control text-right" name="total_mn" value="">
 
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">
@@ -223,7 +223,7 @@
                       <td>  
                           <div class="input-group" id="discount-total">
                              <input type="number" value="<?php if(isset($estimate)){ echo app_format_money($estimate->discount_percent,''); } ?>" onchange="dc_percent_change(this); return false;" class="form-control pull-left input-percent text-right" min="0" max="100" name="dc_percent">
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">%</span>
@@ -242,7 +242,7 @@
 
                              <input type="text" value="<?php if(isset($estimate)){ echo app_format_money($estimate->discount_total,''); } ?>" class="form-control pull-left text-right" onchange="dc_total_change(this); return false;" data-type="currency" name="dc_total">
 
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">
@@ -265,7 +265,7 @@
 
                              <input type="text" disabled="true" class="form-control text-right" name="after_discount" value="<?php if(isset($estimate)){ echo app_format_money($estimate->total,''); } ?>">
 
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">

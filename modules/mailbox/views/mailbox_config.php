@@ -15,7 +15,7 @@
         <div class="input-group">
         	<?php $value = (isset($member) ? $member->mail_password : ''); ?>
 	        <input type="password" class="form-control password" name="mail_password" value="<?php echo $value;?>" autocomplete="new-password">
-	        <span class="input-group-addon">
+	        <span class="input-group-append">
 	        <a href="#mail_password" class="show_password" onclick="showPassword('mail_password'); return false;"><i class="fa fa-eye"></i></a>
 	        </span>	        
 	    </div>

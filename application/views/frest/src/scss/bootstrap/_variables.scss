@@ -505,9 +505,9 @@ $form-check-inline-input-margin-x: .3125rem !default;
 $form-grid-gutter-width: 10px !default;
 $form-group-margin-bottom: 1rem !default;
 
-$input-group-addon-color: $input-color !default;
-$input-group-addon-bg: $gray-200 !default;
-$input-group-addon-border-color: $input-border-color !default;
+$input-group-append-color: $input-color !default;
+$input-group-append-bg: $gray-200 !default;
+$input-group-append-border-color: $input-border-color !default;
 
 $custom-forms-transition: background-color .15s ease-in-out,
 border-color .15s ease-in-out,
@@ -634,7 +634,7 @@ $custom-file-border-color: $input-border-color !default;
 $custom-file-border-radius: $input-border-radius !default;
 $custom-file-box-shadow: $input-box-shadow !default;
 $custom-file-button-color: $custom-file-color !default;
-$custom-file-button-bg: $input-group-addon-bg !default;
+$custom-file-button-bg: $input-group-append-bg !default;
 $custom-file-text: (en: "Browse"
 ) !default;
 

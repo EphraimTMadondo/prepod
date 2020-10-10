@@ -105,7 +105,7 @@
 
                               <input type="text" disabled="true" class="form-control text-right" name="total_mn" value="">
 
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">
@@ -126,7 +126,7 @@
                       <td>  
                           <div class="input-group" id="discount-total">
                              <input type="number" value="<?php if(isset($pur_order)){ echo app_format_money($pur_order->discount_percent,''); } ?>" onchange="dc_percent_change(this); return false;" class="form-control pull-left input-percent text-right" min="0" max="100" name="dc_percent">
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">%</span>
@@ -145,7 +145,7 @@
 
                              <input type="text" value="<?php if(isset($pur_order)){ echo app_format_money($pur_order->discount_total,''); } ?>" class="form-control pull-left text-right" onchange="dc_total_change(this); return false;" data-type="currency" name="dc_total">
 
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">
@@ -168,7 +168,7 @@
 
                              <input type="text" disabled="true" class="form-control text-right" name="after_discount" value="<?php if(isset($pur_order)){ echo app_format_money($pur_order->total,''); } ?>">
 
-                             <div class="input-group-addon">
+                             <div class="input-group-append">
                                 <div class="dropdown">
                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                    <span class="discount-type-selected">

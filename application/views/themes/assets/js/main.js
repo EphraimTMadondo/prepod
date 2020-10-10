@@ -90,7 +90,7 @@ $("body").on('loaded.bs.select', 'select', function() {
 
 // Init bootstrap selectpicker
 $("body").on('loaded.bs.select', '._select_input_group', function(e) {
-    $(this).parents('.form-group').find('.input-group-select .input-group-addon').css('opacity', '1');
+    $(this).parents('.form-group').find('.input-group-select .input-group-append').css('opacity', '1');
 });
 
 $(window).on("load resize", function(e) {
@@ -1470,7 +1470,7 @@ $(function() {
     // Fix for bigger items descriptions, the select is going out of the container
     $('body').on('change loaded.bs.select', '#item_select', function() {
         var selectWrapper = $('.items-wrapper .items-select-wrapper');
-        var selectAddon = $('.items-wrapper .input-group-addon');
+        var selectAddon = $('.items-wrapper .input-group-append');
            if(selectAddon.length === 0){
                 // No items create permissions, so no + input group
                 $('.items-wrapper .bootstrap-select').css('width', '100%')
@@ -2471,7 +2471,7 @@ function _init_tasks_billable_select(tasks, project_id) {
             billable_tasks_area.append('<option value="' + obj.id + '"' + option_data + '>' + obj.name + '</option>');
         });
 
-        var tasks_help_wrapper = $('.input-group-addon-bill-tasks-help');
+        var tasks_help_wrapper = $('.input-group-append-bill-tasks-help');
         tasks_help_wrapper.find('.popover-invoker').popover('destroy');
         tasks_help_wrapper.empty();
 
@@ -3854,7 +3854,7 @@ function _gen_lead_add_inline_on_select_field(type) {
     if ($('body').hasClass('leads-email-integration') || $('body').hasClass('web-to-lead-form')) {
         type = 'lead_' + type;
     }
-    html = "<div id=\"new_lead_" + type + "_inline\" class=\"form-group\"><label for=\"new_" + type + "_name\">" + $('label[for=\"' + type + '\"]').html().trim() + "</label><div class=\"input-group\"><input type=\"text\" id=\"new_" + type + "_name\" name=\"new_" + type + "_name\" class=\"form-control\"><div class=\"input-group-addon\"><a href=\"#\" onclick=\"lead_add_inline_select_submit('" + type + "'); return false;\" class=\"lead-add-inline-submit-" + type + "\"><i class=\"fa fa-check\"></i></a></div></div></div>";
+    html = "<div id=\"new_lead_" + type + "_inline\" class=\"form-group\"><label for=\"new_" + type + "_name\">" + $('label[for=\"' + type + '\"]').html().trim() + "</label><div class=\"input-group\"><input type=\"text\" id=\"new_" + type + "_name\" name=\"new_" + type + "_name\" class=\"form-control\"><div class=\"input-group-append\"><a href=\"#\" onclick=\"lead_add_inline_select_submit('" + type + "'); return false;\" class=\"lead-add-inline-submit-" + type + "\"><i class=\"fa fa-check\"></i></a></div></div></div>";
     $('.form-group-select-input-' + type).after(html);
     $('body').find('#new_' + type + '_name').focus();
     $('.lead-save-btn,#form_info button[type="submit"],#leads-email-integration button[type="submit"],.btn-import-submit').prop('disabled', true);

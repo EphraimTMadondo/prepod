@@ -29,7 +29,7 @@
                 <div class="col-md-6">
                   <div class="input-group">
                     <input type="number" class="form-control" name="reminder_before" value="<?php echo $event->reminder_before; ?>" id="reminder_before">
-                    <span class="input-group-addon"><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('reminder_notification_placeholder'); ?>"></i></span>
+                    <span class="input-group-append"><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('reminder_notification_placeholder'); ?>"></i></span>
                   </div>
                 </div>
                 <div class="col-md-6">

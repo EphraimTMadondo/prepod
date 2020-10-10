@@ -73,7 +73,7 @@ label,
     margin-right: 10px;
 }
 
-[dir="rtl"] .input-group-addon:last-child {
+[dir="rtl"] .input-group-append:last-child {
     border-left: 1px solid #ccc;
 }
 
@@ -251,7 +251,7 @@ fieldset[disabled] .form-control {
     cursor: not-allowed;
 }
 
-.input-group-addon {
+.input-group-append {
     border: 1px solid #bfcbd9;
     background-color: #fbfdff;
     color: #97a8be;
@@ -1453,7 +1453,7 @@ input[type="radio"] .styled:checked+label::after {
     direction: rtl;
 }
 
-[dir="rtl"] div.dataTables_wrapper div.dataTables_filter .input-group-addon {
+[dir="rtl"] div.dataTables_wrapper div.dataTables_filter .input-group-append {
     border-right: 1px solid #bfcbd9;
 }
 

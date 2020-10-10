@@ -103,7 +103,7 @@
                               <label for="report-from" class="control-label"><?php echo _l('report_sales_from_date'); ?></label>
                               <div class="input-group date">
                                  <input type="text" class="form-control pickadate datepicker" id="report-from" name="report-from">
-                                 <div class="input-group-addon">
+                                 <div class="input-group-append">
                                     <i class="fa fa-calendar calendar-icon"></i>
                                  </div>
                               </div>
@@ -112,7 +112,7 @@
                               <label for="report-to" class="control-label"><?php echo _l('report_sales_to_date'); ?></label>
                               <div class="input-group date">
                                  <input type="text" class="form-control pickadate datepicker" disabled="disabled" id="report-to" name="report-to">
-                                 <div class="input-group-addon">
+                                 <div class="input-group-append">
                                     <i class="fa fa-calendar calendar-icon"></i>
                                  </div>
                               </div>

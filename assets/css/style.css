@@ -1866,13 +1866,13 @@ textarea.form-control {
     padding-top: 10px;
 }
 
-.input-group-addon {
+.input-group-append {
     border: 1px solid #bfcbd9;
     background-color: #fbfdff;
     color: #97a8be;
 }
 
-.input-group-addon .btn {
+.input-group-append .btn {
     padding: 1px 5px !important;
 }
 
@@ -1931,7 +1931,7 @@ input[type="color"]:focus {
     outline: 0 none;
 }
 
-body.rtl .input-group-addon:last-child {
+body.rtl .input-group-append:last-child {
     border-left: 1px solid #ccc;
 }
 
@@ -2232,16 +2232,16 @@ input[type="radio"] .styled:checked+label::after {
     color: #fff;
 }
 
-.input-group-addon .checkbox,
-.input-group-addon .radio {
+.input-group-append .checkbox,
+.input-group-append .radio {
     margin: 0;
 }
 
-.input-group-addon .checkbox label {
+.input-group-append .checkbox label {
     padding-top: 2px;
 }
 
-.input-group-addon .checkbox label::after {
+.input-group-append .checkbox label::after {
     padding-top: 5px;
     padding-left: 2px;
 }
@@ -5882,7 +5882,7 @@ body.rtl div.dataTables_wrapper div.dataTables_filter {
     text-align: left;
 }
 
-body.rtl div.dataTables_wrapper div.dataTables_filter .input-group .input-group-addon {
+body.rtl div.dataTables_wrapper div.dataTables_filter .input-group .input-group-append {
     border-right: 1px solid #cccccc;
 }
 
@@ -8850,7 +8850,7 @@ body.rtl .screen-options-btn {
     border-bottom: 1px dashed #bbbbbb;
 }
 
-.input-group-select .input-group-addon {
+.input-group-select .input-group-append {
     padding-top: 8px;
     opacity: 0;
 }
@@ -8872,7 +8872,7 @@ body.rtl .input-group .form-control:first-child {
     border-bottom-right-radius: 4px;
 }
 
-body.rtl .input-group .input-group-addon {
+body.rtl .input-group .input-group-append {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }

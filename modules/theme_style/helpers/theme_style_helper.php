@@ -442,6 +442,6 @@ function render_theme_styling_picker($id, $value, $target, $css, $additional = '
 {
     echo '<div class="input-group mbot15 colorpicker-component" data-target="' . $target . '" data-css="' . $css . '" data-additional="' . $additional . '">
     <input type="text" value="' . $value . '" data-id="' . $id . '" class="form-control" />
-    <span class="input-group-addon"><i></i></span>
+    <span class="input-group-append"><i></i></span>
     </div>';
 }

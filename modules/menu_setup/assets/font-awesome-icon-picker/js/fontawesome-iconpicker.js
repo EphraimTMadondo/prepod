@@ -456,7 +456,7 @@
         input: "input,.iconpicker-input",
         inputSearch: false,
         container: false,
-        component: ".input-group-addon,.iconpicker-component",
+        component: ".input-group-append,.iconpicker-component",
         templates: {
             popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' + '<div class="popover-title"></div><div class="popover-content"></div></div>',
             footer: '<div class="popover-footer"></div>',

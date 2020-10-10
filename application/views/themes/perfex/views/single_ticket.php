@@ -62,7 +62,7 @@
                                                     </option>
                                                     <?php } ?>
                                                 </select>
-                                                <span class="input-group-addon"><i class="bx bx-trash pointer toggle-change-ticket-status"></i></span>
+                                                <span class="input-group-append"><i class="bx bx-trash pointer toggle-change-ticket-status"></i></span>
                                             </div>
                                         </div>
                                         <?php } ?>

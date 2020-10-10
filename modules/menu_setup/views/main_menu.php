@@ -47,7 +47,7 @@
                                    $icon = app_get_menu_setup_icon($menu_options, $item['slug'], 'sidebar');
                               ?>
                               <input type="text" value="<?php if($icon){echo $icon;} ?>" class="form-control icon-picker" id="icon-<?php echo $item['slug']; ?>">
-                              <span class="input-group-addon">
+                              <span class="input-group-append">
                               <i class="<?php if($icon){echo $icon;} ?>"></i>
                               </span>
                            </div>
@@ -79,7 +79,7 @@
                                            $icon = app_get_menu_setup_icon($menu_options, $submenu['slug'], 'sidebar');
                                     ?>
                                     <input type="text" value="<?php if($icon){echo $icon;} ?>" class="form-control icon-picker" id="icon-<?php echo $submenu['slug']; ?>">
-                                    <span class="input-group-addon">
+                                    <span class="input-group-append">
                                     <i class="<?php if($icon){echo $icon;} ?>"></i>
                                     </span>
                                  </div>

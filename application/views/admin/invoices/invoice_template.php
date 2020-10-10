@@ -178,7 +178,7 @@
             <div class="form-group">
                <label for="number"><?php echo _l('invoice_add_edit_number'); ?></label>
                <div class="input-group">
-                  <span class="input-group-addon">
+                  <span class="input-group-append">
                   <?php if(isset($invoice)){ ?>
                     <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_invoice_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $invoice->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('invoices/update_number_settings/'.$invoice->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>">
                     <i class="fa fa-cog"></i>
@@ -189,11 +189,11 @@
                   </span>
                   <input type="text" name="number" class="form-control" value="<?php echo $_invoice_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
                   <?php if($format == 3) { ?>
-                  <span class="input-group-addon">
+                  <span class="input-group-append">
                      <span id="prefix_year" class="format-n-yy"><?php echo $yy; ?></span>
                   </span>
                   <?php } else if($format == 4) { ?>
-                   <span class="input-group-addon">
+                   <span class="input-group-append">
                      <span id="prefix_month" class="format-mm-yyyy"><?php echo $mm; ?></span>
                      /
                      <span id="prefix_year" class="format-mm-yyyy"><?php echo $yyyy; ?></span>
@@ -403,7 +403,7 @@
                           </label>
                           <div class="input-group">
                             <input type="number" class="form-control"<?php if($value == 0){echo ' disabled'; } ?> name="cycles" id="cycles" value="<?php echo $value; ?>" <?php if(isset($invoice) && $invoice->total_cycles > 0){echo 'min="'.($invoice->total_cycles).'"';} ?>>
-                            <div class="input-group-addon">
+                            <div class="input-group-append">
                               <div class="checkbox">
                                 <input type="checkbox"<?php if($value == 0){echo ' checked';} ?> id="unlimited_cycles">
                                 <label for="unlimited_cycles"><?php echo _l('cycles_infinity'); ?></label>
@@ -441,7 +441,7 @@
                      data-subtext="<?php echo $task_billable['rel_type'] == 'project' ? '' : $task_rel_value['name']; ?>" <?php } ?>><?php echo $task_billable['name']; ?></option>
                   <?php } ?>
                </select>
-                <div class="input-group-addon input-group-addon-bill-tasks-help">
+                <div class="input-group-append input-group-append-bill-tasks-help">
                   <?php
                     if(isset($invoice) && !empty($invoice->project_id)) {
                        $help_text = _l('showing_billable_tasks_from_project') . ' ' . get_project_name_by_id($invoice->project_id);
@@ -639,7 +639,7 @@
 
                                 <input type="number" data-toggle="tooltip" data-title="<?php echo _l('numbers_not_formatted_while_editing'); ?>" value="<?php echo (isset($invoice) ? $invoice->discount_total : 0); ?>" class="form-control pull-left input-discount-fixed<?php if(!isset($invoice) || (isset($invoice) && !is_sale_discount($invoice,'fixed'))){echo ' hide';} ?>" min="0" name="discount_total">
 
-                                <div class="input-group-addon">
+                                <div class="input-group-append">
                                   <div class="dropdown">
                                     <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                       <span class="discount-total-type-selected">
