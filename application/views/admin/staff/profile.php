@@ -152,7 +152,7 @@
 </div>
 </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('staff'); ?>
 <script>
  $(function(){
    appValidateForm($('#staff_profile_table'),{firstname:'required',lastname:'required',email:'required'});

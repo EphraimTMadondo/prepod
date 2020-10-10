@@ -484,7 +484,7 @@
    </div>
    <div class="btn-bottom-pusher"></div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('staff'); ?>
 <script>
    $(function() {
 

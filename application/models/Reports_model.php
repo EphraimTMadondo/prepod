@@ -547,8 +547,8 @@ class Reports_model extends App_Model
         $year = $this->input->post('year');
         $this->db->select('amount,' . db_prefix() . 'invoicepaymentrecords.date');
         $this->db->from(db_prefix() . 'invoicepaymentrecords');
-        $companyusername = $_SESSION['current_company'];
-        $this->db->where('company_username', $companyusername);
+        // $companyusername = $_SESSION['current_company'];
+        // $this->db->where('company_username', $companyusername);
         
         
         $this->db->where('YEAR(' . db_prefix() . 'invoicepaymentrecords.date)', $year);

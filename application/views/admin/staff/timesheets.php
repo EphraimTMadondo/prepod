@@ -136,7 +136,7 @@
       </div>
    </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('staff'); ?>
 <script>
    var staff_member_select = $('select[name="staff_id"]');
    $(function() {

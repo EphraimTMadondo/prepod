@@ -61,7 +61,7 @@
 		<?php echo form_close(); ?>
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php init_tail(); ?>
+<?php init_tail('staff'); ?>
 <script>
 	$(function(){
 		initDataTable('.table-staff', window.location.href);
