@@ -29,11 +29,11 @@
                         <?php if(has_permission('hrm','','create')){ { ?>
                         <div class="_buttons">
                             <a href="<?php echo admin_url('hrm/contract'); ?>" class="btn btn-primary"><?php echo _l('new_contract'); ?></a>
-                            <div class="btn-group btn-primary btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="btn-group btn-with-tooltip-group _filter_data" data-toggle="tooltip" data-title="<?php echo _l('filter_by'); ?>">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-filter" aria-hidden="true"></i>
                                 </button>
-                                <ul class="dropdown-menu dropdown-menu-left width300 height500">
+                                <ul class="dropdown-menu dropdown-menu-left">
                                     <li class="dropdown-item">
                                         <a href="#" data-cview="all" onclick="dt_custom_view('','.table-table_contract',''); return false;">
                                             <?php echo _l('contracts_view_all'); ?>
