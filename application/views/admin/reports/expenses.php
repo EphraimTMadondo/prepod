@@ -9,13 +9,13 @@
                 <div class="card mt-2">
                     <div class="card-body">
                         <div class="float-right">
-                            <a href="<?php echo admin_url('reports/expenses/detailed_report'); ?>" class="btn btn-success"><?php echo _l('expenses_detailed_report'); ?></a>
+                            <a href="#" onclick="make_expense_pdf_export(); return false;" class="btn btn-primary btn-icon <?php if($export_not_supported){echo ' disabled';} ?>"><i class="fa fa-file-pdf"></i></a>
+                            <a download="expenses-report-<?php echo $current_year; ?>.xls" class="btn btn-primary btn-icon <?php if($export_not_supported){echo ' disabled';} ?>" href="#" onclick="return ExcellentExport.excel(this, 'expenses-report-table', 'Expenses Report <?php echo $current_year; ?>');"><i class="fa fa-file-excel"></i></a>
                         </div>
+                        <a href="<?php echo admin_url('reports/expenses/detailed_report'); ?>" class="btn btn-primary"><?php echo _l('expenses_detailed_report'); ?></a>
                         <?php if($export_not_supported){ ?>
-                        <p class="text-danger">Exporting not support in IE. To export this data please try another browser</p>
+                            <p class="text-danger">Exporting not support in IE. To export this data please try another browser</p>
                         <?php } ?>
-                        <a href="#" onclick="make_expense_pdf_export(); return false;" class="btn btn-primary <?php if($export_not_supported){echo ' disabled';} ?>"><i class="fa fa-file-pdf-o"></i></a>
-                        <a download="expenses-report-<?php echo $current_year; ?>.xls" class="btn btn-primary <?php if($export_not_supported){echo ' disabled';} ?>" href="#" onclick="return ExcellentExport.excel(this, 'expenses-report-table', 'Expenses Report <?php echo $current_year; ?>');"><i class="fa fa-file-excel-o"></i></a>
                         <?php if(count($expense_years) > 0 ){ ?>
                         <select class="selectpicker" data-style="btn-primary" name="expense_year" onchange="filter_expenses();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                             <?php foreach($expense_years as $year) { ?>
