@@ -451,8 +451,8 @@ class Reports_model extends App_Model
         $colors = get_system_favourite_colors();
         $this->db->select('amount,' . db_prefix() . 'invoicepaymentrecords.date');
         $this->db->from(db_prefix() . 'invoicepaymentrecords');
-        $companyusername = $_SESSION['current_company'];
-        $this->db->where('company_username', $companyusername);
+        // $companyusername = $_SESSION['current_company'];
+        // $this->db->where('company_username', $companyusername);
       
         $this->db->where('YEAR(' . db_prefix() . 'invoicepaymentrecords.date)', $year);
         $this->db->join(db_prefix() . 'invoices', '' . db_prefix() . 'invoices.id = ' . db_prefix() . 'invoicepaymentrecords.invoiceid');
