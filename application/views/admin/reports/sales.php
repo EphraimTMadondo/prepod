@@ -61,7 +61,7 @@
                              <?php if(isset($currencies)){ ?>
                   <div id="currency" class="form-group hide">
                      <label for="currency"><i class="fa fa-question-circle" data-toggle="tooltip" title="<?php echo _l('report_sales_base_currency_select_explanation'); ?>"></i> <?php echo _l('currency'); ?></label><br />
-                     <select class="selectpicker" data-style="btn-outline-light" name="currency" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                     <select class="selectpicker" data-style="btn-primary" name="currency" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                         <?php foreach($currencies as $currency){
                            $selected = '';
                            if($currency['isdefault'] == 1){
@@ -75,7 +75,7 @@
                      <?php } ?>
                      <div id="income-years" class="hide mbot15">
                         <label for="payments_years"><?php echo _l('year'); ?></label><br />
-                        <select class="selectpicker" data-style="btn-outline-light" name="payments_years" data-width="100%" onchange="total_income_bar_report();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-primary" name="payments_years" data-width="100%" onchange="total_income_bar_report();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <?php foreach($payments_years as $year) { ?>
                            <option value="<?php echo $year['year']; ?>"<?php if($year['year'] == date('Y')){echo 'selected';} ?>>
                               <?php echo $year['year']; ?>
@@ -85,7 +85,7 @@
                      </div>
                      <div class="form-group hide" id="report-time">
                         <label for="months-report"><?php echo _l('period_datepicker'); ?></label><br />
-                        <select class="selectpicker" data-style="btn-outline-light" name="months-report" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-primary" name="months-report" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""><?php echo _l('report_sales_months_all_time'); ?></option>
                            <option value="this_month"><?php echo _l('this_month'); ?></option>
                            <option value="1"><?php echo _l('last_month'); ?></option>
