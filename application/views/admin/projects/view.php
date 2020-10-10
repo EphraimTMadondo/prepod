@@ -155,7 +155,7 @@
          viewComponents = view.split(":");
          project_mark_as_modal(viewComponents[0],viewComponents[1], $('#select-filter'));
       } else {
-         windor.location.href = view;
+         window.location.href = view;
       }
    }
    
