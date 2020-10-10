@@ -61,7 +61,7 @@
                               <?php foreach($statuses as $status){
                                  if($status['id'] == $project->status){continue;}
                                  ?>
-                                 <option value="project_mark_as_modal(<?php echo $status['id']; ?>,<?php echo $project->id; ?>, this); return false;"><?php echo _l('project_mark_as',$status['name']); ?></option>
+                                 <option value="status_id<?php echo $status['id']; ?>:<?php echo $project->id; ?>"><?php echo _l('project_mark_as',$status['name']); ?></option>
                               <?php } ?>
                               <?php } ?>
                               <?php if(has_permission('projects','','create')){ ?>
@@ -148,8 +148,10 @@
       var view = $('#select-filter').val();
       if(view = "<?php echo _l('copy_project'); ?>"){
          copy_project();
-      } else if(view = "#"){
-
+      } else if(view.startsWith("status_id")){
+         view = view.replace("status_id","");
+         viewComponents = view.split(":");
+         project_mark_as_modal(viewComponents[0],viewComponents[1], $('#select-filter'));
       } else {
          windor.location.href = view;
       }
