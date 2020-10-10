@@ -18,17 +18,17 @@
                 <i class="fa fa-filter" aria-hidden="true"></i>
               </button>
               <ul class="dropdown-menu dropdown-menu-right width300">
-                <li>
+                <li class="dropdown-item">
                   <a href="#" data-cview="all" onclick="dt_custom_view('','.tickets-table',''); return false;">
                     <?php echo _l('task_list_all'); ?>
                   </a>
                 </li>
-                <li>
+                <li class="dropdown-item">
                   <a href="" data-cview="my_tickets" onclick="dt_custom_view('my_tickets','.tickets-table','my_tickets'); return false;"><?php echo _l('my_tickets_assigned'); ?></a>
                 </li>
-                <li class="divider"></li>
+                <li class="dropdown-divider"></li>
                 <?php foreach($statuses as $status){ ?>
-                <li class="<?php if($status['ticketstatusid'] == $chosen_ticket_status || $chosen_ticket_status == '' && in_array($status['ticketstatusid'], $default_tickets_list_statuses)){echo 'active';} ?>">
+                <li class="dropdown-item <?php if($status['ticketstatusid'] == $chosen_ticket_status || $chosen_ticket_status == '' && in_array($status['ticketstatusid'], $default_tickets_list_statuses)){echo 'active';} ?>">
                   <a href="#" data-cview="ticket_status_<?php echo $status['ticketstatusid']; ?>" onclick="dt_custom_view('ticket_status_<?php echo $status['ticketstatusid']; ?>','.tickets-table','ticket_status_<?php echo $status['ticketstatusid']; ?>'); return false;">
                     <?php echo ticket_status_translate($status['ticketstatusid']); ?>
                   </a>
@@ -36,12 +36,12 @@
                 <?php } ?>
                 <?php if(count($ticket_assignees) > 0 && is_admin()){ ?>
                 <div class="clearfix"></div>
-                <li class="divider"></li>
+                <li class="dropdown-divider"></li>
                 <li class="dropdown-submenu pull-left">
                  <a href="#" tabindex="-1"><?php echo _l('filter_by_assigned'); ?></a>
                  <ul class="dropdown-menu dropdown-menu-left">
                   <?php foreach($ticket_assignees as $as){ ?>
-                  <li>
+                  <li class="dropdown-item">
                     <a href="#" data-cview="ticket_assignee_<?php echo $as['assigned']; ?>" onclick="dt_custom_view(<?php echo $as['assigned']; ?>,'.tickets-table','ticket_assignee_<?php echo $as['assigned']; ?>'); return false;"><?php echo get_staff_full_name($as['assigned']); ?></a>
                   </li>
                   <?php } ?>

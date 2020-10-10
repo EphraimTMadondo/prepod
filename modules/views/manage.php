@@ -50,26 +50,26 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                                     <i class="fa fa-filter" aria-hidden="true"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-left" style="width:300px;">
-                                    <li class="active"><a href="#" data-cview="all" onclick="dt_custom_view('','.table-call_logs',''); return false;"><?php echo _l('customers_sort_all'); ?></a>
+                                    <li class="dropdown-item active"><a href="#" data-cview="all" onclick="dt_custom_view('','.table-call_logs',''); return false;"><?php echo _l('customers_sort_all'); ?></a>
                                     </li>
-                                    <li class="divider"></li>
-                                    <li>
+                                    <li class="dropdown-divider"></li>
+                                    <li class="dropdown-item">
                                         <a href="#" data-cview="my_call_logs" onclick="dt_custom_view('my_call_logs','.table-call_logs','my_call_logs'); return false;">
                                             <?php echo _l('cl_assigned_to_me'); ?>
                                         </a>
                                     </li>
-                                    <li class="divider"></li>
+                                    <li class="dropdown-divider"></li>
                                     <?php if(count($staffs) > 0){ ?>
                                         <li class="dropdown-submenu pull-left staffs">
                                             <a href="#" tabindex="-1"><?php echo _l('cl_filter_staff'); ?></a>
                                             <ul class="dropdown-menu dropdown-menu-left">
                                                 <?php foreach($staffs as $staff){ ?>
-                                                    <li><a href="#" data-cview="staffid_<?php echo $staff['staffid']; ?>" onclick="dt_custom_view('staffid_<?php echo $staff['staffid']; ?>','.table-call_logs','staffid_<?php echo $staff['staffid']; ?>'); return false;"><?php echo $staff['firstname'].' '.$staff['lastname']; ?></a></li>
+                                                    <li class="dropdown-item"><a href="#" data-cview="staffid_<?php echo $staff['staffid']; ?>" onclick="dt_custom_view('staffid_<?php echo $staff['staffid']; ?>','.table-call_logs','staffid_<?php echo $staff['staffid']; ?>'); return false;"><?php echo $staff['firstname'].' '.$staff['lastname']; ?></a></li>
                                                 <?php } ?>
                                             </ul>
                                         </li>
                                         <div class="clearfix"></div>
-                                        <li class="divider"></li>
+                                        <li class="dropdown-divider"></li>
                                     <?php } ?>
 
                                     <?php if(count($rel_types) > 0){ ?>
@@ -77,12 +77,12 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                                             <a href="#" tabindex="-1"><?php echo _l('cl_type'); ?></a>
                                             <ul class="dropdown-menu dropdown-menu-left">
                                                 <?php foreach($rel_types as $rel_type){ ?>
-                                                    <li><a href="#" data-cview="rel_type_<?php echo $rel_type['key']; ?>" onclick="dt_custom_view('rel_type_<?php echo $rel_type['key']; ?>','.table-call_logs','rel_type_<?php echo $rel_type['key']; ?>'); return false;"><?php echo $rel_type['lang_key']; ?></a></li>
+                                                    <li class="dropdown-item"><a href="#" data-cview="rel_type_<?php echo $rel_type['key']; ?>" onclick="dt_custom_view('rel_type_<?php echo $rel_type['key']; ?>','.table-call_logs','rel_type_<?php echo $rel_type['key']; ?>'); return false;"><?php echo $rel_type['lang_key']; ?></a></li>
                                                 <?php } ?>
                                             </ul>
                                         </li>
                                         <div class="clearfix"></div>
-                                        <li class="divider"></li>
+                                        <li class="dropdown-divider"></li>
                                     <?php } ?>
 
                                     <?php if(count($leads) > 0){ ?>
@@ -90,12 +90,12 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                                             <a href="#" tabindex="-1"><?php echo _l('cl_lead'); ?></a>
                                             <ul class="dropdown-menu dropdown-menu-left">
                                                 <?php foreach($leads as $lead){ ?>
-                                                    <li><a href="#" data-cview="lead_<?php echo $lead['id']; ?>" onclick="dt_custom_view('lead_<?php echo $lead['id']; ?>','.table-call_logs','lead_<?php echo $lead['id']; ?>'); return false;"><?php echo $lead['name']; ?></a></li>
+                                                    <li class="dropdown-item"><a href="#" data-cview="lead_<?php echo $lead['id']; ?>" onclick="dt_custom_view('lead_<?php echo $lead['id']; ?>','.table-call_logs','lead_<?php echo $lead['id']; ?>'); return false;"><?php echo $lead['name']; ?></a></li>
                                                 <?php } ?>
                                             </ul>
                                         </li>
                                         <div class="clearfix"></div>
-                                        <li class="divider"></li>
+                                        <li class="dropdown-divider"></li>
                                     <?php } ?>
 
                                     <?php if(count($clcustomers) > 0){ ?>
@@ -103,12 +103,12 @@ if ($this->session->has_userdata('cl_grid_view') && $this->session->userdata('cl
                                             <a href="#" tabindex="-1"><?php echo _l('cl_customer'); ?></a>
                                             <ul class="dropdown-menu dropdown-menu-left">
                                                 <?php foreach($clcustomers as $client){ ?>
-                                                    <li><a href="#" data-cview="client_<?php echo $client['userid']; ?>" onclick="dt_custom_view('client_<?php echo $client['userid']; ?>','.table-call_logs','client_<?php echo $client['userid']; ?>'); return false;"><?php echo $client['company']; ?></a></li>
+                                                    <li class="dropdown-item"><a href="#" data-cview="client_<?php echo $client['userid']; ?>" onclick="dt_custom_view('client_<?php echo $client['userid']; ?>','.table-call_logs','client_<?php echo $client['userid']; ?>'); return false;"><?php echo $client['company']; ?></a></li>
                                                 <?php } ?>
                                             </ul>
                                         </li>
                                         <div class="clearfix"></div>
-                                        <li class="divider"></li>
+                                        <li class="dropdown-divider"></li>
                                     <?php } ?>
 
                                 </ul>

@@ -16,15 +16,15 @@
                <i class="fa fa-filter" aria-hidden="true"></i>
                </button>
                <ul class="dropdown-menu width300">
-               <li>
+               <li class="dropdown-item">
                   <a href="#" data-cview="all" onclick="dt_custom_view('','.table-invoices',''); return false;">
                   <?php echo _l('invoices_list_all'); ?>
                   </a>
                </li>
                <?php if (count($invoices_years) > 0) { ?>
-               <li class="divider"></li>
+               <li class="dropdown-divider"></li>
                <?php foreach ($invoices_years as $year) { ?>
-               <li class="active">
+               <li class="active dropdown-item">
                   <a href="#" data-cview="year_<?php echo $year['year']; ?>" onclick="dt_custom_view(<?php echo $year['year']; ?>,'.table-invoices','year_<?php echo $year['year']; ?>'); return false;"><?php echo $year['year']; ?>
                   </a>
                </li>
@@ -32,12 +32,12 @@
                <?php } ?>
                <?php if (count($invoices_sale_agents) > 0) { ?>
                <div class="clearfix"></div>
-               <li class="divider"></li>
+               <li class="dropdown-divider"></li>
                <li class="dropdown-submenu pull-left">
                   <a href="#" tabindex="-1"><?php echo _l('sale_agent_string'); ?></a>
                   <ul class="dropdown-menu dropdown-menu-left">
                      <?php foreach ($invoices_sale_agents as $agent) { ?>
-                     <li>
+                     <li class="dropdown-item">
                         <a href="#" data-cview="sale_agent_<?php echo $agent['sale_agent']; ?>" onclick="dt_custom_view(<?php echo $agent['sale_agent']; ?>,'.table-invoices','sale_agent_<?php echo $agent['sale_agent']; ?>'); return false;"><?php echo $agent['full_name']; ?>
                         </a>
                      </li>

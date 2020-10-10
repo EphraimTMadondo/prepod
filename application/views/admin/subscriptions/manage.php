@@ -35,19 +35,19 @@
                 <i class="fa fa-filter" aria-hidden="true"></i>
               </button>
               <ul class="dropdown-menu dropdown-menu-right width300">
-                <li>
+                <li class="dropdown-item">
                   <a href="#" data-cview="all" onclick="dt_custom_view('','.table-subscriptions',''); return false;">
                     <?php echo _l('all'); ?>
                   </a>
                 </li>
-                <li class="divider"></li>
-                <li class="<?php if(!$this->input->get('status') || $this->input->get('status') && $this->input->get('status') == 'not_subscribed'){echo 'active';} ?>">
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item <?php if(!$this->input->get('status') || $this->input->get('status') && $this->input->get('status') == 'not_subscribed'){echo 'active';} ?>">
                   <a href="#" data-cview="not_subscribed" onclick="dt_custom_view('not_subscribed','.table-subscriptions','not_subscribed'); return false;">
                     <?php echo _l('subscription_not_subscribed'); ?>
                   </a>
                 </li>
                 <?php foreach(get_subscriptions_statuses() as $status){ ?>
-                  <li class="<?php if($status['filter_default'] == true && !$this->input->get('status') || $this->input->get('status') == $status['id']){echo 'active';} ?>">
+                  <li class="dropdown-item <?php if($status['filter_default'] == true && !$this->input->get('status') || $this->input->get('status') == $status['id']){echo 'active';} ?>">
                     <a href="#" data-cview="<?php echo 'subscription_status_'.$status['id']; ?>" onclick="dt_custom_view('subscription_status_<?php echo $status['id']; ?>','.table-subscriptions','subscription_status_<?php echo $status['id']; ?>'); return false;">
                       <?php echo _l('subscription_'.$status['id']); ?>
                     </a>

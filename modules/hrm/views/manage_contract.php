@@ -37,34 +37,34 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-left width300 height500">
                             
-                            <li>
+                            <li class="dropdown-item">
                                 <a href="#" data-cview="all" onclick="dt_custom_view('','.table-table_contract',''); return false;">
                                     <?php echo _l('contracts_view_all'); ?>
                                 </a>
                             </li>
-                            <li class="filter-group" data-filter-group="status">
+                            <li class="dropdown-item filter-group" data-filter-group="status">
                                 <a href="#" data-cview="draft"  onclick="dt_custom_view('draft','.table-table_contract','draft'); return false;">
                                     <?php echo _l('draft'); ?>
                                 </a>
                             </li>
-                            <li class="filter-group" data-filter-group="status">
+                            <li class="dropdown-item filter-group" data-filter-group="status">
                                 <a href="#" data-cview="valid"  onclick="dt_custom_view('valid','.table-table_contract','valid'); return false;">
                                     <?php echo _l('valid'); ?>
                                 </a>
                             </li>
-                            <li class="filter-group" data-filter-group="status">
+                            <li class="dropdown-item filter-group" data-filter-group="status">
                                 <a href="#" data-cview="invalid"  onclick="dt_custom_view('invalid','.table-table_contract','invalid'); return false;">
                                     <?php echo _l('invalid'); ?>
                                 </a>
                             </li>
                         
                             <div class="clearfix"></div>
-                            <li class="divider"></li>
+                            <li class="dropdown-divider"></li>
                             <li class="dropdown-submenu pull-left">
                                 <a href="#" tabindex="-1"><?php echo _l('staff'); ?></a>
                                 <ul class="dropdown-menu dropdown-menu-left">
                                     <?php  foreach($staff as $s){ ?>
-                                    <li><a href="#" data-cview="contracts_by_staff_<?php echo htmlspecialchars($s['staffid']); ?>" onclick="dt_custom_view('contracts_by_staff_<?php echo htmlspecialchars($s['staffid']); ?>','.table-table_contract','contracts_by_staff_<?php echo htmlspecialchars($s['staffid']); ?>'); return false;">
+                                    <li class="dropdown-item"><a href="#" data-cview="contracts_by_staff_<?php echo htmlspecialchars($s['staffid']); ?>" onclick="dt_custom_view('contracts_by_staff_<?php echo htmlspecialchars($s['staffid']); ?>','.table-table_contract','contracts_by_staff_<?php echo htmlspecialchars($s['staffid']); ?>'); return false;">
                                     <?php echo htmlspecialchars($s['firstname']); ?>
                                 </a></li>
                                     <?php } ?>
@@ -72,9 +72,9 @@
                             </li>
                             <div class="clearfix"></div>
                             <?php if(count($contract_type) > 0){ ?>
-                            <li class="divider"></li>
+                            <li class="dropdown-divider"></li>
                             <?php foreach($contract_type as $type){ ?>
-                            <li>
+                            <li class="dropdown-item">
                                 <a href="#" data-cview="contracts_by_type_<?php echo htmlspecialchars($type['id_contracttype']); ?>" onclick="dt_custom_view('contracts_by_type_<?php echo htmlspecialchars($type['id_contracttype']); ?>','.table-table_contract','contracts_by_type_<?php echo htmlspecialchars($type['id_contracttype']); ?>'); return false;">
                                     <?php echo htmlspecialchars($type['name_contracttype']); ?>
                                 </a>
@@ -83,9 +83,9 @@
                             <?php } ?>
                             <div class="clearfix"></div>
                             <?php if(count($duration) > 0){ ?>
-                                <li class="divider"></li>
+                                <li class="dropdown-divider"></li>
                             <?php foreach($duration as $type){ ?>
-                                <li class="filter-group" data-filter-group="duration">
+                                <li class="dropdown-item filter-group" data-filter-group="duration">
                                     <a href="#" data-cview="contracts_by_duration_<?php echo htmlspecialchars($type['duration']).'_'.htmlspecialchars($type['unit']); ?>" onclick="dt_custom_view('contracts_by_duration_<?php echo htmlspecialchars($type['duration']).'_'.htmlspecialchars($type['unit']); ?>','.table-table_contract','contracts_by_duration_<?php echo htmlspecialchars($type['duration']).'_'.htmlspecialchars($type['unit']); ?>'); return false;">
                                     <?php echo htmlspecialchars($type['duration']).' '.htmlspecialchars($type['unit']); ?>
                                 </a>
