@@ -29,13 +29,13 @@
                      </div>
                      <div class="col-md-5 text-right">
                         <?php if(has_permission('tasks','','create')){ ?>
-                        <a href="#" onclick="new_task_from_relation(undefined,'project',<?php echo $project->id; ?>); return false;" class="btn btn-secondary"><?php echo _l('new_task'); ?></a>
+                        <a href="#" onclick="new_task_from_relation(undefined,'project',<?php echo $project->id; ?>); return false;" class="btn btn-primary"><?php echo _l('new_task'); ?></a>
                         <?php } ?>
                         <?php
                            $invoice_func = 'pre_invoice_project';
                            ?>
                         <?php if(has_permission('invoices','','create')){ ?>
-                        <a href="#" onclick="<?php echo $invoice_func; ?>(<?php echo $project->id; ?>); return false;" class="invoice-project btn btn-secondary<?php if($project->client_data->active == 0){echo ' disabled';} ?>"><?php echo _l('invoice_project'); ?></a>
+                        <a href="#" onclick="<?php echo $invoice_func; ?>(<?php echo $project->id; ?>); return false;" class="invoice-project btn btn-primary<?php if($project->client_data->active == 0){echo ' disabled';} ?>"><?php echo _l('invoice_project'); ?></a>
                         <?php } ?>
                         <?php
                            $project_pin_tooltip = _l('pin_project');
@@ -47,7 +47,34 @@
                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            <?php echo _l('more'); ?> <span class="caret"></span>
                            </button>
-                           
+                           <select class="selectpicker" id="select-filter" onChange="custom_view()" data-style="btn-primary">
+                              <option value="<?php echo admin_url('projects/pin_action/'.$project->id); ?>" ><?php echo $project_pin_tooltip; ?></option>
+                              <?php if(has_permission('projects','','edit')){ ?>
+                                 <option value="<?php echo admin_url('projects/project/'.$project->id); ?>" ><?php echo _l('edit_project'); ?></option>
+                              <?php } ?>
+                              <?php if(has_permission('projects','','create')){ ?>
+                                 <option value="<?php echo _l('copy_project'); ?>">
+                                 <?php echo _l('copy_project'); ?>
+                                 </option>
+                              <?php } ?>
+                              <?php if(has_permission('projects','','create') || has_permission('projects','','edit')){ ?>
+                                 <?php foreach($statuses as $status){
+                                    if($status['id'] == $project->status){continue;}
+                                    ?>
+                                    <option value="status_id<?php echo $status['id']; ?>:<?php echo $project->id; ?>"><?php echo _l('project_mark_as',$status['name']); ?></option>
+                                 <?php } ?>
+                              <?php } ?>
+                              <?php if(has_permission('projects','','create')){ ?>
+                                 <option value="<?php echo admin_url('projects/export_project_data/'.$project->id); ?>" target="_blank"><?php echo _l('export_project_data'); ?></option>
+                              <?php } ?>
+                              <?php if(is_admin()){ ?>
+                                 <option value="<?php echo admin_url('projects/view_project_as_client/'.$project->id .'/'.$project->clientid); ?>" target="_blank"><?php echo _l('project_view_as_client'); ?></option>
+                              <?php } ?>
+                              <?php if(has_permission('projects','','delete')){ ?>
+                                 <option value="<?php echo admin_url('projects/delete/'.$project->id); ?>" class="_delete">
+                                    <span class="text-danger"><?php echo _l('delete_project'); ?></span>
+                                 </option>
+                           </select>
                         </div>
                      </div>
                   </div>
