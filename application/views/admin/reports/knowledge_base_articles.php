@@ -7,11 +7,11 @@
     <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mt-2">
-               <h5 class="card-title">
-                  <?php echo _l('reports_choose_kb_group'); ?>
-               </h5>
+            <div class="card">
                <div class="card-body">
+                  <h5 class="card-title">
+                     <?php echo _l('reports_choose_kb_group'); ?>
+                  </h5>
                   <div class="row">
                      <div class="col-md-3">
                         <select class="selectpicker" data-style="btn-outline-light" name="report-group-change" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
@@ -29,10 +29,10 @@
                <?php foreach($groups as $group){ ?>
                <div class="col-md-12 group-report hide" id="group_<?php echo $group['groupid']; ?>">
                   <div class="card">
-                     <div class="card-title">
-                        <?php echo $group['name']; ?>
-                     </div>
                      <div class="card-body">
+                        <h5 class="card-title">
+                           <?php echo $group['name']; ?>
+                        </h5>
                         <?php foreach($group['articles'] as $article) {
                            $total_answers = total_rows(db_prefix().'knowedge_base_article_feedback',array('articleid'=>$article['articleid']));
                            $total_yes_answers = total_rows(db_prefix().'knowedge_base_article_feedback',array('articleid'=>$article['articleid'],'answer'=>1));
