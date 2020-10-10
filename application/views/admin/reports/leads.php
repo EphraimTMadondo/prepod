@@ -58,9 +58,7 @@
                                 ?>
                             </div>
                         </div>
-                        <div style="max-height:350px">
-                            <canvas class="leads-monthly chart" id="leads-monthly" height="200"></canvas>
-                        </div>
+                        <canvas class="leads-monthly chart" id="leads-monthly" height="200"></canvas>
                     </div>
                 </div>
             </div>
