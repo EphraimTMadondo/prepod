@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="card mt-2">
                     <div class="card-body">
-                        <a href="<?php echo admin_url('reports/expenses'); ?>" class="btn btn-default pull-left"><?php echo _l('go_back'); ?></a>
+                        <a href="<?php echo admin_url('reports/expenses'); ?>" class="btn btn-primary"><?php echo _l('go_back'); ?></a>
                         <?php $this->load->view('admin/expenses/filter_by_template'); ?>
                     </div>
                 </div>
@@ -46,18 +46,18 @@
                              <div class="col-md-6">
                               <label for="report-from" class="control-label"><?php echo _l('report_sales_from_date'); ?></label>
                               <div class="input-group date">
-                               <input type="text" class="form-control pickadate datepicker" id="report-from" name="report-from">
+                               <input type="text" class="form-control pickadate" id="report-from" name="report-from">
                                <div class="input-group-addon">
-                                <i class="fa fa-calendar calendar-icon"></i>
+                                <i class="input-group-text fa fa-calendar calendar-icon"></i>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                       <label for="report-to" class="control-label"><?php echo _l('report_sales_to_date'); ?></label>
                       <div class="input-group date">
-                       <input type="text" class="form-control pickadate datepicker" disabled="disabled" id="report-to" name="report-to">
+                       <input type="text" class="form-control pickadate" disabled="disabled" id="report-to" name="report-to">
                        <div class="input-group-addon">
-                        <i class="fa fa-calendar calendar-icon"></i>
+                        <i class=" input-group-text fa fa-calendar calendar-icon"></i>
                     </div>
                 </div>
             </div>
