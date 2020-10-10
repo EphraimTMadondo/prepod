@@ -44,10 +44,8 @@
                            }
                            ?>
                         <div class="btn-group">
-                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <?php echo _l('more'); ?> <span class="caret"></span>
-                           </button>
                            <select class="selectpicker" id="select-filter" onChange="custom_view()" data-style="btn-primary">
+                              <option value="#" ><?php echo _l('more'); ?></option>
                               <option value="<?php echo admin_url('projects/pin_action/'.$project->id); ?>" ><?php echo $project_pin_tooltip; ?></option>
                               <?php if(has_permission('projects','','edit')){ ?>
                                  <option value="<?php echo admin_url('projects/project/'.$project->id); ?>" ><?php echo _l('edit_project'); ?></option>
@@ -147,7 +145,10 @@
    
    function custom_view(){
       var view = $('#select-filter').val();
-      if(view = "<?php echo _l('copy_project'); ?>"){
+      if(view === "#")
+         return;
+
+      if(view === "<?php echo _l('copy_project'); ?>"){
          copy_project();
       } else if(view.startsWith("status_id")){
          view = view.replace("status_id","");
