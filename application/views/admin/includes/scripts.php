@@ -80,12 +80,12 @@
       case "contracts":
       case "projects":
       case "reports":
-      case "'staff'":
+      case "staff":
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
       break;
       case "hrm":
       case "purchase":
-      case "'staff'":
+      case "staff":
          echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
       break;
       default:

@@ -53,43 +53,43 @@
                            <div class="col-md-12 period hide">
                               <?php echo render_date_input('period-to'); ?>
                            </div>
-                        </div>
-                     </div>
-                     <?php if(isset($view_all)){ ?>
-                     <div class="col-md-5ths">
-                        <div class="select-placeholder">
-                           <select name="staff_id" id="staff_id" class="selectpicker" data-style="btn-outline-light" data-width="100%">
-                              <option value=""><?php echo _l('all_staff_members'); ?></option>
-                              <option value="<?php echo get_staff_user_id(); ?>"><?php echo get_staff_full_name(get_staff_user_id()); ?></option>
-                              <?php foreach($staff_members_with_timesheets as $staff){ ?>
-                              <option value="<?php echo $staff['staff_id']; ?>"><?php echo get_staff_full_name($staff['staff_id']); ?></option>
-                              <?php } ?>
-                           </select>
-                        </div>
-                     </div>
-                     <?php } ?>
-                     <div class="col-md-5ths">
-                        <div class="select-placeholder">
-                           <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search" data-empty-title="<?php echo _l('client'); ?>" data-none-selected-text="<?php echo _l('client'); ?>">
-                           </select>
-                        </div>
-                     </div>
-                     <div class="col-md-5ths">
-                        <div class="select-placeholder projects-wrapper">
-                           <div id="project_ajax_search_wrapper">
-                              <select data-empty-title="<?php echo _l('project'); ?>" multiple="true" name="project_id[]" id="project_id" class="projects ajax-search" data-live-search="true" data-width="100%">
-                              </select>
+                           <?php if(isset($view_all)){ ?>
+                           <div class="col-md-5ths ml-1">
+                              <div class="select-placeholder">
+                                 <select name="staff_id" id="staff_id" class="selectpicker" data-style="btn-outline-light" data-width="100%">
+                                    <option value=""><?php echo _l('all_staff_members'); ?></option>
+                                    <option value="<?php echo get_staff_user_id(); ?>"><?php echo get_staff_full_name(get_staff_user_id()); ?></option>
+                                    <?php foreach($staff_members_with_timesheets as $staff){ ?>
+                                    <option value="<?php echo $staff['staff_id']; ?>"><?php echo get_staff_full_name($staff['staff_id']); ?></option>
+                                    <?php } ?>
+                                 </select>
+                              </div>
                            </div>
-                        </div>
-                     </div>
-                     <div class="col-md-5ths">
-                        <a href="#" id="apply_filters_timesheets" class="btn btn-primary"><?php echo _l('apply'); ?></a>
-                     </div>
-                     <div class="mtop10 hide relative float-right" id="group_by_tasks_wrapper">
-                        <span><?php echo _l('group_by_task'); ?></span>
-                        <div class="onoffswitch">
-                           <input type="checkbox" name="group_by_task" class="onoffswitch-checkbox" id="group_by_task">
-                           <label class="onoffswitch-label" for="group_by_task"></label>
+                           <?php } ?>
+                           <div class="col-md-5ths ml-1">
+                              <div class="select-placeholder">
+                                 <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search" data-empty-title="<?php echo _l('client'); ?>" data-none-selected-text="<?php echo _l('client'); ?>">
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="col-md-5ths ml-1">
+                              <div class="select-placeholder projects-wrapper">
+                                 <div id="project_ajax_search_wrapper">
+                                    <select data-empty-title="<?php echo _l('project'); ?>" multiple="true" name="project_id[]" id="project_id" class="projects ajax-search" data-live-search="true" data-width="100%">
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-5ths ml-1">
+                              <a href="#" id="apply_filters_timesheets" class="btn btn-primary"><?php echo _l('apply'); ?></a>
+                           </div>
+                           <div id="group_by_tasks_wrapper">
+                              <span><?php echo _l('group_by_task'); ?></span>
+                              <div class="onoffswitch">
+                                 <input type="checkbox" name="group_by_task" class="onoffswitch-checkbox" id="group_by_task">
+                                 <label class="onoffswitch-label" for="group_by_task"></label>
+                              </div>
+                           </div>
                         </div>
                      </div>
                      <div class="col-md-12">
