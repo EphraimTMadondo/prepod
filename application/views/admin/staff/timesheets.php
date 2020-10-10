@@ -75,7 +75,7 @@
                            <div class="col-md-5ths ml-1">
                               <div class="select-placeholder projects-wrapper">
                                  <div id="project_ajax_search_wrapper">
-                                    <select data-empty-title="<?php echo _l('project'); ?>" multiple="true" name="project_id[]" id="project_id" class="projects ajax-search" data-live-search="true" data-width="100%">
+                                    <select data-empty-title="<?php echo _l('project'); ?>" multiple="true" name="project_id[]" id="project_id" class="projects ajax-search"  data-style="btn-primary" data-live-search="true" data-width="100%">
                                     </select>
                                  </div>
                               </div>
