@@ -87,6 +87,7 @@
       case "purchase":
       case "staff":
          echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/plugins/jquery-circle-progress/circle-progress.min.js'></script>\n";
       break;
       default:
       break;
