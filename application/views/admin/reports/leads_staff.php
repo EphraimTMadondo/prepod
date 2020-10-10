@@ -6,10 +6,9 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-             <p class="text-info inline-block" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><i class="fa fa-question-circle"></i></p>
              <div class="card">
                 <div class="card-body">
-                    <a href="<?php echo admin_url('reports/leads'); ?>" class="btn btn-success"><?php echo _l('switch_to_staff_report'); ?></a>
+                    <a href="<?php echo admin_url('reports/leads'); ?>"  data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>" class="btn btn-primary"><?php echo _l('switch_to_staff_report'); ?></a>
                 </div>
             </div>
         </div>
@@ -24,7 +23,7 @@
                         <div class="col-md-4">
                             <?php echo render_date_input('staff_report_to_date','to_date',$this->input->post('staff_report_to_date')); ?>
                         </div>
-                        <div class="col-md-4 text-left">
+                        <div class="col-md-4">
                             <button type="submit" class="btn btn-secondary label-margin"><?php echo _l('generate'); ?></button>
                         </div>
                     </div>

@@ -48,19 +48,17 @@
                                 <?php
                                 echo '<select name="month" class="selectpicker" data-style="btn-outline-light" data-none-selected-text="'._l('dropdown_non_selected_tex').'">' . PHP_EOL;
                                 for ($m=1; $m<=12; $m++) {
-                                $_selected = '';
-                                if($m == date('m')){
-                                $_selected  = ' selected';
-                            }
-                            echo '  <option value="' . $m . '"'.$_selected.'>' . _l(date('F', mktime(0,0,0,$m,1))) . '</option>' . PHP_EOL;
-                        }
-                        echo '</select>' . PHP_EOL;
-                        ?>
+                                        $_selected = '';
+                                        if($m == date('m')){
+                                        $_selected  = ' selected';
+                                    }
+                                    echo '  <option value="' . $m . '"'.$_selected.'>' . _l(date('F', mktime(0,0,0,$m,1))) . '</option>' . PHP_EOL;
+                                }
+                                echo '</select>' . PHP_EOL;
+                                ?>
                             </div>
                         </div>
-                        <div class="relative" style="max-height:400px;">
-                            <canvas class="leads-monthly chart mt-2" id="leads-monthly" height="400"></canvas>
-                        </div>
+                        <canvas class="leads-monthly chart" id="leads-monthly" height="400"></canvas>
                     </div>
                 </div>
             </div>
