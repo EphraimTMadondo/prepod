@@ -103,7 +103,7 @@
                         <div class="row">
   
                            <?php  $pro = $this->hrm_model->get_staff();?>
-                           <div  class="col-md-3 leads-filter-column pull-left">
+                           <div  class="col-md-3 leads-filter-column">
                           
                                   <select name="staff[]" id="staff" data-live-search="true" class="selectpicker" data-style="btn-outline-light" multiple="true" data-actions-box="true" data-width="100%" data-none-selected-text="<?php echo _l('als_staff'); ?>">
                                     <?php foreach($pro as $s) { ?>
@@ -112,7 +112,7 @@
                                   </select>
                             </div> 
 
-                            <div  class="col-md-2 leads-filter-column float-right">
+                            <div  class="col-md-3 leads-filter-column">
                                 <div class="form-group" app-field-wrapper="validity_end_date">
                                     <div class="input-group date">
                                         <input type="text" id="validity_end_date" name="validity_end_date" class="form-control pickadate datepicker" value="" autocomplete="off" placeholder="<?php echo _l('validity_end_date') ?>">
@@ -122,7 +122,7 @@
                                     </div>
                                 </div>
                             </div> 
-                            <div  class="col-md-2 leads-filter-column float-right">
+                            <div  class="col-md-3 leads-filter-column">
                                 <div class="form-group" app-field-wrapper="validity_start_date">
                                     <div class="input-group date">
                                         <input type="text" id="validity_start_date" name="validity_start_date" class="form-control pickadate datepicker" value="" autocomplete="off" placeholder="<?php echo _l('validity_start_date') ?>">
