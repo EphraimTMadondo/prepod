@@ -11,7 +11,7 @@
     <?php echo form_hidden('ticket_id',$ticket->ticketid); ?>
     <div class="col-md-4 ticket-info">
         <div class="card">
-            <div class="panel-heading">
+            <div class="card-title">
                 <?php echo _l('clients_single_ticket_information_heading'); ?>
             </div>
             <div class="card-body">
@@ -97,7 +97,7 @@
             <div class="col-md-8">
                 <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'ticket-reply')); ?>
                 <div class="card single-ticket-reply-area">
-                    <div class="panel-heading">
+                    <div class="card-title">
                         <?php echo _l('clients_ticket_single_add_reply_heading'); ?>
                     </div>
                     <div class="card-body">
@@ -130,7 +130,7 @@
         </div>
         <?php echo form_close(); ?>
         <div class="card">
-            <div class="panel-heading">
+            <div class="card-title">
                 <?php echo _l('clients_single_ticket_string'); ?>
             </div>
             <div class="card-body <?php if($ticket->admin == NULL){echo 'client-reply';} ?>">

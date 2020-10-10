@@ -79,6 +79,7 @@
       break;
       case "contracts":
       case "projects":
+      case "reports":
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
       break;
       case "hrm":

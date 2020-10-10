@@ -39,7 +39,7 @@
     </div>
 </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('reports'); ?>
 <script>
     window.onload = function(){
         new Chart($('#leads-staff-report'),{

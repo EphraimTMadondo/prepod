@@ -21,7 +21,7 @@
 
                   <div class="col-md-7">
                     <div class="panel panel-primary">
-                      <div class="panel-heading"><?php echo _l('general_infor') ?></div>
+                      <div class="card-title"><?php echo _l('general_infor') ?></div>
                       <div class="card-body">
 
                         <div class="col-md-12">
@@ -130,7 +130,7 @@ echo render_textarea('introduce_yourself', 'introduce_yourself', $introduce_your
 
                   <div class="col-md-5">
                     <div class="panel panel-info">
-                      <div class="panel-heading"><?php echo _l('contact_info') ?></div>
+                      <div class="card-title"><?php echo _l('contact_info') ?></div>
                       <div class="card-body">
 
                         <div class="col-md-6">
@@ -182,7 +182,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
 
                   <div class="col-md-12">
                     <div class="panel panel-success">
-                      <div class="panel-heading"><?php echo _l('work_experience') ?></div>
+                      <div class="card-title"><?php echo _l('work_experience') ?></div>
                       <div class="card-body">
                         <div class="work_experience">
                         <?php if (isset($candidate) && count($candidate->work_experience) > 0) {
@@ -291,7 +291,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
 
                   <div class="col-md-12">
                     <div class="panel panel-default">
-                      <div class="panel-heading"><?php echo _l('literacy') ?></div>
+                      <div class="card-title"><?php echo _l('literacy') ?></div>
                       <div class="card-body">
                         <div class="list_literacy">
                           <?php if (isset($candidate) && count($candidate->literacy) > 0) {
@@ -382,7 +382,7 @@ echo render_textarea('current_accommodation', 'current_accommodation', $current_
 
                   <div class="col-md-12">
                     <div class="panel panel-warning">
-                      <div class="panel-heading"><?php echo _l('family_infor') ?></div>
+                      <div class="card-title"><?php echo _l('family_infor') ?></div>
                       <div class="card-body">
                         <div class="list_family_infor">
                           <?php if (isset($candidate) && count($candidate->family_infor) > 0) {

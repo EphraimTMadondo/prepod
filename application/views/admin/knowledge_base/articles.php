@@ -62,7 +62,7 @@
                                     <?php
                                        $group_color = 'style="background:'.$group["color"].';border:1px solid '.$group['color'].'"';
                                        ?>
-                                    <div class="panel-heading-bg primary-bg" <?php echo $group_color; ?> data-group-id="<?php echo $group['groupid']; ?>">
+                                    <div class="card-title-bg primary-bg" <?php echo $group_color; ?> data-group-id="<?php echo $group['groupid']; ?>">
                                        <?php if($has_permission_edit){ ?>
                                        <i class="fa fa-reorder pointer"></i> <?php } ?>
                                        <a href="#"
@@ -222,7 +222,7 @@
      // Status color change
      $('body').on('click', '.kb-kan-ban .cpicker', function () {
        var color = $(this).data('color');
-       var group_id = $(this).parents('.panel-heading-bg').data('group-id');
+       var group_id = $(this).parents('.card-title-bg').data('group-id');
        $.post(admin_url + 'knowledge_base/change_group_color', {
          color: color,
          group_id: group_id

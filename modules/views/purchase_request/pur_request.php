@@ -24,7 +24,7 @@
 
                   <div class=" col-md-7">
                   <div class="panel panel-success">
-                    <div class="panel-heading"><?php echo _l('other_infor'); ?></div>
+                    <div class="card-title"><?php echo _l('other_infor'); ?></div>
                     <div class="card-body">
                       <div class="col-md-4">
                       <?php $pur_rq_code = ( isset($pur_request) ? $pur_request->pur_rq_code : '');
@@ -54,7 +54,7 @@
 
                   <div class="col-md-5">
                    <div class="panel panel-success">
-                    <div class="panel-heading"><?php echo _l('general_infor'); ?></div>
+                    <div class="card-title"><?php echo _l('general_infor'); ?></div>
                     <div class="card-body">
                     <table class="table border table-striped mtop0" >
                     <tbody>

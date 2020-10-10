@@ -8,9 +8,9 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card mt-2">
-               <div class="panel-heading">
+               <h5 class="card-title">
                   <?php echo _l('reports_choose_kb_group'); ?>
-               </div>
+               </h5>
                <div class="card-body">
                   <div class="row">
                      <div class="col-md-3">
@@ -29,7 +29,7 @@
                <?php foreach($groups as $group){ ?>
                <div class="col-md-12 group-report hide" id="group_<?php echo $group['groupid']; ?>">
                   <div class="card">
-                     <div class="panel-heading">
+                     <div class="card-title">
                         <?php echo $group['name']; ?>
                      </div>
                      <div class="card-body">
@@ -99,7 +99,7 @@
       </div>
    </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('reports'); ?>
 <script>
    $(function(){
        var groupid = $('select[name="report-group-change"]').val();

@@ -31,7 +31,7 @@ foreach ($milestones as $milestone) {
 <ul class="kan-ban-col milestone-column<?php if(!has_permission('projects','','edit') || $milestone['id'] == 0){echo ' milestone-not-sortable';}; ?>" data-col-status-id="<?php echo $milestone['id']; ?>" data-total-pages="<?php echo $total_pages; ?>">
  <li class="kan-ban-col-wrapper">
   <div class="border-right card">
-   <div class="panel-heading panel-heading-bg <?php if ($milestone_color != '') {
+   <div class="card-title card-title-bg <?php if ($milestone_color != '') {
     echo 'color-not-auto-adjusted color-white ';
     } ?><?php if ($milestone['id'] != 0) {
       echo 'task-phase';

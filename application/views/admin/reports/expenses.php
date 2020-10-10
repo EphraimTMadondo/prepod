@@ -14,10 +14,10 @@
                         <?php if($export_not_supported){ ?>
                         <p class="text-danger">Exporting not support in IE. To export this data please try another browser</p>
                         <?php } ?>
-                        <a href="#" onclick="make_expense_pdf_export(); return false;" class="btn btn-default pull-left mr-1<?php if($export_not_supported){echo ' disabled';} ?>"><i class="fa fa-file-pdf-o"></i></a>
-                        <a download="expenses-report-<?php echo $current_year; ?>.xls" class="btn btn-default pull-left mr-1<?php if($export_not_supported){echo ' disabled';} ?>" href="#" onclick="return ExcellentExport.excel(this, 'expenses-report-table', 'Expenses Report <?php echo $current_year; ?>');"><i class="fa fa-file-excel-o"></i></a>
+                        <a href="#" onclick="make_expense_pdf_export(); return false;" class="btn btn-primary <?php if($export_not_supported){echo ' disabled';} ?>"><i class="fa fa-file-pdf-o"></i></a>
+                        <a download="expenses-report-<?php echo $current_year; ?>.xls" class="btn btn-primary <?php if($export_not_supported){echo ' disabled';} ?>" href="#" onclick="return ExcellentExport.excel(this, 'expenses-report-table', 'Expenses Report <?php echo $current_year; ?>');"><i class="fa fa-file-excel-o"></i></a>
                         <?php if(count($expense_years) > 0 ){ ?>
-                        <select class="selectpicker" data-style="btn-outline-light" name="expense_year" onchange="filter_expenses();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select class="selectpicker" data-style="btn-primary" name="expense_year" onchange="filter_expenses();" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                             <?php foreach($expense_years as $year) { ?>
                             <option value="<?php echo $year['year']; ?>"<?php if($year['year'] == $current_year){echo 'selected';} ?>>
                                 <?php echo $year['year']; ?>
@@ -227,7 +227,7 @@
                 </div>
             </div>
         </div>
-        <?php init_tail(); ?>
+        <?php init_tail('reports'); ?>
         <script src="<?php echo base_url('assets/plugins/excellentexport/excellentexport.min.js'); ?>"></script>
         <script>
             new Chart($('#expenses_chart_not_billable'),{

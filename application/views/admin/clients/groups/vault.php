@@ -8,7 +8,7 @@
 <?php } ?>
 <?php foreach($vault_entries as $entry){ ?>
 <div class="card mt-2 panel panel-default panel-vault">
-   <div class="panel-heading" role="tab" id="<?php echo 'vaultEntryHeading-'.$entry['id']; ?>">
+   <div class="card-title" role="tab" id="<?php echo 'vaultEntryHeading-'.$entry['id']; ?>">
       <h4 class="panel-title pull-left">
          <?php echo $entry['server_address']; ?>
       </h4>

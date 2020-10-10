@@ -6,12 +6,10 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                
                 <div class="card">
-                    <p class="text-info inline-block" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><i class="fa fa-question-circle"></i></p>
-                    <div class="card mt-2">
+                    <div class="card">
                         <div class="card-body">
-                            <a href="<?php echo admin_url('reports/leads?type=staff'); ?>" class="btn btn-success"><?php echo _l('switch_to_general_report'); ?></a>
+                            <a href="<?php echo admin_url('reports/leads?type=staff'); ?>" class="btn btn-primary"  data-toggle="tooltip" data-title="<?php echo _l('leads_report_converted_notice'); ?>"><?php echo _l('switch_to_general_report'); ?></a>
                         </div>
                     </div>
                     
@@ -20,64 +18,56 @@
             <div class="col-md-6 animated fadeIn">
                 <div class="card">
                     <div class="card">
-                        <div class="panel-heading">
-                            <?php echo _l('report_this_week_leads_conversions'); ?>
+                        <div class="card-header">
+                            <h5 class="card-title"><?php echo _l('report_this_week_leads_conversions'); ?></h5>
                         </div>
                         <div class="card-body">
                             <canvas class="leads-this-week" height="150" id="leads-this-week"></canvas>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="col-md-6 animated fadeIn">
                 <div class="card">
-                <div class="card">
-                    <div class="panel-heading">
-                        <?php echo _l('report_leads_sources_conversions'); ?>
+                    <div class="card-header">
+                        <h5 class="card-title"><?php echo _l('report_leads_sources_conversions'); ?></h5>
                     </div>
                     <div class="card-body">
                        <canvas class="leads-sources-report" height="150" id="leads-sources-report"></canvas>
-                </div>
+                    </div>
                </div>
-                </div>
-
            </div>
            <div class="col-md-12 animated fadeIn">
-               <div class="card">
-                   <div class="card">
-
-                <div class="panel-heading">
-                    <?php echo _l('report_leads_monthly_conversions'); ?>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title"><?php echo _l('report_leads_monthly_conversions'); ?></h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <?php
+                                echo '<select name="month" class="selectpicker" data-style="btn-outline-light" data-none-selected-text="'._l('dropdown_non_selected_tex').'">' . PHP_EOL;
+                                for ($m=1; $m<=12; $m++) {
+                                $_selected = '';
+                                if($m == date('m')){
+                                $_selected  = ' selected';
+                            }
+                            echo '  <option value="' . $m . '"'.$_selected.'>' . _l(date('F', mktime(0,0,0,$m,1))) . '</option>' . PHP_EOL;
+                        }
+                        echo '</select>' . PHP_EOL;
+                        ?>
+                            </div>
+                        </div>
+                        <div class="relative" style="max-height:400px;">
+                            <canvas class="leads-monthly chart mt-2" id="leads-monthly" height="400"></canvas>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <?php
-                            echo '<select name="month" class="selectpicker" data-style="btn-outline-light" data-none-selected-text="'._l('dropdown_non_selected_tex').'">' . PHP_EOL;
-                            for ($m=1; $m<=12; $m++) {
-                             $_selected = '';
-                             if($m == date('m')){
-                              $_selected  = ' selected';
-                          }
-                          echo '  <option value="' . $m . '"'.$_selected.'>' . _l(date('F', mktime(0,0,0,$m,1))) . '</option>' . PHP_EOL;
-                      }
-                      echo '</select>' . PHP_EOL;
-                      ?>
-                  </div>
-              </div>
-              <div class="relative" style="max-height:400px;">
-                <canvas class="leads-monthly chart mt-2" id="leads-monthly" height="400"></canvas>
             </div>
         </div>
     </div>
-               </div>
-            
 </div>
-</div>
-</div>
-</div>
-<?php init_tail(); ?>
+<?php init_tail('reports'); ?>
 <script>
     var MonthlyLeadsChart;
     $(function(){

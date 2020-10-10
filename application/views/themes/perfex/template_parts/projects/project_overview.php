@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="row mt-1">
  <div class="col-md-6">
-  <div class="panel-heading project-info-bg no-radius"><?php echo _l('project_overview'); ?></div>
+  <div class="card-title project-info-bg no-radius"><?php echo _l('project_overview'); ?></div>
   <div class="card-body no-radius">
    <table class="table table-borded no-margin">
     <tbody>
@@ -199,7 +199,7 @@
 </div>
 <div class="clearfix"></div>
 <div class="col-md-<?php if($project->settings->view_team_members == 1){ echo 6; } else {echo 12;} ?>">
-  <div class="panel-heading project-info-bg no-radius"><?php echo _l('project_description'); ?></div>
+  <div class="card-title project-info-bg no-radius"><?php echo _l('project_description'); ?></div>
   <div class="card-body no-radius tc-content project-description">
     <?php if(empty($project->description)){
      echo '<p class="text-muted text-center mb-0">' . _l('no_description_project') . '</p>';
@@ -209,7 +209,7 @@
 </div>
 <?php if($project->settings->view_team_members == 1){ ?>
   <div class="col-md-6 team-members project-overview-column">
-    <div class="panel-heading project-info-bg no-radius"><?php echo _l('project_members'); ?></div>
+    <div class="card-title project-info-bg no-radius"><?php echo _l('project_members'); ?></div>
     <div class="card-body">
      <?php
      if(count($members) == 0){

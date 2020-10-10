@@ -37,7 +37,7 @@
 
                   <div class=" col-md-6">
                   <div class="panel panel-warning">
-                    <div class="panel-heading"><?php echo _l('general_infor'); ?></div>
+                    <div class="card-title"><?php echo _l('general_infor'); ?></div>
                     <div class="card-body">
                       <table class="table border table-striped martop0">
                     <tbody>
@@ -90,7 +90,7 @@
 
                   <div class=" col-md-6">
                   <div class="panel panel-warning">
-                    <div class="panel-heading"><?php echo _l('approval_infor'); ?></div>
+                    <div class="card-title"><?php echo _l('approval_infor'); ?></div>
                     <div class="card-body">
                       <div class="project-overview-right">
                         <?php if(count($list_approve_status) > 0){ ?>

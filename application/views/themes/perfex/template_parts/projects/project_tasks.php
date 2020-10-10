@@ -47,7 +47,7 @@
          }
          ?>
       <div class="col-md-4<?php if($milestone['id'] == 0 && count($tasks) == 0){echo ' hide'; } ?>">
-         <div class="panel-heading <?php if($milestone_color != ''){echo 'color-not-auto-adjusted color-white ';} ?><?php if($milestone['id'] != 0){echo 'task-phase';}else{echo 'info-bg';} ?>"<?php echo $milestone_color; ?>>
+         <div class="card-title <?php if($milestone_color != ''){echo 'color-not-auto-adjusted color-white ';} ?><?php if($milestone['id'] != 0){echo 'task-phase';}else{echo 'info-bg';} ?>"<?php echo $milestone_color; ?>>
             <?php if($milestone['id'] != 0 && $milestone['description_visible_to_customer'] == 1){ ?>
             <i class="fa fa-file-text pointer" aria-hidden="true" data-toggle="popover" data-title="<?php echo _l('milestone_description'); ?>" data-html="true" data-content="<?php echo htmlspecialchars($milestone['description']); ?>"></i>&nbsp;
             <?php } ?>

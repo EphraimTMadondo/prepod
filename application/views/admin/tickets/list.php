@@ -54,7 +54,7 @@
         <div class="card weekly-ticket-opening no-shadow" style="display:none;">
           <hr class="hr-panel-heading" />
           <div class="clearfix"></div>
-          <div class="panel-heading-bg">
+          <div class="card-title-bg">
             <?php echo _l('home_weekend_ticket_opening_statistics'); ?>
           </div>
           <div class="card-body">

@@ -22,7 +22,7 @@ foreach ($statuses as $status) {
           $status_color = 'style="background:'.$status["color"].';border:1px solid '.$status['color'].'"';
         }
         ?>
-        <div class="panel-heading-bg primary-bg" <?php if($status['isdefault'] == 1){ ?>data-toggle="tooltip" data-title="<?php echo _l('leads_converted_to_client') . ' - '. _l('client'); ?>"<?php } ?> <?php echo $status_color; ?> data-status-id="<?php echo $status['id']; ?>">
+        <div class="card-title-bg primary-bg" <?php if($status['isdefault'] == 1){ ?>data-toggle="tooltip" data-title="<?php echo _l('leads_converted_to_client') . ' - '. _l('client'); ?>"<?php } ?> <?php echo $status_color; ?> data-status-id="<?php echo $status['id']; ?>">
           <div class="kan-ban-step-indicator<?php if($status['isdefault'] == 1){ echo ' kan-ban-step-indicator-full'; } ?>"></div>
           <i class="fa fa-reorder pointer"></i>
           <span class="heading pointer" <?php if($is_admin){ ?> data-order="<?php echo $status['statusorder']; ?>" data-color="<?php echo $status['color']; ?>" data-name="<?php echo $status['name']; ?>" onclick="edit_status(this,<?php echo $status['id']; ?>); return false;" <?php } ?>><?php echo $status['name']; ?>

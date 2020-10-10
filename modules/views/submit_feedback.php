@@ -16,7 +16,7 @@
 
       <div class="card">
 
-         <div class="panel-heading text-uppercase open-ticket-subject">
+         <div class="card-title text-uppercase open-ticket-subject">
 
            <?php echo _l('feedback'); ?>
 

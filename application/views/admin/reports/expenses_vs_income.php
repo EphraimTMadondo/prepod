@@ -30,7 +30,7 @@
         </div>
     </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('reports'); ?>
 <script>
     $(function(){
         chartExpenseVsIncome = new Chart($('#report-expense-vs-income'),{

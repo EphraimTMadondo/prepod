@@ -200,7 +200,7 @@
                     <div class="col-md-12">
                         <div id="additional"></div>
                     <div class="panel panel-info">
-                      <div class="panel-heading"><?php echo htmlspecialchars(_l('asset_information')) ?></div>
+                      <div class="card-title"><?php echo htmlspecialchars(_l('asset_information')) ?></div>
                       <div class="card-body">
                         <div class="row">
                           <div class="col-md-6">
@@ -280,7 +280,7 @@
                       </div>
                     </div>
                     <div class="panel panel-info">
-                      <div class="panel-heading"><?php echo htmlspecialchars(_l('supplier_information')) ?></div>
+                      <div class="card-title"><?php echo htmlspecialchars(_l('supplier_information')) ?></div>
                       <div class="card-body">
                         <div class="row">
                           <div class="col-md-6">

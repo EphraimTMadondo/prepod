@@ -6,7 +6,7 @@
       <?php hooks()->do_action('before_client_open_ticket_form_start'); ?>
 
       <div class="card">
-         <div class="panel-heading text-uppercase open-ticket-subject">
+         <div class="card-title text-uppercase open-ticket-subject">
             <?php echo _l('clients_ticket_open_subject'); ?>
          </div>
          <div class="card-body">

@@ -106,7 +106,7 @@
 </div>
 </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('reports'); ?>
 
 <script>
     $(function(){

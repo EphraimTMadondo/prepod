@@ -144,7 +144,7 @@
    </div>
 </div>
 </div>
-<?php init_tail(); ?>
+<?php init_tail('reports'); ?>
 <?php $this->load->view('admin/reports/includes/sales_js'); ?>
 </body>
 </html>
