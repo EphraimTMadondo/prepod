@@ -232,9 +232,6 @@
       var $gr = $('#group_by_tasks_wrapper').clone()
       $('#group_by_tasks_wrapper').remove();
       $gr.removeClass('hide');
-      $gr.find('span').css('position','absolute');
-      $gr.find('span').css('top','2px');
-      $gr.find('span').css((isRTL == 'true' ? 'right' : 'left'),'-90px');
       $dtFilter.before($gr,'<div class="clearfix"></div>');
     });
 
