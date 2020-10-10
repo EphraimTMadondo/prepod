@@ -74,6 +74,7 @@
                                  <option value="<?php echo admin_url('projects/delete/'.$project->id); ?>" class="_delete">
                                     <span class="text-danger"><?php echo _l('delete_project'); ?></span>
                                  </option>
+                              <?php } ?>
                            </select>
                         </div>
                      </div>
