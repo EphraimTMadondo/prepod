@@ -13,7 +13,7 @@
                      <div class="col-md-7 project-heading">
                         <h3 class="hide project-name"><?php echo $project->name; ?></h3>
                         <div id="project_view_name">
-                           <select class="selectpicker " data-style="btn-outline-light" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
+                           <select class="selectpicker " data-style="btn-primary" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
                               <option value="<?php echo $project->id; ?>" selected data-content="<?php echo $project->name; ?> - <small><?php echo $project->client_data->company; ?></small>">
                                 <?php echo $project->client_data->company; ?> <?php echo $project->name; ?>
                               </option>
@@ -44,58 +44,37 @@
                            }
                            ?>
                         <div class="btn-group">
-                           <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            <?php echo _l('more'); ?> <span class="caret"></span>
                            </button>
-                           <ul class="dropdown-menu dropdown-menu-right width200 project-actions">
-                              <li>
-                                 <a href="<?php echo admin_url('projects/pin_action/'.$project->id); ?>">
-                                 <?php echo $project_pin_tooltip; ?>
-                                 </a>
-                              </li>
+                           <select class="selectpicker" id="select-filter" onChange="custom_view()" data-style="btn-primary">
+                              <option value="<?php echo admin_url('projects/pin_action/'.$project->id); ?>" data-tokens="<?php echo $project_pin_tooltip; ?>"><?php echo $project_pin_tooltip; ?></option>
                               <?php if(has_permission('projects','','edit')){ ?>
-                              <li>
-                                 <a href="<?php echo admin_url('projects/project/'.$project->id); ?>">
-                                 <?php echo _l('edit_project'); ?>
-                                 </a>
-                              </li>
+                                 <option value="<?php echo admin_url('projects/project/'.$project->id); ?>" data-tokens="<?php echo _l('edit_project'); ?>"><?php echo _l('edit_project'); ?></option>
                               <?php } ?>
                               <?php if(has_permission('projects','','create')){ ?>
-                              <li>
-                                 <a href="#" onclick="copy_project(); return false;">
+                                 <option value="<?php echo _l('copy_project'); ?>">
                                  <?php echo _l('copy_project'); ?>
-                                 </a>
-                              </li>
+                                 </option>
                               <?php } ?>
                               <?php if(has_permission('projects','','create') || has_permission('projects','','edit')){ ?>
-                              <li class="divider"></li>
                               <?php foreach($statuses as $status){
                                  if($status['id'] == $project->status){continue;}
                                  ?>
-                              <li>
-                                 <a href="#" data-name="<?php echo _l('project_status_'.$status['id']); ?>" onclick="project_mark_as_modal(<?php echo $status['id']; ?>,<?php echo $project->id; ?>, this); return false;"><?php echo _l('project_mark_as',$status['name']); ?></a>
-                              </li>
+                                 <option value="project_mark_as_modal(<?php echo $status['id']; ?>,<?php echo $project->id; ?>, this); return false;"><?php echo _l('project_mark_as',$status['name']); ?></option>
                               <?php } ?>
                               <?php } ?>
-                              <li class="divider"></li>
                               <?php if(has_permission('projects','','create')){ ?>
-                              <li>
-                                 <a href="<?php echo admin_url('projects/export_project_data/'.$project->id); ?>" target="_blank"><?php echo _l('export_project_data'); ?></a>
-                              </li>
+                                 <option value="<?php echo admin_url('projects/export_project_data/'.$project->id); ?>" target="_blank"><?php echo _l('export_project_data'); ?></option>
                               <?php } ?>
                               <?php if(is_admin()){ ?>
-                              <li>
-                                 <a href="<?php echo admin_url('projects/view_project_as_client/'.$project->id .'/'.$project->clientid); ?>" target="_blank"><?php echo _l('project_view_as_client'); ?></a>
-                              </li>
+                                 <option value="<?php echo admin_url('projects/view_project_as_client/'.$project->id .'/'.$project->clientid); ?>" target="_blank"><?php echo _l('project_view_as_client'); ?></option>
                               <?php } ?>
                               <?php if(has_permission('projects','','delete')){ ?>
-                              <li>
-                                 <a href="<?php echo admin_url('projects/delete/'.$project->id); ?>" class="_delete">
-                                 <span class="text-danger"><?php echo _l('delete_project'); ?></span>
-                                 </a>
-                              </li>
-                              <?php } ?>
-                           </ul>
+                                 <option value="<?php echo admin_url('projects/delete/'.$project->id); ?>" class="_delete">
+                                    <span class="text-danger"><?php echo _l('delete_project'); ?></span>
+                                 </option>
+                           </select>
                         </div>
                      </div>
                   </div>
@@ -164,9 +143,22 @@
    taskid = '<?php echo $this->input->get('taskid'); ?>';
 </script>
 <script>
+   
+   function custom_view(){
+      var view = $('#select-filter').val();
+      if(view = "<?php echo _l('copy_project'); ?>"){
+         copy_project();
+      } else if(view = "#"){
+
+      } else {
+         windor.location.href = view;
+      }
+   }
+   
    var gantt_data = {};
    <?php if(isset($gantt_data)){ ?>
    gantt_data = <?php echo json_encode($gantt_data); ?>;
+
    <?php } ?>
    var discussion_id = $('input[name="discussion_id"]').val();
    var discussion_user_profile_image_url = $('input[name="discussion_user_profile_image_url"]').val();

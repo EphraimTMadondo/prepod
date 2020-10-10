@@ -31,6 +31,8 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown_<?php echo $key; ?>">
                             <?php
                             foreach($tab['children'] as $d){
+                                if($d['slug'] === "project_gantt")
+                                    continue;
                                 echo '<li class="nav-item"><a class="nav-link" href="'.admin_url('projects/view/'.$project->id.'?group='.$d['slug']).'" data-group="'.$d['slug'].'">'.$d['name'].'</a></li>';
                             }
                             ?>
