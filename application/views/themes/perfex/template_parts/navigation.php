@@ -12,8 +12,9 @@
       
 
   ?>   
+      <div id = "siteurl" style ="display: none;"> <? echo site_url();?></div>
  <?php
-                    if($url == "https://www.worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login_admin" || $url == "https://www.worksuite.app/os/authentication/register"|| $url =="https://worksuite.app/os/authentication/register" || $url == "https://worksuite.app/os/authentication/login"||$url =="https://worksuite.app/os/authentication/register2" || $url == "https://worksuite.app/os/authentication/register3" ) { ?>
+                    if($url ==  site_url()."authentication/login" || $url == site_url()."authentication/login" || $url == site_url()."authentication/login_admin" || $url == site_url(). "authentication/register"|| $url == site_url()."authentication/register" || $url == site_url()."/authentication/login"||$url == site_url()."authentication/register2" || $url == site_url()."authentication/register3" ) { ?>
 <nav class="navbar navbar-default header" style ="background-color: #f9fafb !IMPORTANT;background: none; margin-bottom:0px">
     <?php
 
@@ -23,8 +24,12 @@ else
 
 ?>
 
-<nav class="navbar navbar-default header">
 
+<nav class="navbar navbar-default header">
+<?php 
+        
+        
+?>
 
 <?php
 }
@@ -50,7 +55,11 @@ else
     color: #006FB8 !important;
     
 }
-
+.navbar-default .navbar-nav>li>a {
+    color: #006FB8 !important;
+    line-height: 62px;
+    font-size: 15px;
+}
 li.customers-nav-item-register a:not(.menu-text) {
     color: #006fb8 !important;
     display: none;
@@ -108,7 +117,7 @@ body{
     
 
    <?php
-                    if($url == "https://www.worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login_admin" || $url == "https://www.worksuite.app/os/authentication/register"|| $url =="https://worksuite.app/os/authentication/register" || $url == "https://worksuite.app/os/authentication/login"||$url =="https://worksuite.app/os/authentication/register2" || $url == "https://worksuite.app/os/authentication/register3" ) { ?>
+                    if($url == site_url()."authentication/login" || $url == site_url()."authentication/login" || $url == site_url()."authentication/login_admin" || $url == site_url()."/authentication/register"|| $url == site_url()."authentication/register" || $url == site_url()."authentication/login"||$url == site_url()."authentication/register2" || $url == site_url()."authentication/register3" ) { ?>
 <div class="container">
     <?php
 
@@ -140,7 +149,7 @@ else
          <ul class="nav navbar-nav navbar-right">
             <?php hooks()->do_action('customers_navigation_start'); ?>
             <?php
-              if($url == "https://www.worksuite.app/os/authentication/register"|| $url =="https://worksuite.app/os/authentication/register"  || $url == "https://worksuite.app/os/authentication/register3")
+              if($url == site_url()."authentication/register"|| $url == site_url()."authentication/register"  || $url == site_url()."authentication/register3")
                      { ?>
                        <li class="customers-nav-item-register">
                      <a  class = "menu-text" >Already a Worksuite user?</a>
@@ -149,13 +158,13 @@ else
                     <?php   
                      } ?>
             <?php
-            if($url == "https://www.worksuite.app/os/authentication/register2"|| $url =="https://worksuite.app/os/authentication/register2"){?>
+            if($url == site_url()."authentication/register2"|| $url == site_url()."authentication/register2"){?>
                 <li class="customers-nav-item-register">
                     <a  class = "menu-text" >Already a Worksuite user?</a>
                 </li>
             <?php }?>
             <?php
-            if($url == "https://www.worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login"){?>
+            if($url == site_url()."authentication/login" || $url == site_url()."authentication/login"){?>
                 <li class="customers-nav-item-register">
                     <a  class = "menu-text" >Not yet a Worksuite user?</a>
                 </li>
@@ -163,7 +172,8 @@ else
                         <button id="register_button" onclick="myFunction()" type="button" class="btn btn-primary">Register</button>
                         <script>
                             function myFunction(){
-                                window.open("https://worksuite.app/os/authentication/register","_self");
+                                var site = document.getElementById("siteurl").innerHTML;
+                                window.open(site + "authentication/register","_self");
                             }
                         </script>
                 </li>
@@ -173,18 +183,18 @@ else
                   <?php echo _attributes_to_string(isset($item['li_attributes']) ? $item['li_attributes'] : []); ?>>
                    
                   <a href="<?php echo $item['href'];?>"
-                    <?php if($item_id == 'login' && ($url == "https://www.worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/login_admin"))
+                    <?php if($item_id == 'login' && ($url == site_url()."authentication/login" || $url == site_url()."authentication/login" || $url == site_url()."authentication/login_admin"))
                      {
                       
                        echo  "style = 'display: none'";
                      }
-                     if($item_id == 'login' && ($url == "https://www.worksuite.app/os/authentication/register"|| $url =="https://worksuite.app/os/authentication/register" || $url =="https://worksuite.app/os/authentication/register2" || $url == "https://worksuite.app/os/authentication/register3"))
+                     if($item_id == 'login' && ($url == site_url()."authentication/register"|| $url == site_url()."authentication/register" || $url == site_url()."authentication/register2" || $url == site_url()."authentication/register3"))
                      { 
                        
                        echo  "id = 'login_btn' class='login_button'";
                        
                      }
-                     if($item_id == 'knowledge-base' &&($url == "https://www.worksuite.app/os/authentication/login"||$url ==  "https://www.worksuite.app/os/authentication/register" || $url == "https://worksuite.app/os/authentication/login" || $url == "https://worksuite.app/os/authentication/register" || $url == "https://worksuite.app/os/authentication/login_admin" || $url == "https://worksuite.app/os/authentication/register2"|| $url == "https://worksuite.app/os/authentication/register3" ))
+                     if($item_id == 'knowledge-base' &&($url == site_url()."authentication/login"||$url ==  site_url()."authentication/register" || $url == site_url()."authentication/login" || $url == site_url()."authentication/register" || $url == site_url()."authentication/login_admin" || $url == site_url()."authentication/register2"|| $url == site_url()."authentication/register3" ))
                      {
                       
                        //echo  "class = 'menu-text'";
@@ -210,7 +220,7 @@ else
             <?php if(is_client_logged_in()) { ?>
                <li class="dropdown customers-nav-item-profile">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                     <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" data-toggle="tooltip" data-title="<?php echo html_escape($contact->firstname . ' ' .$contact->lastname); ?>" data-placement="bottom" class="client-profile-image-small mr-1">
+                     <img src="<?php echo contact_profile_image_url($contact->id,'thumb'); ?>" data-toggle="tooltip" data-title="<?php echo html_escape($contact->firstname . ' ' .$contact->lastname); ?>" data-placement="bottom" class="client-profile-image-small mright5">
                      <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu animated fadeIn">
@@ -279,6 +289,7 @@ else
                </li>
             <?php } ?>
             <?php hooks()->do_action('customers_navigation_after_profile'); ?>
+        
          </ul>
       </div>
       <!-- /.navbar-collapse -->

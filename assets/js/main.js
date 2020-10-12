@@ -328,6 +328,285 @@ $(function() {
         );
     }
 
+    
+    // On select with name tax apply necessary actions if tax2 exists too
+    $("body").on('change', 'select[name="tax"]', function() {
+        var sp_tax_2 = $("body").find('select[name="tax2"]');
+        var sp_tax_1 = $(this);
+        if (sp_tax_1.val() !== '') {
+            sp_tax_2.prop('disabled', false);
+        } else {
+            sp_tax_2.prop('disabled', true);
+            if (sp_tax_2.val() !== '') {
+                sp_tax_1.selectpicker('val', sp_tax_2.val());
+                sp_tax_2.val('');
+                sp_tax_1.selectpicker('refresh');
+            }
+        }
+        sp_tax_2.selectpicker('refresh');
+    });
+
+    $('body').on('click', '#invoice_create_credit_note', function(e) {
+        if ($(this).attr('data-status') == 2) {
+            return true;
+        } else {
+            var $m = $('#confirm_credit_note_create_from_invoice');
+            $m.modal('show');
+            $m.find('#confirm-invoice-credit-note').attr('href', $(this).attr('href'));
+            e.preventDefault();
+        }
+    });
+
+    $('body').on('change blur', '.apply-credits-to-invoice .apply-credits-field', function() {
+
+        var $applyCredits = $('#apply_credits');
+        var $amountInputs = $applyCredits.find('input.apply-credits-field');
+        var total = 0;
+        var creditsRemaining = $applyCredits.attr('data-credits-remaining');
+
+        $.each($amountInputs, function() {
+            if ($(this).valid() === true) {
+                var amount = $(this).val();
+                amount = parseFloat(amount);
+                if (!isNaN(amount)) {
+                    total += amount;
+                } else {
+                    $(this).val(0);
+                }
+            }
+        });
+
+        $applyCredits.find('#credits-alert').remove();
+        $applyCredits.find('.amount-to-credit').html(format_money(total));
+        if (creditsRemaining < total) {
+            $('.credits-table').before($('<div/>', {
+                id: 'credits-alert',
+                class: 'alert alert-danger',
+            }).html(app.lang.credit_amount_bigger_then_credit_note_remaining_credits));
+            $applyCredits.find('[type="submit"]').prop('disabled', true);
+        } else {
+            $applyCredits.find('.credit-note-balance-due').html(format_money(creditsRemaining - total));
+            $applyCredits.find('[type="submit"]').prop('disabled', false);
+        }
+    });
+
+    $('body').on('change blur', '.apply-credits-from-invoice .apply-credits-field', function() {
+
+        var $applyCredits = $('#apply_credits');
+        var $amountInputs = $applyCredits.find('input.apply-credits-field');
+        var total = 0;
+        var invoiceBalanceDue = $applyCredits.attr('data-balance-due');
+
+        $.each($amountInputs, function() {
+            if ($(this).valid() === true) {
+                var amount = $(this).val();
+                amount = parseFloat(amount);
+                if (!isNaN(amount)) {
+                    total += amount;
+                } else {
+                    $(this).val(0);
+                }
+            }
+        });
+
+        $applyCredits.find('#credits-alert').remove();
+        $applyCredits.find('.amount-to-credit').html(format_money(total));
+        if (total > invoiceBalanceDue) {
+            $('.credits-table').before($('<div/>', {
+                id: 'credits-alert',
+                class: 'alert alert-danger',
+            }).html(app.lang.credit_amount_bigger_then_invoice_balance));
+            $applyCredits.find('[type="submit"]').prop('disabled', true);
+        } else {
+            $applyCredits.find('.invoice-balance-due').html(format_money(invoiceBalanceDue - total));
+            $applyCredits.find('[type="submit"]').prop('disabled', false);
+        }
+    });
+
+    // Leads integrations notify type
+    $('input[name="notify_type"]').on('change', function() {
+        var val = $('input[name="notify_type"]:checked').val();
+        var specific_staff_notify = $('#specific_staff_notify');
+        var role_notify = $('#role_notify');
+        if (val == 'specific_staff') {
+            specific_staff_notify.removeClass('hide');
+            role_notify.addClass('hide');
+        } else if (val == 'roles') {
+            specific_staff_notify.addClass('hide');
+            role_notify.removeClass('hide');
+        } else if (val == 'assigned') {
+            specific_staff_notify.addClass('hide');
+            role_notify.addClass('hide');
+        }
+    });
+
+    // Auto focus the lead name if user is adding new lead
+    $("body").on("shown.bs.modal", '#lead-modal', function(e) {
+        // custom_fields_hyperlink();
+        if ($("body").find('#lead-modal input[name="leadid"]').length === 0) {
+            $("body").find('#lead-modal input[name="name"]').focus();
+        }
+        init_tabs_scrollable();
+        if ($('body').find('.lead-wrapper').hasClass('open-edit')) {
+            $('body').find('a[lead-edit]').click();
+        }
+    });
+
+    // Remove the more button for leads if there is no options in the dropdown
+    // This is happening because the if statements are not checked
+    $("body").on("show.bs.modal", '#lead-modal', function(e) {
+        if ($('#lead-more-dropdown').find('li').length == 0) {
+            $('#lead-more-btn').css('opacity', 0)
+                .css('pointer-events', 'none');
+        }
+    });
+
+    // On hidden lead modal some actions need to be operated here
+    $('#lead-modal').on("hidden.bs.modal", function(event) {
+        destroy_dynamic_scripts_in_element($(this));
+        $(this).data('bs.modal', null);
+        $('#lead_reminder_modal').html('');
+        // clear the hash
+        if (!$('#lead-modal').is(':visible')) {
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+        $('body #lead-modal .datetimepicker').datetimepicker('destroy');
+        if (typeof(leadAttachmentsDropzone) != 'undefined') { leadAttachmentsDropzone.destroy(); }
+    });
+
+
+    $('body').on('submit', '#lead-modal .consent-form', function() {
+        var data = $(this).serialize();
+        $.post($(this).attr('action'), data).done(function(response) {
+            response = JSON.parse(response);
+            init_lead_modal_data(response.lead_id);
+        });
+        return false;
+    });
+    // Set hash on modal tab change
+    $("body").on('click', '#lead-modal a[data-toggle="tab"]', function() {
+        if (this.hash == '#tab_lead_profile' ||
+            this.hash == '#attachments' ||
+            this.hash == '#lead_notes' ||
+            this.hash == '#gdpr' ||
+            this.hash == '#lead_activity') {
+            window.location.hash = this.hash;
+        } else {
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+        // Lead modal backdrop is showing some issues with index, is fixed after triggering document resize
+        $(document).resize();
+    });
+
+    // Manually add lead activity
+    $("body").on('click', '#lead_enter_activity', function() {
+        var message = $('#lead_activity_textarea').val();
+        var aLeadId = $('#lead-modal').find('input[name="leadid"]').val();
+        if (message === '') { return; }
+        $.post(admin_url + 'leads/add_activity', {
+            leadid: aLeadId,
+            activity: message
+        }).done(function(response) {
+            response = JSON.parse(response);
+            _lead_init_data(response, response.id);
+        }).fail(function(data) {
+            alert_float('danger', data.responseText);
+        });
+    });
+
+    // Submit notes on lead modal do ajax not the regular request
+    $("body").on('submit', '#lead-modal #lead-notes', function() {
+        var form = $(this);
+        var data = $(form).serialize();
+        $.post(form.attr('action'), data).done(function(response) {
+            response = JSON.parse(response);
+            _lead_init_data(response, response.id);
+        }).fail(function(data) {
+            alert_float('danger', data.responseText);
+        });
+        return false;
+    });
+
+    // Add additional server params $_POST
+    var LeadsServerParams = {
+        "custom_view": "[name='custom_view']",
+        "assigned": "[name='view_assigned']",
+        "status": "[name='view_status[]']",
+        "source": "[name='view_source']",
+    };
+
+    // Init the table
+    table_leads = $('table.table-leads');
+    if (table_leads.length) {
+        var tableLeadsConsentHeading = table_leads.find('#th-consent');
+        var leadsTableNotSortable = [0];
+        var leadsTableNotSearchable = [0, table_leads.find('#th-assigned').index()];
+
+        if (tableLeadsConsentHeading.length > 0) {
+            leadsTableNotSortable.push(tableLeadsConsentHeading.index());
+            leadsTableNotSearchable.push(tableLeadsConsentHeading.index());
+        }
+
+        _table_api = initDataTable(table_leads, admin_url + 'leads/table', leadsTableNotSearchable, leadsTableNotSortable, LeadsServerParams, [table_leads.find('th.date-created').index(), 'desc']);
+
+        if (_table_api && tableLeadsConsentHeading.length > 0) {
+            _table_api.on('draw', function() {
+                var tableData = table_leads.find('tbody tr');
+                $.each(tableData, function() {
+                    $(this).find('td:eq(3)').addClass('bg-light-gray');
+                });
+            });
+        }
+
+        $.each(LeadsServerParams, function(i, obj) {
+            $('select' + obj).on('change', function() {
+
+                $("[name='view_status[]']")
+                    .prop('disabled', ($(this).val() == 'lost' || $(this).val() == 'junk'))
+                    .selectpicker('refresh');
+
+                table_leads.DataTable().ajax.reload()
+                    .columns.adjust()
+                    .responsive.recalc();
+            });
+        });
+    }
+
+    // When adding if lead is contacted today
+    $("body").on('change', 'input[name="contacted_today"]', function() {
+        var checked = $(this).prop('checked');
+        var lsdc = $('.lead-select-date-contacted');
+        (checked == false ? lsdc.removeClass('hide') : lsdc.addClass('hide'));
+    });
+
+    // Lead modal show contacted indicator input
+    $("body").on('change', 'input[name="contacted_indicator"]', function() {
+        var lsdc = $('.lead-select-date-contacted');
+        ($(this).val() == 'yes' ? lsdc.removeClass('hide') : lsdc.addClass('hide'));
+    });
+
+    // Fix for checkboxes ID duplicate when table goes responsive
+    $("body").on('click', 'table.dataTable tbody td:first-child', function() {
+        var tr = $(this).parents('tr');
+        if ($(this).parents('table').DataTable().row(tr).child.isShown()) {
+            var switchBox = $(tr).next().find('input.onoffswitch-checkbox');
+            if (switchBox.length > 0) {
+                var switchBoxId = Math.random().toString(16).slice(2);
+                switchBox.attr('id', switchBoxId).next().attr('for', switchBoxId);
+            }
+        }
+    });
+
+    // Custom close function for reminder modals in case is modal in modal
+    $("body").on('click', '.close-reminder-modal', function() {
+        $(".reminder-modal-" + $(this).data('rel-type') + '-' + $(this).data('rel-id')).modal('hide');
+    });
+
+    // Recalculate responsive for hidden tables
+    $("body").on('shown.bs.tab', 'a[data-toggle="tab"]', function(e) {
+        $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
+    });
+
     // Store navTabs, used multiple times.
     var $navTabs = $("body").find('ul.nav-tabs');
     // Check for active tab if any found in url so we can set this tab to active - Tab active is defined on top
@@ -340,9 +619,9 @@ $(function() {
         $navTabs.find('[data-group="' + tab_group + '"]').parents('li').addClass('active');
     }
     // Set moment locale
-    moment.locale(app.locale);
+    // moment.locale(app.locale);
     // Set timezone locale
-    moment().tz(app.options.timezone).format();
+    // moment.tz(app.options.timezone).format();
 
     // Init tinymce editors
     init_editor();
@@ -354,8 +633,6 @@ $(function() {
     init_tags_inputs();
     // Init all color pickers
     init_color_pickers();
-    // Init tables offline (no serverside)
-    initDataTableInline();
 
     // Bootstrap switch active or inactive global function
     $("body").on('change', '.onoffswitch input', function(event, state) {
@@ -364,8 +641,11 @@ $(function() {
         switch_field(this);
     });
 
+    // Init tables offline (no serverside)
+    initDataTableInline();
+
     /* Custom fields hyperlink */
-    custom_fields_hyperlink();
+    // custom_fields_hyperlink();
     // Init lightboxes if found
     init_lightbox();
     // Init progress bars
@@ -427,9 +707,9 @@ $(function() {
     }
 
     // Init now metisMenu for the main admin sidebar
-    side_bar.metisMenu();
+        // side_bar.metisMenu();
     // Init setup menu
-    setup_menu.metisMenu();
+        // setup_menu.metisMenu();
 
     // Handle minimalize sidebar menu
     $('.hide-menu').click(function(e) {
@@ -472,7 +752,7 @@ $(function() {
     mainWrapperHeightFix();
 
     // Init scrollable tabs
-    init_tabs_scrollable();
+        //init_tabs_scrollable();
 
     // Refresh top timers on click
     $('#top-timers').on('click', function() {
@@ -1053,400 +1333,127 @@ $(function() {
     });
 
     // Check if calendar exists in the DOM and init.
-    if (calendar_selector.length > 0) {
-        validate_calendar_form();
-        var calendar_settings = {
-            themeSystem: 'bootstrap3',
-            customButtons: {},
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay,viewFullCalendar,calendarFilter'
-            },
-            editable: false,
-            eventLimit: parseInt(app.options.calendar_events_limit) + 1,
+    // if (calendar_selector.length > 0) {
+    //     validate_calendar_form();
+    //     var calendar_settings = {
+    //         themeSystem: 'bootstrap3',
+    //         customButtons: {},
+    //         header: {
+    //             left: 'prev,next today',
+    //             center: 'title',
+    //             right: 'month,agendaWeek,agendaDay,viewFullCalendar,calendarFilter'
+    //         },
+    //         editable: false,
+    //         eventLimit: parseInt(app.options.calendar_events_limit) + 1,
 
-            views: {
-                day: {
-                    eventLimit: false
-                }
-            },
-            defaultView: app.options.default_view_calendar,
-            isRTL: (isRTL == 'true' ? true : false),
-            eventStartEditable: false,
-            timezone: app.options.timezone,
-            firstDay: parseInt(app.options.calendar_first_day),
-            year: moment.tz(app.options.timezone).format("YYYY"),
-            month: moment.tz(app.options.timezone).format("M"),
-            date: moment.tz(app.options.timezone).format("DD"),
-            loading: function(isLoading, view) {
-                isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-info').removeClass('btn-default').css('display', 'block');
-                !isLoading ? $('.dt-loader').addClass('hide') : $('.dt-loader').removeClass('hide');
-            },
-            eventSources: [{
-                url: admin_url + 'utilities/get_calendar_data',
-                data: function() {
-                    var params = {};
-                    $('#calendar_filters').find('input:checkbox:checked').map(function() {
-                        params[$(this).attr('name')] = true;
-                    }).get();
-                    if (!jQuery.isEmptyObject(params)) {
-                        params['calendar_filters'] = true;
-                    }
-                    return params;
-                },
-                type: 'POST',
-                error: function() {
-                    console.error('There was error fetching calendar data');
-                },
-            }, ],
-            eventLimitClick: function(cellInfo, jsEvent) {
-                $('#calendar').fullCalendar('gotoDate', cellInfo.date);
-                $('#calendar').fullCalendar('changeView', 'basicDay');
-            },
-            eventRender: function(event, element) {
-                element.attr('title', event._tooltip);
-                element.attr('onclick', event.onclick);
-                element.attr('data-toggle', 'tooltip');
-                if (!event.url) {
-                    element.click(function() { view_event(event.eventid); });
-                }
-            },
-            dayClick: function(date, jsEvent, view) {
-                var d = date.format();
-                if (!$.fullCalendar.moment(d).hasTime()) {
-                    d += ' 00:00';
-                }
-                var vformat = (app.options.time_format == 24 ? app.options.date_format + ' H:i' : app.options.date_format + ' g:i A');
-                var fmt = new DateFormatter();
-                var d1 = fmt.formatDate(new Date(d), vformat);
-                $("input[name='start'].datetimepicker").val(d1);
-                $('#newEventModal').modal('show');
-                return false;
-            }
-        };
-        if ($("body").hasClass('dashboard')) {
-            calendar_settings.customButtons.viewFullCalendar = {
-                text: app.lang.calendar_expand,
-                click: function() {
-                    window.location.href = admin_url + 'utilities/calendar';
-                }
-            };
-        }
-        calendar_settings.customButtons.calendarFilter = {
-            text: app.lang.filter_by.toLowerCase(),
-            click: function() {
-                slideToggle('#calendar_filters');
-            }
-        };
-        if (app.user_is_staff_member == 1) {
-            if (app.options.google_api !== '') {
-                calendar_settings.googleCalendarApiKey = app.options.google_api;
-            }
-            if (app.calendarIDs !== '') {
-                app.calendarIDs = JSON.parse(app.calendarIDs);
-                if (app.calendarIDs.length != 0) {
-                    if (app.options.google_api !== '') {
-                        for (var i = 0; i < app.calendarIDs.length; i++) {
-                            var _gcal = {};
-                            _gcal.googleCalendarId = app.calendarIDs[i];
-                            calendar_settings.eventSources.push(_gcal);
-                        }
-                    } else {
-                        console.error('You have setup Google Calendar IDs but you dont have specified Google API key. To setup Google API key navigate to Setup->Settings->Google');
-                    }
-                }
-            }
-        }
-        // Init calendar
-        calendar_selector.fullCalendar(calendar_settings);
-        var new_event = get_url_param('new_event');
-        if (new_event) {
-            $("input[name='start'].datetimepicker").val(get_url_param('date'));
-            $('#newEventModal').modal('show');
-        }
-    }
-
-    // On select with name tax apply necessary actions if tax2 exists too
-    $("body").on('change', 'select[name="tax"]', function() {
-        var sp_tax_2 = $("body").find('select[name="tax2"]');
-        var sp_tax_1 = $(this);
-        if (sp_tax_1.val() !== '') {
-            sp_tax_2.prop('disabled', false);
-        } else {
-            sp_tax_2.prop('disabled', true);
-            if (sp_tax_2.val() !== '') {
-                sp_tax_1.selectpicker('val', sp_tax_2.val());
-                sp_tax_2.val('');
-                sp_tax_1.selectpicker('refresh');
-            }
-        }
-        sp_tax_2.selectpicker('refresh');
-    });
-
-    $('body').on('click', '#invoice_create_credit_note', function(e) {
-        if ($(this).attr('data-status') == 2) {
-            return true;
-        } else {
-            var $m = $('#confirm_credit_note_create_from_invoice');
-            $m.modal('show');
-            $m.find('#confirm-invoice-credit-note').attr('href', $(this).attr('href'));
-            e.preventDefault();
-        }
-    });
-
-    $('body').on('change blur', '.apply-credits-to-invoice .apply-credits-field', function() {
-
-        var $applyCredits = $('#apply_credits');
-        var $amountInputs = $applyCredits.find('input.apply-credits-field');
-        var total = 0;
-        var creditsRemaining = $applyCredits.attr('data-credits-remaining');
-
-        $.each($amountInputs, function() {
-            if ($(this).valid() === true) {
-                var amount = $(this).val();
-                amount = parseFloat(amount);
-                if (!isNaN(amount)) {
-                    total += amount;
-                } else {
-                    $(this).val(0);
-                }
-            }
-        });
-
-        $applyCredits.find('#credits-alert').remove();
-        $applyCredits.find('.amount-to-credit').html(format_money(total));
-        if (creditsRemaining < total) {
-            $('.credits-table').before($('<div/>', {
-                id: 'credits-alert',
-                class: 'alert alert-danger',
-            }).html(app.lang.credit_amount_bigger_then_credit_note_remaining_credits));
-            $applyCredits.find('[type="submit"]').prop('disabled', true);
-        } else {
-            $applyCredits.find('.credit-note-balance-due').html(format_money(creditsRemaining - total));
-            $applyCredits.find('[type="submit"]').prop('disabled', false);
-        }
-    });
-
-    $('body').on('change blur', '.apply-credits-from-invoice .apply-credits-field', function() {
-
-        var $applyCredits = $('#apply_credits');
-        var $amountInputs = $applyCredits.find('input.apply-credits-field');
-        var total = 0;
-        var invoiceBalanceDue = $applyCredits.attr('data-balance-due');
-
-        $.each($amountInputs, function() {
-            if ($(this).valid() === true) {
-                var amount = $(this).val();
-                amount = parseFloat(amount);
-                if (!isNaN(amount)) {
-                    total += amount;
-                } else {
-                    $(this).val(0);
-                }
-            }
-        });
-
-        $applyCredits.find('#credits-alert').remove();
-        $applyCredits.find('.amount-to-credit').html(format_money(total));
-        if (total > invoiceBalanceDue) {
-            $('.credits-table').before($('<div/>', {
-                id: 'credits-alert',
-                class: 'alert alert-danger',
-            }).html(app.lang.credit_amount_bigger_then_invoice_balance));
-            $applyCredits.find('[type="submit"]').prop('disabled', true);
-        } else {
-            $applyCredits.find('.invoice-balance-due').html(format_money(invoiceBalanceDue - total));
-            $applyCredits.find('[type="submit"]').prop('disabled', false);
-        }
-    });
-
-    // Leads integrations notify type
-    $('input[name="notify_type"]').on('change', function() {
-        var val = $('input[name="notify_type"]:checked').val();
-        var specific_staff_notify = $('#specific_staff_notify');
-        var role_notify = $('#role_notify');
-        if (val == 'specific_staff') {
-            specific_staff_notify.removeClass('hide');
-            role_notify.addClass('hide');
-        } else if (val == 'roles') {
-            specific_staff_notify.addClass('hide');
-            role_notify.removeClass('hide');
-        } else if (val == 'assigned') {
-            specific_staff_notify.addClass('hide');
-            role_notify.addClass('hide');
-        }
-    });
-
-    // Auto focus the lead name if user is adding new lead
-    $("body").on("shown.bs.modal", '#lead-modal', function(e) {
-        custom_fields_hyperlink();
-        if ($("body").find('#lead-modal input[name="leadid"]').length === 0) {
-            $("body").find('#lead-modal input[name="name"]').focus();
-        }
-        init_tabs_scrollable();
-        if ($('body').find('.lead-wrapper').hasClass('open-edit')) {
-            $('body').find('a[lead-edit]').click();
-        }
-    });
-
-    // Remove the more button for leads if there is no options in the dropdown
-    // This is happening because the if statements are not checked
-    $("body").on("show.bs.modal", '#lead-modal', function(e) {
-        if ($('#lead-more-dropdown').find('li').length == 0) {
-            $('#lead-more-btn').css('opacity', 0)
-                .css('pointer-events', 'none');
-        }
-    });
-
-    // On hidden lead modal some actions need to be operated here
-    $('#lead-modal').on("hidden.bs.modal", function(event) {
-        destroy_dynamic_scripts_in_element($(this));
-        $(this).data('bs.modal', null);
-        $('#lead_reminder_modal').html('');
-        // clear the hash
-        if (!$('#lead-modal').is(':visible')) {
-            history.pushState("", document.title, window.location.pathname + window.location.search);
-        }
-        $('body #lead-modal .datetimepicker').datetimepicker('destroy');
-        if (typeof(leadAttachmentsDropzone) != 'undefined') { leadAttachmentsDropzone.destroy(); }
-    });
-
-
-    $('body').on('submit', '#lead-modal .consent-form', function() {
-        var data = $(this).serialize();
-        $.post($(this).attr('action'), data).done(function(response) {
-            response = JSON.parse(response);
-            init_lead_modal_data(response.lead_id);
-        });
-        return false;
-    });
-    // Set hash on modal tab change
-    $("body").on('click', '#lead-modal a[data-toggle="tab"]', function() {
-        if (this.hash == '#tab_lead_profile' ||
-            this.hash == '#attachments' ||
-            this.hash == '#lead_notes' ||
-            this.hash == '#gdpr' ||
-            this.hash == '#lead_activity') {
-            window.location.hash = this.hash;
-        } else {
-            history.pushState("", document.title, window.location.pathname + window.location.search);
-        }
-        // Lead modal backdrop is showing some issues with index, is fixed after triggering document resize
-        $(document).resize();
-    });
-
-    // Manually add lead activity
-    $("body").on('click', '#lead_enter_activity', function() {
-        var message = $('#lead_activity_textarea').val();
-        var aLeadId = $('#lead-modal').find('input[name="leadid"]').val();
-        if (message === '') { return; }
-        $.post(admin_url + 'leads/add_activity', {
-            leadid: aLeadId,
-            activity: message
-        }).done(function(response) {
-            response = JSON.parse(response);
-            _lead_init_data(response, response.id);
-        }).fail(function(data) {
-            alert_float('danger', data.responseText);
-        });
-    });
-
-    // Submit notes on lead modal do ajax not the regular request
-    $("body").on('submit', '#lead-modal #lead-notes', function() {
-        var form = $(this);
-        var data = $(form).serialize();
-        $.post(form.attr('action'), data).done(function(response) {
-            response = JSON.parse(response);
-            _lead_init_data(response, response.id);
-        }).fail(function(data) {
-            alert_float('danger', data.responseText);
-        });
-        return false;
-    });
-
-    // Add additional server params $_POST
-    var LeadsServerParams = {
-        "custom_view": "[name='custom_view']",
-        "assigned": "[name='view_assigned']",
-        "status": "[name='view_status[]']",
-        "source": "[name='view_source']",
-    };
-
-    // Init the table
-    table_leads = $('table.table-leads');
-    if (table_leads.length) {
-        var tableLeadsConsentHeading = table_leads.find('#th-consent');
-        var leadsTableNotSortable = [0];
-        var leadsTableNotSearchable = [0, table_leads.find('#th-assigned').index()];
-
-        if (tableLeadsConsentHeading.length > 0) {
-            leadsTableNotSortable.push(tableLeadsConsentHeading.index());
-            leadsTableNotSearchable.push(tableLeadsConsentHeading.index());
-        }
-
-        _table_api = initDataTable(table_leads, admin_url + 'leads/table', leadsTableNotSearchable, leadsTableNotSortable, LeadsServerParams, [table_leads.find('th.date-created').index(), 'desc']);
-
-        if (_table_api && tableLeadsConsentHeading.length > 0) {
-            _table_api.on('draw', function() {
-                var tableData = table_leads.find('tbody tr');
-                $.each(tableData, function() {
-                    $(this).find('td:eq(3)').addClass('bg-light-gray');
-                });
-            });
-        }
-
-        $.each(LeadsServerParams, function(i, obj) {
-            $('select' + obj).on('change', function() {
-
-                $("[name='view_status[]']")
-                    .prop('disabled', ($(this).val() == 'lost' || $(this).val() == 'junk'))
-                    .selectpicker('refresh');
-
-                table_leads.DataTable().ajax.reload()
-                    .columns.adjust()
-                    .responsive.recalc();
-            });
-        });
-    }
-
-    // When adding if lead is contacted today
-    $("body").on('change', 'input[name="contacted_today"]', function() {
-        var checked = $(this).prop('checked');
-        var lsdc = $('.lead-select-date-contacted');
-        (checked == false ? lsdc.removeClass('hide') : lsdc.addClass('hide'));
-    });
-
-    // Lead modal show contacted indicator input
-    $("body").on('change', 'input[name="contacted_indicator"]', function() {
-        var lsdc = $('.lead-select-date-contacted');
-        ($(this).val() == 'yes' ? lsdc.removeClass('hide') : lsdc.addClass('hide'));
-    });
-
-    // Fix for checkboxes ID duplicate when table goes responsive
-    $("body").on('click', 'table.dataTable tbody td:first-child', function() {
-        var tr = $(this).parents('tr');
-        if ($(this).parents('table').DataTable().row(tr).child.isShown()) {
-            var switchBox = $(tr).next().find('input.onoffswitch-checkbox');
-            if (switchBox.length > 0) {
-                var switchBoxId = Math.random().toString(16).slice(2);
-                switchBox.attr('id', switchBoxId).next().attr('for', switchBoxId);
-            }
-        }
-    });
-
-    // Custom close function for reminder modals in case is modal in modal
-    $("body").on('click', '.close-reminder-modal', function() {
-        $(".reminder-modal-" + $(this).data('rel-type') + '-' + $(this).data('rel-id')).modal('hide');
-    });
-
-    // Recalculate responsive for hidden tables
-    $("body").on('shown.bs.tab', 'a[data-toggle="tab"]', function(e) {
-        $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
-    });
+    //         views: {
+    //             day: {
+    //                 eventLimit: false
+    //             }
+    //         },
+    //         defaultView: app.options.default_view_calendar,
+    //         isRTL: (isRTL == 'true' ? true : false),
+    //         eventStartEditable: false,
+    //         timezone: app.options.timezone,
+    //         firstDay: parseInt(app.options.calendar_first_day),
+    //         year: moment.tz(app.options.timezone).format("YYYY"),
+    //         month: moment.tz(app.options.timezone).format("M"),
+    //         date: moment.tz(app.options.timezone).format("DD"),
+    //         loading: function(isLoading, view) {
+    //             isLoading && $('#calendar .fc-header-toolbar .btn-default').addClass('btn-info').removeClass('btn-default').css('display', 'block');
+    //             !isLoading ? $('.dt-loader').addClass('hide') : $('.dt-loader').removeClass('hide');
+    //         },
+    //         eventSources: [{
+    //             url: admin_url + 'utilities/get_calendar_data',
+    //             data: function() {
+    //                 var params = {};
+    //                 $('#calendar_filters').find('input:checkbox:checked').map(function() {
+    //                     params[$(this).attr('name')] = true;
+    //                 }).get();
+    //                 if (!jQuery.isEmptyObject(params)) {
+    //                     params['calendar_filters'] = true;
+    //                 }
+    //                 return params;
+    //             },
+    //             type: 'POST',
+    //             error: function() {
+    //                 console.error('There was error fetching calendar data');
+    //             },
+    //         }, ],
+    //         eventLimitClick: function(cellInfo, jsEvent) {
+    //             $('#calendar').fullCalendar('gotoDate', cellInfo.date);
+    //             $('#calendar').fullCalendar('changeView', 'basicDay');
+    //         },
+    //         eventRender: function(event, element) {
+    //             element.attr('title', event._tooltip);
+    //             element.attr('onclick', event.onclick);
+    //             element.attr('data-toggle', 'tooltip');
+    //             if (!event.url) {
+    //                 element.click(function() { view_event(event.eventid); });
+    //             }
+    //         },
+    //         dayClick: function(date, jsEvent, view) {
+    //             var d = date.format();
+    //             if (!$.fullCalendar.moment(d).hasTime()) {
+    //                 d += ' 00:00';
+    //             }
+    //             var vformat = (app.options.time_format == 24 ? app.options.date_format + ' H:i' : app.options.date_format + ' g:i A');
+    //             var fmt = new DateFormatter();
+    //             var d1 = fmt.formatDate(new Date(d), vformat);
+    //             $("input[name='start'].datetimepicker").val(d1);
+    //             $('#newEventModal').modal('show');
+    //             return false;
+    //         }
+    //     };
+    //     if ($("body").hasClass('dashboard')) {
+    //         calendar_settings.customButtons.viewFullCalendar = {
+    //             text: app.lang.calendar_expand,
+    //             click: function() {
+    //                 window.location.href = admin_url + 'utilities/calendar';
+    //             }
+    //         };
+    //     }
+    //     calendar_settings.customButtons.calendarFilter = {
+    //         text: app.lang.filter_by.toLowerCase(),
+    //         click: function() {
+    //             slideToggle('#calendar_filters');
+    //         }
+    //     };
+    //     if (app.user_is_staff_member == 1) {
+    //         if (app.options.google_api !== '') {
+    //             calendar_settings.googleCalendarApiKey = app.options.google_api;
+    //         }
+    //         if (app.calendarIDs !== '') {
+    //             app.calendarIDs = JSON.parse(app.calendarIDs);
+    //             if (app.calendarIDs.length != 0) {
+    //                 if (app.options.google_api !== '') {
+    //                     for (var i = 0; i < app.calendarIDs.length; i++) {
+    //                         var _gcal = {};
+    //                         _gcal.googleCalendarId = app.calendarIDs[i];
+    //                         calendar_settings.eventSources.push(_gcal);
+    //                     }
+    //                 } else {
+    //                     console.error('You have setup Google Calendar IDs but you dont have specified Google API key. To setup Google API key navigate to Setup->Settings->Google');
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     // Init calendar
+    //     calendar_selector.fullCalendar(calendar_settings);
+    //     var new_event = get_url_param('new_event');
+    //     if (new_event) {
+    //         $("input[name='start'].datetimepicker").val(get_url_param('date'));
+    //         $('#newEventModal').modal('show');
+    //     }
+    // }
 
     // Init are you sure on forms
-    $('form').not('#single-ticket-form,#calendar-event-form,#proposal-form').areYouSure();
+    try{
+        $('form').not('#single-ticket-form,#calendar-event-form,#proposal-form').areYouSure();
+    }
+    catch(error){
+        console.log(error);
+    }
 
     // For inline tinymce editors when content is blank a message is shown, on click this message should be hidden.
     $("body").on('click', '.editor-add-content-notice', function() {
@@ -1498,9 +1505,9 @@ $(function() {
             }).done(function(response) {
                 response = JSON.parse(response);
                 if (response.success == true) {
-                    errorContainer.html('<div class="alert alert-success no-mbot mtop15">SMS Sent Successfully!</div>');
+                    errorContainer.html('<div class="alert alert-success mb-0 mtop15">SMS Sent Successfully!</div>');
                 } else {
-                    errorContainer.html('<div class="alert alert-warning no-mbot mtop15">' + response.error + '</div>');
+                    errorContainer.html('<div class="alert alert-warning mb-0 mtop15">' + response.error + '</div>');
                 }
             }).always(function() {
                 that.prop('disabled', false);
@@ -3086,15 +3093,15 @@ function edit_todo_item(id) {
 
 // Date picker init with selected timeformat from settings
 function init_datepicker(element_date, element_time) {
-    appDatepicker({
-        element_date: element_date,
-        element_time: element_time,
-    });
+    // appDatepicker({
+    //     element_date: element_date,
+    //     element_time: element_time,
+    // });
 }
 
 // Init color pickers
 function init_color_pickers() {
-    appColorPicker();
+    // appColorPicker();
 }
 
 // Init select picker
@@ -3114,7 +3121,7 @@ function init_progress_bars() {
 
 // All inputs used for tags
 function init_tags_inputs() {
-    appTagsInput();
+    // appTagsInput();
 }
 
 // Datatables custom view will fill input with the value
@@ -6349,12 +6356,14 @@ function init_currency(id) {
 
         requestGetJSON('misc/get_currency/' + selectedCurrencyId)
             .done(function(currency) {
-                // Used for formatting money
-                accounting.settings.currency.decimal = currency.decimal_separator;
-                accounting.settings.currency.thousand = currency.thousand_separator;
-                accounting.settings.currency.symbol = currency.symbol;
-                accounting.settings.currency.format = currency.placement == 'after' ? '%v %s' : '%s%v';
-                calculate_total();
+                if (typeof(accounting) != 'undefined') {
+                    // Used for formatting money
+                    accounting.settings.currency.decimal = currency.decimal_separator;
+                    accounting.settings.currency.thousand = currency.thousand_separator;
+                    accounting.settings.currency.symbol = currency.symbol;
+                    accounting.settings.currency.format = currency.placement == 'after' ? '%v %s' : '%s%v';
+                    calculate_total();
+                }
             });
     }
 }
@@ -6722,6 +6731,7 @@ function proposals_pipeline_update(ui, object) {
 function proposals_pipeline() {
     init_kanban('proposals/get_pipeline', proposals_pipeline_update, '.pipeline-status', 347, 360);
 }
+
 
 // Open single proposal in pipeline
 function proposal_pipeline_open(id) {

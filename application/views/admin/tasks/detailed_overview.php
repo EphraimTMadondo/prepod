@@ -6,7 +6,7 @@
     <div class="content-wrapper">
       <div class="row">
          <div class="col-md-12">
-            <div class="card mtop20">
+            <div class="card mt-2">
                <div class="card-body">
                   <?php if(!$this->input->get('project_id')){ ?>
                   <a href="<?php echo admin_url('tasks'); ?>" class="btn btn-default pull-left"><?php echo _l('back_to_tasks_list'); ?></a>
@@ -43,7 +43,7 @@
                      </div>
                      <div class="col-md-2 text-center border-right">
                         <div class="form-group no-margin select-placeholder">
-                           <select name="status" id="status" class="selectpicker no-margin" data-width="100%" data-title="<?php echo _l('task_status'); ?>">
+                           <select name="status" id="status" class="selectpicker no-margin" data-style="btn-outline-light" data-width="100%" data-title="<?php echo _l('task_status'); ?>">
                               <option value="" selected><?php echo _l('task_list_all'); ?></option>
                               <?php foreach($task_statuses as $status){ ?>
                               <option value="<?php echo $status['id']; ?>" <?php if($this->input->post('status') == $status['id']){echo 'selected'; } ?>><?php echo $status['name']; ?></option>
@@ -52,14 +52,14 @@
                         </div>
                      </div>
                      <div class="col-md-2 border-right select-placeholder">
-                        <select name="year" id="year" class="selectpicker no-margin" data-width="100%">
+                        <select name="year" id="year" class="selectpicker no-margin" data-style="btn-outline-light" data-width="100%">
                            <?php foreach($years as $data){ ?>
                            <option value="<?php echo $data['year']; ?>" <?php if($this->input->post('year') == $data['year'] || date('Y') == $data['year']){echo 'selected'; } ?>><?php echo $data['year']; ?></option>
                            <?php } ?>
                         </select>
                      </div>
                      <div class="col-md-2">
-                        <button type="submit" class="btn btn-info btn-block" style="margin-top:3px;"><?php echo _l('filter'); ?></button>
+                        <button type="submit" class="btn btn-secondary btn-block" style="margin-top:3px;"><?php echo _l('filter'); ?></button>
                      </div>
                   </div>
                   <?php echo form_close(); ?>

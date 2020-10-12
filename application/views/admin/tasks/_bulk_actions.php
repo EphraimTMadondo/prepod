@@ -17,7 +17,7 @@
             <div id="bulk_change">
                <div class="form-group">
                   <label for="move_to_status_tasks_bulk_action"><?php echo _l('task_status'); ?></label>
-                  <select name="move_to_status_tasks_bulk_action" id="move_to_status_tasks_bulk_action" data-width="100%" class="selectpicker" data-none-selected-text="<?php echo _l('task_status'); ?>">
+                  <select name="move_to_status_tasks_bulk_action" id="move_to_status_tasks_bulk_action" data-width="100%" class="selectpicker" data-style="btn-outline-light" data-none-selected-text="<?php echo _l('task_status'); ?>">
                      <option value=""></option>
                      <?php foreach($task_statuses as $status){ ?>
                         <option value="<?php echo $status['id']; ?>"><?php echo $status['name']; ?></option>
@@ -27,7 +27,7 @@
                <?php if(has_permission('tasks','','edit')){ ?>
                   <div class="form-group">
                      <label for="task_bulk_priority" class="control-label"><?php echo _l('task_add_edit_priority'); ?></label>
-                     <select name="task_bulk_priority" class="selectpicker" id="task_bulk_priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                     <select name="task_bulk_priority" class="selectpicker" data-style="btn-outline-light" id="task_bulk_priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                         <option value=""></option>
                         <option value="1"><?php echo _l('task_priority_low'); ?></option>
                         <option value="2"><?php echo _l('task_priority_medium'); ?></option>
@@ -55,7 +55,7 @@
       </div>
       <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-         <a href="#" class="btn btn-info" onclick="tasks_bulk_action(this); return false;"><?php echo _l('confirm'); ?></a>
+         <a href="#" class="btn btn-secondary" onclick="tasks_bulk_action(this); return false;"><?php echo _l('confirm'); ?></a>
       </div>
    </div>
    <!-- /.modal-content -->

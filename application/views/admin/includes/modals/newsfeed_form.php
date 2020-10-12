@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<a href="#" class="close_newsfeed" data-close="true"><i class="fa fa-remove"></i></a>
+<a href="#" class="close_newsfeed" data-close="true"><i class="bx bx-trash"></i></a>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="card">
@@ -10,16 +10,16 @@
         <?php echo $current_user->firstname . ' ' . $current_user->lastname ;?></a>
         <textarea name="content" id="post" rows="5" class="form-control" placeholder="<?php echo _l('whats_on_your_mind'); ?>"></textarea>
         <hr />
-        <button type="submit" class="btn btn-info float-right"><?php echo _l('new_post'); ?></button>
+        <button type="submit" class="btn btn-secondary float-right"><?php echo _l('new_post'); ?></button>
         <a href="#" class="btn btn-default add-post-attachments"><i data-toggle="tooltip" title="<?php echo _l('newsfeed_upload_tooltip'); ?>" class="fa fa-files-o"></i></a>
-        <select id="post-visibility" class="selectpicker" multiple name="visibility[]" data-width="60%" data-none-selected-text="<?php echo _l('newsfeed_all_departments'); ?>">
+        <select id="post-visibility" class="selectpicker" data-style="btn-outline-light" multiple name="visibility[]" data-width="60%" data-none-selected-text="<?php echo _l('newsfeed_all_departments'); ?>">
 
          <?php foreach($departments as $department){ ?>
            <option value="<?php echo $department['departmentid']; ?>"><?php echo $department['name']; ?></option>
          <?php } ?>
        </select>
        <div class="dz-message" data-dz-message><span></span></div>
-       <div class="dropzone-previews mtop25"></div>
+       <div class="dropzone-previews mt-2"></div>
        <?php echo form_close(); ?>
      </div>
    </div>

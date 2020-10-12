@@ -116,7 +116,7 @@ body{
 }
 .pb-button--primary {
     color: #fff;
-    background-color: #08a742 !important;
+     background-color: #006FB8 !important;
     font-weight: 700;
     font-size:24px;
     padding: 11px 20px;
@@ -151,6 +151,8 @@ label.control-label {
     <div class="card main-area ">
         <div class="card-body" style ="height: 100%; justify-content: space-between; ">
             <h1 class = "heading login-title">COMPANY DETAILS</h1>
+              <?   echo "other is". $_SESSION['other_verification'];
+           echo "facebook is". $_SESSION['facebook'];?>
             <div class="form-group mtop15 register-company-group underlined-input">
                 <input type="text"  placeholder = <?php echo _l('clients_company'); ?> class="form-control custom-input" name="company" id="company" value="<?php echo set_value('company'); ?>">
                 <?php echo form_error('company'); ?>

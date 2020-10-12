@@ -261,6 +261,7 @@ class Tickets_model extends App_Model
         }
     }
 
+    
     public function get($id = '', $where = [])
     {
         $this->db->select('*,' . db_prefix() . 'tickets.userid,' . db_prefix() . 'tickets.name as from_name,' . db_prefix() . 'tickets.email as ticket_email, ' . db_prefix() . 'departments.name as department_name, ' . db_prefix() . 'tickets_priorities.name as priority_name, statuscolor, ' . db_prefix() . 'tickets.admin, ' . db_prefix() . 'services.name as service_name, service, ' . db_prefix() . 'tickets_status.name as status_name,' . db_prefix() . 'tickets.ticketid, ' . db_prefix() . 'contacts.firstname as user_firstname, ' . db_prefix() . 'contacts.lastname as user_lastname,' . db_prefix() . 'staff.firstname as staff_firstname, ' . db_prefix() . 'staff.lastname as staff_lastname,lastreply,message,' . db_prefix() . 'tickets.status,subject,department,priority,' . db_prefix() . 'contacts.email,adminread,clientread,date');
@@ -278,14 +279,36 @@ class Tickets_model extends App_Model
 
             return $this->db->get(db_prefix() . 'tickets')->row();
         }
-        
-            $companyusername = $_SESSION['current_company'];
-         $this->db->where('company_username', $companyusername);
+            
+            if(isset($_SESSION['current_company']))
+            {
+                
+                    $companyusername = $_SESSION['current_company'];
+                    $this->db->where('company_username', $companyusername);
+         
+            }
         $this->db->order_by('lastreply', 'asc');
 
         return $this->db->get(db_prefix() . 'tickets')->result_array();
     }
+  
+     public function get_client($id = '', $where = [])
+    {
+        $this->db->get(db_prefix() . 'tickets');
+       
+    
+        $this->db->where($where);
+        if (is_numeric($id)) {
+            $this->db->where(db_prefix() . 'tickets.ticketid', $id);
 
+            return $this->db->get(db_prefix() . 'tickets')->row();
+        }
+            
+          
+        $this->db->order_by('lastreply', 'asc');
+
+        return $this->db->get(db_prefix() . 'tickets')->result_array();
+    }
     /**
      * Get ticket by id and all data
      * @param  mixed  $id     ticket id

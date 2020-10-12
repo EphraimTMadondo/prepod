@@ -303,7 +303,7 @@
               >
               <a href="https://worksuite.app/os/admin/assets/allocation"
                >
-                              <i class="fa fa-pencil-square-o menu-icon"></i>
+                              <i class="bx bx-pencil menu-icon"></i>
                               <span class="sub-menu-text">
                   Allocation               </span>
                </a>

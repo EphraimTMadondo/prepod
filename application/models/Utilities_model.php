@@ -15,6 +15,7 @@ class Utilities_model extends App_Model
      */
     public function event($data)
     {
+       
          //blank_page(_l('project_not_found'));
         $data['userid'] = get_staff_user_id();
         $data['start']  = to_sql_date($data['start'], true);
@@ -55,9 +56,9 @@ class Utilities_model extends App_Model
         
         
            
-            // $data['company_username'] =  $_SESSION['current_company'];
+            $data['company_username'] =  $_SESSION['current_company'];
           
-            
+            print_r($data);
 
         $data = hooks()->apply_filters('event_create_data', $data);
        
@@ -98,7 +99,8 @@ class Utilities_model extends App_Model
         if ($is_staff_member) {
             $this->db->or_where('public', 1);
         }
- $companyusername = $_SESSION['current_company'];
+       
+         $companyusername = $_SESSION['current_company'];
          $this->db->where('company_username', $companyusername);
        return $this->db->get(db_prefix() . 'events')->result_array();
     }
@@ -117,6 +119,7 @@ class Utilities_model extends App_Model
         $client_id  = $this->db->escape_str($client_id);
         $contact_id = $this->db->escape_str($contact_id);
      
+        
         $companyusername = $_SESSION['current_company'];
         $is_admin                     = is_admin();
         $has_permission_tasks_view    = has_permission('tasks', '', 'view');
@@ -322,7 +325,8 @@ class Utilities_model extends App_Model
                     $this->db->where('visible_to_client', 1);
                 }
 
-                if ((!$has_permission_tasks_view || get_option('calendar_only_assigned_tasks') == '1') && !$client_data) {
+                //removed get_option('calendar_only_assigned_tasks') == '1')
+                if ((!$has_permission_tasks_view) && !$client_data) {
                     $this->db->where('(id IN (SELECT taskid FROM ' . db_prefix() . 'task_assigned WHERE staffid = ' . get_staff_user_id() . '))');
                 }
 
@@ -532,7 +536,6 @@ class Utilities_model extends App_Model
             'contact_id' => $contact_id,
         ]);
     }
-
     /**
      * Delete user event
      * @param  mixed $id event id

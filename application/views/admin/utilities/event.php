@@ -1,10 +1,27 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade _event" id="viewEvent">
   <div class="modal-dialog">
+      <style>
+          <style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        
+               
+                                        
+</style>
+      </style>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><?php echo $event->title; ?></h4>
+        <h4 class="modal-title" style ="color:white"><?php echo $event->title; ?></h4>
       </div>
       <?php echo form_open('admin/utilities/calendar',array('id'=>'calendar-event-form')); ?>
       <div class="modal-body">

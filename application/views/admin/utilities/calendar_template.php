@@ -2,9 +2,11 @@
 <div class="modal fade _event" id="newEventModal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style = "display: block;
+    background: #226faa;
+    padding: 15px 30px;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><?php echo _l('utility_calendar_new_event_title'); ?></h4>
+        <h4 class="modal-title" style = "color:white;"><?php echo _l('utility_calendar_new_event_title'); ?></h4>
       </div>
       <?php echo form_open('admin/utilities/calendar',array('id'=>'calendar-event-form')); ?>
       <div class="modal-body">
@@ -16,6 +18,8 @@
             <div class="clearfix mtop15"></div>
             <?php echo render_datetime_input('end','utility_calendar_new_event_end_date'); ?>
              <?php if(total_rows('emailtemplates', ['active'=>1,'slug'=>'event-notification-to-staff']) > 0){ ?>
+             
+             
             <div class="form-group">
              <div class="row">
               <div class="col-md-12">
@@ -27,8 +31,9 @@
                   <span class="input-group-addon"><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('reminder_notification_placeholder'); ?>"></i></span>
                 </div>
               </div>
-              <div class="col-md-6">
-               <select name="reminder_before_type" id="reminder_before_type" class="selectpicker" data-width="100%">
+              <div class="col-md-6 ">
+               <select name="reminder_before_type" id="reminder_before_type" class="" data-width="100%">
+                   
                  <option value="minutes" selected><?php echo _l('minutes'); ?></option>
                  <option value="hours"><?php echo _l('hours'); ?></option>
                  <option value="days"><?php echo _l('days'); ?></option>
@@ -59,10 +64,30 @@
         ?>
         <div class="clearfix"></div>
         <hr />
+        <style>
+            .cpicker-small {
+
+            width: 10px;
+            height: 10px;
+            }
+            
+            .cpicker {
+                float: left;
+                margin-right: 15px;
+                border-radius: 1px;
+            }
+            
+           .cpicker-big {
+    width: 20px;
+    height: 20px;
+}
+            
+        </style>
         <div class="checkbox checkbox-primary">
           <input type="checkbox" name="public" id="public">
           <label for="public"><?php echo _l('utility_calendar_new_event_make_public'); ?></label>
         </div>
+ 
       </div>
     </div>
   </div>

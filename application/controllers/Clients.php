@@ -583,6 +583,7 @@ class Clients extends ClientsController
 
     public function tickets($status = '')
     {
+       // print_r($this->tickets_model->get_client('', []));
         if (!has_contact_permission('support')) {
             set_alert('warning', _l('access_denied'));
             redirect(site_url());
@@ -605,7 +606,7 @@ class Clients extends ClientsController
 
         $data['list_statuses'] = is_numeric($status) ? [$status] : $defaultStatuses;
         $data['bodyclass']     = 'tickets';
-        $data['tickets']       = $this->tickets_model->get('', $where);
+       $data['tickets']       = $this->tickets_model->get_client('', $where);
         $data['title']         = _l('clients_tickets_heading');
         $this->data($data);
         $this->view('tickets');
@@ -924,7 +925,7 @@ class Clients extends ClientsController
                 $where['status !='] = 1;
             }
         }
-        $data['estimates'] = $this->estimates_model->get('', $where);
+        $data['estimates'] = $this->estimates_model->get_client('', $where);
         $data['title']     = _l('clients_my_estimates');
         $this->data($data);
         $this->view('estimates');

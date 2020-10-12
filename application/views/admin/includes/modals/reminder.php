@@ -16,7 +16,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default close-reminder-modal" data-rel-id="<?php echo $id; ?>" data-rel-type="<?php echo $name; ?>"><?php echo _l('close'); ?></button>
-        <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+        <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
       </div>
       <?php echo form_close(); ?>
     </div>

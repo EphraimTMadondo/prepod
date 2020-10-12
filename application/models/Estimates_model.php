@@ -78,6 +78,46 @@ class Estimates_model extends App_Model
         return $this->db->get()->result_array();
     }
 
+    public function get_client($id = '', $where = [])
+    {
+        $this->db->select('*,' . db_prefix() . 'currencies.id as currencyid, ' . db_prefix() . 'estimates.id as id, ' . db_prefix() . 'currencies.name as currency_name');
+        $this->db->from(db_prefix() . 'estimates');
+        $this->db->join(db_prefix() . 'currencies', db_prefix() . 'currencies.id = ' . db_prefix() . 'estimates.currency', 'left');
+        $this->db->where($where);
+        
+    
+        if (is_numeric($id)) {
+            $this->db->where(db_prefix() . 'estimates.id', $id);
+            $estimate = $this->db->get()->row();
+            if ($estimate) {
+                $estimate->attachments                           = $this->get_attachments($id);
+                $estimate->visible_attachments_to_customer_found = false;
+                foreach ($estimate->attachments as $attachment) {
+                    if ($attachment['visible_to_customer'] == 1) {
+                        $estimate->visible_attachments_to_customer_found = true;
+
+                        break;
+                    }
+                }
+                $estimate->items = get_items_by_type('estimate', $id);
+
+                if ($estimate->project_id != 0) {
+                    $this->load->model('projects_model');
+                    $estimate->project_data = $this->projects_model->get($estimate->project_id);
+                }
+                $estimate->client = $this->clients_model->get($estimate->clientid);
+                if (!$estimate->client) {
+                    $estimate->client          = new stdClass();
+                    $estimate->client->company = $estimate->deleted_customer_name;
+                }
+            }
+
+            return $estimate;
+        }
+        $this->db->order_by('number,YEAR(date)', 'desc');
+
+        return $this->db->get()->result_array();
+    }
     /**
      * Get estimate statuses
      * @return array

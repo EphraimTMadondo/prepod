@@ -1,11 +1,28 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_open_multipart(admin_url('tasks/task/'.$id),array('id'=>'task-form')); ?>
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        
+               
+                                        
+</style>
+<!-- Datepicker -->
+
 <div class="modal fade<?php if(isset($task)){echo ' edit';} ?>" id="_task_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"<?php if($this->input->get('opened_from_lead_id')){echo 'data-lead-id='.$this->input->get('opened_from_lead_id'); } ?>>
 <div class="modal-dialog" role="document">
    <div class="modal-content">
       <div class="modal-header">
          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <h4 class="modal-title" id="myModalLabel">
+         <h4 class="modal-title" id="myModalLabel" style ="color:white;">
             <?php echo $title; ?>
          </h4>
       </div>
@@ -24,7 +41,7 @@
                    }
                   ?>
                <?php if(isset($task)){ ?>
-               <div class="float-right mbot10 task-single-menu task-menu-options">
+               <div class="float-right mb-1 task-single-menu task-menu-options">
                   <div class="content-menu hide">
                      <ul>
                         <?php if(has_permission('tasks','','create')){ ?>
@@ -124,7 +141,7 @@
                <div class="project-details<?php if($rel_type != 'project'){echo ' hide';} ?>">
                   <div class="form-group">
                      <label for="milestone"><?php echo _l('task_milestone'); ?></label>
-                     <select name="milestone" id="milestone" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                     <select name="milestone" id="milestone" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                         <option value=""></option>
                         <?php foreach($milestones as $milestone){ ?>
                         <option value="<?php echo $milestone['id']; ?>" <?php if(isset($task) && $task->milestone == $milestone['id']){echo 'selected'; } ?>><?php echo $milestone['name']; ?></option>
@@ -146,6 +163,7 @@
                         $date_attrs['disabled'] = true;
                         }
                         ?>
+                        
                      <?php echo render_date_input('startdate','task_add_edit_start_date',$value, $date_attrs); ?>
                   </div>
                   <div class="col-md-6">
@@ -155,7 +173,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="priority" class="control-label"><?php echo _l('task_add_edit_priority'); ?></label>
-                        <select name="priority" class="selectpicker" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="priority" class="selectpicker" data-style="btn-outline-light" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <?php foreach(get_tasks_priorities() as $priority) { ?>
                            <option value="<?php echo $priority['id']; ?>"<?php if(isset($task) && $task->priority == $priority['id'] || !isset($task) && get_option('default_task_priority') == $priority['id']){echo ' selected';} ?>><?php echo $priority['name']; ?></option>
                            <?php } ?>
@@ -166,7 +184,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="repeat_every" class="control-label"><?php echo _l('task_repeat_every'); ?></label>
-                        <select name="repeat_every" id="repeat_every" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_every" id="repeat_every" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="1-week" <?php if(isset($task) && $task->repeat_every == 1 && $task->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('week'); ?></option>
                            <option value="2-week" <?php if(isset($task) && $task->repeat_every == 2 && $task->recurring_type == 'week'){echo 'selected';} ?>>2 <?php echo _l('weeks'); ?></option>
@@ -187,7 +205,7 @@
                         <?php echo render_input('repeat_every_custom','',$value,'number',array('min'=>1)); ?>
                      </div>
                      <div class="col-md-6">
-                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value="day" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'day'){echo 'selected';} ?>><?php echo _l('task_recurring_days'); ?></option>
                            <option value="week" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('task_recurring_weeks'); ?></option>
                            <option value="month" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'month'){echo 'selected';} ?>><?php echo _l('task_recurring_months'); ?></option>
@@ -220,7 +238,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="rel_type" class="control-label"><?php echo _l('task_related_to'); ?></label>
-                        <select name="rel_type" class="selectpicker" id="rel_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="rel_type" class="selectpicker" data-style="btn-outline-light" id="rel_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="project"
                               <?php if(isset($task) || $this->input->get('rel_type')){if($rel_type == 'project'){echo 'selected';}} ?>><?php echo _l('project'); ?></option>
@@ -274,6 +292,8 @@
                      echo render_datetime_input('datefinished','task_finished',_dt($task->datefinished));
                   }
                ?>
+               ZZZZZ
+               <input type="text" id="start" name="start" class="form-control pickadate datetimepicker picker__input picker__input--active" value="" autocomplete="off" readonly="" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="start_root">
                <div class="form-group checklist-templates-wrapper<?php if(count($checklistTemplates) == 0 || isset($task)){echo ' hide';}  ?>">
                   <label for="checklist_items"><?php echo _l('insert_checklist_templates'); ?></label>
                   <select id="checklist_items" name="checklist_items[]" class="selectpicker checklist-items-template-select" multiple="1" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex') ?>" data-width="100%" data-live-search="true" data-actions-box="true">
@@ -297,13 +317,13 @@
                <p class="bold"><?php echo _l('task_add_edit_description'); ?></p>
                <?php
                // onclick and onfocus used for convert ticket to task too
-               echo render_textarea('description','',(isset($task) ? $task->description : ''),array('rows'=>6,'placeholder'=>_l('task_add_description'),'data-task-ae-editor'=>true, !is_mobile() ? 'onclick' : 'onfocus'=>(!isset($task) || isset($task) && $task->description == '' ? 'init_editor(\'.tinymce-task\', {height:200, auto_focus: true});' : '')),array(),'no-mbot','tinymce-task'); ?>
+               echo render_textarea('description','',(isset($task) ? $task->description : ''),array('rows'=>6,'placeholder'=>_l('task_add_description'),'data-task-ae-editor'=>true, !is_mobile() ? 'onclick' : 'onfocus'=>(!isset($task) || isset($task) && $task->description == '' ? 'init_editor(\'.tinymce-task\', {height:200, auto_focus: true});' : '')),array(),'mb-0','tinymce-task'); ?>
             </div>
          </div>
       </div>
       <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
-         <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
+         <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
       </div>
    </div>
 </div>
@@ -459,3 +479,7 @@
       init_datepicker($duedate);
    }
 </script>
+
+   
+   
+   

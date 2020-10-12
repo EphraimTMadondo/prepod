@@ -13,7 +13,10 @@
     <link rel="apple-touch-icon" href="<?php echo base_url();?>assets/frest/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" id="favicon" href="https://worksuite.app/prepod/uploads/company/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
-
+    <?php
+      echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/pickadate/pickadate.css'>\n\t";
+      echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css'>\n\t";
+    ?>
     <!-- BEGIN: Vendor CSS-->
     <?php
       switch($page)
@@ -22,7 +25,6 @@
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/swiper.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/dragula.min.css'>\n\t";
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/daterange/daterangepicker.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-time-picker.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-date-picker.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/calendars/tui-calendar.min.css'>\n\t";
@@ -41,10 +43,11 @@
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/extensions/dragula.min.css'>\n\t";
         break;
         case 'task_kanban':
+        case 'proposals_kanban':
+        case 'leads':
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/jkanban/jkanban.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/editors/quill/quill.snow.css'>\n\t";
-          echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/pickers/pickadate/pickadate.css'>\n\t";
         break;
         case 'mailbox':
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
@@ -62,7 +65,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/bootstrap-select-ajax/css/ajax-bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/components.css"> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/dark-layout.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/css/themes/semi-dark-layout.min.css">
@@ -86,7 +91,14 @@
         case "task_list":
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/app-todo.css'>\n\t";
         break;
+        case "hrm":
+        case "purchase":
+          echo "<link rel='stylesheet' type='text/css' href='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.css'>\n\t";
+          echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
+        break;
         case "task_kanban":
+        case "proposals_kanban":
+        case "leads":
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/css/pages/app-kanban.css'>\n\t";
         break;
         case "mailbox":

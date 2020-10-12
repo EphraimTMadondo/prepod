@@ -2,6 +2,26 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+    <style>
+@media (min-width: 768px)
+.form-inline .checkbox, .form-inline .radio {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.checkbox {
+    padding: initial;
+}
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+}
+
+
+    </style>
       <div class="content-overlay"></div>
       <div class="content-wrapper">
          <div class="row">
@@ -310,12 +330,7 @@
                data.mass_delete = true;
            }
            var rows = $('.table-clients').find('tbody tr');
-           $.each(rows, function() {
-               var checkbox = $($(this).find('td').eq(0)).find('input');
-               if (checkbox.prop('checked') == true) {
-                   ids.push(checkbox.val());
-               }
-           });
+         
            data.ids = ids;
            $(event).addClass('disabled');
            setTimeout(function(){
@@ -325,6 +340,7 @@
          },50);
        }
    }
+
 </script>
 </body>
 </html>
