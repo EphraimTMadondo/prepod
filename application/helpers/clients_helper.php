@@ -38,7 +38,11 @@ function send_confirm_client_email($staff_id, $email)
    // $admin = $CI->staff_model->get_new_staff('', ['staffid' => $client_id]);
 
        
+<<<<<<< HEAD
    send_mail_template('verify_admin_email',$email, $staff_id, $staff_id);
+=======
+    send_mail_template('verify_admin_email',$email, $staff_id, $staff_id);
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 }
 
 /**

@@ -307,13 +307,21 @@ function option_exists($name)
 function app_init_settings_tabs()
 {
     $CI = &get_instance();
+<<<<<<< HEAD
 /***
+=======
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     $CI->app_tabs->add_settings_tab('general', [
         'name'     => _l('settings_group_general'),
         'view'     => 'admin/settings/includes/general',
         'position' => 5,
     ]);
+<<<<<<< HEAD
 ****/
+=======
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     $CI->app_tabs->add_settings_tab('company', [
         'name'     => _l('company_information'),
         'view'     => 'admin/settings/includes/company',
@@ -391,15 +399,22 @@ function app_init_settings_tabs()
         'view'     => 'admin/settings/includes/e_sign',
         'position' => 70,
     ]);
+<<<<<<< HEAD
 /***
+=======
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     $CI->app_tabs->add_settings_tab('cronjob', [
         'name'     => _l('settings_group_cronjob'),
         'view'     => 'admin/settings/includes/cronjob',
         'position' => 75,
     ]);
+<<<<<<< HEAD
     
     
     ***/
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     $CI->app_tabs->add_settings_tab('tags', [
         'name'     => _l('tags'),

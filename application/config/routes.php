@@ -167,7 +167,10 @@ $route['register']        = 'authentication/register';
 $route['register2']        = 'authentication/register2';
 $route['verify_email']        = 'authentication/verify_email';
 $route['resend_verification']        = 'authentication/resend_verification';
+<<<<<<< HEAD
 $route['login_client']        = 'authentication/login_client';
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 /**
  * Terms and conditions and Privacy Policy routes
  */

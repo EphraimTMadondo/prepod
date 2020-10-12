@@ -104,6 +104,7 @@ class Cron_model extends App_Model
         $all_notified_events       = [];
         foreach ($events as $event) {
             $date_compare = date('Y-m-d H:i:s', strtotime('+' . $event['reminder_before'] . ' ' . strtoupper($event['reminder_before_type'])));
+<<<<<<< HEAD
             
             
             //Added by Vic make sure notifications aren't sent twice
@@ -118,6 +119,10 @@ class Cron_model extends App_Model
             
              }
             if ($event['start'] <= $date_compare && ($newnotification == true)) {
+=======
+
+            if ($event['start'] <= $date_compare) {
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 array_push($all_notified_events, $event['eventid']);
                 array_push($notified_users, $event['userid']);
 

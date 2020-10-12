@@ -139,6 +139,7 @@ class Authentication_model extends App_Model
         return false;
     }
 
+<<<<<<< HEAD
     //Log user in via facebook
     //Victor
      public function login_facebook($facebook, $staff)
@@ -317,6 +318,8 @@ class Authentication_model extends App_Model
         return false;
     }
     
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     /**
      * @param  boolean If Client or Staff
      * @return none
@@ -326,13 +329,19 @@ class Authentication_model extends App_Model
         $this->delete_autologin($staff);
 
         if (is_client_logged_in()) {
+<<<<<<< HEAD
            
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
             hooks()->do_action('before_contact_logout', get_client_user_id());
 
             $this->session->unset_userdata('client_user_id');
             $this->session->unset_userdata('client_logged_in');
+<<<<<<< HEAD
             $this->session->sess_destroy();
              redirect(site_url('authentication/login_client'));
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         } else {
             hooks()->do_action('before_staff_logout', get_staff_user_id());
 

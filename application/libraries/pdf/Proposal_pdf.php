@@ -26,6 +26,7 @@ class Proposal_pdf extends App_pdf
             $this->load_language($proposal->rel_id);
         }
 
+<<<<<<< HEAD
        $this->SetTitle($this->proposal_number);
         $this->SetDisplayMode('default', 'OneColumn');
          
@@ -104,6 +105,13 @@ class Proposal_pdf extends App_pdf
        
         
     
+=======
+        $this->SetTitle($this->proposal_number);
+        $this->SetDisplayMode('default', 'OneColumn');
+
+        # Don't remove these lines - important for the PDF layout
+        $this->proposal->content = $this->fix_editor_html($this->proposal->content);
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     }
 
     public function prepare()

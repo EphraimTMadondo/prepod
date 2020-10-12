@@ -73,6 +73,7 @@ abstract class App_pdf extends TCPDF
         $this->SetFont($this->get_font_name(), '', $this->get_font_size());
         $this->setImageScale($this->image_scale);
         $this->setJPEGQuality($this->jpeg_quaility);
+<<<<<<< HEAD
         
         if($this->type() == 'proposal')
         {
@@ -98,6 +99,10 @@ abstract class App_pdf extends TCPDF
         }
        $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']);
      
+=======
+
+        $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']);
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
         if ($this->ci->input->get('print') == 'true') {
             // force print dialog

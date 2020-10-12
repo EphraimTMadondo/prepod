@@ -20,6 +20,7 @@ class Contract_pdf extends App_pdf
         $this->load_language($this->contract->client);
         $this->SetTitle($this->contract->subject);
 
+<<<<<<< HEAD
         # Don't remove these lines - important for the PDF layout + Victor edits
         
           //Cover Page
@@ -90,6 +91,9 @@ class Contract_pdf extends App_pdf
         $this->writeHTML($startofpdf, true, false, false, false, '');
         $this->SetTextColor(0, 0, 0);
         
+=======
+        # Don't remove these lines - important for the PDF layout
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         $this->contract->content = $this->fix_editor_html($this->contract->content);
     }
 

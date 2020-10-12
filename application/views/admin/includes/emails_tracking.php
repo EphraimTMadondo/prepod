@@ -1,9 +1,16 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 if(count($tracked_emails) === 0) {
+<<<<<<< HEAD
    echo '<h4 class="mb-0">'._l('no_tracked_emails_sent').'</h4>';
 } else {
    ?>
    <h4 class="mb-0"><?php echo _l('tracked_emails_sent'); ?></h4>
+=======
+   echo '<h4 class="no-mbot">'._l('no_tracked_emails_sent').'</h4>';
+} else {
+   ?>
+   <h4 class="no-mbot"><?php echo _l('tracked_emails_sent'); ?></h4>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
    <div class="table-responsive">
       <table class="table ">
          <thead>

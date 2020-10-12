@@ -47,7 +47,11 @@
      
 }
 .choose:hover {
+<<<<<<< HEAD
   background-color: #006FB8 !important;
+=======
+  background-color: green;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
   color: white;
 }
 .selected1{
@@ -63,7 +67,11 @@
     padding-top: 5%;
     padding-bottom: 5%;
     font-weight: 100;
+<<<<<<< HEAD
     background-color:blue !important;
+=======
+    background-color:#08a742;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     color: white;
 }
 .customers-extended{
@@ -149,8 +157,12 @@ body{
 }
 .pb-button--primary {
     color: #fff;
+<<<<<<< HEAD
      background-color: #006FB8 !important;
 
+=======
+    background-color: #08a742 !important;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     font-weight: 700;
     font-size:18px;
     padding: 11px 20px;
@@ -198,16 +210,25 @@ p {
  <?php echo form_open('authentication/register3', ['id'=>'register-form']); ?>
     <div class="card main-area">
         <div class="card-body" style ="height: 100%; justify-content: space-between; ">
+<<<<<<< HEAD
             
         <h1 class="login-title">MAKE WORKSUITE TRULY YOURS</h1>
      
+=======
+        <h1 class="login-title">MAKE WORKSUITE TRULY YOURS</h1>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         <p style = "text-align: center; margin-bottom: 35px;font-size:15px;">We'll use this info to personalize your experience. </p>
 
         <div class="form-group register-address-group" style = "margin-bottom: 20px;">
         <p style = "text-align: center; margin-bottom: 10px;font-size:15px;">How many people in your company will use Worksuite? </p>
         <div style = "display:flex;">
+<<<<<<< HEAD
             <div id = "1" class = "choose"  onclick="selected(this.id)"><strong> 1-2</strong></div>
             <div id = "2" class = "choose"  onclick="selected(this.id)"><strong> 3-5</strong></div>
+=======
+            <div id = "1" class = "choose"  onclick="selected(this.id)"><strong> 1</strong></div>
+            <div id = "2" class = "choose"  onclick="selected(this.id)"><strong> 2-5</strong></div>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
             <div id = "3" class = "choose"  onclick="selected(this.id)"><strong> 6-10</strong></div>
             <div id = "4" class = "choose"  onclick="selected(this.id)"><strong> 11-50</strong></div>
             <div id = "5" class = "choose"  onclick="selected(this.id)"><strong> 50+</strong></div>
@@ -218,7 +239,11 @@ p {
     <script>
         function selected(id){
             document.getElementById("choose").value = id;
+<<<<<<< HEAD
            document.getElementById(id).className = "selected1"; 
+=======
+            document.getElementById(id).className = "selected1"; 
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
             
             for (i = 1; i < 6; i++) {
                 if(i != id){

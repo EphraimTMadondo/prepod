@@ -15,7 +15,11 @@
         </div>
       </div>
       <div class="modal-footer">
+<<<<<<< HEAD
         <a href="#" class="btn btn-secondary load_more_post_comment_likes"><?php echo _l('load_more'); ?></a>
+=======
+        <a href="#" class="btn btn-info load_more_post_comment_likes"><?php echo _l('load_more'); ?></a>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
       </div>
     </div>
   </div>

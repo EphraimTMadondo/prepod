@@ -138,7 +138,11 @@ body{
 }
 .pb-button--primary {
     color: #fff;
+<<<<<<< HEAD
     background-color: #006FB8 !important;
+=======
+    background-color: #08a742 !important;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     font-weight: 700;
     font-size:24px;
     padding: 11px 20px;
@@ -149,6 +153,7 @@ body{
 
 
 <?php echo form_open('authentication/register', ['id'=>'register-form']); ?>
+<<<<<<< HEAD
 
 <script>
   window.fbAsyncInit = function() {
@@ -191,6 +196,8 @@ body{
 
 
 
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 <div style = "text-align: center; top: 50%;">
     <div class="card main-area">
         <div class="card-body" style ="text-align: center;">
@@ -198,6 +205,7 @@ body{
             <div class = "" style = "">
                 <h1 class = "heading login-title">Try Worksuite for 14 days</h1>
                 <div class="form-group mtop15 register-firstname-group" style = "margin-bottom: 50px;" >
+<<<<<<< HEAD
                     <p style = "text-align: center; margin-bottom: 55px;font-size:15px;">Immediate access. No credit card required. </p>
                     <div >
                                  <!--Google Sign In -->
@@ -241,12 +249,16 @@ body{
 
                   
                         
+=======
+                    <p style = "text-align: center; margin-bottom: 65px;font-size:15px;">Immediate access. No credit card required. </p>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                     <div style= "display: flex; position: relative; border-bottom: 2px solid; justify-content: space-between;flex: 1; color: #b9babb;">  
                         <img src = "<?php echo base_url();?>uploads/company/profile.png" style = "height: 20px; margin: 17px 0px; "</img>
                         <input type="text" class="form-control custom-input" name="firstname" id="firstname" placeholder="Full Name" value="<?php echo set_value('firstname'); ?>">
                     </div>
                     <?php echo form_error('firstname'); ?>
                 </div>
+<<<<<<< HEAD
          
                <input name="facebook" id="facebook" value = "none" style ="display:none;">
                
@@ -262,10 +274,17 @@ body{
                     
                         <img src = "<?php echo base_url();?>uploads/company/email.jpg" style = "height: 20px; margin: 17px 0px; "</img>
                         
+=======
+               
+                <div class="form-group register-email-group" style = "margin-bottom: 55px;">
+                    <div style= "display: flex; position: relative; border-bottom: 2px solid; justify-content: space-between;flex: 1; color: #b9babb;"> 
+                        <img src = "<?php echo base_url();?>uploads/company/email.jpg" style = "height: 20px; margin: 17px 0px; "</img>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                         <input type="email"  class="form-control custom-input" name="email" id="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
                     </div>
                     <?php echo form_error('email'); ?>
                 </div>
+<<<<<<< HEAD
                 <?
                 
                 }
@@ -314,6 +333,8 @@ body{
  }
                 }
     </script>
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 <!--
                 <div class="form-group register-contact-phone-group">
                     <label class="control-label" for="contact_phonenumber">Admin Phonenumber</label>
@@ -366,6 +387,7 @@ body{
           
     </div>
     <?php echo form_close(); ?>
+<<<<<<< HEAD
                  <script>
             
               
@@ -467,5 +489,7 @@ body{
       
     </script>
   
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 </div>
 </div>

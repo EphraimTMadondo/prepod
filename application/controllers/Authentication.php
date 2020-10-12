@@ -23,6 +23,7 @@ class Authentication extends ClientsController
     {
         redirect(admin_url('authentication'));
     }
+<<<<<<< HEAD
     
     public function facebook_login()
     {
@@ -65,6 +66,8 @@ class Authentication extends ClientsController
             
         }
     }
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     public function login()
     {
@@ -117,6 +120,7 @@ class Authentication extends ClientsController
         $this->view('login');
         $this->layout();
     }
+<<<<<<< HEAD
   
    public function login_client()
     {
@@ -172,6 +176,9 @@ class Authentication extends ClientsController
         $this->layout();
     }
       
+=======
+    
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     
 
      public function login_admin()
@@ -239,8 +246,11 @@ class Authentication extends ClientsController
     
     public function register()
     {
+<<<<<<< HEAD
         
         
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
       if (is_staff_logged_in()) {
             
             redirect(base_url().'admin/');    
@@ -251,8 +261,13 @@ class Authentication extends ClientsController
                  
         $this->form_validation->set_rules('firstname', _l('client_firstname'), 'required');
        // $this->form_validation->set_rules('lastname', _l('client_lastname'), 'required');
+<<<<<<< HEAD
   
          
+=======
+        
+        $this->form_validation->set_rules('email', _l('client_email'), 'trim|required|is_unique[' . db_prefix() . 'staff.email]|valid_email');
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
        // $this->form_validation->set_rules('password', _l('clients_register_password'), 'required');
        // $this->form_validation->set_rules('passwordr', _l('clients_register_password_repeat'), 'required|matches[password]');
 
@@ -260,6 +275,7 @@ class Authentication extends ClientsController
         
 
       
+<<<<<<< HEAD
             
     
         if ($this->input->post()) {
@@ -310,6 +326,19 @@ class Authentication extends ClientsController
                 }
                 
                 
+=======
+
+     
+     
+        if ($this->input->post()) {
+           // blank_page(_l('project_not_found'));
+            
+            if ($this->form_validation->run() !== false) {
+                       
+              
+                $data = $this->input->post();
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 $names = explode(' ', $data['firstname']);
                 $data['admin'] = 1;
                 $data['datecreated'] =  date("Y-m-d H:i:s"); 
@@ -327,6 +356,7 @@ class Authentication extends ClientsController
 
              $this->db->insert(db_prefix() . 'staff', $data);
             
+<<<<<<< HEAD
              if ($data['facebook']== "none"  && $data['google'] == "none")
              {
              
@@ -340,6 +370,12 @@ class Authentication extends ClientsController
               
              }
             
+=======
+             
+             $this->db->where('email',$email);
+             $array = $this->db->get(db_prefix() . 'staff')->result_array();
+             $staff_id = $array[0]['staffid'];
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
              
              
              
@@ -353,11 +389,16 @@ class Authentication extends ClientsController
                 //echo"running";
             
               //send_customer_registered_email_to_administrators($staff_id, $email);
+<<<<<<< HEAD
                
              if ($data['facebook']== "none" && $data['google'] == "none")
                 {
               send_confirm_client_email($staff_id, $email);
                 }
+=======
+             
+              send_confirm_client_email($staff_id, $email);
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
               $_SESSION['my_user_email'] = $email;
               $_SESSION['my_staff_id'] = $staff_id;
               
@@ -374,7 +415,11 @@ class Authentication extends ClientsController
             
             
             
+<<<<<<< HEAD
              
+=======
+               //echo"running";
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                //echo "I have died".base_url(); die();
                redirect(base_url()."authentication/register2");
                //  redirect(base_url()."authentication/admin_verify_email");
@@ -561,6 +606,7 @@ class Authentication extends ClientsController
             $staffid =      $_SESSION['company_username'];
              $this->db->where('company_username', $staffid);
             $this->db->update(db_prefix() . 'companies', $data2);
+<<<<<<< HEAD
         
         if( $_SESSION['other_verification'] != "yes")
         {
@@ -570,6 +616,10 @@ class Authentication extends ClientsController
         {
            redirect(base_url()."authentication/complete_registration"); 
         }
+=======
+                        
+         redirect(base_url()."authentication/verify_email");
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
               
             }
         }
@@ -622,7 +672,11 @@ public function complete_registration()
         }
      
          
+<<<<<<< HEAD
          if(isset($_GET['staffid']) && !empty($_GET['staffid']) OR isset($_GET['hash']) && !empty($_GET['hash'])OR $_SESSION['staff_id'] != null OR $_SESSION['other_verification'] == "yes" ){
+=======
+         if(isset($_GET['staffid']) && !empty($_GET['staffid']) OR isset($_GET['hash']) && !empty($_GET['hash'])OR $_SESSION['staff_id'] != null){
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 // Verify data
     
                 if (isset($_GET['staffid']) && !empty($_GET['staffid']) OR isset($_GET['hash']) && !empty($_GET['hash']) )
@@ -638,6 +692,7 @@ public function complete_registration()
 
     
          
+<<<<<<< HEAD
         $this->form_validation->set_rules('password', _l('clients_register_password'), 'required');     $this->form_validation->set_rules('password', _l('clients_register_password'), 'required');
                         $this->form_validation->set_rules('passwordr', _l('clients_register_password_repeat'), 'required|matches[password]');
                            // $this->form_validation->set_message('matches', "The Company Username must have no spaces");
@@ -648,6 +703,13 @@ public function complete_registration()
                    $this->form_validation->set_rules('email', _l('client_email'), 'trim|required|is_unique[' . db_prefix() . 'staff.email]|valid_email');
                    
                }
+=======
+        $this->form_validation->set_rules('password', _l('clients_register_password'), 'required');
+                        $this->form_validation->set_rules('passwordr', _l('clients_register_password_repeat'), 'required|matches[password]');
+                           // $this->form_validation->set_message('matches', "The Company Username must have no spaces");
+    
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
         $custom_fields_contacts = get_custom_fields('contacts', [
             'show_on_client_portal' => 1,

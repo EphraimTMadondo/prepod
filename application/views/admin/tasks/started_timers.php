@@ -31,7 +31,11 @@ foreach ($startedTimers as $timer) {
 
         $data .= 'data-content="';
         $data .= htmlspecialchars(render_textarea("timesheet_note"));
+<<<<<<< HEAD
         $data .= '<button type=\'button\' onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].');\' class=\'btn btn-secondary btn-xs\'>'._l('save').'</button>" ';
+=======
+        $data .= '<button type=\'button\' onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].');\' class=\'btn btn-info btn-xs\'>'._l('save').'</button>" ';
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         $data .= 'onclick="return false;">';
     } else {
         $data .= 'onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].'); return false;\'>';
@@ -53,11 +57,19 @@ if ($noTimersWithoutTask
     && !(get_option('auto_stop_tasks_timers_on_new_timer') == 1
         && total_rows(db_prefix().'taskstimers','staff_id='.get_staff_user_id().' AND end_time IS NULL') > 0)
     ) {
+<<<<<<< HEAD
     echo '<button class="mt-1 text-center btn btn-success started-timers-button top-dropdown-btn" onclick="timer_action(this,0); return false;"><i class="fa fa-clock-o"></i> '._l('task_start_timer').'</button>';
 }
 
 if (is_admin()) {
     echo '<div class="text-center mt-1 view-all-timesheets">';
+=======
+    echo '<button class="mtop15 text-center btn btn-success started-timers-button top-dropdown-btn" onclick="timer_action(this,0); return false;"><i class="fa fa-clock-o"></i> '._l('task_start_timer').'</button>';
+}
+
+if (is_admin()) {
+    echo '<div class="text-center mtop15 view-all-timesheets">';
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     echo '<a href="'.admin_url('staff/timesheets?view=all').'">'._l('view_members_timesheets').'</a>';
     echo '</div>';
 }

@@ -5,7 +5,11 @@
    <div class="card-body padding-10">
     <div class="widget-dragger"></div>
      <div class="row">
+<<<<<<< HEAD
       <div class="col-md-12 mb-1">
+=======
+      <div class="col-md-12 mbot10">
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         <p class="padding-5"> <?php echo _l('home_tickets_awaiting_reply_by_status'); ?></p>
         <hr class="hr-panel-heading-dashboard">
         <div class="height-200">

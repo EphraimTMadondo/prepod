@@ -2,6 +2,7 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+<<<<<<< HEAD
     <style>
 @media (min-width: 768px)
 .form-inline .checkbox, .form-inline .radio {
@@ -22,6 +23,8 @@
 
 
     </style>
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
       <div class="content-overlay"></div>
       <div class="content-wrapper">
          <div class="row">
@@ -330,7 +333,16 @@
                data.mass_delete = true;
            }
            var rows = $('.table-clients').find('tbody tr');
+<<<<<<< HEAD
          
+=======
+           $.each(rows, function() {
+               var checkbox = $($(this).find('td').eq(0)).find('input');
+               if (checkbox.prop('checked') == true) {
+                   ids.push(checkbox.val());
+               }
+           });
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
            data.ids = ids;
            $(event).addClass('disabled');
            setTimeout(function(){
@@ -340,7 +352,10 @@
          },50);
        }
    }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 </script>
 </body>
 </html>

@@ -23,6 +23,7 @@ if($this->session->has_userdata('tasks_kanban_view') && $this->session->userdata
    } else { 
       init_tail('task_list');
 }?>
+<<<<<<< HEAD
 <script>
 function kanban_tasks(){
    if ($('#kanban-app').length === 0) { return; }
@@ -209,5 +210,7 @@ $(function() {
     });
 });
 </script>
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 </body>
 </html>

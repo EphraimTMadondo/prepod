@@ -115,8 +115,13 @@ function render_color_picker($name, $label = '', $value = '', $input_attrs = [])
     $picker .= '<div class="form-group" app-field-wrapper="' . $name . '">';
     $picker .= '<label for="' . $name . '" class="control-label">' . $label . '</label>';
     $picker .= '<div class="input-group mbot15 colorpicker-input">
+<<<<<<< HEAD
     <input type="color" value="' . set_value($name, $value) . '" name="' . $name . '" id="' . $name . '" class="form-control" ' . $_input_attrs . ' />
     <span class="input-group-append"><i class="input-group-text"></i></span>
+=======
+    <input type="text" value="' . set_value($name, $value) . '" name="' . $name . '" id="' . $name . '" class="form-control" ' . $_input_attrs . ' />
+    <span class="input-group-addon"><i></i></span>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 </div>';
     $picker .= '</div>';
 
@@ -171,9 +176,15 @@ function render_date_input($name, $label = '', $value = '', $input_attrs = [], $
         $input .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
     }
     $input .= '<div class="input-group date">';
+<<<<<<< HEAD
     $input .= '<input type="text" id="' . $name . '" name="' . $name . '" class="form-control pickadate datepicker' . $input_class . '" ' . $_input_attrs . ' value="' . set_value($name, $value) . '" autocomplete="off">';
     $input .= '<div class="input-group-append">
     <i class="fa fa-calendar calendar-icon input-group-text"></i>
+=======
+    $input .= '<input type="text" id="' . $name . '" name="' . $name . '" class="form-control datepicker' . $input_class . '" ' . $_input_attrs . ' value="' . set_value($name, $value) . '" autocomplete="off">';
+    $input .= '<div class="input-group-addon">
+    <i class="fa fa-calendar calendar-icon"></i>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 </div>';
     $input .= '</div>';
     $input .= '</div>';
@@ -321,12 +332,20 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
     if (!empty($form_group_class)) {
         $form_group_class = ' ' . $form_group_class;
     }
+<<<<<<< HEAD
     $select .= "<fieldset class='form-group'>\n";
     // $select .= '<div class="select-placeholder form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
     if ($label != '') {
         $select .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
     }
     $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control' . $select_class . '" ' . $_select_attrs . ' data-live-search="true">';
+=======
+    $select .= '<div class="select-placeholder form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
+    if ($label != '') {
+        $select .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
+    }
+    $select .= '<select id="' . $name . '" name="' . $name . '" class="selectpicker' . $select_class . '" ' . $_select_attrs . ' data-live-search="true">';
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     if ($include_blank == true) {
         $select .= '<option value=""></option>';
     }
@@ -393,29 +412,48 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
                 $data_content = ' ' . $data_content;
             }
         }
+<<<<<<< HEAD
         $select .= "<option value='" . $key . "'" . $_selected . $data_content . $data_sub_text . ">" . $val . "</option>\n";
     }
     $select .= "    </select>\n";
     $select .= "</fieldset>\n";
+=======
+        $select .= '<option value="' . $key . '"' . $_selected . $data_content . $data_sub_text . '>' . $val . '</option>';
+    }
+    $select .= '</select>';
+    $select .= '</div>';
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     return $select;
 }
 
 function render_select_with_input_group($name, $options, $option_attrs = [], $label = '', $selected = '', $input_group_contents = '', $select_attrs = [], $form_group_attr = [], $form_group_class = '', $select_class = '', $include_blank = true)
 {
+<<<<<<< HEAD
     $select_class .= ' custom-select';
     $select = render_select($name, $options, $option_attrs, $label, $selected, $select_attrs, $form_group_attr, $form_group_class, $select_class, $include_blank);
     $select = str_replace("<fieldset class='form-group'>", "<div class='input-group'>", $select);
     $select = str_replace('select-placeholder ', '', $select);
     $select = str_replace('</select>', '</select><div class="input-group-append">' . $input_group_contents . '</div>', $select);
     $select = str_replace('</fieldset> ', '</div>', $select);
+=======
+    $select_class .= ' _select_input_group';
+    $select = render_select($name, $options, $option_attrs, $label, $selected, $select_attrs, $form_group_attr, $form_group_class, $select_class, $include_blank);
+    $select = str_replace('form-group', 'input-group input-group-select select-' . $name, $select);
+    $select = str_replace('select-placeholder ', '', $select);
+    $select = str_replace('</select>', '</select><div class="input-group-addon">' . $input_group_contents . '</div>', $select);
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     $re = '/<label.*<\/label>/i';
     preg_match($re, $select, $label);
 
     if (count($label) > 0) {
         $select = preg_replace($re, '', $select);
+<<<<<<< HEAD
         $select = "<fieldset class='form-group'>" . $label[0] . $select . '</fieldset>';
+=======
+        $select = '<div class="select-placeholder form-group form-group-select-input-' . $name . ' input-group-select">' . $label[0] . $select . '</div>';
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     }
 
     return $select;
@@ -463,7 +501,11 @@ if (!function_exists('render_form_builder_field')) {
             if (isset($field->subtype) && $field->subtype == 'color') {
                 echo '<div class="input-group colorpicker-input">
          <input' . (isset($field->required) ? ' required="true"': '') . ' placeholder="' . (isset($field->placeholder) ? $field->placeholder : '') . '" type="text"' . (isset($field->value) ? ' value="' . $field->value . '"' : '') . ' name="' . $field->name . '" id="' . $field->name . '" class="' . (isset($field->className) ? $field->className : '') . '" />
+<<<<<<< HEAD
              <span class="input-group-append"><i class="input-group-text"></i></span>
+=======
+             <span class="input-group-addon"><i></i></span>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
          </div>';
             } elseif ($type == 'file' || $type == 'text' || $type == 'number') {
                 $ftype = isset($field->subtype) ? $field->subtype : $type;

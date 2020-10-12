@@ -467,6 +467,7 @@ class Misc_model extends App_Model
 
         return $this->db->get(db_prefix() . 'notifications')->result_array();
     }
+<<<<<<< HEAD
     
     
      public function get_user_notifications_cron($staff_id)
@@ -501,6 +502,8 @@ class Misc_model extends App_Model
 
         return $this->db->get(db_prefix() . 'notifications')->result_array();
     }
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     /**
      * Set notification read when user open notification dropdown

@@ -6,6 +6,7 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
 
+<<<<<<< HEAD
 <!-- Datepicker -->
 <?php
    echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>\n";
@@ -16,6 +17,8 @@
    echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>\n";
 ?>
 
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 <!-- Data tables -->
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
@@ -26,12 +29,18 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dropzone.min.js"></script>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/bootstrap-select-ajax/js/ajax-bootstrap-select.min.js"></script>
 
 
 <script type="text/javascript" id="tinymce-js" src="<?php echo base_url();?>assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="jquery-shortcuts-js" src="<?php echo base_url();?>assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
+=======
+
+<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="tinymce-js" src="<?php echo base_url();?>assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
@@ -64,12 +73,24 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>\n";
       break;
       case "task_kanban":
+<<<<<<< HEAD
       case "proposals_kanban":
       case "leads":
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/jkanban/jkanban.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
       break;
       case "task_list":
+=======
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/jkanban/jkanban.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
+      break;
+      case "task_list":
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js'></script>\n";
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
       break;
@@ -77,6 +98,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/toastr.min.js'></script>\n";
       break;
+<<<<<<< HEAD
       case "contracts":
       case "projects":
       case "reports":
@@ -90,6 +112,10 @@
          echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
       break;
       default:
+=======
+      default:
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/forms/select/select2.full.min.js'></script>\n";
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
       break;
    }
 ?>
@@ -98,7 +124,10 @@
 <!-- BEGIN: Theme JS-->
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
+<<<<<<< HEAD
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
@@ -123,12 +152,21 @@
       case "task_list":
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-todo.js'></script>\n";
       break;
+<<<<<<< HEAD
       case "mailbox":
          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
       break;
       case "projects":
          echo "<script src='".base_url()."assets/js/projects.js'></script>\n";
       break;
+=======
+      case "task_kanban":
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-kanban.js'></script>\n";
+      break;
+      case "mailbox":
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
+      break;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
       default:
       break;
    }

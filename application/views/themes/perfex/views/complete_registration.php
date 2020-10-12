@@ -10,7 +10,11 @@
 }
 .pb-button--primary {
     color: #fff;
+<<<<<<< HEAD
     background-color: blue !important;
+=======
+    background-color: #08a742 !important;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     font-weight: 700;
     font-size:18px;
     padding: 11px 20px;
@@ -100,6 +104,7 @@ label.control-label {
                         <input type="password" class="form-control custom-input" name="passwordr" id="passwordr" placeholder="<?php echo _l('clients_register_password_repeat'); ?>">
                         <?php echo form_error('passwordr'); ?>
                     </div>
+<<<<<<< HEAD
                     <?
                         if($_SESSION['other_verification'] == "yes")
                {
@@ -118,6 +123,10 @@ label.control-label {
                 <?
                }
                 ?>
+=======
+                    
+                
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <div class="form-group">

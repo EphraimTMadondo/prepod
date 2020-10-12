@@ -14,18 +14,30 @@ $i = 0;
         <small class="text-muted display-block"><?php echo _dt($note['dateadded']); ?></small>
         <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
         <a href="#" class="float-right text-danger" onclick="delete_sales_note(this,<?php echo $note['id']; ?>);return false;"><i class="fa fa fa-times"></i></a>
+<<<<<<< HEAD
         <a href="#" class="float-right mr-1" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="bx bx-pencil"></i></a>
+=======
+        <a href="#" class="float-right mr-1" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><i class="fa fa-pencil-square-o"></i></a>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         <?php } ?>
         <h5 class="media-heading bold"><a href="<?php echo admin_url('profile/'.$note["addedfrom"]); ?>"><?php echo get_staff_full_name($note['addedfrom']); ?></a></h5>
         <div data-note-description="<?php echo $note['id']; ?>">
            <?php echo check_for_links($note['description']); ?>
         </div>
+<<<<<<< HEAD
         <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide mt-1">
+=======
+        <div data-note-edit-textarea="<?php echo $note['id']; ?>" class="hide mtop15">
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
             <?php echo render_textarea('note','',$note['description']); ?>
         <?php if($note['addedfrom'] == get_staff_user_id() || is_admin()){ ?>
         <div class="text-right">
             <button type="button" class="btn btn-default" onclick="toggle_edit_note(<?php echo $note['id']; ?>);return false;"><?php echo _l('cancel'); ?></button>
+<<<<<<< HEAD
             <button type="button" class="btn btn-secondary" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
+=======
+            <button type="button" class="btn btn-info" onclick="edit_note(<?php echo $note['id']; ?>);"><?php echo _l('update_note'); ?></button>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
           </div>
         <?php } ?>
         </div>

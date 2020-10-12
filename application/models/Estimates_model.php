@@ -78,6 +78,7 @@ class Estimates_model extends App_Model
         return $this->db->get()->result_array();
     }
 
+<<<<<<< HEAD
     public function get_client($id = '', $where = [])
     {
         $this->db->select('*,' . db_prefix() . 'currencies.id as currencyid, ' . db_prefix() . 'estimates.id as id, ' . db_prefix() . 'currencies.name as currency_name');
@@ -118,6 +119,8 @@ class Estimates_model extends App_Model
 
         return $this->db->get()->result_array();
     }
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     /**
      * Get estimate statuses
      * @return array

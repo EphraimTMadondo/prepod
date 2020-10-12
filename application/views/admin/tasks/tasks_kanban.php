@@ -3,6 +3,7 @@
     <div class="content-overlay"></div>
     <div class="content-wrapper">
         <div class="content-header row">
+<<<<<<< HEAD
             <div class="col-md-8">
                 <?php if(has_permission('tasks','','create')){ ?>
                 <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-primary pull-left new"><?php echo _l('new_task'); ?></a>
@@ -21,6 +22,8 @@
                 <a href="<?php echo admin_url('tasks/detailed_overview'); ?>" class="btn btn-success pull-right mright5"><?php echo _l('detailed_overview'); ?></a>
                 <?php } ?>
             </div>
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         </div>
         <div class="content-body">
             <!-- Basic Kanban App -->
@@ -28,9 +31,19 @@
             <section id="kanban-wrapper">
                 <div class="row">
                     <div class="col-12">
+<<<<<<< HEAD
                         <div id="kanban-app"></div>
                     </div>
                 </div>
+=======
+                        <button type="button" class="btn btn-primary mb-1" id="add-kanban">
+                            <i class='bx bx-add-to-queue mr-50'></i> Add New Board
+                        </button>
+                        <div id="kanban-app"></div>
+                    </div>
+                </div>
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 <!-- User new mail right area -->
                 <div class="kanban-sidebar">
                     <div class="card shadow-none quill-wrapper">
@@ -125,6 +138,10 @@
                 <!--/ User Chat profile right area -->
             </section>
             <!--/ Sample Project kanban -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         </div>
     </div>
 </div>

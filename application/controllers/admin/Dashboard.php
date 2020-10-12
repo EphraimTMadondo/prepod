@@ -13,8 +13,11 @@ class Dashboard extends AdminController
     /* This is admin dashboard view */
     public function index()
     {
+<<<<<<< HEAD
         
         
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         close_setup_menu();
         $this->load->model('departments_model');
         $this->load->model('todo_model');

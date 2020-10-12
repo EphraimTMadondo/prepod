@@ -2,7 +2,10 @@
 <?php init_head(true, 'calendar'); ?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
+<<<<<<< HEAD
       
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
       <div class="content-overlay">
         <?php $this->load->view('admin/includes/alerts'); ?>
       </div>
@@ -40,6 +43,7 @@
             </div>
             <!-- calendar sidebar end -->
             <!-- calendar view start  -->
+<<<<<<< HEAD
             
            
             <div class="calendar-view">
@@ -48,6 +52,9 @@
                        
                 
                 ?>
+=======
+            <div class="calendar-view">
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 <div class="calendar-action d-flex align-items-center flex-wrap">
                     <!-- sidebar toggle button for small sceen -->
                     <button class="btn btn-icon sidebar-toggle-btn">
@@ -170,12 +177,17 @@
 	});
 	
 </script>
+<<<<<<< HEAD
 
 
+=======
+<!-- Added by Leo -->
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     <!-- Perfect-scrollbar  -->
     <script src="<?php echo base_url();?>assets/plugins/perfect-scrollbar/perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
     
+<<<<<<< HEAD
     <!-- Tui Calendar 
   >
    
@@ -189,10 +201,18 @@
    
    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+=======
+    <!-- Tui Calendar -->
+    <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
+    <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     
     <!-- Chance -->
     <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
     
+<<<<<<< HEAD
   
    
     
@@ -789,6 +809,19 @@ $(window).on("resize", function () {
         var myTimeZone = '<?Php echo get_option('default_timezone'); ?>';
     
         
+=======
+    <!-- Apex Calendar -->
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    
+        <!-- Custom JS -->
+    <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
+    <script>
+        var csrf_token_name = '<?Php echo $this->security->get_csrf_hash(); ?>'
+        var getCalendarLink = "<?php echo base_url();?>admin/utilities/get_calendar_data";
+        var myTimeZone = '<?Php echo get_option('default_timezone'); ?>';
+        
+        function getMySchedules(){
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
             var today = new Date();
 
             
@@ -802,6 +835,7 @@ $(window).on("resize", function () {
             var mm = String(nextYear.getMonth() + 1).padStart(2, '0'); //January is 0!
             var yyyy = nextYear.getFullYear();
             
+<<<<<<< HEAD
            var nextYearDate = yyyy + '/' + mm + '/'  + dd;
           
            // alert("this is running");
@@ -814,6 +848,18 @@ $(window).on("resize", function () {
                      
                     //alert("Leo " + result);
                     setSchedules2(JSON.parse(result));
+=======
+            nextYearDate = yyyy + '/' + mm + '/'  + dd;
+            
+            //alert("this is running");
+            $.ajax({
+                url: "<?php echo base_url();?>admin/utilities/get_calendar_data",
+                type: "POST",
+                success: function(result){
+                    //$("#div1").html(result);
+                    alert("Leo " + result);
+                    //setSchedules2(JSON.parse(result));
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                     
                 },
                 data:{
@@ -823,6 +869,7 @@ $(window).on("resize", function () {
                     timezone: myTimeZone
                 }
             });
+<<<<<<< HEAD
             
            
         }
@@ -1046,5 +1093,16 @@ function ScheduleInfo() {
   
 
 <!-- End of Added by Leo and Vic -->
+=======
+        }
+    </script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/modal/components-modal.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js"></script>
+    <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js"></script>
+    <!--<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js"></script>-->
+    <script src="<?php echo base_url();?>assets/js/my-calendar.js"></script>
+
+<!-- End of Added by Leo -->
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 </body>
 </html>

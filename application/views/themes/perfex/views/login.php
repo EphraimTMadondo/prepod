@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 header("Access-Control-Allow-Origin: *");
 defined('BASEPATH') or exit('No direct script access allowed'); ?>
@@ -75,6 +76,10 @@ VERSION v8.0
 <div id="fb-root"></div>
 
 
+=======
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<meta name=”viewport” content=”width=device-width, initial-scale=1?>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 <style>
 #wrapper {
     margin:0;
@@ -190,7 +195,11 @@ body{
 }
 .pb-button--primary {
     color: #fff;
+<<<<<<< HEAD
   
+=======
+    background-color: #08a742 !important;
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     font-weight: 700;
     font-size:24px;
     padding: 11px 20px;
@@ -209,12 +218,17 @@ body{
        <?php echo form_open('authentication/login_admin', ['id'=>'register-form']); ?>
 
      <?php hooks()->do_action('clients_login_form_start'); ?>
+<<<<<<< HEAD
                      
+=======
+
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
      <div style = "text-align: center;">
       <div class="card main-area">
         <div class="card-body"   style = “text-align: center;”>
           <h1 class="login-title">LOG IN</h1>
             <div id = "form-items" style = "display: inline-block; width: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-box-pack: center;">
+<<<<<<< HEAD
                 
  <div style = "display:flex; padding-bottom: 15%;padding-top: 5%;">
                     
@@ -299,6 +313,8 @@ body{
                   </script>
                     
                    
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 <div class="form-group" style = "margin-bottom: 50px;">
                     <div style= "display: flex; position: relative; border-bottom: 2px solid; justify-content: space-between;flex: 1; color: #b9babb;">
                  
@@ -329,7 +345,11 @@ body{
            
 
                 <div class="form-group"  style = "margin-bottom: 20px;">
+<<<<<<< HEAD
                    <button type="submit" class="btn btn-info btn-block pb-button--primary" style ="border-radius: 2px; background-color:blue;"><?php echo _l('clients_login_login_string'); ?></button>
+=======
+                   <button type="submit" class="btn btn-info btn-block pb-button--primary" style ="border-radius: 2px; background-color:green;"><?php echo _l('clients_login_login_string'); ?></button>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                    <?php if(get_option('allow_registration') == 1) { ?>
                    <!--
                    <a href="<?php echo site_url('authentication/register_admin'); ?>" class="btn btn-success btn-block"  style = "border-color: #5bc0de;color: #5bc0de; background-color:white"  ><?php echo _l('clients_register_string'); ?>
@@ -349,6 +369,7 @@ body{
                
         <?php hooks()->do_action('clients_login_form_end'); ?>
         <?php echo form_close(); ?>  
+<<<<<<< HEAD
         
          <script>
                 function checkLoginState()
@@ -392,5 +413,7 @@ body{
             
                 }
                 </script>
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     </div>
 

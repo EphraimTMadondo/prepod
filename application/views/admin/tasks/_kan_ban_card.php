@@ -4,7 +4,11 @@
     <div class="row">
       <div class="col-md-12 task-name">
         <a href="<?php echo admin_url('tasks/view/' . $task['id']); ?>" onclick="init_task_modal(<?php echo $task['id']; ?>);return false;">
+<<<<<<< HEAD
           <span class="inline-block full-width mtop10 mb-1"><?php echo $task['name']; ?></span>
+=======
+          <span class="inline-block full-width mtop10 mbot10"><?php echo $task['name']; ?></span>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         </a>
       </div>
       <div class="col-md-6 text-muted">

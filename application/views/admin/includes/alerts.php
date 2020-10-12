@@ -24,7 +24,11 @@ if(sizeof($_announcements) > 0 && isset($dashboard) && is_staff_member()){ ?>
 				</a>
 				<?php if(is_admin()){ ?>
 				<a href="<?php echo admin_url('announcements/announcement/'.$__announcement['announcementid']); ?>">
+<<<<<<< HEAD
 					<i class="bx bx-pencil float-right"></i>
+=======
+					<i class="fa fa-pencil-square-o float-right"></i>
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 				</a>
 				<?php } ?>
 				<div class="clearfix"></div>

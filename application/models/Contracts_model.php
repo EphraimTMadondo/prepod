@@ -22,14 +22,22 @@ class Contracts_model extends App_Model
         $this->db->select('*,' . db_prefix() . 'contracts_types.name as type_name,' . db_prefix() . 'contracts.id as id, ' . db_prefix() . 'contracts.addedfrom');
         $this->db->where($where);
         
+<<<<<<< HEAD
         
+=======
+        $companyusername = $_SESSION['current_company'];
+        $this->db->where('company_username', $companyusername);
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         
         $this->db->join(db_prefix() . 'contracts_types', '' . db_prefix() . 'contracts_types.id = ' . db_prefix() . 'contracts.contract_type', 'left');
         $this->db->join(db_prefix() . 'clients', '' . db_prefix() . 'clients.userid = ' . db_prefix() . 'contracts.client');
         if (is_numeric($id)) {
             $this->db->where(db_prefix() . 'contracts.id', $id);
+<<<<<<< HEAD
             $companyusername = $_SESSION['current_company'];
              $this->db->where('contracts.company_username', $companyusername);
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
             $contract = $this->db->get(db_prefix() . 'contracts')->row();
             if ($contract) {
                 $contract->attachments = $this->get_contract_attachments('', $contract->id);
@@ -54,8 +62,11 @@ class Contracts_model extends App_Model
 
             return $contract;
         }
+<<<<<<< HEAD
          $companyusername = $_SESSION['current_company'];
              $this->db->where('contracts.company_username', $companyusername);
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         $contracts = $this->db->get(db_prefix() . 'contracts')->result_array();
         $i         = 0;
         foreach ($contracts as $contract) {
@@ -75,6 +86,7 @@ class Contracts_model extends App_Model
        
        return $this->db->query('SELECT DISTINCT(YEAR(datestart)) as year FROM ' . db_prefix() . 'contracts')->result_array();
     }
+<<<<<<< HEAD
     
         public function get_introduction($id)
     {
@@ -87,6 +99,8 @@ class Contracts_model extends App_Model
         
         return $introduction;
     }
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
     /**
      * @param  integer ID
@@ -142,6 +156,7 @@ class Contracts_model extends App_Model
         }
 
         $data['hash'] = app_generate_hash();
+<<<<<<< HEAD
         $this->db->where('id',  $data['client']);
 
         $client =  $this->db->get(db_prefix() . 'contacts')->row();
@@ -153,13 +168,18 @@ class Contracts_model extends App_Model
         $this->db->where('company_username', $companyusername);
 
         $r = $this->db->get(db_prefix() . 'companies')->row()->company;
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
         $data = hooks()->apply_filters('before_contract_added', $data);
          if($_SESSION['current_company']!= NULL)
            {
              $data['company_username'] =  $_SESSION['current_company'];
+<<<<<<< HEAD
              $data['company_name'] = $r;
              $data['client_name'] = $client_name;
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                 $this->db->insert(db_prefix() . 'contracts', $data);
     
                 }
@@ -175,7 +195,10 @@ class Contracts_model extends App_Model
             }
             hooks()->do_action('after_contract_added', $insert_id);
             log_activity('New Contract Added [' . $data['subject'] . ']');
+<<<<<<< HEAD
             redirect("https://worksuite.app/os/admin/contracts/");
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
 
             return $insert_id;
         }
@@ -220,7 +243,10 @@ class Contracts_model extends App_Model
         }
 
         $this->db->where('id', $id);
+<<<<<<< HEAD
      
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
         $this->db->update(db_prefix() . 'contracts', $data);
 
         if ($this->db->affected_rows() > 0) {

@@ -12,7 +12,11 @@
                         <?php echo form_open_multipart('admin/misc/upload_sales_file',array('id'=>'sales-upload','class'=>'dropzone')); ?>
                         <input type="file" name="file" multiple />
                         <?php echo form_close(); ?>
+<<<<<<< HEAD
                         <div class="row mt-1" id="sales_uploaded_files_preview">
+=======
+                        <div class="row mtop15" id="sales_uploaded_files_preview">
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
                         </div>
                         <div class="text-right">
                         <button class="gpicker" data-on-pick="salesGoogleDriveSave">

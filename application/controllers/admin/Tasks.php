@@ -50,6 +50,7 @@ class Tasks extends AdminController
         echo $this->load->view('admin/tasks/kan_ban', [], true);
     }
 
+<<<<<<< HEAD
 
     // Added by Ephraim T Madondo
     public function get_pipeline_ajax(){
@@ -79,6 +80,8 @@ class Tasks extends AdminController
         };
     }
 
+=======
+>>>>>>> d71d750e00250050260fb71bf92c645d4ca43ed1
     public function ajax_search_assign_task_to_timer()
     {
         if ($this->input->is_ajax_request()) {
