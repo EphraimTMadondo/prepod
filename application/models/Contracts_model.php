@@ -23,7 +23,7 @@ class Contracts_model extends App_Model
         $this->db->where($where);
         
         $companyusername = $_SESSION['current_company'];
-        $this->db->where('company_username', $companyusername);
+       // $this->db->where('company_username', $companyusername);
         
         $this->db->join(db_prefix() . 'contracts_types', '' . db_prefix() . 'contracts_types.id = ' . db_prefix() . 'contracts.contract_type', 'left');
         $this->db->join(db_prefix() . 'clients', '' . db_prefix() . 'clients.userid = ' . db_prefix() . 'contracts.client');
