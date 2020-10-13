@@ -365,6 +365,7 @@ body{
   // alert(stringj);
     var userID = split3[1];
     
+    
         $.ajax({
                 url: "<?php echo base_url();?>index.php/authentication/facebook_login",
                 type: "POST",
