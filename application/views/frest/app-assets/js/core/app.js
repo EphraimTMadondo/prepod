@@ -593,7 +593,7 @@
       debug: false,
       fallbackLng: "en",
       backend: {
-        loadPath: "https://worksuite.app/prepod/assets/frest/app-assets/data/locales/{{lng}}.json"
+        loadPath: "https://worksuite.app/preprod/assets/frest/app-assets/data/locales/{{lng}}.json"
       },
       returnObjects: true
     },
