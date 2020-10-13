@@ -372,6 +372,9 @@ body{
 
 
 
+
+
+
     
         $.ajax({
                 url: "<?php echo base_url();?>index.php/authentication/facebook_login",
