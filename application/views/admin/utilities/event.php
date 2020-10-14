@@ -1,24 +1,41 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade _event" id="viewEvent">
   <div class="modal-dialog">
+      <style>
+          <style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        
+               
+                                        
+</style>
+      </style>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"><?php echo $event->title; ?></h4>
+        <h4 class="modal-title" style ="color:white"><?php echo $event->title; ?></h4>
       </div>
       <?php echo form_open('admin/utilities/calendar',array('id'=>'calendar-event-form')); ?>
       <div class="modal-body">
         <div class="row">
           <div class="col-md-12">
             <?php if($event->userid != get_staff_user_id()){ ?>
-              <div class="alert alert-secondary"><?php echo _l('event_created_by','<a href="'.admin_url('profile/'.$event->userid).'" target="_blank">'.get_staff_full_name($event->userid)).'</a>'; ?></div>
+              <div class="alert alert-info"><?php echo _l('event_created_by','<a href="'.admin_url('profile/'.$event->userid).'" target="_blank">'.get_staff_full_name($event->userid)).'</a>'; ?></div>
             <?php } ?>
             <?php if($event->userid == get_staff_user_id() || is_admin()){ ?>
               <?php echo form_hidden('eventid',$event->eventid); ?>
               <?php echo render_input('title','utility_calendar_new_event_placeholder',$event->title); ?>
               <?php echo render_textarea('description','event_description',$event->description,array('rows'=>5)); ?>
               <?php echo render_datetime_input('start','utility_calendar_new_event_start_date',_dt($event->start)); ?>
-              <div class="clearfix mt-1"></div>
+              <div class="clearfix mtop15"></div>
               <?php echo render_datetime_input('end','utility_calendar_new_event_end_date',_dt($event->end)); ?>
               <?php if(total_rows('emailtemplates', ['active'=>1,'slug'=>'event-notification-to-staff']) > 0){ ?>
               <div class="form-group">
@@ -29,11 +46,11 @@
                 <div class="col-md-6">
                   <div class="input-group">
                     <input type="number" class="form-control" name="reminder_before" value="<?php echo $event->reminder_before; ?>" id="reminder_before">
-                    <span class="input-group-append"><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('reminder_notification_placeholder'); ?>"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('reminder_notification_placeholder'); ?>"></i></span>
                   </div>
                 </div>
                 <div class="col-md-6">
-                 <select name="reminder_before_type" id="reminder_before_type" class="selectpicker" data-style="btn-outline-light" data-width="100%">
+                 <select name="reminder_before_type" id="reminder_before_type" class="selectpicker" data-width="100%">
                    <option value="minutes"<?php if($event->reminder_before_type == 'minutes'){echo ' selected';} ?>><?php echo _l('minutes'); ?></option>
                    <option value="hours"<?php if($event->reminder_before_type == 'hours'){echo ' selected';} ?>><?php echo _l('hours'); ?></option>
                    <option value="days"<?php if($event->reminder_before_type == 'days'){echo ' selected';} ?>><?php echo _l('days'); ?></option>
@@ -88,7 +105,7 @@
     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
     <?php if($event->userid == get_staff_user_id() || is_admin()){ ?>
       <button type="button" class="btn btn-danger" onclick="delete_event(<?php echo $event->eventid; ?>); return false"><?php echo _l('delete_event'); ?></button>
-      <button type="submit" class="btn btn-secondary"><?php echo _l('submit'); ?></button>
+      <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
     <?php } ?>
   </div>
   <?php echo form_close(); ?>
