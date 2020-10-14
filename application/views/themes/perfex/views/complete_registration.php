@@ -10,7 +10,7 @@
 }
 .pb-button--primary {
     color: #fff;
-    background-color: blue !important;
+    background-color: #006FB8 !important;
     font-weight: 700;
     font-size:18px;
     padding: 11px 20px;
