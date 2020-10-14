@@ -4,6 +4,21 @@
 <div id="event"></div>
 <div id="newsfeed" class="animated fadeIn hide" <?php if($this->session->flashdata('newsfeed_auto')){echo 'data-newsfeed-auto';} ?>>
 </div>
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        
+               
+                                        
+</style>
 <!-- Task modal view -->
 <div class="modal fade task-modal-single" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog <?php echo get_option('task_modal_class'); ?>">
