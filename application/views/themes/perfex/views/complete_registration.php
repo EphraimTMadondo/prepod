@@ -10,7 +10,7 @@
 }
 .pb-button--primary {
     color: #fff;
-    background-color: #08a742 !important;
+    background-color: blue !important;
     font-weight: 700;
     font-size:18px;
     padding: 11px 20px;
@@ -100,12 +100,28 @@ label.control-label {
                         <input type="password" class="form-control custom-input" name="passwordr" id="passwordr" placeholder="<?php echo _l('clients_register_password_repeat'); ?>">
                         <?php echo form_error('passwordr'); ?>
                     </div>
+                    <?
+                        if($_SESSION['other_verification'] == "yes")
+               {
+                   
+                  ?>
+                      <div id = "emaildiv" class="form-group register-email-group" style = "margin-bottom: 55px;">
+                    <div style= "display: flex; position: relative; border-bottom: 2px solid; justify-content: space-between;flex: 1; color: #b9babb;"> 
                     
-                
+                        <img src = "<?php echo base_url();?>uploads/company/email.jpg" style = "height: 20px; margin: 17px 0px; "</img>
+                        
+                        <input type="email"  class="form-control custom-input" name="email" id="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
+                    </div>
+                    <?php echo form_error('email'); ?>
+                </div>
+                    
+                <?
+               }
+                ?>
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <div class="form-group">
-                                <button id=submitBtn type="submit" autocomplete="off"  class="btn btn-secondary pb-button--primary"><?php echo _l('clients_register_string'); ?></button>
+                                <button id=submitBtn type="submit" autocomplete="off"  class="btn btn-info pb-button--primary"><?php echo _l('clients_register_string'); ?></button>
                             </div>
                         </div>
                     </div>
