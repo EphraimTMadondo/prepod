@@ -174,45 +174,7 @@ class Staff_merge_fields extends App_merge_fields
     */
     public function format($staff_id, $password = '')
     {
-        
-        
-                                  
-                     $LoggedInUser = get_staff_user_id();
-
-//Get CompanyUsername
-
-    // Create connection
-    $conn = new mysqli('localhost', 'worksuite', 'Cloud@263');
-    // Check connection
-    if ($conn->connect_error) {
-        echo "failed connection";
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-    // connect to the database
-    $db = mysqli_connect('localhost', 'worksuit_crm', 'Cloud@263','worksuit_crm');
-        
-         
-		      
-                $query = "SELECT * FROM tblstaff WHERE staffid='$LoggedInUser'";
-            $result = mysqli_query($db, $query);
-            
-            
-            if ($result)
-            { 
-                while($row = $result->fetch_assoc()) {
-                    
-                   $companyusername = ($row['company_username']); 
-              
-           }
-        
-                
-            }
-            else{
-                
-                
-            } 
-        
+      
         
         
         $fields = [];
