@@ -110,8 +110,19 @@ class Cron_model extends App_Model
                 array_push($notified_users, $event['userid']);
 
                 $eventNotifications = hooks()->apply_filters('event_notifications', true);
+                $notifications = get_user_notifications_cron($event['userid']);
+                $isnew = true;
+                foreach ($notifications as $notification {
+                    if($notification['link'] == $event['link'] )
+                    {
 
-                if ($eventNotifications) {
+                        isnew = false;
+
+                    }
+                }
+
+
+                if ($eventNotifications && (isnew == true))  {
                     $notified = add_notification([
                         'description'     => 'not_event',
                         'touserid'        => $event['userid'],
