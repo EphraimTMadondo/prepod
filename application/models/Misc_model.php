@@ -467,6 +467,40 @@ class Misc_model extends App_Model
 
         return $this->db->get(db_prefix() . 'notifications')->result_array();
     }
+    
+    
+     public function get_user_notifications_cron($staff_id)
+    {
+        $read = false;
+        $read     = $read == false ? 0 : 1;
+        $total    = $this->notifications_limit;
+         
+
+        $sql = 'SELECT COUNT(*) as total FROM ' . db_prefix() . 'notifications WHERE isread=' . $read . ' AND touserid=' . $staff_id;
+        $sql .= ' UNION ALL ';
+        $sql .= 'SELECT COUNT(*) as total FROM ' . db_prefix() . 'notifications WHERE isread_inline=' . $read . ' AND touserid=' . $staff_id;
+
+        $res = $this->db->query($sql)->result();
+
+        $total_unread        = $res[0]->total;
+        $total_unread_inline = $res[1]->total;
+
+        if ($total_unread > $total) {
+            $total = ($total_unread - $total) + $total;
+        } elseif ($total_unread_inline > $total) {
+            $total = ($total_unread_inline - $total) + $total;
+        }
+
+        // In case user is not marking the notifications are read this process may be long because the script will always fetch the total from the not read notifications.
+        // In this case we are limiting to 30
+        $total = $total > 30 ? 30 : $total;
+
+        $this->db->where('touserid', $staff_id);
+        $this->db->limit($total);
+        $this->db->order_by('date', 'desc');
+
+        return $this->db->get(db_prefix() . 'notifications')->result_array();
+    }
 
     /**
      * Set notification read when user open notification dropdown

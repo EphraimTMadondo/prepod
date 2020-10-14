@@ -104,20 +104,8 @@ class Cron_model extends App_Model
         $all_notified_events       = [];
         foreach ($events as $event) {
             $date_compare = date('Y-m-d H:i:s', strtotime('+' . $event['reminder_before'] . ' ' . strtoupper($event['reminder_before_type'])));
-            
-            
-            //Added by Vic make sure notifications aren't sent twice
-            $newnotification = true;
-            $_notifications = $this->misc_model->get_user_notifications_cron($event['userid']);
-             foreach($_notifications as $notification)
-             {
-           if  ($event['link'] == $notification['link'])
-                        {
-                            $newnotification = false;
-                        }
-            
-             }
-            if ($event['start'] <= $date_compare && ($newnotification == true)) {
+
+            if ($event['start'] <= $date_compare) {
                 array_push($all_notified_events, $event['eventid']);
                 array_push($notified_users, $event['userid']);
 
