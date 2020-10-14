@@ -108,9 +108,9 @@ class Cron_model extends App_Model
             if ($event['start'] <= $date_compare) {
                 array_push($all_notified_events, $event['eventid']);
                 array_push($notified_users, $event['userid']);
-
+                
                 $eventNotifications = hooks()->apply_filters('event_notifications', true);
-                $notifications = get_user_notifications_cron($event['userid']);
+                $notifications = $this->misc_model->get_user_notifications_cron($event['userid']);
                 $isnew = true;
                 foreach ($notifications as $notification {
                     if($notification['link'] == $event['link'] )
