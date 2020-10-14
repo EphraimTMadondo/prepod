@@ -1,11 +1,28 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_open_multipart(admin_url('tasks/task/'.$id),array('id'=>'task-form')); ?>
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        
+               
+                                        
+</style>
+<!-- Datepicker -->
+
 <div class="modal fade<?php if(isset($task)){echo ' edit';} ?>" id="_task_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"<?php if($this->input->get('opened_from_lead_id')){echo 'data-lead-id='.$this->input->get('opened_from_lead_id'); } ?>>
 <div class="modal-dialog" role="document">
    <div class="modal-content">
       <div class="modal-header">
          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <h4 class="modal-title" id="myModalLabel">
+         <h4 class="modal-title" id="myModalLabel" style ="color:white;">
             <?php echo $title; ?>
          </h4>
       </div>
@@ -146,6 +163,7 @@
                         $date_attrs['disabled'] = true;
                         }
                         ?>
+                        
                      <?php echo render_date_input('startdate','task_add_edit_start_date',$value, $date_attrs); ?>
                   </div>
                   <div class="col-md-6">
@@ -207,7 +225,7 @@
                      </label>
                      <div class="input-group">
                         <input type="number" class="form-control"<?php if($value == 0){echo ' disabled'; } ?> name="cycles" id="cycles" value="<?php echo $value; ?>" <?php if(isset($task) && $task->total_cycles > 0){echo 'min="'.($task->total_cycles).'"';} ?>>
-                        <div class="input-group-append">
+                        <div class="input-group-addon">
                            <div class="checkbox">
                               <input type="checkbox"<?php if($value == 0){echo ' checked';} ?> id="unlimited_cycles">
                               <label for="unlimited_cycles"><?php echo _l('cycles_infinity'); ?></label>
@@ -274,6 +292,8 @@
                      echo render_datetime_input('datefinished','task_finished',_dt($task->datefinished));
                   }
                ?>
+               ZZZZZ
+               <input type="text" id="start" name="start" class="form-control pickadate datetimepicker picker__input picker__input--active" value="" autocomplete="off" readonly="" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="start_root">
                <div class="form-group checklist-templates-wrapper<?php if(count($checklistTemplates) == 0 || isset($task)){echo ' hide';}  ?>">
                   <label for="checklist_items"><?php echo _l('insert_checklist_templates'); ?></label>
                   <select id="checklist_items" name="checklist_items[]" class="selectpicker checklist-items-template-select" multiple="1" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex') ?>" data-width="100%" data-live-search="true" data-actions-box="true">
@@ -459,3 +479,7 @@
       init_datepicker($duedate);
    }
 </script>
+
+   
+   
+   
