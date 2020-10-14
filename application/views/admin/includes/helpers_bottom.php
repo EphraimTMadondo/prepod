@@ -30,6 +30,25 @@
     padding: 13px 20px;
     border-bottom-right-radius: 6px;
 }
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+element.style {
+    margin-right: 5px !important;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+.no-margin {
+    margin: 0!important;
+}
                
                                         
 </style>
