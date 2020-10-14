@@ -19,7 +19,7 @@ class Settings extends AdminController
         }
 
         $tab = $this->input->get('group');
-
+        
         if ($this->input->post()) {
             if (!has_permission('settings', '', 'edit')) {
                 access_denied('settings');
@@ -58,9 +58,7 @@ class Settings extends AdminController
             }
 
             // Do hard refresh on general for the logo
-            if ($tab == 'general') {
-                redirect(admin_url('settings?group=' . $tab), 'refresh');
-            } elseif ($signatureUploaded) {
+            if ($signatureUploaded) {
                 redirect(admin_url('settings?group=pdf&tab=signature'));
             } else {
                 $redUrl = admin_url('settings?group=' . $tab);
@@ -86,7 +84,7 @@ class Settings extends AdminController
         $data['admin_tabs'] = ['update', 'info'];
 
         if (!$tab || (in_array($tab, $data['admin_tabs']) && !is_admin())) {
-            $tab = 'general';
+            $tab = 'company';
         }
 
         $data['tabs'] = $this->app_tabs->get_settings_tabs();
