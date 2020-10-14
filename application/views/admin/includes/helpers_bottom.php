@@ -20,6 +20,16 @@
     line-height: 1.42857143;
     color: white;
 }
+
+.color-white, .color-white[href] {
+    color: #fff;
+}
+
+.task-single-col-right {
+    background: #f0f5f7;
+    padding: 13px 20px;
+    border-bottom-right-radius: 6px;
+}
                
                                         
 </style>
