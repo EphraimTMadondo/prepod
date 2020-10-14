@@ -260,6 +260,19 @@ function app_init_admin_sidebar_menu_items()
                     'href'     => admin_url('reports/knowledge_base_articles'),
                     'position' => 30,
             ]);
+
+            $CI->app_menu->add_sidebar_children_item('utilities', [
+                'slug'     => 'announcements',
+                'name'     => _l('als_announcements_submenu'),
+                'href'     => admin_url('announcements'),
+                'position' => 20,
+        ]);
+        $CI->app_menu->add_sidebar_children_item('utilities', [
+                'slug'     => 'announcements',
+                'name'     => "My Account",
+                'href'     => admin_url('announcements'),
+                'position' => 31,
+        ]);
     }
 
     // Setup menu
