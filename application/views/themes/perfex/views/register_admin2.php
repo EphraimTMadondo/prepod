@@ -116,7 +116,7 @@ body{
 }
 .pb-button--primary {
     color: #fff;
-    background-color: #08a742 !important;
+     background-color: #006FB8 !important;
     font-weight: 700;
     font-size:24px;
     padding: 11px 20px;
@@ -151,12 +151,14 @@ label.control-label {
     <div class="card main-area ">
         <div class="card-body" style ="height: 100%; justify-content: space-between; ">
             <h1 class = "heading login-title">COMPANY DETAILS</h1>
-            <div class="form-group mt-1 register-company-group underlined-input">
+              <?   echo "other is". $_SESSION['other_verification'];
+           echo "facebook is". $_SESSION['facebook'];?>
+            <div class="form-group mtop15 register-company-group underlined-input">
                 <input type="text"  placeholder = <?php echo _l('clients_company'); ?> class="form-control custom-input" name="company" id="company" value="<?php echo set_value('company'); ?>">
                 <?php echo form_error('company'); ?>
             </div>
                     
-            <div class="form-group mt-1 register-company-group underlined-input">
+            <div class="form-group mtop15 register-company-group underlined-input">
                 <input type="text"  placeholder ="Company Username" class="form-control custom-input" name="company_username" id="company_username" value="<?php echo set_value('company_username'); ?>">
                 <?php echo form_error('company_username'); ?>
             </div>
@@ -192,7 +194,7 @@ label.control-label {
             </div>
             <?php } ?>
             <div class="form-group">
-                <button type="submit" autocomplete="off"  class="btn btn-secondary btn-block pb-button--primary">Submit</button>
+                <button type="submit" autocomplete="off"  class="btn btn-info btn-block pb-button--primary">Submit</button>
             </div>
             <div class="register-company-custom-fields underlined-input" style="display:none;">
                 <?php echo render_custom_fields( 'customers','',array('show_on_client_portal'=>1)); ?>
