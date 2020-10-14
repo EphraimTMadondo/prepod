@@ -15,7 +15,11 @@
             padding: 15px 30px;
         }
         
-        
+        .modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    color: white;
+}
                
                                         
 </style>
