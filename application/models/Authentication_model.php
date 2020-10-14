@@ -139,6 +139,184 @@ class Authentication_model extends App_Model
         return false;
     }
 
+    //Log user in via facebook
+    //Victor
+     public function login_facebook($facebook, $staff)
+    {
+        if ((!empty($facebook))) {
+             
+          // $result =  $this->Authentication_model->login_facebook(
+          //      $this->input->post('userID'),
+          //      true
+          //  );
+            
+           
+
+                $table = db_prefix() . 'staff';
+                $_id   = 'staffid';
+            
+         
+            $this->db->where('facebook', $facebook);
+            
+            $user = $this->db->get($table)->row();
+            if ($user) {
+                          
+                if($table == db_prefix() . 'staff')
+            {
+                $useID = $user->staffid;
+                 //$this->db->from(db_prefix() . 'staff');
+                 //$this->db->where('email', $email);
+                 $this->db->where('staffid',  $useID);
+                 $user2 = $this->db->get(db_prefix() . 'staff_companies')->row();
+                 $usecompany = $user2->company_username;
+                 //$original_array= unserialize($serialized_array);
+                 $_SESSION['current_company'] = $usecompany;
+                //  $_SESSION['user'] = $;
+               //  $res[6]['product_name']
+                                 
+                            
+
+                  
+               //  $serialized_array = $user[[companies]];///////////////////////////////////////////////
+                // $_SESSION['user'] = $user;
+                //    $original_array=unserialize($serialized_array);
+                //   $_SESSION['companies'] = $original_array;
+                // Email is okey lets check the password now
+            }
+                
+            } else {
+
+                hooks()->do_action('non_existent_user_login_attempt', [
+                        'facebook'           => $facebook,
+                        'is_staff_member' => $staff,
+                ]);
+
+                log_activity('Non Existing User Tried to Login [Facebook: ' . $facebook . ', Is Staff Member: ' . ($staff == true ? 'Yes' : 'No') . ', IP: ' . $this->input->ip_address() . ']');
+
+                return false;
+            }
+
+          
+
+            $twoFactorAuth = false;
+            if ($staff == true) {
+                $twoFactorAuth = $user->two_factor_auth_enabled == 0 ? false : true;
+
+                if (!$twoFactorAuth) {
+                    hooks()->do_action('before_staff_login', [
+                        'facebook'  => $facebook,
+                        'userid' => $user->$_id,
+                    ]);
+
+                    $user_data = [
+                        'staff_user_id'   => $user->$_id,
+                        'staff_logged_in' => true,
+                    ];
+                } else {
+                    $user_data = [];
+                   
+                }
+            } 
+
+            $this->session->set_userdata($user_data);
+
+           // echo ("facebook control running! Session heading is ". $user->$_id) ;
+
+            return true;
+        
+        }
+
+        return false;
+    }
+    
+     public function login_google($google, $staff)
+    {
+        if ((!empty($google))) {
+             
+          // $result =  $this->Authentication_model->login_facebook(
+          //      $this->input->post('userID'),
+          //      true
+          //  );
+            
+           
+
+                $table = db_prefix() . 'staff';
+                $_id   = 'staffid';
+            
+         
+            $this->db->where('google', $google);
+            
+            $user = $this->db->get($table)->row();
+            if ($user) {
+                          
+                if($table == db_prefix() . 'staff')
+            {
+                $useID = $user->staffid;
+                 //$this->db->from(db_prefix() . 'staff');
+                 //$this->db->where('email', $email);
+                 $this->db->where('staffid',  $useID);
+                 $user2 = $this->db->get(db_prefix() . 'staff_companies')->row();
+                 $usecompany = $user2->company_username;
+                 //$original_array= unserialize($serialized_array);
+                 $_SESSION['current_company'] = $usecompany;
+                //  $_SESSION['user'] = $;
+               //  $res[6]['product_name']
+                                 
+                            
+
+                  
+               //  $serialized_array = $user[[companies]];///////////////////////////////////////////////
+                // $_SESSION['user'] = $user;
+                //    $original_array=unserialize($serialized_array);
+                //   $_SESSION['companies'] = $original_array;
+                // Email is okey lets check the password now
+            }
+                
+            } else {
+
+                hooks()->do_action('non_existent_user_login_attempt', [
+                        'google'           => $google,
+                        'is_staff_member' => $staff,
+                ]);
+
+                log_activity('Non Existing User Tried to Login [Google: ' . $google . ', Is Staff Member: ' . ($staff == true ? 'Yes' : 'No') . ', IP: ' . $this->input->ip_address() . ']');
+
+                return false;
+            }
+
+          
+
+            $twoFactorAuth = false;
+            if ($staff == true) {
+                $twoFactorAuth = $user->two_factor_auth_enabled == 0 ? false : true;
+
+                if (!$twoFactorAuth) {
+                    hooks()->do_action('before_staff_login', [
+                        'google'  => $google,
+                        'userid' => $user->$_id,
+                    ]);
+
+                    $user_data = [
+                        'staff_user_id'   => $user->$_id,
+                        'staff_logged_in' => true,
+                    ];
+                } else {
+                    $user_data = [];
+                   
+                }
+            } 
+
+            $this->session->set_userdata($user_data);
+
+           // echo ("facebook control running! Session heading is ". $user->$_id) ;
+
+            return true;
+        
+        }
+
+        return false;
+    }
+    
     /**
      * @param  boolean If Client or Staff
      * @return none
@@ -148,10 +326,13 @@ class Authentication_model extends App_Model
         $this->delete_autologin($staff);
 
         if (is_client_logged_in()) {
+           
             hooks()->do_action('before_contact_logout', get_client_user_id());
 
             $this->session->unset_userdata('client_user_id');
             $this->session->unset_userdata('client_logged_in');
+            $this->session->sess_destroy();
+             redirect(site_url('authentication/login_client'));
         } else {
             hooks()->do_action('before_staff_logout', get_staff_user_id());
 
