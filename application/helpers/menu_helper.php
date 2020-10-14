@@ -458,6 +458,14 @@ function app_init_admin_sidebar_menu_items()
         'position' => 61,
         'icon'     => 'fa fa-balance-scale',
     ]);
+
+    $CI->app_menu->add_sidebar_menu_item('reports', [
+        'collapse' => true,
+        'name'     => _l('als_reports'),
+        'href'     => admin_url('reports'),
+        'icon'     => 'fa fa-area-chart',
+        'position' => 60,
+]);
 /**
     if (has_permission('email_templates', '', 'view')) {
         $CI->app_menu->add_setup_menu_item('email-templates', [
