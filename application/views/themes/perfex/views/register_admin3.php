@@ -63,7 +63,8 @@
     padding-top: 5%;
     padding-bottom: 5%;
     font-weight: 100;
-    background-color:blue !important;
+    background-color: #006FB8 !important;
+
     color: white;
 }
 .customers-extended{
@@ -266,7 +267,7 @@ p {
     </div>
                     
           
-          
+
              
            
 </div>
