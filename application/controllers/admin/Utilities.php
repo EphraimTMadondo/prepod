@@ -4,6 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Utilities extends AdminController
 {
+    //yyyy
     public function __construct()
     {
         parent::__construct();
@@ -64,7 +65,10 @@ class Utilities extends AdminController
     /* Calendar functions */
     public function calendar()
     {
-        if ($this->input->post() && $this->input->is_ajax_request()) {
+       
+        //     if ($this->input->post() && $this->input->is_ajax_request()) {  
+        if ($this->input->post()) {
+             echo "calendar running";
             $data    = $this->input->post();
             $success = $this->utilities_model->event($data);
             $message = '';
@@ -92,14 +96,19 @@ class Utilities extends AdminController
     public function get_calendar_data()
     {
         if ($this->input->is_ajax_request()) {
-            echo json_encode($this->utilities_model->get_calendar_data(
+           // echo "running!";
+             echo json_encode($this->utilities_model->get_calendar_data(
                 $this->input->post('start'),
                 $this->input->post('end'),
                 '',
                 '',
                 $this->input->post()
             ));
+            
+            
             die();
+            
+            
         }
     }
 
