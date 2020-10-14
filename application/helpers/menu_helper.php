@@ -260,19 +260,6 @@ function app_init_admin_sidebar_menu_items()
                     'href'     => admin_url('reports/knowledge_base_articles'),
                     'position' => 30,
             ]);
-
-            $CI->app_menu->add_sidebar_children_item('utilities', [
-                'slug'     => 'announcements',
-                'name'     => _l('als_announcements_submenu'),
-                'href'     => admin_url('announcements'),
-                'position' => 20,
-        ]);
-        $CI->app_menu->add_sidebar_children_item('utilities', [
-                'slug'     => 'announcements',
-                'name'     => "My Account",
-                'href'     => admin_url('announcements'),
-                'position' => 31,
-        ]);
     }
 
     // Setup menu
@@ -465,6 +452,12 @@ function app_init_admin_sidebar_menu_items()
                     'position' => 200,
             ]);
     }
+    $CI->app_menu->add_sidebar_menu_item('sales', [
+        'collapse' => true,
+        'name'     => 'My Account',
+        'position' => 61,
+        'icon'     => 'fa fa-balance-scale',
+    ]);
 /**
     if (has_permission('email_templates', '', 'view')) {
         $CI->app_menu->add_setup_menu_item('email-templates', [
