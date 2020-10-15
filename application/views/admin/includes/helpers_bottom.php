@@ -54,6 +54,17 @@ element.style {
 .h3, .h4, h3, h4 {
     /* font-weight: 400; */
 }
+.fa {
+    /* display: inline-block; */
+    /* font: normal normal normal 14px/1 FontAwesome; */
+    /* font-size: inherit; */
+    /* text-rendering: auto; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.task-modal-single .trigger i {
+    font-size: 10px;
+}
 
 .task-single-col-right .task-menu-options {
     position: absolute;
