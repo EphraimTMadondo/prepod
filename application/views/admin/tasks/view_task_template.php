@@ -639,7 +639,7 @@ html {
          <div class="tasks-comments inline-block full-width simple-editor"<?php if(count($task->comments) == 0){echo ' style="display:none"';} ?>>
             <?php echo form_open_multipart(admin_url('tasks/add_task_comment'),array('id'=>'task-comment-form','class'=>'dropzone dropzone-manual','style'=>'min-height:auto;background-color:#fff;')); ?>
             <textarea name="comment" placeholder="<?php echo _l('task_single_add_new_comment'); ?>" id="task_comment" rows="3" class="form-control ays-ignore"></textarea>
-            <div id="dropzoneTaskComment" class="dropzoneDragArea dz-default dz-message hide task-comment-dropzone">
+            <div >
                <span>88888888888</span>
             </div>
             <div class="dropzone-task-comment-previews dropzone-previews"></div>
