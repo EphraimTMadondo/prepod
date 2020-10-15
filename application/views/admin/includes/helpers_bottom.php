@@ -54,6 +54,12 @@ element.style {
 .h3, .h4, h3, h4 {
     /* font-weight: 400; */
 }
+
+.task-single-col-right .task-menu-options {
+    position: absolute;
+    margin-top: 10px;
+    right: 10px;
+}
 .h4, .h5, .h6, h4, h5, h6 {
     margin-top: 10px;
     margin-bottom: 10px;
