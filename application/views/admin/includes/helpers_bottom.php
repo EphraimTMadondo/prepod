@@ -74,6 +74,28 @@ button, input, select, textarea {
     -webkit-overflow-scrolling: touch;
 }
 
+
+table.table {
+    margin-top: 25px;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #727E8C;
+}
+table {
+    background-color: transparent;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 .task-single-col-right {
     background: #f0f5f7;
     padding: 13px 20px;
