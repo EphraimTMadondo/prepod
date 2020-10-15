@@ -639,8 +639,8 @@ html {
          <div class="tasks-comments inline-block full-width simple-editor"<?php if(count($task->comments) == 0){echo ' style="display:none"';} ?>>
             <?php echo form_open_multipart(admin_url('tasks/add_task_comment'),array('id'=>'task-comment-form','class'=>'dropzone dropzone-manual','style'=>'min-height:auto;background-color:#fff;')); ?>
             <textarea name="comment" placeholder="<?php echo _l('task_single_add_new_comment'); ?>" id="task_comment" rows="3" class="form-control ays-ignore"></textarea>
-            <div >
-               <span>88888888888</span>
+            <div id="dropzoneTaskComment" class="dropzoneDragArea dz-default dz-message hide task-comment-dropzone">
+               <span><?php echo _l('drop_files_here_to_upload'); ?></span>
             </div>
             <div class="dropzone-task-comment-previews dropzone-previews"></div>
             <button type="button" class="btn btn-secondary mtop10 float-right hide" id="addTaskCommentBtn" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="add_task_comment('<?php echo $task->id; ?>');" data-comment-task-id="<?php echo $task->id; ?>">
@@ -1116,7 +1116,6 @@ html {
                ?>
          </div>
          <hr class="task-info-separator" />
-         <?php echo form_open_multipart('admin/tasks/upload_file',array('id'=>'task-attachment','class'=>'dropzone')); ?>
          <?php echo form_close(); ?>
          <div class="mtop10 text-right">
             <button class="gpicker mbot5">
