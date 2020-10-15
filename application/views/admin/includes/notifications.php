@@ -1,4 +1,45 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<style>
+
+.width400 {
+  width: 400px;
+}
+
+.dropup, .dropright, .dropdown, .dropleft {
+  position: relative;
+}
+
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+</style>
+<style>
+.navbar-right .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+</style>
 <a href="#" class="dropdown-toggle notifications-icon" data-toggle="dropdown" aria-expanded="false">
   <i class="fa fa-bell-o fa-fw fa-lg"></i>
   <?php if($current_user->total_unread_notifications > 0){ ?>
@@ -9,47 +50,7 @@
   <li class="not_mark_all_as_read">
     <a href="#" onclick="mark_all_notifications_as_read_inline(); return false;"><?php echo _l('mark_all_as_read'); ?></a>
   </li>
-  <style>
 
-  .width400 {
-    width: 400px;
-}
-
-.dropup, .dropright, .dropdown, .dropleft {
-    position: relative;
-}
-
-
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 160px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
-  </style>
-  <style>
-  .navbar-right .dropdown-menu {
-    right: 0;
-    left: auto;
-}
-
-  </style>
   <?php
   $_notifications = $this->misc_model->get_user_notifications();
   foreach($_notifications as $notification){ ?>
