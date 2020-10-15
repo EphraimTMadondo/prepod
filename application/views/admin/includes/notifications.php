@@ -9,6 +9,12 @@
   <li class="not_mark_all_as_read">
     <a href="#" onclick="mark_all_notifications_as_read_inline(); return false;"><?php echo _l('mark_all_as_read'); ?></a>
   </li>
+  <style>
+  
+  .width400 {
+    width: 400px;
+}
+  </style>
   <?php
   $_notifications = $this->misc_model->get_user_notifications();
   foreach($_notifications as $notification){ ?>
