@@ -20,10 +20,6 @@
 }
 
 
-.navbar-right .dropdown-menu {
-    right: 0;
-    left: auto;
-}
 
 .dropdown-menu {
     position: absolute;
@@ -46,6 +42,13 @@
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
+  </style>
+  <style>
+  .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
   </style>
   <?php
   $_notifications = $this->misc_model->get_user_notifications();
