@@ -60,7 +60,20 @@ button, input, select, textarea {
     position: relative;
     padding: 15px;
     padding-top: 0px;
+    padding-bottom: 0px;
 }
+
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .task-single-col-right {
     background: #f0f5f7;
     padding: 13px 20px;
