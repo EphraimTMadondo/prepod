@@ -1117,7 +1117,7 @@ html {
          </div>
          <hr class="task-info-separator" />
         
-        
+         Drop files here to upload
          <?php echo form_open_multipart('admin/tasks/upload_file',array('id'=>'task-attachment','class'=>'dropzone')); ?>
          <?php echo form_close(); ?>
          <div class="mtop10 text-right">
