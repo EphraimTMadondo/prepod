@@ -24,7 +24,9 @@
 .color-white, .color-white[href] {
     color: #fff;
 }
-
+.modal-body {
+padding-top: 0% !important;
+}
 .task-single-col-right {
     background: #f0f5f7;
     padding: 13px 20px;
