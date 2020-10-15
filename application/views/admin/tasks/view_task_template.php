@@ -5,6 +5,220 @@
    <i class="fa fa-tty" aria-hidden="true"></i>
    </a>
    <?php } ?>
+   <style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        .modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    color: white;
+}
+
+.color-white, .color-white[href] {
+    color: #fff;
+}
+input.tagit-hidden-field {
+    display: none;
+}
+
+.h5, h5 {
+    font-size: 14px;
+}
+
+.tagsinput, input#tags {
+    width: 100%;
+    opacity: 0;
+    height: 31.56px;
+}
+
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    border: none solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.267rem;
+    outline: 0;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+table.table {
+    margin-top: 25px;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #727E8C;
+}
+table {
+    background-color: transparent;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.task-single-col-right {
+    background: #f0f5f7;
+    padding: 13px 20px;
+    border-bottom-right-radius: 6px;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+element.style {
+    margin-right: 5px !important;
+}
+.task-info-heading {
+    font-size: 15px;
+}
+.task-info-created small {
+    font-size: 85%;
+}
+.h3, .h4, h3, h4 {
+    /* font-weight: 400; */
+}
+
+form.dropzone {
+    background-color: #fbfdff;
+    border: 1px dashed #c0ccda;
+    border-radius: 6px;
+}
+
+.dropzone, .dropzone * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dropzone {
+    position: relative;
+}
+.dropzone {
+    min-height: 150px;
+    border: 2px solid rgba(0,0,0,.3);
+    background: #fff;
+    padding: 20px 20px;
+}
+
+.dropzone .dz-message {
+    /* margin-top: 45px; */
+    color: #03a9f4;
+}
+
+.dropzone .dz-message {
+    text-align: center;
+    margin: 2em 0;
+}
+
+html {
+    font-size: 15px;
+    height: 100%;
+    letter-spacing: 0.01rem;
+}
+.fa {
+    /* display: inline-block; */
+    /* font: normal normal normal 14px/1 FontAwesome; */
+    /* font-size: inherit; */
+    /* text-rendering: auto; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.task-modal-single .trigger i {
+    font-size: 10px;
+}
+
+.task-single-col-right .task-menu-options {
+    position: absolute;
+    margin-top: 10px;
+    right: 10px;
+}
+.h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.task-single-col-left {
+    padding: 25px;
+    background: #fff;
+    min-height: 600px;
+    border-bottom-left-radius: 6px;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+.no-margin {
+    margin: 0!important;
+}
+
+.task-info-inline-input-edit {
+    margin-top: -1px;
+    background: #f0f5f7;
+    border: 0;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px dashed #bbb;
+    width: 100%;
+}
+
+.mbot10 {
+    margin-bottom: 10px;
+}   
+
+.disabled, :disabled {
+    color: #828D99 !important;
+}
+                                        
+</style>
    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
    <h4 class="modal-title"><?php echo $task->name; ?> 777</h4>
    <?php if($task->billed == 1){ ?>
