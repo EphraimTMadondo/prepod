@@ -93,6 +93,21 @@ form.dropzone {
     border-radius: 6px;
 }
 
+.dropzone, .dropzone * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dropzone {
+    position: relative;
+}
+.dropzone {
+    min-height: 150px;
+    border: 2px solid rgba(0,0,0,.3);
+    background: #fff;
+    padding: 20px 20px;
+}
+
 .dropzone .dz-message {
     /* margin-top: 45px; */
     color: #03a9f4;
