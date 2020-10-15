@@ -46,6 +46,13 @@ element.style {
     margin-right: 5px !important;
 }
 
+.task-single-col-left {
+    padding: 25px;
+    background: #fff;
+    min-height: 600px;
+    border-bottom-left-radius: 6px;
+}
+
 .pull-left {
     float: left!important;
 }
