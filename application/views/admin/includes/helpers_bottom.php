@@ -49,6 +49,16 @@ element.style {
 .no-margin {
     margin: 0!important;
 }
+
+.task-info-inline-input-edit {
+    margin-top: -1px;
+    background: #f0f5f7;
+    border: 0;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px dashed #bbb;
+}
                
                                         
 </style>
