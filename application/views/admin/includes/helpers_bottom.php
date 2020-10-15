@@ -28,6 +28,10 @@ input.tagit-hidden-field {
     display: none;
 }
 
+.h5, h5 {
+    font-size: 14px;
+}
+
 .tagsinput, input#tags {
     width: 100%;
     opacity: 0;
