@@ -55,6 +55,12 @@ element.style {
     /* font-weight: 400; */
 }
 
+form.dropzone {
+    background-color: #fbfdff;
+    border: 1px dashed #c0ccda;
+    border-radius: 6px;
+}
+
 html {
     font-size: 15px;
     height: 100%;
