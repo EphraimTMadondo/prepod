@@ -58,6 +58,7 @@ element.style {
     -webkit-box-shadow: none;
     box-shadow: none;
     border-bottom: 1px dashed #bbb;
+    width: 100%;
 }
                
                                         
