@@ -34,6 +34,7 @@ input.tagit-hidden-field {
     height: 31.56px;
 }
 
+
 button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
