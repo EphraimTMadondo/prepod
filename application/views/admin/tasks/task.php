@@ -11,7 +11,10 @@
             padding: 15px 30px;
         }
         
-        
+        .modal-body {
+    position: relative;
+    padding: 15px;
+}
                
                                         
 </style>
