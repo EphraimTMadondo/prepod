@@ -24,6 +24,21 @@
 .color-white, .color-white[href] {
     color: #fff;
 }
+input.tagit-hidden-field {
+    display: none;
+}
+
+.tagsinput, input#tags {
+    width: 100%;
+    opacity: 0;
+    height: 31.56px;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
 .modal-content {
     position: relative;
     display: flex;
