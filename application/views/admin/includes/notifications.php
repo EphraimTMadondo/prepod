@@ -19,7 +19,7 @@
     position: relative;
 }
 
-@media (min-width: 768px)
+
 .navbar-right .dropdown-menu {
     right: 0;
     left: auto;
