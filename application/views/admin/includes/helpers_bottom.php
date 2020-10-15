@@ -24,6 +24,18 @@
 .color-white, .color-white[href] {
     color: #fff;
 }
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #FFFFFF;
+    background-clip: padding-box;
+    border: none solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.267rem;
+    outline: 0;
+}
 .modal-body {
     position: relative;
     padding: 15px;
@@ -59,6 +71,16 @@ form.dropzone {
     background-color: #fbfdff;
     border: 1px dashed #c0ccda;
     border-radius: 6px;
+}
+
+.dropzone .dz-message {
+    /* margin-top: 45px; */
+    color: #03a9f4;
+}
+
+.dropzone .dz-message {
+    text-align: center;
+    margin: 2em 0;
 }
 
 html {
