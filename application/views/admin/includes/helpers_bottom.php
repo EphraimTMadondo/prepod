@@ -54,6 +54,12 @@ element.style {
 .h3, .h4, h3, h4 {
     /* font-weight: 400; */
 }
+
+html {
+    font-size: 15px;
+    height: 100%;
+    letter-spacing: 0.01rem;
+}
 .fa {
     /* display: inline-block; */
     /* font: normal normal normal 14px/1 FontAwesome; */
