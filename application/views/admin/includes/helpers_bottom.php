@@ -25,7 +25,8 @@
     color: #fff;
 }
 .modal-body {
-padding-top: 0% !important;
+    position: relative;
+    padding: 15px;
 }
 .task-single-col-right {
     background: #f0f5f7;
