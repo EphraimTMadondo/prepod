@@ -1116,7 +1116,11 @@ html {
                ?>
          </div>
          <hr class="task-info-separator" />
-         <?php echo form_open_multipart('admin/tasks/upload_file',array('id'=>'task-attachment','class'=>'dropzone')); ?>
+         <form action= <?php echo site_url()."admin/tasks/upload_file" id="task-attachment" enctype="multipart/form-data"
+         method="post"accept-charset="utf-8"class="dropzone dz-clickable"
+         >
+         </form>
+         <?php// echo form_open_multipart('admin/tasks/upload_file',array('id'=>'task-attachment','class'=>'dropzone')); ?>
          <?php echo form_close(); ?>
          <div class="mtop10 text-right">
             <button class="gpicker mbot5">
