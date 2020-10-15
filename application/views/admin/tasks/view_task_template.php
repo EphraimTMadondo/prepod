@@ -220,7 +220,7 @@ html {
                                         
 </style>
    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-   <h4 class="modal-title"><?php echo $task->name; ?> 777</h4>
+   <h4 class="modal-title"><?php echo $task->name; ?> </h4>
    <?php if($task->billed == 1){ ?>
    <?php  echo '<p class="no-margin">'._l('task_is_billed','<a href="'.admin_url('invoices/list_invoices/'.$task->invoice_id).'" target="_blank" class="color-white">'.format_invoice_number($task->invoice_id)). '</a></p>'; ?>
    <?php } ?>
@@ -640,7 +640,7 @@ html {
             <?php echo form_open_multipart(admin_url('tasks/add_task_comment'),array('id'=>'task-comment-form','class'=>'dropzone dropzone-manual','style'=>'min-height:auto;background-color:#fff;')); ?>
             <textarea name="comment" placeholder="<?php echo _l('task_single_add_new_comment'); ?>" id="task_comment" rows="3" class="form-control ays-ignore"></textarea>
             <div id="dropzoneTaskComment" class="dropzoneDragArea dz-default dz-message hide task-comment-dropzone">
-               <span><?php echo _l('drop_files_here_to_upload'); ?></span>
+               <span><?php echo _l('drop_files_here_to_upload'); ?>88888888888</span>
             </div>
             <div class="dropzone-task-comment-previews dropzone-previews"></div>
             <button type="button" class="btn btn-secondary mtop10 float-right hide" id="addTaskCommentBtn" autocomplete="off" data-loading-text="<?php echo _l('wait_text'); ?>" onclick="add_task_comment('<?php echo $task->id; ?>');" data-comment-task-id="<?php echo $task->id; ?>">
