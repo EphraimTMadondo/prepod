@@ -96,6 +96,10 @@ table {
     border-spacing: 0;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .task-single-col-right {
     background: #f0f5f7;
     padding: 13px 20px;
