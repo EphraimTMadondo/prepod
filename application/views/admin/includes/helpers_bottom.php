@@ -27,6 +27,7 @@
 .modal-body {
     position: relative;
     padding: 15px;
+    padding-top: 0px;
 }
 .task-single-col-right {
     background: #f0f5f7;
@@ -63,7 +64,14 @@ element.style {
     border-bottom: 1px dashed #bbb;
     width: 100%;
 }
-               
+
+.mbot10 {
+    margin-bottom: 10px;
+}   
+
+.disabled, :disabled {
+    color: #828D99 !important;
+}
                                         
 </style>
 <!-- Task modal view -->
