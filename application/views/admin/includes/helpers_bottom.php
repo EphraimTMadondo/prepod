@@ -45,7 +45,19 @@ button, input, optgroup, select, textarea {
 element.style {
     margin-right: 5px !important;
 }
-
+.task-info-heading {
+    font-size: 15px;
+}
+.task-info-created small {
+    font-size: 85%;
+}
+.h3, .h4, h3, h4 {
+    /* font-weight: 400; */
+}
+.h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .task-single-col-left {
     padding: 25px;
     background: #fff;
