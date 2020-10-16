@@ -573,12 +573,11 @@ class Tasks_model extends App_Model
             unset($data['tags']);
         }
 
-         if($_SESSION['current_company']!= NULL)
-           {
+         
              $data['company_username'] =  $_SESSION['current_company'];
              $this->db->insert(db_prefix() . 'tasks', $data);
 
-            }
+            
             echo "task running";
         $insert_id = $this->db->insert_id();
         if ($insert_id) {
