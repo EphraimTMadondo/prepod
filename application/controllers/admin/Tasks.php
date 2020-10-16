@@ -330,15 +330,14 @@ class Tasks extends AdminController
                         }
                     }
                 }
-        
-                json_encode([
+                set_alert('success', 'Payment successfully made');
+                echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
                     'message' => $message,
                 ]); 
 
-                
-                $this->load->view('admin/tasks/task', $data);
+               
 
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
