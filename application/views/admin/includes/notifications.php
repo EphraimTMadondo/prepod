@@ -126,7 +126,7 @@
 </li>
 <?php } ?>
 <?php if(count($_notifications) != 0){ ?>
-  <li class="divider no-mbot"></li>
+  
 <?php } ?>
 <li class="text-center" style = "
     padding: 8px 16px;
