@@ -128,7 +128,10 @@
 <?php if(count($_notifications) != 0){ ?>
   <li class="divider no-mbot"></li>
 <?php } ?>
-<li class="text-center">
+<li class="text-center" style = "
+    padding: 8px 16px;
+    color: #333;
+">
   <?php if(count($_notifications) > 0){ ?>
     <a href="<?php echo admin_url('profile?notifications=true'); ?>"><?php echo _l('nav_view_all_notifications'); ?></a>
   <?php } else { ?>
