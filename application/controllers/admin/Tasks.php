@@ -337,7 +337,8 @@ class Tasks extends AdminController
                     'message' => $message,
                 ]); 
 
-               
+                
+                $this->load->view('admin/tasks/task', $data);
 
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
@@ -387,7 +388,7 @@ class Tasks extends AdminController
 
         $data['id']    = $id;
         $data['title'] = $title;
-        echo "running before load";
+        
         $this->load->view('admin/tasks/task', $data);
     }
 
