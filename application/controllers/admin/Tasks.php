@@ -301,7 +301,8 @@ class Tasks extends AdminController
         }
         if ($this->input->post()) {
             $data                = $this->input->post();
-           // print_r(data);
+           echo "input data is";
+           print_r(data);
             $data['description'] = $this->input->post('description', false);
             if ($id == '') {
                 if (!has_permission('tasks', '', 'create')) {
