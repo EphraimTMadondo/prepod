@@ -331,7 +331,7 @@ class Tasks extends AdminController
                         }
                     }
                 }
-                echo "running";
+            
                 echo json_encode([
                     'success' => $success,
                     'id'      => $_id,

@@ -463,6 +463,7 @@ class Tasks_model extends App_Model
      */
     public function add($data, $clientRequest = false)
     {
+        echo "task running";
         $ticket_to_task = false;
 
         if (isset($data['ticket_to_task'])) {
