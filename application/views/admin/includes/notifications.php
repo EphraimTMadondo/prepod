@@ -50,7 +50,7 @@
 
 .notification-wrapper:hover
 {
-  background-color: #5A8DEE;
+  background: #e4e8f1;
 }
 
 </style>
