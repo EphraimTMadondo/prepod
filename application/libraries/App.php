@@ -241,6 +241,7 @@ class App
      */
     public function get_option($name)
     {
+        // $_SESSION['current_company'] = "vertix";
 
         $val  = '';
         $name = trim($name);
@@ -250,6 +251,12 @@ class App
         }
         
         //Added By Leo
+        if($name == "lead_unique_validation"){
+            echo $name;
+            //testing --Vic
+            $name = 1;
+            //echo "<script>alert('$name');<script>";die();
+        }
 
         if (!isset($this->options[$name])) {
            
