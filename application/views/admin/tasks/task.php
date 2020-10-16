@@ -233,7 +233,7 @@
                         <?php echo render_input('repeat_every_custom','',$value,'number',array('min'=>1)); ?>
                      </div>
                      <div class="col-md-6">
-                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_type_custom" id="repeat_type_custom" class="" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value="day" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'day'){echo 'selected';} ?>><?php echo _l('task_recurring_days'); ?></option>
                            <option value="week" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('task_recurring_weeks'); ?></option>
                            <option value="month" <?php if(isset($task) && $task->custom_recurring == 1 && $task->recurring_type == 'month'){echo 'selected';} ?>><?php echo _l('task_recurring_months'); ?></option>
