@@ -320,8 +320,7 @@
                      echo render_datetime_input('datefinished','task_finished',_dt($task->datefinished));
                   }
                ?>
-               ZZZZZ
-               <input type="text" id="start" name="start" class="form-control pickadate datetimepicker picker__input picker__input--active" value="" autocomplete="off" readonly="" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="start_root">
+              
                <div class="form-group checklist-templates-wrapper<?php if(count($checklistTemplates) == 0 || isset($task)){echo ' hide';}  ?>">
                   <label for="checklist_items"><?php echo _l('insert_checklist_templates'); ?></label>
                   <select id="checklist_items" name="checklist_items[]" class="selectpicker checklist-items-template-select" multiple="1" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex') ?>" data-width="100%" data-live-search="true" data-actions-box="true">
