@@ -48,7 +48,10 @@
     text-align: center;
 }
 
-
+.notification-wrapper:hover
+{
+  background-color: #5A8DEE;
+}
 
 </style>
 <a href="#" class="dropdown-toggle notifications-icon" data-toggle="dropdown" aria-expanded="false">
