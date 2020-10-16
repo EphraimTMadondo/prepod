@@ -38,6 +38,10 @@
   right: 0;
   left: auto;
 }
+.notification-box {
+    padding: 10px 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
 
 </style>
 <a href="#" class="dropdown-toggle notifications-icon" data-toggle="dropdown" aria-expanded="false">
