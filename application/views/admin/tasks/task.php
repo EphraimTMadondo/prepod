@@ -266,7 +266,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="rel_type" class="control-label"><?php echo _l('task_related_to'); ?></label>
-                        <select name="rel_type" class="selectpicker" data-style="btn-outline-light" id="rel_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="rel_type" class="" data-style="btn-outline-light" id="rel_type" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="project"
                               <?php if(isset($task) || $this->input->get('rel_type')){if($rel_type == 'project'){echo 'selected';}} ?>><?php echo _l('project'); ?></option>
