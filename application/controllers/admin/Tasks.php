@@ -337,7 +337,7 @@ class Tasks extends AdminController
                     'message' => $message,
                 ]); 
 
-                echo "running";
+               
 
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
