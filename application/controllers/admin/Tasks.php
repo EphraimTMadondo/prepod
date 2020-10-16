@@ -50,35 +50,6 @@ class Tasks extends AdminController
         echo $this->load->view('admin/tasks/kan_ban', [], true);
     }
 
-
-    // Added by Ephraim T Madondo
-    public function get_pipeline_ajax(){
-        if ($this->input->is_ajax_request()) {
-            $where = array();
-            if($this->input->get('project_id')){
-                $where['rel_id'] = $this->input->get('project_id');
-                $where['rel_type'] = 'project';
-            }
-            $kanban_items = array();
-            $task_statuses = $this->tasks_model->get_statuses();
-            foreach ($task_statuses as $status) {
-                $kanban_item['total_pages'] = ceil($this->tasks_model->do_kanban_query($status['id'],$this->input->get('search'),1,true,$where)/get_option('tasks_kanban_limit'));
-                $tasks = $this->tasks_model->do_kanban_query($status['id'],$this->input->get('search'),1,false,$where);
-                $kanban_item['total_tasks'] = count($tasks);
-                $kanban_item['tasks'] = $tasks;
-                $kanban_item['status'] = $status;
-                $kanban_item['load_more'] = _l('load_more');
-                $kanban_item['title'] = format_task_status($status['id'],false,true);
-                $kanban_items[] = $kanban_item;
-            }
-            $data['where'] = $where;
-            $data['statuses'] = $task_statuses;
-            $data['kanban_items'] = $kanban_items;
-            $data['success'] = true;
-            echo json_encode($data);
-        };
-    }
-
     public function ajax_search_assign_task_to_timer()
     {
         if ($this->input->is_ajax_request()) {
