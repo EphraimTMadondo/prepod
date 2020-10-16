@@ -312,9 +312,10 @@ class Tasks extends AdminController
                     ]);
                     die;
                 }
-                echo "running";
+               
 
                 $id      = $this->tasks_model->add($data);
+                echo "task_model return is".id;
                 $_id     = false;
                 $success = false;
                 $message = '';
@@ -329,6 +330,7 @@ class Tasks extends AdminController
                         }
                     }
                 }
+                echo "running";
                 echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
