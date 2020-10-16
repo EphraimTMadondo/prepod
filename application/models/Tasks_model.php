@@ -579,6 +579,7 @@ class Tasks_model extends App_Model
 
             
             echo "task running";
+            print_r($data);
         $insert_id = $this->db->insert_id();
         if ($insert_id) {
             foreach ($checklistItems as $key => $chkID) {
