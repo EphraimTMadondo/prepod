@@ -301,6 +301,7 @@ class Tasks extends AdminController
         }
         if ($this->input->post()) {
             $data                = $this->input->post();
+            echo "running";
             print_r(data);
             $data['description'] = $this->input->post('description', false);
             if ($id == '') {
