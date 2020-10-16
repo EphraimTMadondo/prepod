@@ -47,7 +47,7 @@
   <?php } ?>
 </a>
 <ul style = "right: 0;
-    left: auto;" class="dropdown-menu notifications animated fadeIn width400" data-total-unread="<?php echo $current_user->total_unread_notifications; ?>">
+    left: auto;padding: 0px 0;" class="dropdown-menu notifications animated fadeIn width400" data-total-unread="<?php echo $current_user->total_unread_notifications; ?>">
   <li class="not_mark_all_as_read" style = "background-color: #5A8DEE;" >
     <a href="#" style = "color:white" onclick="mark_all_notifications_as_read_inline(); return false;"><?php echo _l('mark_all_as_read'); ?></a>
   </li>
