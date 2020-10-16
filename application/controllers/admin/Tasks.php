@@ -330,12 +330,14 @@ class Tasks extends AdminController
                         }
                     }
                 }
-            /** 
+            /*
                echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
                     'message' => $message,
-                ]); **/
+                ]); */
+
+
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
                     header('HTTP/1.0 400 Bad error');
