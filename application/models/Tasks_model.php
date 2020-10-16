@@ -463,7 +463,7 @@ class Tasks_model extends App_Model
      */
     public function add($data, $clientRequest = false)
     {
-        echo "task running";
+       
         $ticket_to_task = false;
 
         if (isset($data['ticket_to_task'])) {
@@ -579,6 +579,7 @@ class Tasks_model extends App_Model
              $this->db->insert(db_prefix() . 'tasks', $data);
 
             }
+            echo "task running";
         $insert_id = $this->db->insert_id();
         if ($insert_id) {
             foreach ($checklistItems as $key => $chkID) {
