@@ -48,10 +48,7 @@
     text-align: center;
 }
 
-.dropdown-menu>li>a {
-    padding: 8px 16px;
-    color: #333;
-}
+
 
 </style>
 <a href="#" class="dropdown-toggle notifications-icon" data-toggle="dropdown" aria-expanded="false">
