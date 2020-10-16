@@ -330,13 +330,14 @@ class Tasks extends AdminController
                         }
                     }
                 }
-            /*
-               echo json_encode([
+        
+                json_encode([
                     'success' => $success,
                     'id'      => $_id,
                     'message' => $message,
-                ]); */
+                ]); 
 
+                echo "running";
 
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
@@ -352,7 +353,7 @@ class Tasks extends AdminController
                 if ($success) {
                     $message = _l('updated_successfully', _l('task'));
                 }
-                echo json_encode([
+                json_encode([
                     'success' => $success,
                     'message' => $message,
                     'id'      => $id,
