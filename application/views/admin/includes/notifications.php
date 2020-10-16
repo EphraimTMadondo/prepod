@@ -82,7 +82,8 @@
           }
         }
         ?>
-        <div class="media-body">
+        <div class="media-body" style = "padding-top: 2%;
+    padding-bottom: 2%;">
           <?php
           $additional_data = '';
           if(!empty($notification['additional_data'])){
