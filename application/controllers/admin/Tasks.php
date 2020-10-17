@@ -332,7 +332,7 @@ class Tasks extends AdminController
                 }
               //  set_alert('success', 'Payment successfully made');
                // blank_page("hi testing");
-               die;
+               //die;
                 echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
