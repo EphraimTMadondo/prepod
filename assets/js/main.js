@@ -5258,7 +5258,7 @@ function alert_float(type, message, timeout) {
     el.append('<span class="fa fa-bell-o" data-notify="icon"></span>');
     el.append("<span class=\"alert-title\">" + message + "</span>");
 
-   // $("body").append(el);
+    $("body").append(el);
     timeout = timeout ? timeout : 3500
     setTimeout(function() {
         $('#' + aId).hide('fast', function() {
