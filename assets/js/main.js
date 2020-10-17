@@ -5251,14 +5251,14 @@ function alert_float(type, message, timeout) {
 
     el = $("<div></div>", {
         "id": aId,
-        "class": "",
+        "class": "float-alert animated fadeInRight col-xs-10 col-sm-3 alert alert-",
     });
 
     el.append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
     el.append('<span class="fa fa-bell-o" data-notify="icon"></span>');
     el.append("<span class=\"alert-title\">" + message + "</span>");
 
-    $("body").append(el);
+   // $("body").append(el);
     timeout = timeout ? timeout : 3500
     setTimeout(function() {
         $('#' + aId).hide('fast', function() {
