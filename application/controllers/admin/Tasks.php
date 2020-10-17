@@ -396,7 +396,7 @@ die;
         $data['id']    = $id;
         $data['title'] = $title;
         
-       // $this->load->view('admin/tasks/task', $data);
+        $this->load->view('admin/tasks/task', $data);
     }
 
     public function copy()
