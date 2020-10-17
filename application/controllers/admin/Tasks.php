@@ -337,6 +337,8 @@ class Tasks extends AdminController
      'alert_float("success",'.$message.', 3500)',
      '</script>'
 ;
+
+die;
                 echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
