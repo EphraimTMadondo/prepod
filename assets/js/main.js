@@ -5251,7 +5251,7 @@ function alert_float(type, message, timeout) {
 
     el = $("<div></div>", {
         "id": aId,
-        "class": "float-alert animated fadeInRight col-xs-10 col-sm-3 alert alert-" + type,
+        "class": "",
     });
 
     el.append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
