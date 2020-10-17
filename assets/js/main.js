@@ -5240,6 +5240,34 @@ function showHideTagsPlaceholder($tagit) {
     $tagit.tagit("assignedTags").length > 0 ? $input.removeAttr('placeholder') : $input.attr('placeholder', placeholderText);
 }
 
+// Generate float alert
+function alert_float(type, message, timeout) {
+    var aId, el;
+
+    aId = $("body").find('float-alert').length;
+    aId++;
+
+    aId = 'alert_float_' + aId;
+
+    el = $("<div></div>", {
+        "id": aId,
+        "class": "float-alert animated fadeInRight col-xs-10 col-sm-3 alert alert-" + type,
+    });
+
+    el.append('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+    el.append('<span class="fa fa-bell-o" data-notify="icon"></span>');
+    el.append("<span class=\"alert-title\">" + message + "</span>");
+
+    $("body").append(el);
+    timeout = timeout ? timeout : 3500
+    setTimeout(function() {
+        $('#' + aId).hide('fast', function() {
+            $('#' + aId).remove();
+        });
+    }, timeout);
+}
+
+
 // Create new task directly from relation, related options selected after modal is shown
 function new_task_from_relation(table, rel_type, rel_id) {
     if (typeof(rel_type) == 'undefined' && typeof(rel_id) == 'undefined') {
