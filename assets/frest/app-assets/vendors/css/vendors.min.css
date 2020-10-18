@@ -28,7 +28,8 @@
     background: #39DA8A !important;
     color: #fff !important;
     box-shadow: 0 3px 8px 0 rgba(57, 218, 138, 0.4);
-    border: none;
+	border: none;
+	z-index: 99999999999!important;
 }
 
 .float-alert {
