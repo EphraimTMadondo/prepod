@@ -5250,7 +5250,7 @@ function alert_float(type, message, timeout) {
     aId = 'alert_float_' + aId;
 
     el = $("<div></div>", {
-        "id": aId,
+        "id": testitem,
         "class": "",
     });
 
