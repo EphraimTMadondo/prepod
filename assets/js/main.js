@@ -5242,6 +5242,7 @@ function showHideTagsPlaceholder($tagit) {
 
 // Generate float alert
 function alert_float(type, message, timeout) {
+    alert("running in main.js");
     var aId, el;
 
     aId = $("body").find('float-alert').length;

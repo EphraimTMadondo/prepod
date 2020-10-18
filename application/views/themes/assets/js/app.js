@@ -520,6 +520,7 @@ function _table_jump_to_page(table, oSettings) {
 
 // Generate float alert
 function alert_float(type, message, timeout) {
+    alert("running in app.js themes/assets");
     var aId, el;
 
     aId = $("body").find('float-alert').length;
