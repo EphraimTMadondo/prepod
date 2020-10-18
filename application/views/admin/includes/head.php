@@ -114,6 +114,61 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/assets/css/style.css">
     <!-- END: Custom CSS-->
+
+    <style>
+
+.alert.alert-success {
+    background: #39DA8A !important;
+    color: #fff !important;
+    box-shadow: 0 3px 8px 0 rgba(57, 218, 138, 0.4);
+	border: none;
+	z-index: 99999999999!important;
+}
+
+.float-alert {
+    display: inline-block;
+    margin: 0 auto;
+    position: fixed;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    z-index: 1031;
+    top: 20px;
+    right: 20px;
+}
+
+.alert {
+    z-index: 99999999999!important;
+}
+
+.alert {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+
+
+
+    </style>
     
     <?php render_admin_js_variables(); ?>
     <script>
