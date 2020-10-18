@@ -332,6 +332,7 @@ class Tasks extends AdminController
                 }
 
                 die;
+                
               //  set_alert('success', 'Payment successfully made');
                // blank_page("hi testing");
                //die;
