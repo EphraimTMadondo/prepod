@@ -5,11 +5,18 @@
             <div class="sidebar">
                 <div class="todo-sidebar d-flex">
                     <span class="sidebar-close-icon">
+                    <script>
+                          var message2 = "hiiiiii";
+                          var type2 = "success"
+                                </script>
                         <i class="bx bx-x"></i>
                     </span>
                     <!-- todo app menu -->
                     <div class="todo-app-menu">
-                                <button> test button </button>
+                                <button
+                               
+                     onclick = "alert_float(type2,message2, 3500)"
+                                     > test button </button>
                         <div class="form-group text-center add-task">
                             <?php if(has_permission('tasks','','create')){ ?>
                             <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-primary btn-block  my-1"><?php echo _l('new_task'); ?></a>
