@@ -9,6 +9,7 @@
                     </span>
                     <!-- todo app menu -->
                     <div class="todo-app-menu">
+                                <button> test button </button>
                         <div class="form-group text-center add-task">
                             <?php if(has_permission('tasks','','create')){ ?>
                             <a href="#" onclick="new_task(<?php if($this->input->get('project_id')){ echo "'".admin_url('tasks/task?rel_id='.$this->input->get('project_id').'&rel_type=project')."'";} ?>); return false;" class="btn btn-primary btn-block  my-1"><?php echo _l('new_task'); ?></a>
