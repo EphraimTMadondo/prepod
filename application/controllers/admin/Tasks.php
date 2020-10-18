@@ -333,7 +333,7 @@ class Tasks extends AdminController
               //  set_alert('success', 'Payment successfully made');
                // blank_page("hi testing");
                //die;
-               echo '<script type="text/javascript">',
+             //  echo '<script type="text/javascript">',
      'alert_float("success",'.$message.', 3500)',
      '</script>'
 //;
