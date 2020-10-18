@@ -334,18 +334,18 @@ class Tasks extends AdminController
                // blank_page("hi testing");
                //die;
              //  echo '<script type="text/javascript">',
-     'alert_float("success",'.$message.', 3500)',
-     '</script>'
+   //  'alert_float("success",'.$message.', 3500)',
+   //  '</script>'
 //;
 //$this->load->view('admin/tasks/view_task_template', $data);
 //die;
-               // echo json_encode([
+               /*** echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
                     'message' => $message,
              //   ]); 
 
-               
+                */
 
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
