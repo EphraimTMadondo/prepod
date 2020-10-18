@@ -5241,9 +5241,9 @@ function showHideTagsPlaceholder($tagit) {
 }
 
 // Generate float alert
-/** 
+
 function alert_float(type, message, timeout) {
-    alert("running in main.js");
+    //alert("running in main.js");
     var aId, el;
 
     aId = $("body").find('float-alert').length;
@@ -5270,7 +5270,6 @@ function alert_float(type, message, timeout) {
     }, timeout);
 }
 
-*/
 
 // Create new task directly from relation, related options selected after modal is shown
 function new_task_from_relation(table, rel_type, rel_id) {
