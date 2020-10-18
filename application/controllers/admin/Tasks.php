@@ -336,7 +336,7 @@ class Tasks extends AdminController
                echo '<script type="text/javascript">',
      'alert_float("success",'.$message.', 3500)',
      '</script>'
-;
+//;
 //$this->load->view('admin/tasks/view_task_template', $data);
 //die;
                // echo json_encode([
