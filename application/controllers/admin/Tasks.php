@@ -339,11 +339,11 @@ class Tasks extends AdminController
 ;
 //$this->load->view('admin/tasks/view_task_template', $data);
 //die;
-                echo json_encode([
+               // echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
                     'message' => $message,
-                ]); 
+             //   ]); 
 
                
 
