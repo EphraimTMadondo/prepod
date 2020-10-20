@@ -37,8 +37,9 @@
             {
             
            ?>
-           <?php
+          
                 <ul class="menu-content">
+                <?php
             foreach($companies as $company)
             {
                 
