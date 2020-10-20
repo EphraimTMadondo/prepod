@@ -108,16 +108,16 @@
 
                       function update()
                       {
-                          window.open(document.getElementById("site").name +"admin/account/update","_self")
+                          window.open(document.getElementById("site").name +"account/update","_self")
                       }
                       
                        function history()
                       {
-                          window.open(document.getElementById("site").name +"admin/account/payments","_self")
+                          window.open(document.getElementById("site").name +"account/payments","_self")
                       }
                        function make_payment()
                       {
-                          window.open(document.getElementById("site").name +"admin/account/make_payment","_self")
+                          window.open(document.getElementById("site").name +"account/make_payment","_self")
                       }
                           
                       </script>
