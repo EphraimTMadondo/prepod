@@ -32,9 +32,46 @@
   
   ?>
             <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">My Companies</span></a>
-          
+            <?php foreach($companies as $company)
+            {
+                
             
-           
+            
+            ?>
+            <ul class="nav nav-second-level collapse" aria-expanded="false">
+                <li class="menu-item-customers">
+                    <a id = "<?php echo $company['company_username'];  ?>" onclick ="change_company(this.id)" aria-expanded="false">
+                        <i class="fa fa-user-o menu-icon"></i>
+                        <span class="menu-text"><?php echo $company['company_username'];  ?> </span>
+                    </a>
+               </li>
+               
+              
+            </ul>
+            
+            <?php
+            }
+            ?>
+            
+            <script>
+                function change_company(current_company)
+                {
+                
+                    
+                                  
+                                  if (window.confirm("Switch current company to "+current_company+ "?")) { 
+                                     createCookie("new_company",current_company );
+                                            alert("<?php echo $this->staff_model->change_company($_COOKIE["new_company"])?>");
+                                    }
+               }
+                
+                
+               function createCookie(name,value) {
+                         
+                         document.cookie = escape(name) + "=" + escape(value) + "; path=/";
+                       }
+                
+            </script>
             <?php if($totalQuickActionsRemoved != count($quickActions)){ ?>
                 <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">Quick Links</span></a>
                     <ul class="menu-content">
