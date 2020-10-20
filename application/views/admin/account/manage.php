@@ -101,19 +101,23 @@
                     </div>
                       <button id ="update" onclick="update()" class="center btn btn-info">Update</button>
                       </div>
+                      <div id ="site" style = "display:none;">
+                          <?php echo site_url();?>
+                </div>
                       <script>
+
                       function update()
                       {
-                          window.open("https://worksuite.app/os/admin/account/update","_self")
+                          window.open(document.getElementById("site").innerHTML +"admin/account/update","_self")
                       }
                       
                        function history()
                       {
-                          window.open("https://worksuite.app/os/admin/account/payments","_self")
+                          window.open(document.getElementById("site").innerHTML +"admin/account/payments","_self")
                       }
                        function make_payment()
                       {
-                          window.open("https://worksuite.app/os/admin/account/make_payment","_self")
+                          window.open(document.getElementById("site").innerHTML +"admin/account/make_payment","_self")
                       }
                           
                       </script>
