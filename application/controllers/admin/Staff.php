@@ -202,6 +202,21 @@ class Staff extends AdminController
         redirect(admin_url('staff'));
     }
 
+
+    public function change_company()
+    {
+        if ($this->input->is_ajax_request()) {
+            
+            $_SESSION['current_company'] = $this->input->post('company');
+            echo "Current company has been changed to ".$_SESSION['current_company']  ;
+            die();
+            
+            
+        }
+    }
+
+
+
     /* When staff edit his profile */
     public function edit_profile()
     {

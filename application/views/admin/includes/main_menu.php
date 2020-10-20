@@ -83,6 +83,20 @@
                                   if (window.confirm("Switch current company to "+current_company+ "?")) { 
                                      createCookie("new_company",current_company );
                                             alert("<?php echo $this->staff_model->change_company($_COOKIE["new_company"])?>");
+                                            $.ajax({
+                url: "<?php echo base_url();?>index.php/admin/staff/change_company",
+                type: "POST",
+                success: function(result){
+                   
+                     
+                    alert(result);
+                    
+                    
+                },
+                data:{
+                    company: current_company
+                }
+            });
                                     }
                }
                 
