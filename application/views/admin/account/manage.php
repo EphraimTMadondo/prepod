@@ -105,20 +105,27 @@
                       <?php echo site_url();?>
                 </div>
                       <script>
-
-                    var ret = document.getElementById("site").innerHTML.replace('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20','');
+                    
+                    var use = 
+                    
                       function update()
                       {
-                          window.open(ret +"account/update","_self")
+                        var site = document.getElementById("site").innerHTML +"account/update";
+                        var ret = site.replace('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20','');
+                          window.open(ret ,"_self")
                       }
                       
                        function history()
                       {
-                          window.open(ret +"account/payments","_self")
+                        var site = document.getElementById("site").innerHTML + "account/payments";
+                        var ret = site.replace('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20','');
+                          window.open(ret ,"_self")
                       }
                        function make_payment()
                       {
-                          window.open(ret +"account/make_payment","_self")
+                            var site = document.getElementById("site").innerHTML  +"account/make_payment";
+                            var ret = site.replace('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20','');
+                          window.open(ret ,"_self")
                       }
                           
 
