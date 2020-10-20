@@ -74,7 +74,7 @@
                                   
                                   if (window.confirm("Switch current company to "+current_company+ "?")) { 
                                      createCookie("new_company",current_company );
-                                            alert("<?php echo $this->staff_model->change_company($_COOKIE["new_company"])?>");
+                                            alert("<?php echo $this->staff_model->change_company(current_company)?>");
                                     }
                }
                 
