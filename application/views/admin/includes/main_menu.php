@@ -67,17 +67,18 @@
 
             <?php
 
-                
+                    setcookie("new_company", "", time() - 3600); 
 
                 ?>
                         <script>
+                            
                 function change_company(current_company)
                 {
                     //clear cookie
                 
                    // document.cookie = escape("new_company") + "=" + escape(value) + "; path=/";
                   // document.cookie = "new_company = ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-                    document.cookie = "new_company" + "=" + "; expires=" + "Thu, 01 Jan 1970 00:00:00 GMT";
+                  //  document.cookie = "new_company" + "=" + "; expires=" + "Thu, 01 Jan 1970 00:00:00 GMT";
                                   
                                   if (window.confirm("Switch current company to "+current_company+ "?")) { 
                                      createCookie("new_company",current_company );
