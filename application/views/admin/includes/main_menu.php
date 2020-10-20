@@ -46,7 +46,7 @@
             
             
             ?>
-             <li class="is-shown">
+             <li class="">
            <i class="bx bx-right-arrow-alt"> </i>
                
                     <a id = "<?php echo $company['company_username'];  ?>" onclick ="change_company(this.id)" aria-expanded="false">
