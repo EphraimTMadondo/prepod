@@ -184,6 +184,12 @@ $route['admin/utilities/(:any)'] = 'admin/utilities/$1';
 $route['admin/utilities/(:any)/(:any)'] = 'admin/utilities/$1/$2';
 $route['admin/utilities/(:any)/(:any)/(:any)'] = 'admin/utilities/$1/$2/$3';
 
+//My account
+
+$route['admin/account/update'] = 'admin/account/update';
+$route['admin/account/payments'] = 'admin/account/payments';
+$route['admin/account/make_payment'] = 'admin/account/make_payment';
+
 // Public single ticket route
 $route['forms/tickets/(:any)'] = 'forms/public_ticket/$1';
 
