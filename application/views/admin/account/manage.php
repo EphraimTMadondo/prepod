@@ -61,8 +61,10 @@
                         </div>
                         
                     </div>
-                      <button id="history" href="<?php echo site_url() ?>account/payments" class="center btn btn-info">Payment History</button>
-                      </div>
+                    <a  href="<?php echo site_url() ?>admin/account/payments">
+                      <button id="history" class="center btn btn-info">Payment History</button>
+                </a>
+                    </div>
                     <div class = "col-md-1"></div>
                            <div class = "col-md-3" style ="text-align: center;">
                 <div class="card widget">
@@ -80,7 +82,9 @@
                         </div>
                         
                     </div>
-                      <button href="<?php echo site_url()?>account/make_payment" class="center btn btn-info">Make Payment</button>
+                    <a href="<?php echo site_url()?>admin/account/make_payment">
+                      <button  class="center btn btn-info">Make Payment</button>
+                </a>
                       </div>
                     <div class = "col-md-1"></div>
                   <div class = "col-md-3" style ="text-align: center;">
@@ -99,7 +103,9 @@
                         </div>
                         
                     </div>
-                      <button id ="update" href="<?php echo site_url()?>account/update" class="center btn btn-info">Update</button>
+                    <a  href="<?php echo site_url()?>admin/account/update">
+                      <button id ="update" class="center btn btn-info">Update</button>
+                </a>
                       </div>
                       <div id ="site" name = "<?php echo site_url();?>" style = "">
                       <?php echo site_url();?>
