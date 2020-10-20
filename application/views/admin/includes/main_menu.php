@@ -42,9 +42,9 @@
             
             ?>
             <ul class="nav nav-second-level collapse" aria-expanded="false">
-                <li class="menu-item-customers">
+                <li class= "menu-content">
                     <a id = "<?php echo $company['company_username'];  ?>" onclick ="change_company(this.id)" aria-expanded="false">
-                        <i class="fa fa-user-o menu-icon"></i>
+                        <i class="menu-livicon"></i>
                         <span class="menu-text"><?php echo $company['company_username'];  ?> </span>
                     </a>
                </li>
