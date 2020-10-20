@@ -81,8 +81,8 @@
                   //  document.cookie = "new_company" + "=" + "; expires=" + "Thu, 01 Jan 1970 00:00:00 GMT";
                                   
                                   if (window.confirm("Switch current company to "+current_company+ "?")) { 
-                                     createCookie("new_company",current_company );
-                                            alert("<?php echo $this->staff_model->change_company($_COOKIE["new_company"])?>");
+                                     //createCookie("new_company",current_company );
+                                            
                                             $.ajax({
                 url: "<?php echo base_url();?>index.php/admin/staff/change_company",
                 type: "POST",
@@ -90,6 +90,7 @@
                    
                      
                     alert(result);
+                    location.reload();
                     
                     
                 },
