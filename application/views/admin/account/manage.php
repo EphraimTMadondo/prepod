@@ -102,23 +102,23 @@
                       <button id ="update" onclick="update()" class="center btn btn-info">Update</button>
                       </div>
                       <div id ="site" name = "<?php echo site_url();?>" style = "">
-                      "<?php echo site_url();?>"
+                      <?php echo site_url();?>
                 </div>
                       <script>
 
-                    var ret = "data-123".replace('data-','');
+                    var ret = document.getElementById("site").innerHTML.replace('%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20','');
                       function update()
                       {
-                          window.open(document.getElementById("site").innerHTML +"account/update","_self")
+                          window.open(ret +"account/update","_self")
                       }
                       
                        function history()
                       {
-                          window.open(document.getElementById("site").innerHTML  +"account/payments","_self")
+                          window.open(ret +"account/payments","_self")
                       }
                        function make_payment()
                       {
-                          window.open(document.getElementById("site").innerHTML  +"account/make_payment","_self")
+                          window.open(ret +"account/make_payment","_self")
                       }
                           
 
