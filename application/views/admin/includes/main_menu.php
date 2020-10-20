@@ -20,6 +20,8 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">Quick Links</span></a>
+
             <?php if($totalQuickActionsRemoved != count($quickActions)){ ?>
                 <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">Quick Links</span></a>
                     <ul class="menu-content">
