@@ -108,18 +108,19 @@
 
                       function update()
                       {
-                          window.open(document.getElementById("site").name +"/account/update","_self")
+                          window.open(document.getElementById("site").innerHTML +"account/update","_self")
                       }
                       
                        function history()
                       {
-                          window.open(document.getElementById("site").name +"/account/payments","_self")
+                          window.open(document.getElementById("site").innerHTML  +"account/payments","_self")
                       }
                        function make_payment()
                       {
-                          window.open(document.getElementById("site").name +"/account/make_payment","_self")
+                          window.open(document.getElementById("site").innerHTML  +"account/make_payment","_self")
                       }
                           
+                      
                       </script>
                     </div>
                <div class="col-md-7 small-table-right-col">
