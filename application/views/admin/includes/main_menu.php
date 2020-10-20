@@ -35,17 +35,22 @@
             <?php
             if(!empty($companies))
             {
+            
+           ?>
+           <?php
+                <ul class="menu-content">
             foreach($companies as $company)
             {
                 
             
             
             ?>
-            <ul class="nav nav-second-level collapse" aria-expanded="false">
-                <li class= "menu-content">
+             <li class="is-shown">
+           <i class="bx bx-right-arrow-alt"> </i>
+               
                     <a id = "<?php echo $company['company_username'];  ?>" onclick ="change_company(this.id)" aria-expanded="false">
                         <i class="menu-livicon"></i>
-                        <span class="menu-text"><?php echo $company['company_username'];  ?> </span>
+                        <span class="menu-item"><?php echo $company['company_username'];  ?> </span>
                     </a>
                </li>
                
