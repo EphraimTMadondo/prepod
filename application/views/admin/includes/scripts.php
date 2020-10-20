@@ -6,7 +6,6 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
 
-<script src="<?php echo base_url();?>assets/builds/vendor-admin.js"></script>
 
 
 <!-- Datepicker -->
