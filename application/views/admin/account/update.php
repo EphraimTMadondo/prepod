@@ -26,7 +26,7 @@
      
 }
 .choose:hover {
-  background-color: green;
+    background-color: #006FB8 !important;
   color: white;
 }
 .selected1{
@@ -42,7 +42,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     font-weight: 100;
-    background-color:#08a742;
+    background-color: #006FB8 !important;
     color: white;
 }
 .customers-extended{
