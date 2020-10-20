@@ -962,7 +962,7 @@ public function test2()
     public function change_company($company)
     {
         $_SESSION['current_company'] = $company;
-        return "Current company has been changed to ".$company.$_SESSION['current_company']  ;
+        return "Current company has been changed to ".$_SESSION['current_company']  ;
     }
     
     public function get_company_name ($username)
