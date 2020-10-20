@@ -106,21 +106,22 @@
                 </div>
                       <script>
 
+                    var ret = document.getElementById("site").innerHTML.replace('data-','');
                       function update()
                       {
-                          window.open(document.getElementById("site").innerHTML +"account/update","_self")
+                          window.open( +"account/update","_self")
                       }
                       
                        function history()
                       {
-                          window.open(document.getElementById("site").innerHTML  +"account/payments","_self")
+                          window.open("account/payments","_self")
                       }
                        function make_payment()
                       {
-                          window.open(document.getElementById("site").innerHTML  +"account/make_payment","_self")
+                          window.open("account/make_payment","_self")
                       }
                           
-                      
+
                       </script>
                     </div>
                <div class="col-md-7 small-table-right-col">
