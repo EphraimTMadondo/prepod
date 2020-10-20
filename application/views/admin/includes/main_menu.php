@@ -279,6 +279,10 @@
                         <?php } ?>
                     </ul>
                 </li>
+                
+                <li> class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">My Account</span></a>
+                        </li>
+
             </ul>
         </div>
     </div>
