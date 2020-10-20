@@ -191,8 +191,8 @@ p {
                                  <p style = "text-align: center; margin-bottom: 10px;font-size:15px;">How many people in your company will use Worksuite? </p>
                                     <hr class="mtop15">
                                 <div style = "display:flex; text-align: center;" >
-                                    <div id = "1" class = "choose"  onclick="selected(this.id)"><strong> 1</strong></div>
-                                    <div id = "2" class = "choose"  onclick="selected(this.id)"><strong> 2-5</strong></div>
+                                    <div id = "1" class = "choose"  onclick="selected(this.id)"><strong> 1-2</strong></div>
+                                    <div id = "2" class = "choose"  onclick="selected(this.id)"><strong> 3-5</strong></div>
                                     <div id = "3" class = "choose"  onclick="selected(this.id)"><strong> 6-10</strong></div>
                                     <div id = "4" class = "choose"  onclick="selected(this.id)"><strong> 11-50</strong></div>
                                     <div id = "5" class = "choose"  onclick="selected(this.id)"><strong> 50+</strong></div>

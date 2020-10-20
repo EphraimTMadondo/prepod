@@ -539,7 +539,7 @@ class Authentication extends ClientsController
                  $data2['industry'] = $data['industry'];
                 if($data['choose']==1)
                 {
-                    $data2['max_users'] = 1;
+                    $data2['max_users'] = 2;
                 }
                   if($data['choose']==2)
                 {

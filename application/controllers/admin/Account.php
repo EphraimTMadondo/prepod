@@ -101,7 +101,7 @@ class Account extends AdminController
                 
                 if($data['choose']==1)
                 {
-                    $data2['max_users'] = 1;
+                    $data2['max_users'] = 2;
                 }
                   if($data['choose']==2)
                 {
