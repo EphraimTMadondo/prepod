@@ -330,10 +330,13 @@ class Staff_model extends App_Model
 
             return $staff;
         }
-        $companyusername = $_SESSION['current_company'];
+      ;
      
         $this->db->select('staffid');
-         $this->db->where('company_username', $companyusername);
+        if(isset($_SESSION['current_company'])){
+              $companyusername = $_SESSION['current_company'];
+            $this->db->where('company_username', $companyusername);
+        }
           $staffArray =  $this->db->get(db_prefix() . 'staff_companies')->result_array();
           
           
@@ -485,7 +488,11 @@ public function test2()
         $this->db->where('email', $data['email']);
         $email = $this->db->get(db_prefix() . 'staff')->row();
         if ($email) {
-            die('Email already exists');
+            //Adding new company to existing  staff member - Victor
+            $this->db->where('email', $data['email']);
+            $staffid = $email->staffid;
+            $exists = 1;
+            //die('Email already exists');
         }
         $data['admin'] = 0;
         if (is_admin()) {
@@ -524,9 +531,12 @@ public function test2()
         if ($data['admin'] == 1) {
             $data['is_not_staff'] = 0;
         }
-
+        if(!$exists)
+        {
         $this->db->insert(db_prefix() . 'staff', $data);
         $staffid = $this->db->insert_id();
+        }
+        
         $data2['staffid'] =$staffid;
         $data2['company_username'] = $_SESSION['current_company'];
          $this->db->insert(db_prefix() . 'staff_companies', $data2);
@@ -948,4 +958,20 @@ public function test2()
 
         return $result;
     }
+    
+    public function change_company($company)
+    {
+        $_SESSION['current_company'] = $company;
+        return "Current company has been changed to ".$company.$_SESSION['current_company']  ;
+    }
+    
+    public function get_company_name ($username)
+    {
+        $this->db->select('company_name');  
+      
+        $this->db->where('company_username', $username);
+
+        return $this->db->get(db_prefix() . 'companies')->row()->company_name;
+    }
+    
 }
