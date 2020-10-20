@@ -56,6 +56,7 @@
         default:
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/vendors.min.css'>\n\t";
           echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/frest/app-assets/vendors/css/forms/select/select2.min.css'>\n\t";
+          
         break;
       }
     ?>
@@ -163,7 +164,7 @@
     border: 1px solid transparent;
     border-radius: 4px;
 
-    
+
 }
 
 
@@ -181,5 +182,6 @@
         isRTL = '<?php echo $isRTL; ?>',
         taskid,taskTrackingStatsData,taskAttachmentDropzone,taskCommentAttachmentDropzone,newsFeedDropzone,expensePreviewDropzone,taskTrackingChart,cfh_popover_templates = {},_table_api;
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
   <!-- END: Head-->
