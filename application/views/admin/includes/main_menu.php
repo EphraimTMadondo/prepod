@@ -31,7 +31,12 @@
   
   
   ?>
-            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">My Companies</span></a>
+            <li <?php 
+            if(sizeof(companies) > 1)
+            {
+                    echo "style = 'display: none'";
+            }
+            ?> class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="unlink"></i><span class="menu-title" data-i18n="Quick Links">My Companies</span></a>
             <?php
             if(!empty($companies))
             {
