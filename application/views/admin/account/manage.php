@@ -101,7 +101,7 @@
                     </div>
                       <button id ="update" onclick="update()" class="center btn btn-info">Update</button>
                       </div>
-                      <div id ="site" style = "display:none;">
+                      <div id ="site" style = "">
                           <?php echo site_url();?>
                 </div>
                       <script>
