@@ -102,7 +102,7 @@
                       <button id ="update" onclick="update()" class="center btn btn-info">Update</button>
                       </div>
                       <div id ="site" name = "<?php echo site_url();?>" style = "">
-                        
+                      "<?php echo site_url();?>"
                 </div>
                       <script>
 
