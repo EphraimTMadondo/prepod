@@ -46,13 +46,12 @@
             
             
             ?>
-             <li class="">
+             <li>
            <i class="bx bx-right-arrow-alt"> </i>
+
+           <a id = "<?php echo $company['company_username'];  ?>" onclick ="change_company(this.id)" aria-expanded="false" ><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Basic"><?php echo $company['company_username'];  ?> </span></a>
                
-                    <a id = "<?php echo $company['company_username'];  ?>" onclick ="change_company(this.id)" aria-expanded="false">
-                        <i class="menu-livicon"></i>
-                        <span class="menu-item"><?php echo $company['company_username'];  ?> </span>
-                    </a>
+                   
                </li>
                
               
