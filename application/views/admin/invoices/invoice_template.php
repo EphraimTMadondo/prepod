@@ -32,9 +32,11 @@
         echo form_hidden('merge_current_invoice',$invoice->id);
       } ?>
       <div class="row">
-      <div class = "card">
-      <div class = "card-body">
-         <div class="col-md-6">
+     
+      <div class="col-md-6">
+          <div class= "card"
+         <div class= "card-body" >
+            
             <div class="f_client_id">
               <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
@@ -243,8 +245,14 @@
                ?>
                <?php echo render_custom_fields('invoice',$rel_id); ?>
          </div>
-               </div>
-               </div>
+         </div>
+         </div>
+
+              
+
+
+
+
          <div class="col-md-6">
             <div class="card no-shadow">
 
