@@ -469,6 +469,10 @@
     letter-spacing: 1px;
 }
 
+.col-md-offset-4 {
+    margin-left: 33.33333333%;
+}
+
       </style>
    
    <div class = "card">
@@ -537,7 +541,11 @@
     height: inherit;
     padding-top: 10px;
 }
-
+textarea.form-control {
+    height: 5rem;
+    padding-top: 10px;
+    width: 100%;
+}
 
 
 
@@ -610,7 +618,7 @@
                      </style>
                   <td>
                      <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-                     <input type="text" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent">
+                     <input type="text" style = "width: 100;" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent">
                   </td>
                   <td>
                      <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
