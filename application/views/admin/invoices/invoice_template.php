@@ -20,9 +20,9 @@
       </div>
    </div>
 </div>
-<div class="card mt-2 invoice accounting-template">
+<div class="">
    <div class="additional"></div>
-   <div class="card-body">
+   <div class="">
       <?php if(isset($invoice)){ ?>
       <?php  echo format_invoice_status($invoice->status); ?>
       <hr class="hr-panel-heading" />
@@ -32,6 +32,8 @@
         echo form_hidden('merge_current_invoice',$invoice->id);
       } ?>
       <div class="row">
+      <div class = "card">
+      <div class = "card-body">
          <div class="col-md-6">
             <div class="f_client_id">
               <div class="form-group select-placeholder">
@@ -241,6 +243,8 @@
                ?>
                <?php echo render_custom_fields('invoice',$rel_id); ?>
          </div>
+               </div>
+               </div>
          <div class="col-md-6">
             <div class="card no-shadow">
 
