@@ -20,9 +20,7 @@
       <hr class="hr-panel-heading" />
       <?php } ?>
       <div class="row">
-        <div class = "col-md-6">
-          <div class = "card">
-       <div class="card-body">
+       <div class="col-md-6">
         <div class="f_client_id">
          <div class="form-group select-placeholder">
           <label for="clientid" class="control-label"><?php echo _l('client'); ?></label>
@@ -38,10 +36,6 @@
           } ?>
         </select>
       </div>
-      </div>
-      </div>
-
-
     </div>
     <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
      <label for="project_id"><?php echo _l('project'); ?></label>
