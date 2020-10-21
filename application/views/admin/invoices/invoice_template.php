@@ -481,7 +481,7 @@
           ?>
          <div class="col-md-3">
             <div class="form-group select-placeholder input-group-select form-group-select-task_select popover-250">
-              <div class="input-group input-group-select" style ="display: flex">
+              <div class="input-group-select" style ="display: flex">
                <select name="task_select" data-live-search="true" id="task_select" class="selectpicker no-margin _select_input_group" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('bill_tasks'); ?>">
                   <option value=""></option>
                   <?php foreach($billable_tasks as $task_billable){ ?>
@@ -499,7 +499,7 @@
                     } else {
                        $help_text = _l('invoice_task_item_project_tasks_not_included');
                     }
-                    echo '<span class="pointer popover-invoker" data-container=".form-group-select-task_select"
+                    echo '<span style = "margin-left: 8;"class="pointer popover-invoker" data-container=".form-group-select-task_select"
                       data-trigger="click" data-placement="top" data-toggle="popover" data-content="'.$help_text.'">
                       <i class="fa fa-question-circle"></i></span>';
                   ?>
@@ -508,6 +508,12 @@
             </div>
          </div>
          <?php } ?>
+         <style>
+            .radio
+            {
+               margin-left: 8;
+            }
+            </style>
          <div class="col-md-<?php if(!isset($invoice_from_project)){ echo 5; }else {echo 8;} ?> text-right show_quantity_as_wrapper">
             <div class="" style = "display: flex">
                <span><?php echo _l('show_quantity_as'); ?> </span>
