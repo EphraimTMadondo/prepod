@@ -105,7 +105,7 @@
                     	<?php echo render_date_input('to_date','to_date',''); ?>
                     </div>
                     <div class="col-md-12">
-                    	<h4><?php echo _l('shifts_detail'); ?></h4>
+                    	
                     	<hr/>
                     </div>
                     <div class="col-md-12 ml-1" id="example">
