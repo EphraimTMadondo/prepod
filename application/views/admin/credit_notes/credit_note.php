@@ -12,14 +12,31 @@
   }
   ?>
   <div class="col-md-12">
-    <div class="card credit_note accounting-template">
+    <div class="credit_note accounting-template">
      <div class="additional"></div>
-
-
-
-
-
-
+     <div class="">
+      <?php if(isset($credit_note)){ ?>
+      <?php echo format_credit_note_status($credit_note->status); ?>
+      <hr class="hr-panel-heading" />
+      <?php } ?>
+      <div class="row">
+       <div class="col-md-6">
+        <div class="f_client_id">
+         <div class="form-group select-placeholder">
+          <label for="clientid" class="control-label"><?php echo _l('client'); ?></label>
+          <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($credit_note) && empty($credit_note->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+            <?php $selected = (isset($credit_note) ? $credit_note->clientid : '');
+            if($selected == ''){
+             $selected = (isset($customer_id) ? $customer_id: '');
+           }
+           if($selected != ''){
+            $rel_data = get_relation_data('customer',$selected);
+            $rel_val = get_relation_values($rel_data,'customer');
+            echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
+          } ?>
+        </select>
+      </div>
+    </div>
     <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
      <label for="project_id"><?php echo _l('project'); ?></label>
      <div id="project_ajax_search_wrapper">
@@ -220,12 +237,6 @@
 </div>
 </div>
 </div>
-
-
-
-
-
-
 <div class="card-body mt-1">
   <div class="row">
   <div class="col-md-4">
