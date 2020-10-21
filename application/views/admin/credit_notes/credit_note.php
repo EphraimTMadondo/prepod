@@ -20,7 +20,9 @@
       <hr class="hr-panel-heading" />
       <?php } ?>
       <div class="row">
-       <div class="col-md-6">
+        <div class = "col-md-6">
+          <div class = "card">
+       <div class="card-body">
         <div class="f_client_id">
          <div class="form-group select-placeholder">
           <label for="clientid" class="control-label"><?php echo _l('client'); ?></label>
@@ -36,6 +38,10 @@
           } ?>
         </select>
       </div>
+      </div>
+      </div>
+
+
     </div>
     <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
      <label for="project_id"><?php echo _l('project'); ?></label>
@@ -55,7 +61,10 @@
     <a href="#" class="edit_shipping_billing_info" data-toggle="modal" data-target="#billing_and_shipping_details"><i class="bx bx-pencil"></i></a>
     <?php include_once(APPPATH .'views/admin/credit_notes/billing_and_shipping_template.php'); ?>
   </div>
+
   <div class="col-md-6">
+    <div class = "card">
+  <div class = card-body" >
     <p class="bold"><?php echo _l('credit_note_bill_to'); ?></p>
     <address>
      <span class="billing_street">
@@ -225,6 +234,8 @@
        <option value="after_tax" <?php if(isset($credit_note)){if($credit_note->discount_type == 'after_tax'){echo 'selected';}} ?>><?php echo _l('discount_type_after_tax'); ?></option>
      </select>
    </div>
+ </div>
+ </div>
  </div>
 </div>
 <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
