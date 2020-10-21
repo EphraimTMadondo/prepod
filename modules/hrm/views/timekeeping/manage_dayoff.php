@@ -13,6 +13,10 @@
            
         }
 
+        .hrm-width150 {
+    width: 150%;
+}
+
         .modal-title
         {
           color: white;
