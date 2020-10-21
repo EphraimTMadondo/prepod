@@ -448,7 +448,7 @@
    
    <div class = "card">
    <div class="card-body mtop10">
-      <div class="row">
+      <div class="row" style = "display: flex">
          <div class="col-md-4">
             <?php $this->load->view('admin/invoice_items/item_select'); ?>
          </div>
