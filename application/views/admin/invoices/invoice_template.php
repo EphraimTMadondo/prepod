@@ -513,6 +513,16 @@
             {
                margin-left: 8;
             }
+
+                        table.items tr.main td {
+               padding-top: 25px;
+               padding-bottom: 25px;
+            }
+
+            textarea.form-control {
+    height: inherit;
+    padding-top: 10px;
+}
             </style>
          <div class="col-md-<?php if(!isset($invoice_from_project)){ echo 5; }else {echo 8;} ?> text-right show_quantity_as_wrapper">
             <div class="" style = "display: flex">
