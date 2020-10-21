@@ -11,29 +11,7 @@
     echo form_hidden('isedit');
   }
   ?>
-  <div class="col-md-12">
-    <div class="card credit_note accounting-template">
-     <div class="additional"></div>
-     <div class="card-body">
-      <?php if(isset($credit_note)){ ?>
-      <?php echo format_credit_note_status($credit_note->status); ?>
-      <hr class="hr-panel-heading" />
-      <?php } ?>
-      <div class="row">
-       
-    </div>
-    <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
-     <label for="project_id"><?php echo _l('project'); ?></label>
-     <div id="project_ajax_search_wrapper">
-      <select name="project_id" id="project_id" class="projects ajax-search" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-        <?php
-        if(isset($credit_note) && $credit_note->project_id != 0){
-         echo '<option value="'.$credit_note->project_id.'" selected>'.get_project_name_by_id($credit_note->project_id).'</option>';
-       }
-       ?>
-     </select>
-   </div>
- </div>
+  
  <div class="row">
    <div class="col-md-12">
     <hr class="hr-10" />
