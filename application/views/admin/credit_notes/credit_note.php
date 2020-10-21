@@ -18,6 +18,8 @@
     margin: 2px;
 }
 
+
+
 .mbot25 {
     margin-bottom: 25px;
 }
@@ -38,6 +40,44 @@
 }
 
       </style>
+               <style>
+            .form-control {
+    display: block;
+    /* width: 100%; */
+    height: calc(1.4em + .94rem + 3.7px);
+    padding: .47rem .8rem;
+    font-size: 1rem;
+    /* line-height: 1.4; */
+    color: #475F7B;
+    background-color: #FFF;
+    border: 1px solid #DFE3E7;
+    border-radius: .267rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+            .radio
+            {
+               margin-left: 8;
+            }
+
+                        table.items tr.main td {
+               padding-top: 25px;
+               padding-bottom: 25px;
+            }
+
+            textarea.form-control {
+    height: inherit;
+    padding-top: 10px;
+}
+textarea.form-control {
+    height: 5rem;
+    padding-top: 10px;
+    width: 100%;
+}
+
+
+
+            </style>
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
   <div class="row">
@@ -263,13 +303,13 @@
        <option value="after_tax" <?php if(isset($credit_note)){if($credit_note->discount_type == 'after_tax'){echo 'selected';}} ?>><?php echo _l('discount_type_after_tax'); ?></option>
      </select>
 
-     <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
+    
+   </div>
+
+   <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
 <?php echo render_input('reference_no','reference_no',$value); ?>
 <?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
 <?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
-   </div>
-
-
 
 
 
@@ -294,7 +334,7 @@
 <div class = "card">
   <div class = "card-body">
 <div class="card-body mt-1">
-  <div class="row">
+  <div class="row" style = "display: flex">
   <div class="col-md-4">
       <?php $this->load->view('admin/invoice_items/item_select'); ?>
   </div>
