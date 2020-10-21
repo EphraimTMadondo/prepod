@@ -12,9 +12,9 @@
   }
   ?>
   <div class="col-md-12">
-    <div class="card credit_note accounting-template">
+    <div class="">
      <div class="additional"></div>
-     <div class="card-body">
+     <div class="">
       <?php if(isset($credit_note)){ ?>
       <?php echo format_credit_note_status($credit_note->status); ?>
       <hr class="hr-panel-heading" />
@@ -237,6 +237,9 @@
 </div>
 </div>
 </div>
+
+<div class = "card">
+  <div class = "card-body">
 <div class="card-body mt-1">
   <div class="row">
   <div class="col-md-4">
@@ -482,6 +485,14 @@
 <?php echo form_close(); ?>
 <?php $this->load->view('admin/invoice_items/item'); ?>
 </div>
+</div>
+</div>
+
+
+
+
+
+
 </div>
 </div>
 <?php init_tail(); ?>
