@@ -523,7 +523,7 @@
                    <div role="tab-pane" class="tab-pane" id="insurrance">
                       <div class="insurance-info">
                         <div class="row publib-insurance-title">
-                             <div class="col-md-8">
+                             <div class="col-md-12">
                                 <h4>
                                     <span class="publib-infor"><?php echo _l('insurance_info') ?></span>
                                 </h4>
