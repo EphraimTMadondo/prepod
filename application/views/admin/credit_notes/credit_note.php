@@ -3,14 +3,29 @@
 <!-- BEGIN: Content-->
 <div class="app-content content">
 <style>
+      .table.items thead {
+    background: #415164;
+    color: white;
+    border: 0;
+}
+.table.items thead {
+    background: #415164;
+    color: #fff;
+    border: 0;
+}
+
+.row {
+    margin: 2px;
+}
+
+table.items tr.main td {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
 .mbot25 {
     margin-bottom: 25px;
 }
-
-
-
-
 
 
 
@@ -267,10 +282,7 @@ textarea.form-control {
              </div>
            </div>
          </div>
-         <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
-<?php echo render_input('reference_no','reference_no',$value); ?>
-<?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
-<?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
+
       </div>
     </div>
     <div class="col-md-6">
@@ -313,7 +325,10 @@ textarea.form-control {
     
    </div>
 
-
+   <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
+<?php echo render_input('reference_no','reference_no',$value); ?>
+<?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
+<?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
 
 
 
