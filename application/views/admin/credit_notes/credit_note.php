@@ -60,18 +60,14 @@
     <a href="#" class="edit_shipping_billing_info" data-toggle="modal" data-target="#billing_and_shipping_details"><i class="bx bx-pencil"></i></a>
     <?php include_once(APPPATH .'views/admin/credit_notes/billing_and_shipping_template.php'); ?>
   </div>
-  
   </div>
-  <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
-<?php echo render_input('reference_no','reference_no',$value); ?>
-<?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
-<?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
-<?php $rel_id = (isset($credit_note) ? $credit_note->id : false); ?>
-<?php echo render_custom_fields('credit_note',$rel_id); ?>
   </div>
 
 <!------------------------------------->
-  <div class="col-md-6">
+
+<div  class="col-md-6">
+  <div class="card" >
+  <div class= "card-body" >
     <p class="bold"><?php echo _l('credit_note_bill_to'); ?></p>
     <address>
      <span class="billing_street">
@@ -242,8 +238,17 @@
      </select>
    </div>
  </div>
-</div>
+    </div>
+    </div>
 
+
+</div>
+<?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
+<?php echo render_input('reference_no','reference_no',$value); ?>
+<?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
+<?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
+<?php $rel_id = (isset($credit_note) ? $credit_note->id : false); ?>
+<?php echo render_custom_fields('credit_note',$rel_id); ?>
 </div>
 </div>
 </div>
