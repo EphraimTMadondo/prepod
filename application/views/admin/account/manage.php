@@ -107,7 +107,7 @@
                       <button id ="update" class="center btn btn-info">Update</button>
                 </a>
                       </div>
-                      <div id ="site" name = "<?php echo site_url();?>" style = "">
+                      <div id ="site" name = "<?php echo site_url();?>" style = "display:none">
                       <?php echo site_url();?>
                 </div>
                       <script>
