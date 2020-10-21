@@ -111,7 +111,7 @@
                     <div class="col-md-12 ml-1" id="example">
                     	
                     </div>
-                    <?php // echo form_hidden('shifts_detail'); ?>
+                    <?php echo form_hidden('shifts_detail'); ?>
                 </div>
                     <button class="btn btn-secondary float-right save_detail_shift"><?php echo _l('submit'); ?></button>
                 
