@@ -458,21 +458,16 @@
     margin-bottom: 25px;
 }
 
-.input-group {
-    position: relative;
-    display: table;
-    border-collapse: separate;
-}
 
-.input-group-select .input-group-addon {
-    padding-top: 8px;
-    opacity: 0;
-}
 
 .mtop10 {
     margin-top: 10px;
 }
-
+.table thead th {
+    color: white;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
 
       </style>
    
