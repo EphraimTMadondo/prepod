@@ -509,6 +509,20 @@
          </div>
          <?php } ?>
          <style>
+            .form-control {
+    display: block;
+    /* width: 100%; */
+    height: calc(1.4em + .94rem + 3.7px);
+    padding: .47rem .8rem;
+    font-size: 1rem;
+    /* line-height: 1.4; */
+    color: #475F7B;
+    background-color: #FFF;
+    border: 1px solid #DFE3E7;
+    border-radius: .267rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
             .radio
             {
                margin-left: 8;
@@ -523,6 +537,10 @@
     height: inherit;
     padding-top: 10px;
 }
+
+
+
+
             </style>
          <div class="col-md-<?php if(!isset($invoice_from_project)){ echo 5; }else {echo 8;} ?> text-right show_quantity_as_wrapper">
             <div class="" style = "display: flex">
