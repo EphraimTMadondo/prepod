@@ -331,8 +331,8 @@ class Tasks extends AdminController
                     }
                 }
 
-                die;
-                
+               // die;
+
               //  set_alert('success', 'Payment successfully made');
                // blank_page("hi testing");
                //die;
@@ -342,13 +342,13 @@ class Tasks extends AdminController
 //;
 //$this->load->view('admin/tasks/view_task_template', $data);
 //die;
-               /*** echo json_encode([
+               echo json_encode([
                     'success' => $success,
                     'id'      => $_id,
                     'message' => $message,
-             //   ]); 
+              ]); 
 
-                */
+            
 
             } else {
                 if (!has_permission('tasks', '', 'edit')) {
