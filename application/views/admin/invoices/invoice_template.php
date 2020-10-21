@@ -31,10 +31,10 @@
       <?php if(isset($invoice)){
         echo form_hidden('merge_current_invoice',$invoice->id);
       } ?>
-      <div class="row">
+      <div class="row" style = "display:flex">
      
       <div class="col-md-6">
-          <div class= "card"
+          <div class= "card">
          <div class= "card-body" >
             
             <div class="f_client_id">
@@ -245,7 +245,7 @@
                ?>
                <?php echo render_custom_fields('invoice',$rel_id); ?>
          </div>
-         </div>
+               </div>
          </div>
 
               
