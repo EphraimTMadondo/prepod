@@ -78,6 +78,17 @@ textarea.form-control {
 
 
             </style>
+               <style>
+
+.input-transparent {
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   outline: 0;
+   border: 0!important;
+   background: 0 0;
+}
+
+</style>
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
   <div class="row">
@@ -339,7 +350,7 @@ textarea.form-control {
       <?php $this->load->view('admin/invoice_items/item_select'); ?>
   </div>
 <div class="col-md-8 text-right show_quantity_as_wrapper">
-  <div class="mt-1">
+  <div style = "display: flex">
    <span><?php echo _l('show_quantity_as'); ?> </span>
    <div class="radio radio-primary radio-inline">
     <input type="radio" value="1" id="sq_1" name="show_quantity_as" data-text="<?php echo _l('credit_note_table_quantity_heading'); ?>" <?php if(isset($credit_note) && $credit_note->show_quantity_as == 1){echo 'checked';}else if(!isset($hours_quantity) && !isset($qty_hrs_quantity)){echo'checked';} ?>>
