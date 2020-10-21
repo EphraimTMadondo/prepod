@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
- <h4><?php echo '<i class=" fa fa-hotel"></i> '. $title; ?></h4>
+ <h4 style= "color:white"><?php echo '<i class=" fa fa-hotel"></i> '. $title; ?></h4>
  <br/>
  <style>
             .modal .modal-content .modal-header {
