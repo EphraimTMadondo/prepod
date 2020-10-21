@@ -591,13 +591,13 @@
                <tr class="main">
                   <td></td>
                   <td>
-                     <textarea name="description" class="form-control" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
+                     <textarea name="description" class="" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
                   </td>
                   <td>
-                     <textarea name="long_description" rows="4" class="form-control" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
+                     <textarea name="long_description" rows="4" class="" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
                   </td>
                   <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
-                  <td>
+                  <td style = "display: flex">
                      <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
                      <input type="text" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent text-right">
                   </td>
