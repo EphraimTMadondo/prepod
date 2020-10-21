@@ -6,7 +6,7 @@
     <div class="content-wrapper">
  	<?php echo form_hidden('cd_id',$candidate->id); ?>
  	<?php echo form_open_multipart(admin_url('recruitment/transfer_hr/'.$candidate->id),array('class'=>'transfer-form','autocomplete'=>'off')); ?>
-    <div class="col-md-8 col-md-offset-2" id="small-table">
+    <div class="col-md-12 col-md-offset-2" id="small-table">
    <div class="card">
      <div class="card-body">
        <ul class="nav nav-tabs" role="tablist">

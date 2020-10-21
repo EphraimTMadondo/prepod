@@ -615,7 +615,7 @@
                       <?php echo form_close(); ?>   
 
                     <div>
-                       <div id="contract_attachments" class="mt-2 col-md-12 col-md-offset-2">
+                       <div id="contract_attachments" class="mt-2 col-md-8 col-md-offset-2">
                            <?php
                               $data = '<div class="row" id="attachment_file">';
                               foreach($hrm_staff as $attachment) {
