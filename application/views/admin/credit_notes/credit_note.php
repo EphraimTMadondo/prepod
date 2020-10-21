@@ -40,7 +40,7 @@
             echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
           } ?>
         </select>
-      </div>
+     
     </div>
     <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
      <label for="project_id"><?php echo _l('project'); ?></label>
@@ -62,7 +62,7 @@
   </div>
   </div>
   </div>
-
+  </div>
 <!------------------------------------->
 
 <div  class="col-md-6">
