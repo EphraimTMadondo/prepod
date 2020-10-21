@@ -305,6 +305,8 @@ textarea.form-control {
         } else {
           if($currency['isdefault'] == 1){
             $selected = $currency['id'];
+
+            
           }
         }
       }
@@ -323,6 +325,9 @@ textarea.form-control {
      </select>
 
     
+
+
+
    </div>
 
    <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
