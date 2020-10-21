@@ -121,7 +121,7 @@
 <script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
 
 <script src="<?php echo base_url();?>assets/js/app.js"></script>
-<script src="<?php echo base_url();?>assets\plugins\datetimepicker\jquery.datetimepicker.full.js></script>
+<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
 
 <!-- END: Theme JS-->
 
