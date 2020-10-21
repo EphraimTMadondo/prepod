@@ -1,6 +1,21 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
  <h4><?php echo '<i class=" fa fa-hotel"></i> '. $title; ?></h4>
  <br/>
+ <style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        
+               
+                                        
+</style>
  <a href="#" onclick="new_leave(); return false;" class="btn btn-primary"><?php echo _l('new_leave'); ?></a>
  <br/><br/>
 <div class="horizontal-scrollable-tabs preview-tabs-top">
