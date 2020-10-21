@@ -1,6 +1,74 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div>
 <div class="_buttons">
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+           
+        }
+
+ 
+
+.bootstrap-select .dropdown-menu>li:first-child>a {
+    border-radius: 0;
+}
+
+._filter_data .dropdown-menu li a, .bootstrap-select .dropdown-menu li a {
+    padding: 6px 16px;
+}
+
+        .hrm-width150 {
+    width: 150%;
+}
+
+        .modal-title
+        {
+          color: white;
+        }
+        
+        
+.h3, .h4, h3, h4 {
+    font-weight: 400;
+}
+.h4, h4 {
+    font-size: 18px;
+}
+.h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+ 
+.modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.3rem 2.3rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.4em + .94rem + 3.7px);
+    padding: .47rem .8rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #475F7B;
+    background-color: #FFF;
+    border: 1px solid #DFE3E7;
+    border-radius: .267rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+                                        
+</style>
     <a href="#" onclick="new_salary_form(); return false;" class="btn btn-primary">
         <?php echo _l('new_salary_form'); ?>
     </a>
