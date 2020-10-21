@@ -13,9 +13,7 @@
            
         }
 
-        .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
-    background-color: #03a9f4;
-}
+ 
 
 .bootstrap-select .dropdown-menu>li:first-child>a {
     border-radius: 0;
