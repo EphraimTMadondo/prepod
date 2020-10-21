@@ -437,6 +437,14 @@
 
       </div>
    </div>
+
+   <style>
+      .table.items thead {
+    background: #415164;
+    color: #fff;
+    border: 0;
+}
+      </style>
    
    <div class = "card">
    <div class="card-body mtop10">
@@ -761,7 +769,7 @@
    </div>
 
    
-   
+
 </div>
 
 
