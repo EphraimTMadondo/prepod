@@ -29,6 +29,9 @@
             if($selected == ''){
              $selected = (isset($customer_id) ? $customer_id: '');
            }
+
+
+           
            if($selected != ''){
             $rel_data = get_relation_data('customer',$selected);
             $rel_val = get_relation_values($rel_data,'customer');
