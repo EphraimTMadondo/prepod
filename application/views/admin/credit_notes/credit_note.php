@@ -397,6 +397,8 @@ textarea.form-control {
  <tr class="main">
   <td></td>
   <td>
+
+  
    <textarea name="description" class="form-control" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
  </td>
  <td>
