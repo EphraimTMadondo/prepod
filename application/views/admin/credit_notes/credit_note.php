@@ -2,6 +2,42 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+<style>
+      .table.items thead {
+    background: #415164;
+    color: white;
+    border: 0;
+}
+.table.items thead {
+    background: #415164;
+    color: #fff;
+    border: 0;
+}
+
+.row {
+    margin: 2px;
+}
+
+.mbot25 {
+    margin-bottom: 25px;
+}
+
+
+
+.mtop10 {
+    margin-top: 10px;
+}
+.table thead th {
+    color: white;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.col-md-offset-4 {
+    margin-left: 33.33333333%;
+}
+
+      </style>
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
   <div class="row">
@@ -226,15 +262,28 @@
        if(isset($credit_note)){ if($credit_note->discount_type == 'before_tax'){ echo 'selected'; }} ?>><?php echo _l('discount_type_before_tax'); ?></option>
        <option value="after_tax" <?php if(isset($credit_note)){if($credit_note->discount_type == 'after_tax'){echo 'selected';}} ?>><?php echo _l('discount_type_after_tax'); ?></option>
      </select>
+
+     <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
+<?php echo render_input('reference_no','reference_no',$value); ?>
+<?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
+<?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
    </div>
+
+
+
+
+
+
+
+
+
+
+
  </div>
     </div>
     </div>
 </div>
-<?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
-<?php echo render_input('reference_no','reference_no',$value); ?>
-<?php $value = (isset($credit_note) ? $credit_note->adminnote : ''); ?>
-<?php echo render_textarea('adminnote','credit_note_admin_note',$value); ?>
+
 <?php $rel_id = (isset($credit_note) ? $credit_note->id : false); ?>
 <?php echo render_custom_fields('credit_note',$rel_id); ?>
 </div>
