@@ -12,15 +12,17 @@
   }
   ?>
   <div class="col-md-12">
-    <div class="card credit_note accounting-template">
+    <div class="">
      <div class="additional"></div>
-     <div class="card-body">
+     <div class="">
       <?php if(isset($credit_note)){ ?>
       <?php echo format_credit_note_status($credit_note->status); ?>
       <hr class="hr-panel-heading" />
       <?php } ?>
       <div class="row">
-       <div class="col-md-6">
+        <div class="col-md-6" >
+          <div class = "card">
+       <div class = "card-body">
         <div class="f_client_id">
          <div class="form-group select-placeholder">
           <label for="clientid" class="control-label"><?php echo _l('client'); ?></label>
@@ -36,6 +38,9 @@
           } ?>
         </select>
       </div>
+      </div>
+      </div>
+
     </div>
     <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
      <label for="project_id"><?php echo _l('project'); ?></label>
