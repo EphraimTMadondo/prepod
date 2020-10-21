@@ -15,6 +15,8 @@
     <div class="">
      <div class="additional"></div>
      <div class="">
+     <div class = "card">
+  <div class = "card-body">
       <?php if(isset($credit_note)){ ?>
       <?php echo format_credit_note_status($credit_note->status); ?>
       <hr class="hr-panel-heading" />
@@ -226,6 +228,8 @@
      </select>
    </div>
  </div>
+    </div>
+    </div>
 </div>
 <?php $value = (isset($credit_note) ? $credit_note->reference_no : ''); ?>
 <?php echo render_input('reference_no','reference_no',$value); ?>
