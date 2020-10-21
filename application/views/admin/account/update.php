@@ -172,7 +172,7 @@ p {
     
    <div class="content">
       
-      <div class="row">
+      <div class="row" style = "margin-top: 5%;">
           
         
                

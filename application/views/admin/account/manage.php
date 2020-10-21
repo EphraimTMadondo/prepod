@@ -9,7 +9,7 @@
             }
     </style>
    <div class="content">
-      <div class="row">
+      <div class="row"  style =  "margin-top: 5%">
          <div class="col-md-12">
             <div class="mtop20 mbot10">
                <div style ="text-align:center">
