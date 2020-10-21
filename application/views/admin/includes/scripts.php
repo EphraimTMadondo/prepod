@@ -119,7 +119,7 @@
 <script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
 
-
+<script src="<?php echo base_url();?>assets/js/app.js"></script>
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
