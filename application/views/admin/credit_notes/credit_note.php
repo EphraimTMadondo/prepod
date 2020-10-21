@@ -18,7 +18,10 @@
     margin: 2px;
 }
 
-
+table.items tr.main td {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
 .mbot25 {
     margin-bottom: 25px;
@@ -412,9 +415,7 @@ textarea.form-control {
    <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
    <input type="text" style = "width: 100;" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control input-transparent">
  </td>
-
-
-<div style = "padding-top:0px">
+ 
  <td>
    <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
  </td>
@@ -445,8 +446,6 @@ textarea.form-control {
 ?>
 <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-secondary"><i class="fa fa-check"></i></button>
 </td>
-
-</div>
 </tr>
 <?php if (isset($credit_note) || isset($add_items)) {
   $i               = 1;
