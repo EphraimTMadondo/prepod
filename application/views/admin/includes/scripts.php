@@ -104,6 +104,10 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
+
+<script src="<?php echo base_url();?>hrm/assets/js/managedayoff.js"></script>
+
+
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->

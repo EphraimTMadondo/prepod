@@ -1,5 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
+
+
+<script src="<? echo base_url()?>"></script>
+
+
+
 <!-- BEGIN: Content-->
 <div class="app-content content">
 <style>
@@ -263,7 +269,8 @@ textarea.form-control {
             <div class="form-group">
              <label for="number"><?php echo _l('credit_note_number'); ?></label>
              <div class="input-group">
-              <span class="input-group-append">
+              <span class="input-group-append" style = "margin-right: 5;
+">
                 <?php if(isset($credit_note)){ ?>
                 <a class="input-group-text" href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('credit_note_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $credit_note->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('credit_notes/update_number_settings/'.$credit_note->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>"><i class="fa fa-cog"></i></a>
                 <?php } ?>
@@ -306,7 +313,7 @@ textarea.form-control {
           if($currency['isdefault'] == 1){
             $selected = $currency['id'];
 
-            
+
           }
         }
       }
