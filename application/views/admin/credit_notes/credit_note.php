@@ -400,7 +400,7 @@ textarea.form-control {
 
 
 
-  
+
 
    <textarea name="description" class="form-control" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
  </td>
@@ -410,7 +410,7 @@ textarea.form-control {
  <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
  <td>
    <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-   <input type="text" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control input-transparent text-right">
+   <input type="text" style = "width: 100;" placeholder="<?php echo _l('unit'); ?>" name="unit" class="form-control input-transparent">
  </td>
  <td>
    <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
