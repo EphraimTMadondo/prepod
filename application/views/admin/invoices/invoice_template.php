@@ -591,10 +591,10 @@
                <tr class="main">
                   <td></td>
                   <td>
-                     <textarea name="description" class="" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
+                     <textarea name="description" class="form-control" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
                   </td>
                   <td>
-                     <textarea name="long_description" rows="4" class="" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
+                     <textarea name="long_description" rows="4" class="form-control" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
                   </td>
                   <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
                   <style>
