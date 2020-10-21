@@ -51,7 +51,7 @@
 </div>       
 <div class="hide" id="shift_setting">
         <?php echo form_open(admin_url('hrm/shifts'),array('id'=>'shift_f-form')); ?>
-        <div class="content hrm-fullwidth">
+    
                 <h4 class="modal-title">
                     <span class="edit-title"><?php echo _l('edit_shift'); ?></span>
                     <span class="add-title"><?php echo _l('new_shift'); ?></span>
