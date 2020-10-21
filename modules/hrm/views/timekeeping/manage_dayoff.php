@@ -13,6 +13,18 @@
            
         }
 
+        .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    background-color: #03a9f4;
+}
+
+.bootstrap-select .dropdown-menu>li:first-child>a {
+    border-radius: 0;
+}
+
+._filter_data .dropdown-menu li a, .bootstrap-select .dropdown-menu li a {
+    padding: 6px 16px;
+}
+
         .hrm-width150 {
     width: 150%;
 }
