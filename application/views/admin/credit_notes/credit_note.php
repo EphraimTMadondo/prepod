@@ -31,7 +31,7 @@
            }
 
 
-           
+
            if($selected != ''){
             $rel_data = get_relation_data('customer',$selected);
             $rel_val = get_relation_values($rel_data,'customer');
@@ -194,30 +194,8 @@
     <div class="col-md-6">
       <div class="card no-shadow">
        <div class="row">
-        <div class="col-md-6">
-         <?php
+    
 
-         $credit_note_currency_attr = array('disabled'=>true,'data-show-subtext'=>true);
-         $credit_note_currency_attr = apply_filters_deprecated('credit_note_currency_disabled', [$credit_note_currency_attr], '2.3.0', 'credit_note_currency_attributes');
-
-         foreach($currencies as $currency){
-          if($currency['isdefault'] == 1){
-           $credit_note_currency_attr['data-base'] = $currency['id'];
-         }
-         if(isset($credit_note)){
-           if($currency['id'] == $credit_note->currency){
-            $selected = $currency['id'];
-          }
-        } else {
-          if($currency['isdefault'] == 1){
-            $selected = $currency['id'];
-          }
-        }
-      }
-      $credit_note_currency_attr = hooks()->apply_filters('credit_note_currency_attributes',$credit_note_currency_attr);
-      ?>
-      <?php echo render_select('currency', $currencies, array('id','name','symbol'), 'currency', $selected, $credit_note_currency_attr); ?>
-    </div>
     <div class="col-md-6">
      <div class="form-group select-placeholder">
       <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
