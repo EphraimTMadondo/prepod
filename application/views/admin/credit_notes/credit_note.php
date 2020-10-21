@@ -14,32 +14,12 @@
   <div class="col-md-12">
     <div class="card credit_note accounting-template">
      <div class="additional"></div>
-     <div class="card-body">
-      <?php if(isset($credit_note)){ ?>
-      <?php echo format_credit_note_status($credit_note->status); ?>
-      <hr class="hr-panel-heading" />
-      <?php } ?>
-      <div class="row">
-       <div class="col-md-6">
-        <div class="f_client_id">
-         <div class="form-group select-placeholder">
-          <label for="clientid" class="control-label"><?php echo _l('client'); ?></label>
-          <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($credit_note) && empty($credit_note->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-            <?php $selected = (isset($credit_note) ? $credit_note->clientid : '');
-            if($selected == ''){
-             $selected = (isset($customer_id) ? $customer_id: '');
-           }
 
 
 
-           if($selected != ''){
-            $rel_data = get_relation_data('customer',$selected);
-            $rel_val = get_relation_values($rel_data,'customer');
-            echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
-          } ?>
-        </select>
-      </div>
-    </div>
+
+
+
     <div class="form-group projects-wrapper<?php if((!isset($credit_note)) || (isset($credit_note) && !customer_has_projects($credit_note->clientid))){ echo ' hide';} ?>">
      <label for="project_id"><?php echo _l('project'); ?></label>
      <div id="project_ajax_search_wrapper">
@@ -194,8 +174,30 @@
     <div class="col-md-6">
       <div class="card no-shadow">
        <div class="row">
-    
+        <div class="col-md-6">
+         <?php
 
+         $credit_note_currency_attr = array('disabled'=>true,'data-show-subtext'=>true);
+         $credit_note_currency_attr = apply_filters_deprecated('credit_note_currency_disabled', [$credit_note_currency_attr], '2.3.0', 'credit_note_currency_attributes');
+
+         foreach($currencies as $currency){
+          if($currency['isdefault'] == 1){
+           $credit_note_currency_attr['data-base'] = $currency['id'];
+         }
+         if(isset($credit_note)){
+           if($currency['id'] == $credit_note->currency){
+            $selected = $currency['id'];
+          }
+        } else {
+          if($currency['isdefault'] == 1){
+            $selected = $currency['id'];
+          }
+        }
+      }
+      $credit_note_currency_attr = hooks()->apply_filters('credit_note_currency_attributes',$credit_note_currency_attr);
+      ?>
+      <?php echo render_select('currency', $currencies, array('id','name','symbol'), 'currency', $selected, $credit_note_currency_attr); ?>
+    </div>
     <div class="col-md-6">
      <div class="form-group select-placeholder">
       <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
@@ -218,6 +220,12 @@
 </div>
 </div>
 </div>
+
+
+
+
+
+
 <div class="card-body mt-1">
   <div class="row">
   <div class="col-md-4">
