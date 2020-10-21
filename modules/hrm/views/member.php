@@ -523,7 +523,7 @@
                    <div role="tab-pane" class="tab-pane" id="insurrance">
                       <div class="insurance-info">
                         <div class="row publib-insurance-title">
-                             <div class="col-md-12">
+                             <div class="col-md-8">
                                 <h4>
                                     <span class="publib-infor"><?php echo _l('insurance_info') ?></span>
                                 </h4>
@@ -615,7 +615,7 @@
                       <?php echo form_close(); ?>   
 
                     <div>
-                       <div id="contract_attachments" class="mt-2 col-md-8 col-md-offset-2">
+                       <div id="contract_attachments" class="mt-2 col-md-12 col-md-offset-2">
                            <?php
                               $data = '<div class="row" id="attachment_file">';
                               foreach($hrm_staff as $attachment) {
