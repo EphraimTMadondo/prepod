@@ -252,8 +252,9 @@
 
 
 
-
          <div class="col-md-6">
+          <div class= "card">
+         <div class= "card-body">
             <div class="card no-shadow">
 
                    <div class="form-group">
@@ -431,8 +432,13 @@
 
             </div>
          </div>
+         </div>
+         </div>
+
       </div>
    </div>
+   
+   <div class = "card">
    <div class="card-body mtop10">
       <div class="row">
          <div class="col-md-4">
@@ -751,5 +757,6 @@
          </div>
         <div class="btn-bottom-pusher"></div>
       </div>
+   </div>
    </div>
 </div>
