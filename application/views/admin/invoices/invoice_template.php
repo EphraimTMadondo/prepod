@@ -597,7 +597,18 @@
                      <textarea name="long_description" rows="4" class="" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
                   </td>
                   <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
-                  <td style = "display: flex">
+                  <style>
+
+                           .input-transparent {
+                              -webkit-box-shadow: none;
+                              box-shadow: none;
+                              outline: 0;
+                              border: 0!important;
+                              background: 0 0;
+                           }
+
+                     </style>
+                  <td>
                      <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
                      <input type="text" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent text-right">
                   </td>
