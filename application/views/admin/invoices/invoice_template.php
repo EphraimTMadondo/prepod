@@ -441,9 +441,39 @@
    <style>
       .table.items thead {
     background: #415164;
+    color: white;
+    border: 0;
+}
+.table.items thead {
+    background: #415164;
     color: #fff;
     border: 0;
 }
+
+.row {
+    margin: 2px;
+}
+
+.mbot25 {
+    margin-bottom: 25px;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.input-group-select .input-group-addon {
+    padding-top: 8px;
+    opacity: 0;
+}
+
+.mtop10 {
+    margin-top: 10px;
+}
+
+
       </style>
    
    <div class = "card">
