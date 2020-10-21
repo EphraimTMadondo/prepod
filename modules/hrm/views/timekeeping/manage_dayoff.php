@@ -10,6 +10,7 @@
             display: block;
             background: #226faa;
             padding: 15px 30px;
+            color: white;
         }
         
         
