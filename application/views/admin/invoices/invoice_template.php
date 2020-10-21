@@ -481,7 +481,7 @@
           ?>
          <div class="col-md-3">
             <div class="form-group select-placeholder input-group-select form-group-select-task_select popover-250">
-              <div class="input-group input-group-select">
+              <div class="input-group input-group-select" style ="display: flex">
                <select name="task_select" data-live-search="true" id="task_select" class="selectpicker no-margin _select_input_group" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('bill_tasks'); ?>">
                   <option value=""></option>
                   <?php foreach($billable_tasks as $task_billable){ ?>
