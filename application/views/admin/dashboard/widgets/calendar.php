@@ -154,7 +154,7 @@
 	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
 </script>
 <!---ISSUE STARTS HERE"-->
-<?php init_tail('calendar'); ?> 
+
 
 
 <script>
@@ -165,6 +165,12 @@
 	});
 	
 </script>
+
+
+ <!-- Perfect-scrollbar  -->
+ <script src="<?php echo base_url();?>assets/plugins/perfect-scrollbar/perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
+    
+   
 
 
 
