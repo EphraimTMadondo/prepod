@@ -154,6 +154,7 @@
 	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
 </script>
 <!---ISSUE STARTS HERE"-->
+<div> mark </div>
 <?php init_tail('calendar'); ?> 
 
 
