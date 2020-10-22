@@ -153,12 +153,19 @@
 
 </script>
 <?php init_tail('calendar'); ?>
+<script>
+	$(function(){
+		if(get_url_param('eventid')) {
+			view_event(get_url_param('eventid'));
+		}
+	});
+	
+</script>
 
 
 
 
-
-<script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script
+<script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
      <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
    
    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
