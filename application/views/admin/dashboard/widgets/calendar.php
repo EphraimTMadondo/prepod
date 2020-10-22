@@ -152,7 +152,7 @@
 <script>
 	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
 </script>
-
+<?php init_tail('calendar'); ?>
 <script>
 	$(function(){
 		if(get_url_param('eventid')) {
