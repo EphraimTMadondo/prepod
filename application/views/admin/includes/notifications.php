@@ -67,7 +67,11 @@
 
   <?php
   $_notifications = $this->misc_model->get_user_notifications();
-  foreach($_notifications as $notification){ ?>
+  $limit = 0;
+  foreach($_notifications as $notification){ 
+    if($limit < 6)
+    {
+    ?>
     <li class="relative notification-wrapper" data-notification-id="<?php echo $notification['id']; ?>">
       <?php if(!empty($notification['link'])){ ?>
         <a href="<?php echo admin_url($notification['link']); ?>" class="notification-top notification-link">
@@ -127,7 +131,12 @@
     <a href="#" class="text-muted pull-right not-mark-as-read-inline" onclick="set_notification_read_inline(<?php echo $notification['id']; ?>);" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('mark_as_read'); ?>"><small><i class="fa fa-circle-thin" aria-hidden="true"></i></small></a>
   <?php } ?>
 </li>
-<?php } ?>
+
+  
+<?php
+    $limit++;
+  }
+} ?>
 <?php if(count($_notifications) != 0){ ?>
   
 <?php } ?>
