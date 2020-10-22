@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-
-        <?php $this->load->view('admin/includes/alerts'); ?>
-      </div>
-    <div class="content-wrapper">
-        <div class="card-body" style="overflow-x: auto;">
-        <div class="dt-loader hide"></div>
-        <?php $this->load->view('admin/utilities/calendar_filters'); ?>
+<div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('calendar'); ?>">
+  <div class="clearfix"></div>
+  <div class="card">
+   <div class="card-body">
+    <div class="widget-dragger"></div>
+    <div class="dt-loader hide"></div>
+    <?php $this->load->view('admin/utilities/calendar_filters'); ?>
         <div id="calendarh"></div>
         <!-- calendar Wrapper  -->
         <div class="calendar-wrapper position-relative">
@@ -1042,3 +1042,10 @@ function ScheduleInfo() {
   
 
 <!-- End of Added by Leo and Vic -->
+
+                </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+</div>
+
