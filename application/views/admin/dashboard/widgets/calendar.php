@@ -154,7 +154,7 @@
 	
 </script>
 <!---ISSUE STARTS HERE"-->
-<?php init_tail('calendar'); ?> 
+ 
 
 
 
