@@ -1,9 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php init_head(true, 'calendar'); ?>
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-      
-      <div class="content-overlay">
+
         <?php $this->load->view('admin/includes/alerts'); ?>
       </div>
     <div class="content-wrapper">
@@ -1046,5 +1042,3 @@ function ScheduleInfo() {
   
 
 <!-- End of Added by Leo and Vic -->
-</body>
-</html>
