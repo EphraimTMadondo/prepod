@@ -150,7 +150,7 @@
 
 <?php $this->load->view('admin/utilities/calendar_template'); ?>
 <script>
-
+	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
 </script>
 <?php init_tail('calendar'); ?>
 <script>
@@ -165,7 +165,7 @@
 
 
 
-<script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
+<script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script
      <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
    
    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
