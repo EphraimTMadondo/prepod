@@ -153,14 +153,7 @@
 
 </script>
 <?php init_tail('calendar'); ?>
-<script>
-	$(function(){
-		if(get_url_param('eventid')) {
-			view_event(get_url_param('eventid'));
-		}
-	});
-	
-</script>
+
 
 
 
