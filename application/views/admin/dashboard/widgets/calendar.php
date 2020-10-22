@@ -149,7 +149,18 @@
 
 
 <?php $this->load->view('admin/utilities/calendar_template'); ?>
-
+<script>
+	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
+</script>
+<?php init_tail('calendar'); ?>
+<script>
+	$(function(){
+		if(get_url_param('eventid')) {
+			view_event(get_url_param('eventid'));
+		}
+	});
+	
+</script>
 
 
 
