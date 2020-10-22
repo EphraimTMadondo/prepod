@@ -69,7 +69,7 @@
   $_notifications = $this->misc_model->get_user_notifications();
   $limit = 0;
   foreach($_notifications as $notification){ 
-    if($limit < 6)
+    if($limit < 4)
     {
     ?>
     <li class="relative notification-wrapper" data-notification-id="<?php echo $notification['id']; ?>">
