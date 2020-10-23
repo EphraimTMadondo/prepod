@@ -22,7 +22,7 @@
             
             <?php hooks()->do_action('after_dashboard_half_container'); ?>
             <div class="col-md-8" data-container="left-8">
-                <?php render_dashboard_widgets('left-8'); ?>
+                <?php // render_dashboard_widgets('left-8'); ?>
             </div>
             <div> here </div>
             
