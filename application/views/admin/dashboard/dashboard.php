@@ -4,7 +4,7 @@
 <style>
 
 
-.widget-user_data .widget-earnings-swiper.swiper-container .swiper-slide{
+#widget-user_data .widget-earnings-swiper.swiper-container .swiper-slide{
 
 
 
