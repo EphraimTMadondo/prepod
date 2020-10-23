@@ -19,12 +19,13 @@
             <div class="col-md-6" data-container="middle-right-6">
                 <?php render_dashboard_widgets('middle-right-6'); ?>
             </div>
+            <div> here </div>
             <?php hooks()->do_action('after_dashboard_half_container'); ?>
             <div class="col-md-8" data-container="left-8">
                 <?php render_dashboard_widgets('left-8'); ?>
             </div>
 
-            <div> here </div>
+            
             <div class="col-md-4" data-container="right-4">
                 <?php  render_dashboard_widgets('right-4'); ?>
             </div>
