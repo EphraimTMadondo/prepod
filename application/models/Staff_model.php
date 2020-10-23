@@ -538,6 +538,7 @@ public function test2()
         }
         
         $data2['staffid'] =$staffid;
+        echo "running";
         $data2['company_username'] = $_SESSION['current_company'];
          $this->db->insert(db_prefix() . 'staff_companies', $data2);
         if ($staffid) {
