@@ -10,7 +10,7 @@
 
 font-weight:500;
 background-color :#f2f4f4;
-height:10px;
+height: 50px;
 width :auto !important;
 color:#828d99;
 cursor:pointer;
