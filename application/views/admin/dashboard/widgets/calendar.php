@@ -155,7 +155,98 @@
 </script>
 <!---ISSUE STARTS HERE"-->
 <div> mark </div>
-<?php init_tail('calendar'); ?> 
+
+<div class="modal likes_modal animated fadeIn" id="modal_post_comment_likes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Colleagues who like this comment</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div id="modal_comment_likes_wrapper">
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-secondary load_more_post_comment_likes">Load More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="event"></div>
+<div id="newsfeed" class="animated fadeIn hide" >
+</div>
+
+<!-- Task modal view -->
+<div class="modal fade task-modal-single" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog task_modal_class">
+    <div class="modal-content data">
+
+    </div>
+  </div>
+</div>
+
+<!--Add/edit task modal-->
+<div id="_task"></div>
+
+<!-- Lead Data Add/Edit-->
+<div class="modal fade lead-modal" id="lead-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content data">
+
+    </div>
+  </div>
+</div>
+
+<div id="timers-logout-template-warning" class="hide">
+  <h2 class="bold">Started tasks timers found!<br />Are you sure you want to logout without stopping the timers?</h2>
+  <hr />
+  <a href="https://worksuite.app/preprod/admin/authentication/logout" class="btn btn-danger">Logout</a>
+</div>
+
+<!--Lead convert to customer modal-->
+<div id="lead_convert_to_customer"></div>
+
+<!--Lead reminder modal-->
+<div id="lead_reminder_modal"></div>
+
+
+
+<!-- Datepicker -->
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/pickadate/legacy.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/pickadate/picker.time.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>
+
+
+
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/calendar/tui-dom.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/calendar/chance.min.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>
+
+
+
+
+<script src="https://worksuite.app/preprod/assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
+
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>
+<script src='https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>
+<!-- END: Page JS-->
+ 
+
 
 <div> end </div>
 
