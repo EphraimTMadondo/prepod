@@ -28,7 +28,7 @@
                 
             
             <div class="col-md-4" data-container="right-4">
-                <?php  render_dashboard_widgets('right-4'); ?>
+                <?php // render_dashboard_widgets('right-4'); ?>
             </div>
      
             <!---flex end -->
