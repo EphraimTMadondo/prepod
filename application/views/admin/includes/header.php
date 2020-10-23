@@ -61,6 +61,17 @@ ob_start();
                            <ul class="search-list"></ul>
                         </div>
                   </li>
+                  <li class="icon header-timers timer-button" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('my_timesheets'); ?>">
+      <a href="#" id="top-timers" class="dropdown-toggle top-timers" data-toggle="dropdown">
+         <i class="fa fa-clock-o fa-fw fa-lg" aria-hidden="true"></i>
+         <span class="label bg-success icon-total-indicator icon-started-timers<?php if ($totalTimers = count($startedTimers) == 0){ echo ' hide'; }?>">
+            <?php echo count($startedTimers); ?>
+         </span>
+      </a>
+      <ul class="dropdown-menu animated fadeIn started-timers-top width350" id="started-timers-top">
+         <?php $this->load->view('admin/tasks/started_timers',array('startedTimers'=>$startedTimers)); ?>
+      </ul>
+   </li>
                   <li class="dropdown dropdown-notification nav-item notifications-wrapper">
                      <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon bx bx-bell bx-tada bx-flip-horizontal"></i>
                      <?php if($current_user->total_unread_notifications > 0){ ?>

@@ -540,10 +540,7 @@ public function test2()
         $data2['staffid'] =$staffid;
         
         $data2['company_username'] = $_SESSION['current_company'];
-        savestaffrecords($data2);
-        // print_r($data);
-
-         
+         $this->db->insert(db_prefix() . 'staff_companies', $data2);
         if ($staffid) {
              
             $slug = $data['firstname'] . ' ' . $data['lastname'];
@@ -597,14 +594,6 @@ public function test2()
 
         return false;
     }
-
-
-    function savestaffrecords($data)
-	{
-          echo "run savestaffrecords";
-          $this->db->insert(db_prefix() . 'staff_companies', $data);
-          return $this->db->insert_id();
-	}
 
     /**
      * Update staff member info
