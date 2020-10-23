@@ -24,7 +24,7 @@
             <div class="col-md-8" data-container="left-8">
                 <?php // render_dashboard_widgets('left-8'); ?>
             </div>
-            <div> here </div>
+                
             
             <div class="col-md-4" data-container="right-4">
                 <?php  render_dashboard_widgets('right-4'); ?>
