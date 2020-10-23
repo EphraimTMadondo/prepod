@@ -42,7 +42,7 @@
     <script>
         app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
     </script>
-    <?php $this->load->view('admin/utilities/calendar_template'); ?>
+    <?php // $this->load->view('admin/utilities/calendar_template'); ?>
     <?php init_tail('dashboard'); ?> 
     <?php $this->load->view('admin/dashboard/dashboard_js'); ?>
   </body>
