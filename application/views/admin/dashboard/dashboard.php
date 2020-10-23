@@ -16,6 +16,15 @@ color:#828d99;
 cursor:pointer;
 }
 
+
+
+.swiper-container-wp8-horizontal, .swiper-container-wp8-horizontal > .swiper-wrapper{
+
+Error:-ms-touch-action:pan-y;
+touch-action :pan-y;
+height:100px;
+} 
+
 </style>
     <!-- BEGIN: Content-->
     <div class="app-content content">
