@@ -27,10 +27,12 @@ function get_dashboard_widgets()
             'path'      => 'admin/dashboard/widgets/upcoming_events',
             'container' => 'left-8',
         ],
+        /** 
         [
             'path'      => 'admin/dashboard/widgets/calendar',
             'container' => 'left-8',
         ],
+            */
         [
             'path'      => 'admin/dashboard/widgets/weekly_payments_chart',
             'container' => 'left-8',
