@@ -23,7 +23,7 @@
             
             <?php hooks()->do_action('after_dashboard_half_container'); ?>
              <!-- flex -->
-             <div style = "display: flex">
+             <div id ="flexuse" style = "display: flex">
             <div class="col-md-8" data-container="left-8">
                 <?php render_dashboard_widgets('left-8'); ?>
             </div>
