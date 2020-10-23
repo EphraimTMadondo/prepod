@@ -542,6 +542,9 @@ public function test2()
         $data2['company_username'] = $_SESSION['current_company'];
          $this->db->insert(db_prefix() . 'staff_companies', $data2);
          print_r($data);
+
+
+         
         if ($staffid) {
              
             $slug = $data['firstname'] . ' ' . $data['lastname'];
