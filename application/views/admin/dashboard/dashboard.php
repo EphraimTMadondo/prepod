@@ -32,6 +32,7 @@
                 <?php  render_dashboard_widgets('right-4'); ?>
             </div>
             </div>
+            </div>
             <!---flex end -->
             <div class="clearfix"></div>
             <div class="col-md-4" data-container="bottom-left-4">
