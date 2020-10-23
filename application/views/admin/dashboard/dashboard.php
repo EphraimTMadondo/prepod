@@ -1,5 +1,22 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(true, 'dashboard'); ?>
+
+<style>
+
+
+.widget-user_data .widget-earnings-swiper.swiper-container .swiper-slide{
+
+
+
+font-weight:500;
+background-color :#f2f4f4;
+height:10px;
+width :auto !important;
+color:#828d99;
+cursor:pointer;
+}
+
+</style>
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <div class="content-overlay">
