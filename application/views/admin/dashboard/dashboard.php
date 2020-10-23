@@ -11,6 +11,7 @@
             <div class="col-md-12 mt-2" data-container="top-12">
                 <?php render_dashboard_widgets('top-12'); ?>
             </div>
+            <div> here </div>
             <?php hooks()->do_action('after_dashboard_top_container'); ?>
             <div class="col-md-6" data-container="middle-left-6">
                 <?php render_dashboard_widgets('middle-left-6'); ?>
@@ -23,9 +24,9 @@
                 <?php render_dashboard_widgets('left-8'); ?>
             </div>
             <div class="col-md-4" data-container="right-4">
-                <?php // render_dashboard_widgets('right-4'); ?>
+                <?php  render_dashboard_widgets('right-4'); ?>
             </div>
-            <div> here </div>
+     
             <div class="clearfix"></div>
             <div class="col-md-4" data-container="bottom-left-4">
                 <?php render_dashboard_widgets('bottom-left-4'); ?>
