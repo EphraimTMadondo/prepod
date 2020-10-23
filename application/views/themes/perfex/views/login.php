@@ -190,7 +190,7 @@ body{
 }
 .pb-button--primary {
     color: #fff;
-  
+    background-color: #006fb8;
     font-weight: 700;
     font-size:24px;
     padding: 11px 20px;
@@ -329,7 +329,7 @@ body{
            
 
                 <div class="form-group"  style = "margin-bottom: 20px;">
-                   <button type="submit" class="btn btn-info btn-block pb-button--primary" style ="border-radius: 2px; background-color:blue;"><?php echo _l('clients_login_login_string'); ?></button>
+                   <button type="submit" class="btn btn-info btn-block pb-button--primary" style ="border-radius: 2px;"><?php echo _l('clients_login_login_string'); ?></button>
                    <?php if(get_option('allow_registration') == 1) { ?>
                    <!--
                    <a href="<?php echo site_url('authentication/register_admin'); ?>" class="btn btn-success btn-block"  style = "border-color: #5bc0de;color: #5bc0de; background-color:white"  ><?php echo _l('clients_register_string'); ?>
