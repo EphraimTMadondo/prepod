@@ -119,7 +119,10 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
     transform: rotate(45deg);
 }
 
-
+.system-popup .system-popup-close::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
 
 element.style {
 }
