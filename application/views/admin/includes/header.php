@@ -91,7 +91,9 @@ ob_start();
     opacity: .2;
     outline: 0;
 }
-
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
 
 
 
