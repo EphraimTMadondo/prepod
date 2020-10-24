@@ -79,6 +79,19 @@ ob_start();
     margin-bottom: 10px;
 }
 
+.system-popup .system-popup-close {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    top: 30px;
+    right: 150px;
+    background: 0 0;
+    border: 0;
+    opacity: .2;
+    outline: 0;
+}
+
 
 
 
