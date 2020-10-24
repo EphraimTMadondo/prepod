@@ -5400,7 +5400,7 @@ function timer_action(e, task_id, timer_id, adminStop) {
         var popupData = {};
         popupData.content = '';
         popupData.content += '<div class="row">';
-        popupData.content += '<div class="form-group"><select id="timer_add_task_id" data-empty-title="' + app.lang.search_tasks + '" data-width="60%" class="ajax-search" data-live-search="true">';
+        popupData.content += '<div class="form-group"><select id="timer_add_task_id" data-empty-title="' + app.lang.search_tasks + '" data-width="100%" class="ajax-search" data-live-search="true">';
         popupData.content += '</select></div>';
         popupData.content += '<div class="form-group">';
         popupData.content += '<textarea id="timesheet_note" placeholder="' + app.lang.note + '" style="margin:0 auto;width:60%;" rows="4" class="form-control"></textarea>';
