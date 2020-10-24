@@ -205,7 +205,8 @@ body{
     <meta name="google-signin-client_id" content="875467174336-7j1j7g7k4ket6s0i71jrejefsqh0i7mv.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
-    <div style = "display:flex;">
+    <div style = "display:flex;padding-bottom: 50px;
+">
                     <fb:login-button 
                             
                             id = "loginFB"
