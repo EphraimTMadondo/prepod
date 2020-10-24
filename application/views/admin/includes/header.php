@@ -21,6 +21,11 @@ ob_start();
 
 <!-- BEGIN: Header-->
 <div class="header-navbar-shadow"></div>
+<style>
+.fa-clock-o:before {
+    content: "\f017";
+}
+   </style>
 <nav class="header-navbar main-header-navbar navbar-expand-lg navbar navbar-with-menu fixed-top ">
    <div class="navbar-wrapper">
       <div class="navbar-container content">
