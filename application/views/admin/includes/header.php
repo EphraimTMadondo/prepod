@@ -26,6 +26,62 @@ ob_start();
     content: "\f017";
 }
 
+#lightbox, .lightboxOverlay {
+    z-index: 100002!important;
+}
+
+.lightbox {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    font-weight: 400;
+}
+
+.system-popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 99999;
+    text-align: center;
+}
+.system-popup .popup-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: table;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.system-popup .popup-message {
+    font-family: Helvetica;
+    font-weight: 600;
+    font-size: 38px;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+
 element.style {
 }
 .started-timers-top .top-dropdown-btn {
