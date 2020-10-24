@@ -26,6 +26,25 @@ ob_start();
     content: "\f017";
 }
 
+element.style {
+}
+.started-timers-top .top-dropdown-btn {
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    min-width: 50%;
+    margin: 0 auto;
+    margin-top: 14px;
+    border-radius: 3px!important;
+}
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
 .navbar-right .dropdown-menu {
     right: 0;
     left: auto;
