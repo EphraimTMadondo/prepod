@@ -91,16 +91,7 @@ ob_start();
     background: #000;
 }
 
-.system-popup .system-popup-close::after, .system-popup .system-popup-close::before {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    margin-top: -1px;
-    background: #000;
-}
+
 
 .h1, .h2, .h3, h1, h2, h3 {
     margin-top: 20px;

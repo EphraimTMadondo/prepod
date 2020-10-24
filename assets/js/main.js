@@ -5364,7 +5364,7 @@ function system_popup(data) {
     overlayHTML += '</h2>';
     overlayHTML += '<div class="popup-content">';
     overlayHTML += data.content;
-    overlayHTML += '<button type="button" class="system-popup-close"> X </button>';
+    overlayHTML += '<button type="button" class="system-popup-close"></button>';
     overlayHTML += '</div>';
     overlayHTML += '</div>';
 
