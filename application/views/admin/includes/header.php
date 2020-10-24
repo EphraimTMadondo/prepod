@@ -86,9 +86,9 @@ ob_start();
     overflow: hidden;
     top: 30px;
     right: 150px;
-    background: 0 0;
+    /* background: 0 0; */
     border: 0;
-    opacity: .2;
+    /* opacity: .2; */
     outline: 0;
 }
 button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
