@@ -25,6 +25,21 @@ ob_start();
 .fa-clock-o:before {
     content: "\f017";
 }
+
+.navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.started-timers-top {
+    padding: 15px!important;
+}
+
+.width350 {
+    width: 350px;
+}
+
+
    </style>
 <nav class="header-navbar main-header-navbar navbar-expand-lg navbar navbar-with-menu fixed-top ">
    <div class="navbar-wrapper">
@@ -66,7 +81,7 @@ ob_start();
                            <ul class="search-list"></ul>
                         </div>
                   </li>
-                  <li style = "padding-top: 25;" class="dropdown nav-item icon header-timers timer-button" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('my_timesheets'); ?>">
+                  <li style = "padding-top: 23;" class="dropdown nav-item icon header-timers timer-button" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('my_timesheets'); ?>">
       <a href="#" id="top-timers" class="dropdown-toggle top-timers" data-toggle="dropdown">
          <i class="fa fa-clock-o fa-fw fa-lg" aria-hidden="true"></i>
          <span class="label bg-success icon-total-indicator icon-started-timers<?php if ($totalTimers = count($startedTimers) == 0){ echo ' hide'; }?>">
