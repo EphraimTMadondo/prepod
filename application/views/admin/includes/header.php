@@ -88,12 +88,12 @@ ob_start();
             <?php echo count($startedTimers); ?>
          </span>
       </a>
-      <ul class="dropdown-menu animated fadeIn started-timers-top width350" id="started-timers-top">
+      <ul class="dropdown-menu animated fadeIn started-timers-top width350" style = "right: 0;
+    left: auto;" id="started-timers-top">
          <?php $this->load->view('admin/tasks/started_timers',array('startedTimers'=>$startedTimers)); ?>
       </ul>
    </li>
-                  <li class="dropdown dropdown-notification nav-item notifications-wrapper" style = "right: 0;
-    left: auto;">
+                  <li class="dropdown dropdown-notification nav-item notifications-wrapper" >
                      <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon bx bx-bell bx-tada bx-flip-horizontal"></i>
                      <?php if($current_user->total_unread_notifications > 0){ ?>
                         <span class="badge badge-pill badge-danger badge-up"><?php echo $current_user->total_unread_notifications; ?></span>
