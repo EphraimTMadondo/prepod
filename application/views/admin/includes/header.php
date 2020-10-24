@@ -92,7 +92,8 @@ ob_start();
          <?php $this->load->view('admin/tasks/started_timers',array('startedTimers'=>$startedTimers)); ?>
       </ul>
    </li>
-                  <li class="dropdown dropdown-notification nav-item notifications-wrapper">
+                  <li class="dropdown dropdown-notification nav-item notifications-wrapper" style = "right: 0;
+    left: auto;">
                      <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon bx bx-bell bx-tada bx-flip-horizontal"></i>
                      <?php if($current_user->total_unread_notifications > 0){ ?>
                         <span class="badge badge-pill badge-danger badge-up"><?php echo $current_user->total_unread_notifications; ?></span>
