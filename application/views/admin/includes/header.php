@@ -113,6 +113,12 @@ ob_start();
     color: #FFF;
   
 }
+
+
+.btn-light {
+    color: #FFF;
+  
+}
 button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
     cursor: pointer;
 }
