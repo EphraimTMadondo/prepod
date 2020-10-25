@@ -517,7 +517,8 @@ class Utilities_model extends App_Model
             }
         }
         if (!$client_data && !$ff || (!$client_data && $ff && array_key_exists('events', $filters))) {
-            $events = $this->get_all_events($start, $end);
+          //  $events = $this->get_all_events($start, $end);
+          $events = {};
             foreach ($events as $event) {
                 if ($event['userid'] != get_staff_user_id() && !$is_admin) {
                     $event['is_not_creator'] = true;
