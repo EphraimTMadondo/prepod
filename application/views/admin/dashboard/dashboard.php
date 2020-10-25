@@ -57,6 +57,9 @@ height:100px;
                 <?php render_dashboard_widgets('right-4'); ?>
             </div>
 
+
+            
+
             <div class="col-md-6" data-container="left-8">
                 <?php render_dashboard_widgets('left-8'); ?>
             </div>
