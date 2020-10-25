@@ -32,7 +32,7 @@
   
   ?>
             <li <?php 
-            if(sizeof(companies) > 1)
+            if(sizeof($companies) <= 1)
             {
                     echo "style = 'display: none'";
             }
