@@ -55,7 +55,7 @@ height:100px;
             </div>
                 
             
-            <div class="col-md-4" data-container="right-4">
+            <div class="col-md-3" data-container="right-4">
                 <?php render_dashboard_widgets('right-4'); ?>
             </div>
 
