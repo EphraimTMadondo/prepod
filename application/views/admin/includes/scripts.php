@@ -50,7 +50,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
    
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
-         echo "<script src='".base_url()."views/themes/assets/js/dashboard-custom.js'></script>\n";
+         echo "<script src='".base_url()."application/views/themes/assets/js/dashboard-custom.js'></script>\n";
        
       
       break;
