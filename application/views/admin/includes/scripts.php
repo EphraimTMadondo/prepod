@@ -50,6 +50,8 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
    
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/js/dashboard-custom.js";
+        
       
       break;
       case 'calendar':
