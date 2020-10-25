@@ -535,12 +535,13 @@ public function test2()
         {
         $this->db->insert(db_prefix() . 'staff', $data);
         $staffid = $this->db->insert_id();
-        }
-        
         $data2['staffid'] =$staffid;
         
         $data2['company_username'] = $_SESSION['current_company'];
          $this->db->insert(db_prefix() . 'staff_companies', $data2);
+        }
+        
+       
         if ($staffid) {
              
             $slug = $data['firstname'] . ' ' . $data['lastname'];
