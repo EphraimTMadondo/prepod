@@ -12,7 +12,7 @@
 }
     #content
     {
-        background-color: #f9fafb;
+       
         margin-bottom:0;
          padding-bottom: 280px;
     }
@@ -89,7 +89,7 @@
 }
 body{
     min-height:100vh;
-    background-color:#f7f7f7;
+ 
 }
 .custom-input{
     border: 0 !important;
