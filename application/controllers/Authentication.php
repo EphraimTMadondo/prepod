@@ -423,9 +423,9 @@ class Authentication extends ClientsController
         
         $this->form_validation->set_rules('company', _l('clients_company'), 'required');
         $this->form_validation->set_rules('company_username', _l('company_username'),'required|has_no_spaces|has_no_caps|is_unique[' . db_prefix() . 'companies.company_username]');
-       
+        $this->form_validation->set_message('has_no_spaces', "The Company Username must have no spaces");
       
-         $this->form_validation->set_message('has_no_spaces', "The Company Username must have no spaces");
+         $this->form_validation->set_message('is_unique', "This Company Username already exists");
         $this->form_validation->set_message('has_no_caps', "The Company Username must have no capital letters");
          //$this->form_validation->set_message('required', "The Company Username field is required.");
          
