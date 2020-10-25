@@ -96,12 +96,13 @@ class Utilities_model extends App_Model
         // Check if is passed start and end date
         $this->db->where('(start BETWEEN "' . $start . '" AND "' . $end . '")');
         $this->db->where('userid', get_staff_user_id());
+        $companyusername = $_SESSION['current_company'];
+        $this->db->where('company_username', $companyusername);
         if ($is_staff_member) {
             $this->db->or_where('public', 1);
         }
        
-         $companyusername = $_SESSION['current_company'];
-         $this->db->where('company_username', $companyusername);
+        
        return $this->db->get(db_prefix() . 'events')->result_array();
     }
 
