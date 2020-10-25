@@ -55,9 +55,9 @@
         }
 
         // Payments statistics
-        init_weekly_payment_statistics( <?php echo $weekly_payment_stats; ?> );
+        init_weekly_payment_statistics2( <?php echo $weekly_payment_stats; ?> );
         $('select[name="currency"]').on('change', function() {
-            init_weekly_payment_statistics();
+            init_weekly_payment_statistics2();
         });
 
         $( "[data-container]" ).sortable({
