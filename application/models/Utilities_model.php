@@ -92,7 +92,7 @@ class Utilities_model extends App_Model
     public function get_all_events($start, $end)
     {
         $is_staff_member = is_staff_member();
-        $this->db->select('title,start,end,eventid,userid,color,public');
+        $this->db->select('title,start,end,eventid,userid,color,public,company_username');
         // Check if is passed start and end date
         $this->db->where('(start BETWEEN "' . $start . '" AND "' . $end . '")');
         $this->db->where('userid', get_staff_user_id());
@@ -526,7 +526,7 @@ class Utilities_model extends App_Model
                 }
                 $event['_tooltip'] = _l('calendar_event') . ' - ' . $event['title'];
                 $event['color']    = $event['color'];
-               // array_push($data, $event);
+             array_push($data, $event);
             }
         }
 
