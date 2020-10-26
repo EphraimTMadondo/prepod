@@ -1174,49 +1174,7 @@ if (typeof jQuery === 'undefined') {
     })
   }
 
-  Modal.prototype.checkScrollbar = function () {
-    var fullWindowWidth = window.innerWidth
-    if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
-      var documentElementRect = document.documentElement.getBoundingClientRect()
-      fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left)
-    }
-    this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
-    this.scrollbarWidth = this.measureScrollbar()
-  }
 
-  Modal.prototype.setScrollbar = function () {
-    var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
-    this.originalBodyPad = document.body.style.paddingRight || ''
-    var scrollbarWidth = this.scrollbarWidth
-    if (this.bodyIsOverflowing) {
-      this.$body.css('padding-right', bodyPad + scrollbarWidth)
-      $(this.fixedContent).each(function (index, element) {
-        var actualPadding = element.style.paddingRight
-        var calculatedPadding = $(element).css('padding-right')
-        $(element)
-          .data('padding-right', actualPadding)
-          .css('padding-right', parseFloat(calculatedPadding) + scrollbarWidth + 'px')
-      })
-    }
-  }
-
-  Modal.prototype.resetScrollbar = function () {
-    this.$body.css('padding-right', this.originalBodyPad)
-    $(this.fixedContent).each(function (index, element) {
-      var padding = $(element).data('padding-right')
-      $(element).removeData('padding-right')
-      element.style.paddingRight = padding ? padding : ''
-    })
-  }
-
-  Modal.prototype.measureScrollbar = function () { // thx walsh
-    var scrollDiv = document.createElement('div')
-    scrollDiv.className = 'modal-scrollbar-measure'
-    this.$body.append(scrollDiv)
-    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    this.$body[0].removeChild(scrollDiv)
-    return scrollbarWidth
-  }
 
 
   // MODAL PLUGIN DEFINITION
