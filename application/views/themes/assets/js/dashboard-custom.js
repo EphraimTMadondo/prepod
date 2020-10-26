@@ -13,6 +13,7 @@ $(document).ready ( function(){
 });
 
 
+
 function init_weekly_payment_statistics2(data) {
 
       var $primary = '#5A8DEE';
