@@ -58,7 +58,7 @@ class Utilities_model extends App_Model
            
             $data['company_username'] =  $_SESSION['current_company'];
           
-            print_r($data);
+           
 
         $data = hooks()->apply_filters('event_create_data', $data);
        

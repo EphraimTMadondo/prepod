@@ -76,19 +76,21 @@ class Utilities extends AdminController
                 if (isset($data['eventid'])) {
                     $message = _l('event_updated');
                 } else {
-                
-            echo json_encode([
-                'success' => $success,
-                'message' => $message,
-            ]); 
+                    $message = _l('utility_calendar_event_added_successfully');
                 }
 
 
             }
-            
+        
+            echo json_encode([
+                'success' => $success,
+                'message' => $message,
+            ]); 
           //  echo "runnign";
           //  set_alert('success', 'Event successfully added');
-        redirect( site_url()."admin/utilities/calendar");
+      //  redirect( site_url()."admin/utilities/calendar");
+
+
             //die();
         }
         $data['google_ids_calendars'] = $this->misc_model->get_google_calendar_ids();
