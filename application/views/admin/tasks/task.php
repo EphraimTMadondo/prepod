@@ -201,12 +201,15 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="priority" class="control-label"><?php echo _l('task_add_edit_priority'); ?></label>
-                        <select name="priority" class="" data-style="btn-outline-light" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="priority" class="dropdown bootstrap-select bs3" data-style="btn-outline-light" id="priority" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <?php foreach(get_tasks_priorities() as $priority) { ?>
                            <option value="<?php echo $priority['id']; ?>"<?php if(isset($task) && $task->priority == $priority['id'] || !isset($task) && get_option('default_task_priority') == $priority['id']){echo ' selected';} ?>><?php echo $priority['name']; ?></option>
                            <?php } ?>
                            <?php hooks()->do_action('task_priorities_select', (isset($task) ? $task : 0)); ?>
                         </select>
+
+
+                        
                      </div>
                   </div>
                   <div class="col-md-6">

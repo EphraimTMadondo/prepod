@@ -238,7 +238,7 @@ html {
 </div>
 <div class="modal-body">
    <div class="row">
-      <div class="col-md-8 task-single-col-left">
+      <div class="col-md-7 task-single-col-left">
          <?php if(total_rows(db_prefix().'taskstimers',array('end_time'=>NULL,'staff_id !='=>get_staff_user_id(),'task_id'=>$task->id)) > 0){
             $startedTimers = $this->tasks_model->get_timers($task->id,array('staff_id !='=>get_staff_user_id(),'end_time'=>NULL));
 
@@ -716,7 +716,7 @@ html {
             </div>
          </div>
       </div>
-      <div class="col-md-4 task-single-col-right">
+      <div class="col-md-5 task-single-col-right">
          <div class="float-right mb-1 task-single-menu task-menu-options">
             <div class="content-menu hide">
                <ul>

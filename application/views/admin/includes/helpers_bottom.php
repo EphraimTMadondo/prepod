@@ -4,7 +4,13 @@
 <div id="event"></div>
 <div id="newsfeed" class="animated fadeIn hide" <?php if($this->session->flashdata('newsfeed_auto')){echo 'data-newsfeed-auto';} ?>>
 </div>
-
+<style>
+@media (min-width: 576px)
+.modal-dialog {
+    max-width: 640px;
+    margin: 1.75rem auto;
+}
+  </style>
 <!-- Task modal view -->
 <div class="modal fade task-modal-single" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog <?php echo get_option('task_modal_class'); ?>">
