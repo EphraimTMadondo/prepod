@@ -83,7 +83,7 @@ class Utilities extends AdminController
                 'success' => $success,
                 'message' => $message,
             ]);
-            //die();
+            die();
         }
         $data['google_ids_calendars'] = $this->misc_model->get_google_calendar_ids();
         $data['google_calendar_api']  = get_option('google_calendar_api_key');
