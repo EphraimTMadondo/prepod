@@ -270,5 +270,15 @@ element.style {
             </div>
       </div>
    </div>
+   <script>
+function delete_user_unfinished_timesheet(id) {
+    if (confirm_delete()) {
+        requestGetJSON('tasks/delete_user_unfinished_timesheet/' + id).done(function(response) {
+            _init_timers_top_html(JSON.parse(response.timers));
+            reload_tasks_tables();
+        });
+    }
+}
+   </script>
 </nav>
 <!-- END: Header-->
