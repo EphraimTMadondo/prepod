@@ -60,7 +60,7 @@
                         <a href="#" onclick="delete_contact_profile_image(<?php echo $contact->id; ?>); return false;" class="text-danger float-right" id="contact-remove-img"><i class="bx bx-remove"></i></a>
                         <?php } ?>
                         <?php } ?>
-                        <div id="contact-profile-image" class="float-right form-group<?php if(isset($contact) && !empty($contact->profile_image)){echo ' hide';} ?>">
+                        <div id="contact-profile-image" class="<?php if(isset($contact) && !empty($contact->profile_image)){echo ' hide';} ?>">
                             <label for="profile_image" class="profile-image"><?php echo _l('client_profile_image'); ?></label>
                             <input type="file" name="profile_image" class="form-control" id="profile_image">
                         </div>
@@ -156,7 +156,7 @@
                 }
                 ?>
                 <?php foreach($customer_permissions as $permission){ ?>
-                <div class="col-md-6 row">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo $permission['name']; ?></span>
