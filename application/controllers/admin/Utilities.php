@@ -81,11 +81,12 @@ class Utilities extends AdminController
 
 
             }
-        
+        /***** 
             echo json_encode([
                 'success' => $success,
                 'message' => $message,
-            ]); 
+            ]); */
+            
           //  echo "runnign";
           set_alert('success', 'Event successfully added');
        redirect( site_url()."admin/utilities/calendar");
