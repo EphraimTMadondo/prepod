@@ -20,6 +20,11 @@ ob_start();
       break;
    }
 ?>
+<style>
+.bg-success {
+    background-color: transparent;
+}
+</style>
 
 <?php hooks()->do_action('after_body_start'); ?>
 
