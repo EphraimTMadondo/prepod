@@ -6,6 +6,17 @@
    </a>
    <?php } ?>
    <style>
+
+.modal-dialog {
+    max-width: 640px;
+    margin: 1.75rem auto;
+}
+
+.modal-body {
+  
+    padding-top: 0px;
+   
+}
             .modal .modal-content .modal-header {
             align-items: center;
         }
