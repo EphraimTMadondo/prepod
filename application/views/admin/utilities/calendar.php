@@ -158,53 +158,6 @@
 
 
 <?php $this->load->view('admin/utilities/calendar_template'); ?>
-<script>
-	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
-</script>
-<?php init_tail('calendar'); ?>
-<script>
-	$(function(){
-		if(get_url_param('eventid')) {
-			view_event(get_url_param('eventid'));
-		}
-	});
-	
-</script>
-
-
-
-    <!-- Perfect-scrollbar  -->
-    <script src="<?php echo base_url();?>assets/plugins/perfect-scrollbar/perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
-    
-    <!-- Tui Calendar 
-  >
-   
-   
-    
-        
-   
-    -->
-      <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script
-     <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
-   
-   <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
-   <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-    
-    <!-- Chance -->
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
-    
-  
-   
-    
-    <!-- Apex Calendar -->
-    
-<!--
-    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script> -->
-    
-        <!-- Custom JS -->
-  <!-- <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
-
--->
 
 <script>
         function custom_fields_hyperlink(){
@@ -260,6 +213,54 @@
      }
  </script>
     
+<script>
+	app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
+</script>
+<?php init_tail('calendar'); ?>
+<script>
+	$(function(){
+		if(get_url_param('eventid')) {
+			view_event(get_url_param('eventid'));
+		}
+	});
+	
+</script>
+
+
+
+    <!-- Perfect-scrollbar  -->
+    <script src="<?php echo base_url();?>assets/plugins/perfect-scrollbar/perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
+    
+    <!-- Tui Calendar 
+  >
+   
+   
+    
+        
+   
+    -->
+      <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script
+     <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
+   
+   <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+   <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+    
+    <!-- Chance -->
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/calendar/chance.min.js"></script>
+    
+  
+   
+    
+    <!-- Apex Calendar -->
+    
+<!--
+    <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/charts/apexcharts.min.js"></script> -->
+    
+        <!-- Custom JS -->
+  <!-- <script src="<?php echo base_url();?>assets/js/dashboard-custom.js"></script>
+
+-->
+
             
         <script>
 //added from frest appocal.js

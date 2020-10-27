@@ -68,7 +68,7 @@ class Utilities extends AdminController
        
         //     if ($this->input->post() && $this->input->is_ajax_request()) {  
         if ($this->input->post()) {
-             echo "calendar running";
+           
             $data    = $this->input->post();
             $success = $this->utilities_model->event($data);
             $message = '';
@@ -83,7 +83,7 @@ class Utilities extends AdminController
                 'success' => $success,
                 'message' => $message,
             ]);
-            die();
+            //die();
         }
         $data['google_ids_calendars'] = $this->misc_model->get_google_calendar_ids();
         $data['google_calendar_api']  = get_option('google_calendar_api_key');
