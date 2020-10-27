@@ -4,8 +4,8 @@ ob_start();
 <!-- BEGIN: Body-->
 <?php
 
-echo "current comp is ";
-print_r($_SESSION['current_company']);
+//echo "current comp is ";
+//print_r($_SESSION['current_company']);
 
    switch($page)
    {
