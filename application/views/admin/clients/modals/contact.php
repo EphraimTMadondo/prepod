@@ -174,7 +174,7 @@
                  <hr />
                 <p class="bold"><?php echo _l('email_notifications'); ?><?php if(is_sms_trigger_active()){echo '/SMS';} ?></p>
                 <div id="contact_email_notifications">
-                <div class="col-md-6 row">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo _l('invoice'); ?></span>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 row">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo _l('estimate'); ?></span>
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 row">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo _l('credit_note'); ?></span>
@@ -214,7 +214,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 row">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo _l('project'); ?></span>
@@ -227,7 +227,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 row">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo _l('tickets'); ?></span>
@@ -250,7 +250,7 @@
 
                     </div>
                 </div>
-                 <div class="col-md-6 row">
+                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6 mt-1 border-right">
                             <span><?php echo _l('contract'); ?></span>
