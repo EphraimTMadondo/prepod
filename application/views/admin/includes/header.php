@@ -227,8 +227,8 @@ element.style {
                      <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon bx  bx-bell <?php 
                        $_notifications = $this->misc_model->get_user_notifications();
                        $_notifications =["rt"];
-                       $size = sizeof($_notifications);
-                     if(size > 0)
+                       $size = count($_notifications);
+                     if($size > 0)
                      {
                      echo "bx-tada"; 
 
