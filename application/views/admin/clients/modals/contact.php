@@ -49,7 +49,7 @@
             <?php echo form_open(admin_url('clients/form_contact/'.$customer_id.'/'.$contactid),array('id'=>'contact-form','autocomplete'=>'off')); ?>
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><?php echo $title; ?><br /><small class="color-white" id=""><?php echo get_company_name($customer_id,true); ?></small></h4>
+                <h4 class="modal-title" style = "color:white !important;" id="myModalLabel"><?php echo $title; ?><br /><small class="color-white" id=""><?php echo get_company_name($customer_id,true); ?></small></h4>
             </div>
             <div class="modal-body">
                 <div class="row">
