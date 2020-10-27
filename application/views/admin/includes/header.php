@@ -22,7 +22,7 @@ ob_start();
 ?>
 <style>
 .bg-success {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 </style>
 
