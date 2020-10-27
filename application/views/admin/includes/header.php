@@ -224,7 +224,16 @@ element.style {
       </ul>
    </li>
                   <li class="dropdown dropdown-notification nav-item notifications-wrapper" >
-                     <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon bx bx-bell bx-tada bx-flip-horizontal"></i>
+                     <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon bx  bx-bell <?php 
+                       $_notifications = $this->misc_model->get_user_notifications();
+                       $size = sizeof($days);
+                     if(size > 0)
+                     {
+                     echo "bx-tada"; 
+
+                     }
+                     
+                     ?> bx-flip-horizontal"></i>
                      <?php if($current_user->total_unread_notifications > 0){ ?>
                         <span class="badge badge-pill badge-danger badge-up"><?php echo $current_user->total_unread_notifications; ?></span>
                      <?php } ?></a>
