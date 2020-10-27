@@ -84,6 +84,9 @@ foreach ($rResult as $aRow) {
                 <div class="todo-badge-wrapper d-flex">
                     <span class="badge badge-light-primary badge-pill">Frontend</span>
                 </div>
+                <div class="avatar ml-1">
+                
+                    </div>
                 ';
 
                 /** user image <div class="avatar ml-1">
