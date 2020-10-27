@@ -231,7 +231,7 @@ element.style {
                       //print_r($_notifications);
                        foreach($_notifications as $notification){ 
 
-                           if($notification)['isread'] != 1)
+                           if($notification['isread'] != 1)
                            {
                               $size++;  
                            }
