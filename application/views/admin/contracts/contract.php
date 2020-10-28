@@ -17,7 +17,7 @@
 
 .fa-plus
 {
-   display: none;
+
 }
 .input-group-addon:last-child {
     border-left: 0;
