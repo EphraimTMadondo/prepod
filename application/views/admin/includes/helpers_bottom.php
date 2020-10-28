@@ -70,7 +70,11 @@ if(strpos($actual_link, "admin/leads"))
     text-transform: inherit;
     padding-left: 10px;
 }
-                                        
+
+.h4
+{
+ color: white;
+ }                                  
 </style>
   <?php
 }
