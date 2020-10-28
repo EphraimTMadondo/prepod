@@ -77,7 +77,7 @@
             <?php $this->load->view('admin/clients/tabs'); ?>
          </div>
          <?php } ?>
-         <div class="col-md-12">
+         <div class="col-md-8" style = "margin-top: 15px">
             <div class="card">
                <div class="card-body">
                   <?php if(isset($client)){ ?>
