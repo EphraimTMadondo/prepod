@@ -11,6 +11,24 @@
             {
                display: none;
             }
+
+            .input-group-addon {
+    border: 1px solid #bfcbd9;
+    background-color: #fbfdff;
+    color: #97a8be;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
     </style>
 <div id="wrapper">
    <div class="content">
