@@ -29,64 +29,10 @@
          }
 
 
-
+         
 
    </style>
-   
-      <a data-toggle="tooltip" class="btn btn-default float-right lead-print-btn lead-top-btn lead-view ml-1" onclick="print_lead_information(); return false;" data-placement="top" title="<?php echo _l('print'); ?>" href="#">
-      <i class="fa fa-print"></i>
-      </a>
-       <?php
-           $client = false;
-           $convert_to_client_tooltip_email_exists = '';
-           if(total_rows(db_prefix().'contacts',array('email'=>$lead->email)) > 0 && total_rows(db_prefix().'clients',array('leadid'=>$lead->id)) == 0){
-             $convert_to_client_tooltip_email_exists = _l('lead_email_already_exists');
-             $text = _l('lead_convert_to_client');
-          } else if (total_rows(db_prefix().'clients',array('leadid'=>$lead->id))){
-             $client = true;
-          } else {
-             $text = _l('lead_convert_to_client');
-          }
-      ?>
-      <?php if($lead_locked == false){ ?>
-      <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
-         <button type="button" class="btn btn-secondary float-right ml-1 lead-top-btn lead-save-btn" onclick="document.getElementById('lead-form-submit').click();">
-              <?php echo _l('submit'); ?>
-          </button>
-      </div>
-      <?php } ?>
-      <?php if($client && (has_permission('customers','','view') || is_customer_admin(get_client_id_by_lead_id($lead->id)))){ ?>
-      <a data-toggle="tooltip" class="btn btn-success float-right lead-top-btn lead-view" data-placement="top" title="<?php echo _l('lead_converted_edit_client_profile'); ?>" href="<?php echo admin_url('clients/client/'.get_client_id_by_lead_id($lead->id)); ?>">
-      <i class="fa fa-user-o"></i>
-      </a>
-   <?php } ?>
-   <?php if(total_rows(db_prefix().'clients',array('leadid'=>$lead->id)) == 0){ ?>
-      <a href="#" data-toggle="tooltip" data-title="<?php echo $convert_to_client_tooltip_email_exists; ?>" class="btn btn-success float-right lead-convert-to-customer lead-top-btn lead-view" onclick="convert_lead_to_customer(<?php echo $lead->id; ?>); return false;">
-            <i class="fa fa-user-o"></i>
-            <?php echo $text; ?>
-      </a>
-   <?php } ?>
-   <?php } ?>
-   <div class="clearfix no-margin"></div>
 
-   <?php if(isset($lead)){ ?>
-
-   <div class="row mbot15">
-      <hr class="no-margin" />
-   </div>
-
-   <div class="alert alert-warning hide mt-2" role="alert" id="lead_proposal_warning">
-      <?php echo _l('proposal_warning_email_change',array(_l('lead_lowercase'),_l('lead_lowercase'),_l('lead_lowercase'))); ?>
-      <hr />
-      <a href="#" onclick="update_all_proposal_emails_linked_to_lead(<?php echo $lead->id; ?>); return false;">
-        <?php echo _l('update_proposal_email_yes'); ?>
-        </a>
-      <br />
-      <a href="#" onclick="init_lead_modal_data(<?php echo $lead->id; ?>); return false;">
-        <?php echo _l('update_proposal_email_no'); ?>
-      </a>
-   </div>
-   <?php } ?>
    <?php echo form_open((isset($lead) ? admin_url('leads/lead/'.$lead->id) : admin_url('leads/lead')),array('id'=>'lead_form')); ?>
    <div class="row">
       <div class="lead-view<?php if(!isset($lead)){echo ' hide';} ?>" id="leadViewWrapper">
