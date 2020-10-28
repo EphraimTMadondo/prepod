@@ -1,6 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
+<style>
 
+
+
+</style>
 <div class="app-content content customer_profile">
   <div class="content-overlay"></div>
   <div class="content-wrapper">
@@ -82,7 +86,7 @@
                   <div class="clearfix"></div>
                   <?php } ?>
                   <div class="tab-content">
-                        <?php // $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
+                        <?php  $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
                   </div>
                   <?php if($group == 'profile'){ ?>
                   <div class="btn-bottom-toolbar btn-toolbar-container-out text-right mt-4">
