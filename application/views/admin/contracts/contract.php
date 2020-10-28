@@ -21,6 +21,7 @@
     width: 39;
     height: 39;
     padding-top: 10;
+    padding-left: 10;
     color: #97a8be;
     background-color: transparent;
 }
@@ -29,7 +30,6 @@
     width: 39;
     height: 39;
     padding-top: 10;
-    padding-left: 10;
     color: #97a8be;
     background-color: transparent;
 }
