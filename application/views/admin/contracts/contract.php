@@ -13,7 +13,7 @@
       <div class="row">
          <div class="col-md-6 left-column offset-md-3">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                   <?php echo form_open($this->uri->uri_string(),array('id'=>'contract-form')); ?>
                   
                   <div class="form-group">
