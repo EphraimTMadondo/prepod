@@ -74,7 +74,27 @@ if(strpos($actual_link, "admin/leads"))
 .h4
 {
  color: white;
- }                                  
+ } 
+
+
+ .horizontal-scrollable-tabs .horizontal-tabs .nav-tabs-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+.top-lead-menu {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+}
+
+.lead-edit
+{
+  width: 100%;
+}
+
 </style>
   <?php
 }

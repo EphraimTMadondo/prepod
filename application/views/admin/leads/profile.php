@@ -218,6 +218,7 @@
       </div>
       <div class="clearfix"></div>
       <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
+      <div style = "flex">
          <div class="col-md-4">
           <?php
             $selected = '';
@@ -248,6 +249,7 @@
                  $assigned_attrs['disabled'] = true;
                }
                echo render_select('assigned',$members,array('staffid',array('firstname','lastname')),'lead_add_edit_assigned',$selected,$assigned_attrs); ?>
+         </div>
          </div>
          <div class="clearfix"></div>
             <hr class="mtop5 mb-1" />
