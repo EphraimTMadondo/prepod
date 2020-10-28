@@ -10,6 +10,22 @@
     display: -webkit-box;
     display: -moz-box;
 }
+.top-lead-menu {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+}
+
+.preview-tabs-top
+{
+   padding: 15px;
+}
+
+.nav {
+    padding-left: 0;
+     margin-bottom: 0; */
+    list-style: none; */
+}
 
 .modal-title {
     margin: 0;
