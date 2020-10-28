@@ -218,7 +218,7 @@
       </div>
       <div class="clearfix"></div>
       <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
-      <div style = "flex">
+      <div style = "display:flex">
          <div class="col-md-4">
           <?php
             $selected = '';
