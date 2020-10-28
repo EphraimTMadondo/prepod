@@ -30,6 +30,9 @@
          <?php if(isset($client)){ ?>
          <div class="col-md-3">
             <div class="card mt-1">
+
+
+
                <div class="card-title p-2">
                   <h4 class="bold">
                      #<?php echo $client->userid . ' ' . $title; ?>
@@ -79,7 +82,7 @@
                   <div class="clearfix"></div>
                   <?php } ?>
                   <div class="tab-content">
-                        <?php $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
+                        <?php // $this->load->view((isset($tab) ? $tab['view'] : 'admin/clients/groups/profile')); ?>
                   </div>
                   <?php if($group == 'profile'){ ?>
                   <div class="btn-bottom-toolbar btn-toolbar-container-out text-right mt-4">

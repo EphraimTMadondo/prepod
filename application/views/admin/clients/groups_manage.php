@@ -3,20 +3,7 @@
 <div class="app-content content customer_profile">
   <div class="content-overlay"></div>
   <div class="content-wrapper">
-  <style>
 
-.nav {
-    flex-wrap: nowrap;
-    display: block;
-}
-
-navbar-pills-flat {
-    background: #fff;
-    -webkit-box-shadow: 0 1px 15px 1px rgba(90,90,90,.08);
-    /* box-shadow: 0 1px 15px 1px rgba(90,90,90,.08); */
-}
-
-</style>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
