@@ -24,6 +24,8 @@
     width: 39;
     height: 39;
     padding-top: 10;
+    color: #97a8be;
+    background-color: transparent;
 }
 .input-group-addon {
     padding: 6px 12px;
@@ -36,6 +38,8 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+
 .input-group-addon, .input-group-btn {
     width: 1%;
     white-space: nowrap;
