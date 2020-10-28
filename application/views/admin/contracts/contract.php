@@ -6,6 +6,11 @@
                 font-size: 25px;
                 padding-top:15px;
             }
+
+            .fa fa-plus
+            {
+               display: none;
+            }
     </style>
 <div id="wrapper">
    <div class="content">
