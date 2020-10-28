@@ -29,6 +29,7 @@
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
          
          <div class="col-md-10 offset-md-1">
+         <div class = "card">
             <div class="card mtop20">
                <div class="card-body">
                     <p class="center newTitle">Proposal Template </p>
@@ -88,6 +89,7 @@
                   </div>
                  
                </div>
+            </div>
             </div>
          </div>
          <div class="col-md-10 offset-md-1">
