@@ -7,10 +7,7 @@
                 padding-top:15px;
             }
 
-            .fa fa-plus
-            {
-               display: none;
-            }
+           
 
             .input-group-addon {
     border: 1px solid #bfcbd9;
