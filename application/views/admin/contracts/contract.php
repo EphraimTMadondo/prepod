@@ -314,7 +314,7 @@
                                  <?php } ?>
                               </p>
                               <div class="pull-right">
-                                 <img src="<?php echo site_url('download/preview_image?path='.protected_file_url_by_path(get_upload_path_by_type('contract').$contract->id.'/'.$contract->signature)); ?>" class="img-responsive" alt="">
+                                 <img src="<?php // echo site_url('download/preview_image?path='.protected_file_url_by_path(get_upload_path_by_type('contract').$contract->id.'/'.$contract->signature)); ?>" class="img-responsive" alt="">
                               </div>
                            </div>
                         </div>
