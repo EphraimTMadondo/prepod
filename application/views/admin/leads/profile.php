@@ -33,51 +33,7 @@
       <?php echo _l('more'); ?>
       <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu dropdown-menu-left" id="lead-more-dropdown" style = "display: flex">
-         <?php if($lead->junk == 0){
-         if($lead->lost == 0 && (total_rows(db_prefix().'clients',array('leadid'=>$lead->id)) == 0)){ ?>
-         <li>
-            <a href="#" onclick="lead_mark_as_lost(<?php echo $lead->id; ?>); return false;">
-              <i class="fa fa-mars"></i>
-              <?php echo _l('lead_mark_as_lost'); ?>
-            </a>
-         </li>
-         <?php } else if($lead->lost == 1){ ?>
-         <li>
-            <a href="#" onclick="lead_unmark_as_lost(<?php echo $lead->id; ?>); return false;">
-              <i class="fa fa-smile-o"></i>
-              <?php echo _l('lead_unmark_as_lost'); ?>
-            </a>
-         </li>
-         <?php } ?>
-         <?php } ?>
-         <!-- mark as junk -->
-         <?php if($lead->lost == 0){
-         if($lead->junk == 0 && (total_rows(db_prefix().'clients',array('leadid'=>$lead->id)) == 0)){ ?>
-         <li>
-            <a href="#" onclick="lead_mark_as_junk(<?php echo $lead->id; ?>); return false;">
-              <i class="fa fa fa-times"></i>
-              <?php echo _l('lead_mark_as_junk'); ?>
-            </a>
-         </li>
-         <?php } else if($lead->junk == 1){ ?>
-         <li>
-            <a href="#" onclick="lead_unmark_as_junk(<?php echo $lead->id; ?>); return false;">
-              <i class="fa fa-smile-o"></i>
-              <?php echo _l('lead_unmark_as_junk'); ?>
-            </a>
-         </li>
-         <?php } ?>
-         <?php } ?>
-         <?php if(((is_lead_creator($lead->id) || has_permission('leads','','delete')) && $lead_locked == false) || is_admin()){ ?>
-         <li>
-            <a href="<?php echo admin_url('leads/delete/'.$lead->id); ?>" class="text-danger delete-text _delete" data-toggle="tooltip" title="">
-              <i class="bx bx-trash"></i>
-              <?php echo _l('lead_edit_delete_tooltip'); ?>
-            </a>
-         </li>
-         <?php } ?>
-      </ul>
+      
    </div>
       <a data-toggle="tooltip" class="btn btn-default float-right lead-print-btn lead-top-btn lead-view ml-1" onclick="print_lead_information(); return false;" data-placement="top" title="<?php echo _l('print'); ?>" href="#">
       <i class="fa fa-print"></i>
