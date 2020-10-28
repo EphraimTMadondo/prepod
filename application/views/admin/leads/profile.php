@@ -1,6 +1,18 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="<?php if($openEdit == true){echo 'open-edit ';} ?>lead-wrapper" <?php if(isset($lead) && ($lead->junk == 1 || $lead->lost == 1)){ echo 'lead-is-junk-or-lost';} ?>>
    <?php if(isset($lead)){ ?>
+   <style>
+         .nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.horizontal-scrollable-tabs .horizontal-tabs .nav-tabs-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+   </style>
    <div class="btn-group pull-left lead-actions-left">
       <a href="#" lead-edit class="mr-1 font-medium-xs pull-left<?php if($lead_locked == true){echo ' hide';} ?>">
          <?php echo _l('edit'); ?>
@@ -216,6 +228,7 @@
             <p class="bold font-medium-xs"><?php echo (isset($lead) && $lead->description != '' ? $lead->description : '-') ?></p>
          </div>
       </div>
+
       <div class="clearfix"></div>
       <div class="lead-edit<?php if(isset($lead)){echo ' hide';} ?>">
       <div style = "display:flex">
@@ -262,7 +275,7 @@
          <div class="clearfix"></div>
          <hr class="no-mtop mbot15" />
 
-         <div class="col-md-6">
+         <div class="col-md-3">
             <?php $value = (isset($lead) ? $lead->name : ''); ?>
             <?php echo render_input('name','lead_add_edit_name',$value); ?>
             <?php $value = (isset($lead) ? $lead->title : ''); ?>
@@ -292,7 +305,7 @@
             <?php $value = (isset($lead) ? $lead->company : ''); ?>
             <?php echo render_input('company','lead_company',$value); ?>
          </div>
-         <div class="col-md-6">
+         <div class="col-md-3">
             <?php $value = (isset($lead) ? $lead->address : ''); ?>
             <?php echo render_textarea('address','lead_address',$value,array('rows'=>1,'style'=>'height:36px;font-size:100%;')); ?>
             <?php $value = (isset($lead) ? $lead->city : ''); ?>
