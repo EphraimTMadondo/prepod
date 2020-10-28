@@ -17,7 +17,9 @@
     background-color: #fbfdff;
     color: #97a8be;
 }
-
+.input-group .form-control, .input-group-addon, .input-group-btn {
+    display: table-cell;
+}
 .input-group-addon {
     padding: 6px 12px;
     font-size: 14px;
