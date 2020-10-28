@@ -23,7 +23,7 @@
             ?>
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
          <div class="col-md-12">
-            <div class="card mt-2">
+            <div class="card mtop20">
                <div class="card-body">
                   <div class="row">
                      <?php if(isset($proposal)){ ?>
@@ -39,7 +39,7 @@
                         <?php echo render_input('subject','proposal_subject',$value,'text',$attrs); ?>
                         <div class="form-group select-placeholder">
                            <label for="rel_type" class="control-label"><?php echo _l('proposal_related'); ?></label>
-                           <select name="rel_type" id="rel_type" class="selectpicker" data-style="btn-outline-light" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                           <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                               <option value=""></option>
                               <option value="lead" <?php if((isset($proposal) && $proposal->rel_type == 'lead') || $this->input->get('rel_type')){if($rel_type == 'lead'){echo 'selected';}} ?>><?php echo _l('proposal_for_lead'); ?></option>
                               <option value="customer" <?php if((isset($proposal) &&  $proposal->rel_type == 'customer') || $this->input->get('rel_type')){if($rel_type == 'customer'){echo 'selected';}} ?>><?php echo _l('proposal_for_customer'); ?></option>
@@ -48,7 +48,7 @@
                         <div class="form-group select-placeholder<?php if($rel_id == ''){echo ' hide';} ?> " id="rel_id_wrapper">
                            <label for="rel_id"><span class="rel_id_label"></span></label>
                            <div id="rel_id_select">
-                              <select name="rel_id" id="rel_id" class="ajax-search" data-style="btn-outline-light" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                              <select name="rel_id" id="rel_id" class="ajax-search" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                               <?php if($rel_id != '' && $rel_type != ''){
                                  $rel_data = get_relation_data($rel_type,$rel_id);
                                  $rel_val = get_relation_values($rel_data,$rel_type);
@@ -119,7 +119,7 @@
                              <div class="col-md-6">
                                <div class="form-group select-placeholder">
                                  <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
-                                 <select name="discount_type" class="selectpicker" data-style="btn-outline-light" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                 <select name="discount_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                   <option value="" selected><?php echo _l('no_discount'); ?></option>
                                   <option value="before_tax" <?php
                                   if(isset($estimate)){ if($estimate->discount_type == 'before_tax'){ echo 'selected'; }}?>><?php echo _l('discount_type_before_tax'); ?></option>
@@ -130,11 +130,11 @@
                            </div>
                         <?php $fc_rel_id = (isset($proposal) ? $proposal->id : false); ?>
                         <?php echo render_custom_fields('proposal',$fc_rel_id); ?>
-                         <div class="form-group mb-0">
+                         <div class="form-group no-mbot">
                            <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
                            <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo (isset($proposal) ? prep_tags_input(get_tags_in($proposal->id,'proposal')) : ''); ?>" data-role="tagsinput">
                         </div>
-                        <div class="form-group mtop10 mb-0">
+                        <div class="form-group mtop10 no-mbot">
                             <p><?php echo _l('proposal_allow_comments'); ?></p>
                             <div class="onoffswitch">
                               <input type="checkbox" id="allow_comments" class="onoffswitch-checkbox" <?php if((isset($proposal) && $proposal->allow_comments == 1) || !isset($proposal)){echo 'checked';}; ?> value="on" name="allow_comments">
@@ -155,7 +155,7 @@
                                      }
                                     }
                                     ?>
-                                 <select name="status" class="selectpicker" data-style="btn-outline-light" data-style="btn-outline-light" data-width="100%" <?php echo $disabled; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                 <select name="status" class="selectpicker" data-width="100%" <?php echo $disabled; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                     <?php foreach($statuses as $status){ ?>
                                     <option value="<?php echo $status; ?>" <?php if((isset($proposal) && $proposal->status == $status) || (!isset($proposal) && $status == 0)){echo 'selected';} ?>><?php echo format_proposal_status($status,'',false); ?></option>
                                     <?php } ?>
@@ -212,11 +212,11 @@
                      </div>
                   </div>
                   <div class="btn-bottom-toolbar bottom-transaction text-right">
-                  <p class="mb-0 pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
-                    <button type="button" class="btn btn-secondary ml-1 proposal-form-submit save-and-send transaction-submit">
+                  <p class="no-mbot pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
+                    <button type="button" class="btn btn-info ml-1 proposal-form-submit save-and-send transaction-submit">
                         <?php echo _l('save_and_send'); ?>
                     </button>
-                    <button class="btn btn-secondary ml-1 proposal-form-submit transaction-submit" type="button">
+                    <button class="btn btn-info ml-1 proposal-form-submit transaction-submit" type="button">
                       <?php echo _l('submit'); ?>
                     </button>
                </div>
