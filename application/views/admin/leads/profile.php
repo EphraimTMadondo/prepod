@@ -10,15 +10,17 @@
     display: -webkit-box;
     display: -moz-box;
 }
+
+
 .top-lead-menu {
     margin-left: -15px;
     margin-right: -15px;
     margin-top: -15px;
+    display: none;
 }
-
 .preview-tabs-top
 {
-   padding: 15px;
+   padding: 15px
 }
 
 .nav {
