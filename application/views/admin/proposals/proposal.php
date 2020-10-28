@@ -28,7 +28,7 @@
             ?>
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
          
-         <div class="col-md-6 offset-md-3">
+         <div class="col-md-10 offset-md-1">
             <div class="card mtop20">
                <div class="card-body">
                     <p class="center newTitle">Proposal Template </p>
@@ -90,7 +90,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-12">
+         <div class="col-md-10 offset-md-1">
             <div class="card">
                <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
             </div>
@@ -98,7 +98,7 @@
          
          
          
-           <div class="col-md-6 offset-md-3">
+           <div class="col-md-10 offset-md-1">
                <div class="card">
                <div class="card-body">
                     <p class="center newTitle">Customer  Details </p>
