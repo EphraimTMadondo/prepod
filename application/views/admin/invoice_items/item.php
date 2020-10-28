@@ -49,7 +49,11 @@
          }
 
 
-         
+         .modal-header {
+    display: block;
+    background: #226faa;
+    padding: 15px 30px;
+}    
 
    </style>
 <div class="modal fade" id="sales_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
