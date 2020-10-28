@@ -24,6 +24,58 @@
 <div id="_task"></div>
 
 <!-- Lead Data Add/Edit-->
+<?php
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if(strpos($actual_link, "admin/leads"))
+{
+
+  ?>
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        .modal-body {
+    position: relative;
+    padding: 15px;
+}
+.bootstrap-select>select {
+    position: absolute!important;
+    bottom: 0;
+    left: 50%;
+    display: block!important;
+    width: .5px!important;
+    height: 100%!important;
+    padding: 0!important;
+    opacity: 0!important;
+    border: none;
+    z-index: 0!important;
+}
+
+.bootstrap-select .btn-default {
+    background: #fff!important;
+    color: #415164!important;
+    border: 1px solid #bfcbd9!important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 4px 10px;
+    line-height: 2;
+    height: 36px;
+    text-transform: inherit;
+    padding-left: 10px;
+}
+                                        
+</style>
+  <?php
+}
+
+?>
 <div class="modal fade lead-modal" id="lead-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog <?php echo get_option('lead_modal_class'); ?>">
     <div class="modal-content data">
