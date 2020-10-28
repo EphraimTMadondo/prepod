@@ -17,8 +17,9 @@
     background-color: #fbfdff;
     color: #97a8be;
 }
-.input-group .form-control, .input-group-addon, .input-group-btn {
-    display: table-cell;
+
+.input-group-addon:last-child {
+    border-left: 0;
 }
 .input-group-addon {
     padding: 6px 12px;
@@ -30,6 +31,15 @@
     background-color: #eee;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+.input-group-addon, .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group .form-control, .input-group-addon, .input-group-btn {
+    display: table-cell;
 }
     </style>
 <div id="wrapper">
