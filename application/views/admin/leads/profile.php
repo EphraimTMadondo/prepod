@@ -276,7 +276,8 @@
          <hr class="no-mtop mbot15" />
 
          <div style = "display: flex">
-         <div class="col-md-3">
+
+         <div class="col-md-6">
             <?php $value = (isset($lead) ? $lead->name : ''); ?>
             <?php echo render_input('name','lead_add_edit_name',$value); ?>
             <?php $value = (isset($lead) ? $lead->title : ''); ?>
@@ -306,7 +307,7 @@
             <?php $value = (isset($lead) ? $lead->company : ''); ?>
             <?php echo render_input('company','lead_company',$value); ?>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-6">
             <?php $value = (isset($lead) ? $lead->address : ''); ?>
             <?php echo render_textarea('address','lead_address',$value,array('rows'=>1,'style'=>'height:36px;font-size:100%;')); ?>
             <?php $value = (isset($lead) ? $lead->city : ''); ?>
