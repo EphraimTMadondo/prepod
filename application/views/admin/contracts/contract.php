@@ -17,7 +17,12 @@
 
 .fa-plus
 {
-
+   border-left: 0;
+    width: 39;
+    height: 39;
+    padding-top: 10;
+    color: #97a8be;
+    background-color: transparent;
 }
 .input-group-addon:last-child {
     border-left: 0;
