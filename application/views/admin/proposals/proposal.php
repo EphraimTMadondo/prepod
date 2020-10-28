@@ -30,7 +30,7 @@
          
          <div class="col-md-6 offset-md-3">
             <div class="card mtop20">
-               <div class="panel-body">
+               <div class="card-body">
                     <p class="center newTitle">Proposal Template </p>
                               
                               <hr class="mtop15">
@@ -100,7 +100,7 @@
          
            <div class="col-md-6 offset-md-3">
                <div class="card">
-               <div class="panel-body">
+               <div class="card-body">
                     <p class="center newTitle">Customer  Details </p>
                               
                               <hr class="mtop15">
