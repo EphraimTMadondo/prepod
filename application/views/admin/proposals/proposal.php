@@ -1,9 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
-<!-- BEGIN: Content-->
-<div class="app-content content">
-  <div class="content-overlay"></div>
-  <div class="content-wrapper accounting-template proposal">
+  <style>
+        .newTitle
+            {
+                font-size: 25px;
+                padding-top:15px;
+            }
+    </style>
+<div id="wrapper">
+   <div class="content accounting-template proposal">
       <div class="row">
          <?php
             if(isset($proposal)){
@@ -22,9 +27,13 @@
             }
             ?>
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
-         <div class="col-md-12">
+         
+         <div class="col-md-6 offset-md-3">
             <div class="card mtop20">
-               <div class="card-body">
+               <div class="panel-body">
+                    <p class="center newTitle">Proposal Template </p>
+                              
+                              <hr class="mtop15">
                   <div class="row">
                      <?php if(isset($proposal)){ ?>
                      <div class="col-md-12">
@@ -33,11 +42,72 @@
                      <div class="clearfix"></div>
                      <hr />
                      <?php } ?>
-                     <div class="col-md-6 border-right">
+                     <div class="col-md-12">
+                        
                         <?php $value = (isset($proposal) ? $proposal->subject : ''); ?>
                         <?php $attrs = (isset($proposal) ? array() : array('autofocus'=>true)); ?>
                         <?php echo render_input('subject','proposal_subject',$value,'text',$attrs); ?>
-                        <div class="form-group select-placeholder">
+                        <div class="form-group" app-field-wrapper="introduction">
+                            <label for="introduction" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Introduction
+                                 </label>
+                                 
+                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4">
+                                <?php echo $proposal->introduction;?>
+                                
+                                
+                            </textarea>
+                            
+                        </div>
+                         <div class="form-group" app-field-wrapper="summary">
+                            DESCRIPTION
+                                 
+                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4">
+                                <?php echo $proposal->summary;?>
+                            </textarea>
+                            
+                        </div>
+                       <div class="form-group" app-field-wrapper="terms_and_conditions">
+                            <label for="terms_and_conditions" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Terms & Conditions
+                                 </label>
+                                 
+                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4">
+                                
+                                <?php echo $proposal->terms_and_conditions;?>
+                            </textarea>
+                            
+                        </div>
+                       
+                         
+                        
+                     </div>
+                   
+                  </div>
+                 
+               </div>
+            </div>
+         </div>
+         <div class="col-md-12">
+            <div class="card">
+               <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
+            </div>
+         </div>
+         
+         
+         
+           <div class="col-md-6 offset-md-3">
+               <div class="card">
+               <div class="panel-body">
+                    <p class="center newTitle">Customer  Details </p>
+                              
+                              <hr class="mtop15">
+                        <div class="row">
+                             
+                           <div class="col-md-12">
+                               <div class="form-group select-placeholder">
                            <label for="rel_type" class="control-label"><?php echo _l('proposal_related'); ?></label>
                            <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                               <option value=""></option>
@@ -141,10 +211,6 @@
                               <label class="onoffswitch-label" for="allow_comments" data-toggle="tooltip" title="<?php echo _l('proposal_allow_comments_help'); ?>"></label>
                             </div>
                           </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="row">
-                           <div class="col-md-6">
                               <div class="form-group select-placeholder">
                                  <label for="status" class="control-label"><?php echo _l('proposal_status'); ?></label>
                                  <?php
@@ -161,9 +227,7 @@
                                     <?php } ?>
                                  </select>
                               </div>
-                           </div>
-                           <div class="col-md-6">
-                              <?php
+                               <?php
                                  $i = 0;
                                  $selected = '';
                                  foreach($staff as $member){
@@ -177,6 +241,7 @@
                                  echo render_select('assigned',$staff,array('staffid',array('firstname','lastname')),'proposal_assigned',$selected);
                                  ?>
                            </div>
+                          
                         </div>
                         <?php $value = (isset($proposal) ? $proposal->proposal_to : ''); ?>
                         <?php echo render_input('proposal_to','proposal_to',$value); ?>
@@ -209,25 +274,30 @@
                               <?php echo render_input('phone','proposal_phone',$value); ?>
                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="btn-bottom-toolbar bottom-transaction text-right">
+                         <div class="">
                   <p class="no-mbot pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
-                    <button type="button" class="btn btn-info ml-1 proposal-form-submit save-and-send transaction-submit">
+                    <button type="button" class="btn btn-info mleft10 proposal-form-submit save-and-send transaction-submit">
                         <?php echo _l('save_and_send'); ?>
                     </button>
-                    <button class="btn btn-info ml-1 proposal-form-submit transaction-submit" type="button">
+                    <button class="btn btn-info mleft5 proposal-form-submit transaction-submit" type="button">
                       <?php echo _l('submit'); ?>
                     </button>
                </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-12">
-            <div class="card">
-               <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
-            </div>
-         </div>
+                         </div>
+                        </div>
+                        
+                     </div>
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
          <?php echo form_close(); ?>
          <?php $this->load->view('admin/invoice_items/item'); ?>
       </div>
