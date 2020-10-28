@@ -55,6 +55,12 @@
 .input-group .form-control, .input-group-addon, .input-group-btn {
     display: table-cell;
 }
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
     </style>
 <div id="wrapper">
    <div class="content">
