@@ -15,8 +15,15 @@
     color: #97a8be;
 }
 
+.fa-plus
+{
+   display: none;
+}
 .input-group-addon:last-child {
     border-left: 0;
+    width: 39;
+    height: 39;
+    padding-top: 10;
 }
 .input-group-addon {
     padding: 6px 12px;
