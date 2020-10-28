@@ -1,6 +1,60 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<style>
+         .nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.horizontal-scrollable-tabs .horizontal-tabs .nav-tabs-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+
+.top-lead-menu {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+    display: none;
+}
+.preview-tabs-top
+{
+   padding: 15px
+}
+
+.nav {
+    padding-left: 0;
+     margin-bottom: 0; */
+    list-style: none; */
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+.modal-dialog {
+    max-width: 640px;
+    margin: 1.75rem auto;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+
+    color: white;
+}
+
+         .preview-tabs-top
+         {
+            display: flex;
+         }
+
+
+         
+
+   </style>
 <div class="modal fade" id="sales_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
+
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

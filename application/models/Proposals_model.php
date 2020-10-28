@@ -127,6 +127,9 @@ class Proposals_model extends App_Model
             $custom_fields = $data['custom_fields'];
             unset($data['custom_fields']);
         }
+        
+           
+        
 
         $data['address'] = trim($data['address']);
         $data['address'] = nl2br($data['address']);
@@ -162,10 +165,19 @@ class Proposals_model extends App_Model
 
         $data  = $hook['data'];
         $items = $hook['items'];
+       
+      	
+      	
+      	$this->db->select('company');  
+        $companyusername = $_SESSION['current_company'];
+        $this->db->where('company_username', $companyusername);
+
+        $r = $this->db->get(db_prefix() . 'companies')->row()->company;
 
             if($_SESSION['current_company']!= NULL)
         {
         $data['company_username'] =  $_SESSION['current_company'];
+        $data['company_name'] =  $r ;
           $this->db->insert(db_prefix() . 'proposals', $data);
         }
        
@@ -306,6 +318,7 @@ class Proposals_model extends App_Model
         unset($data['removed_items']);
 
         $this->db->where('id', $id);
+       // $data['introduction'] = "use";
         $this->db->update(db_prefix() . 'proposals', $data);
         if ($this->db->affected_rows() > 0) {
             $affectedRows++;
@@ -410,6 +423,8 @@ class Proposals_model extends App_Model
 
         if (is_numeric($id)) {
             $this->db->where(db_prefix() . 'proposals.id', $id);
+            $companyusername = $_SESSION['current_company'];
+            $this->db->where('proposals.company_username', $companyusername);
             $proposal = $this->db->get()->row();
             if ($proposal) {
                 $proposal->attachments                           = $this->get_attachments($id);
@@ -429,7 +444,8 @@ class Proposals_model extends App_Model
 
             return $proposal;
         }
-
+         $companyusername = $_SESSION['current_company'];
+         $this->db->where('company_username', $companyusername);
         return $this->db->get()->result_array();
     }
 
