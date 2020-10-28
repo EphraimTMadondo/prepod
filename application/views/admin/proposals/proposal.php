@@ -92,7 +92,7 @@
             </div>
             </div>
          </div>
-         <div class="col-md-10 offset-md-1">
+         <div class="col-md-12" style = " margin-left: 15;">
             <div class="card">
                <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
             </div>
