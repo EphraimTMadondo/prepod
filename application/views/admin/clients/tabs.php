@@ -14,6 +14,14 @@ style =
 "
 
 >
+<?php
+
+
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+
+
+?>
   <?php
   foreach(filter_client_visible_tabs($customer_tabs) as $key => $tab){
     ?>
@@ -21,7 +29,8 @@ style =
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(229, 229, 229);">
-      <a class="nav-link <?php if($key == 'profile'){echo 'active ';} ?>" data-group="<?php echo $key; ?>" href="<?php echo admin_url('clients/client/'.$client->userid.'?group='.$key); ?>">
+
+      <a class="nav-link <?php if(strpos($actual_link, $key)!=false){echo 'active ';} ?>" data-group="<?php echo $key; ?>" href="<?php echo admin_url('clients/client/'.$client->userid.'?group='.$key); ?>">
         <?php if(!empty($tab['icon'])){ ?>
             <i class="<?php echo $tab['icon']; ?> menu-icon" aria-hidden="true"></i>
         <?php } ?>
