@@ -12,6 +12,17 @@
     display: -moz-box;
 }
 
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+
+    color: white;
+}
+
    </style>
    <div class="btn-group pull-left lead-actions-left">
       <a href="#" lead-edit class="mr-1 font-medium-xs pull-left<?php if($lead_locked == true){echo ' hide';} ?>">
@@ -22,7 +33,7 @@
       <?php echo _l('more'); ?>
       <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu dropdown-menu-left" id="lead-more-dropdown">
+      <ul class="dropdown-menu dropdown-menu-left" id="lead-more-dropdown" style = "display: flex">
          <?php if($lead->junk == 0){
          if($lead->lost == 0 && (total_rows(db_prefix().'clients',array('leadid'=>$lead->id)) == 0)){ ?>
          <li>
