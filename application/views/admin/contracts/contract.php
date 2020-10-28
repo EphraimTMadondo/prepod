@@ -12,6 +12,7 @@
       
       <div class="row">
          <div class="col-md-6 left-column offset-md-3">
+         <div class= "card" style = "margin-top: 25px">
             <div class="card mtop20">
                <div class="card-body">
                   <?php echo form_open($this->uri->uri_string(),array('id'=>'contract-form')); ?>
@@ -93,6 +94,7 @@
                   
                   <?php echo form_close(); ?>
                </div>
+            </div>
             </div>
          </div>
          <?php if(isset($contract)) { ?>
