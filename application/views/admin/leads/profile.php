@@ -275,6 +275,7 @@
          <div class="clearfix"></div>
          <hr class="no-mtop mbot15" />
 
+         <div style = "display: flex">
          <div class="col-md-3">
             <?php $value = (isset($lead) ? $lead->name : ''); ?>
             <?php echo render_input('name','lead_add_edit_name',$value); ?>
@@ -338,6 +339,8 @@
                </select>
             </div>
             <?php } ?>
+         </div>
+
          </div>
          <div class="col-md-12">
             <?php $value = (isset($lead) ? $lead->description : ''); ?>
