@@ -160,6 +160,27 @@
                 echo ''.$str;
             }
             else{
+              ?>
+              <style>
+              .dt-buttons .btn-group
+              {
+                margin-left: 25;
+              }
+
+              .btn-secondary
+              {
+                margin-left: 25;
+              }
+
+                .previous
+                {
+                  margin-left: 25;
+
+                }
+      
+
+      </style>
+      <?
                 echo '';
             } ?>
 
