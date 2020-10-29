@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+     <!--
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('home_weekly_payment_records'); ?>">
    <?php if(has_permission('payments','','view') || has_permission('invoices','','view_own')){ ?>
    <div class="row" id="weekly_payments">
@@ -38,3 +39,5 @@
     </div>
     <?php } ?>
  </div>
+
+ -->
