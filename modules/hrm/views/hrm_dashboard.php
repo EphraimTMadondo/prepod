@@ -23,7 +23,7 @@
 
                   .btn-secondary
                   {
-                    margin-left: 100;
+                    margin-left: 150;
                   }
 
                     .previous
