@@ -6,6 +6,13 @@
     max-width: 100%;
     height: auto;
 }
+
+.brand-logo
+{
+   display: block;
+    max-width: 100%;
+    height: auto;
+}
 </style>
 <div class="mt-1 preview-top-wrapper">
 
