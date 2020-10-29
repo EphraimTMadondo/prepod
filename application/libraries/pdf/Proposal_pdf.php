@@ -26,11 +26,84 @@ class Proposal_pdf extends App_pdf
             $this->load_language($proposal->rel_id);
         }
 
-        $this->SetTitle($this->proposal_number);
+       $this->SetTitle($this->proposal_number);
         $this->SetDisplayMode('default', 'OneColumn');
-
+         
         # Don't remove these lines - important for the PDF layout
+        
+        //Cover Page
+        $this->setPage(1);
+        
+        $img_file = base_url()."uploads/company/portfoliobackground1.jpg" ;
+        //$this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
+        // remove default header/footer
+        $this->setPrintHeader(false);
+        $this->setPrintFooter(false);
+        
+        // set margins
+        $this->SetMargins(0, 0, 0, true);
+        $this->SetMargins(10, 0, -10,true);
+        
+        // set auto page breaks false
+        $this->SetAutoPageBreak(false, 0);
+        $this->Image($img_file, 0, 0, 210, 297, 'JPG', '', '', true, 200, '', false, false, 0, false, false, true);
+
+        $this->setY( $_SESSION['start_y'] );
+        $this->SetFont ('freesans', '', 40 , '', 'default', true );
+        $this->SetTextColor(255, 255, 255);
+        $startofpdf = "<div style='page-break-before: always; height: 5000px;'></div>"."<div style='page-break-before: always; height: 5000px;'></div>"."<div style='max-width: 10px;'>"."<h2 >".$proposal->subject.$this->font_size ." Proposal"."</h2>"."</div>";
+        $this->writeHTML($startofpdf, true, false, false, false, '');
+        $this->SetFont ('freesans', '', 10 , '', 'default', true );
+       
+       
+      
+        
+        
+         $startofpdf = "<div style = 'display: flex'>"." <div><h1>Prepared by:</h1>"."<p>".$proposal->company_name."</p></div>";
+         $startofpdf .= "<div><h1>Prepared For:</h1>"."<p>".$proposal->proposal_to."</p></div>";
+        $startofpdf .= "</div>";
+        $this->writeHTML($startofpdf, true, false, false, false, '');
+        
+        //Introduction
+        
+           $this->setPage(2);
+            $this->setY( $_SESSION['start_y'] );
+            $this->SetTextColor(0, 0, 0);
+            
+           $this->Header();
+           $this->Footer();
+            
+            $this->SetMargins(10, 5, 10, true);
+           $this->setY( $_SESSION['start_y'] );
+           $this->SetFont ('freesans', '', 15 , '', 'default', true );
+           
+        $this->SetTextColor(0,0,139);
+        
+        
+       $startofpdf = "<div style='page-break-before: always; height: 5000px;'></div>"."<strong>"."Introduction"."</strong>"."<div style='page-break-before: always; height: 5000px;'></div>";
+               $this->writeHTML($startofpdf, true, false, false, false, '');
+       $this->SetTextColor(0, 0, 0);
+       $this->SetFont ('freesans', '', 10 , '', 'default', true );
+         $startofpdf = $proposal->introduction."<div style='page-break-before: always; height: 5000px;'></div>"."<div style='page-break-before: always; height: 5000px;'></div>";
+        $this->writeHTML($startofpdf, true, false, false, false, '');
+          $this->setPage(3);
+             $this->SetFont ('freesans', '', 15 , '', 'default', true );
+             
+        $this->SetTextColor(0,0,139);
+        $startofpdf = "<strong>"."Pricing"."</strong>"."<div style='page-break-before: always; height: 5000px;'></div>";
+      
+        $this->writeHTML($startofpdf, true, false, false, false, '');
+        $this->SetTextColor(0, 0, 0);
+        $endofpdf = "<div style='page-break-before: always; height: 5000px;'></div>"."<div style='page-break-before: always; height: 5000px;'></div>"."<strong>"."Terms And Conditions"."</strong>"."<div style='page-break-before: always; height: 5000px;'></div>";
+        $this->SetFont ('freesans', '', 10 , '', 'default', true );
+        $endofpdf .= $proposal->terms_and_conditions."<div style='page-break-before: always; height: 5000px;'></div>"; 
+       
+        $this->proposal->content = $this->proposal->content.$endofpdf;
+        
         $this->proposal->content = $this->fix_editor_html($this->proposal->content);
+       
+        
+    
     }
 
     public function prepare()

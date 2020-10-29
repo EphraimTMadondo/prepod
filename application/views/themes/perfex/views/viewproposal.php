@@ -1,4 +1,30 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<style>
+
+.logo {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.brand-logo
+{
+   display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.top
+{
+
+    margin-top: 35px;
+
+}
+
+.float-right {
+    float: right!important;
+}
+</style>
 <div id="proposal-wrapper">
    <?php
       ob_start();
