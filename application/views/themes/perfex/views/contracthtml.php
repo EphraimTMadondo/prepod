@@ -15,6 +15,7 @@
 }
 
 .top
+{
 
     margin-top: 65px;
 
@@ -43,7 +44,7 @@
    <div class="top" data-sticky data-sticky-class="preview-sticky-header">
       <div class="container preview-sticky-container">
          <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 top">
                <h4 class="pull-left no-mtop contract-html-subject"><?php echo $contract->subject; ?><br />
                   <small><?php echo $contract->type_name; ?></small>
                </h4>
