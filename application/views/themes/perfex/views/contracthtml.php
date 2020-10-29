@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <style>
 
-.navbar-brand {
+.logo {
     display: block;
     max-width: 100%;
     height: auto;
