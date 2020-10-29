@@ -26,6 +26,12 @@
                     margin-left: 25;
                   }
 
+                    .previous
+                    {
+                      margin-left: 25;
+
+                    }
+          
 
           </style>
 
