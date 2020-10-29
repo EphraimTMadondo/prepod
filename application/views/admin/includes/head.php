@@ -174,6 +174,10 @@
 }
 
 
+.dataTables_info{
+  display: flex;
+
+}
 
 
 
