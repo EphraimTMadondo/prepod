@@ -1,5 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="mt-1 preview-top-wrapper">
+<style>
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+</style>
    <div class="row">
       <div class="col-md-3">
          <div class="mbot30">
@@ -8,6 +15,7 @@
             </div>
          </div>
       </div>
+
       <div class="clearfix"></div>
    </div>
    <div class="top" data-sticky data-sticky-class="preview-sticky-header">
