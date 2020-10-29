@@ -15,6 +15,12 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
+          <style>
+                  dt-buttons btn-group
+                  {
+                    margin-left: 25;
+                  }
+          </style>
 
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
 
@@ -95,10 +101,10 @@
         <div id="contract_type_chart" class="hrm-marginauto hrm-minwidth310">
       </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12" style = "padding: 0px;">
         <br>
               <div class="card">
-                <div class="card-body">
+                <div class="card-body" style = "padding: 0px;">
                   <h4><p class="padding-5 bold"><?php echo _l('list_overdue_contract'); ?></p></h4>
                     <hr class="hr-panel-heading-dashboard">
                   <table class="table dt-table scroll-responsive">
