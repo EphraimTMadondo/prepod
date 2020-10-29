@@ -51,7 +51,7 @@ class Proposal_pdf extends App_pdf
         $this->setY( $_SESSION['start_y'] );
         $this->SetFont ('freesans', '', 40 , '', 'default', true );
         $this->SetTextColor(255, 255, 255);
-        $startofpdf = "<div style='page-break-before: always; height: 5000px;'></div>"."<div style='page-break-before: always; height: 5000px;'></div>"."<div style='max-width: 10px;'>"."<h2 >".$proposal->subject.$this->font_size ." Proposal"."</h2>"."</div>";
+        $startofpdf = "<div style='page-break-before: always; height: 5000px;'></div>"."<div style='page-break-before: always; height: 5000px;'></div>"."<div style='max-width: 10px;'>"."<h2 >".$proposal->subject." Proposal"."</h2>"."</div>";
         $this->writeHTML($startofpdf, true, false, false, false, '');
         $this->SetFont ('freesans', '', 10 , '', 'default', true );
        
