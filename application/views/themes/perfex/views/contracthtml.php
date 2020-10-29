@@ -13,6 +13,16 @@
     max-width: 100%;
     height: auto;
 }
+
+.top
+
+    margin-top: 65px;
+
+}
+
+.pull-right {
+    float: right!important;
+}
 </style>
 <div class="mt-1 preview-top-wrapper">
 
