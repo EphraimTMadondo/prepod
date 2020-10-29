@@ -119,7 +119,45 @@
         <br>
               <div class="card">
                 <div class="card-body" style = "padding: 0px;">
-            
+                  <h4><p class="padding-5 bold"><?php echo _l('list_overdue_contract'); ?></p></h4>
+                    <hr class="hr-panel-heading-dashboard">
+                  <table class="table dt-table scroll-responsive">
+                    <thead>
+                        <th><?php echo _l('contract_code'); ?></th>
+                        <th><?php echo _l('name_contract'); ?></th>
+                        <th><?php echo _l('staff'); ?></th>
+                        <th><?php echo _l('departments'); ?></th>
+                        <th><?php echo _l('start_valid'); ?></th>
+                        <th><?php echo _l('end_valid'); ?></th>
+                        <th><?php echo _l('sign_day'); ?></th>
+                    </thead>
+                    <tbody>
+              
+                        <?php 
+                         $list_member_id = [];
+                        foreach($data_dash['overdue_contract_data'] as $overdue_contract){
+                          ?>
+
+                        <tr>
+                            <td><?php echo htmlspecialchars($overdue_contract['contract_code']); ?></td>
+                            <td><a href="<?php echo admin_url('hrm/contract/' . $overdue_contract['id_contract']); ?>"><?php echo htmlspecialchars($overdue_contract['name_contract']); ?></a></td>
+                            <td><?php echo get_staff_full_name($overdue_contract['staff']); ?></td>
+
+                            <td> <?php
+                            $departments = $this->departments_model->get_staff_departments($overdue_contract['staff']);
+                              if(isset($departments[0])){
+                $team = $this->hrm_model->get_department_name($departments[0]['departmentid']);
+                $str = '';
+                $j = 0;
+                foreach ($team as $value) {
+                    $j++;
+                    $str .= '<span class="label label-tag tag-id-1"><span class="tag">'.$value['name'].'</span><span class="hide">, </span></span>&nbsp';
+                    if($j%2 == 0){
+                         $str .= '<br><br/>';
+                    }
+                   
+                }
+                echo ''.$str;
             }
             else{
               ?>
