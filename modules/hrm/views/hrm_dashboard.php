@@ -23,7 +23,7 @@
 
                   .btn-secondary
                   {
-                    margin-left: 1050;
+                    margin-left: 25;
                   }
 
                     .previous
@@ -110,25 +110,7 @@
         <div id="staff_chart_by_age" class="hrm-marginauto hrm-minwidth310">
       </div>
       </div>
-      <style>
-                  .dt-buttons .btn-group
-                  {
-                    margin-left: 25;
-                  }
-
-                  .btn-secondary
-                  {
-                    margin-left: 25;
-                  }
-
-                    .previous
-                    {
-                      margin-left: 25;
-
-                    }
-          
-
-          </style>
+    
       <div class="col-md-6">
         <div id="contract_type_chart" class="hrm-marginauto hrm-minwidth310">
       </div>
