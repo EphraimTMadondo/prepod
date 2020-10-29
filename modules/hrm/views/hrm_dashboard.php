@@ -110,6 +110,25 @@
         <div id="staff_chart_by_age" class="hrm-marginauto hrm-minwidth310">
       </div>
       </div>
+      <style>
+                  .dt-buttons .btn-group
+                  {
+                    margin-left: 25;
+                  }
+
+                  .btn-secondary
+                  {
+                    margin-left: 25;
+                  }
+
+                    .previous
+                    {
+                      margin-left: 25;
+
+                    }
+          
+
+          </style>
       <div class="col-md-6">
         <div id="contract_type_chart" class="hrm-marginauto hrm-minwidth310">
       </div>
@@ -131,25 +150,7 @@
                         <th><?php echo _l('sign_day'); ?></th>
                     </thead>
                     <tbody>
-                    <style>
-                  .dt-buttons .btn-group
-                  {
-                    margin-left: 25;
-                  }
-
-                  .btn-secondary
-                  {
-                    margin-left: 25;
-                  }
-
-                    .previous
-                    {
-                      margin-left: 25;
-
-                    }
-          
-
-          </style>
+              
                         <?php 
                          $list_member_id = [];
                         foreach($data_dash['overdue_contract_data'] as $overdue_contract){
