@@ -17,7 +17,7 @@
 .top
 {
 
-    margin-top: 65px;
+    margin-top: 35px;
 
 }
 
