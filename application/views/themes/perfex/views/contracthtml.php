@@ -20,7 +20,7 @@
 
 }
 
-.pull-right {
+.float-right {
     float: right!important;
 }
 </style>
