@@ -23,7 +23,7 @@
 
                   .btn-secondary
                   {
-                    margin-left: 25;
+                    margin-left: 50;
                   }
 
                     .previous
@@ -131,7 +131,25 @@
                         <th><?php echo _l('sign_day'); ?></th>
                     </thead>
                     <tbody>
-                     
+                    <style>
+                  .dt-buttons .btn-group
+                  {
+                    margin-left: 25;
+                  }
+
+                  .btn-secondary
+                  {
+                    margin-left: 25;
+                  }
+
+                    .previous
+                    {
+                      margin-left: 25;
+
+                    }
+          
+
+          </style>
                         <?php 
                          $list_member_id = [];
                         foreach($data_dash['overdue_contract_data'] as $overdue_contract){
