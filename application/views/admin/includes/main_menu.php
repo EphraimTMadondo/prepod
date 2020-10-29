@@ -182,7 +182,7 @@
                     <ul class="menu-content">
                         <li><a href="<?php echo base_url();?>admin/hrm"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Dashboard">Dashboard</span></a>
                         </li>
-                        <li><a href="<?php echo base_url();?>admin/hrm/staff_infor"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Staff">Staff</span></a>
+                        <li><a href="<?php echo base_url();?>admin/staff"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Staff">Staff</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/hrm/contracts"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Contracts">Contract</span></a>
                         </li>
@@ -244,8 +244,7 @@
                         </li>
                         <li><a href="<?php echo base_url();?>admin/reports/leads"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Leads">Leads</span></a>
                         </li>
-                        <li><a href="<?php echo base_url();?>admin/staff/timesheets?view=all"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Timesheets overview ">Timesheets overview </span></a>
-                        </li>
+                        
                         <li><a href="<?php echo base_url();?>admin/reports/knowledge_base_articles"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="KB Articles">KB Articles</span></a>
                         </li>
                     </ul>
