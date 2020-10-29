@@ -175,7 +175,7 @@
 
 
 .dataTables_info{
-  display: flex;
+  display: none;
 
 }
 
