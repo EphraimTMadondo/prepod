@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <style>
 
-.img-responsive{
+.navbar-brand {
     display: block;
     max-width: 100%;
     height: auto;
