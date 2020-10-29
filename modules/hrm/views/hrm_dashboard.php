@@ -16,10 +16,12 @@
         <div class="card">
           <div class="card-body">
           <style>
-                  dt-buttons btn-group
+                  .dt-buttons btn-group
                   {
                     margin-left: 25;
                   }
+
+                  
           </style>
 
 <div class="widget" id="widget-<?php echo basename(__FILE__,".php"); ?>" data-name="<?php echo _l('hrm'); ?>">
