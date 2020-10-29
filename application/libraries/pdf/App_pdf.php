@@ -73,8 +73,31 @@ abstract class App_pdf extends TCPDF
         $this->SetFont($this->get_font_name(), '', $this->get_font_size());
         $this->setImageScale($this->image_scale);
         $this->setJPEGQuality($this->jpeg_quaility);
-
-        $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']);
+        
+        if($this->type() == 'proposal')
+        {
+                $proposal     = hooks()->apply_filters('proposal_html_pdf_data', $this);
+                $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']); // cover page
+                $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']); // pricing and content
+                $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']); // terms and conditions 
+                $_SESSION['start_y'] =  $this->GetY();
+               
+        
+        
+        }
+             if($this->type() == 'contract'  )
+        {
+                $proposal     = hooks()->apply_filters('proposal_html_pdf_data', $this);
+                $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']); // cover page
+                $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']); // pricing and content
+          
+                $_SESSION['start_y'] =  $this->GetY();
+               
+        
+        
+        }
+       $this->AddPage($this->formatArray['orientation'], $this->formatArray['format']);
+     
 
         if ($this->ci->input->get('print') == 'true') {
             // force print dialog
