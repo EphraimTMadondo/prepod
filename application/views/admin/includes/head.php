@@ -76,14 +76,14 @@
     <link rel='stylesheet' type='text/css' href='<?php echo base_url();?>assets/frest/app-assets/vendors/css/tables/datatable/datatables.min.css'>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frest/app-assets/vendors/css/file-uploaders/dropzone.min.css">
     <!-- END: Theme CSS--->
+    <style src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.min.css"></style>
 
     <!-- BEGIN: Page CSS-->
     <?php
     
-    <style src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.min.css"></style>
 
 
-    
+
 
 
       switch($page)
