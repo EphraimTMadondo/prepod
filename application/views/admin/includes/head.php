@@ -80,7 +80,9 @@
     <!-- BEGIN: Page CSS-->
     <?php
     
-    <script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.min.css"></script>
+    <style src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.min.css"></style>
+
+
       switch($page)
       {
         case 'dashboard':
