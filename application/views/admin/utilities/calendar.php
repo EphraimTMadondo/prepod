@@ -2,7 +2,18 @@
 <?php init_head(true, 'calendar'); ?>
     <!-- BEGIN: Content-->
     <div class="app-content content">
-      
+      <style>
+      .calendar-wrapper .sidebar {
+    width: 190px;
+    height: 100%;
+    border-top-left-radius: 0.267rem;
+    border-bottom-left-radius: 0.267rem;
+    transition: all .3s ease;
+    float: left;
+    padding: 1.53rem 1.33rem;
+}
+      </style>
+
       <div class="content-overlay">
         <?php $this->load->view('admin/includes/alerts'); ?>
       </div>
