@@ -3,14 +3,10 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
       <style>
-      .calendar-wrapper .sidebar {
-    width: 190px;
-    height: 100%;
-    border-top-left-radius: 0.267rem;
-    border-bottom-left-radius: 0.267rem;
-    transition: all .3s ease;
-    float: left;
-    padding: 1.53rem 1.33rem;
+      .btn-primary {
+    border-color: #2c6de9 !important;
+    background-color: #5A8DEE !important;
+    color: #fff;
 }
       </style>
 
