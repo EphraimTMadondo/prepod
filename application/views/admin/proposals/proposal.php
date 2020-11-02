@@ -60,8 +60,7 @@
                          <div class="form-group" app-field-wrapper="summary">
                             DESCRIPTION
                                  
-                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4">
-                                <?php echo $proposal->summary;?>
+                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->summary;?>
                             </textarea>
                             
                         </div>
@@ -304,16 +303,7 @@
 </div>
 <?php init_tail(); ?>
 
-<script>
-removeTextAreaWhiteSpace();
-function removeTextAreaWhiteSpace() {
-var myTxtArea = document.getElementById('introduction');
-myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g,’’);
-var myTxtArea = document.getElementById('description');
-myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g,’’);
-}
 
-</script>
 <script>
    var _rel_id = $('#rel_id'),
    _rel_type = $('#rel_type'),
