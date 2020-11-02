@@ -5447,6 +5447,49 @@ function timer_action(e, task_id, timer_id, adminStop) {
     });
 }
 
+
+function timer_action2(e, task_id, timer_id, adminStop) {
+
+    timer_id = typeof(timer_id) == 'undefined' ? '' : timer_id;
+
+    var $timerSelectTask = $('#timer-select-task');
+    if (task_id === '' && $timerSelectTask.is(':visible')) {
+        return;
+    }
+
+    $(e).addClass('disabled');
+
+    var data = {};
+   // data.task_id = task_id;
+    data.timer_id = timer_id;
+    data.note = $("body").find('#timesheet_note').val();
+    if (!data.note) { data.note = ''; }
+    var taskModalVisible = $('#task-modal').is(':visible');
+    var reqUrl = admin_url + 'tasks/timer_tracking?single_task=' + taskModalVisible;
+    if (adminStop) {
+        reqUrl += '&admin_stop=' + adminStop;
+    }
+    $.post(reqUrl, data).done(function(response) {
+        response = JSON.parse(response);
+
+        // Timer action, stopping from staff/member/id
+        if ($('body').hasClass('member')) {
+            window.location.reload();
+        }
+
+        if (taskModalVisible) { _task_append_html(response.taskHtml); }
+
+        if ($timerSelectTask.is(':visible')) {
+            $timerSelectTask.find('.system-popup-close').click();
+        }
+
+        _init_timers_top_html(JSON.parse(response.timers));
+
+        $('.popover-top-timer-note').popover('hide');
+        reload_tasks_tables();
+    });
+}
+
 // Init task modal and get data from server
 function init_task_modal(task_id, comment_id) {
 

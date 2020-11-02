@@ -34,7 +34,7 @@ foreach ($startedTimers as $timer) {
         $data .= '<button type=\'button\' onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].');\' class=\'btn btn-secondary btn-xs\'>'._l('save').'</button>" ';
         $data .= 'onclick="return false;">';
     } else {
-        $data .= 'onclick=\'timer_action(this,'.$timer['task_id'].','.$timer['id'].'); return false;\'>';
+        $data .= 'onclick=\'timer_action2(this,'.$timer['task_id'].','.$timer['id'].'); return false;\'>';
     }
 
     $data .= '<i class="fa fa-clock-o"></i> '._l('task_stop_timer').'</a>';
