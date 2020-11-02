@@ -54,11 +54,7 @@
                                         Introduction
                                  </label>
                                  
-                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4">
-                                <?php echo $proposal->introduction;?>
-                                
-                                
-                            </textarea>
+                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->introduction;?></textarea>
                             
                         </div>
                          <div class="form-group" app-field-wrapper="summary">
