@@ -5449,7 +5449,7 @@ function timer_action(e, task_id, timer_id, adminStop) {
         reload_tasks_tables();
     });
 
-    if(task_id != '')
+    if(timer_id != '')
     {
         location.reload();
     }
