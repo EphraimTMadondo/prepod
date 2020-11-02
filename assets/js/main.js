@@ -5454,9 +5454,9 @@ function timer_action2(e, task_id, timer_id, adminStop) {
 
     timer_id = typeof(timer_id) == 'undefined' ? '' : timer_id;
 
-    var $timerSelectTask = $('#timer-select-task');
-    if (task_id === '' && $timerSelectTask.is(':visible')) {
-        return;
+   // var $timerSelectTask = $('#timer-select-task');
+ //   if (task_id === '' && $timerSelectTask.is(':visible')) {
+      //  return;
     }
     if (timer_id !== '' && task_id == '0') {
         var popupData = {};
