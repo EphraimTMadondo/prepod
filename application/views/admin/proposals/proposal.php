@@ -317,7 +317,7 @@ var myTxtArea = document.getElementById('description');
 myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g,’’);
 }
 
-</sctipt>
+</script>
 <script>
    var _rel_id = $('#rel_id'),
    _rel_type = $('#rel_type'),
