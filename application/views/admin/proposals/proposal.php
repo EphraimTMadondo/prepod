@@ -307,6 +307,17 @@
    </div>
 </div>
 <?php init_tail(); ?>
+
+<script>
+removeTextAreaWhiteSpace();
+function removeTextAreaWhiteSpace() {
+var myTxtArea = document.getElementById('introduction');
+myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g,’’);
+var myTxtArea = document.getElementById('description');
+myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g,’’);
+}
+
+</sctipt>
 <script>
    var _rel_id = $('#rel_id'),
    _rel_type = $('#rel_type'),
