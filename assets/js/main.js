@@ -5392,6 +5392,9 @@ function timer_action(e, task_id, timer_id, adminStop) {
 
     timer_id = typeof(timer_id) == 'undefined' ? '' : timer_id;
 
+    if(timer_id == 0)
+    {
+
     var $timerSelectTask = $('#timer-select-task');
     if (task_id === '' && $timerSelectTask.is(':visible')) {
         return;
@@ -5413,7 +5416,7 @@ function timer_action(e, task_id, timer_id, adminStop) {
         init_ajax_search('tasks', '#timer_add_task_id', undefined, admin_url + 'tasks/ajax_search_assign_task_to_timer');
         return false;
     }
-
+}
     $(e).addClass('disabled');
 
     var data = {};
@@ -5445,7 +5448,14 @@ function timer_action(e, task_id, timer_id, adminStop) {
         $('.popover-top-timer-note').popover('hide');
         reload_tasks_tables();
     });
+
+    if(timer_id != 0)
+    {
+        location.reload();
+    }
 }
+
+
 
 // Init task modal and get data from server
 function init_task_modal(task_id, comment_id) {
