@@ -5392,7 +5392,7 @@ function timer_action(e, task_id, timer_id, adminStop) {
 
     timer_id = typeof(timer_id) == 'undefined' ? '' : timer_id;
 
-    if(timer_id =='')
+    if(timer_id == 0)
     {
 
     var $timerSelectTask = $('#timer-select-task');
