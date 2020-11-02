@@ -293,12 +293,13 @@
                      
                      
                      
-         <?php echo form_close(); ?>
+      
          <?php $this->load->view('admin/invoice_items/item'); ?>
       </div>
       <div class="btn-bottom-pusher"></div>
    </div>
 </div>
+<?php echo form_close(); ?>
 <?php init_tail(); ?>
 
 
