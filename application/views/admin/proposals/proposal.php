@@ -71,10 +71,7 @@
                                         Terms & Conditions
                                  </label>
                                  
-                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4">
-                                
-                                <?php echo $proposal->terms_and_conditions;?>
-                            </textarea>
+                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4"><?php echo $proposal->terms_and_conditions;?></textarea>
                             
                         </div>
                        
