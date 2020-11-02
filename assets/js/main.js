@@ -5392,27 +5392,7 @@ function timer_action(e, task_id, timer_id, adminStop) {
 
     timer_id = typeof(timer_id) == 'undefined' ? '' : timer_id;
 
-    var $timerSelectTask = $('#timer-select-task');
-    if (task_id === '' && $timerSelectTask.is(':visible')) {
-        return;
-    }
-    if (timer_id !== '' && task_id == '0') {
-        var popupData = {};
-        popupData.content = '';
-        popupData.content += '<div class="row">';
-        popupData.content += '<div class="form-group"><select id="timer_add_task_id" data-empty-title="' + app.lang.search_tasks + '" data-width="100%" class="ajax-search" data-live-search="true">';
-        popupData.content += '</select></div>';
-        popupData.content += '<div class="form-group">';
-        popupData.content += '<textarea id="timesheet_note" placeholder="' + app.lang.note + '" style="margin:0 auto;width:60%;" rows="4" class="form-control"></textarea>';
-        popupData.content += '</div>';
-        popupData.content += '<button type=\'button\' onclick=\'timer_action(this,document.getElementById("timer_add_task_id").value,' + timer_id + ');return false;\' class=\'btn btn-info\'>' + app.lang.confirm + '</button>';
 
-        popupData.message = app.lang.task_stop_timer;
-        var $popupHTML = system_popup(popupData);
-        $popupHTML.attr('id', 'timer-select-task');
-        init_ajax_search('tasks', '#timer_add_task_id', undefined, admin_url + 'tasks/ajax_search_assign_task_to_timer');
-        return false;
-    }
 
     $(e).addClass('disabled');
 
@@ -5446,6 +5426,8 @@ function timer_action(e, task_id, timer_id, adminStop) {
         reload_tasks_tables();
     });
 }
+
+
 
 // Init task modal and get data from server
 function init_task_modal(task_id, comment_id) {
