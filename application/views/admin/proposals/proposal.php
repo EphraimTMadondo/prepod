@@ -28,10 +28,9 @@
             ?>
          <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
          
-         <div class="col-md-12" style = " margin-left: 15;">
-         <div class = "card" style = "margin-top: 75;">
+         <div class="col-md-6 offset-md-3">
             <div class="card mtop20">
-               <div class="card-body">
+               <div class="panel-body">
                     <p class="center newTitle">Proposal Template </p>
                               
                               <hr class="mtop15">
@@ -54,15 +53,19 @@
                                         Introduction
                                  </label>
                                  
-                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->introduction;?></textarea>
+                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4">
+                                <?php echo $proposal->introduction;?>
+                                
+                                
+                            </textarea>
                             
                         </div>
                          <div class="form-group" app-field-wrapper="summary">
-                         <label for="introduction" class="control-label">
-                                  <small class="req text-danger">*</small>
-                                        Summary
-                                 </label>
-                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->summary;?></textarea>
+                            DESCRIPTION
+                                 
+                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4">
+                                <?php echo $proposal->summary;?>
+                            </textarea>
                             
                         </div>
                        <div class="form-group" app-field-wrapper="terms_and_conditions">
@@ -71,7 +74,10 @@
                                         Terms & Conditions
                                  </label>
                                  
-                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4"><?php echo $proposal->terms_and_conditions;?></textarea>
+                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4">
+                                
+                                <?php echo $proposal->terms_and_conditions;?>
+                            </textarea>
                             
                         </div>
                        
@@ -83,9 +89,8 @@
                  
                </div>
             </div>
-            </div>
          </div>
-         <div class="col-md-12" style = " margin-left: 15;">
+         <div class="col-md-12">
             <div class="card">
                <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
             </div>
@@ -93,9 +98,9 @@
          
          
          
-           <div class="col-md-12" style = " margin-left: 15;">
+           <div class="col-md-6 offset-md-3">
                <div class="card">
-               <div class="card-body">
+               <div class="panel-body">
                     <p class="center newTitle">Customer  Details </p>
                               
                               <hr class="mtop15">
@@ -293,16 +298,13 @@
                      
                      
                      
-      
+         <?php echo form_close(); ?>
          <?php $this->load->view('admin/invoice_items/item'); ?>
       </div>
       <div class="btn-bottom-pusher"></div>
    </div>
 </div>
-<?php echo form_close(); ?>
 <?php init_tail(); ?>
-
-
 <script>
    var _rel_id = $('#rel_id'),
    _rel_type = $('#rel_type'),
