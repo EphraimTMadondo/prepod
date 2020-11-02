@@ -116,6 +116,8 @@
 <script src="<?php echo base_url();?>assets/js/app.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
+<script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
+
 
 
 <!-- END: Theme JS-->
