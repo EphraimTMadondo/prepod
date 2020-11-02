@@ -6382,10 +6382,10 @@ function delete_item(row, itemid) {
 function format_money(total, excludeSymbol) {
 
     if (typeof(excludeSymbol) != 'undefined' && excludeSymbol) {
-        return accounting.formatMoney(total, { symbol: '' });
+      //  return accounting.formatMoney(total, { symbol: '' });
     }
 
-    return accounting.formatMoney(total);
+  //  return accounting.formatMoney(total);
 }
 
 // Set the currency for accounting
