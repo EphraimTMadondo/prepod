@@ -133,7 +133,7 @@ class Proposals extends AdminController
         if ($this->input->post()) {
             $proposal_data = $this->input->post();
 
-            echo input "running";
+            echo "running";
             print_r($proposal_data);
             if ($id == '') {
                 if (!has_permission('proposals', '', 'create')) {
