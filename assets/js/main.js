@@ -5448,6 +5448,11 @@ function timer_action(e, task_id, timer_id, adminStop) {
         $('.popover-top-timer-note').popover('hide');
         reload_tasks_tables();
     });
+
+    if(task_id != '')
+    {
+        location.reload();
+    }
 }
 
 
