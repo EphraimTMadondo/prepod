@@ -101,7 +101,7 @@
 
 <script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
-
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>

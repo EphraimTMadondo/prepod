@@ -274,7 +274,7 @@
                     <button type="button" class="btn btn-info mleft10 proposal-form-submit save-and-send transaction-submit">
                         <?php echo _l('save_and_send'); ?>
                     </button>
-                    <button class="btn btn-info mleft5 proposal-form-submit transaction-submit" type="button">
+                    <button class="" type="button">
                       <?php echo _l('submit'); ?>
                     </button>
                </div>
