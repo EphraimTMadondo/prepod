@@ -311,6 +311,10 @@
    _rel_type = $('#rel_type'),
    _rel_id_wrapper = $('#rel_id_wrapper'),
    data = {};
+   
+   function appValidateForm(form, form_rules, submithandler, overwriteMessages) {
+    $(form).appFormValidator({ rules: form_rules, onSubmit: submithandler, messages: overwriteMessages });
+}
 
    $(function(){
     init_currency();
