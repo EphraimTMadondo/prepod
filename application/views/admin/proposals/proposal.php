@@ -302,6 +302,7 @@
       <div class="btn-bottom-pusher"></div>
    </div>
 </div>
+<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js"></script>
 
 
