@@ -130,6 +130,7 @@ class Proposals extends AdminController
 
     public function proposal($id = '')
     {
+        echo "running";
         if ($this->input->post()) {
             $proposal_data = $this->input->post();
 
