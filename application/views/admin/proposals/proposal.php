@@ -303,8 +303,11 @@
    </div>
 </div>
 
+
 <!--
 <script type="text/javascript" id="vendor-js" src="<?php echo base_url();?>assets/builds/vendor-admin.js?v=2.4.2"></script>
+
+  -->
 <script type="text/javascript" id="datatables-js" src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js"></script>
@@ -313,7 +316,7 @@
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.min.js"></script>
 
--->
+
 <?php init_tail(); ?>
 
 
