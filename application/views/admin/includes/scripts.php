@@ -75,8 +75,8 @@
       case "projects":
       case "reports":
       case "staff":
-         //echo "<script src='".base_url()."assets/plugins/jquery-circle-progress/circle-progress.min.js'></script>\n";
-        // echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/plugins/jquery-circle-progress/circle-progress.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
       break;
       case "hrm":
       case "purchase":
@@ -101,7 +101,7 @@
 
 <script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
+
 <script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
