@@ -274,7 +274,7 @@
                     <button type="button" class="btn btn-info mleft10 proposal-form-submit save-and-send transaction-submit">
                         <?php echo _l('save_and_send'); ?>
                     </button>
-                    <button class="btn btn-info mleft5 proposal-form-submit transaction-submit" type="button" onclick = "validate_proposal_form()"
+                    <button class="btn btn-info mleft5 proposal-form-submit transaction-submit" type="button" onclick = ""
                     
                     >
                       <?php echo _l('submit'); ?>
@@ -296,13 +296,13 @@
                      
                      
                      
-      
+          <?php echo form_close(); ?>
          <?php $this->load->view('admin/invoice_items/item'); ?>
       </div>
       <div class="btn-bottom-pusher"></div>
    </div>
 </div>
-<?php echo form_close(); ?>
+
 <?php init_tail(); ?>
 
 
