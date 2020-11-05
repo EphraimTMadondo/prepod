@@ -35,6 +35,14 @@
 
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
 
+<script src="<?php echo base_url();?>assets/js/app.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
+<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
+
+<script src="<?php echo base_url();?>application/views/themes/assets/plugins/internal/validation/app-form-validation.js"></script>
+<script src="<?php echo base_url();?>assets/builds/common.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/internal/validation/app-form-validation.js"></script>
+
 -->
 
 
@@ -123,13 +131,7 @@
 <script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
 
-<script src="<?php echo base_url();?>assets/js/app.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
-<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
 
-<script src="<?php echo base_url();?>application/views/themes/assets/plugins/internal/validation/app-form-validation.js"></script>
-<script src="<?php echo base_url();?>assets/builds/common.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/internal/validation/app-form-validation.js"></script>
 
 
 
