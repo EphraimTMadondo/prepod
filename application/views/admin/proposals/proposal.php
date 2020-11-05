@@ -426,32 +426,7 @@ function init_items_sortable(preview_table) {
     var _items_sortable = $("#wrapper").find('.items tbody');
 
     if (_items_sortable.length === 0) { return; }
-    _items_sortable.sortable({
-        helper: fixHelperTableHelperSortable,
-        handle: '.dragger',
-        placeholder: 'ui-placeholder',
-        itemPath: '> tbody',
-        itemSelector: 'tr.sortable',
-        items: "tr.sortable",
-        update: function() {
-            if (typeof(preview_table) == 'undefined') {
-                reorder_items();
-            } else {
-                // If passed from the admin preview there is other function for re-ordering
-                save_ei_items_order();
-            }
-        },
-        sort: function(event, ui) {
-            // Firefox fixer when dragging
-            var $target = $(event.target);
-            if (!/html|body/i.test($target.offsetParent()[0].tagName)) {
-                var top = event.pageY - $target.offsetParent().offset().top - (ui.helper.outerHeight(true) / 2);
-                ui.helper.css({
-                    'top': top + 'px'
-                });
-            }
-        }
-    });
+   
 }
 </script>
 
