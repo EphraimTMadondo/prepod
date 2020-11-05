@@ -75,8 +75,8 @@
   75       case "projects":\r
   76       case "reports":\r
   77       case "staff":\r
-  78          //echo "<script src='".base_url()."assets/plugins/jquery-circle-progress/circle-progress.min.js'></script>\n";\r
-  79         // echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";\r
+  78          echo "<script src='".base_url()."assets/plugins/jquery-circle-progress/circle-progress.min.js'></script>\n";\r
+  79          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";\r
   80       break;\r
   81       case "hrm":\r
   82       case "purchase":\r
@@ -115,101 +115,90 @@
  115 \r
  116 <script src="<?php echo base_url();?>assets/js/app.js"></script>\r
  117 <script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>\r
- 118 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>\r
- 119 \r
- 120 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/internal/validation/app-form-validation.js"></script>\r
- 121 <script src="<?php echo base_url();?>assets/builds/common.js"></script>\r
- 122 <script src="<?php echo base_url();?>assets/plugins/internal/validation/app-form-validation.js"></script>\r
- 123 \r
- 124 \r
- 125 \r
- 126 \r
- 127 \r
- 128 \r
- 129 \r
- 130 <!-- END: Theme JS-->\r
- 131 \r
- 132 <!-- BEGIN: Page JS-->\r
- 133 <?php\r
- 134    switch($page)\r
- 135    {\r
- 136       case 'dashboard':\r
- 137          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js'></script>\n";\r
- 138          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/cards/widgets.js'></script>\n";\r
- 139          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>\n";\r
- 140          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>\n";\r
- 141          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>\n";\r
+ 118 \r
+ 119 <!-- END: Theme JS-->\r
+ 120 \r
+ 121 <!-- BEGIN: Page JS-->\r
+ 122 <?php\r
+ 123    switch($page)\r
+ 124    {\r
+ 125       case 'dashboard':\r
+ 126          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js'></script>\n";\r
+ 127          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/cards/widgets.js'></script>\n";\r
+ 128          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>\n";\r
+ 129          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>\n";\r
+ 130          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>\n";\r
+ 131       break;\r
+ 132       case 'calendar':\r
+ 133          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>\n";\r
+ 134          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>\n";\r
+ 135          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>\n";\r
+ 136       break;\r
+ 137       case "task_list":\r
+ 138          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-todo.js'></script>\n";\r
+ 139       break;\r
+ 140       case "mailbox":\r
+ 141          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";\r
  142       break;\r
- 143       case 'calendar':\r
- 144          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>\n";\r
- 145          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>\n";\r
- 146          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>\n";\r
+ 143       case "projects":\r
+ 144          echo "<script src='".base_url()."assets/js/projects.js'></script>\n";\r
+ 145       break;\r
+ 146       default:\r
  147       break;\r
- 148       case "task_list":\r
- 149          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-todo.js'></script>\n";\r
- 150       break;\r
- 151       case "mailbox":\r
- 152          echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";\r
- 153       break;\r
- 154       case "projects":\r
- 155          echo "<script src='".base_url()."assets/js/projects.js'></script>\n";\r
- 156       break;\r
- 157       default:\r
- 158       break;\r
- 159    }\r
- 160 ?>\r
- 161 \r
- 162 <script>\r
- 163         function custom_fields_hyperlink(){\r
- 164          var cf_hyperlink = $('body').find('.cf-hyperlink');\r
- 165          if(cf_hyperlink.length){\r
- 166              $.each(cf_hyperlink,function(){\r
- 167                 var cfh_wrapper = $(this);\r
- 168                 var cfh_field_to = cfh_wrapper.attr('data-fieldto');\r
- 169                 var cfh_field_id = cfh_wrapper.attr('data-field-id');\r
- 170                 var textEl = $('body').find('#custom_fields_'+cfh_field_to+'_'+cfh_field_id+'_popover');\r
- 171                 var hiddenField = $("#custom_fields\\\["+cfh_field_to+"\\\]\\\["+cfh_field_id+"\\\]");\r
- 172                 var cfh_value = cfh_wrapper.attr('data-value');\r
- 173                 hiddenField.val(cfh_value);\r
- 174 \r
- 175                 if($(hiddenField.val()).html() != ''){\r
- 176                     textEl.html($(hiddenField.val()).html());\r
- 177                 }\r
- 178                 var cfh_field_name = cfh_wrapper.attr('data-field-name');\r
- 179                 textEl.popover({\r
- 180                     html: true,\r
- 181                     trigger: "manual",\r
- 182                     placement: "top",\r
- 183                     title:cfh_field_name,\r
- 184                     content:function(){\r
- 185                         return $(cfh_popover_templates[cfh_field_id]).html();\r
- 186                     }\r
- 187                 }).on("click", function(e){\r
- 188                     var $popup = $(this);\r
- 189                     $popup.popover("toggle");\r
- 190                     var titleField = $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_title");\r
- 191                     var urlField = $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_link");\r
- 192                     var ttl = $(hiddenField.val()).html();\r
- 193                     var cfUrl = $(hiddenField.val()).attr("href");\r
- 194                     if(cfUrl){\r
- 195                         $('#cf_hyperlink_open_'+cfh_field_id).attr('href',(cfUrl.indexOf('://') === -1 ? 'http://' + cfUrl : cfUrl));\r
- 196                     }\r
- 197                     titleField.val(ttl);\r
- 198                     urlField.val(cfUrl);\r
- 199                     $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_btn-save").click(function(){\r
- 200                         hiddenField.val((urlField.val() != '' ? '<a href="'+urlField.val()+'" target="_blank">' + titleField.val() + '</a>' : ''));\r
- 201                         textEl.html(titleField.val() == "" ? "Click here to add link" : titleField.val());\r
- 202                         $popup.popover("toggle");\r
- 203                     });\r
- 204                     $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_btn-cancel").click(function(){\r
- 205                         if(urlField.val() == ''){\r
- 206                             hiddenField.val('');\r
- 207                         }\r
- 208                         $popup.popover("toggle");\r
- 209                     });\r
- 210                 });\r
- 211             });\r
- 212          }\r
- 213      }\r
- 214  </script>\r
- 215 <!-- END: Page JS-->\r
+ 148    }\r
+ 149 ?>\r
+ 150 \r
+ 151 <script>\r
+ 152         function custom_fields_hyperlink(){\r
+ 153          var cf_hyperlink = $('body').find('.cf-hyperlink');\r
+ 154          if(cf_hyperlink.length){\r
+ 155              $.each(cf_hyperlink,function(){\r
+ 156                 var cfh_wrapper = $(this);\r
+ 157                 var cfh_field_to = cfh_wrapper.attr('data-fieldto');\r
+ 158                 var cfh_field_id = cfh_wrapper.attr('data-field-id');\r
+ 159                 var textEl = $('body').find('#custom_fields_'+cfh_field_to+'_'+cfh_field_id+'_popover');\r
+ 160                 var hiddenField = $("#custom_fields\\\["+cfh_field_to+"\\\]\\\["+cfh_field_id+"\\\]");\r
+ 161                 var cfh_value = cfh_wrapper.attr('data-value');\r
+ 162                 hiddenField.val(cfh_value);\r
+ 163 \r
+ 164                 if($(hiddenField.val()).html() != ''){\r
+ 165                     textEl.html($(hiddenField.val()).html());\r
+ 166                 }\r
+ 167                 var cfh_field_name = cfh_wrapper.attr('data-field-name');\r
+ 168                 textEl.popover({\r
+ 169                     html: true,\r
+ 170                     trigger: "manual",\r
+ 171                     placement: "top",\r
+ 172                     title:cfh_field_name,\r
+ 173                     content:function(){\r
+ 174                         return $(cfh_popover_templates[cfh_field_id]).html();\r
+ 175                     }\r
+ 176                 }).on("click", function(e){\r
+ 177                     var $popup = $(this);\r
+ 178                     $popup.popover("toggle");\r
+ 179                     var titleField = $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_title");\r
+ 180                     var urlField = $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_link");\r
+ 181                     var ttl = $(hiddenField.val()).html();\r
+ 182                     var cfUrl = $(hiddenField.val()).attr("href");\r
+ 183                     if(cfUrl){\r
+ 184                         $('#cf_hyperlink_open_'+cfh_field_id).attr('href',(cfUrl.indexOf('://') === -1 ? 'http://' + cfUrl : cfUrl));\r
+ 185                     }\r
+ 186                     titleField.val(ttl);\r
+ 187                     urlField.val(cfUrl);\r
+ 188                     $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_btn-save").click(function(){\r
+ 189                         hiddenField.val((urlField.val() != '' ? '<a href="'+urlField.val()+'" target="_blank">' + titleField.val() + '</a>' : ''));\r
+ 190                         textEl.html(titleField.val() == "" ? "Click here to add link" : titleField.val());\r
+ 191                         $popup.popover("toggle");\r
+ 192                     });\r
+ 193                     $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_btn-cancel").click(function(){\r
+ 194                         if(urlField.val() == ''){\r
+ 195                             hiddenField.val('');\r
+ 196                         }\r
+ 197                         $popup.popover("toggle");\r
+ 198                     });\r
+ 199                 });\r
+ 200             });\r
+ 201          }\r
+ 202      }\r
+ 203  </script>\r
+ 204 <!-- END: Page JS-->\r
