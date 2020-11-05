@@ -48,7 +48,32 @@
                         <?php $value = (isset($proposal) ? $proposal->subject : ''); ?>
                         <?php $attrs = (isset($proposal) ? array() : array('autofocus'=>true)); ?>
                         <?php echo render_input('subject','proposal_subject',$value,'text',$attrs); ?>
-                      
+                        <div class="form-group" app-field-wrapper="introduction">
+                            <label for="introduction" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Introduction
+                                 </label>
+                                 
+                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->introduction;?></textarea>
+                            
+                        </div>
+                         <div class="form-group" app-field-wrapper="summary">
+                         <label for="introduction" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Summary
+                                 </label>
+                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->summary;?></textarea>
+                            
+                        </div>
+                       <div class="form-group" app-field-wrapper="terms_and_conditions">
+                            <label for="terms_and_conditions" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Terms & Conditions
+                                 </label>
+                                 
+                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4"><?php echo $proposal->terms_and_conditions;?></textarea>
+                            
+                        </div>
                        
                          
                         
