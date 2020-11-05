@@ -62,7 +62,8 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
    
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
-         echo "<script src='".base_url()."application/views/themes/assets/js/dashboard-custom.js'></script>\n";
+         
+         //echo "<script src='".base_url()."application/views/themes/assets/js/dashboard-custom.js'></script>\n";
        
       
       break;
@@ -121,7 +122,8 @@
 <script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
-<script src="<?php echo base_url();?>modules/assets/js/proposal.js"></script>
+<!--
+<script src="<?php echo base_url();?>modules/assets/js/proposal.js"></script> -->
 
 <script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
