@@ -417,6 +417,10 @@
        currency : 'required',
      });
    }
+
+   function appValidateForm(form, form_rules, submithandler, overwriteMessages) {
+    $(form).appFormValidator({ rules: form_rules, onSubmit: submithandler, messages: overwriteMessages });
+}
 </script>
 </body>
 </html>
