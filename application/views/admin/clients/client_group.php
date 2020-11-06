@@ -11,7 +11,15 @@
             padding: 15px 30px;
         }
         
-        
+        .add-title
+        {
+            color:white;
+        }
+
+        .edit-title
+        {
+            color:white;
+        }
                
                                         
 </style>
