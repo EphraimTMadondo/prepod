@@ -46,61 +46,7 @@
                         <?php } ?>
                         <a href="<?php echo admin_url('clients/all_contacts'); ?>"  class="btn btn-primary">
                         <?php echo _l('customer_contacts'); ?></a>
-                        <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
-                           <option value="" data-tokens="<?php echo _l('customers_sort_all'); ?>"><?php echo _l('customers_sort_all'); ?></option>
-                           <?php if(get_option('customer_requires_registration_confirmation') == '1' || total_rows(db_prefix().'clients','registration_confirmed=0') > 0) { ?>
-                              <option value="requires_registration_confirmation" data-tokens="<?php echo _l('customer_requires_registration_confirmation'); ?>"><?php echo _l('customer_requires_registration_confirmation'); ?></option>
-                           <?php } ?>
-                           <option value="my_customers" data-tokens="<?php echo _l('customers_assigned_to_me'); ?>"><?php echo _l('customers_assigned_to_me'); ?></option>
-                           <?php if(count($groups) > 0){ ?>
-                              <optgroup label="<?php echo _l('customer_groups'); ?>">
-                                 <?php foreach($groups as $group){ ?>
-                                    <option value="customer_group_<?php echo $group['id']; ?>" data-tokens="<?php echo $group['name']; ?>"><?php echo $group['name']; ?></option>
-                                 <?php } ?>
-                              </optgroup>
-                           <?php } ?>
-                           <?php if(count($countries) > 1){ ?>
-                              <optgroup label="<?php echo _l('clients_country'); ?>">
-                                 <?php foreach($countries as $country){ ?>
-                                    <option value="country_<?php echo $country['country_id']; ?>" data-tokens="<?php echo $country['short_name']; ?>"><?php echo $country['short_name']; ?></option>
-                                 <?php } ?>
-                              </optgroup>
-                           <?php } ?>
-                           <optgroup label="<?php echo _l('invoices'); ?>">
-                              <?php foreach($invoice_statuses as $status){ ?>
-                                 <option value="invoices_<?php echo $status; ?>" data-tokens="<?php echo $status; ?>"><?php echo $status; ?></option>
-                              <?php } ?>
-                           </optgroup>
-                           <optgroup label="<?php echo _l('estimates'); ?>">
-                              <?php foreach($estimate_statuses as $status){ ?>
-                                 <option value="estimates_<?php echo $status; ?>" data-tokens="<?php echo $status; ?>"><?php echo $status; ?></option>
-                              <?php } ?>
-                           </optgroup>
-                           <optgroup label="<?php echo _l('projects'); ?>">
-                              <?php foreach($project_statuses as $status){ ?>
-                                 <option value="projects_<?php echo $status; ?>" data-tokens="<?php echo $status; ?>"><?php echo $status; ?></option>
-                              <?php } ?>
-                           </optgroup>
-                           <optgroup label="<?php echo _l('proposals'); ?>">
-                              <?php foreach($proposal_statuses as $status){ ?>
-                                 <option  value="proposals_<?php echo $status; ?>" data-tokens="<?php echo $status; ?>"><?php echo $status; ?></option>
-                              <?php } ?>
-                           </optgroup>
-                           <?php if(count($contract_types) > 0){ ?>
-                              <optgroup label="<?php echo _l('contract_types'); ?>">
-                                 <?php foreach($contract_type_statuses as $status){ ?>
-                                    <option value="contract_type_<?php echo $status['id']; ?>" data-tokens="<?php echo _l('customer_have_contracts_by_type',$status['name']); ?>"><?php echo _l('customer_have_contracts_by_type',$status['name']); ?></option>
-                                 <?php } ?>
-                              </optgroup>
-                           <?php } ?>
-                           <?php if(count($customer_admins) > 0 && (has_permission('customers','','create') || has_permission('customers','','edit'))){ ?>
-                              <optgroup label="<?php echo _l('contract_types'); ?>">
-                                 <?php foreach($customer_admins as $cadmin){ ?>
-                                    <option value="responsible_admin_<?php echo $cadmin['staff_id']; ?>" data-tokens="<?php echo get_staff_full_name($cadmin['staff_id']); ?>"><?php echo get_staff_full_name($cadmin['staff_id']); ?></option>
-                                 <?php } ?>
-                              </optgroup>
-                           <?php } ?>
-                        </select>
+                       
                         <a href="#" onClick="$('#stats-top').toggle();" class="float-right btn btn-primary ml-1 mb-1 btn-with-tooltip cursor-pointer" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart-alt"></i></a>
                      </div>
                      <div class="clearfix"></div>
