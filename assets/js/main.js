@@ -3093,10 +3093,10 @@ function edit_todo_item(id) {
 
 // Date picker init with selected timeformat from settings
 function init_datepicker(element_date, element_time) {
-    // appDatepicker({
-    //     element_date: element_date,
-    //     element_time: element_time,
-    // });
+     appDatepicker({
+         element_date: element_date,
+         element_time: element_time,
+     });
 }
 
 // Init color pickers
