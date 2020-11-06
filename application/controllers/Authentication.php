@@ -243,7 +243,7 @@ class Authentication extends ClientsController
         
       if (is_staff_logged_in()) {
             
-            redirect(base_url().'admin/');    
+           // redirect(base_url().'admin/');    
          }
         
         session_start();
