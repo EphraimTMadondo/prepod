@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade _event" id="viewEvent">
   <div class="modal-dialog">
-      <style>
+  
           <style>
             .modal .modal-content .modal-header {
             align-items: center;
@@ -17,7 +17,7 @@
                
                                         
 </style>
-      </style>
+    
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
