@@ -42,8 +42,7 @@
                         <?php if (has_permission('customers','','create')) { ?>
                         <a href="<?php echo admin_url('clients/client'); ?>" class="btn btn-primary">
                         <?php echo _l('new_client'); ?></a>
-                        <a href="<?php echo admin_url('clients/import'); ?>"  class="btn btn-primary">
-                        <?php echo _l('import_customers'); ?></a>
+                    
                         <?php } ?>
                         <a href="<?php echo admin_url('clients/all_contacts'); ?>"  class="btn btn-primary">
                         <?php echo _l('customer_contacts'); ?></a>
