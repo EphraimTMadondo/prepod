@@ -53,9 +53,12 @@ class Client_groups_model extends App_Model
         if (is_numeric($id)) {
             $this->db->where('id', $id);
 
+
             return $this->db->get(db_prefix().'customers_groups')->row();
         }
         $this->db->order_by('name', 'asc');
+        $companyusername = $_SESSION['current_company'];
+        $this->db->where('company_username', $companyusername);
 
         return $this->db->get(db_prefix().'customers_groups')->result_array();
     }
