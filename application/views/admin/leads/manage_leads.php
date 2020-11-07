@@ -2,7 +2,11 @@
 <?php init_head(true, 'leads'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
-   <style>
+
+   <div class="content-overlay"></div>
+   <div class="content-wrapper">
+      <div class="row">
+      <style>
 
 .h1
 {
@@ -27,9 +31,7 @@ color: #475F7B;
 
 
       </style>
-   <div class="content-overlay"></div>
-   <div class="content-wrapper">
-      <div class="row">
+      
          <div class="col-md-12">
             <div class="mt-1">
                <div class="card-body">
