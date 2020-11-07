@@ -2,7 +2,29 @@
 <?php init_head(true, 'leads'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+<style>
 
+.h1
+{
+color: #475F7B;
+}
+
+.h2
+{
+color: #475F7B;
+}
+.h3
+{
+color: #475F7B;
+}
+
+.h4
+{
+color: #475F7B;
+}
+
+
+      </style>
    <div class="content-overlay"></div>
    <div class="content-wrapper">
       <div class="row">
@@ -211,13 +233,11 @@
                                     echo '</div>';
                                     ?>
                               </div>
-                                  <!--
                               <div class="col-md-3 leads-filter-column">
                                  <?php
                                     echo render_select('view_source',$sources,array('id','name'),'','',array('data-width'=>'100%','data-none-selected-text'=>_l('leads_source')),array(),'mb-0');
                                     ?>
                               </div>
-                                 -->
                               <div class="col-md-3 leads-filter-column">
                                  <div class="select-placeholder">
                                     <select name="custom_view" title="<?php echo _l('additional_filters'); ?>" id="custom_view" class="selectpicker" data-style="btn-outline-light" data-width="100%">
@@ -274,9 +294,7 @@
                                          </div>
                                           <?php echo render_select('move_to_status_leads_bulk',$statuses,array('id','name'),'ticket_single_change_status'); ?>
                                           <?php
-                                          /** 
                                              echo render_select('move_to_source_leads_bulk',$sources,array('id','name'),'lead_source');
-                                             */
                                              echo render_datetime_input('leads_bulk_last_contact','leads_dt_last_contact');
                                              if(has_permission('leads','','edit')){
                                                echo render_select('assign_to_leads_bulk',$staff,array('staffid',array('firstname','lastname')),'leads_dt_assigned');
@@ -358,15 +376,10 @@
                                'name'=>_l('leads_dt_status'),
                                'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-status')
                               );
-
-                           /**
                               $_table_data[] = array(
                                'name'=>_l('leads_source'),
                                'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-source')
                               );
-                                  */
-
-
                               $_table_data[] = array(
                                'name'=>_l('leads_dt_last_contact'),
                                'th_attrs'=>array('class'=>'toggleable', 'id'=>'th-last-contact')
