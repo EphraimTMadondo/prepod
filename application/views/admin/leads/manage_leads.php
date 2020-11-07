@@ -2,6 +2,13 @@
 <?php init_head(true, 'leads'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+   <style>
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+         {
+            color: #475F7B;
+         }
+      </style>
    <div class="content-overlay"></div>
    <div class="content-wrapper">
       <div class="row">
@@ -12,10 +19,7 @@
                      <a href="#" onclick="init_lead(); return false;" class="btn btn-primary">
                      <?php echo _l('new_lead'); ?>
                      </a>
-                     <?php if(is_admin() || get_option('allow_non_admin_members_to_import_leads') == '1'){ ?>
-                     <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-primary hidden-xs">
-                     <?php echo _l('import_leads'); ?>
-                     </a>
+                    
                      <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-primary hidden-xs">
                      <?php if($switch_kanban == 1){ echo _l('leads_switch_to_kanban');}else{echo _l('switch_to_list_view');}; ?>
                      </a>
