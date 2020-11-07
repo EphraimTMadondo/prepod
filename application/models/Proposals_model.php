@@ -939,6 +939,9 @@ class Proposals_model extends App_Model
         $data = new StdClass();
         if ($rel_type == 'customer') {
             $this->db->where('userid', $rel_id);
+            $companyusername =  $_SESSION['current_company'];
+        
+            $this->db->where(db_prefix() . 'company_username', $companyusername);
             $_data = $this->db->get(db_prefix() . 'clients')->row();
 
             $primary_contact_id = get_primary_contact_user_id($rel_id);
