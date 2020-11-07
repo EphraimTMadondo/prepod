@@ -21,7 +21,7 @@ function get_relation_data($type, $rel_id = '')
     if ($type == 'customer' || $type == 'customers') {
         $where_clients = '';
         if ($q) {
-            $where_clients .= '(company LIKE "%' . $CI->db->escape_like_str($q) . '%" ESCAPE \'!\' OR CONCAT(firstname, " ", lastname) LIKE "%' . $CI->db->escape_like_str($q) . '%" ESCAPE \'!\' OR email LIKE "%' . $CI->db->escape_like_str($q) . '%" ESCAPE \'!\') AND ' . db_prefix() . 'clients.company_username = '.$companyusername;
+            $where_clients .= '(company LIKE "%' . $CI->db->escape_like_str($q) . '%" ESCAPE \'!\' OR CONCAT(firstname, " ", lastname) LIKE "%' . $CI->db->escape_like_str($q) . '%" ESCAPE \'!\' OR email LIKE "%' . $CI->db->escape_like_str($q) . '%" ESCAPE \'!\') AND ' . db_prefix() . "clients.company_username = '$companyusername'";
         }
 
         $data = $CI->clients_model->get($rel_id, $where_clients);
