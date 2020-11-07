@@ -105,6 +105,7 @@ class Leads extends AdminController
                 ]);
                 */
                // echo "running";
+               redirect(admin_url('leads'));
             } else {
                 $emailOriginal   = $this->db->select('email')->where('id', $id)->get(db_prefix() . 'leads')->row()->email;
                 $proposalWarning = false;
