@@ -4,10 +4,28 @@
 <div class="app-content content">
    <style>
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
-         {
-            color: #475F7B;
-         }
+.h1
+{
+color: #475F7B;
+}
+
+.h2
+{
+color: #475F7B;
+}
+.h3
+{
+color: #475F7B;
+}
+
+.h4
+{
+color: #475F7B;
+}
+
+
+
+
       </style>
    <div class="content-overlay"></div>
    <div class="content-wrapper">
@@ -31,7 +49,7 @@
                         <div class="col-md-12">
 
 
-                        
+
                            <h4 class="no-margin"><?php echo _l('leads_summary'); ?></h4>
                         </div>
                         <?php
