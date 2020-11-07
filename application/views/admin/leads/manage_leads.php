@@ -29,6 +29,9 @@
                      <div class="row hide leads-overview">
                         <hr class="hr-panel-heading" />
                         <div class="col-md-12">
+
+
+                        
                            <h4 class="no-margin"><?php echo _l('leads_summary'); ?></h4>
                         </div>
                         <?php
