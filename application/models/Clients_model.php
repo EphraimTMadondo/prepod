@@ -32,6 +32,8 @@ class Clients_model extends App_Model
             $companyusername =  $_SESSION['current_company'];
         
             $this->db->where(db_prefix() . 'clients.company_username', 'tbga');
+            //
+
             $this->db->where($where);
         }
 
