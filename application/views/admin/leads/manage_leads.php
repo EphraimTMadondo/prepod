@@ -6,32 +6,7 @@
    <div class="content-overlay"></div>
    <div class="content-wrapper">
       <div class="row">
-      <style>
-
-.h1
-{
-color: #475F7B;
-}
-
-.h2
-{
-color: #475F7B;
-}
-.h3
-{
-color: #475F7B;
-}
-
-.h4
-{
-color: #475F7B;
-}
-
-
-
-
-      </style>
-      
+  
          <div class="col-md-12">
             <div class="mt-1">
                <div class="card-body">
