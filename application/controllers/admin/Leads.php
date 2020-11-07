@@ -96,13 +96,14 @@ class Leads extends AdminController
             if ($id == '') {
                 $id      = $this->leads_model->add($this->input->post());
                 $message = $id ? _l('added_successfully', _l('lead')) : '';
-                echo "running";
+               
                 echo json_encode([
                     'success'  => $id ? true : false,
                     'id'       => $id,
                     'message'  => $message,
                     'leadView' => $id ? $this->_get_lead_data($id) : [],
                 ]);
+                echo "running";
             } else {
                 $emailOriginal   = $this->db->select('email')->where('id', $id)->get(db_prefix() . 'leads')->row()->email;
                 $proposalWarning = false;
