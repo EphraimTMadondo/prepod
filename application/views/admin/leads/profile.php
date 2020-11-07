@@ -286,12 +286,14 @@
             echo render_leads_status_select($statuses, $selected,'lead_add_edit_status');
           ?>
          </div>
+             <!--
          <div class="col-md-4">
             <?php
                $selected = (isset($lead) ? $lead->source : get_option('leads_default_source'));
                echo render_leads_source_select($sources, $selected,'lead_add_edit_source');
             ?>
          </div>
+         -->
          <div class="col-md-4">
             <?php
                $assigned_attrs = array();
