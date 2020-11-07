@@ -31,8 +31,8 @@ class Clients_model extends App_Model
         if ((is_array($where) && count($where) > 0) || (is_string($where) && $where != '')) {
             $companyusername =  $_SESSION['current_company'];
         
-            $this->db->where(db_prefix() . 'company_username', 'tbga');
-            //
+            $this->db->where(db_prefix() . 'clients.company_username', $companyusername);
+            
 
             $this->db->where($where);
         }
