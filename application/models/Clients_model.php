@@ -24,9 +24,7 @@ class Clients_model extends App_Model
     public function get($id = '', $where = [])
     {
         $this->db->select(implode(',', prefixed_table_fields_array(db_prefix() . 'clients')) . ',' . get_sql_select_client_company());
-       $companyusername =  $_SESSION['current_company'];
-        
-        $this->db->where(db_prefix() . 'clients.company_username', $companyusername);
+   
         $this->db->join(db_prefix() . 'countries', '' . db_prefix() . 'countries.country_id = ' . db_prefix() . 'clients.country', 'left');
         $this->db->join(db_prefix() . 'contacts', '' . db_prefix() . 'contacts.userid = ' . db_prefix() . 'clients.userid AND is_primary = 1', 'left');
 
@@ -50,6 +48,9 @@ class Clients_model extends App_Model
 
           
         $this->db->order_by('company', 'asc');
+        $companyusername =  $_SESSION['current_company'];
+        
+        $this->db->where(db_prefix() . 'clients.company_username', $companyusername);
 
         return $this->db->get(db_prefix() . 'clients')->result_array();
     }
