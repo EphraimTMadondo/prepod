@@ -2,11 +2,32 @@
 <?php init_head(true, 'leads'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+<style>
 
+.h1
+{
+color: #475F7B;
+}
+
+.h2
+{
+color: #475F7B;
+}
+.h3
+{
+color: #475F7B;
+}
+
+.h4
+{
+color: #475F7B;
+}
+
+
+      </style
    <div class="content-overlay"></div>
    <div class="content-wrapper">
       <div class="row">
-  
          <div class="col-md-12">
             <div class="mt-1">
                <div class="card-body">
@@ -14,7 +35,8 @@
                      <a href="#" onclick="init_lead(); return false;" class="btn btn-primary">
                      <?php echo _l('new_lead'); ?>
                      </a>
-                    
+                     <?php if(is_admin() || get_option('allow_non_admin_members_to_import_leads') == '1'){ ?>
+                   
                      <a href="<?php echo admin_url('leads/switch_kanban/'.$switch_kanban); ?>" class="btn btn-primary hidden-xs">
                      <?php if($switch_kanban == 1){ echo _l('leads_switch_to_kanban');}else{echo _l('switch_to_list_view');}; ?>
                      </a>
@@ -24,9 +46,6 @@
                      <div class="row hide leads-overview">
                         <hr class="hr-panel-heading" />
                         <div class="col-md-12">
-
-
-
                            <h4 class="no-margin"><?php echo _l('leads_summary'); ?></h4>
                         </div>
                         <?php
