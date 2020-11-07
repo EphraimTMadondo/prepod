@@ -2,29 +2,7 @@
 <?php init_head(true, 'leads'); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
-<style>
 
-.h1
-{
-color: #475F7B;
-}
-
-.h2
-{
-color: #475F7B;
-}
-.h3
-{
-color: #475F7B;
-}
-
-.h4
-{
-color: #475F7B;
-}
-
-
-      </style
    <div class="content-overlay"></div>
    <div class="content-wrapper">
       <div class="row">
