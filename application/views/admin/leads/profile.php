@@ -201,8 +201,12 @@
             </div>
             <p class="text-muted lead-field-heading no-mtop"><?php echo _l('lead_add_edit_status'); ?></p>
             <p class="bold font-medium-xs mbot15"><?php echo (isset($lead) && $lead->status_name != '' ? $lead->status_name : '-') ?></p>
+
+            <!--
             <p class="text-muted lead-field-heading"><?php echo _l('lead_add_edit_source'); ?></p>
+
             <p class="bold font-medium-xs mbot15"><?php echo (isset($lead) && $lead->source_name != '' ? $lead->source_name : '-') ?></p>
+               -->
             <?php if(get_option('disable_language') == 0){ ?>
             <p class="text-muted lead-field-heading"><?php echo _l('localization_default_language'); ?></p>
             <p class="bold font-medium-xs mbot15"><?php echo (isset($lead) && $lead->default_language != '' ? ucfirst($lead->default_language) : _l('system_default_string')) ?></p>
