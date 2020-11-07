@@ -29,13 +29,14 @@ class Clients_model extends App_Model
         $this->db->join(db_prefix() . 'contacts', '' . db_prefix() . 'contacts.userid = ' . db_prefix() . 'clients.userid AND is_primary = 1', 'left');
 
         if ((is_array($where) && count($where) > 0) || (is_string($where) && $where != '')) {
+            $companyusername =  $_SESSION['current_company'];
+        
+            $this->db->where(db_prefix() . 'clients.company_username', 'tbga');
             $this->db->where($where);
         }
 
         if (is_numeric($id)) {
-            $companyusername =  $_SESSION['current_company'];
-        
-            $this->db->where(db_prefix() . 'clients.company_username', $companyusername);
+         
             $this->db->where(db_prefix() . 'clients.userid', $id);
             $client = $this->db->get(db_prefix() . 'clients')->row();
 
