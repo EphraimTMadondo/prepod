@@ -104,7 +104,7 @@ class Leads extends AdminController
                     'leadView' => $id ? $this->_get_lead_data($id) : [],
                 ]);
                 */
-                echo "running";
+               // echo "running";
             } else {
                 $emailOriginal   = $this->db->select('email')->where('id', $id)->get(db_prefix() . 'leads')->row()->email;
                 $proposalWarning = false;
