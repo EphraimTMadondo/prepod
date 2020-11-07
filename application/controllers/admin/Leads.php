@@ -92,6 +92,7 @@ class Leads extends AdminController
         }
 
         if ($this->input->post()) {
+            echo "running";
             if ($id == '') {
                 $id      = $this->leads_model->add($this->input->post());
                 $message = $id ? _l('added_successfully', _l('lead')) : '';
