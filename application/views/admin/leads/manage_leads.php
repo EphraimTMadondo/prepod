@@ -413,35 +413,7 @@ color: #475F7B;
       </div>
    </div>
 </div>
-<div class="modal fade" id="source" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <?php echo form_open(admin_url('leads/source')); ?>
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">
-                    <span class="edit-title"><?php echo _l('edit_source'); ?></span>
-                    <span class="add-title"><?php echo _l('lead_new_source'); ?></span>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="additional"></div>
-                        <?php echo render_input('name','leads_source_add_edit_name'); ?>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal"><?php echo _l('close'); ?></button>
-                <button type="submit" class="btn btn-primary"><?php echo _l('submit'); ?></button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-        <?php echo form_close(); ?>
-    </div>
-    <!-- /.modal-dialog -->
-</div>
+
 <script id="hidden-columns-table-leads" type="text/json">
    <?php echo get_staff_meta(get_staff_user_id(), 'hidden-columns-table-leads'); ?>
 </script>
@@ -640,36 +612,6 @@ color: #475F7B;
    });
 </script>
 
-<script>
-    $(function(){
-    	appValidateForm($('form'),{name:'required'},manage_leads_sources);
-    	$('#source').on('hidden.bs.modal', function(event) {
-    		$('#additional').html('');
-    		$('#source input[name="name"]').val('');
-    		$('.add-title').removeClass('hide');
-    		$('.edit-title').removeClass('hide');
-    	});
-        initDataTableInline('.dt-table');
-    });
-    function manage_leads_sources(form) {
-    	var data = $(form).serialize();
-    	var url = form.action;
-    	$.post(url, data).done(function(response) {
-    		window.location.reload();
-    	});
-    	return false;
-    }
-    function new_source(){
-    	$('#source').modal('show');
-    	$('.edit-title').addClass('hide');
-    }
-    function edit_source(invoker,id){
-    	var name = $(invoker).data('name');
-    	$('#additional').append(hidden_input('id',id));
-    	$('#source input[name="name"]').val(name);
-    	$('#source').modal('show');
-    	$('.add-title').addClass('hide');
-    }
-</script>
+
 </body>
 </html>
