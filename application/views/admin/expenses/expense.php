@@ -3,6 +3,13 @@
 <!-- BEGIN: Content-->
 <div class="app-content content">
    <div class="content-overlay"></div>
+   <style>
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+      </style>
    <div class="content-wrapper">
       <div class="row">
          <?php
