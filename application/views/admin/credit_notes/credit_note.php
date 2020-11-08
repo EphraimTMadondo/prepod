@@ -275,8 +275,9 @@ textarea.form-control {
            // $_invoice_number = str_pad(, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
    
 
-          echo "credit note is ". $_credit_note_number;
+         
             $_credit_note_number = str_pad($last, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+            echo "credit note is ". $_credit_note_number;
             $isedit = isset($credit_note) ? 'true' : 'false';
             $data_original_number = $_credit_note_number;
             ?>
