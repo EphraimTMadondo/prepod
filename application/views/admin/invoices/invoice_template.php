@@ -187,7 +187,7 @@
              
       
 
-               $_invoice_number = str_pad($last, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+               $_invoice_number = str_pad($last +1, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
                $isedit = isset($invoice) ? 'true' : 'false';
                $data_original_number = isset($invoice) ? $invoice->number : 'false';
 
