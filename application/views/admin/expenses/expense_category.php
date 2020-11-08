@@ -1,6 +1,67 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade" id="expense-category-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
+        
+<style>
+         .nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.horizontal-scrollable-tabs .horizontal-tabs .nav-tabs-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+
+.top-lead-menu {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+    display: none;
+}
+.preview-tabs-top
+{
+   padding: 15px
+}
+
+.nav {
+    padding-left: 0;
+     margin-bottom: 0; */
+    list-style: none; */
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+
+    color: white;
+}
+
+         .preview-tabs-top
+         {
+            display: flex;
+         }
+
+
+.add-title
+{
+        color:white;
+}
+
+.edit-title
+{
+    color:white;
+
+    
+}
+ 
+
+   </style>
         <?php echo form_open(admin_url('expenses/category'),array('id'=>'expense-category-form')); ?>
         <div class="modal-content">
             <div class="modal-header">
