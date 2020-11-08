@@ -153,9 +153,9 @@
 
               // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
 
-              $_estimate_number = $last;
+             // $_estimate_number = $last;
              
-             // $_estimate_number = str_pad($__number, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+             $_estimate_number = str_pad($last, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
                $isedit = isset($estimate) ? 'true' : 'false';
                $data_original_number = isset($estimate) ? $estimate->number : 'false';
                ?>

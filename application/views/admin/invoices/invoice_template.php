@@ -174,7 +174,20 @@
                 }
                }
 
-               $_invoice_number = str_pad($__number, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+
+               $last = $this->db->order_by('id',"desc")
+               ->limit(1)
+               ->get(db_prefix() . 'invoices')
+               ->row()->id;
+              //  print_r($last);
+
+              // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
+
+             // $_estimate_number = $last;
+             
+      
+
+               $_invoice_number = str_pad($last, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
                $isedit = isset($invoice) ? 'true' : 'false';
                $data_original_number = isset($invoice) ? $invoice->number : 'false';
 
