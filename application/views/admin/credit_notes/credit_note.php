@@ -276,7 +276,7 @@ textarea.form-control {
 
             $_credit_note_number = str_pad($last, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
             $isedit = isset($credit_note) ? 'true' : 'false';
-            $data_original_number = isset($credit_note) ? $credit_note->number : 'false';
+            $data_original_number = $_credit_note_number;
             ?>
             <div class="form-group">
              <label for="number"><?php echo _l('credit_note_number'); ?></label>
