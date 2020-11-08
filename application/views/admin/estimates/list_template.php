@@ -8,7 +8,7 @@
       <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-primary new new-estimate-btn"><?php echo _l('create_new_estimate'); ?></a>
       <?php } ?>
       <a href="<?php echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary switch-pipeline hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
-      (<select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
+      <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
           <option value="" data-tokens="<?php echo _l('estimates_list_all'); ?>"><?php echo _l('estimates_list_all'); ?></option>
           <option value="not_sent" data-tokens="<?php echo _l('not_sent_indicator'); ?>"><?php echo _l('not_sent_indicator'); ?></option>
           <option value="invoiced" data-tokens="<?php echo _l('estimate_invoiced'); ?>"><?php echo _l('estimate_invoiced'); ?></option>
@@ -30,7 +30,7 @@
               <option value="year_<?php echo $year['year']; ?>" data-tokens="<?php echo $year['year']; ?>"><?php echo $year['year']; ?></option>
           <?php } ?>
         <?php } ?>
-      </select>)
+      </select>
       <a href="#" class="btn btn-primary float-right btn-with-tooltip estimates-total" onclick="slideToggle('#stats-top'); init_estimates_total(true); return false;" data-toggle="tooltip" title="<?php echo _l('view_stats_tooltip'); ?>"><i class="bx bx-bar-chart"></i></a>
     </div>
     <div class="card-body">
