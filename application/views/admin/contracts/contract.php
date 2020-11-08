@@ -129,8 +129,7 @@
                                         Introduction
                                  </label>
                                  
-                            <textarea id="introduction" style ="text-align: left;" name="introduction" value="<?php echo $contract->introduction;?>"  class="form-control tinymce-manual" rows="4"><?php echo $contract->introduction;?>
-                            </textarea>
+                            <textarea id="introduction" style ="text-align: left;" name="introduction" value="<?php echo $contract->introduction;?>"  class="form-control tinymce-manual" rows="4"><?php echo $contract->introduction;?></textarea>
                             
                         </div>
 
