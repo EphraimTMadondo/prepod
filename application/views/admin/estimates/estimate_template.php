@@ -144,10 +144,12 @@
 //$row = $this->db->select('*')->get(db_prefix() . 'estimates')->order_by('id',"desc")->limit(1)->get('post')->row();
              
 
-               $this->db->select('id');  
-               $rows = $this->db->get(db_prefix() . 'estimates');
 
-               print_r($rows);
+               $last = $this->db->order_by('id',"desc")
+               ->limit(1)
+               ->get(db_prefix() . 'estimates')
+               ->row();
+                print_r($last);
 
               // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
 
