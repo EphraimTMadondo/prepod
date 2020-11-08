@@ -112,13 +112,9 @@ textarea.form-control {
    
    $last = $this->db->order_by('id',"desc")
    ->limit(1)
-   ->get(db_prefix() . 'credit_notes')
+   ->get(db_prefix() . 'creditnotes')
    ->row()->id;
-  //  print_r($last);
-
-  // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
-
- // $_estimate_number = $last;
+ 
  
 
 
