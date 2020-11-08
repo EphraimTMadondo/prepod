@@ -178,7 +178,7 @@
                $last = $this->db->order_by('id',"desc")
                ->limit(1)
                ->get(db_prefix() . 'invoices')
-               ->row()->id;
+               ->row()->number;
               //  print_r($last);
 
               // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();

@@ -113,7 +113,7 @@ textarea.form-control {
    $last = $this->db->order_by('id',"desc")
    ->limit(1)
    ->get(db_prefix() . 'creditnotes')
-   ->row()->id;
+   ->row()->number;
  
  
 
