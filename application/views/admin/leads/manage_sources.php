@@ -6,6 +6,21 @@
     <div class="content-overlay"></div>
     <div class="content-wrapper">
         <div class="row">
+            <style>
+
+                .add-title
+                {
+                        color:white;
+                }
+
+                .edit-title
+                {
+                    color:white;
+
+                    
+                }
+
+                </style>
             <div class="col-md-12">
                 <div class="card mt-2">
                     <div class="card-body">
