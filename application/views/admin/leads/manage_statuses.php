@@ -4,6 +4,21 @@
 <div class="app-content content">
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
+	<style>
+
+.add-title
+{
+		color:white;
+}
+
+.edit-title
+{
+	color:white;
+
+	
+}
+
+</style>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card mt-2">
