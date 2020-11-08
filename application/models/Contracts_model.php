@@ -175,7 +175,7 @@ class Contracts_model extends App_Model
             }
             hooks()->do_action('after_contract_added', $insert_id);
             log_activity('New Contract Added [' . $data['subject'] . ']');
-            redirect("https://worksuite.app/os/admin/contracts/");
+            redirect(site_url()."admin/contracts/");
 
             return $insert_id;
         }
@@ -768,8 +768,9 @@ class Contracts_model extends App_Model
                
              $data['company_username'] =  $_SESSION['current_company'];
               $this->contract_types_model->add($data);
-
-             header('Location: '.$_SERVER['REQUEST_URI']);
+            
+            redirect(site_url()."admin/contracts/contract");
+            
              
             }
        
