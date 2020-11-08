@@ -141,7 +141,7 @@
                }
 
              
-$row = $this->db->select('*')->db->get(db_prefix() . 'estimates')->order_by('id',"desc")->limit(1)->get('post')->row();
+$row = $this->db->select('*')->get(db_prefix() . 'estimates')->order_by('id',"desc")->limit(1)->get('post')->row();
              
                print_r($row);
 
