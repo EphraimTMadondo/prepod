@@ -768,6 +768,7 @@ class Contracts_model extends App_Model
                
              $data['company_username'] =  $_SESSION['current_company'];
              return $this->contract_types_model->add($data);
+             header('Location: '.$_SERVER['REQUEST_URI']);
              
             }
        
