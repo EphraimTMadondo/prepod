@@ -118,7 +118,7 @@
 function new_type(){
     $('#type').modal('show');
     $('.edit-title').addClass('hide');
-    //location.reload();
+    
 }
 function edit_type(invoker,id){
     var name = $(invoker).data('name');
