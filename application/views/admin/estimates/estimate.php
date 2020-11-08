@@ -22,14 +22,7 @@
 </div>
 <?php init_tail(); ?>
 <script>
-	//Make all doc nubers uneditable
-	var x = document.getElementsByName("number");
-var i;
-for (i = 0; i < x.length; i++) {
 
-    x[i].setAttribute("readonly", true )
-  
-}
 	$(function(){
 		validate_estimate_form();
 		// Init accountacy currency symbol

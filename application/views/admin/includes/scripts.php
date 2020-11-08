@@ -216,5 +216,15 @@
             });
          }
      }
+
+     	//Make all doc nubers uneditable
+	var x = document.getElementsByName("number");
+var i;
+for (i = 0; i < x.length; i++) {
+
+    x[i].setAttribute("readonly", true )
+  
+}
  </script>
+ 
 <!-- END: Page JS-->
