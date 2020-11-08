@@ -140,7 +140,15 @@
                 }
                }
 
-               $_estimate_number = str_pad($__number, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+               $this->db->select('id');
+               $this->db->from(db_prefix() . 'estimates');
+               $this->db->get(); 
+
+               $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
+
+               $_estimate_number =  $last_row->id;
+               echo "number is ". $_estimate_number;
+             //  $_estimate_number = str_pad($__number, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
                $isedit = isset($estimate) ? 'true' : 'false';
                $data_original_number = isset($estimate) ? $estimate->number : 'false';
                ?>
@@ -154,7 +162,7 @@
                     echo $prefix;
                   ?>
                  </span>
-                  <input type="text" name="number" class="form-control" value="<?php echo $_estimate_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php // echo $data_original_number; ?>">
+                  <input type="text" name="number" class="form-control" value="<?php echo $_estimate_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
                   <?php if($format == 3) { ?>
                   <span class="input-group-append">
                      <span id="prefix_year" class="format-n-yy  input-group-text"><?php echo $yy; ?></span>
