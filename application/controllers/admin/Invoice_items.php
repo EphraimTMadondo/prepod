@@ -121,7 +121,8 @@ class Invoice_items extends AdminController
     {
         if ($this->input->post() && has_permission('items', '', 'create')) {
             $this->invoice_items_model->add_group($this->input->post());
-            set_alert('success', _l('added_successfully', _l('item_group')));
+            
+           // set_alert('success', _l('added_successfully', _l('item_group')));
         }
     }
 
