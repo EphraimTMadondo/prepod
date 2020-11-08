@@ -154,7 +154,7 @@
                     echo $prefix;
                   ?>
                  </span>
-                  <input type="text" name="number" class="form-control" value="<?php echo $_estimate_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
+                  <input type="text" name="number" class="form-control" value="<?php echo $_estimate_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php // echo $data_original_number; ?>">
                   <?php if($format == 3) { ?>
                   <span class="input-group-append">
                      <span id="prefix_year" class="format-n-yy  input-group-text"><?php echo $yy; ?></span>
