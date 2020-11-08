@@ -107,7 +107,7 @@
                   <?php
                      $selected = (isset($contract) ? $contract->contract_type : '');
                      if(is_admin() || get_option('staff_members_create_inline_contract_types') == '1'){
-                      echo render_select_with_input_group('contract_type',$types,array('id','name'),'contract_type',$selected,'<a href="#" onclick="new_type();return false;"><i class="fa fa-plus"></i></a>');
+                      echo render_select_with_input_group('contract_type',$types,array('id','name'),'contract_type',$selected,'<a href="#" onclick="new_type();return false;location.reload();"><i class="fa fa-plus"></i></a>');
                      } else {
                      echo render_select('contract_type',$types,array('id','name'),'contract_type',$selected);
                      }
