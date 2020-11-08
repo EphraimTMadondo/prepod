@@ -108,6 +108,20 @@ textarea.form-control {
   <div class="row">
    <?php
    echo form_open($this->uri->uri_string(),array('id'=>'credit-note-form','class'=>'_transaction_form credit-note-form'));
+
+   
+   $last = $this->db->order_by('id',"desc")
+   ->limit(1)
+   ->get(db_prefix() . 'credit_notes')
+   ->row()->id;
+  //  print_r($last);
+
+  // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
+
+ // $_estimate_number = $last;
+ 
+
+
    if(isset($credit_note)){
     echo form_hidden('isedit');
   }
@@ -262,7 +276,9 @@ textarea.form-control {
                 $__number = $next_credit_note_number;
               }
             }
-            $_credit_note_number = str_pad($__number, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+           // $_invoice_number = str_pad(, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+
+            $_credit_note_number = str_pad($last, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
             $isedit = isset($credit_note) ? 'true' : 'false';
             $data_original_number = isset($credit_note) ? $credit_note->number : 'false';
             ?>
