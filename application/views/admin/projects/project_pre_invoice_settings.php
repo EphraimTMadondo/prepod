@@ -1,5 +1,28 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <!-- Copy Project -->
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        .modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.modal-title
+{
+    color: white;
+}
+
+                                        
+</style>
 <div class="modal fade" id="pre_invoice_project_settings" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
