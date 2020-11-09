@@ -2,6 +2,26 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+   <style>
+
+      .add-title
+      {
+         color:white;
+      }
+
+      .edit-title
+      {
+         color:white;
+
+      }
+
+      .modal-header {
+    display: block;
+    background: #226faa;
+    padding: 15px 30px;
+}
+
+      </style>
     <div class="content-overlay"></div>
     <div class="content-wrapper">
    <div class="row">
