@@ -876,6 +876,7 @@ class hrm_model extends App_Model
         {
                         return $page;
         }
+        return "comp user = ". $page['company_username'] ;
     }
       public function get_contractOverdue(){
           
