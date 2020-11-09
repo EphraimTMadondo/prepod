@@ -5,6 +5,26 @@
         <?php echo _l('new_workplace'); ?>
     </a>
 </div>
+<style>
+
+.add-title
+{
+   color:white;
+}
+
+.edit-title
+{
+   color:white;
+
+}
+
+.modal-header {
+display: block;
+background: #226faa;
+padding: 15px 30px;
+}
+
+</style>
 <div class="clearfix"></div>
 <hr class="hr-panel-heading" />
 <div class="clearfix"></div>
