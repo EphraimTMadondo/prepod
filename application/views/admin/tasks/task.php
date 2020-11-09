@@ -15,32 +15,21 @@
     position: relative;
     padding: 15px;
 }
-.bootstrap-select>select {
-    position: absolute!important;
-    bottom: 0;
-    left: 50%;
-    display: block!important;
-    width: .5px!important;
-    height: 100%!important;
-    padding: 0!important;
-    opacity: 0!important;
-    border: none;
-    z-index: 0!important;
-}
 
-.bootstrap-select .btn-default {
-    background: #fff!important;
-    color: #415164!important;
-    border: 1px solid #bfcbd9!important;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    padding: 4px 10px;
-    line-height: 2;
-    height: 36px;
-    text-transform: inherit;
-    padding-left: 10px;
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 220px;
 }
-                                        
+.form-group .bootstrap-select, .form-horizontal .bootstrap-select, .form-inline .bootstrap-select {
+    margin-bottom: 0;
+}
+.bootstrap-select:not(.input-group-btn), .bootstrap-select[class*=col-] {
+    float: none;
+    display: inline-block;
+    margin-left: 0;
+}
+.bootstrap-select {
+    vertical-align: middle;
+}                                    
 </style>
 <!-- Datepicker -->
 
