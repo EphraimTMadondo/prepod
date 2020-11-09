@@ -5,6 +5,29 @@
         <?php echo _l('new_shift'); ?>
     </a>
 </div>
+<style>
+
+.bootstrap-select>.dropdown-toggle {
+    position: relative;
+    width: 100%;
+    text-align: right;
+    white-space: nowrap;
+    margin-bottom: 5%;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+</style>
 <div class="clearfix"></div>
 <hr class="hr-panel-heading" />
 <div class="clearfix"></div>
