@@ -269,7 +269,7 @@
       </div>
       <?php echo form_close(); ?>
       <?php if(isset($member)){ ?>
-      <div class="col-md-7 small-table-right-col">
+      <div class="col-md-12 small-table-right-col">
          <div class="card">
             <div class="card-body">
                <h4 class="no-margin">
