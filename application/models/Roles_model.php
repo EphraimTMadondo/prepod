@@ -106,6 +106,9 @@ class Roles_model extends App_Model
             return $role;
         }
 
+        $companyusername = $_SESSION['current_company'];
+    
+         $this->db->where('company_username', $companyusername);
         return $this->db->get(db_prefix() . 'roles')->result_array();
     }
 

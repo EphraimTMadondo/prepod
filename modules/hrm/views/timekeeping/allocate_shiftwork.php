@@ -101,7 +101,7 @@
 		                  <option value="overtime_shifts"><?php echo _l('overtime_shifts'); ?></option>
 		                </select>
                     </div>
-                    <div class="col-md-6 mbot15">
+                    <div class="col-md-6">
                     	<label for="department"><?php echo _l('department'); ?></label>
                         <select name="department" id="department" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">  
                          <option value=""></option> 
@@ -110,7 +110,7 @@
                           <?php } ?>
                       </select>
                     </div>
-                    <div class="col-md-12 mbot15">
+                    <div class="col-md-12">
 					
                     	<label for="position"><?php echo _l('position'); ?></label>
                         <select name="position" id="position" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('all'); ?>" data-hide-disabled="true">
