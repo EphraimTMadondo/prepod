@@ -809,30 +809,21 @@ public function latch_payslip(){
     }
     public function contract($id = '')
     {
-
-
-
         if (!has_permission('hrm', '', 'view')) {
             access_denied('hrm');
         }
         
         $this->load->model('hrm_model');
         if ($this->input->post()) {
-         
             $data = $this->input->post();
-
             if ($id == '') {
                 if (!has_permission('hrm', '', 'create')) {
                     access_denied('hrm');
                 }
                 $id = $this->hrm_model->add_contract($data);
-              
                 if ($id) {
-             
                     set_alert('success', _l('added_successfully', _l('contract')));
-                   // redirect(admin_url('hrm/contract/' . $id));
-                   // echo "running";
-                   
+                    redirect(admin_url('hrm/contract/' . $id));
                 }
             } else {
                 if (!has_permission('hrm', '', 'edit')) {
