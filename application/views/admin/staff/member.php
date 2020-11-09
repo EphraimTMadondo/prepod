@@ -44,7 +44,7 @@
       </div>
       <?php } ?>
       <?php echo form_open_multipart($this->uri->uri_string(),array('class'=>'col-md-12 staff-form','autocomplete'=>'off')); ?>
-      <div class="col-md-<?php if(!isset($member)){echo '8 col-md-offset-2';} else {echo '5';} ?>" id="small-table">
+      <div class="col-md-<?php if(!isset($member)){echo '8 col-md-offset-2';} else {echo '12';} ?>" id="small-table">
          <div class="card">
             <div class="card-body">
                <ul class="nav nav-tabs" role="tablist">
