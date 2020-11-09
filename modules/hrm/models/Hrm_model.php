@@ -872,7 +872,7 @@ class hrm_model extends App_Model
         $companyusername = $_SESSION['current_company'];
          $this->db->where('company_username', $companyusername);
          $this->db->where('id_contract', $id);
-        return $this->db->get(db_prefix() . 'tblstaff_contract')->result_array();
+        return $this->db->get('tblstaff_contract')->result_array();
          
     }
       public function get_contractOverdue(){
