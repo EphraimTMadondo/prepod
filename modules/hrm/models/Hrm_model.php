@@ -870,13 +870,10 @@ class hrm_model extends App_Model
     }
     public function get_contract($id){
         $companyusername = $_SESSION['current_company'];
-
-        $page = $this->db->query('select * from tblstaff_contract where id_contract = '.$id)->result_array();
-        if ($page['company_username'] ==  $companyusername)
-        {
-                        return $page;
-        }
-        return $page;
+         $this->db->select('*');
+         $this->db->where('company_username', $companyusername);
+        return $this->db->get(db_prefix() . 'tblstaff_contract')->result_array();
+         
     }
       public function get_contractOverdue(){
           
