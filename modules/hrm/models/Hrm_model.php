@@ -870,7 +870,6 @@ class hrm_model extends App_Model
     }
     public function get_contract($id){
         $companyusername = $_SESSION['current_company'];
-        $this->db->select('*');
          $this->db->where('company_username', $companyusername);
          $this->db->where('id_contract', $id);
         return $this->db->get(db_prefix() . 'tblstaff_contract')->result_array();
