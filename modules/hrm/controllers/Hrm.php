@@ -809,6 +809,7 @@ public function latch_payslip(){
     }
     public function contract($id = '')
     {
+        echo "running";
         if (!has_permission('hrm', '', 'view')) {
             access_denied('hrm');
         }
@@ -822,7 +823,7 @@ public function latch_payslip(){
                 }
                 $id = $this->hrm_model->add_contract($data);
                 if ($id) {
-                    echo "running";
+                   
                     set_alert('success', _l('added_successfully', _l('contract')));
                     redirect(admin_url('hrm/contract/' . $id));
                    
