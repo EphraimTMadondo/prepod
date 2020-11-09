@@ -824,8 +824,9 @@ public function latch_payslip(){
             
                 if ($id) {
                     set_alert('success', _l('added_successfully', _l('contract')));
-                    echo "running";
-                  //  redirect(admin_url('hrm/contract/' . $id));
+                    
+                    
+                  redirect(admin_url('hrm/contract/' . $id));
                 }
             } else {
                 if (!has_permission('hrm', '', 'edit')) {
