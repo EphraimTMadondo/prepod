@@ -16,20 +16,7 @@
     padding: 15px;
 }
 
-.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-    width: 220px;
-}
-.form-group .bootstrap-select, .form-horizontal .bootstrap-select, .form-inline .bootstrap-select {
-    margin-bottom: 0;
-}
-.bootstrap-select:not(.input-group-btn), .bootstrap-select[class*=col-] {
-    float: none;
-    display: inline-block;
-    margin-left: 0;
-}
-.bootstrap-select {
-    vertical-align: middle;
-}                                    
+                                        
 </style>
 <!-- Datepicker -->
 
