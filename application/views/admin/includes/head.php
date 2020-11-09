@@ -201,6 +201,30 @@
         isRTL = '<?php echo $isRTL; ?>',
         taskid,taskTrackingStatsData,taskAttachmentDropzone,taskCommentAttachmentDropzone,newsFeedDropzone,expensePreviewDropzone,taskTrackingChart,cfh_popover_templates = {},_table_api;
     </script>
+
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        .modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.modal-title
+{
+    color: white;
+}
+
+                                        
+</style>
     
     </head>
   <!-- END: Head-->
