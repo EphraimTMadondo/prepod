@@ -936,7 +936,7 @@ class hrm_model extends App_Model
             $job_position = $data['job_position'];
             unset($data['job_position']);
         }
-            echo "running";
+
          if($_SESSION['current_company']!= NULL)
            {
              $data['company_username'] =  $_SESSION['current_company'];
