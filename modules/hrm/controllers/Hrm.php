@@ -821,7 +821,7 @@ public function latch_payslip(){
                     access_denied('hrm');
                 }
                 $id = $this->hrm_model->add_contract($data);
-                echo $id;
+        
             
                 if ($id) {
                     set_alert('success', _l('added_successfully', _l('contract')));
@@ -854,6 +854,7 @@ public function latch_payslip(){
         } else {
 
             $contract = $this->hrm_model->get_contract($id);
+            echo $id;
             $contract_detail = $this->hrm_model->get_contract_detail($id);
             if (!$contract) {
                 blank_page('Contract Not Found', 'danger');
