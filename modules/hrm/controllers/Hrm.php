@@ -854,7 +854,7 @@ public function latch_payslip(){
         } else {
 
             $contract = $this->hrm_model->get_contract($id);
-            echo $contract;
+            print_r($contract);
             $contract_detail = $this->hrm_model->get_contract_detail($id);
             if (!$contract) {
                 blank_page('Contract Not Found', 'danger');
