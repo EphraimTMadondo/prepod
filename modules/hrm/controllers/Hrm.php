@@ -823,7 +823,7 @@ public function latch_payslip(){
                 $id = $this->hrm_model->add_contract($data);
                 if ($id) {
                     set_alert('success', _l('added_successfully', _l('contract')));
-                    redirect(admin_url('hrm/contract/' . $id));
+                  //  redirect(admin_url('hrm/contract/' . $id));
                 }
             } else {
                 if (!has_permission('hrm', '', 'edit')) {
