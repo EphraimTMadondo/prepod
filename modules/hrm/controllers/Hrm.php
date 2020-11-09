@@ -809,15 +809,16 @@ public function latch_payslip(){
     }
     public function contract($id = '')
     {
-        echo "running";
 
-        
+
+
         if (!has_permission('hrm', '', 'view')) {
             access_denied('hrm');
         }
         
         $this->load->model('hrm_model');
         if ($this->input->post()) {
+            echo "running";
             $data = $this->input->post();
             if ($id == '') {
                 if (!has_permission('hrm', '', 'create')) {
