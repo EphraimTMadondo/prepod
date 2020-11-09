@@ -1,6 +1,29 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+<style>
+            .modal .modal-content .modal-header {
+            align-items: center;
+        }
+        
+                .modal-header {
+            display: block;
+            background: #226faa;
+            padding: 15px 30px;
+        }
+        
+        .modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.modal-title
+{
+    color: white;
+}
+
+                                        
+</style>
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
     <div class="row">
