@@ -198,7 +198,7 @@
                 </div>
                 </div>
             </div>
- <div class="col-md-5">
+ <div class="col-md-7">
     <div class="card mt-2">
         <div class="card-body" id="project-settings-area">
            <h4 class="no-margin">
