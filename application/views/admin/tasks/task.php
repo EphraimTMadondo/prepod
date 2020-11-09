@@ -191,7 +191,7 @@
                   <div class="col-md-6">
                      <div class="form-group">
                         <label for="repeat_every" class="control-label"><?php echo _l('task_repeat_every'); ?></label>
-                        <select name="repeat_every" id="repeat_every" class="" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                        <select name="repeat_every" id="repeat_every" class="form-control  custom-select" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                            <option value=""></option>
                            <option value="1-week" <?php if(isset($task) && $task->repeat_every == 1 && $task->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('week'); ?></option>
                            <option value="2-week" <?php if(isset($task) && $task->repeat_every == 2 && $task->recurring_type == 'week'){echo 'selected';} ?>>2 <?php echo _l('weeks'); ?></option>
