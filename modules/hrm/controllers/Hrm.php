@@ -810,6 +810,8 @@ public function latch_payslip(){
     public function contract($id = '')
     {
         echo "running";
+
+        
         if (!has_permission('hrm', '', 'view')) {
             access_denied('hrm');
         }
