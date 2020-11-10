@@ -265,15 +265,15 @@ class App
             $this->ci->db->from(db_prefix() . '_sub_options_ref');
             $query = $this->ci->db->get();
             $table_name_records = $query->row_array();
-            echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
+           // echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
             if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
-                echo "running in new tables";
+               // echo "running in new tables";
                 $company_username = $_SESSION['current_company'];
                 $this->ci->db->select($table_name_records['col_name']);
                 $this->ci->db->from($table_name_records['table_name']);
                 $this->ci->db->where('company_username', $company_username);
 
-            
+                
 
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
@@ -291,7 +291,8 @@ class App
                 //run old code if the user doesnt have the data in the new tables
                 // is not auto loaded
 
-                echo "running old";
+               // echo "running old";
+               /***
                 $this->ci->db->select('value');
                 $this->ci->db->where('name', $name);
                 $row = $this->ci->db->get(db_prefix() . 'options')->row();
@@ -299,6 +300,8 @@ class App
                     $val = $row->value;
                 }
                 $this->setup_new_options();
+
+                 */
             }
             
         }else{
