@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-where = [];
+$where = [];
 $companyusername = $_SESSION['current_company'];
   array_push($where, 'AND ('.db_prefix()."roles.company_username = '$companyusername'".' OR '.db_prefix()."roles.company_username = '')");
 
