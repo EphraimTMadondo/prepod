@@ -348,7 +348,7 @@ function app_init_admin_sidebar_menu_items()
                     'position' => 10,
             ]);
             
-            /**
+            /***
         $CI->app_menu->add_setup_children_item('leads', [
                     'slug'     => 'leads-email-integration',
                     'name'     => _l('leads_email_integration'),
@@ -356,12 +356,15 @@ function app_init_admin_sidebar_menu_items()
                     'position' => 15,
             ]);
             **/
+            /***
         $CI->app_menu->add_setup_children_item('leads', [
                     'slug'     => 'web-to-lead',
                     'name'     => _l('web_to_lead'),
                     'href'     => admin_url('leads/forms'),
                     'position' => 20,
             ]);
+
+            */
 
         $CI->app_menu->add_setup_menu_item('finance', [
                     'collapse' => true,
@@ -418,19 +421,19 @@ function app_init_admin_sidebar_menu_items()
             ]);
             
             **/
-
+/***
         $CI->app_menu->add_setup_menu_item('custom-fields', [
                     'href'     => admin_url('custom_fields'),
                     'name'     => _l('asc_custom_fields'),
                     'position' => 45,
-            ]);
-
+            ]);  */
+/*** 
         $CI->app_menu->add_setup_menu_item('gdpr', [
                     'href'     => admin_url('gdpr'),
                     'name'     => _l('gdpr_short'),
                     'position' => 50,
             ]);
-
+*/
         $CI->app_menu->add_setup_menu_item('roles', [
                     'href'     => admin_url('roles'),
                     'name'     => _l('acs_roles'),
