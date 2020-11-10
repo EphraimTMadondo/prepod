@@ -11,7 +11,7 @@
     ['id' => 'settings-form', 'class' => isset($tab['update_url']) ? 'custom-update-url' : '']
 );
     ?>
-    <div class="row">
+    <div class="row" style = "margin-top: 10%">
      <?php if ($this->session->flashdata('debug')) {
         ?>
        <div class="col-lg-12">
