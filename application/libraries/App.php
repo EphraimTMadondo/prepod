@@ -318,7 +318,7 @@ class App
         $number_of_elements_per_tables = 40;
         $table_count = intval($number_of_options/$number_of_elements_per_tables);
 
-        echo "table count is" .  $table_count;
+   
         
         
         $i = 0;$j=0;
@@ -326,6 +326,9 @@ class App
         $data = array();
         //echo(json_encode($all_options));
         foreach($all_options as $option){
+            echo "option is " .  $option;
+
+            
             $i++;$j++;
             $data["col_$j"] = json_encode($option);
             
