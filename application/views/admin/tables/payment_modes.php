@@ -34,10 +34,13 @@ foreach ($rResult as $aRow) {
             if ($aRow['active'] == 1) {
                 $checked = 'checked';
             }
+            if($aRow['company_username'] == $companyusername)
+            {
             $_data = '<div class="onoffswitch">
                 <input type="checkbox" data-switch-url="' . admin_url() . 'paymentmodes/change_payment_mode_status" name="onoffswitch" class="onoffswitch-checkbox" id="c_' . $aRow['id'] . '" data-id="' . $aRow['id'] . '" ' . $checked . '>
                 <label class="onoffswitch-label" for="c_' . $aRow['id'] . '"></label>
             </div>';
+            }
             // For exporting
             $_data .= '<span class="hide">' . ($checked == 'checked' ? _l('is_active_export') : _l('is_not_active_export')) . '</span>';
         } elseif ($aColumns[$i] == 'name') {
