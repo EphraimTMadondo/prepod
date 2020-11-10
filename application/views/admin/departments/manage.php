@@ -64,8 +64,11 @@
                         <hr />
                         <?php echo render_input('email','department_email','','email'); ?>
                         <i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('department_username_help'); ?>"></i>
-                        <?php echo render_input('imap_username','department_username'); ?>
-                        <?php echo render_input('host','dept_imap_host'); ?>
+                    
+                        <?php // echo render_input('imap_username','department_username'); ?>
+                        <?php // echo render_input('host','dept_imap_host'); ?>
+                        
+
                         <?php echo render_input('password','dept_email_password','','password'); ?>
                         <div class="form-group">
                             <label for="encryption"><?php echo _l('dept_encryption'); ?></label><br />
