@@ -45,8 +45,13 @@ foreach ($rResult as $aRow) {
             {
                 $data-target = "#payment_mode_modal"
             }
+            else
+            {
+                $data-target = ""
+
+            }
             $_data = '<a href="#" data-toggle="modal" data-default-selected="'
-             . $aRow['selected_by_default'] . '" data-show-on-pdf="' . $aRow['show_on_pdf'] . '" data-target= ' $data-target.' data-expenses-only="' . $aRow['expenses_only'] . '" data-invoices-only="' . $aRow['invoices_only'] . '" data-id="' . $aRow['id'] . '">' . $_data . '</a>';
+             . $aRow['selected_by_default'] . '" data-show-on-pdf="' . $aRow['show_on_pdf'] . '" data-target= ' .$data-target.' data-expenses-only="' . $aRow['expenses_only'] . '" data-invoices-only="' . $aRow['invoices_only'] . '" data-id="' . $aRow['id'] . '">' . $_data . '</a>';
         }
 
         $row[] = $_data;
