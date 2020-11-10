@@ -2,6 +2,11 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
+where = [];
+$companyusername = $_SESSION['current_company'];
+  array_push($where, 'AND ('.db_prefix()."roles.company_username = '$companyusername'".' OR '.db_prefix()."roles.company_username = '')");
+
+
 $aColumns = [
     'name',
     ];
@@ -9,7 +14,7 @@ $aColumns = [
 $sIndexColumn = 'roleid';
 $sTable       = db_prefix().'roles';
 
-$result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], [], ['roleid']);
+$result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, ['roleid']);
 $output  = $result['output'];
 $rResult = $result['rResult'];
 
