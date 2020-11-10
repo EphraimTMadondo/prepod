@@ -229,6 +229,7 @@ class assets_model extends App_Model
         return $file;
     }
     public function allocation_asset($data){
+        
         $assets = $this->get($data['assets']);
         $data['time_acction'] = to_sql_date($data['time_acction'],true);
          $data['company_username'] =  $_SESSION['current_company'];

@@ -88,7 +88,7 @@
                                 <label for="delete_after_import"><?php echo _l('delete_mail_after_import'); ?>
                                 </div>
                                 <hr />
-                                <button onclick="test_dep_imap_connection(); return false;" class="btn btn-default"><?php echo _l('leads_email_integration_test_connection'); ?></button>
+                                <button style ="display: none" onclick="test_dep_imap_connection(); return false;" class="btn btn-default"><?php echo _l('leads_email_integration_test_connection'); ?></button>
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,25 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+   <style>
+
+label {
+    color: #475F7B;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-right: 5%;
+}
+
+
+.mbot15 {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+
+
+</style>
+
     <div class="content-overlay"></div>
     <div class="content-wrapper">
       <div class="row">
