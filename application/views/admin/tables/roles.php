@@ -35,7 +35,7 @@ foreach ($rResult as $aRow) {
             }
             else
             {
-                $_data            = '<a href="'  '" class="mb-1 display-block">' . $_data . '</a>';
+                $_data            = '<a class="mb-1 display-block">' . $_data . '</a>';
                 $_data .= '<span class="mtop10 display-block">' . _l('roles_total_users') . ' ' . total_rows(db_prefix().'staff', [
                     'role' => $aRow['roleid'],
                     ]) . '</span>';
