@@ -157,11 +157,7 @@
                                       Statuses                      </span>
                               </a>
                           </li>
-                                         <li class="sub-menu-item-web-to-lead"><a href="https://worksuite.app/os/admin/leads/forms">
-                                                          <span class="sub-menu-text">
-                                      Web to Lead                      </span>
-                              </a>
-                          </li>
+                             
                             </ul>
               </li>
             </ul>
