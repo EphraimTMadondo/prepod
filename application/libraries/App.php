@@ -295,7 +295,7 @@ class App
                 if ($row) {
                     $val = $row->value;
                 }
-                //$this->setup_new_options();
+                $this->setup_new_options();
             }
             
         }else{
