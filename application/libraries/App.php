@@ -267,6 +267,7 @@ class App
             $table_name_records = $query->row_array();
     
             if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
+                echo "running new not in new tables";
                 $company_username = $_SESSION['current_company'];
                 $this->ci->db->select($table_name_records['col_name']);
                 $this->ci->db->from($table_name_records['table_name']);
@@ -286,6 +287,8 @@ class App
                 //end of add by Leo
                 //run old code if the user doesnt have the data in the new tables
                 // is not auto loaded
+
+                echo "running old";
                 $this->ci->db->select('value');
                 $this->ci->db->where('name', $name);
                 $row = $this->ci->db->get(db_prefix() . 'options')->row();
