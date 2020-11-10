@@ -172,6 +172,8 @@
                                 <li><a href="<?php echo base_url();?>admin/leads/sources"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Sources">Sources</span></a>
                                 <li><a href="<?php echo base_url();?>admin/leads/statuses"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Statuses">Statuses</span></a>
                                <!-- <li><a href="<?php echo base_url();?>admin/leads/forms"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Web to Lead">Web to Lead</span></a> -->
+                           
+                            
                             </ul>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/contracts"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Contracts">Contracts</span></a>
