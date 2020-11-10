@@ -24,7 +24,8 @@ foreach ($rResult as $aRow) {
     $row = [];
     for ($i = 0; $i < count($aColumns); $i++) {
         $_data = $aRow[$aColumns[$i]];
-
+        if($aRow['company_username'] == $companyusername)
+    {
         $attributes = [
         'data-toggle'             => 'modal',
         'data-target'             => '#currency_modal',
@@ -33,6 +34,19 @@ foreach ($rResult as $aRow) {
         'data-thousand-separator' => $aRow['thousand_separator'],
         'data-decimal-separator'  => $aRow['decimal_separator'],
         ];
+
+    }
+    else
+    {
+        $attributes = [
+            'data-toggle'             => 'modal',
+            'data-id'                 => $aRow['id'],
+            'data-placement'          => $aRow['placement'],
+            'data-thousand-separator' => $aRow['thousand_separator'],
+            'data-decimal-separator'  => $aRow['decimal_separator'],
+            ];
+    
+    }
 
         if ($aColumns[$i] == 'name') {
             $_data = '<span class="name"><a href="#" ' . _attributes_to_string($attributes) . '>' . $_data . '</a></span>';
