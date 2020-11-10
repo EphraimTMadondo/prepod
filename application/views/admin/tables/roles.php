@@ -23,10 +23,25 @@ foreach ($rResult as $aRow) {
     for ($i = 0; $i < count($aColumns); $i++) {
         $_data = $aRow[$aColumns[$i]];
         if ($aColumns[$i] == 'name') {
+
+           
+            if($aRow['company_username'] == $companyusername)
+            {
+
             $_data            = '<a href="' . admin_url('roles/role/' . $aRow['roleid']) . '" class="mb-1 display-block">' . $_data . '</a>';
             $_data .= '<span class="mtop10 display-block">' . _l('roles_total_users') . ' ' . total_rows(db_prefix().'staff', [
                 'role' => $aRow['roleid'],
                 ]) . '</span>';
+            }
+            else
+            {
+                $_data            = '<a href="'  '" class="mb-1 display-block">' . $_data . '</a>';
+                $_data .= '<span class="mtop10 display-block">' . _l('roles_total_users') . ' ' . total_rows(db_prefix().'staff', [
+                    'role' => $aRow['roleid'],
+                    ]) . '</span>';
+            }
+
+
         }
         $row[] = $_data;
     }
