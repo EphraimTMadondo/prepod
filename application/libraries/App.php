@@ -272,6 +272,9 @@ class App
                 $this->ci->db->select($table_name_records['col_name']);
                 $this->ci->db->from($table_name_records['table_name']);
                 $this->ci->db->where('company_username', $company_username);
+
+                echo "we are selecting ". $table_name_records['col_name']." from " . $table_name_records['table_name'];
+
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
                 //echo json_encode($option_set);die;
