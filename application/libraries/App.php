@@ -373,6 +373,8 @@ class App
             $data = array();
             $i=0;
         }
+
+        echo "setup_new arn success";
     }
     /**
      * Add new quick action data
