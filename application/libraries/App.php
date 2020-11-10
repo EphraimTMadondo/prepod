@@ -342,7 +342,7 @@ class App
                 $query = $this->ci->db->get();
                 //echo $query->num_rows(); die;
                 echo "table has records ".$query->num_rows();
-                echo "table is ". '_sub_options_'.++$table_index); 
+                echo "table is ". '_sub_options_'.++$table_index; 
                 if(($query->num_rows()) == 0){
                     echo "table has no record";
                     //echo '<br/> '.db_prefix() . '_sub_options_'.$table_index;
