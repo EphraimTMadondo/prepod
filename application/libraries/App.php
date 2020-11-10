@@ -265,7 +265,7 @@ class App
             $this->ci->db->from(db_prefix() . '_sub_options_ref');
             $query = $this->ci->db->get();
             $table_name_records = $query->row_array();
-    
+            echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
             if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
                 echo "running in new tables";
                 $company_username = $_SESSION['current_company'];
@@ -273,7 +273,7 @@ class App
                 $this->ci->db->from($table_name_records['table_name']);
                 $this->ci->db->where('company_username', $company_username);
 
-                echo "we are selecting ". $table_name_records['col_name']." from " . $table_name_records['table_name'];
+            
 
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
@@ -344,8 +344,7 @@ class App
                 $this->ci->db->from(db_prefix() . '_sub_options_'.++$table_index);
                 $query = $this->ci->db->get();
                 //echo $query->num_rows(); die;
-                echo "table has records ".$query->num_rows();
-                echo "table is ". '_sub_options_'.++$table_index; 
+               
                 if(($query->num_rows()) == 0){
                     echo "table has no record";
                     //echo '<br/> '.db_prefix() . '_sub_options_'.$table_index;
