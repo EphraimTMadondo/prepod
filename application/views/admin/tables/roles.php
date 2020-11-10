@@ -14,7 +14,7 @@ $aColumns = [
 $sIndexColumn = 'roleid';
 $sTable       = db_prefix().'roles';
 
-$result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, ['roleid']);
+$result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, ['roleid','company_username']);
 $output  = $result['output'];
 $rResult = $result['rResult'];
 
