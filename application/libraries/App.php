@@ -326,15 +326,16 @@ class App
         $data = array();
         //echo(json_encode($all_options));
         foreach($all_options as $option){
-            echo "option is " .  $option;
+           // echo "option is " .  $option;
 
-            
+
             $i++;$j++;
             $data["col_$j"] = json_encode($option);
             
             
             if($i == $number_of_elements_per_tables){
                 //check if the table already has a record
+               
                 $this->ci->db->select("*");
                 $this->ci->db->where("company_username",$_SESSION['current_company']);
                 $this->ci->db->from(db_prefix() . '_sub_options_'.++$table_index);
@@ -342,6 +343,7 @@ class App
                 //echo $query->num_rows(); die;
                 
                 if(($query->num_rows()) == 0){
+                    echo "table has no record";
                     //echo '<br/> '.db_prefix() . '_sub_options_'.$table_index;
                     //save the data to the table
                     $data["company_username"] = $_SESSION['current_company'];
