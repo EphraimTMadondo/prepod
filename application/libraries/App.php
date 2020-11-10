@@ -317,6 +317,8 @@ class App
         $number_of_options = count($all_options);
         $number_of_elements_per_tables = 40;
         $table_count = intval($number_of_options/$number_of_elements_per_tables);
+
+        echo "table count is" .  $table_count;
         
         
         $i = 0;$j=0;
@@ -374,7 +376,7 @@ class App
             $i=0;
         }
 
-        echo "setup_new arn success";
+        
     }
     /**
      * Add new quick action data
