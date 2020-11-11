@@ -517,6 +517,7 @@ class App
                 $this->ci->db->where('company_username', $company_username);
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
+                echo "select all from ".$table_name_record['table_name']."where companyusername = ". $company_username;
                 // Loop the options and store them in a array to prevent fetching again and again from database
                 if($query->num_rows()>0){
                     foreach($option_set as $key=>$value){
