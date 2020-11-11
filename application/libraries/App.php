@@ -265,9 +265,9 @@ class App
             $this->ci->db->from(db_prefix() . '_sub_options_ref');
             $query = $this->ci->db->get();
             $table_name_records = $query->row_array();
-            echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
+           // echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
             if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
-               // echo "running in new tables";
+               echo "running in new tables";
                 $company_username = $_SESSION['current_company'];
                 $this->ci->db->select($table_name_records['col_name']);
                 $this->ci->db->from($table_name_records['table_name']);
@@ -277,12 +277,15 @@ class App
 
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
+                echo "option set is ";
+                print_r($option_set);
                 //echo json_encode($option_set);die;
                 //echo $query->num_rows();die();
                 if($query->num_rows()>0){
                     $row = json_decode($table_name_records['col_name']);
                     if ($row) {
                         $val = $row->value;
+                        echo "value is ".  $val ;
                     }
                 }
             }else{
