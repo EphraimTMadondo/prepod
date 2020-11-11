@@ -268,6 +268,10 @@ class App
            // echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
             if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
 
+
+
+                
+
                echo "running in new tables";
                 $company_username = $_SESSION['current_company'];
                 $this->ci->db->select($table_name_records['col_name']);
