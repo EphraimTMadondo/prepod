@@ -523,7 +523,7 @@ class App
                     foreach($option_set as $key=>$value){
                         echo "option_set is ";
                         print_r($option_set);
-                        echo "value is ". $key=>$value;
+                      //  echo "value is ". $key=>$value;
 
                         $temp = json_decode($value);
                         if(isset($temp->autoload)){
