@@ -530,7 +530,10 @@ class App
 
                         echo "comoany username is " . $temp->company_username;
                         
-                        if(isset($temp->autoload)){
+                if($temp->company_username === "tbga")
+                  {
+                
+                      if(isset($temp->autoload)){
                             //echo json_encode("Key $key, value $value"); die;
                             if($temp->autoload == "1"){
 
@@ -538,6 +541,8 @@ class App
                             }
                             
                         }
+
+                    }
 
                     
                     }    
