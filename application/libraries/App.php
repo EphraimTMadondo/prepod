@@ -266,7 +266,7 @@ class App
                 $this->ci->db->select("*");
                 $this->ci->db->where('field_name', $name);
                 $this->ci->db->from(db_prefix() . '_sub_options_ref');
-                $table_name_records = $CI->db->get()->row_array();
+                $table_name_records =  $this->ci->db->get()->row_array();
                 
                 $this->ci->db->select($table_name_records['col_name']);
                 $this->ci>db->from($table_name_records['table_name']);
