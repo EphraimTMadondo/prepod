@@ -313,6 +313,7 @@ class App
             
         }else{
             $val = $this->options[$name];
+            $val = "testing else";
         }
         //echo "val $val name $name"; die;
         if(!isset($_SESSION['current_company'])){
