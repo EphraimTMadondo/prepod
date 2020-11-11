@@ -286,7 +286,7 @@ class App
                     if ($row) {
 
 
-                        
+
                       //  $val = $row->value;
                     
                     }
@@ -311,7 +311,7 @@ class App
             }
             
         }else{
-            $val = $this->options[$name];
+          //  $val = $this->options[$name];
         }
         //echo "val $val name $name"; die;
         if(!isset($_SESSION['current_company'])){
