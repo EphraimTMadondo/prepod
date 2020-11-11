@@ -263,15 +263,15 @@ class App
 
             if(isset($_SESSION['current_company'])){
                 $company_username = $_SESSION['current_company'];
-                $CI->db->select("*");
-                $CI->db->where('field_name', $name);
-                $CI->db->from(db_prefix() . '_sub_options_ref');
+                $this->ci->db->select("*");
+                $this->ci->db->where('field_name', $name);
+                $this->ci->db->from(db_prefix() . '_sub_options_ref');
                 $table_name_records = $CI->db->get()->row_array();
                 
-                $CI->db->select($table_name_records['col_name']);
-                $CI->db->from($table_name_records['table_name']);
-                $CI->db->where('company_username', $company_username);
-                $query=$CI->db->get();
+                $this->ci->db->select($table_name_records['col_name']);
+                $this->ci>db->from($table_name_records['table_name']);
+                $this->ci->db->where('company_username', $company_username);
+                $query=$this->ci->db->get();
                 $option_set = $query->row_array();
                 if($query->num_rows()>0){
                     //echo $table_name_records['table_name'] . $table_name_records['col_name'] . "option_set ".json_encode($option_set) . "<br/><br/>";
