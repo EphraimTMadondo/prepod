@@ -530,7 +530,7 @@ class App
 
                         echo "comoany username is " . $temp->company_username;
                         
-                if($temp->company_username === "tbga")
+                if($temp->company_username === "tbga" ||$temp->company_username === ""  )
                   {
                 
                       if(isset($temp->autoload)){
