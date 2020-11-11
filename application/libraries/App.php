@@ -269,9 +269,7 @@ class App
             if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
 
 
-
                 
-
                echo "running in new tables";
                 $company_username = $_SESSION['current_company'];
                 $this->ci->db->select($table_name_records['col_name']);
@@ -317,7 +315,7 @@ class App
             
         }else{
             $val = $this->options[$name];
-            $val = "testing else";
+           // $val = "testing else";
         }
         //echo "val $val name $name"; die;
         if(!isset($_SESSION['current_company'])){
