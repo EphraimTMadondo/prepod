@@ -280,8 +280,8 @@ class App
 
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
-               // echo "option set is ";
-               // print_r($option_set);
+               echo "option set is ";
+               print_r($option_set);
                 //echo json_encode($option_set);die;
                 //echo $query->num_rows();die();
                 if($query->num_rows()>0){
