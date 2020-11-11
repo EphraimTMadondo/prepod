@@ -260,37 +260,30 @@ class App
 
         if (!isset($this->options[$name])) {
            
-            $this->ci->db->select("*");
-            $this->ci->db->where('field_name', $name);
-            $this->ci->db->from(db_prefix() . '_sub_options_ref');
-            $query = $this->ci->db->get();
-            $table_name_records = $query->row_array();
-           // echo "we are selecting field-name ". $name." from " . '_sub_options_ref';
-            if(($query->num_rows()>0)  && isset($_SESSION['current_company'])){
-               echo "running in new tables";
+
+            if(isset($_SESSION['current_company'])){
                 $company_username = $_SESSION['current_company'];
-                $this->ci->db->select($table_name_records['col_name']);
-                $this->ci->db->from($table_name_records['table_name']);
-                $this->ci->db->where('company_username', $company_username);
-
+                $CI->db->select("*");
+                $CI->db->where('field_name', $name);
+                $CI->db->from(db_prefix() . '_sub_options_ref');
+                $table_name_records = $CI->db->get()->row_array();
                 
-
-                $query = $this->ci->db->get();
+                $CI->db->select($table_name_records['col_name']);
+                $CI->db->from($table_name_records['table_name']);
+                $CI->db->where('company_username', $company_username);
+                $query=$CI->db->get();
                 $option_set = $query->row_array();
-               // echo "option set is ";
-               // print_r($option_set);
-                //echo json_encode($option_set);die;
-                //echo $query->num_rows();die();
                 if($query->num_rows()>0){
-                    $row = json_decode($table_name_records['col_name']);
-                    if ($row) {
-
-
-
-                      //  $val = $row->value;
-                    
-                    }
+                    //echo $table_name_records['table_name'] . $table_name_records['col_name'] . "option_set ".json_encode($option_set) . "<br/><br/>";
+                    $row = json_decode($option_set[$table_name_records['col_name']]);
+                    $val =$row->value;
+                    return hooks()->apply_filters('get_option', $val, $name);
+                   
                 }
+                
+                     
+            }
+           
             }else{
                 
                 //end of add by Leo
@@ -311,7 +304,7 @@ class App
             }
             
         }else{
-          //  $val = $this->options[$name];
+            $val = $this->options[$name];
         }
         //echo "val $val name $name"; die;
         if(!isset($_SESSION['current_company'])){
