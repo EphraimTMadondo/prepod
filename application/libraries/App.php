@@ -277,15 +277,18 @@ class App
 
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
-                echo "option set is ";
-                print_r($option_set);
+               // echo "option set is ";
+               // print_r($option_set);
                 //echo json_encode($option_set);die;
                 //echo $query->num_rows();die();
                 if($query->num_rows()>0){
                     $row = json_decode($table_name_records['col_name']);
                     if ($row) {
-                        $val = $row->value;
-                        echo "value is ".  $val ;
+
+
+                        
+                      //  $val = $row->value;
+                    
                     }
                 }
             }else{
