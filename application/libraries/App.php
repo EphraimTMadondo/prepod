@@ -521,8 +521,8 @@ class App
                 // Loop the options and store them in a array to prevent fetching again and again from database
                 if($query->num_rows()>0){
                     foreach($option_set as $key=>$value){
-                        echo "option_set is ";
-                        print_r($option_set);
+                        echo "key value is ";
+                        print_r($key=>$value);
                       //  echo "value is ". $key=>$value;
 
                         $temp = json_decode($value);
