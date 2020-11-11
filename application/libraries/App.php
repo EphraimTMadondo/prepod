@@ -270,7 +270,7 @@ class App
 
 
                 
-               echo "running in new tables";
+            
                 $company_username = $_SESSION['current_company'];
                 $this->ci->db->select($table_name_records['col_name']);
                 $this->ci->db->from($table_name_records['table_name']);
@@ -280,8 +280,7 @@ class App
 
                 $query = $this->ci->db->get();
                 $option_set = $query->row_array();
-               echo "option set is ";
-               print_r($option_set);
+             
                 //echo json_encode($option_set);die;
                 //echo $query->num_rows();die();
                 if($query->num_rows()>0){
@@ -290,8 +289,7 @@ class App
 
                         
                         $val = $row->value;
-                        echo "value is ".$row->value;
-                        $val = "testing";
+                        
                     
                     }
                 }
@@ -316,6 +314,7 @@ class App
             
         }else{
             $val = $this->options[$name];
+            echo "running not set";
            // $val = "testing else";
         }
         //echo "val $val name $name"; die;
