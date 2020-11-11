@@ -290,6 +290,7 @@ class App
 
                         
                         $val = $row->value;
+                        echo "value is ".$row->value;
                         $val = "testing";
                     
                     }
