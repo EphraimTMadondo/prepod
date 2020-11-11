@@ -527,6 +527,9 @@ class App
 
                         $temp = json_decode($value);
                         print_r($temp);
+
+                        if($temp->company_username == $company_username)
+                        {
                         if(isset($temp->autoload)){
                             //echo json_encode("Key $key, value $value"); die;
                             if($temp->autoload == "1"){
@@ -535,6 +538,8 @@ class App
                             }
                             
                         }
+
+                    }
                     }    
                 }
                 
