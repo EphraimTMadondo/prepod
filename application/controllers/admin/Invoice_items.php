@@ -58,12 +58,17 @@ class Invoice_items extends AdminController
                     if ($id) {
                         $success = true;
                         $message = _l('added_successfully', _l('sales_item'));
+                        set_alert('success', 'Item successfully created');
                     }
+
+
+                    /***
                     echo json_encode([
                         'success' => $success,
                         'message' => $message,
                         'item'    => $this->invoice_items_model->get($id),
-                    ]);
+                    ]);  */
+
                 } else {
                     if (!has_permission('items', '', 'edit')) {
                         header('HTTP/1.0 400 Bad error');
