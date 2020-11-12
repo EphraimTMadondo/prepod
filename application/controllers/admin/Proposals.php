@@ -150,7 +150,7 @@ class Proposals extends AdminController
                     }
                 }
             } else {
-                echo "running";
+            
                 if (!has_permission('proposals', '', 'edit')) {
                     access_denied('proposals');
                 }
@@ -167,7 +167,7 @@ class Proposals extends AdminController
         }
 
 
-        
+
         if ($id == '') {
             $title = _l('add_new', _l('proposal_lowercase'));
         } else {

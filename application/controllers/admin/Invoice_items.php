@@ -53,6 +53,7 @@ class Invoice_items extends AdminController
                         die;
                     }
                     $id      = $this->invoice_items_model->add($data);
+                    echo "id is ".$id;
                     $success = false;
                     $message = '';
                     if ($id) {
