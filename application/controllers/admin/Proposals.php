@@ -150,6 +150,7 @@ class Proposals extends AdminController
                     }
                 }
             } else {
+                "running";
                 if (!has_permission('proposals', '', 'edit')) {
                     access_denied('proposals');
                 }
