@@ -120,6 +120,8 @@ class Invoice_items_model extends App_Model
         {
         $data['company_username'] =  $_SESSION['current_company'];
           $this->db->insert(db_prefix() . 'items', $data);
+
+          
         }
        
        

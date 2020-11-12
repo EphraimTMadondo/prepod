@@ -143,8 +143,7 @@ function _table_jump_to_page(e, t) {
 }
 function alert_float(e, t, a) {
 
-    if(t !='')
-    {
+   
     var n, i;
     (n = $("body").find("float-alert").length),
         (n = "alert_float_" + ++n),
@@ -161,7 +160,7 @@ function alert_float(e, t, a) {
             });
         }, a);
 
-    }
+    
 
 }
 function generatePassword(e) {
