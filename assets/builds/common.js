@@ -142,6 +142,9 @@ function _table_jump_to_page(e, t) {
     }
 }
 function alert_float(e, t, a) {
+
+    if(t !='')
+    {
     var n, i;
     (n = $("body").find("float-alert").length),
         (n = "alert_float_" + ++n),
@@ -157,6 +160,9 @@ function alert_float(e, t, a) {
                 $("#" + n).remove();
             });
         }, a);
+
+    }
+
 }
 function generatePassword(e) {
     for (var t = "abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", a = "", n = 0, i = t.length; n < 12; ++n) a += t.charAt(Math.floor(Math.random() * i));
