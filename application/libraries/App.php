@@ -314,7 +314,7 @@ class App
             
         }else{
             $val = $this->options[$name];
-            echo "running not set";
+          //  echo "running not set";
            // $val = "testing else";
         }
         //echo "val $val name $name"; die;
@@ -533,7 +533,7 @@ class App
                 if($temp->company_username === "tbga" ||$temp->company_username === ""  )
                   {
                 
-                    echo "comoany username is " . $temp->company_username;
+                  //  echo "comoany username is " . $temp->company_username;
                       if(isset($temp->autoload)){
                             //echo json_encode("Key $key, value $value"); die;
                             if($temp->autoload == "1"){
@@ -543,7 +543,7 @@ class App
                             
                         }
 
-                        
+
 
                     }
 
