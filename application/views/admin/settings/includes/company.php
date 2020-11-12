@@ -13,6 +13,15 @@
     <?php echo render_input('settings[company_vat]','company_vat_number',get_option('company_vat')); ?>
     <?php echo render_custom_fields('company',0); ?>
     <hr />
+
+    <style>
+
+
+        .hr-panel-heading{
+                display:none;
+        }
+
+    </style>
     <!--
     <?php echo render_textarea('settings[company_info_format]','company_info_format',clear_textarea_breaks(get_option('company_info_format')),array('rows'=>8,'style'=>'line-height:20px;')); ?>
     <p>
