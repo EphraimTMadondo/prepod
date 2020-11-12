@@ -57,7 +57,7 @@ $config['bcc_batch_mode']   = false;
 $config['bcc_batch_size']   = 200;
 
 $config['imap_host'] = 'xxx.xxx.xxx.xxx';
-$config['imap_user'] = 'user@domain.com';
+$config['imap_user'] = 'worksuite@worksuite.app';
 $config['imap_pass'] = 'Jk98S**Jlk';
 $config['imap_port'] = '143';
 $config['imap_mailbox'] = 'INBOX';
