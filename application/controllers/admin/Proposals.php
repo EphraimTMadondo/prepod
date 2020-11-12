@@ -135,7 +135,7 @@ class Proposals extends AdminController
             $proposal_data = $this->input->post();
 
         
-            print_r($proposal_data);
+         
             if ($id == '') {
                 if (!has_permission('proposals', '', 'create')) {
                     access_denied('proposals');
