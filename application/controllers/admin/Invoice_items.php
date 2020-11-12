@@ -45,7 +45,7 @@ class Invoice_items extends AdminController
     {
         if (has_permission('items', '', 'view')) {
             if ($this->input->post()) {
-                echo "running";
+                
                 $data = $this->input->post();
                 if ($data['itemid'] == '') {
                     if (!has_permission('items', '', 'create')) {
@@ -58,7 +58,7 @@ class Invoice_items extends AdminController
                     $success = false;
                     $message = '';
                     if ($id) {
-                        echo "id exists";
+                       // echo "id exists";
                         $success = true;
                         $message = _l('added_successfully', _l('sales_item'));
                         set_alert('success', 'Item successfully created');
@@ -67,8 +67,8 @@ class Invoice_items extends AdminController
 
                     
                     echo json_encode([
-                        'success' => $success,
-                        'message' => $message,
+                        'success' => true,
+                        'message' => 'test message',
                         'item'    => $this->invoice_items_model->get($id),
                     ]); 
 
