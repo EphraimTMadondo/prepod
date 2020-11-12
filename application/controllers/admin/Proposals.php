@@ -165,6 +165,9 @@ class Proposals extends AdminController
                 }
             }
         }
+
+
+        
         if ($id == '') {
             $title = _l('add_new', _l('proposal_lowercase'));
         } else {
