@@ -257,6 +257,47 @@ class App
             $name = 1;
             //echo "<script>alert('$name');<script>";die();
         }
+        if($name == "mail_engine"){
+            
+            $val = 'codeigniter';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+        if($name == "email_protocol"){
+            
+            $val = 'mail';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+        if($name == "smtp_email_charset"){
+            
+            $val = 'utf-8';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+
+        if($name == "bcc_emails"){
+            
+            $val = '';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+
+        if($name == "email_signature"){
+            
+            $val = 'Team Workzuite';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+        
+        if($name == "email_header"){
+            
+            $val = '';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+
+        if($name == "email_footer"){
+            
+            $val = '';
+            return hooks()->apply_filters('get_option', $val, $name);
+        }
+
+        
 
         if (!isset($this->options[$name])) {
            
