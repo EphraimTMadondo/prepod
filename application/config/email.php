@@ -56,6 +56,15 @@ $config['bcc_batch_mode']   = false;
 
 $config['bcc_batch_size']   = 200;
 
+$config['imap_host'] = 'xxx.xxx.xxx.xxx';
+$config['imap_user'] = 'user@domain.com';
+$config['imap_pass'] = 'Jk98S**Jlk';
+$config['imap_port'] = '143';
+$config['imap_mailbox'] = 'INBOX';
+$config['imap_path'] = '';
+$config['imap_server_encoding'] = 'utf-8';
+$config['imap_attachemnt_dir'] = './tmp/';
+
 $config['encoding']         = '8bit';                   // The body encoding. For CodeIgniter: '8bit' or '7bit'. For PHPMailer: '8bit', '7bit', 'binary', 'base64', or 'quoted-printable'.
 
 // DKIM Signing

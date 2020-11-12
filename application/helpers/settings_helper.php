@@ -330,12 +330,14 @@ function app_init_settings_tabs()
 
      */
 
-    
+    /***
     $CI->app_tabs->add_settings_tab('email', [
         'name'     => _l('settings_group_email'),
         'view'     => 'admin/settings/includes/email',
         'position' => 20,
     ]);
+    
+    */
 
     $CI->app_tabs->add_settings_tab('sales', [
         'name'     => _l('settings_group_sales'),
