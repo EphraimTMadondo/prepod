@@ -45,6 +45,7 @@ class Invoice_items extends AdminController
     {
         if (has_permission('items', '', 'view')) {
             if ($this->input->post()) {
+                echo "running";
                 $data = $this->input->post();
                 if ($data['itemid'] == '') {
                     if (!has_permission('items', '', 'create')) {
