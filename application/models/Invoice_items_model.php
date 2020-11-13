@@ -28,8 +28,7 @@ class Invoice_items_model extends App_Model
             t2.taxrate as taxrate_2,t2.id as taxid_2,t2.name as taxname_2,
             description,long_description,group_id,' . db_prefix() . 'items_groups.name as group_name,unit');
         $this->db->from(db_prefix() . 'items');
-      $companyusername = $_SESSION['current_company'];
-      $this->db->where('company_username', $companyusername);
+     
         $this->db->join('' . db_prefix() . 'taxes t1', 't1.id = ' . db_prefix() . 'items.tax', 'left');
         $this->db->join('' . db_prefix() . 'taxes t2', 't2.id = ' . db_prefix() . 'items.tax2', 'left');
         $this->db->join(db_prefix() . 'items_groups', '' . db_prefix() . 'items_groups.id = ' . db_prefix() . 'items.group_id', 'left');
@@ -39,7 +38,8 @@ class Invoice_items_model extends App_Model
 
             return $this->db->get()->row();
         }
-
+        $companyusername = $_SESSION['current_company'];
+        $this->db->where('company_username', $companyusername);
         return $this->db->get()->result_array();
     }
 
@@ -121,7 +121,7 @@ class Invoice_items_model extends App_Model
         $data['company_username'] =  $_SESSION['current_company'];
           $this->db->insert(db_prefix() . 'items', $data);
 
-          
+
         }
        
        
