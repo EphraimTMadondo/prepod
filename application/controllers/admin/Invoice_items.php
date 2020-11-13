@@ -73,8 +73,8 @@ class Invoice_items extends AdminController
 
                    echo json_encode([
                     'success' => true,
-                    'id'      => 4,
-                    'message' => 'hi',
+                    'id'      => $id,
+                    'message' =>  $message,
               ]); 
 
                     /***
