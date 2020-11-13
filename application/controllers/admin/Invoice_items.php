@@ -46,12 +46,7 @@ class Invoice_items extends AdminController
         
         if (has_permission('items', '', 'view')) {
             if ($this->input->post()) {
-                echo json_encode([
-                    'success' => true,
-                    'message' => "test2",
-                    'item'    => 2,
-                ]);
-                
+             
                 $data = $this->input->post();
                 if ($data['itemid'] == '') {
                     if (!has_permission('items', '', 'create')) {
@@ -59,11 +54,17 @@ class Invoice_items extends AdminController
                         echo _l('access_denied');
                         die;
                     }
-                    $id      = $this->invoice_items_model->add($data);
+                    $id  = $this->invoice_items_model->add($data);
                   
                     $success = false;
                     $message = '';
                     if ($id) {
+                        echo json_encode([
+                            'success' => true,
+                            'message' => "test3",
+                            'item'    => 2,
+                        ]);
+                        
                        // echo "id exists";
                       //  $success = true;
                      //   $message = _l('added_successfully', _l('sales_item'));
