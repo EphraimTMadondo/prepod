@@ -5930,8 +5930,7 @@ function clear_item_preview_values(default_taxes) {
     $('input[name="expense_id"]').val('');
 }
 
-// Append the added items to the preview to the table as items
-function add_item_to_table(data, itemid, merge_invoice, bill_expense) {
+// Append the added items to the preview to the tab(data, itemid, merge_invoice, bill_expense) {
 
     // If not custom data passed get from the preview
     data = typeof(data) == 'undefined' || data == 'undefined' ? get_item_preview_values() : data;
