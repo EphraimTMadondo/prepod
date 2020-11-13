@@ -46,7 +46,7 @@ class Invoice_items extends AdminController
         echo json_encode([
             'success' => true,
             'message' => "test",
-            'itemid'    => 2,
+            'item'    => 2,
         ]); 
         if (has_permission('items', '', 'view')) {
             if ($this->input->post()) {
