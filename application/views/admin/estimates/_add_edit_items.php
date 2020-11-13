@@ -434,5 +434,15 @@ function delete_item(row, itemid) {
     }
 }
 
+function get_item_preview_values() {
+    var response = {};
+    response.description = $('.main textarea[name="description"]').val();
+    response.long_description = $('.main textarea[name="long_description"]').val();
+    response.qty = $('.main input[name="quantity"]').val();
+    response.taxname = $('.main select.tax').selectpicker('val');
+    response.rate = $('.main input[name="rate"]').val();
+    response.unit = $('.main input[name="unit"]').val();
+    return response;
+}
 
                                  </script>
