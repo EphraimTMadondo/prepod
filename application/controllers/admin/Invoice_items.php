@@ -43,13 +43,14 @@ class Invoice_items extends AdminController
     /* Edit or update items / ajax request /*/
     public function manage()
     {
-        echo json_encode([
-            'success' => true,
-            'message' => "test",
-            'item'    => 2,
-        ]); 
+        
         if (has_permission('items', '', 'view')) {
             if ($this->input->post()) {
+                echo json_encode([
+                    'success' => true,
+                    'message' => "test2",
+                    'item'    => 2,
+                ]);
                 
                 $data = $this->input->post();
                 if ($data['itemid'] == '') {
