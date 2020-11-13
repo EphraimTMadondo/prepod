@@ -151,14 +151,14 @@
 // Items add/edit
 function manage_invoice_items(form) {
     var data = $(form).serialize();
-    alert("serialized data is " + data);
+   // alert("serialized data is " + data);
 
     var url = form.action;
-    alert("url is "+ url);
+   // alert("url is "+ url);
     $.post(url, data).done(function (response) {
 
         response = JSON.parse(response);
-        alert("running");
+       // alert("running");
 
         if (response.success == true) {
             var item_select = $('#item_select');
@@ -196,11 +196,14 @@ function manage_invoice_items(form) {
                 $('.table-invoice-items').DataTable().ajax.reload(null, false);
             }
             alert_float('success', response.message);
+
+
+            
         }
         $('#sales_item_modal').modal('hide');
     }).fail(function (data) {
         alert_float('danger', data.responseText);
-        alert("data is " + data.responseText);
+       // alert("data is " + data.responseText);
     });
     return false;
 }
