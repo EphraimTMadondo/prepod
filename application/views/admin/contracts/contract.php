@@ -709,6 +709,7 @@
        if (typeof (manual) != 'undefined') {
           // Show some message to the user if saved via CTRL + S
           alert_float('success', response.message);
+          location.reload();
        }
        // Invokes to set dirty to false
        editor.save();
@@ -817,6 +818,7 @@
           response = JSON.parse(response);
           if (response.success == true) {
              alert_float('success', response.message);
+             location.reload();
              $('body').find('[data-contract-comment="' + id + '"]').html(nl2br(content));
           }
        });
