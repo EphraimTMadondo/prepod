@@ -151,14 +151,14 @@
 // Items add/edit
 function manage_invoice_items(form) {
     var data = $(form).serialize();
-   
+    alert("serialized data is " + data);
 
     var url = form.action;
     $.post(url, data).done(function (response) {
 
         response = JSON.parse(response);
-        alert ("response is " + response);
-        
+        alert("response is " + response);
+
         if (response.success == true) {
             var item_select = $('#item_select');
             if ($("body").find('.accounting-template').length > 0) {
