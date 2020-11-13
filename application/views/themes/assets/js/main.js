@@ -6171,6 +6171,7 @@ function delete_item(row, itemid) {
     if ($('input[name="isedit"]').length > 0) {
         $('#removed-items').append(hidden_input('removed_items[]', itemid));
     }
+    location.reload();
 }
 
 // Format money function
