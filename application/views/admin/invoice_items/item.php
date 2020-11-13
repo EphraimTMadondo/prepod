@@ -195,7 +195,7 @@ function manage_invoice_items(form) {
         $('#sales_item_modal').modal('hide');
     }).fail(function (data) {
         alert_float('danger', data.responseText);
-        alert("data is ". data.responseText);
+        alert("data is " + data.responseText);
     });
     return false;
 }
