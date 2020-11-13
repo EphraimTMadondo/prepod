@@ -154,6 +154,7 @@ function manage_invoice_items(form) {
     alert("serialized data is " + data);
 
     var url = form.action;
+    alert("url is "+ url);
     $.post(url, data).done(function (response) {
 
         response = JSON.parse(response);
