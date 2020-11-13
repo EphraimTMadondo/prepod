@@ -71,6 +71,9 @@ class Invoice_items extends AdminController
                     
                    // set_alert('success', 'Item successfully created');
 
+
+
+                   
                     
                     echo json_encode([
                         'success' => true,

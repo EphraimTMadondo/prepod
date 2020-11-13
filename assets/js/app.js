@@ -5,10 +5,7 @@ datepicker working but classes missing?
 
 B 15 12 15 20 15
 
-Working with Beki 'Butch Cassidy' Mbambo is a refreshing experience. His willingness to consider and deliver my needs as a client is 
-matched by his willingness to offer advice on bringing about the best vocal performace. In all my experiences with him I recevie not 
-only a mixed and mastered product but some creative additions as well which usually transform the song to a
-great place I would have never imagined on my own. I believe these strengths come from his experiences as an artist himself.
+
 
 
 Right There
