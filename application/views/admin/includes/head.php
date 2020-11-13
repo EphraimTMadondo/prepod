@@ -223,6 +223,20 @@
     color: white;
 }
 
+.control-label, label {
+    font-weight: 400;
+    font-size: 13px;
+    color: #2d2d2d;
+    margin-bottom: 7px;
+}
+
+.bs-searchbox .form-control {
+    margin-bottom: 0;
+    width: 100%;
+    float: none;
+}
+
+
 .xdsoft_datetimepicker {
 	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
 	background: #fff;
