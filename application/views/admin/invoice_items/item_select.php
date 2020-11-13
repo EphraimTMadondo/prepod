@@ -16,6 +16,9 @@
      </optgroup>
      <?php } ?>
    </select>
+
+
+   
  </div>
  <?php if(has_permission('items','','create')){ ?>
  <div class="input-group-append">
