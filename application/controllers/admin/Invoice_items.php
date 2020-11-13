@@ -71,15 +71,20 @@ class Invoice_items extends AdminController
                     
                    // set_alert('success', 'Item successfully created');
 
+                   echo json_encode([
+                    'success' => $success,
+                    'id'      => $_id,
+                    'message' => $message,
+              ]); 
 
-
-                   
-                    
+                    /***
                     echo json_encode([
-                        'success' => true,
+                        'success' => $success,
                         'message' => $message,
                         'item'    => $this->invoice_items_model->get($id),
                     ]); 
+
+                     */
 
                 } else {
                     if (!has_permission('items', '', 'edit')) {
