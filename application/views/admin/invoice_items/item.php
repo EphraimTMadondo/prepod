@@ -158,6 +158,7 @@ function manage_invoice_items(form) {
 
         response = JSON.parse(response);
         alert ("response is " + response);
+        
         if (response.success == true) {
             var item_select = $('#item_select');
             if ($("body").find('.accounting-template').length > 0) {
