@@ -101,6 +101,7 @@
         response = JSON.parse(response);
         if(response.success == true){
             alert_float('success',response.message);
+            location.reload();
             if($('body').hasClass('contract') && typeof(response.id) != 'undefined') {
                 var ctype = $('#contract_type');
                 ctype.find('option:first').after('<option value="'+response.id+'">'+response.name+'</option>');

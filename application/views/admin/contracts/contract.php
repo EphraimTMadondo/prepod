@@ -717,7 +717,7 @@
        var response = JSON.parse(error.responseText);
        alert_float('danger', response.message);
     });
-    location.reload();
+  
    }
 
    function delete_contract_attachment(wrapper, id) {
@@ -825,7 +825,7 @@
        });
        toggle_contract_comment_edit(id);
     }
-    location.reload();
+
    }
 
    function toggle_contract_comment_edit(id) {
