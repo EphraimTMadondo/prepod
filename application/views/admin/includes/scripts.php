@@ -105,7 +105,7 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
 
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
+<!--<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> -->
 
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
@@ -130,7 +130,7 @@
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
 <script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
 
-<!-- <script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script> -->
+<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>
 
 
 
