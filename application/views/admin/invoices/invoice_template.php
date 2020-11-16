@@ -40,7 +40,7 @@
             <div class="f_client_id">
               <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
-<div class="dropdown bootstrap-select show-tick">
+<div class="dropdown bootstrap-select show-tick" style ="width: 100%">
                 <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($invoice) && empty($invoice->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <?php $selected = (isset($invoice) ? $invoice->clientid : '');
                
