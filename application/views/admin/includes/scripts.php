@@ -14,22 +14,6 @@
 
 
 
-<script type="text/javascript" id="tinymce-js" src="<?php echo base_url();?>assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
-<script type="text/javascript" id="jquery-shortcuts-js" src="<?php echo base_url();?>assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
-<script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.js"></script>
-<script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
-<script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
-<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
-
-<script rc="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
-
-
-<script src="<?php echo base_url();?>application/views/themes/assets/plugins/jquery.are-you-sure/jquery.are-you-sure.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/accounting.js/accounting.js"></script>
-
-
-
-
 
 
 
