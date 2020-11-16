@@ -29,19 +29,16 @@
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.js"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
-
-<!--
-
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
 
-
+<script rc="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
 
 
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/jquery.are-you-sure/jquery.are-you-sure.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/accounting.js/accounting.js"></script>
 
--->
-<script rc="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+
+
 
 
 
@@ -57,7 +54,7 @@
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/swiper.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>\n";
+   
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
          echo "<script src='".base_url()."application/views/themes/assets/js/dashboard-custom.js'></script>\n";
        
@@ -108,7 +105,7 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
 
-<!-- script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> -->
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
 
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
@@ -128,12 +125,12 @@
 <script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
 
-<!--<script src="<?php echo base_url();?>assets/js/app.js"></script> -->
-<!-- <script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script> -->
-<!--<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script> -->
-<!-- <script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script> -->
+<script src="<?php echo base_url();?>assets/js/app.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
+<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
+<script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
 
-<!-- <script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script> -->
+<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>
 
 
 
@@ -226,7 +223,14 @@
          }
      }
 
+     	//Make all doc nubers uneditable
+	var x = document.getElementsByName("number");
+var i;
+for (i = 0; i < x.length; i++) {
 
+    x[i].setAttribute("readonly", true )
+  
+}
  </script>
  
 <!-- END: Page JS-->
