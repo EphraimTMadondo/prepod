@@ -1,9 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="card mt-2 <?php if(!isset($invoice) || (isset($invoice) && count($invoices_to_merge) == 0 && (isset($invoice) && !isset($invoice_from_project) && count($expenses_to_bill) == 0 || $invoice->status == Invoices_model::STATUS_CANCELLED))){echo ' hide';} ?>" id="invoice_top_info">
-  
-  
-  
-  
    <div class="card-body">
       <div class="row">
          <div id="merge" class="col-md-6">
@@ -40,10 +36,12 @@
       <div class="col-md-6">
           <div class= "card">
          <div class= "card-body" >
-
-
-
-            
+         <div class="f_client_id">
+              <div class="form-group">
+                <label for="clientid" class="control-label"> <small class="req text-danger">* </small>Customer</label>
+                <div class="dropdown bootstrap-select ajax-search bs3" style="width: 100%;"><select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search" data-none-selected-text="Non selected" tabindex="-98"><option class="bs-title-option" value=""></option><optgroup label="Currently Selected"><option value="" title="" class="bs-title-option" selected="selected"></option></optgroup></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-15" aria-haspopup="listbox" aria-expanded="false" data-id="clientid" title="Select and begin typing"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select and begin typing</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" style="min-height: 55px; max-height: 180px; overflow: hidden;"><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-15" aria-autocomplete="list" placeholder="Type to search..."></div><div class="inner open" role="listbox" id="bs-select-15" tabindex="-1" style="min-height: 0px; max-height: 124px; overflow-y: auto;"><ul class="dropdown-menu inner " role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class="divider optgroup-1div"></li><li class="dropdown-header optgroup-1"><span class="text">Currently Selected</span></li><li class="optgroup-1"><a role="option" class="opt bs-title-option" id="bs-select-15-2" tabindex="0"><span class="text"></span></a></li></ul></div><div class="status" style="">Start typing to search</div></div></div>
+              </div>
+            </div>
             <div class="f_client_id">
               <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
@@ -60,12 +58,6 @@
                 </select>
               </div>
             </div>
-
-            <?php
-
-         
-                        echo render_select('client',$staff, $this->clients_model->get(),'sale_agent_string',$selected);
-                        ?>
             <?php
             if(!isset($invoice_from_project)){ ?>
             <div class="form-group select-placeholder projects-wrapper<?php if((!isset($invoice)) || (isset($invoice) && !customer_has_projects($invoice->clientid))){ echo ' hide';} ?>">
