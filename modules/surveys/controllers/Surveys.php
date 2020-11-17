@@ -516,11 +516,34 @@ class Surveys extends AdminController
                   $this->db->where_in('staffid', $staffArray3);
                   $emails = $this->db->get(db_prefix() . 'staff')->result_array();
 
-
+             
 
 
 
                 print_r($emails);
+
+                $list->emails = [];
+                $i            = 0;
+                foreach ($emails as $email) {
+                    if (empty($email['email'])) {
+                        continue;
+                    }
+                    if ($id == 'leads') {
+                        $list->emails[$i]['dateadded'] = $email['dateadded'];
+                    } else {
+                        $list->emails[$i]['dateadded'] = $email['datecreated'];
+                    }
+                    $list->emails[$i]['email'] = $email['email'];
+                    $i++;
+                }
+                $data['list']  = $list;
+                $data['title'] = $title;
+                $fixed_list    = true;
+                   
+                $data['fixedlist'] = $fixed_list;
+                $this->load->view('surveys/mail_lists/list_view', $data);
+
+
             } elseif ($id == 'leads') {
                 $title = _l('leads');
                 if (is_gdpr() && get_option('gdpr_enable_consent_for_leads') == '1') {
@@ -558,8 +581,11 @@ class Surveys extends AdminController
             $data['list']  = $list;
             $fixed_list    = false;
         }
+        if($id =='staff')
+        {
         $data['fixedlist'] = $fixed_list;
         $this->load->view('surveys/mail_lists/list_view', $data);
+        }
     }
 
     /* Add single email to mail list / ajax*/
