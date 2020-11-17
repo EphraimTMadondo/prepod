@@ -866,7 +866,17 @@ textarea.form-control {
    </div>
    </div>
 
-   
+   <script>
+
+function init_ajax_project_search_by_customer_id(selector) {
+    selector = typeof(selector) == 'undefined' ? '#project_id.ajax-search' : selector;
+    init_ajax_search('project', selector, {
+        customer_id: function() {
+            return $('select[name="clientid"]').val();
+        }
+    });
+}
+   </script>
 
 </div>
 
