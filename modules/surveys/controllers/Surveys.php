@@ -480,6 +480,7 @@ class Surveys extends AdminController
             ]);
         }
         if ($id == 'staff' || $id == 'clients' || $id == 'leads') {
+            echo "running if staff client leads ";
             $list  = new stdClass();
             $title = _l('clients_mail_lists');
             if ($id == 'clients') {
@@ -492,7 +493,7 @@ class Surveys extends AdminController
                 $data['groups'] = $this->clients_model->get_groups();
             } elseif ($id == 'staff') {
                 $title = _l('staff_mail_lists');
-
+                echo "running in staff";
                 $emails = $this->staff_model->get();
             } elseif ($id == 'leads') {
                 $title = _l('leads');
@@ -525,6 +526,7 @@ class Surveys extends AdminController
             $data['title'] = $title;
             $fixed_list    = true;
         } else {
+            echo "run not lead else etc ";
             $list          = $this->surveys_model->get_data_for_view_list($id);
             $data['title'] = $list->name;
             $data['list']  = $list;
