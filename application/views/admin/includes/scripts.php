@@ -25,7 +25,7 @@
 
 <script src="<?php echo base_url();?>assets/plugins/bootstrap-select-ajax/js/ajax-bootstrap-select.min.js"></script>
 <script type="text/javascript" id="datatables-js" src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js"></script>
-<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js"></script>
+<!--<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js"></script> -->
 
 
 

@@ -45,6 +45,7 @@
             <div class="f_client_id">
               <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
+                <div class="dropdown bootstrap-select ajax-search bs3" style="width: 100%;">
                 <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($invoice) && empty($invoice->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <?php $selected = (isset($invoice) ? $invoice->clientid : '');
                  if($selected == ''){
@@ -56,6 +57,7 @@
                     echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
                  } ?>
                 </select>
+                </div>
               </div>
             </div>
             <?php
