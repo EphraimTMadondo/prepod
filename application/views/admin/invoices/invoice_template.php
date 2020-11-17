@@ -36,6 +36,7 @@
       <div class="col-md-6">
           <div class= "card">
          <div class= "card-body" >
+         <!--
          <div class="f_client_id">
               <div class="form-group">
                 <label for="clientid" class="control-label"> <small class="req text-danger">* </small>Customer</label>
@@ -44,6 +45,7 @@
                 <div class="inner open" role="listbox" id="bs-select-15" tabindex="-1" style="min-height: 0px; max-height: 124px; overflow-y: auto;"><ul class="dropdown-menu inner " role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class="divider optgroup-1div"></li><li class="dropdown-header optgroup-1"><span class="text">Currently Selected</span></li><li class="optgroup-1"><a role="option" class="opt bs-title-option" id="bs-select-15-2" tabindex="0"><span class="text"></span></a></li></ul></div><div class="status" style="">Start typing to search</div></div></div>
               </div>
             </div>
+            -->
             <div class="f_client_id">
               <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
