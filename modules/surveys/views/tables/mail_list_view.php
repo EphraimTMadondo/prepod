@@ -172,7 +172,7 @@ if (is_numeric($id)) {
         ]);
     }
 
-    $result = 
+
     $output  = $result['output'];
     $rResult = $result['rResult'];
 
