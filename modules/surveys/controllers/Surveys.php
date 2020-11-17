@@ -520,12 +520,12 @@ class Surveys extends AdminController
 
 
 
-                print_r($emails);
+              //  print_r($emails);
 
 
                 
             } elseif ($id == 'leads') {
-                echo "running in leads";
+               // echo "running in leads";
                 $title = _l('leads');
                 if (is_gdpr() && get_option('gdpr_enable_consent_for_leads') == '1') {
                     $this->load->model('gdpr_model');
@@ -545,10 +545,10 @@ class Surveys extends AdminController
                     continue;
                 }
                 if ($id == 'leads') {
-                    echo "running in leads";
+                   // echo "running in leads";
                     $list->emails[$i]['dateadded'] = $email['dateadded'];
                 } else {
-                    echo "running in else not lead";
+                  //  echo "running in else not lead";
                     $list->emails[$i]['dateadded'] = $email['datecreated'];
                 }
                 $list->emails[$i]['email'] = $email['email'];
@@ -558,7 +558,7 @@ class Surveys extends AdminController
             $data['title'] = $title;
             $fixed_list    = true;
         } else {
-           echo "run else everything";
+         //  echo "run else everything";
             $list          = $this->surveys_model->get_data_for_view_list($id);
             $data['title'] = $list->name;
             $data['list']  = $list;
