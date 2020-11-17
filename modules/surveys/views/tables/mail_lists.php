@@ -9,9 +9,14 @@ $aColumns = [
     'creator',
     ];
 
+    $where = [];
+
+    $companyusername = $_SESSION['current_company'];
+    array_push($where, 'AND ('.db_prefix()."mail_lists.company_username = '$companyusername')");
+
 $sIndexColumn = 'listid';
 $sTable       = db_prefix().'emaillists';
-$result       = data_tables_init($aColumns, $sIndexColumn, $sTable, [], [], []);
+$result       = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, []);
 $output       = $result['output'];
 $rResult      = $result['rResult'];
 foreach ($rResult as $aRow) {
