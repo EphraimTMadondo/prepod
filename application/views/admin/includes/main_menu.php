@@ -213,8 +213,9 @@
                     <ul class="menu-content">
                         <li><a href="<?php echo base_url();?>admin/assets/manage_assets"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Assets">Assets</span></a>
                         </li>
+                        <!--
                         <li><a href="<?php echo base_url();?>admin/assets/allocation"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Allocation">Allocation</span></a>
-                        </li>
+                        </li> -->
                         <li><a href="<?php echo base_url();?>admin/assets/eviction"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Remove">Remove</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/assets/depreciation"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Depreciation">Depreciation</span></a>
