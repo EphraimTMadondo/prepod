@@ -64,7 +64,7 @@
             <?php
 
          
-                        echo render_select('sale_agent',$staff,array('staffid',array('firstname','lastname')),'sale_agent_string',$selected);
+                        echo render_select('client',$staff, $this->clients_model->get(),'sale_agent_string',$selected);
                         ?>
             <?php
             if(!isset($invoice_from_project)){ ?>
