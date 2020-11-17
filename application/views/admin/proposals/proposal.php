@@ -320,7 +320,7 @@
 
  -->
  <!--script -->
-<?php // init_tail(); ?>
+<?php init_tail(); ?>
 
 <!-- end script-->
 
