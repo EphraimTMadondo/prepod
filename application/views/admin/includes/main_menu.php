@@ -231,8 +231,9 @@
                 </li>
                 <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="clapboard"></i><span class="menu-title" data-i18n="Utilities">Utilities</span></a>
                     <ul class="menu-content">
+                    <!--
                         <li><a href="<?php echo base_url();?>admin/utilities/bulk_pdf_exporter"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Bulk PDF Export">Bulk PDF Export</span></a>
-                        </li>
+                        </li> -->
                         <li><a href="<?php echo base_url();?>admin/announcements"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Announcements">Announcements</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/goals"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Goals">Goals</span></a>
