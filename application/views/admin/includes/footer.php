@@ -219,10 +219,9 @@ img {
   
 </style>
     <p class="clearfix mb-0"><span class="float-left d-inline-block">2020 &copy; Worksuite</span><span class="float-right d-sm-inline-block d-none">Designed with
-    .box1
- <span class="colored-text-1">Z</span><span class="colored-text-2">I</span><span class="colored-text-3">M</span>
- <span class="colored-text-4">B</span><span class="colored-text-5">A</span><span class="colored-text-6">B</span>
- <span class="colored-text-7">W</span><span class="colored-text-8">E</span>
+ 
+ 
+
 .box
   .green-box
   .yellow-box
@@ -232,9 +231,8 @@ img {
   .white-triangle
     .red-star
     img(src='https://res.cloudinary.com/drbnf9ini/image/upload/v1547225651/Zimbabwe_Bird.svg.png' alt='Zimbabwe Bird' style='width:120px; height:130px;')
-    
-    
-    in<a class="text-uppercase" href="mailto:madondoephraim@gmail.com" target="_blank"><i class="bx bxs-heart pink mx-50 font-small-3"></i></a></span>
+ 
+ <a class="text-uppercase" href="mailto:madondoephraim@gmail.com" target="_blank"><i class="bx bxs-heart pink mx-50 font-small-3"></i></a></span>
     <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
     </p>
 </footer>
