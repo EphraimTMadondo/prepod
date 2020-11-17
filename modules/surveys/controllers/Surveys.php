@@ -536,7 +536,7 @@ class Surveys extends AdminController
                 $data['statuses'] = $this->leads_model->get_status();
                 $data['sources']  = $this->leads_model->get_source();
 
-                $emails = $this->leads_model->get('', ['lost' => 0]);
+               // $emails = $this->leads_model->get('', ['lost' => 0]);
             }
             $list->emails = [];
             $i            = 0;
