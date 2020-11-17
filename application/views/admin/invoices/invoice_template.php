@@ -878,6 +878,6 @@ textarea.form-control {
 
 </div>
 
-<?php init_tail(); ?>
+<?php //init_tail(); ?>
 
 
