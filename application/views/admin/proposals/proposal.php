@@ -319,7 +319,7 @@
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.min.js"></script>
 
  -->
-<?php init_tail(); ?>
+<?php //init_tail(); ?>
 
 
 <script>
