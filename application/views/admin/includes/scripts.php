@@ -28,7 +28,7 @@
 <!--<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js"></script> -->
 
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-<script src="<?php echo base_url();?>assets/js/main.min.js"></script>
+
 
 
 
