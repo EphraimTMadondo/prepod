@@ -4,7 +4,6 @@
       <div class="row">
          <div id="merge" class="col-md-6">
             <?php
-             //$rel_id = '';
               if(isset($invoice)){
                  $this->load->view('admin/invoices/merge_invoice', array('invoices_to_merge'=>$invoices_to_merge));
               }
@@ -39,9 +38,8 @@
          <div class= "card-body" >
             
             <div class="f_client_id">
-              <div class="form-group select-placeholder" id="rel_id_wrapper">
+              <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
-                <div class="dropdown bootstrap-select ajax-search" style="width: 100%;">
                 <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($invoice) && empty($invoice->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <?php $selected = (isset($invoice) ? $invoice->clientid : '');
                  if($selected == ''){
@@ -53,30 +51,6 @@
                     echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
                  } ?>
                 </select>
-  </div>
-
-
-
-<div class="form-group" id="rel_id_wrapper">
-                           <label for="rel_id"> <small class="req text-danger">* </small><span class="rel_id_label">Customer</span></label>
-                           <div id="rel_id_select">
-                              
-                           <div class="dropdown bootstrap-select ajax-search" style="width: 100%;"><select name="rel_id" id="rel_id" class="ajax-search" data-width="100%" data-live-search="true" data-none-selected-text="Non selected" tabindex="-98" title="Select and begin typing"><option class="bs-title-option" value=""></option></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-9" aria-haspopup="listbox" aria-expanded="false" data-id="rel_id" title="Select and begin typing"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select and begin typing</div></div> </div></button><div class="dropdown-menu " style="min-height: 47px; max-height: 105.922px; overflow: hidden;"><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-9" aria-autocomplete="list" placeholder="Type to search..."></div><div class="inner show" role="listbox" id="bs-select-9" tabindex="-1" style="min-height: 0px; max-height: 46.9219px; overflow-y: auto;"><ul class="dropdown-menu inner show" role="presentation"></ul></div><div class="status" style="">Start typing to search</div></div></div></div>
-                        </div>
-
-                <div class="form-group select-placeholder<?php if($rel_id == ''){echo '';} ?> " id="rel_id_wrapper">
-                           <label for="rel_id"><span class="rel_id_label"></span></label>
-                           <div id="rel_id_select">
-                              <select name="rel_id" id="rel_id" class="ajax-search" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                              <?php if($rel_id != '' && $rel_type != ''){
-                                 $rel_data = get_relation_data($rel_type,$rel_id);
-                                 $rel_val = get_relation_values($rel_data,$rel_type);
-                                    echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
-                                 } ?>
-                              </select>
-                           </div>
-                        </div>
-                
               </div>
             </div>
             <?php
@@ -889,113 +863,6 @@ textarea.form-control {
 
 </div>
 
-<?php //init_tail(); ?>
-
-
-<script>
-   var _rel_id = $('#rel_id'),
-   _rel_type = $('#rel_type'),
-   _rel_id_wrapper = $('#rel_id_wrapper'),
-   data = {};
 
 
 
-   $(function(){
-    init_currency();
-    // Maybe items ajax search
-    init_ajax_search('items','#item_select.ajax-search',undefined,admin_url+'items/search');
-    validate_proposal_form();
-    $('body').on('change','#rel_id', function() {
-     if($(this).val() != ''){
-      $.get(admin_url + 'proposals/get_relation_data_values/' + $(this).val() + '/' + _rel_type.val(), function(response) {
-        $('input[name="proposal_to"]').val(response.to);
-        $('textarea[name="address"]').val(response.address);
-        $('input[name="email"]').val(response.email);
-        $('input[name="phone"]').val(response.phone);
-        $('input[name="city"]').val(response.city);
-        $('input[name="state"]').val(response.state);
-        $('input[name="zip"]').val(response.zip);
-        $('select[name="country"]').selectpicker('val',response.country);
-        var currency_selector = $('#currency');
-        if(_rel_type.val() == 'customer'){
-          if(typeof(currency_selector.attr('multi-currency')) == 'undefined'){
-            currency_selector.attr('disabled',true);
-          }
-
-         } else {
-           currency_selector.attr('disabled',false);
-        }
-        var proposal_to_wrapper = $('[app-field-wrapper="proposal_to"]');
-        if(response.is_using_company == false && !empty(response.company)) {
-          proposal_to_wrapper.find('#use_company_name').remove();
-          proposal_to_wrapper.find('#use_company_help').remove();
-          proposal_to_wrapper.append('<div id="use_company_help" class="hide">'+response.company+'</div>');
-          proposal_to_wrapper.find('label')
-          .prepend("<a href=\"#\" id=\"use_company_name\" data-toggle=\"tooltip\" data-title=\"<?php echo _l('use_company_name_instead'); ?>\" onclick='document.getElementById(\"proposal_to\").value = document.getElementById(\"use_company_help\").innerHTML.trim(); this.remove();'><i class=\"fa fa-building-o\"></i></a> ");
-        } else {
-          proposal_to_wrapper.find('label #use_company_name').remove();
-          proposal_to_wrapper.find('label #use_company_help').remove();
-        }
-       /* Check if customer default currency is passed */
-       if(response.currency){
-         currency_selector.selectpicker('val',response.currency);
-       } else {
-        /* Revert back to base currency */
-        currency_selector.selectpicker('val',currency_selector.data('base'));
-      }
-      currency_selector.selectpicker('refresh');
-      currency_selector.change();
-    }, 'json');
-    }
-   });
-    $('.rel_id_label').html(_rel_type.find('option:selected').text());
-    _rel_type.on('change', function() {
-      var clonedSelect = _rel_id.html('').clone();
-      _rel_id.selectpicker('destroy').remove();
-      _rel_id = clonedSelect;
-      $('#rel_id_select').append(clonedSelect);
-      proposal_rel_id_select();
-      if($(this).val() != ''){
-        _rel_id_wrapper.removeClass('hide');
-      } else {
-        _rel_id_wrapper.addClass('hide');
-      }
-      $('.rel_id_label').html(_rel_type.find('option:selected').text());
-    });
-    proposal_rel_id_select();
-    <?php if(!isset($proposal) && $rel_id != ''){ ?>
-      _rel_id.change();
-      <?php } ?>
-    });
-   function proposal_rel_id_select(){
-      var serverData = {};
-      serverData.rel_id = _rel_id.val();
-      data.type = _rel_type.val();
-      init_ajax_search(_rel_type.val(),_rel_id,serverData);
-   }
-   function validate_proposal_form(){
-      appValidateForm($('#proposal-form'), {
-        subject : 'required',
-        proposal_to : 'required',
-        rel_type: 'required',
-        rel_id : 'required',
-        date : 'required',
-        email: {
-         email:true,
-         required:true
-       },
-       currency : 'required',
-     });
-   }
-
-   function appValidateForm(form, form_rules, submithandler, overwriteMessages) {
-    $(form).appFormValidator({ rules: form_rules, onSubmit: submithandler, messages: overwriteMessages });
-}
-
-function init_items_sortable(preview_table) {
-    var _items_sortable = $("#wrapper").find('.items tbody');
-
-    if (_items_sortable.length === 0) { return; }
-   
-}
-</script>
