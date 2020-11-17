@@ -556,7 +556,7 @@ class Surveys extends AdminController
             }
            // $data['list']  = $list;
             $data['title'] = $title;
-            $fixed_list    = true;
+            $fixed_list    = false;
         } else {
            echo "run else everything";
             $list          = $this->surveys_model->get_data_for_view_list($id);
