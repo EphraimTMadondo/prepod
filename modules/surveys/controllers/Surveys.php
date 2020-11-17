@@ -494,7 +494,32 @@ class Surveys extends AdminController
             } elseif ($id == 'staff') {
                 $title = _l('staff_mail_lists');
                
-                $emails = $this->staff_model->get();
+               // $emails = $this->staff_model->get();
+
+         
+                $this->db->select('staffid');
+                if(isset($_SESSION['current_company'])){
+                      $companyusername = $_SESSION['current_company'];
+                    $this->db->where('company_username', $companyusername);
+                }
+                  $staffArray =  $this->db->get(db_prefix() . 'staff_companies')->result_array();
+                  
+                  
+                   $staffArray3 =[];
+                       foreach ($staffArray as $value){ 
+                        
+                          array_push($staffArray3, $value['staffid'] );
+                         
+                       } 
+                       
+                  $this->db->order_by('firstname', 'desc');
+                  $this->db->where_in('staffid', $staffArray3);
+                  $emails = $this->db->get(db_prefix() . 'staff')->result_array();
+
+
+
+
+
                 print_r($emails);
             } elseif ($id == 'leads') {
                 $title = _l('leads');
