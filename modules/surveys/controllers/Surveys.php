@@ -522,29 +522,10 @@ class Surveys extends AdminController
 
                 print_r($emails);
 
-                $list->emails = [];
-                $i            = 0;
-                foreach ($emails as $email) {
-                    if (empty($email['email'])) {
-                        continue;
-                    }
-                    if ($id == 'leads') {
-                        $list->emails[$i]['dateadded'] = $email['dateadded'];
-                    } else {
-                        $list->emails[$i]['dateadded'] = $email['datecreated'];
-                    }
-                    $list->emails[$i]['email'] = $email['email'];
-                    $i++;
-                }
-                $data['list']  = $list;
-                $data['title'] = $title;
-                $fixed_list    = true;
-                   
-                $data['fixedlist'] = $fixed_list;
-                $this->load->view('surveys/mail_lists/list_view', $data);
 
-
+                
             } elseif ($id == 'leads') {
+                echo "running in leads";
                 $title = _l('leads');
                 if (is_gdpr() && get_option('gdpr_enable_consent_for_leads') == '1') {
                     $this->load->model('gdpr_model');
@@ -564,8 +545,10 @@ class Surveys extends AdminController
                     continue;
                 }
                 if ($id == 'leads') {
+                    echo "running in leads";
                     $list->emails[$i]['dateadded'] = $email['dateadded'];
                 } else {
+                    echo "running in else not lead";
                     $list->emails[$i]['dateadded'] = $email['datecreated'];
                 }
                 $list->emails[$i]['email'] = $email['email'];
@@ -575,17 +558,14 @@ class Surveys extends AdminController
             $data['title'] = $title;
             $fixed_list    = true;
         } else {
-           
+           echo "run else everything";
             $list          = $this->surveys_model->get_data_for_view_list($id);
             $data['title'] = $list->name;
             $data['list']  = $list;
             $fixed_list    = false;
         }
-        if($id =='staff')
-        {
         $data['fixedlist'] = $fixed_list;
         $this->load->view('surveys/mail_lists/list_view', $data);
-        }
     }
 
     /* Add single email to mail list / ajax*/
