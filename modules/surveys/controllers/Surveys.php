@@ -493,7 +493,7 @@ class Surveys extends AdminController
             } elseif ($id == 'staff') {
                 $title = _l('staff_mail_lists');
 
-                $emails = [];
+                $emails = $this->staff_model->get();
             } elseif ($id == 'leads') {
                 $title = _l('leads');
                 if (is_gdpr() && get_option('gdpr_enable_consent_for_leads') == '1') {
@@ -531,7 +531,7 @@ class Surveys extends AdminController
             $fixed_list    = false;
         }
         $data['fixedlist'] = $fixed_list;
-        $this->load->view('surveys/mail_lists/list_view', $data);
+     //   $this->load->view('surveys/mail_lists/list_view', $data);
     }
 
     /* Add single email to mail list / ajax*/
