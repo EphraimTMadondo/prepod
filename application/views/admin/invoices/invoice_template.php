@@ -39,7 +39,9 @@
          <div class="f_client_id">
               <div class="form-group">
                 <label for="clientid" class="control-label"> <small class="req text-danger">* </small>Customer</label>
-                <div class="dropdown bootstrap-select ajax-search bs3" style="width: 100%;"><select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search" data-none-selected-text="Non selected" tabindex="-98"><option class="bs-title-option" value=""></option><optgroup label="Currently Selected"><option value="" title="" class="bs-title-option" selected="selected"></option></optgroup></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-15" aria-haspopup="listbox" aria-expanded="false" data-id="clientid" title="Select and begin typing"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select and begin typing</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" style="min-height: 55px; max-height: 180px; overflow: hidden;"><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-15" aria-autocomplete="list" placeholder="Type to search..."></div><div class="inner open" role="listbox" id="bs-select-15" tabindex="-1" style="min-height: 0px; max-height: 124px; overflow-y: auto;"><ul class="dropdown-menu inner " role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class="divider optgroup-1div"></li><li class="dropdown-header optgroup-1"><span class="text">Currently Selected</span></li><li class="optgroup-1"><a role="option" class="opt bs-title-option" id="bs-select-15-2" tabindex="0"><span class="text"></span></a></li></ul></div><div class="status" style="">Start typing to search</div></div></div>
+                <div class="dropdown bootstrap-select ajax-search bs3" style="width: 100%;"><select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search" data-none-selected-text="Non selected" tabindex="-98">
+                <option class="bs-title-option" value=""></option><optgroup label="Currently Selected"><option value="" title="" class="bs-title-option" selected="selected"></option></optgroup></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-15" aria-haspopup="listbox" aria-expanded="false" data-id="clientid" title="Select and begin typing"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select and begin typing</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" style="min-height: 55px; max-height: 180px; overflow: hidden;"><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-15" aria-autocomplete="list" placeholder="Type to search..."></div>
+                <div class="inner open" role="listbox" id="bs-select-15" tabindex="-1" style="min-height: 0px; max-height: 124px; overflow-y: auto;"><ul class="dropdown-menu inner " role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class="divider optgroup-1div"></li><li class="dropdown-header optgroup-1"><span class="text">Currently Selected</span></li><li class="optgroup-1"><a role="option" class="opt bs-title-option" id="bs-select-15-2" tabindex="0"><span class="text"></span></a></li></ul></div><div class="status" style="">Start typing to search</div></div></div>
               </div>
             </div>
             <div class="f_client_id">
@@ -868,6 +870,82 @@ textarea.form-control {
    
 
 </div>
+<style>
+ $("body").on('change', '.f_client_id select[name="clientid"]', function() {
+        var val = $(this).val();
+        var projectAjax = $('select[name="project_id"]');
+        var clonedProjectsAjaxSearchSelect = projectAjax.html('').clone();
+        var projectsWrapper = $('.projects-wrapper');
+        projectAjax.selectpicker('destroy').remove();
+        projectAjax = clonedProjectsAjaxSearchSelect;
+        $('#project_ajax_search_wrapper').append(clonedProjectsAjaxSearchSelect);
+        init_ajax_project_search_by_customer_id();
+        clear_billing_and_shipping_details();
+        if (!val) {
+            $('#merge').empty();
+            $('#expenses_to_bill').empty();
+            $('#invoice_top_info').addClass('hide');
+            projectsWrapper.addClass('hide');
+            return false;
+        }
+
+        var currentInvoiceID = $("body").find('input[name="merge_current_invoice"]').val();
+        currentInvoiceID = typeof(currentInvoiceID) == 'undefined' ? '' : currentInvoiceID;
+
+        requestGetJSON('invoices/client_change_data/' + val + '/' + currentInvoiceID).done(function(response) {
+            $('#merge').html(response.merge_info);
+            var $billExpenses = $('#expenses_to_bill');
+            // Invoice from project, in invoice_template this is not shown
+            $billExpenses.length === 0 ? response.expenses_bill_info = '' : $billExpenses.html(response.expenses_bill_info);
+            ((response.merge_info !== '' || response.expenses_bill_info !== '') ? $('#invoice_top_info').removeClass('hide') : $('#invoice_top_info').addClass('hide'));
+
+            for (var f in billingAndShippingFields) {
+                if (billingAndShippingFields[f].indexOf('billing') > -1) {
+                    if (billingAndShippingFields[f].indexOf('country') > -1) {
+                        $('select[name="' + billingAndShippingFields[f] + '"]').selectpicker('val', response['billing_shipping'][0][billingAndShippingFields[f]]);
+                    } else {
+                        if (billingAndShippingFields[f].indexOf('billing_street') > -1) {
+                            $('textarea[name="' + billingAndShippingFields[f] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[f]]);
+                        } else {
+                            $('input[name="' + billingAndShippingFields[f] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[f]]);
+                        }
+                    }
+                }
+            }
+
+            if (!empty(response['billing_shipping'][0]['shipping_street'])) {
+                $('input[name="include_shipping"]').prop("checked", true).change();
+            }
+
+            for (var fsd in billingAndShippingFields) {
+                if (billingAndShippingFields[fsd].indexOf('shipping') > -1) {
+                    if (billingAndShippingFields[fsd].indexOf('country') > -1) {
+                        $('select[name="' + billingAndShippingFields[fsd] + '"]').selectpicker('val', response['billing_shipping'][0][billingAndShippingFields[fsd]]);
+                    } else {
+                        if (billingAndShippingFields[fsd].indexOf('shipping_street') > -1) {
+                            $('textarea[name="' + billingAndShippingFields[fsd] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[fsd]]);
+                        } else {
+                            $('input[name="' + billingAndShippingFields[fsd] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[fsd]]);
+                        }
+                    }
+                }
+            }
+
+            init_billing_and_shipping_details();
+
+            var client_currency = response['client_currency'];
+            var s_currency = $("body").find('.accounting-template select[name="currency"]');
+            client_currency = parseInt(client_currency);
+            client_currency != 0 ? s_currency.val(client_currency) : s_currency.val(s_currency.data('base'));
+            _init_tasks_billable_select(response['billable_tasks'], projectAjax.selectpicker('val'));
+            response.customer_has_projects === true ? projectsWrapper.removeClass('hide') : projectsWrapper.addClass('hide');
+            s_currency.selectpicker('refresh');
+            init_currency();
+        });
+
+    });
+
+</style>
 
 
 
