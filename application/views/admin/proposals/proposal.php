@@ -296,10 +296,6 @@
                      
                      
                      
-        
-        
-        
-        
           <?php echo form_close(); ?>
          <?php $this->load->view('admin/invoice_items/item'); ?>
       </div>
