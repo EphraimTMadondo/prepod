@@ -682,7 +682,11 @@ class Surveys_model extends App_Model
         $list         = $this->get_mail_lists($id);
         $list_emails  = $this->db->select('email,dateadded,emailid')->from(db_prefix().'listemails')->where('listid', $id)->get()->result_array();
         $list->emails = $list_emails;
+/****
+        if($ =='staff')
+        {
 
+        } *//
         return $list;
     }
 

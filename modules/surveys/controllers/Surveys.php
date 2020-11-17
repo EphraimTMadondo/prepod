@@ -525,13 +525,13 @@ class Surveys extends AdminController
             $data['title'] = $title;
             $fixed_list    = true;
         } else {
-            $list          = $this->surveys_model->get_data_for_view_list($id);
+            $list          = [];
             $data['title'] = $list->name;
             $data['list']  = $list;
             $fixed_list    = false;
         }
         $data['fixedlist'] = $fixed_list;
-     //   $this->load->view('surveys/mail_lists/list_view', $data);
+        $this->load->view('surveys/mail_lists/list_view', $data);
     }
 
     /* Add single email to mail list / ajax*/
