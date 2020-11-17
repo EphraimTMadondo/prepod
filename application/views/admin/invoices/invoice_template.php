@@ -4,7 +4,7 @@
       <div class="row">
          <div id="merge" class="col-md-6">
             <?php
-             $rel_id = '';
+             //$rel_id = '';
               if(isset($invoice)){
                  $this->load->view('admin/invoices/merge_invoice', array('invoices_to_merge'=>$invoices_to_merge));
               }
@@ -39,8 +39,9 @@
          <div class= "card-body" >
             
             <div class="f_client_id">
-              <div class="form-group select-placeholder">
+              <div class="form-group select-placeholder" id="rel_id_wrapper">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
+                <div class="dropdown bootstrap-select ajax-search" style="width: 100%;">
                 <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($invoice) && empty($invoice->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <?php $selected = (isset($invoice) ? $invoice->clientid : '');
                  if($selected == ''){
@@ -52,6 +53,10 @@
                     echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
                  } ?>
                 </select>
+  </div>
+
+
+
 <div class="form-group" id="rel_id_wrapper">
                            <label for="rel_id"> <small class="req text-danger">* </small><span class="rel_id_label">Customer</span></label>
                            <div id="rel_id_select">
