@@ -1,6 +1,6 @@
 
 //alert("code has run start");
-var Calendar = tui.Calendar;
+//var Calendar = tui.Calendar;
 
 $(document).ready ( function(){
     //alert("code has run1");
