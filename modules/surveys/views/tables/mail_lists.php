@@ -16,7 +16,7 @@ $sTable       = db_prefix().'emaillists';
 $where = [];
 
 $companyusername = $_SESSION['current_company'];
-//array_push($where, db_prefix()."emaillists.company_username = '$companyusername')");
+array_push($where, 'AND ('.db_prefix()."emaillists.company_username = '$companyusername')");
 $result       = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, []);
 $output       = $result['output'];
 $rResult      = $result['rResult'];
