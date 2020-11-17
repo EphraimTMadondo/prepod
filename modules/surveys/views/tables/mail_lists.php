@@ -12,7 +12,7 @@ $aColumns = [
     $where = [];
 
     $companyusername = $_SESSION['current_company'];
-    array_push($where, 'AND ('.db_prefix()."mail_lists.company_username = '$companyusername')");
+    array_push($where, db_prefix()."mail_lists.company_username = '$companyusername')");
 
 $sIndexColumn = 'listid';
 $sTable       = db_prefix().'emaillists';
