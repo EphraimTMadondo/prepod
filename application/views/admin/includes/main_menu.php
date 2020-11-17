@@ -195,6 +195,10 @@
                         </li>
                         <li><a href="<?php echo base_url();?>admin/staff"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Staff">Staff</span></a>
                         </li>
+                        
+                        <li><a href="<?php echo base_url();?>admin/departments"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Departments">Departments</span></a>
+                        </li>
+
                         <li><a href="<?php echo base_url();?>admin/hrm/contracts"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Contracts">Contract</span></a>
                         </li>
                         <li><a href="<?php echo base_url();?>admin/hrm/insurances"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Insuarance">Insuarance</span></a>
