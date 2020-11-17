@@ -4,6 +4,7 @@
       <div class="row">
          <div id="merge" class="col-md-6">
             <?php
+             $rel_id = '';
               if(isset($invoice)){
                  $this->load->view('admin/invoices/merge_invoice', array('invoices_to_merge'=>$invoices_to_merge));
               }
@@ -51,7 +52,12 @@
                     echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
                  } ?>
                 </select>
-
+<div class="form-group" id="rel_id_wrapper">
+                           <label for="rel_id"> <small class="req text-danger">* </small><span class="rel_id_label">Customer</span></label>
+                           <div id="rel_id_select">
+                              
+                           <div class="dropdown bootstrap-select ajax-search" style="width: 100%;"><select name="rel_id" id="rel_id" class="ajax-search" data-width="100%" data-live-search="true" data-none-selected-text="Non selected" tabindex="-98" title="Select and begin typing"><option class="bs-title-option" value=""></option></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-9" aria-haspopup="listbox" aria-expanded="false" data-id="rel_id" title="Select and begin typing"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select and begin typing</div></div> </div></button><div class="dropdown-menu " style="min-height: 47px; max-height: 105.922px; overflow: hidden;"><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-9" aria-autocomplete="list" placeholder="Type to search..."></div><div class="inner show" role="listbox" id="bs-select-9" tabindex="-1" style="min-height: 0px; max-height: 46.9219px; overflow-y: auto;"><ul class="dropdown-menu inner show" role="presentation"></ul></div><div class="status" style="">Start typing to search</div></div></div></div>
+                        </div>
 
                 <div class="form-group select-placeholder<?php if($rel_id == ''){echo '';} ?> " id="rel_id_wrapper">
                            <label for="rel_id"><span class="rel_id_label"></span></label>
