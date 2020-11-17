@@ -1,59 +1,116 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="card mt-2 <?php if(!isset($invoice) || (isset($invoice) && count($invoices_to_merge) == 0 && (isset($invoice) && !isset($invoice_from_project) && count($expenses_to_bill) == 0 || $invoice->status == Invoices_model::STATUS_CANCELLED))){echo ' hide';} ?>" id="invoice_top_info">
-   <div class="card-body">
+<?php init_head(); ?>
+  <style>
+        .newTitle
+            {
+                font-size: 25px;
+                padding-top:15px;
+            }
+    </style>
+<div id="wrapper">
+   <div class="content accounting-template proposal">
       <div class="row">
-         <div id="merge" class="col-md-6">
-            <?php
-              if(isset($invoice)){
-                 $this->load->view('admin/invoices/merge_invoice', array('invoices_to_merge'=>$invoices_to_merge));
-              }
+         <?php
+            if(isset($proposal)){
+             echo form_hidden('isedit',$proposal->id);
+            }
+            $rel_type = '';
+            $rel_id = '';
+            if(isset($proposal) || ($this->input->get('rel_id') && $this->input->get('rel_type'))){
+             if($this->input->get('rel_id')){
+               $rel_id = $this->input->get('rel_id');
+               $rel_type = $this->input->get('rel_type');
+             } else {
+               $rel_id = $proposal->rel_id;
+               $rel_type = $proposal->rel_type;
+             }
+            }
             ?>
+         <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
+         
+         <div class="col-md-12" style = " margin-left: 15;">
+         <div class = "card" style = "margin-top: 75;">
+            <div class="card mtop20">
+               <div class="card-body">
+                    <p class="center newTitle">Proposal Template </p>
+                              
+                              <hr class="mtop15">
+                  <div class="row">
+                     <?php if(isset($proposal)){ ?>
+                     <div class="col-md-12">
+                        <?php echo format_proposal_status($proposal->status); ?>
+                     </div>
+                     <div class="clearfix"></div>
+                     <hr />
+                     <?php } ?>
+                     <div class="col-md-12">
+                        
+                        <?php $value = (isset($proposal) ? $proposal->subject : ''); ?>
+                        <?php $attrs = (isset($proposal) ? array() : array('autofocus'=>true)); ?>
+                        <?php echo render_input('subject','proposal_subject',$value,'text',$attrs); ?>
+                        <div class="form-group" app-field-wrapper="introduction">
+                            <label for="introduction" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Introduction
+                                 </label>
+                                 
+                            <textarea id="introduction" name="introduction" value="<?php echo $proposal->introduction;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->introduction;?></textarea>
+                            
+                        </div>
+                         <div class="form-group" app-field-wrapper="summary">
+                         <label for="introduction" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Summary
+                                 </label>
+                            <textarea id="summary" name="summary"  value="<?php echo $proposal->summary;?>"  class="form-control tinymce-manual" rows="4"><?php echo $proposal->summary;?></textarea>
+                            
+                        </div>
+                       <div class="form-group" app-field-wrapper="terms_and_conditions">
+                            <label for="terms_and_conditions" class="control-label">
+                                  <small class="req text-danger">*</small>
+                                        Terms & Conditions
+                                 </label>
+                                 
+                            <textarea id="terms_and_conditions" name="terms_and_conditions" value="<?php echo $proposal->terms_and_conditions;?>" class="form-control tinymce-manual" rows="4"><?php echo $proposal->terms_and_conditions;?></textarea>
+                            
+                        </div>
+                       
+                         
+                        
+                     </div>
+                   
+                  </div>
+                 
+               </div>
+            </div>
+            </div>
          </div>
-         <!--  When invoicing from project area the expenses are not visible here because you can select to bill expenses while trying to invoice project -->
-         <?php if(!isset($invoice_from_project)){ ?>
-           <div id="expenses_to_bill" class="col-md-6">
-              <?php if(isset($invoice) && $invoice->status != Invoices_model::STATUS_CANCELLED){
-                 $this->load->view('admin/invoices/bill_expenses',array('expenses_to_bill'=>$expenses_to_bill));
-              } ?>
-           </div>
-         <?php } ?>
-      </div>
-   </div>
-</div>
-<div class="">
-   <div class="additional"></div>
-   <div class="">
-      <?php if(isset($invoice)){ ?>
-      <?php  echo format_invoice_status($invoice->status); ?>
-      <hr class="hr-panel-heading" />
-      <?php } ?>
-      <?php hooks()->do_action('before_render_invoice_template'); ?>
-      <?php if(isset($invoice)){
-        echo form_hidden('merge_current_invoice',$invoice->id);
-      } ?>
-      <div class="row" style = "display:flex">
-     
-      <div class="col-md-6">
-          <div class= "card">
-         <div class= "card-body" >
-            
-            <div class="f_client_id">
-              <div class="form-group select-placeholder">
-                <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
-                <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($invoice) && empty($invoice->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-               <?php $selected = (isset($invoice) ? $invoice->clientid : '');
-                 if($selected == ''){
-                   $selected = (isset($customer_id) ? $customer_id: '');
-                 }
-                 if($selected != ''){
-                    $rel_data = get_relation_data('customer',$selected);
-                    $rel_val = get_relation_values($rel_data,'customer');
-                    echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
-                 } ?>
-                </select>
-
-
-                <div class="form-group select-placeholder<?php if($rel_id == ''){echo '';} ?> " id="rel_id_wrapper">
+         <div class="col-md-12" style = " margin-left: 15;">
+            <div class="card">
+               <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
+            </div>
+         </div>
+         
+         
+         
+           <div class="col-md-12" style = " margin-left: 15;">
+               <div class="card">
+               <div class="card-body">
+                    <p class="center newTitle">Customer  Details </p>
+                              
+                              <hr class="mtop15">
+                        <div class="row">
+                             
+                           <div class="col-md-12">
+                               <div class="form-group select-placeholder">
+                           <label for="rel_type" class="control-label"><?php echo _l('proposal_related'); ?></label>
+                           <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                              <option value=""></option>
+                              <option value="lead" <?php if((isset($proposal) && $proposal->rel_type == 'lead') || $this->input->get('rel_type')){if($rel_type == 'lead'){echo 'selected';}} ?>><?php echo _l('proposal_for_lead'); ?></option>
+                              <option value="customer" <?php if((isset($proposal) &&  $proposal->rel_type == 'customer') || $this->input->get('rel_type')){if($rel_type == 'customer'){echo 'selected';}} ?>><?php echo _l('proposal_for_customer'); ?></option>
+                           </select>
+                        </div>
+                        <div class="form-group select-placeholder<?php if($rel_id == ''){echo '';} ?> " id="rel_id_wrapper">
                            <label for="rel_id"><span class="rel_id_label"></span></label>
                            <div id="rel_id_select">
                               <select name="rel_id" id="rel_id" class="ajax-search" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
@@ -65,819 +122,569 @@
                               </select>
                            </div>
                         </div>
-                
-              </div>
-            </div>
-            <?php
-            if(!isset($invoice_from_project)){ ?>
-            <div class="form-group select-placeholder projects-wrapper<?php if((!isset($invoice)) || (isset($invoice) && !customer_has_projects($invoice->clientid))){ echo ' hide';} ?>">
-               <label for="project_id"><?php echo _l('project'); ?></label>
-              <div id="project_ajax_search_wrapper">
-                   <select name="project_id" id="project_id" class="projects ajax-search" data-live-search="true" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                   <?php
-                     if(isset($invoice) && $invoice->project_id != 0){
-                        echo '<option value="'.$invoice->project_id.'" selected>'.get_project_name_by_id($invoice->project_id).'</option>';
-                     }
-                   ?>
-               </select>
-               </div>
-            </div>
-            <?php } ?>
-            <div class="row">
-               <div class="col-md-12">
-               <hr class="hr-10" />
-                  <a href="#" class="edit_shipping_billing_info" data-toggle="modal" data-target="#billing_and_shipping_details"><i class="bx bx-pencil"></i></a>
-                  <?php include_once(APPPATH .'views/admin/invoices/billing_and_shipping_template.php'); ?>
-               </div>
-               <div class="col-md-6">
-                  <p class="bold"><?php echo _l('invoice_bill_to'); ?></p>
-                  <address>
-                     <span class="billing_street">
-                     <?php $billing_street = (isset($invoice) ? $invoice->billing_street : '--'); ?>
-                     <?php $billing_street = ($billing_street == '' ? '--' :$billing_street); ?>
-                     <?php echo $billing_street; ?></span><br>
-                     <span class="billing_city">
-                     <?php $billing_city = (isset($invoice) ? $invoice->billing_city : '--'); ?>
-                     <?php $billing_city = ($billing_city == '' ? '--' :$billing_city); ?>
-                     <?php echo $billing_city; ?></span>,
-                     <span class="billing_state">
-                     <?php $billing_state = (isset($invoice) ? $invoice->billing_state : '--'); ?>
-                     <?php $billing_state = ($billing_state == '' ? '--' :$billing_state); ?>
-                     <?php echo $billing_state; ?></span>
-                     <br/>
-                     <span class="billing_country">
-                     <?php $billing_country = (isset($invoice) ? get_country_short_name($invoice->billing_country) : '--'); ?>
-                     <?php $billing_country = ($billing_country == '' ? '--' :$billing_country); ?>
-                     <?php echo $billing_country; ?></span>,
-                     <span class="billing_zip">
-                     <?php $billing_zip = (isset($invoice) ? $invoice->billing_zip : '--'); ?>
-                     <?php $billing_zip = ($billing_zip == '' ? '--' :$billing_zip); ?>
-                     <?php echo $billing_zip; ?></span>
-                  </address>
-               </div>
-               <div class="col-md-6">
-                  <p class="bold"><?php echo _l('ship_to'); ?></p>
-                  <address>
-                     <span class="shipping_street">
-                     <?php $shipping_street = (isset($invoice) ? $invoice->shipping_street : '--'); ?>
-                     <?php $shipping_street = ($shipping_street == '' ? '--' :$shipping_street); ?>
-                     <?php echo $shipping_street; ?></span><br>
-                     <span class="shipping_city">
-                     <?php $shipping_city = (isset($invoice) ? $invoice->shipping_city : '--'); ?>
-                     <?php $shipping_city = ($shipping_city == '' ? '--' :$shipping_city); ?>
-                     <?php echo $shipping_city; ?></span>,
-                     <span class="shipping_state">
-                     <?php $shipping_state = (isset($invoice) ? $invoice->shipping_state : '--'); ?>
-                     <?php $shipping_state = ($shipping_state == '' ? '--' :$shipping_state); ?>
-                     <?php echo $shipping_state; ?></span>
-                     <br/>
-                     <span class="shipping_country">
-                     <?php $shipping_country = (isset($invoice) ? get_country_short_name($invoice->shipping_country) : '--'); ?>
-                     <?php $shipping_country = ($shipping_country == '' ? '--' :$shipping_country); ?>
-                     <?php echo $shipping_country; ?></span>,
-                     <span class="shipping_zip">
-                     <?php $shipping_zip = (isset($invoice) ? $invoice->shipping_zip : '--'); ?>
-                     <?php $shipping_zip = ($shipping_zip == '' ? '--' :$shipping_zip); ?>
-                     <?php echo $shipping_zip; ?></span>
-                  </address>
-               </div>
-            </div>
-            <?php
-               $next_invoice_number = get_option('next_invoice_number');
-               $format = get_option('invoice_number_format');
-
-               if(isset($invoice)){
-                  $format = $invoice->number_format;
-               }
-
-               $prefix = get_option('invoice_prefix');
-
-               if ($format == 1) {
-                 $__number = $next_invoice_number;
-                 if(isset($invoice)){
-                   $__number = $invoice->number;
-                   $prefix = '<span id="prefix">' . $invoice->prefix . '</span>';
-                 }
-               } else if($format == 2) {
-                 if(isset($invoice)){
-                   $__number = $invoice->number;
-                   $prefix = $invoice->prefix;
-                   $prefix = '<span id="prefix">'. $prefix . '</span><span id="prefix_year">' .date('Y',strtotime($invoice->date)).'</span>/';
-                 } else {
-                  $__number = $next_invoice_number;
-                  $prefix = $prefix.'<span id="prefix_year">'.date('Y').'</span>/';
-                }
-               } else if($format == 3) {
-                  if(isset($invoice)){
-                   $yy = date('y',strtotime($invoice->date));
-                   $__number = $invoice->number;
-                   $prefix = '<span id="prefix">'. $invoice->prefix . '</span>';
-                 } else {
-                  $yy = date('y');
-                  $__number = $next_invoice_number;
-                }
-               } else if($format == 4) {
-                  if(isset($invoice)){
-                   $yyyy = date('Y',strtotime($invoice->date));
-                   $mm = date('m',strtotime($invoice->date));
-                   $__number = $invoice->number;
-                   $prefix = '<span id="prefix">'. $invoice->prefix . '</span>';
-                 } else {
-                  $yyyy = date('Y');
-                  $mm = date('m');
-                  $__number = $next_invoice_number;
-                }
-               }
-
-
-               $last = $this->db->order_by('id',"desc")
-               ->limit(1)
-               ->get(db_prefix() . 'invoices')
-               ->row()->number;
-              //  print_r($last);
-
-              // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
-
-             // $_estimate_number = $last;
-             
-      
-
-               $_invoice_number = str_pad($last +1, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
-               $isedit = isset($invoice) ? 'true' : 'false';
-               $data_original_number = isset($invoice) ? $invoice->number : 'false';
-
-               ?>
-            <div class="form-group">
-               <label for="number"><?php echo _l('invoice_add_edit_number'); ?></label>
-               <div class="input-group">
-                  <span class="input-group-append">
-                  <?php if(isset($invoice)){ ?>
-                    <a href="#" onclick="return false;" data-toggle="popover" data-container='._transaction_form' data-html="true" data-content="<label class='control-label'><?php echo _l('settings_sales_invoice_prefix'); ?></label><div class='input-group'><input name='s_prefix' type='text' class='form-control' value='<?php echo $invoice->prefix; ?>'></div><button type='button' onclick='save_sales_number_settings(this); return false;' data-url='<?php echo admin_url('invoices/update_number_settings/'.$invoice->id); ?>' class='btn btn-secondary btn-block mt-1'><?php echo _l('submit'); ?></button>">
-                    <i class="fa fa-cog"></i>
-                    </a>
-                  <?php }
-                    echo $prefix;
-                  ?>
-                  </span>
-                  <input type="text" name="number" class="form-control" value="<?php echo $_invoice_number; ?>" data-isedit="<?php echo $isedit; ?>" data-original-number="<?php echo $data_original_number; ?>">
-                  <?php if($format == 3) { ?>
-                  <span class="input-group-append">
-                     <span id="prefix_year" class="format-n-yy"><?php echo $yy; ?></span>
-                  </span>
-                  <?php } else if($format == 4) { ?>
-                   <span class="input-group-append">
-                     <span id="prefix_month" class="format-mm-yyyy"><?php echo $mm; ?></span>
-                     /
-                     <span id="prefix_year" class="format-mm-yyyy"><?php echo $yyyy; ?></span>
-                  </span>
-                  <?php } ?>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6">
-                  <?php $value = (isset($invoice) ? _d($invoice->date) : _d(date('Y-m-d')));
-                  $date_attrs = array();
-                  if(isset($invoice) && $invoice->recurring > 0 && $invoice->last_recurring_date != null) {
-                    $date_attrs['disabled'] = true;
-                  }
-                  ?>
-                  <?php echo render_date_input('date','invoice_add_edit_date',$value,$date_attrs); ?>
-               </div>
-               <div class="col-md-6">
-                  <?php
-                  $value = '';
-                  if(isset($invoice)){
-                    $value = _d($invoice->duedate);
-                  } else {
-                    if(get_option('invoice_due_after') != 0){
-                        $value = _d(date('Y-m-d', strtotime('+' . get_option('invoice_due_after') . ' DAY', strtotime(date('Y-m-d')))));
-                    }
-                  }
-                   ?>
-                  <?php echo render_date_input('duedate','invoice_add_edit_duedate',$value); ?>
-               </div>
-            </div>
-                <?php if(is_invoices_overdue_reminders_enabled()){ ?>
-               <div class="form-group">
-                  <div class="checkbox checkbox-danger">
-                     <input type="checkbox" <?php if(isset($invoice) && $invoice->cancel_overdue_reminders == 1){echo 'checked';} ?> id="cancel_overdue_reminders" name="cancel_overdue_reminders">
-                     <label for="cancel_overdue_reminders"><?php echo _l('cancel_overdue_reminders_invoice') ?></label>
-                  </div>
-               </div>
-               <?php } ?>
-               <?php $rel_id = (isset($invoice) ? $invoice->id : false); ?>
-               <?php
-                  if(isset($custom_fields_rel_transfer)) {
-                      $rel_id = $custom_fields_rel_transfer;
-                  }
-               ?>
-               <?php echo render_custom_fields('invoice',$rel_id); ?>
-         </div>
-               </div>
-         </div>
-
-              
-
-
-
-         <div class="col-md-6">
-          <div class= "card">
-         <div class= "card-body">
-            <div class="card no-shadow">
-
-                   <div class="form-group">
-                  <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
-                  <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo (isset($invoice) ? prep_tags_input(get_tags_in($invoice->id,'invoice')) : ''); ?>" data-role="tagsinput">
-               </div>
-               <div class="form-group mbot15 select-placeholder">
-                  <label for="allowed_payment_modes" class="control-label"><?php echo _l('invoice_add_edit_allowed_payment_modes'); ?></label>
-                  <br />
-                  <?php if(count($payment_modes) > 0){ ?>
-                  <select class="selectpicker" data-style="btn-outline-light"
-                  data-toggle="<?php echo $this->input->get('allowed_payment_modes'); ?>"
-                  name="allowed_payment_modes[]"
-                  data-actions-box="true"
-                  multiple="true"
-                  data-width="100%"
-                  data-title="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                  <?php foreach($payment_modes as $mode){
-                     $selected = '';
-                     if(isset($invoice)){
-                       if($invoice->allowed_payment_modes){
-                        $inv_modes = unserialize($invoice->allowed_payment_modes);
-                        if(is_array($inv_modes)) {
-                         foreach($inv_modes as $_allowed_payment_mode){
-                           if($_allowed_payment_mode == $mode['id']){
-                             $selected = ' selected';
-                           }
-                         }
-                       }
-                     }
-                     } else {
-                     if($mode['selected_by_default'] == 1){
-                        $selected = ' selected';
-                     }
-                     }
-                     ?>
-                     <option value="<?php echo $mode['id']; ?>"<?php echo $selected; ?>><?php echo $mode['name']; ?></option>
-                  <?php } ?>
-                  </select>
-                  <?php } else { ?>
-                  <p><?php echo _l('invoice_add_edit_no_payment_modes_found'); ?></p>
-                  <a class="btn btn-secondary" href="<?php echo admin_url('paymentmodes'); ?>">
-                  <?php echo _l('new_payment_mode'); ?>
-                  </a>
-                  <?php } ?>
-               </div>
-
-               <div class="row">
-                  <div class="col-md-6">
-                     <?php
-                        $currency_attr = array('disabled'=>true,'data-show-subtext'=>true);
-                        $currency_attr = apply_filters_deprecated('invoice_currency_disabled', [$currency_attr], '2.3.0', 'invoice_currency_attributes');
-
-                        foreach($currencies as $currency){
-                         if($currency['isdefault'] == 1){
-                           $currency_attr['data-base'] = $currency['id'];
-                         }
-                         if(isset($invoice)){
-                          if($currency['id'] == $invoice->currency){
-                           $selected = $currency['id'];
-                         }
+                        <div class="row">
+                          <div class="col-md-6">
+                              <?php $value = (isset($proposal) ? _d($proposal->date) : _d(date('Y-m-d'))) ?>
+                              <?php echo render_date_input('date','proposal_date',$value); ?>
+                          </div>
+                          <div class="col-md-6">
+                            <?php
+                        $value = '';
+                        if(isset($proposal)){
+                          $value = _d($proposal->open_till);
                         } else {
-                         if($currency['isdefault'] == 1){
-                           $selected = $currency['id'];
-                         }
+                          if(get_option('proposal_due_after') != 0){
+                              $value = _d(date('Y-m-d',strtotime('+'.get_option('proposal_due_after').' DAY',strtotime(date('Y-m-d')))));
+                          }
                         }
-                        }
-                        $currency_attr = hooks()->apply_filters('invoice_currency_attributes',$currency_attr);
-                        ?>
-                     <?php echo render_select('currency', $currencies, array('id','name','symbol'), 'invoice_add_edit_currency', $selected, $currency_attr); ?>
-                  </div>
-                  <div class="col-md-6">
-                     <?php
-                        $i = 0;
-                        $selected = '';
-                        foreach($staff as $member){
-                         if(isset($invoice)){
-                           if($invoice->sale_agent == $member['staffid']) {
-                             $selected = $member['staffid'];
-                           }
-                         }
-                         $i++;
-                        }
-                        echo render_select('sale_agent',$staff,array('staffid',array('firstname','lastname')),'sale_agent_string',$selected);
-                        ?>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group select-placeholder"<?php if(isset($invoice) && !empty($invoice->is_recurring_from)){ ?> data-toggle="tooltip" data-title="<?php echo _l('create_recurring_from_child_error_message', [_l('invoice_lowercase'),_l('invoice_lowercase'), _l('invoice_lowercase')]); ?>"<?php } ?>>
-                        <label for="recurring" class="control-label">
-                        <?php echo _l('invoice_add_edit_recurring'); ?>
-                        </label>
-                        <select class="selectpicker" data-style="btn-outline-light"
-                        data-width="100%"
-                        name="recurring"
-                        data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>"
-                        <?php
-                        // The problem is that this invoice was generated from previous recurring invoice
-                        // Then this new invoice you set it as recurring but the next invoice date was still taken from the previous invoice.
-                        if(isset($invoice) && !empty($invoice->is_recurring_from)){echo 'disabled';} ?>
-                        >
-                           <?php for($i = 0; $i <=12; $i++){ ?>
-                           <?php
-                              $selected = '';
-                              if(isset($invoice)){
-                                if($invoice->custom_recurring == 0){
-                                 if($invoice->recurring == $i){
-                                   $selected = 'selected';
-                                 }
-                               }
-                              }
-                              if($i == 0){
-                               $reccuring_string =  _l('invoice_add_edit_recurring_no');
-                              } else if($i == 1){
-                               $reccuring_string = _l('invoice_add_edit_recurring_month',$i);
-                              } else {
-                               $reccuring_string = _l('invoice_add_edit_recurring_months',$i);
-                              }
-                              ?>
-                           <option value="<?php echo $i; ?>" <?php echo $selected; ?>><?php echo $reccuring_string; ?></option>
-                           <?php } ?>
-                           <option value="custom" <?php if(isset($invoice) && $invoice->recurring != 0 && $invoice->custom_recurring == 1){echo 'selected';} ?>><?php echo _l('recurring_custom'); ?></option>
-                        </select>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="form-group select-placeholder">
-                        <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
-                        <select name="discount_type" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                           <option value="" selected><?php echo _l('no_discount'); ?></option>
-                           <option value="before_tax" <?php
-                              if(isset($invoice)){ if($invoice->discount_type == 'before_tax'){ echo 'selected'; }} ?>><?php echo _l('discount_type_before_tax'); ?></option>
-                           <option value="after_tax" <?php if(isset($invoice)){if($invoice->discount_type == 'after_tax'){echo 'selected';}} ?>><?php echo _l('discount_type_after_tax'); ?></option>
-                        </select>
-                     </div>
-                  </div>
-                  <div class="recurring_custom <?php if((isset($invoice) && $invoice->custom_recurring != 1) || (!isset($invoice))){echo 'hide';} ?>">
-                     <div class="col-md-6">
-                        <?php $value = (isset($invoice) && $invoice->custom_recurring == 1 ? $invoice->recurring : 1); ?>
-                        <?php echo render_input('repeat_every_custom','',$value,'number',array('min'=>1)); ?>
-                     </div>
-                     <div class="col-md-6">
-                        <select name="repeat_type_custom" id="repeat_type_custom" class="selectpicker" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                           <option value="day" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'day'){echo 'selected';} ?>><?php echo _l('invoice_recurring_days'); ?></option>
-                           <option value="week" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'week'){echo 'selected';} ?>><?php echo _l('invoice_recurring_weeks'); ?></option>
-                           <option value="month" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'month'){echo 'selected';} ?>><?php echo _l('invoice_recurring_months'); ?></option>
-                           <option value="year" <?php if(isset($invoice) && $invoice->custom_recurring == 1 && $invoice->recurring_type == 'year'){echo 'selected';} ?>><?php echo _l('invoice_recurring_years'); ?></option>
-                        </select>
-                     </div>
-                  </div>
-                  <div id="cycles_wrapper" class="<?php if(!isset($invoice) || (isset($invoice) && $invoice->recurring == 0)){echo ' hide';}?>">
-                     <div class="col-md-12">
-                        <?php $value = (isset($invoice) ? $invoice->cycles : 0); ?>
-                        <div class="form-group recurring-cycles">
-                          <label for="cycles"><?php echo _l('recurring_total_cycles'); ?>
-                            <?php if(isset($invoice) && $invoice->total_cycles > 0){
-                              echo '<small>' . _l('cycles_passed', $invoice->total_cycles) . '</small>';
-                            }
-                            ?>
-                          </label>
-                          <div class="input-group">
-                            <input type="number" class="form-control"<?php if($value == 0){echo ' disabled'; } ?> name="cycles" id="cycles" value="<?php echo $value; ?>" <?php if(isset($invoice) && $invoice->total_cycles > 0){echo 'min="'.($invoice->total_cycles).'"';} ?>>
-                            <div class="input-group-append">
-                              <div class="checkbox">
-                                <input type="checkbox"<?php if($value == 0){echo ' checked';} ?> id="unlimited_cycles">
-                                <label for="unlimited_cycles"><?php echo _l('cycles_infinity'); ?></label>
-                              </div>
-                            </div>
+                        echo render_date_input('open_till','proposal_open_till',$value); ?>
                           </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <?php $value = (isset($invoice) ? $invoice->adminnote : ''); ?>
-               <?php echo render_textarea('adminnote','invoice_add_edit_admin_note',$value); ?>
-
-            </div>
-         </div>
-         </div>
-         </div>
-
-      </div>
-   </div>
-
-   <style>
-      .table.items thead {
-    background: #415164;
-    color: white;
-    border: 0;
-}
-.table.items thead {
-    background: #415164;
-    color: #fff;
-    border: 0;
-}
-
-.row {
-    margin: 2px;
-}
-
-.mbot25 {
-    margin-bottom: 25px;
-}
-
-
-
-.mtop10 {
-    margin-top: 10px;
-}
-.table thead th {
-    color: white;
-    font-size: .8rem;
-    letter-spacing: 1px;
-}
-
-.col-md-offset-4 {
-    margin-left: 33.33333333%;
-}
-
-      </style>
-   
-   <div class = "card">
-   <div class="card-body mtop10">
-      <div class="row" style = "display: flex">
-         <div class="col-md-4">
-            <?php $this->load->view('admin/invoice_items/item_select'); ?>
-         </div>
-         <?php if(!isset($invoice_from_project) && isset($billable_tasks)){
-          ?>
-         <div class="col-md-3">
-            <div class="form-group select-placeholder input-group-select form-group-select-task_select popover-250">
-              <div class="input-group-select" style ="display: flex">
-               <select name="task_select" data-live-search="true" id="task_select" class="selectpicker no-margin _select_input_group" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('bill_tasks'); ?>">
-                  <option value=""></option>
-                  <?php foreach($billable_tasks as $task_billable){ ?>
-                  <option value="<?php echo $task_billable['id']; ?>"<?php if($task_billable['started_timers'] == true){ ?>disabled class="text-danger important" data-subtext="<?php echo _l('invoice_task_billable_timers_found'); ?>" <?php } else {
-                     $task_rel_data = get_relation_data($task_billable['rel_type'],$task_billable['rel_id']);
-                     $task_rel_value = get_relation_values($task_rel_data,$task_billable['rel_type']);
-                     ?>
-                     data-subtext="<?php echo $task_billable['rel_type'] == 'project' ? '' : $task_rel_value['name']; ?>" <?php } ?>><?php echo $task_billable['name']; ?></option>
-                  <?php } ?>
-               </select>
-                <div class="input-group-append input-group-append-bill-tasks-help">
-                  <?php
-                    if(isset($invoice) && !empty($invoice->project_id)) {
-                       $help_text = _l('showing_billable_tasks_from_project') . ' ' . get_project_name_by_id($invoice->project_id);
-                    } else {
-                       $help_text = _l('invoice_task_item_project_tasks_not_included');
-                    }
-                    echo '<span style = "margin-left: 8;"class="pointer popover-invoker" data-container=".form-group-select-task_select"
-                      data-trigger="click" data-placement="top" data-toggle="popover" data-content="'.$help_text.'">
-                      <i class="fa fa-question-circle"></i></span>';
-                  ?>
-                </div>
-               </div>
-            </div>
-         </div>
-         <?php } ?>
-         <style>
-            .form-control {
-    display: block;
-    /* width: 100%; */
-    height: calc(1.4em + .94rem + 3.7px);
-    padding: .47rem .8rem;
-    font-size: 1rem;
-    /* line-height: 1.4; */
-    color: #475F7B;
-    background-color: #FFF;
-    border: 1px solid #DFE3E7;
-    border-radius: .267rem;
-    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-            .radio
-            {
-               margin-left: 8;
-            }
-
-                        table.items tr.main td {
-               padding-top: 25px;
-               padding-bottom: 25px;
-            }
-
-            textarea.form-control {
-    height: inherit;
-    padding-top: 10px;
-}
-textarea.form-control {
-    height: 5rem;
-    padding-top: 10px;
-    width: 100%;
-}
-
-
-
-            </style>
-         <div class="col-md-<?php if(!isset($invoice_from_project)){ echo 5; }else {echo 8;} ?> text-right show_quantity_as_wrapper">
-            <div class="" style = "display: flex">
-               <span><?php echo _l('show_quantity_as'); ?> </span>
-               <div class="radio radio-primary radio-inline">
-                  <input type="radio" value="1" id="sq_1" name="show_quantity_as" data-text="<?php echo _l('invoice_table_quantity_heading'); ?>" <?php if(isset($invoice) && $invoice->show_quantity_as == 1){echo 'checked';}else if(!isset($hours_quantity) && !isset($qty_hrs_quantity)){echo'checked';} ?>>
-                  <label for="sq_1"><?php echo _l('quantity_as_qty'); ?></label>
-               </div>
-               <div class="radio radio-primary radio-inline">
-                  <input type="radio" value="2" id="sq_2" name="show_quantity_as" data-text="<?php echo _l('invoice_table_hours_heading'); ?>" <?php if(isset($invoice) && $invoice->show_quantity_as == 2 || isset($hours_quantity)){echo 'checked';} ?>>
-                  <label for="sq_2"><?php echo _l('quantity_as_hours'); ?></label>
-               </div>
-               <div class="radio radio-primary radio-inline">
-                  <input type="radio" value="3" id="sq_3" name="show_quantity_as" data-text="<?php echo _l('invoice_table_quantity_heading'); ?>/<?php echo _l('invoice_table_hours_heading'); ?>" <?php if(isset($invoice) && $invoice->show_quantity_as == 3 || isset($qty_hrs_quantity)){echo 'checked';} ?>>
-                  <label for="sq_3"><?php echo _l('invoice_table_quantity_heading'); ?>/<?php echo _l('invoice_table_hours_heading'); ?></label>
-               </div>
-            </div>
-         </div>
-      </div>
-      <?php if(isset($invoice_from_project)){ echo '<hr class="no-mtop" />'; } ?>
-      <div class="table-responsive s_table">
-         <table class="table invoice-items-table items table-main-invoice-edit has-calculations no-mtop">
-            <thead>
-               <tr>
-                  <th></th>
-                  <th width="20%" align="left"><i class="fa fa-exclamation-circle" aria-hidden="true" data-toggle="tooltip" data-title="<?php echo _l('item_description_new_lines_notice'); ?>"></i> <?php echo _l('invoice_table_item_heading'); ?></th>
-                  <th width="25%" align="left"><?php echo _l('invoice_table_item_description'); ?></th>
-                  <?php
-                  $custom_fields = get_custom_fields('items');
-                  foreach($custom_fields as $cf){
-                    echo '<th width="15%" align="left" class="custom_field">' . $cf['name'] . '</th>';
-                  }
-                     $qty_heading = _l('invoice_table_quantity_heading');
-                     if(isset($invoice) && $invoice->show_quantity_as == 2 || isset($hours_quantity)){
-                      $qty_heading = _l('invoice_table_hours_heading');
-                     } else if(isset($invoice) && $invoice->show_quantity_as == 3){
-                      $qty_heading = _l('invoice_table_quantity_heading') .'/'._l('invoice_table_hours_heading');
-                     }
-                     ?>
-                  <th width="10%" align="right" class="qty"><?php echo $qty_heading; ?></th>
-                  <th width="15%" align="right"><?php echo _l('invoice_table_rate_heading'); ?></th>
-                  <th width="20%" align="right"><?php echo _l('invoice_table_tax_heading'); ?></th>
-                  <th width="10%" align="right"><?php echo _l('invoice_table_amount_heading'); ?></th>
-                  <th align="center"><i class="fa fa-cog"></i></th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr class="main">
-                  <td></td>
-                  <td>
-                     <textarea name="description" class="form-control" rows="4" placeholder="<?php echo _l('item_description_placeholder'); ?>"></textarea>
-                  </td>
-                  <td>
-                     <textarea name="long_description" rows="4" class="form-control" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
-                  </td>
-                  <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
-                  <style>
-
-                           .input-transparent {
-                              -webkit-box-shadow: none;
-                              box-shadow: none;
-                              outline: 0;
-                              border: 0!important;
-                              background: 0 0;
+                        <?php
+                           $selected = '';
+                           $currency_attr = array('data-show-subtext'=>true);
+                           foreach($currencies as $currency){
+                            if($currency['isdefault'] == 1){
+                              $currency_attr['data-base'] = $currency['id'];
+                            }
+                            if(isset($proposal)){
+                              if($currency['id'] == $proposal->currency){
+                                $selected = $currency['id'];
+                              }
+                              if($proposal->rel_type == 'customer'){
+                                $currency_attr['disabled'] = true;
+                              }
+                            } else {
+                              if($rel_type == 'customer'){
+                                $customer_currency = $this->clients_model->get_customer_default_currency($rel_id);
+                                if($customer_currency != 0){
+                                  $selected = $customer_currency;
+                                } else {
+                                  if($currency['isdefault'] == 1){
+                                    $selected = $currency['id'];
+                                  }
+                                }
+                                $currency_attr['disabled'] = true;
+                              } else {
+                               if($currency['isdefault'] == 1){
+                                $selected = $currency['id'];
+                              }
+                            }
                            }
-
-                     </style>
-                  <td>
-                     <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-                     <input type="text" style = "width: 100;" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent">
-                  </td>
-                  <td>
-                     <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
-                  </td>
-                  <td>
-                     <?php
-                        $default_tax = unserialize(get_option('default_tax'));
-                        $select = '<select class="selectpicker display-block tax main-tax" data-width="100%" name="taxname" multiple data-none-selected-text="'._l('no_tax').'">';
-                      //  $select .= '<option value=""'.(count($default_tax) == 0 ? ' selected' : '').'>'._l('no_tax').'</option>';
-                        foreach($taxes as $tax){
-                        $selected = '';
-                         if(is_array($default_tax)){
-                             if(in_array($tax['name'] . '|' . $tax['taxrate'],$default_tax)){
-                                  $selected = ' selected ';
-                             }
-                        }
-                        $select .= '<option value="'.$tax['name'].'|'.$tax['taxrate'].'"'.$selected.'data-taxrate="'.$tax['taxrate'].'" data-taxname="'.$tax['name'].'" data-subtext="'.$tax['name'].'">'.$tax['taxrate'].'%</option>';
-                        }
-                        $select .= '</select>';
-                        echo $select;
-                        ?>
-                  </td>
-                  <td></td>
-                  <td>
-                     <?php
-                        $new_item = 'undefined';
-                        if(isset($invoice)){
-                         $new_item = true;
-                        }
-                        ?>
-                     <button type="button" onclick="add_item_to_table('undefined','undefined',<?php echo $new_item; ?>); return false;" class="btn float-right btn-secondary"><i class="fa fa-check"></i></button>
-                  </td>
-               </tr>
-               <?php if (isset($invoice) || isset($add_items)) {
-                  $i               = 1;
-                  $items_indicator = 'newitems';
-                  if (isset($invoice)) {
-                    $add_items       = $invoice->items;
-                    $items_indicator = 'items';
-                  }
-                  foreach ($add_items as $item) {
-
-                    $manual    = false;
-                    $table_row = '<tr class="sortable item">';
-                    $table_row .= '<td class="dragger">';
-                    if (!is_numeric($item['qty'])) {
-                      $item['qty'] = 1;
-                    }
-                    $invoice_item_taxes = get_invoice_item_taxes($item['id']);
-                    // passed like string
-                    if ($item['id'] == 0) {
-                        $invoice_item_taxes = $item['taxname'];
-                        $manual             = true;
-                    }
-                    $table_row .= form_hidden('' . $items_indicator . '[' . $i . '][itemid]', $item['id']);
-                    $amount = $item['rate'] * $item['qty'];
-                    $amount = app_format_number($amount);
-                    // order input
-                    $table_row .= '<input type="hidden" class="order" name="' . $items_indicator . '[' . $i . '][order]">';
-                    $table_row .= '</td>';
-                    $table_row .= '<td class="bold description"><textarea name="' . $items_indicator . '[' . $i . '][description]" class="form-control" rows="5">' . clear_textarea_breaks($item['description']) . '</textarea></td>';
-                    $table_row .= '<td><textarea name="' . $items_indicator . '[' . $i . '][long_description]" class="form-control" rows="5">' . clear_textarea_breaks($item['long_description']) . '</textarea></td>';
-
-                    $table_row .= render_custom_fields_items_table_in($item,$items_indicator.'['.$i.']');
-
-                    $table_row .= '<td><input type="number" min="0" onblur="calculate_total();" onchange="calculate_total();" data-quantity name="' . $items_indicator . '[' . $i . '][qty]" value="' . $item['qty'] . '" class="form-control">';
-
-                    $unit_placeholder = '';
-                    if(!$item['unit']){
-                      $unit_placeholder = _l('unit');
-                      $item['unit'] = '';
-                    }
-
-                    $table_row .= '<input type="text" placeholder="'.$unit_placeholder.'" name="'.$items_indicator.'['.$i.'][unit]" class="form-control input-transparent text-right" value="'.$item['unit'].'">';
-
-                    $table_row .= '</td>';
-                    $table_row .= '<td class="rate"><input type="number" data-toggle="tooltip" title="' . _l('numbers_not_formatted_while_editing') . '" onblur="calculate_total();" onchange="calculate_total();" name="' . $items_indicator . '[' . $i . '][rate]" value="' . $item['rate'] . '" class="form-control"></td>';
-                    $table_row .= '<td class="taxrate">' . $this->misc_model->get_taxes_dropdown_template('' . $items_indicator . '[' . $i . '][taxname][]', $invoice_item_taxes, 'invoice', $item['id'], true, $manual) . '</td>';
-                    $table_row .= '<td class="amount" align="right">' . $amount . '</td>';
-                    $table_row .= '<td><a href="#" class="btn btn-danger pull-left" onclick="delete_item(this,' . $item['id'] . '); return false;"><i class="fa fa-times"></i></a></td>';
-                    if (isset($item['task_id'])) {
-                      if (!is_array($item['task_id'])) {
-                        $table_row .= form_hidden('billed_tasks['.$i.'][]', $item['task_id']);
-                      } else {
-                        foreach ($item['task_id'] as $task_id) {
-                          $table_row .= form_hidden('billed_tasks['.$i.'][]', $task_id);
-                        }
-                      }
-                    } else if (isset($item['expense_id'])) {
-                      $table_row .= form_hidden('billed_expenses['.$i.'][]', $item['expense_id']);
-                    }
-                    $table_row .= '</tr>';
-                    echo $table_row;
-                    $i++;
-                  }
-                  }
-                  ?>
-            </tbody>
-         </table>
-      </div>
-      <div class="col-md-8 col-md-offset-4">
-         <table class="table text-right">
-            <tbody>
-               <tr id="subtotal">
-                  <td><span class="bold"><?php echo _l('invoice_subtotal'); ?> :</span>
-                  </td>
-                  <td class="subtotal">
-                  </td>
-               </tr>
-               <tr id="discount_area">
-                  <td>
-                     <div class="row">
-                        <div class="col-md-7">
-                           <span class="bold">
-                            <?php echo _l('invoice_discount'); ?>
-                         </span>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="input-group" id="discount-total">
-
-                                <input type="number" value="<?php echo (isset($invoice) ? $invoice->discount_percent : 0); ?>" class="form-control pull-left input-discount-percent<?php if(isset($invoice) && !is_sale_discount($invoice,'percent') && is_sale_discount_applied($invoice)){echo ' hide';} ?>" min="0" max="100" name="discount_percent">
-
-                                <input type="number" data-toggle="tooltip" data-title="<?php echo _l('numbers_not_formatted_while_editing'); ?>" value="<?php echo (isset($invoice) ? $invoice->discount_total : 0); ?>" class="form-control pull-left input-discount-fixed<?php if(!isset($invoice) || (isset($invoice) && !is_sale_discount($invoice,'fixed'))){echo ' hide';} ?>" min="0" name="discount_total">
-
-                                <div class="input-group-append">
-                                  <div class="dropdown">
-                                    <a class="dropdown-toggle" href="#" id="dropdown_menu_tax_total_type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                      <span class="discount-total-type-selected">
-                                        <?php if(!isset($invoice) || isset($invoice) && (is_sale_discount($invoice,'percent') || !is_sale_discount_applied($invoice))) {
-                                          echo '%';
-                                        } else {
-                                          echo _l('discount_fixed_amount');
-                                        }
-                                        ?>
-                                      </span>
-                                      <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu" id="discount-total-type-dropdown" aria-labelledby="dropdown_menu_tax_total_type">
-                                      <li>
-                                        <a href="#" class="discount-total-type discount-type-percent<?php if(!isset($invoice) || (isset($invoice) && is_sale_discount($invoice,'percent')) || (isset($invoice) && !is_sale_discount_applied($invoice))){echo ' selected';} ?>">%</a>
-                                      </li>
-                                      <li><a href="#" class="discount-total-type discount-type-fixed<?php if(isset($invoice) && is_sale_discount($invoice,'fixed')){echo ' selected';} ?>">
-                                          <?php echo _l('discount_fixed_amount'); ?>
-                                        </a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
+                           }
+                           $currency_attr = apply_filters_deprecated('proposal_currency_disabled', [$currency_attr], '2.3.0', 'proposal_currency_attributes');
+                           $currency_attr = hooks()->apply_filters('proposal_currency_attributes', $currency_attr);
+                           ?>
+                           <div class="row">
+                             <div class="col-md-6">
+                              <?php
+                              echo render_select('currency', $currencies, array('id','name','symbol'), 'proposal_currency', $selected, $currency_attr);
+                              ?>
+                             </div>
+                             <div class="col-md-6">
+                               <div class="form-group select-placeholder">
+                                 <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
+                                 <select name="discount_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                  <option value="" selected><?php echo _l('no_discount'); ?></option>
+                                  <option value="before_tax" <?php
+                                  if(isset($estimate)){ if($estimate->discount_type == 'before_tax'){ echo 'selected'; }}?>><?php echo _l('discount_type_before_tax'); ?></option>
+                                  <option value="after_tax" <?php if(isset($estimate)){if($estimate->discount_type == 'after_tax'){echo 'selected';}} ?>><?php echo _l('discount_type_after_tax'); ?></option>
+                                </select>
+                              </div>
                             </div>
+                           </div>
+                        <?php $fc_rel_id = (isset($proposal) ? $proposal->id : false); ?>
+                        <?php echo render_custom_fields('proposal',$fc_rel_id); ?>
+                         <div class="form-group no-mbot">
+                           <label for="tags" class="control-label"><i class="fa fa-tag" aria-hidden="true"></i> <?php echo _l('tags'); ?></label>
+                           <input type="text" class="tagsinput" id="tags" name="tags" value="<?php echo (isset($proposal) ? prep_tags_input(get_tags_in($proposal->id,'proposal')) : ''); ?>" data-role="tagsinput">
                         </div>
+                        <div class="form-group mtop10 no-mbot">
+                            <p><?php echo _l('proposal_allow_comments'); ?></p>
+                            <div class="onoffswitch">
+                              <input type="checkbox" id="allow_comments" class="onoffswitch-checkbox" <?php if((isset($proposal) && $proposal->allow_comments == 1) || !isset($proposal)){echo 'checked';}; ?> value="on" name="allow_comments">
+                              <label class="onoffswitch-label" for="allow_comments" data-toggle="tooltip" title="<?php echo _l('proposal_allow_comments_help'); ?>"></label>
+                            </div>
+                          </div>
+                              <div class="form-group select-placeholder">
+                                 <label for="status" class="control-label"><?php echo _l('proposal_status'); ?></label>
+                                 <?php
+                                    $disabled = '';
+                                    if(isset($proposal)){
+                                     if($proposal->estimate_id != NULL || $proposal->invoice_id != NULL){
+                                       $disabled = 'disabled';
+                                     }
+                                    }
+                                    ?>
+                                 <select name="status" class="selectpicker" data-width="100%" <?php echo $disabled; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                                    <?php foreach($statuses as $status){ ?>
+                                    <option value="<?php echo $status; ?>" <?php if((isset($proposal) && $proposal->status == $status) || (!isset($proposal) && $status == 0)){echo 'selected';} ?>><?php echo format_proposal_status($status,'',false); ?></option>
+                                    <?php } ?>
+                                 </select>
+                              </div>
+                               <?php
+                                 $i = 0;
+                                 $selected = '';
+                                 foreach($staff as $member){
+                                  if(isset($proposal)){
+                                    if($proposal->assigned == $member['staffid']) {
+                                      $selected = $member['staffid'];
+                                    }
+                                  }
+                                  $i++;
+                                 }
+                                 echo render_select('assigned',$staff,array('staffid',array('firstname','lastname')),'proposal_assigned',$selected);
+                                 ?>
+                           </div>
+                          
+                        </div>
+                        <?php $value = (isset($proposal) ? $proposal->proposal_to : ''); ?>
+                        <?php echo render_input('proposal_to','proposal_to',$value); ?>
+                        <?php $value = (isset($proposal) ? $proposal->address : ''); ?>
+                        <?php echo render_textarea('address','proposal_address',$value); ?>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <?php $value = (isset($proposal) ? $proposal->city : ''); ?>
+                              <?php echo render_input('city','billing_city',$value); ?>
+                           </div>
+                           <div class="col-md-6">
+                              <?php $value = (isset($proposal) ? $proposal->state : ''); ?>
+                              <?php echo render_input('state','billing_state',$value); ?>
+                           </div>
+                           <div class="col-md-6">
+                              <?php $countries = get_all_countries(); ?>
+                              <?php $selected = (isset($proposal) ? $proposal->country : ''); ?>
+                              <?php echo render_select('country',$countries,array('country_id',array('short_name'),'iso2'),'billing_country',$selected); ?>
+                           </div>
+                           <div class="col-md-6">
+                              <?php $value = (isset($proposal) ? $proposal->zip : ''); ?>
+                              <?php echo render_input('zip','billing_zip',$value); ?>
+                           </div>
+                           <div class="col-md-6">
+                              <?php $value = (isset($proposal) ? $proposal->email : ''); ?>
+                              <?php echo render_input('email','proposal_email',$value); ?>
+                           </div>
+                           <div class="col-md-6">
+                              <?php $value = (isset($proposal) ? $proposal->phone : ''); ?>
+                              <?php echo render_input('phone','proposal_phone',$value); ?>
+                           </div>
+                        </div>
+                         <div class="">
+                  <p class="no-mbot pull-left mtop5 btn-toolbar-notice"><?php echo _l('include_proposal_items_merge_field_help','<b>{proposal_items}</b>'); ?></p>
+                    <button type="button" class="btn btn-info mleft10 proposal-form-submit save-and-send transaction-submit">
+                        <?php echo _l('save_and_send'); ?>
+                    </button>
+                    <button class="btn btn-info mleft5 proposal-form-submit transaction-submit" type="button"
+                    
+                    >
+                      <?php echo _l('submit'); ?>
+                    </button>
+               </div>
+                         </div>
+                        </div>
+                        
                      </div>
-                  </td>
-                  <td class="discount-total"></td>
-               </tr>
-               <tr>
-                  <td>
-                     <div class="row">
-                        <div class="col-md-7">
-                           <span class="bold"><?php echo _l('invoice_adjustment'); ?></span>
-                        </div>
-                        <div class="col-md-5">
-                           <input type="number" data-toggle="tooltip" data-title="<?php echo _l('numbers_not_formatted_while_editing'); ?>" value="<?php if(isset($invoice)){echo $invoice->adjustment; } else { echo 0; } ?>" class="form-control pull-left" name="adjustment">
-                        </div>
-                     </div>
-                  </td>
-                  <td class="adjustment"></td>
-               </tr>
-               <tr>
-                  <td><span class="bold"><?php echo _l('invoice_total'); ?> :</span>
-                  </td>
-                  <td class="total">
-                  </td>
-               </tr>
-            </tbody>
-         </table>
-      </div>
-      <div id="removed-items"></div>
-      <div id="billed-tasks"></div>
-      <div id="billed-expenses"></div>
-      <?php echo form_hidden('task_id'); ?>
-      <?php echo form_hidden('expense_id'); ?>
-   </div>
-   <div class="row">
-      <div class="col-md-12 mt-1">
-         <div class="card-body bottom-transaction">
-            <?php $value = (isset($invoice) ? $invoice->clientnote : get_option('predefined_clientnote_invoice')); ?>
-            <?php echo render_textarea('clientnote','invoice_add_edit_client_note',$value,array(),array(),'mt-1'); ?>
-            <?php $value = (isset($invoice) ? $invoice->terms : get_option('predefined_terms_invoice')); ?>
-            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mt-1'); ?>
-            <div class="btn-bottom-toolbar text-right">
-                <?php if(!isset($invoice)){ ?>
-                <button class="btn-tr btn btn-default ml-1 text-right invoice-form-submit save-as-draft transaction-submit">
-                <?php echo _l('save_as_draft'); ?>
-                </button>
-                <?php } ?>
-              <div class="btn-group dropup">
-                <button type="button" class="btn-tr btn btn-secondary invoice-form-submit transaction-submit"><?php echo _l('submit'); ?></button>
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right width200">
-                  <li>
-                    <a href="#" class="invoice-form-submit save-and-send transaction-submit">
-                      <?php echo _l('save_and_send'); ?>
-                    </a>
-                  </li>
-                  <?php if(!isset($invoice)) { ?>
-                  <li>
-                    <a href="#" class="invoice-form-submit save-and-send-later transaction-submit">
-                      <?php echo _l('save_and_send_later'); ?>
-                    </a>
-                  </li>
-                  <li>
-                      <a href="#" class="invoice-form-submit save-and-record-payment transaction-submit">
-                        <?php echo _l('save_and_record_payment'); ?>
-                      </a>
-                  </li>
-                <?php } ?>
-                </ul>
-              </div>
-             </div>
-         </div>
-        <div class="btn-bottom-pusher"></div>
-      </div>
-   </div>
-   </div>
-
+                     
+                     
+                     
    
-
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+                     
+          <?php echo form_close(); ?>
+         <?php $this->load->view('admin/invoice_items/item'); ?>
+      </div>
+      <div class="btn-bottom-pusher"></div>
+   </div>
 </div>
 
 
+<!--
+<script type="text/javascript" id="vendor-js" src="<?php echo base_url();?>assets/builds/vendor-admin.js?v=2.4.2"></script>
+
+  -->
+
+  <!--
+<script type="text/javascript" id="datatables-js" src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js"></script>
 
 
+<script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
+<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.min.js"></script>
+
+ -->
+ <!--script -->
+<?php// init_tail(); ?>
+
+ <!--script -->
+<!-- BEGIN: Footer-->
+<footer class="footer footer-static footer-light">
+    <p class="clearfix mb-0"><span class="float-left d-inline-block">2020 &copy; Worksuite</span><span class="float-right d-sm-inline-block d-none">Designed with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a class="text-uppercase" href="mailto:madondoephraim@gmail.com" target="_blank">TBGA</a></span>
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
+    </p>
+</footer>
+<!-- END: Footer--><!-- Likes -->
+<div class="modal likes_modal fade" id="modal_post_likes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Colleagues who like this post</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div id="modal_post_likes_wrapper">
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+         <a href="#" class="btn btn-secondary load_more_post_likes">Load More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Likes -->
+<div class="modal likes_modal animated fadeIn" id="modal_post_comment_likes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Colleagues who like this comment</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div id="modal_comment_likes_wrapper">
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-secondary load_more_post_comment_likes">Load More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="event"></div>
+<div id="newsfeed" class="animated fadeIn hide" >
+</div>
+<style>
+@media (min-width: 576px)
+.modal-dialog {
+    max-width: 640px;
+    margin: 1.75rem auto;
+}
+  </style>
+<!-- Task modal view -->
+<div class="modal fade task-modal-single" id="task-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content data">
+
+    </div>
+  </div>
+</div>
+
+<!--Add/edit task modal-->
+<div id="_task"></div>
+
+<!-- Lead Data Add/Edit-->
+<div class="modal fade lead-modal" id="lead-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content data">
+
+    </div>
+  </div>
+</div>
+
+<div id="timers-logout-template-warning" class="hide">
+  <h2 class="bold">Started tasks timers found!<br />Are you sure you want to logout without stopping the timers?</h2>
+  <hr />
+  <a href="https://worksuite.app/preprod/admin/authentication/logout" class="btn btn-danger">Logout</a>
+</div>
+
+<!--Lead convert to customer modal-->
+<div id="lead_convert_to_customer"></div>
+
+<!--Lead reminder modal-->
+<div id="lead_reminder_modal"></div>
+ <!-- BEGIN: Vendor JS-->
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/vendors.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+
+
+
+
+
+<!-- Data tables -->
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/extensions/dropzone.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<script src="https://worksuite.app/preprod/assets/plugins/bootstrap-select-ajax/js/ajax-bootstrap-select.min.js"></script>
+<script type="text/javascript" id="datatables-js" src="https://worksuite.app/preprod/assets/plugins/datatables/datatables.min.js"></script>
+<script type="text/javascript" id="bootstrap-select-js" src="https://worksuite.app/preprod/assets/builds/bootstrap-select.min.js"></script>
+
+
+
+
+
+<script type="text/javascript" id="tinymce-js" src="https://worksuite.app/preprod/assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="jquery-shortcuts-js" src="https://worksuite.app/preprod/assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
+<script type="text/javascript" id="jquery-validation-js" src="https://worksuite.app/preprod/assets/plugins/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
+<script type="text/javascript" id="common-js" src="https://worksuite.app/preprod/assets/builds/common.js"></script>
+<script type="text/javascript" id="app-js" src="https://worksuite.app/preprod/assets/js/main.js"></script>
+
+<script rc="https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+
+
+<script src="https://worksuite.app/preprod/application/views/themes/assets/plugins/jquery.are-you-sure/jquery.are-you-sure.js"></script>
+<script src="https://worksuite.app/preprod/assets/plugins/accounting.js/accounting.js"></script>
+<script src= "https://worksuite.app/preprod/assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>
+
+
+
+
+
+
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/js/core/app-menu.min.js"></script>
+
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
+
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/js/core/app.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/components.min.js"></script>
+<script src="https://worksuite.app/preprod/assets/frest/app-assets/js/scripts/footer.min.js"></script>
+
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/managedayoff.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/allowancetype.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/contract.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/contracttype.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/jobposition.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/managecontract.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/managesettings.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/managestaff.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/mmember.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/payroll.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/payrollincludes.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/payslip.js"></script>
+<script src="https://worksuite.app/preprod/modules/hrm/assets/js/workplace.js"></script>
+
+<script src="https://worksuite.app/preprod/assets/js/app.js"></script>
+<script src="https://worksuite.app/preprod/assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
+<script src="https://worksuite.app/preprod/application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
+<script src="https://worksuite.app/preprod/application/views/assets/builds/vendor-admin.js"></script>
+
+<script src="https://worksuite.app/preprod/application/views/themes/assets/js/main.js"></script>
+
+
+
+
+
+
+
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+
+<script>
+        function custom_fields_hyperlink(){
+         var cf_hyperlink = $('body').find('.cf-hyperlink');
+         if(cf_hyperlink.length){
+             $.each(cf_hyperlink,function(){
+                var cfh_wrapper = $(this);
+                var cfh_field_to = cfh_wrapper.attr('data-fieldto');
+                var cfh_field_id = cfh_wrapper.attr('data-field-id');
+                var textEl = $('body').find('#custom_fields_'+cfh_field_to+'_'+cfh_field_id+'_popover');
+                var hiddenField = $("#custom_fields\\\["+cfh_field_to+"\\\]\\\["+cfh_field_id+"\\\]");
+                var cfh_value = cfh_wrapper.attr('data-value');
+                hiddenField.val(cfh_value);
+
+                if($(hiddenField.val()).html() != ''){
+                    textEl.html($(hiddenField.val()).html());
+                }
+                var cfh_field_name = cfh_wrapper.attr('data-field-name');
+                textEl.popover({
+                    html: true,
+                    trigger: "manual",
+                    placement: "top",
+                    title:cfh_field_name,
+                    content:function(){
+                        return $(cfh_popover_templates[cfh_field_id]).html();
+                    }
+                }).on("click", function(e){
+                    var $popup = $(this);
+                    $popup.popover("toggle");
+                    var titleField = $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_title");
+                    var urlField = $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_link");
+                    var ttl = $(hiddenField.val()).html();
+                    var cfUrl = $(hiddenField.val()).attr("href");
+                    if(cfUrl){
+                        $('#cf_hyperlink_open_'+cfh_field_id).attr('href',(cfUrl.indexOf('://') === -1 ? 'http://' + cfUrl : cfUrl));
+                    }
+                    titleField.val(ttl);
+                    urlField.val(cfUrl);
+                    $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_btn-save").click(function(){
+                        hiddenField.val((urlField.val() != '' ? '<a href="'+urlField.val()+'" target="_blank">' + titleField.val() + '</a>' : ''));
+                        textEl.html(titleField.val() == "" ? "Click here to add link" : titleField.val());
+                        $popup.popover("toggle");
+                    });
+                    $("#custom_fields_"+cfh_field_to+"_"+cfh_field_id+"_btn-cancel").click(function(){
+                        if(urlField.val() == ''){
+                            hiddenField.val('');
+                        }
+                        $popup.popover("toggle");
+                    });
+                });
+            });
+         }
+     }
+
+     	//Make all doc nubers uneditable
+	var x = document.getElementsByName("number");
+var i;
+for (i = 0; i < x.length; i++) {
+
+    x[i].setAttribute("readonly", true )
+  
+}
+ </script>
+ 
+<!-- END: Page JS-->
+<!-- end script-->
+
+<!-- end script-->
+
+
+<script>
+   var _rel_id = $('#rel_id'),
+   _rel_type = $('#rel_type'),
+   _rel_id_wrapper = $('#rel_id_wrapper'),
+   data = {};
+
+
+
+   $(function(){
+    init_currency();
+    // Maybe items ajax search
+    init_ajax_search('items','#item_select.ajax-search',undefined,admin_url+'items/search');
+    validate_proposal_form();
+    $('body').on('change','#rel_id', function() {
+     if($(this).val() != ''){
+      $.get(admin_url + 'proposals/get_relation_data_values/' + $(this).val() + '/' + _rel_type.val(), function(response) {
+        $('input[name="proposal_to"]').val(response.to);
+        $('textarea[name="address"]').val(response.address);
+        $('input[name="email"]').val(response.email);
+        $('input[name="phone"]').val(response.phone);
+        $('input[name="city"]').val(response.city);
+        $('input[name="state"]').val(response.state);
+        $('input[name="zip"]').val(response.zip);
+        $('select[name="country"]').selectpicker('val',response.country);
+        var currency_selector = $('#currency');
+        if(_rel_type.val() == 'customer'){
+          if(typeof(currency_selector.attr('multi-currency')) == 'undefined'){
+            currency_selector.attr('disabled',true);
+          }
+
+         } else {
+           currency_selector.attr('disabled',false);
+        }
+        var proposal_to_wrapper = $('[app-field-wrapper="proposal_to"]');
+        if(response.is_using_company == false && !empty(response.company)) {
+          proposal_to_wrapper.find('#use_company_name').remove();
+          proposal_to_wrapper.find('#use_company_help').remove();
+          proposal_to_wrapper.append('<div id="use_company_help" class="hide">'+response.company+'</div>');
+          proposal_to_wrapper.find('label')
+          .prepend("<a href=\"#\" id=\"use_company_name\" data-toggle=\"tooltip\" data-title=\"<?php echo _l('use_company_name_instead'); ?>\" onclick='document.getElementById(\"proposal_to\").value = document.getElementById(\"use_company_help\").innerHTML.trim(); this.remove();'><i class=\"fa fa-building-o\"></i></a> ");
+        } else {
+          proposal_to_wrapper.find('label #use_company_name').remove();
+          proposal_to_wrapper.find('label #use_company_help').remove();
+        }
+       /* Check if customer default currency is passed */
+       if(response.currency){
+         currency_selector.selectpicker('val',response.currency);
+       } else {
+        /* Revert back to base currency */
+        currency_selector.selectpicker('val',currency_selector.data('base'));
+      }
+      currency_selector.selectpicker('refresh');
+      currency_selector.change();
+    }, 'json');
+    }
+   });
+    $('.rel_id_label').html(_rel_type.find('option:selected').text());
+    _rel_type.on('change', function() {
+      var clonedSelect = _rel_id.html('').clone();
+      _rel_id.selectpicker('destroy').remove();
+      _rel_id = clonedSelect;
+      $('#rel_id_select').append(clonedSelect);
+      proposal_rel_id_select();
+      if($(this).val() != ''){
+        _rel_id_wrapper.removeClass('hide');
+      } else {
+        _rel_id_wrapper.addClass('hide');
+      }
+      $('.rel_id_label').html(_rel_type.find('option:selected').text());
+    });
+    proposal_rel_id_select();
+    <?php if(!isset($proposal) && $rel_id != ''){ ?>
+      _rel_id.change();
+      <?php } ?>
+    });
+   function proposal_rel_id_select(){
+      var serverData = {};
+      serverData.rel_id = _rel_id.val();
+      data.type = _rel_type.val();
+      init_ajax_search(_rel_type.val(),_rel_id,serverData);
+   }
+   function validate_proposal_form(){
+      appValidateForm($('#proposal-form'), {
+        subject : 'required',
+        proposal_to : 'required',
+        rel_type: 'required',
+        rel_id : 'required',
+        date : 'required',
+        email: {
+         email:true,
+         required:true
+       },
+       currency : 'required',
+     });
+   }
+
+   function appValidateForm(form, form_rules, submithandler, overwriteMessages) {
+    $(form).appFormValidator({ rules: form_rules, onSubmit: submithandler, messages: overwriteMessages });
+}
+
+function init_items_sortable(preview_table) {
+    var _items_sortable = $("#wrapper").find('.items tbody');
+
+    if (_items_sortable.length === 0) { return; }
+   
+}
+</script>
+
+
+</body>
+</html>
