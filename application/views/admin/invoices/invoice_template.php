@@ -887,3 +887,110 @@ textarea.form-control {
 <?php //init_tail(); ?>
 
 
+<script>
+   var _rel_id = $('#rel_id'),
+   _rel_type = $('#rel_type'),
+   _rel_id_wrapper = $('#rel_id_wrapper'),
+   data = {};
+
+
+
+   $(function(){
+    init_currency();
+    // Maybe items ajax search
+    init_ajax_search('items','#item_select.ajax-search',undefined,admin_url+'items/search');
+    validate_proposal_form();
+    $('body').on('change','#rel_id', function() {
+     if($(this).val() != ''){
+      $.get(admin_url + 'proposals/get_relation_data_values/' + $(this).val() + '/' + _rel_type.val(), function(response) {
+        $('input[name="proposal_to"]').val(response.to);
+        $('textarea[name="address"]').val(response.address);
+        $('input[name="email"]').val(response.email);
+        $('input[name="phone"]').val(response.phone);
+        $('input[name="city"]').val(response.city);
+        $('input[name="state"]').val(response.state);
+        $('input[name="zip"]').val(response.zip);
+        $('select[name="country"]').selectpicker('val',response.country);
+        var currency_selector = $('#currency');
+        if(_rel_type.val() == 'customer'){
+          if(typeof(currency_selector.attr('multi-currency')) == 'undefined'){
+            currency_selector.attr('disabled',true);
+          }
+
+         } else {
+           currency_selector.attr('disabled',false);
+        }
+        var proposal_to_wrapper = $('[app-field-wrapper="proposal_to"]');
+        if(response.is_using_company == false && !empty(response.company)) {
+          proposal_to_wrapper.find('#use_company_name').remove();
+          proposal_to_wrapper.find('#use_company_help').remove();
+          proposal_to_wrapper.append('<div id="use_company_help" class="hide">'+response.company+'</div>');
+          proposal_to_wrapper.find('label')
+          .prepend("<a href=\"#\" id=\"use_company_name\" data-toggle=\"tooltip\" data-title=\"<?php echo _l('use_company_name_instead'); ?>\" onclick='document.getElementById(\"proposal_to\").value = document.getElementById(\"use_company_help\").innerHTML.trim(); this.remove();'><i class=\"fa fa-building-o\"></i></a> ");
+        } else {
+          proposal_to_wrapper.find('label #use_company_name').remove();
+          proposal_to_wrapper.find('label #use_company_help').remove();
+        }
+       /* Check if customer default currency is passed */
+       if(response.currency){
+         currency_selector.selectpicker('val',response.currency);
+       } else {
+        /* Revert back to base currency */
+        currency_selector.selectpicker('val',currency_selector.data('base'));
+      }
+      currency_selector.selectpicker('refresh');
+      currency_selector.change();
+    }, 'json');
+    }
+   });
+    $('.rel_id_label').html(_rel_type.find('option:selected').text());
+    _rel_type.on('change', function() {
+      var clonedSelect = _rel_id.html('').clone();
+      _rel_id.selectpicker('destroy').remove();
+      _rel_id = clonedSelect;
+      $('#rel_id_select').append(clonedSelect);
+      proposal_rel_id_select();
+      if($(this).val() != ''){
+        _rel_id_wrapper.removeClass('hide');
+      } else {
+        _rel_id_wrapper.addClass('hide');
+      }
+      $('.rel_id_label').html(_rel_type.find('option:selected').text());
+    });
+    proposal_rel_id_select();
+    <?php if(!isset($proposal) && $rel_id != ''){ ?>
+      _rel_id.change();
+      <?php } ?>
+    });
+   function proposal_rel_id_select(){
+      var serverData = {};
+      serverData.rel_id = _rel_id.val();
+      data.type = _rel_type.val();
+      init_ajax_search(_rel_type.val(),_rel_id,serverData);
+   }
+   function validate_proposal_form(){
+      appValidateForm($('#proposal-form'), {
+        subject : 'required',
+        proposal_to : 'required',
+        rel_type: 'required',
+        rel_id : 'required',
+        date : 'required',
+        email: {
+         email:true,
+         required:true
+       },
+       currency : 'required',
+     });
+   }
+
+   function appValidateForm(form, form_rules, submithandler, overwriteMessages) {
+    $(form).appFormValidator({ rules: form_rules, onSubmit: submithandler, messages: overwriteMessages });
+}
+
+function init_items_sortable(preview_table) {
+    var _items_sortable = $("#wrapper").find('.items tbody');
+
+    if (_items_sortable.length === 0) { return; }
+   
+}
+</script>
