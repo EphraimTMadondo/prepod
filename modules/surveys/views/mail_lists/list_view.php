@@ -123,6 +123,8 @@
                               ?>
                            <th><?php echo _l('options'); ?></th>
                         </thead>
+
+
                         <tbody></tbody>
                      </table>
                   </div>
@@ -226,7 +228,7 @@
       <?php } ?>
 
       $(function(){
-        initDataTable('.table-mail-list-view', window.location.href, [options_not_sortable], [options_not_sortable],ServerParams,[0,'asc']);
+       // initDataTable('.table-mail-list-view', window.location.href, [options_not_sortable], [options_not_sortable],ServerParams,[0,'asc']);
         appValidateForm($('#add_single_email_form'), {
          email: {
            required: true,
