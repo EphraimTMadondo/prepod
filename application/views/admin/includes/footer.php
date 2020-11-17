@@ -4,8 +4,9 @@
     
     style ="
     
-    height: 5%;
+    height: 3%;
     margin-left: 2%;
+    margin-bottom: 2.5%;
     
     
     
