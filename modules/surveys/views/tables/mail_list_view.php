@@ -171,7 +171,7 @@ if (is_numeric($id)) {
         $allowed = true;
         if($id == "staff")
         {
-        $allowed =   in_array($aRow['staffid'],$staffIds);
+       // $allowed =   in_array($aRow['staffid'],$staffIds);
         }
         
         if( $allowed)
