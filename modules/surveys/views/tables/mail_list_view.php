@@ -78,7 +78,7 @@ if (is_numeric($id)) {
    
     if ($id == 'leads') {
          $companyusername = $_SESSION['current_company'];
-        array_push($where, 'AND ('.db_prefix()."leads.company_username = '$companyusername')");
+       // array_push($where, 'AND ('.db_prefix()."leads.company_username = '$companyusername')");
 
         if ($this->ci->input->post('custom_view')) {
             $filter = $this->ci->input->post('custom_view');
