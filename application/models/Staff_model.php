@@ -330,7 +330,7 @@ class Staff_model extends App_Model
 
             return $staff;
         }
-      ;
+      
      
         $this->db->select('staffid');
         if(isset($_SESSION['current_company'])){
