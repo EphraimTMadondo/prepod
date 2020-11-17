@@ -323,6 +323,10 @@
 
 
 <script>
+   var _rel_id = $('#rel_id'),
+   _rel_type = $('#rel_type'),
+   _rel_id_wrapper = $('#rel_id_wrapper'),
+   data = {};
 
 
 
