@@ -52,11 +52,20 @@
                  } ?>
                 </select>
 
-                <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                              <option value=""></option>
-                              <option value="lead" <?php if((isset($proposal) && $proposal->rel_type == 'lead') || $this->input->get('rel_type')){if($rel_type == 'lead'){echo 'selected';}} ?>><?php echo _l('proposal_for_lead'); ?></option>
-                              <option value="customer" <?php if((isset($proposal) &&  $proposal->rel_type == 'customer') || $this->input->get('rel_type')){if($rel_type == 'customer'){echo 'selected';}} ?>><?php echo _l('proposal_for_customer'); ?></option>
-                           </select>
+
+                <div class="form-group select-placeholder<?php if($rel_id == ''){echo '';} ?> " id="rel_id_wrapper">
+                           <label for="rel_id"><span class="rel_id_label"></span></label>
+                           <div id="rel_id_select">
+                              <select name="rel_id" id="rel_id" class="ajax-search" data-width="100%" data-live-search="true" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+                              <?php if($rel_id != '' && $rel_type != ''){
+                                 $rel_data = get_relation_data($rel_type,$rel_id);
+                                 $rel_val = get_relation_values($rel_data,$rel_type);
+                                    echo '<option value="'.$rel_val['id'].'" selected>'.$rel_val['name'].'</option>';
+                                 } ?>
+                              </select>
+                           </div>
+                        </div>
+                
               </div>
             </div>
             <?php
