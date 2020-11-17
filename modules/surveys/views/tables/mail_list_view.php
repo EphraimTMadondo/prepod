@@ -161,11 +161,18 @@ if (is_numeric($id)) {
     
     }
 
+    $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where)
+
+    if($id == "staff")
+    {
     $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where, [
         'profile_image',
         'lastname',
         'staffid',
         ]);
+    }
+
+    $result = 
     $output  = $result['output'];
     $rResult = $result['rResult'];
 
