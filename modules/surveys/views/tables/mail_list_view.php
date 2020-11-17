@@ -169,7 +169,7 @@ if (is_numeric($id)) {
     foreach ($rResult as $aRow) {
 
         $allowed = true;
-        if($id = "staff")
+        if($id == "staff")
         {
         $allowed =   in_array($aRow['staffid'],$staffIds);
         }
