@@ -40,6 +40,9 @@
       <div class="col-md-6">
           <div class= "card">
          <div class= "card-body" >
+
+
+
             
             <div class="f_client_id">
               <div class="form-group select-placeholder">
@@ -57,6 +60,12 @@
                 </select>
               </div>
             </div>
+
+            <?php
+
+         
+                        echo render_select('sale_agent',$staff,array('staffid',array('firstname','lastname')),'sale_agent_string',$selected);
+                        ?>
             <?php
             if(!isset($invoice_from_project)){ ?>
             <div class="form-group select-placeholder projects-wrapper<?php if((!isset($invoice)) || (isset($invoice) && !customer_has_projects($invoice->clientid))){ echo ' hide';} ?>">
@@ -355,7 +364,7 @@
                          }
                          $i++;
                         }
-                      //  echo render_select('sale_agent',$staff,array('staffid',array('firstname','lastname')),'sale_agent_string',$selected);
+                        echo render_select('sale_agent',$staff,array('staffid',array('firstname','lastname')),'sale_agent_string',$selected);
                         ?>
                   </div>
                   <div class="col-md-6">
