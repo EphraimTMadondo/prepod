@@ -493,7 +493,7 @@ class Surveys extends AdminController
             } elseif ($id == 'staff') {
                 $title = _l('staff_mail_lists');
 
-                $emails = $this->staff_model->get();
+               // $emails = $this->staff_model->get();
             } elseif ($id == 'leads') {
                 $title = _l('leads');
                 if (is_gdpr() && get_option('gdpr_enable_consent_for_leads') == '1') {
