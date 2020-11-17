@@ -60,7 +60,12 @@ if (is_numeric($id)) {
     if ($id == 'staff') {
         $sIndexColumn = 'staffid';
         $sTable       = db_prefix() . 'staff';
+        $sTable2       = db_prefix().'staff_companies';
         array_push($aColumns, 'datecreated');
+
+
+
+
     } elseif ($id == 'leads') {
         array_push($aColumns, 'dateadded');
         $sTable = db_prefix() . 'leads';
@@ -127,12 +132,50 @@ if (is_numeric($id)) {
          $companyusername = $_SESSION['current_company'];
          //array_push($where, 'AND ('.db_prefix()."staff.company_username = '$companyusername')");
         // array_push($where, 'AND ('.db_prefix()."leads.company_username = '$companyusername')");
+
+        //staff companies
+    
+    $aColumns2 = [
+        'staffid',
+        'company_username',
+       
+        ];
+         
+          $where2 =[];
+        $companyusername = $_SESSION['current_company'];
+        array_push($where2,'AND '. db_prefix()."staff_companies.company_username = '$companyusername'");
+    
+    $resultCompanies = data_tables_init($aColumns2, $sIndexColumn, $sTable2, [], $where2, [
+        'staffid',
+        'company_username',
+        ]);
+    
+    $staffIds = [];
+    $rResult2 = $resultCompanies['rResult'];
+    foreach ($rResult2 as $aRow) {
+        
+          array_push($staffIds,$aRow['staffid']);
+        
+    }
+  
+    
     }
 
     $result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], $where);
     $output  = $result['output'];
     $rResult = $result['rResult'];
+
+   
     foreach ($rResult as $aRow) {
+
+        $allowed = true;
+        if($id = "staff")
+        {
+        $allowed =   in_array($aRow['staffid'],$staffIds);
+        }
+        
+        if( $allowed)
+        {
         $row = [];
         for ($i = 0; $i < count($aColumns); $i++) {
             $_data = $aRow[$aColumns[$i]];
@@ -145,4 +188,8 @@ if (is_numeric($id)) {
         $row[]              = '';
         $output['aaData'][] = $row;
     }
+
+    }
+
+
 }
