@@ -686,7 +686,7 @@ class Surveys_model extends App_Model
         if($ =='staff')
         {
 
-        } *//
+        } */
         return $list;
     }
 
