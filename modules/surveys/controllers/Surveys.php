@@ -554,9 +554,9 @@ class Surveys extends AdminController
                 $list->emails[$i]['email'] = $email['email'];
                 $i++;
             }
-           // $data['list']  = $list;
+           $data['list']  = $list;
             $data['title'] = $title;
-            $fixed_list    = false;
+            $fixed_list    = true;
         } else {
            echo "run else everything";
             $list          = $this->surveys_model->get_data_for_view_list($id);
