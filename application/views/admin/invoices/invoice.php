@@ -2,6 +2,11 @@
 <?php init_head(); ?>
 <!-- BEGIN: Content-->
 <div class="app-content content">
+<style>
+
+
+
+</style>
 	<div class="content-overlay"></div>
 	<div class="content-wrapper">
 		<div class="row">
@@ -12,7 +17,9 @@
 			}
 			?>
 			<div class="col-md-12">
-				<?php $this->load->view('admin/invoices/invoice_template'); ?>
+				<?php// $this->load->view('admin/invoices/invoice_template'); ?>
+				<?php $this->load->view('admin/estimates/_add_edit_items'); ?>
+				
 			</div>
 			<?php echo form_close(); ?>
 			<?php $this->load->view('admin/invoice_items/item'); ?>
