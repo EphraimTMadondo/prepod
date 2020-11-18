@@ -37,21 +37,151 @@
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
+
+<!--PROBLEM AREA-->
 <script type="text/javascript" id="app-js" src="https://worksuite.app/prepod/assets/js/main.js"></script>
 
 <!-- BEGIN Vendor JS-->
 
+<!-- BEGIN Vendor JS-->
+
 <!-- BEGIN: Theme JS-->
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/core/app-menu.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/core/app.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/components.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/footer.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
+
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
+
+<!--OG APP.JS-->
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
+
+
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
+
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managesettings.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managestaff.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/mmember.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payroll.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payrollincludes.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
+
+<!--<script src="<?php echo base_url();?>assets/js/app.js"></script>-->
+<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
+<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
+<script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
+
+<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>
+
+
+
+
+
+
+
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
-<!-- END: Page JS-->
+
+
+<?php
+   switch($page)
+   {
+      case 'dashboard':
+     
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/apexcharts.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/swiper.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
+
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>\n";
+   
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
+         echo "<script src='".base_url()."application/views/themes/assets/js/dashboard-custom.js'></script>\n";
+
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js'></script>\n";
+      
+       
+      
+      break;
+      case 'calendar':
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-dom.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/chance.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>\n";
+      break;
+      case "task_kanban":
+      case "proposals_kanban":
+      case "leads":
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/jkanban/jkanban.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
+      break;
+      case "task_list":
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
+      break;
+      case "mailbox":
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/editors/quill/quill.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/toastr.min.js'></script>\n";
+      break;
+      case "contracts":
+      case "projects":
+      case "reports":
+      case "staff":
+         echo "<script src='".base_url()."assets/plugins/jquery-circle-progress/circle-progress.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
+      break;
+      case "hrm":
+      case "purchase":
+      case "staff":
+         echo "<script src='".base_url()."modules/assets/plugins/handsontable/handsontable.full.min.js'></script>\n";
+      break;
+      default:
+      break;
+   }
+?>
+
+
+<!-- BEGIN: Page JS-->
+<?php
+   switch($page)
+   {
+      case 'dashboard':
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/dashboard-ecommerce.min.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/cards/widgets.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>\n";
+      break;
+      case 'calendar':
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/calendars-data.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/schedules.js'></script>\n";
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/extensions/calendar/app-calendar.js'></script>\n";
+      break;
+      case "task_list":
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-todo.js'></script>\n";
+      break;
+      case "mailbox":
+         echo "<script src='".base_url()."assets/frest/app-assets/js/scripts/pages/app-email.js'></script>\n";
+      break;
+      case "projects":
+         echo "<script src='".base_url()."assets/js/projects.js'></script>\n";
+      break;
+      default:
+      break;
+   }
+?>
+
 <script>
         function custom_fields_hyperlink(){
          var cf_hyperlink = $('body').find('.cf-hyperlink');
