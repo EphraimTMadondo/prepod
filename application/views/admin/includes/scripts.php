@@ -1,12 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php include_once(APPPATH.'views/admin/includes/helpers_bottom.php'); ?>
  <!-- BEGIN: Vendor JS-->
-<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/vendors.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
-
-
+ <script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/vendors.min.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
 <!-- Datepicker -->
 <?php
    echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>\n";
