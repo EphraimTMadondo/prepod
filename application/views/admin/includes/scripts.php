@@ -108,15 +108,24 @@
 <!-- BEGIN: Theme JS-->
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
-
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
-
-<!--OG APP.JS-->
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
-
-
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
+
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managesettings.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managestaff.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/mmember.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payroll.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payrollincludes.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
 
 
 
