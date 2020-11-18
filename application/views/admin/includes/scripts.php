@@ -8,8 +8,6 @@
 
 
 
-
-
 <!-- Data tables -->
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
@@ -20,38 +18,16 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dropzone.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-
 <script src="<?php echo base_url();?>assets/plugins/bootstrap-select-ajax/js/ajax-bootstrap-select.min.js"></script>
-<script type="text/javascript" id="datatables-js" src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js"></script>
-<!--<script type="text/javascript" id="bootstrap-select-js" src="<?php echo base_url();?>assets/builds/bootstrap-select.min.js"></script> -->
-
-
-
-
-
 
 
 <script type="text/javascript" id="tinymce-js" src="<?php echo base_url();?>assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="jquery-shortcuts-js" src="<?php echo base_url();?>assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
-<script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
-
-         <!--Progress bars here-->
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
-
-
-
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
-
-
-
-
-
-
-
-
 
 <?php
    switch($page)
