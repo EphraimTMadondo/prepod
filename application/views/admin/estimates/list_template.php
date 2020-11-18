@@ -7,7 +7,13 @@
       <?php if(has_permission('estimates','','create')){ ?>
       <a href="<?php echo admin_url('estimates/estimate'); ?>" class="btn btn-primary new new-estimate-btn"><?php echo _l('create_new_estimate'); ?></a>
       <?php } ?>
-      <a href="<?php echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary switch-pipeline hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+
+
+<!---
+      <a href="<?php // echo admin_url('estimates/pipeline/'.$switch_pipeline); ?>" class="btn btn-primary switch-pipeline hidden-xs"><?php echo _l('switch_to_pipeline'); ?></a>
+    
+      -->
+    
       <select class="selectpicker" id="select-filter" data-live-search="true" onChange="custom_view()" data-style="btn-primary">
           <option value="" data-tokens="<?php echo _l('estimates_list_all'); ?>"><?php echo _l('estimates_list_all'); ?></option>
           <option value="not_sent" data-tokens="<?php echo _l('not_sent_indicator'); ?>"><?php echo _l('not_sent_indicator'); ?></option>
