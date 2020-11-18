@@ -88,6 +88,7 @@ height:100px;
     </div>
     <script>
         app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
+        init_progress_bars();
     </script>
     <?php $this->load->view('admin/utilities/calendar_template'); ?>
     <?php init_tail('dashboard'); ?> 
