@@ -235,50 +235,7 @@ for (i = 0; i < x.length; i++) {
 }
 
 
-// Validate invoice add/edit form
-function validate_invoice_form(selector) {
-    selector = typeof(selector) == 'undefined' ? '#invoice-form' : selector;
 
-    appValidateForm($(selector), {
-        clientid: {
-            required: {
-                depends: function() {
-                    var customerRemoved = $('select#clientid').hasClass('customer-removed');
-                    return !customerRemoved;
-                }
-            }
-        },
-        date: 'required',
-        currency: 'required',
-        repeat_every_custom: { min: 1 },
-        number: {
-            required: true,
-        }
-    });
-    $("body").find('input[name="number"]').rules('add', {
-        remote: {
-            url: admin_url + "invoices/validate_invoice_number",
-            type: 'post',
-            data: {
-                number: function() {
-                    return $('input[name="number"]').val();
-                },
-                isedit: function() {
-                    return $('input[name="number"]').data('isedit');
-                },
-                original_number: function() {
-                    return $('input[name="number"]').data('original-number');
-                },
-                date: function() {
-                    return $('input[name="date"]').val();
-                },
-            }
-        },
-        messages: {
-            remote: app.lang.invoice_number_exists,
-        }
-    });
-}
 
  </script>
  
