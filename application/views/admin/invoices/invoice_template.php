@@ -20,9 +20,9 @@
       </div>
    </div>
 </div>
-<div class="card mt-2 invoice accounting-template">
+<div class="">
    <div class="additional"></div>
-   <div class="card-body">
+   <div class="">
       <?php if(isset($invoice)){ ?>
       <?php  echo format_invoice_status($invoice->status); ?>
       <hr class="hr-panel-heading" />
@@ -31,11 +31,25 @@
       <?php if(isset($invoice)){
         echo form_hidden('merge_current_invoice',$invoice->id);
       } ?>
-      <div class="row">
-         <div class="col-md-6">
+      <div class="row" style = "display:flex">
+     
+      <div class="col-md-6">
+          <div class= "card">
+         <div class= "card-body" >
+         <!--
+         <div class="f_client_id">
+              <div class="form-group">
+                <label for="clientid" class="control-label"> <small class="req text-danger">* </small>Customer</label>
+                <div class="dropdown bootstrap-select ajax-search bs3" style="width: 100%;"><select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search" data-none-selected-text="Non selected" tabindex="-98">
+                <option class="bs-title-option" value=""></option><optgroup label="Currently Selected"><option value="" title="" class="bs-title-option" selected="selected"></option></optgroup></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-default" data-toggle="dropdown" role="combobox" aria-owns="bs-select-15" aria-haspopup="listbox" aria-expanded="false" data-id="clientid" title="Select and begin typing"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select and begin typing</div></div> </div><span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" style="min-height: 55px; max-height: 180px; overflow: hidden;"><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-15" aria-autocomplete="list" placeholder="Type to search..."></div>
+                <div class="inner open" role="listbox" id="bs-select-15" tabindex="-1" style="min-height: 0px; max-height: 124px; overflow-y: auto;"><ul class="dropdown-menu inner " role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class="divider optgroup-1div"></li><li class="dropdown-header optgroup-1"><span class="text">Currently Selected</span></li><li class="optgroup-1"><a role="option" class="opt bs-title-option" id="bs-select-15-2" tabindex="0"><span class="text"></span></a></li></ul></div><div class="status" style="">Start typing to search</div></div></div>
+              </div>
+            </div>
+            -->
             <div class="f_client_id">
               <div class="form-group select-placeholder">
                 <label for="clientid" class="control-label"><?php echo _l('invoice_select_customer'); ?></label>
+                
                 <select id="clientid" name="clientid" data-live-search="true" data-width="100%" class="ajax-search<?php if(isset($invoice) && empty($invoice->clientid)){echo ' customer-removed';} ?>" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                <?php $selected = (isset($invoice) ? $invoice->clientid : '');
                  if($selected == ''){
@@ -170,7 +184,20 @@
                 }
                }
 
-               $_invoice_number = str_pad($__number, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
+
+               $last = $this->db->order_by('id',"desc")
+               ->limit(1)
+               ->get(db_prefix() . 'invoices')
+               ->row()->number;
+              //  print_r($last);
+
+              // $last_row=$this->db->order_by('id',"desc")->limit(1)->get('post')->row();
+
+             // $_estimate_number = $last;
+             
+      
+
+               $_invoice_number = str_pad($last +1, get_option('number_padding_prefixes'), '0', STR_PAD_LEFT);
                $isedit = isset($invoice) ? 'true' : 'false';
                $data_original_number = isset($invoice) ? $invoice->number : 'false';
 
@@ -241,7 +268,16 @@
                ?>
                <?php echo render_custom_fields('invoice',$rel_id); ?>
          </div>
+               </div>
+         </div>
+
+              
+
+
+
          <div class="col-md-6">
+          <div class= "card">
+         <div class= "card-body">
             <div class="card no-shadow">
 
                    <div class="form-group">
@@ -419,10 +455,52 @@
 
             </div>
          </div>
+         </div>
+         </div>
+
       </div>
    </div>
+
+   <style>
+      .table.items thead {
+    background: #415164;
+    color: white;
+    border: 0;
+}
+.table.items thead {
+    background: #415164;
+    color: #fff;
+    border: 0;
+}
+
+.row {
+    margin: 2px;
+}
+
+.mbot25 {
+    margin-bottom: 25px;
+}
+
+
+
+.mtop10 {
+    margin-top: 10px;
+}
+.table thead th {
+    color: white;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.col-md-offset-4 {
+    margin-left: 33.33333333%;
+}
+
+      </style>
+   
+   <div class = "card">
    <div class="card-body mtop10">
-      <div class="row">
+      <div class="row" style = "display: flex">
          <div class="col-md-4">
             <?php $this->load->view('admin/invoice_items/item_select'); ?>
          </div>
@@ -430,7 +508,7 @@
           ?>
          <div class="col-md-3">
             <div class="form-group select-placeholder input-group-select form-group-select-task_select popover-250">
-              <div class="input-group input-group-select">
+              <div class="input-group-select" style ="display: flex">
                <select name="task_select" data-live-search="true" id="task_select" class="selectpicker no-margin _select_input_group" data-style="btn-outline-light" data-width="100%" data-none-selected-text="<?php echo _l('bill_tasks'); ?>">
                   <option value=""></option>
                   <?php foreach($billable_tasks as $task_billable){ ?>
@@ -448,7 +526,7 @@
                     } else {
                        $help_text = _l('invoice_task_item_project_tasks_not_included');
                     }
-                    echo '<span class="pointer popover-invoker" data-container=".form-group-select-task_select"
+                    echo '<span style = "margin-left: 8;"class="pointer popover-invoker" data-container=".form-group-select-task_select"
                       data-trigger="click" data-placement="top" data-toggle="popover" data-content="'.$help_text.'">
                       <i class="fa fa-question-circle"></i></span>';
                   ?>
@@ -457,8 +535,46 @@
             </div>
          </div>
          <?php } ?>
+         <style>
+            .form-control {
+    display: block;
+    /* width: 100%; */
+    height: calc(1.4em + .94rem + 3.7px);
+    padding: .47rem .8rem;
+    font-size: 1rem;
+    /* line-height: 1.4; */
+    color: #475F7B;
+    background-color: #FFF;
+    border: 1px solid #DFE3E7;
+    border-radius: .267rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+            .radio
+            {
+               margin-left: 8;
+            }
+
+                        table.items tr.main td {
+               padding-top: 25px;
+               padding-bottom: 25px;
+            }
+
+            textarea.form-control {
+    height: inherit;
+    padding-top: 10px;
+}
+textarea.form-control {
+    height: 5rem;
+    padding-top: 10px;
+    width: 100%;
+}
+
+
+
+            </style>
          <div class="col-md-<?php if(!isset($invoice_from_project)){ echo 5; }else {echo 8;} ?> text-right show_quantity_as_wrapper">
-            <div class="mtop10">
+            <div class="" style = "display: flex">
                <span><?php echo _l('show_quantity_as'); ?> </span>
                <div class="radio radio-primary radio-inline">
                   <input type="radio" value="1" id="sq_1" name="show_quantity_as" data-text="<?php echo _l('invoice_table_quantity_heading'); ?>" <?php if(isset($invoice) && $invoice->show_quantity_as == 1){echo 'checked';}else if(!isset($hours_quantity) && !isset($qty_hrs_quantity)){echo'checked';} ?>>
@@ -512,9 +628,20 @@
                      <textarea name="long_description" rows="4" class="form-control" placeholder="<?php echo _l('item_long_description_placeholder'); ?>"></textarea>
                   </td>
                   <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
+                  <style>
+
+                           .input-transparent {
+                              -webkit-box-shadow: none;
+                              box-shadow: none;
+                              outline: 0;
+                              border: 0!important;
+                              background: 0 0;
+                           }
+
+                     </style>
                   <td>
                      <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-                     <input type="text" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent text-right">
+                     <input type="text" style = "width: 100;" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent">
                   </td>
                   <td>
                      <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
@@ -740,4 +867,88 @@
         <div class="btn-bottom-pusher"></div>
       </div>
    </div>
+   </div>
+
+   
+
 </div>
+<style>
+ $("body").on('change', '.f_client_id select[name="clientid"]', function() {
+        var val = $(this).val();
+        var projectAjax = $('select[name="project_id"]');
+        var clonedProjectsAjaxSearchSelect = projectAjax.html('').clone();
+        var projectsWrapper = $('.projects-wrapper');
+        projectAjax.selectpicker('destroy').remove();
+        projectAjax = clonedProjectsAjaxSearchSelect;
+        $('#project_ajax_search_wrapper').append(clonedProjectsAjaxSearchSelect);
+        init_ajax_project_search_by_customer_id();
+        clear_billing_and_shipping_details();
+        if (!val) {
+            $('#merge').empty();
+            $('#expenses_to_bill').empty();
+            $('#invoice_top_info').addClass('hide');
+            projectsWrapper.addClass('hide');
+            return false;
+        }
+
+        var currentInvoiceID = $("body").find('input[name="merge_current_invoice"]').val();
+        currentInvoiceID = typeof(currentInvoiceID) == 'undefined' ? '' : currentInvoiceID;
+
+        requestGetJSON('invoices/client_change_data/' + val + '/' + currentInvoiceID).done(function(response) {
+            $('#merge').html(response.merge_info);
+            var $billExpenses = $('#expenses_to_bill');
+            // Invoice from project, in invoice_template this is not shown
+            $billExpenses.length === 0 ? response.expenses_bill_info = '' : $billExpenses.html(response.expenses_bill_info);
+            ((response.merge_info !== '' || response.expenses_bill_info !== '') ? $('#invoice_top_info').removeClass('hide') : $('#invoice_top_info').addClass('hide'));
+
+            for (var f in billingAndShippingFields) {
+                if (billingAndShippingFields[f].indexOf('billing') > -1) {
+                    if (billingAndShippingFields[f].indexOf('country') > -1) {
+                        $('select[name="' + billingAndShippingFields[f] + '"]').selectpicker('val', response['billing_shipping'][0][billingAndShippingFields[f]]);
+                    } else {
+                        if (billingAndShippingFields[f].indexOf('billing_street') > -1) {
+                            $('textarea[name="' + billingAndShippingFields[f] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[f]]);
+                        } else {
+                            $('input[name="' + billingAndShippingFields[f] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[f]]);
+                        }
+                    }
+                }
+            }
+
+            if (!empty(response['billing_shipping'][0]['shipping_street'])) {
+                $('input[name="include_shipping"]').prop("checked", true).change();
+            }
+
+            for (var fsd in billingAndShippingFields) {
+                if (billingAndShippingFields[fsd].indexOf('shipping') > -1) {
+                    if (billingAndShippingFields[fsd].indexOf('country') > -1) {
+                        $('select[name="' + billingAndShippingFields[fsd] + '"]').selectpicker('val', response['billing_shipping'][0][billingAndShippingFields[fsd]]);
+                    } else {
+                        if (billingAndShippingFields[fsd].indexOf('shipping_street') > -1) {
+                            $('textarea[name="' + billingAndShippingFields[fsd] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[fsd]]);
+                        } else {
+                            $('input[name="' + billingAndShippingFields[fsd] + '"]').val(response['billing_shipping'][0][billingAndShippingFields[fsd]]);
+                        }
+                    }
+                }
+            }
+
+            init_billing_and_shipping_details();
+
+            var client_currency = response['client_currency'];
+            var s_currency = $("body").find('.accounting-template select[name="currency"]');
+            client_currency = parseInt(client_currency);
+            client_currency != 0 ? s_currency.val(client_currency) : s_currency.val(s_currency.data('base'));
+            _init_tasks_billable_select(response['billable_tasks'], projectAjax.selectpicker('val'));
+            response.customer_has_projects === true ? projectsWrapper.removeClass('hide') : projectsWrapper.addClass('hide');
+            s_currency.selectpicker('refresh');
+            init_currency();
+        });
+
+    });
+
+</style>
+
+
+
+
