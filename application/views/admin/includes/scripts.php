@@ -20,25 +20,25 @@
 
 
 <!-- Data tables -->
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
-<script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/extensions/dropzone.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+<script src="<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/dropzone.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-<script src="https://worksuite.app/prepod/assets/plugins/bootstrap-select-ajax/js/ajax-bootstrap-select.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/bootstrap-select-ajax/js/ajax-bootstrap-select.js"></script>
 
 
-<script type="text/javascript" id="tinymce-js" src="https://worksuite.app/prepod/assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
-<script type="text/javascript" id="jquery-shortcuts-js" src="https://worksuite.app/prepod/assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
-<script type="text/javascript" id="jquery-validation-js" src="https://worksuite.app/prepod/assets/plugins/jquery-validation/jquery.validate.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="tinymce-js" src="<?php echo base_url();?>assets/plugins/tinymce/tinymce.min.js?v=2.4.2"></script>
+<script type="text/javascript" id="jquery-shortcuts-js" src="<?php echo base_url();?>assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
+<script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.min.js?v=2.4.2"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
-<script type="text/javascript" id="common-js" src="https://worksuite.app/prepod/assets/builds/common.js"></script>
-<script type="text/javascript" id="app-js" src="https://worksuite.app/prepod/assets/js/main.js"></script>
+<script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
+<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
 
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/moment-timezone/moment-timezone-with-data-10-year-range.js"></script>
 <?php
@@ -104,42 +104,12 @@
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app-menu.min.js"></script>
-
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
-
-<!--OG APP.JS-->
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
-
-
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
-<script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
-
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managesettings.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managestaff.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/mmember.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/payroll.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/payrollincludes.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
-
-<!--<script src="<?php echo base_url();?>assets/js/app.js"></script>-->
-<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
-<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
-<script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
-
-<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>
-
-
-
-
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/configs/vertical-menu-dark.min.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/core/app-menu.min.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/core/app.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/components.min.js"></script>
+<script src="https://worksuite.app/prepod/assets/frest/app-assets/js/scripts/footer.min.js"></script>
 
 
 
