@@ -121,7 +121,7 @@
 <!--<script src="<?php echo base_url();?>assets/js/app.js"></script>-->
 <script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
-<script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
+
 
 <!--<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>-->
 
@@ -224,47 +224,6 @@ for (i = 0; i < x.length; i++) {
     x[i].setAttribute("readonly", true )
   
 }
-
-// Custom deselect all on bootstrap ajax select input
-$("body").on('loaded.bs.select change', 'select.ajax-search', function(e) {
-
-var val = $(this).selectpicker('val');
-
-if ($.isArray(val) && val.length == 0) {
-    return;
-}
-
-if (!val || $(this).is(':disabled')) {
-    return;
-}
-
-var $elmWrapper = $(this).parents('.bootstrap-select.ajax-search');
-if ($elmWrapper.find('.ajax-clear-values').length === 0) {
-    var id = $(this).attr('id');
-    var dropdownToggle = $elmWrapper.addClass('ajax-remove-values-option').find('button.dropdown-toggle');
-    dropdownToggle.after('<span class="pointer ajax-clear-values" onclick="deselect_ajax_search(this); return false;" data-id="' + id + '"><i class="bx bx-trash"></i></span>');
-}
-});
-
-
-// On render select remove the placeholder
-$("body").on('rendered.bs.select', 'select', function() {
-    $(this).parents().removeClass('select-placeholder');
-    $(this).parents('.form-group').find('.select-placeholder').removeClass('select-placeholder');
-});
-
-$("body").on('loaded.bs.select', 'select', function() {
-    if ($(this).data('toggle') == 1) {
-        $(this).selectpicker('toggle');
-    }
-});
-
-// Init bootstrap selectpicker
-$("body").on('loaded.bs.select', '._select_input_group', function(e) {
-    $(this).parents('.form-group').find('.input-group-select .input-group-append').css('opacity', '1');
-});
-
-
 
 
  </script>
