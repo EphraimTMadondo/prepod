@@ -7,9 +7,10 @@
  * Not recommened to edit this file directly if you plan to upgrade the script when new versions are released.
  * Use hooks to inject custom javascript code
  */
-
+init_progress_bars();
 $(window).on('load', function() {
     init_btn_with_tooltips();
+    init_progress_bars();
 });
 
 // Set datatables error throw console log
