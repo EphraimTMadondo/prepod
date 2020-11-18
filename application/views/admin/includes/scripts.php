@@ -9,12 +9,15 @@
 
 
 <!-- Datepicker -->
-<script src='https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>
-<script src='https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/pickers/pickadate/legacy.js'></script>
-<script src='https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js'></script>
-<script src='https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/pickers/pickadate/picker.time.js'></script>
-<script src='https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js'></script>
-<script src='https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>
+<?php
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/legacy.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.time.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>\n";
+?>
+
 
 <!-- Data tables -->
 <script src="https://worksuite.app/prepod/assets/frest/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
