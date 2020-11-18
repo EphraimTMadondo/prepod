@@ -195,7 +195,7 @@
     <?php render_admin_js_variables(); ?>
     <script>
         var totalUnreadNotifications = <?php echo $current_user->total_unread_notifications; ?>,
-        proposalsTemplates = <?php echo json_encode(get_proposal_templates()); ?>,
+      //  proposalsTemplates = <?php // echo json_encode(get_proposal_templates()); ?>,
         contractsTemplates = <?php echo json_encode(get_contract_templates()); ?>,
         billingAndShippingFields = ['billing_street','billing_city','billing_state','billing_zip','billing_country','shipping_street','shipping_city','shipping_state','shipping_zip','shipping_country'],
         isRTL = '<?php echo $isRTL; ?>',
