@@ -104,27 +104,6 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
 
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managesettings.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/managestaff.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/mmember.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/payroll.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/payrollincludes.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
-<script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
-
-<!--<script src="<?php echo base_url();?>assets/js/app.js"></script>-->
-<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
-<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
-
-
-<!--<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>-->
-
 
 
 
