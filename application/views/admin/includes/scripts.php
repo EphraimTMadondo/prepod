@@ -40,8 +40,9 @@
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
 
 
-<!--<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>-->
-<script type="text/javascript" id="app-js" src="https://worksuite.app/prepod/assets/js/main.js"></script>
+<script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
+
+<!--<script type="text/javascript" id="app-js" src="https://worksuite.app/prepod/assets/js/main.js"></script>-->
 
 <?php
    switch($page)
