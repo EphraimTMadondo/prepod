@@ -6,6 +6,15 @@
 <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
 
+<!-- Datepicker -->
+<?php
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/legacy.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.date.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/pickadate/picker.time.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/moment.min.js'></script>\n";
+   echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>\n";
+?>
 
 
 <!-- Data tables -->
@@ -103,6 +112,27 @@
 
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
+
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managedayoff.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/allowancetype.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contract.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/contracttype.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/jobposition.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managecontract.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managesettings.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/managestaff.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/mmember.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payroll.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payrollincludes.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
+<script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
+
+<!--<script src="<?php echo base_url();?>assets/js/app.js"></script>-->
+<script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
+<script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
+
+
+<!--<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>-->
 
 
 
@@ -204,6 +234,51 @@ for (i = 0; i < x.length; i++) {
   
 }
 
+
+// Validate invoice add/edit form
+function validate_invoice_form(selector) {
+    selector = typeof(selector) == 'undefined' ? '#invoice-form' : selector;
+
+    appValidateForm($(selector), {
+        clientid: {
+            required: {
+                depends: function() {
+                    var customerRemoved = $('select#clientid').hasClass('customer-removed');
+                    return !customerRemoved;
+                }
+            }
+        },
+        date: 'required',
+        currency: 'required',
+        repeat_every_custom: { min: 1 },
+        number: {
+            required: true,
+        }
+    });
+    $("body").find('input[name="number"]').rules('add', {
+        remote: {
+            url: admin_url + "invoices/validate_invoice_number",
+            type: 'post',
+            data: {
+                number: function() {
+                    return $('input[name="number"]').val();
+                },
+                isedit: function() {
+                    return $('input[name="number"]').data('isedit');
+                },
+                original_number: function() {
+                    return $('input[name="number"]').data('original-number');
+                },
+                date: function() {
+                    return $('input[name="date"]').val();
+                },
+            }
+        },
+        messages: {
+            remote: app.lang.invoice_number_exists,
+        }
+    });
+}
 
  </script>
  
