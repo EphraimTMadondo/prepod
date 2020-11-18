@@ -236,6 +236,31 @@ for (i = 0; i < x.length; i++) {
     x[i].setAttribute("readonly", true )
   
 }
+
+function appTagsInput(e) {
+    void 0 === e && (e = $("body").find("input.tagsinput")),
+        e.length &&
+            e.tagit({
+                availableTags: app.available_tags,
+                allowSpaces: !0,
+                animate: !1,
+                placeholderText: app.lang.tag,
+                showAutocompleteOnFocus: !0,
+                caseSensitive: !1,
+                autocomplete: { appendTo: "#inputTagsWrapper" },
+                afterTagAdded: function (e, t) {
+                    var a = app.available_tags.indexOf($.trim($(t.tag).find(".tagit-label").text()));
+                    if (a > -1) {
+                        var n = app.available_tags_ids[a];
+                        $(t.tag).addClass("tag-id-" + n);
+                    }
+                    showHideTagsPlaceholder($(this));
+                },
+                afterTagRemoved: function (e, t) {
+                    showHideTagsPlaceholder($(this));
+                },
+            });
+}
  </script>
  
 <!-- END: Page JS-->
