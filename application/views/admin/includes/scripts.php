@@ -45,14 +45,7 @@
 
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
 
-<script rc="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
 
-
-<!--<script src="<?php echo base_url();?>application/views/themes/assets/plugins/jquery.are-you-sure/jquery.are-you-sure.js"></script> -->
-<script src="<?php echo base_url();?>assets/plugins/accounting.js/accounting.js"></script>
-<script src= "<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>
-
-<!--<script src= "<?php echo base_url();?>application/views/themes/assets/js/app.js"></script> -->
 
 
 
