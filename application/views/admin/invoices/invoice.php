@@ -12,6 +12,17 @@
 			}
 			?>
 			<div class="col-md-12">
+			<div class="row">
+                             
+							 <div class="col-md-12">
+								 <div class="form-group select-placeholder">
+							 <label for="rel_type" class="control-label"><?php echo _l('proposal_related'); ?></label>
+							 <select name="rel_type" id="rel_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
+								<option value=""></option>
+								<option value="lead" <?php if((isset($proposal) && $proposal->rel_type == 'lead') || $this->input->get('rel_type')){if($rel_type == 'lead'){echo 'selected';}} ?>><?php echo _l('proposal_for_lead'); ?></option>
+								<option value="customer" <?php if((isset($proposal) &&  $proposal->rel_type == 'customer') || $this->input->get('rel_type')){if($rel_type == 'customer'){echo 'selected';}} ?>><?php echo _l('proposal_for_customer'); ?></option>
+							 </select>
+						  </div>
 				<?php $this->load->view('admin/invoices/invoice_template'); ?>
 			</div>
 			<?php echo form_close(); ?>
