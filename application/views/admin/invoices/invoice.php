@@ -17,8 +17,8 @@
 			}
 			?>
 			<div class="col-md-12">
-				<?php// $this->load->view('admin/invoices/invoice_template'); ?>
-				<?php $this->load->view('admin/estimates/_add_edit_items'); ?>
+				<?php $this->load->view('admin/invoices/invoice_template'); ?>
+			
 				
 			</div>
 			<?php echo form_close(); ?>
