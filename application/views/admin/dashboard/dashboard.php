@@ -91,6 +91,20 @@ height:100px;
         init_progress_bars();
         function init_progress_bars() {
     appProgressBar();
+
+
+    // Progress bar animation load
+function appProgressBar() {
+    var progress_bars = $('body').find('.progress div.progress-bar');
+    if (progress_bars.length) {
+        progress_bars.each(function() {
+            var bar = $(this);
+            var perc = bar.attr("data-percent");
+            bar.css('width', (perc) + '%');
+            if (!bar.hasClass('no-percent-text')) { bar.text((perc) + '%'); }
+        });
+    }
+}
 }
     </script>
     <?php $this->load->view('admin/utilities/calendar_template'); ?>
