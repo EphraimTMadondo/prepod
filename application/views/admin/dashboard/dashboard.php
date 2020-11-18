@@ -86,6 +86,7 @@ height:100px;
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         app.calendarIDs = '<?php echo json_encode($google_ids_calendars); ?>';
         init_progress_bars();
