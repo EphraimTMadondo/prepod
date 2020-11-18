@@ -123,7 +123,7 @@
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
 <script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
 
-<!--<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>-->
+<script src="<?php echo base_url();?>application/views/themes/assets/js/main.js"></script>
 
 
 
@@ -224,8 +224,6 @@ for (i = 0; i < x.length; i++) {
     x[i].setAttribute("readonly", true )
   
 }
-
-
  </script>
  
 <!-- END: Page JS-->
