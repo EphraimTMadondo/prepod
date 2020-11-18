@@ -37,7 +37,12 @@
 <script type="text/javascript" id="jquery-shortcuts-js" src="<?php echo base_url();?>assets/plugins/jquery-shortcuts/jquery.shortcuts.js"></script>
 <script type="text/javascript" id="jquery-validation-js" src="<?php echo base_url();?>assets/plugins/jquery-validation/jquery.validate.js"></script>
 <script type="text/javascript" id="google-js" src="https://apis.google.com/js/api.js?onload=onGoogleApiLoad" defer></script>
+
+         <!--Progress bars here-->
 <script type="text/javascript" id="common-js" src="<?php echo base_url();?>assets/builds/common.js"></script>
+
+
+
 <script type="text/javascript" id="app-js" src="<?php echo base_url();?>assets/js/main.js"></script>
 
 <script rc="<?php echo base_url();?>assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
@@ -47,7 +52,7 @@
 <script src="<?php echo base_url();?>assets/plugins/accounting.js/accounting.js"></script>
 <script src= "<?php echo base_url();?>assets/frest/app-assets/vendors/js/extensions/moment.min.js"></script>
 
-<script src= "<?php echo base_url();?>application/views/themes/assets/js/app.js"></script>
+<!--<script src= "<?php echo base_url();?>application/views/themes/assets/js/app.js"></script> -->
 
 
 
@@ -60,18 +65,19 @@
    {
       case 'dashboard':
      
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/pickers/daterange/daterangepicker.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/apexcharts.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/dragula.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/swiper.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/charts/chart.min.js'></script>\n";
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-code-snippet.min.js'></script>\n";
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-dom.js'></script>\n";
+
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>\n";
+   
+         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
+         echo "<script src='".base_url()."application/views/themes/assets/js/dashboard-custom.js'></script>\n";
+
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-time-picker.min.js'></script>\n";
          echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-date-picker.min.js'></script>\n";
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/extensions/moment.min.js'></script>\n";
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/chance.min.js'></script>\n";
-         echo "<script src='".base_url()."assets/frest/app-assets/vendors/js/calendar/tui-calendar.min.js'></script>\n";
+      
        
       
       break;
@@ -122,7 +128,10 @@
 
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> 
 
+<!--OG APP.JS-->
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/core/app.js"></script>
+
+
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/components.min.js"></script>
 <script src="<?php echo base_url();?>assets/frest/app-assets/js/scripts/footer.min.js"></script>
 
@@ -140,7 +149,7 @@
 <script src="<?php echo base_url();?>modules/hrm/assets/js/payslip.js"></script>
 <script src="<?php echo base_url();?>modules/hrm/assets/js/workplace.js"></script>
 
-<script src="<?php echo base_url();?>assets/js/app.js"></script>
+<!--<script src="<?php echo base_url();?>assets/js/app.js"></script>-->
 <script src="<?php echo base_url();?>assets/plugins/datetimepicker/jquery.datetimepicker.full.js"></script>
 <script src="<?php echo base_url();?>application/views/themes/assets/plugins/accounting.js/accounting.js"></script>
 <script src="<?php echo base_url();?>application/views/assets/builds/vendor-admin.js"></script>
