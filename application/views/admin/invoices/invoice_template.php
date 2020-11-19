@@ -449,10 +449,18 @@
          <style>
 
 
-.show_quantity_as_wrapper
-{
-   padding-left: 150;
-}
+               .show_quantity_as_wrapper
+               {
+                  padding-left: 150;
+               }
+
+
+
+               .fa fa-question-circle
+               {
+                  display:none;
+               }
+
 
                .text-right {
                   text-align: right!important;
