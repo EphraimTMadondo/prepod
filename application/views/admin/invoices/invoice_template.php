@@ -448,7 +448,7 @@
          <div class="col-md-4">
          <style>
 
-                  .thead{
+                  thead{
                      color: #FFF !important;
                      background-color: #475F7B;
                      border-color: #475F7B;
@@ -460,7 +460,7 @@
             letter-spacing: 1px;
          }
 
-         
+
          </style>
             <?php $this->load->view('admin/invoice_items/item_select'); ?>
             <?php // $this->load->view('admin/estimates/_add_edit_items'); ?>
