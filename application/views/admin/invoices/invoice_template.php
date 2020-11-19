@@ -448,6 +448,10 @@
          <div class="col-md-4">
          <style>
 
+               .text-right {
+                  text-align: right!important;
+               }
+
                   thead{
                      color: #FFF !important;
                      background-color: #475F7B;
@@ -460,6 +464,7 @@
             letter-spacing: 1px;
          }
 
+            
 
          </style>
             <?php $this->load->view('admin/invoice_items/item_select'); ?>
@@ -493,11 +498,14 @@
                   ?>
                 </div>
                </div>
+
+        
+
             </div>
          </div>
          <?php } ?>
          <div class="col-md-<?php if(!isset($invoice_from_project)){ echo 5; }else {echo 8;} ?> text-right show_quantity_as_wrapper">
-            <div class="mtop10">
+            <div class="mtop10"style = "display:flex" >
                <span><?php echo _l('show_quantity_as'); ?> </span>
                <div class="radio radio-primary radio-inline">
                   <input type="radio" value="1" id="sq_1" name="show_quantity_as" data-text="<?php echo _l('invoice_table_quantity_heading'); ?>" <?php if(isset($invoice) && $invoice->show_quantity_as == 1){echo 'checked';}else if(!isset($hours_quantity) && !isset($qty_hrs_quantity)){echo'checked';} ?>>
