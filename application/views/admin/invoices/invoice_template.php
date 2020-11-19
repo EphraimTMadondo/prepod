@@ -515,7 +515,7 @@
                     }
                     echo '<span class="pointer popover-invoker" data-container=".form-group-select-task_select"
                       data-trigger="click" data-placement="top" data-toggle="popover" data-content="'.$help_text.'">
-                      <i class="fa fa-question-circle"></i></span>';
+                      <i class="fa"></i></span>';
                   ?>
                 </div>
                </div>
@@ -582,7 +582,7 @@
                   <?php echo render_custom_fields_items_table_add_edit_preview(); ?>
                   <td>
                      <input type="number" name="quantity" min="0" value="1" class="form-control" placeholder="<?php echo _l('item_quantity_placeholder'); ?>">
-                     <input type="text" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control input-transparent text-right">
+                     <input type="text" placeholder="<?php echo _l('unit'); ?>" data-toggle="tooltip" data-title="e.q kg, lots, packs" name="unit" class="form-control-plaintext text-right">
                   </td>
                   <td>
                      <input type="number" name="rate" class="form-control" placeholder="<?php echo _l('item_rate_placeholder'); ?>">
