@@ -457,6 +457,12 @@
 
 
 
+               .float-right {
+    float: right!important;
+}
+
+
+
                .fa fa-question-circle
                {
                   display:none;
@@ -678,7 +684,7 @@
          </table>
       </div>
       <div class="col-md-8 col-md-offset-4">
-         <table class="table text-right">
+         <table class="table text-right" style="margin-left: 400;">
             <tbody>
                <tr id="subtotal">
                   <td><span class="bold"><?php echo _l('invoice_subtotal'); ?> :</span>
