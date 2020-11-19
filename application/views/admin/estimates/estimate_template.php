@@ -287,6 +287,8 @@
          </div>
       </div>
    </div>
+   <style>
+   
    <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
    <div class="row">
       <div class="col-md-12 mt-1">
