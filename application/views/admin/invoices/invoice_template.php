@@ -448,6 +448,12 @@
          <div class="col-md-4">
          <style>
 
+
+.show_quantity_as_wrapper
+{
+   padding-left: 150;
+}
+
                .text-right {
                   text-align: right!important;
                }
