@@ -446,6 +446,22 @@
    <div class="card-body mtop10">
       <div class="row">
          <div class="col-md-4">
+         <style>
+
+                  .thead{
+                     color: #FFF !important;
+                     background-color: #475F7B;
+                     border-color: #475F7B;
+                  }
+
+                           .table thead th {
+            color: white;
+            font-size: .8rem;
+            letter-spacing: 1px;
+         }
+
+         
+         </style>
             <?php $this->load->view('admin/invoice_items/item_select'); ?>
             <?php // $this->load->view('admin/estimates/_add_edit_items'); ?>
          </div>
